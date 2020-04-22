@@ -1,0 +1,16 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/DockPanel.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Grid.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/ContentControl.xaml" />
+        <!--<ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Button.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Label.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/TextBox.xaml" />-->
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Header.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/SideMenu.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Login.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

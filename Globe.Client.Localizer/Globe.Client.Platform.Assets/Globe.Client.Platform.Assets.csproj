@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Header.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\SideMenu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Label.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\Grid.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\TextBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\DockPanel.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

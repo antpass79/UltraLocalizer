@@ -1,0 +1,73 @@
+﻿<Window x:Class="Globe.Client.Localizer.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:platform="http://schemas.platform.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+        Title="Ultra Localizator" Height="450" Width="800" WindowState="Maximized">
+    <Window.Resources>
+        <platform:BooleanToVisibilityConverter
+            x:Key="BooleanToVisibilityConverter" 
+            True="Visible" 
+            False="Collapsed" />
+        <platform:BooleanToVisibilityConverter
+            x:Key="InvertBooleanToVisibilityConverter" 
+            True="Collapsed" 
+            False="Visible" />
+        <platform:MessageTypeToColorConverter
+            x:Key="MessageTypeToColorConverter" />
+    </Window.Resources>
+    <DockPanel>
+
+        <!--Side Menu-->
+        <DockPanel Style="{StaticResource MenuPanel}">
+            <Label DockPanel.Dock="Top" Content="Options" Style="{StaticResource MenuHeader}"></Label>
+            <ListBox Style="{StaticResource SideMenu}" ItemsSource="{Binding MenuOptions}" SelectedItem="{Binding SelectedMenuOption}" Name="menu">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <platform:AuthorizeView UserRoles="{Binding ElementName=menu, Path=DataContext.UserRoles}" Roles="{Binding Roles}" VisibileWithoutRoles="{Binding AlwaysVisible}">
+                            <platform:AuthorizeView.PlaceHolder>
+                                <Button Style="{StaticResource SideMenuItem}" Content="{Binding Title}" Command="{Binding ElementName=menu, Path=DataContext.MenuOptionCommand}" CommandParameter="{Binding}">
+                                </Button>
+                            </platform:AuthorizeView.PlaceHolder>
+                        </platform:AuthorizeView>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+
+        <!--Header-->
+        <Grid DockPanel.Dock="Top" Style="{StaticResource Header}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <ContentControl Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <DockPanel Background="Transparent">
+                    <ContentControl prism:RegionManager.RegionName="{x:Static platform:RegionNames.TOOLBAR_REGION}" prism:RegionManager.RegionContext="{Binding ElementName=contentRegion, Path=Content.DataContext}" />
+                </DockPanel>
+            </ContentControl>
+            <StackPanel HorizontalAlignment="Right" Grid.Column="1" Orientation="Horizontal">
+                <TextBlock Text="{Binding HeaderTitle}" Style="{StaticResource HeaderTextBlock}"></TextBlock>
+                <Button Command="{Binding LoginCommand}" Style="{StaticResource HeaderLoginButton}" Visibility="{Binding IsAuthenticated, Converter={StaticResource InvertBooleanToVisibilityConverter}}">
+                    Log in
+                </Button>
+                <Button Command="{Binding LogoutCommand}" Style="{StaticResource HeaderLoginButton}" Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    Log out
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <!--Footer-->
+        <Label DockPanel.Dock="Bottom" HorizontalAlignment="Right" FontWeight="Bold" FontSize="20" Content="{Binding StatusBarMessage.Text}" Foreground="{Binding StatusBarMessage.MessageType, Converter={StaticResource MessageTypeToColorConverter}}"></Label>
+
+        <!--Content-->
+        <Grid>
+            <ContentControl x:Name="contentRegion" prism:RegionManager.RegionName="{x:Static platform:RegionNames.MAIN_REGION}" />
+            <platform:Spinner Diameter="100" Color1="Blue" Color2="Transparent" Visibility="{Binding Busy, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        </Grid>
+    </DockPanel>
+</Window>

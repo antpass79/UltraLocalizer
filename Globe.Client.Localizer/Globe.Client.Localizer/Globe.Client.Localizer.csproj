@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Globe.Client.Platform.Assets\Globe.Client.Platform.Assets.csproj" />
+    <ProjectReference Include="..\Globe.Client.Platform\Globe.Client.Platform.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Prism.Unity" Version="7.2.0.1422" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\HomeWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HomeWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MergeWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JobsWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MergeWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JobsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>
