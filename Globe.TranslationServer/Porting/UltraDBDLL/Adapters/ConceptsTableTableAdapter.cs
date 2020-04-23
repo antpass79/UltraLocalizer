@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class ConceptsTableTableAdapter
+    public static class ConceptsTableTableAdapter
     {
         public static int InsertNewConcept(this LocalizationContext context, string ComponentNamespace, string InternalNamespace, string LocalizationID, bool Ignore, string Comment)
         {

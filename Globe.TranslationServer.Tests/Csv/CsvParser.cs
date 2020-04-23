@@ -32,7 +32,7 @@ namespace Globe.TranslationServer.Tests.Csv
             csvReader.Configuration.ReadingExceptionOccurred = exception =>
             {
                 Console.WriteLine($"Bad data found on row '{exception.Message}'");
-                return true;
+                return false;
             };
             csvReader.Configuration.BadDataFound = context =>
             {

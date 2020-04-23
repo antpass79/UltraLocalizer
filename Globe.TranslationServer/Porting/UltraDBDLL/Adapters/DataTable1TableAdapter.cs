@@ -8,7 +8,7 @@ using System.Linq;
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
     // namespace DataSetConceptAndContextTableAdapters
-    internal static class DataTable1TableAdapter
+    public static class DataTable1TableAdapter
     {
         // SELECT
         //      LOC_ConceptsTable.ID,

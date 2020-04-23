@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class STRINGSTableAdapter
+    public static class STRINGSTableAdapter
     {
         // SELECT
         //      LOC_STRINGS.ID,
@@ -108,6 +108,18 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //where ID = @IDString
         public static IEnumerable<STRING> GetStringByID(this LocalizationContext context, int ID)
         {
+            IList<STRING> strings = new List<STRING>();
+            var item = context.LocStrings.Find(ID);
+            strings.Add(new STRING
+            {
+                ID = item.Id,
+                IDLanguage = item.Idlanguage,
+                IDType = item.Idtype,
+                String = item.String
+            });
+
+            return strings;
+
             string query =
                     $@"
                             SELECT LOC_STRINGS.*
@@ -130,8 +142,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                         ID = (int)reader[0],
                         IDLanguage = (int)reader[1],
                         IDType = (int)reader[2],
-                        String = reader[3] as string,
-                        IDString2Context = (int)reader[4],
+                        String = reader[3] as string
                     });
                 }
             }

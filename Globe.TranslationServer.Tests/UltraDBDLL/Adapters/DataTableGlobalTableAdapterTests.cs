@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Xunit;
 
-namespace Globe.TranslationServer.Tests
+namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
 {
     public class DataTableGlobalTableAdapterTests
     {

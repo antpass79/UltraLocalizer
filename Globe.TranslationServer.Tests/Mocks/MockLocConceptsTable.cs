@@ -12,18 +12,23 @@ namespace Globe.TranslationServer.Tests.Mocks
     {
         public Mock<DbSet<LocConceptsTable>> Mock()
         {
-            var locConceptsTables = GetLocConceptsTable().AsQueryable();
+            var locConceptsTables = GetLocConceptsTable();
+            var queryableLocConceptsTables = locConceptsTables.AsQueryable();
             var dbSet = new Mock<DbSet<LocConceptsTable>>();
 
-            dbSet.As<IQueryable<LocConceptsTable>>().Setup(m => m.Provider).Returns(locConceptsTables.Provider);
-            dbSet.As<IQueryable<LocConceptsTable>>().Setup(m => m.Expression).Returns(locConceptsTables.Expression);
-            dbSet.As<IQueryable<LocConceptsTable>>().Setup(m => m.ElementType).Returns(locConceptsTables.ElementType);
-            dbSet.As<IQueryable<LocConceptsTable>>().Setup(m => m.GetEnumerator()).Returns(locConceptsTables.GetEnumerator());
+            dbSet.As<IQueryable<LocConceptsTable>>().Setup(m => m.Provider).Returns(queryableLocConceptsTables.Provider);
+            dbSet.As<IQueryable<LocConceptsTable>>().Setup(m => m.Expression).Returns(queryableLocConceptsTables.Expression);
+            dbSet.As<IQueryable<LocConceptsTable>>().Setup(m => m.ElementType).Returns(queryableLocConceptsTables.ElementType);
+            dbSet.As<IQueryable<LocConceptsTable>>().Setup(m => m.GetEnumerator()).Returns(queryableLocConceptsTables.GetEnumerator());
+
+            dbSet.Setup(m => m.Add(It.IsAny<LocConceptsTable>())).Callback<LocConceptsTable>((s) => locConceptsTables.Add(s));
+            dbSet.Setup(m => m.Remove(It.IsAny<LocConceptsTable>())).Callback<LocConceptsTable>((s) => locConceptsTables.Remove(s));
+            dbSet.Setup(m => m.Find(It.IsAny<int>())).Returns<object[]>((@params) => locConceptsTables.Find(item => item.Id == (int)@params[0]));
 
             return dbSet;
         }
 
-        private IEnumerable<LocConceptsTable> GetLocConceptsTable()
+        private List<LocConceptsTable> GetLocConceptsTable()
         {
             string directory = Path.Combine(Directory.GetCurrentDirectory(), "Data");
             string csvFile = Path.Combine(directory, nameof(LocConceptsTable) + ".csv");
@@ -41,7 +46,7 @@ namespace Globe.TranslationServer.Tests.Mocks
                 };
             });
 
-            return items;
+            return items.ToList();
         }
     }
 }

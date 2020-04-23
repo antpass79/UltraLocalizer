@@ -2163,7 +2163,7 @@ ID|ComponentNamespace|InternalNamespace|LocalizationID|Ignore|Comment|SSMA_TimeS
 2214|MeasureComponent|MESSAGES|No more custom parameters available! Delete some before.|False||0000000000004C4A
 2215|MeasureComponent|MESSAGES|Fill all the fields of the form !|False||0000000000004C4B
 2216|MeasureComponent|MESSAGES|WARNING: ANY MODIFICATION WILL TAKE PLACE ONLY AFTER SAVING|False||0000000000004C4C
-2217|OLD|MESSAGES|Please, check "Reconnect at logon" in the Map Network Drive window.|False||0000000000001082
+2217|OLD|MESSAGES|Please, check Reconnect at logon in the Map Network Drive window.|False||0000000000001082
 2218|OLD|MESSAGES|This description already exists.|False||0000000000001083
 2219|OLD|MESSAGES|This printer model already exists. Do you want to overwrite it?|False||0000000000001084
 2220|OLD|MESSAGES|The maximum number of configurable servers has been reached.|False||0000000000001085
@@ -2248,7 +2248,7 @@ ID|ComponentNamespace|InternalNamespace|LocalizationID|Ignore|Comment|SSMA_TimeS
 2299|OLD|MESSAGES|Warning: the emergency access won't allow to review from the DB neither already available exams nor the exams you are going to perform.|False||00000000000010D4
 2300|OLD|MESSAGES|Please restart the application|False||00000000000010D5
 2301|OLD|MESSAGES|The hardware configuration of your PC doesn't support 3D review.|False||00000000000010D6
-2302|OLD|MESSAGES|If the "Browse for folder" window doesn't show a network folder, please type its full path into the "Folder" field.|False||00000000000010D7
+2302|OLD|MESSAGES|If the Browse for folder window doesn't show a network folder, please type its full path into the Folder field.|False||00000000000010D7
 2303|OLD|MESSAGES|To activate your modifications, the unit needs to be immediately restarted.|False||00000000000010D8
 2304|OLD|MESSAGES|Warning: this exam already contains a view with the selected name. If you continue, the less recent view will be overwritten.|False||00000000000010D9
 2305|OLD|MESSAGES|Warning: the selected user will be deleted. Do you want to continue?|False||00000000000010DA
@@ -4681,7 +4681,7 @@ ID|ComponentNamespace|InternalNamespace|LocalizationID|Ignore|Comment|SSMA_TimeS
 4870|InformationAreaComponent|InformationArea|DATE|False||00000000000101D2
 4871|InformationAreaComponent|InformationArea|TIME|False||000000000000F277
 4872|InformationAreaComponent|InformationArea|REMAININGTIME|False||0000000000017AFC
-4873|InformationAreaComponent|InformationArea|DONE|False|Message appearing showing you the status of the operation: ...% "done"|000000000006784D
+4873|InformationAreaComponent|InformationArea|DONE|False|Message appearing showing you the status of the operation: ...% done|000000000006784D
 4874|InformationAreaComponent|InformationArea|ErasingUSBDevice|False||0000000000047C7D
 4875|InformationAreaComponent|InformationArea|FREEDISKSPACE|False||000000000001770A
 4876|InformationAreaComponent|InformationArea|TOTALDISKSPACE|False||00000000000182B9
@@ -6668,15 +6668,15 @@ ID|ComponentNamespace|InternalNamespace|LocalizationID|Ignore|Comment|SSMA_TimeS
 22572|MeasureComponent|MeasGroupEditor|MEASURE GROUP EDITOR LOW|False||000000000016433F
 22573|UafViewer||FRAME|False||00000000000700FF
 22575|XStrain2DComponent|Error_Messages|ELIGIBILITY_MSG|False||000000000008C619
-22576|XStrain2DComponent|Error_Messages|NON_MULTIFRAME|False|following "Cannot process the selected clip for the following reason:"|00000000000470C7
-22577|XStrain2DComponent|Error_Messages|NO_HEARTRATE|False|following "Cannot process the selected clip for the following reason:"|00000000000470C3
-22578|XStrain2DComponent|Error_Messages|NO_TRIGGERECG|False|following "Cannot process the selected clip for the following reason:"|00000000000470C4
-22579|XStrain2DComponent|Error_Messages|NON_CARDIO|False|following "Cannot process the selected clip for the following reason:"|00000000000470C6
-22580|XStrain2DComponent|Error_Messages|NON_STANDARD|False|following "Cannot process the selected clip for the following reason:"|00000000000470C9
-22581|XStrain2DComponent|Error_Messages|NOT_HIGHFRAMERATE|False|following "Cannot process the selected clip for the following reason:"|00000000000470CA
-22582|XStrain2DComponent|Error_Messages|NON_NATIVE|False|following "Cannot process the selected clip for the following reason:"|00000000000470C8
-22583|XStrain2DComponent|Error_Messages|NON_CALIBRATIONREGIONSHOMOGENEOUS|False|following "Cannot process the selected clip for the following reason:"|00000000000470C5
-22584|XStrain2DComponent|Error_Messages|GENERIC_ERROR|False|following "Cannot process the selected clip for the following reason:"|00000000000470C2
+22576|XStrain2DComponent|Error_Messages|NON_MULTIFRAME|False|following Cannot process the selected clip for the following reason: |00000000000470C7
+22577|XStrain2DComponent|Error_Messages|NO_HEARTRATE|False|following Cannot process the selected clip for the following reason: |00000000000470C3
+22578|XStrain2DComponent|Error_Messages|NO_TRIGGERECG|False|following Cannot process the selected clip for the following reason: |00000000000470C4
+22579|XStrain2DComponent|Error_Messages|NON_CARDIO|False|following  Cannot process the selected clip for the following reason: |00000000000470C6
+22580|XStrain2DComponent|Error_Messages|NON_STANDARD|False|following  Cannot process the selected clip for the following reason: |00000000000470C9
+22581|XStrain2DComponent|Error_Messages|NOT_HIGHFRAMERATE|False|following  Cannot process the selected clip for the following reason: |00000000000470CA
+22582|XStrain2DComponent|Error_Messages|NON_NATIVE|False|following  Cannot process the selected clip for the following reason: |00000000000470C8
+22583|XStrain2DComponent|Error_Messages|NON_CALIBRATIONREGIONSHOMOGENEOUS|False|following  Cannot process the selected clip for the following reason: |00000000000470C5
+22584|XStrain2DComponent|Error_Messages|GENERIC_ERROR|False|following  Cannot process the selected clip for the following reason: |00000000000470C2
 22585|XStrain2DComponent|WarningDialog|CANNOT_PROCESS|False||00000000000441FB
 22586|XStrain2DComponent|WarningDialog|INTERNAL_CHECK_FAILED|False||00000000000441FC
 22587|RT|General|GMAPB TAB|False||000000000004422B
@@ -6711,7 +6711,7 @@ ID|ComponentNamespace|InternalNamespace|LocalizationID|Ignore|Comment|SSMA_TimeS
 22633|WorksheetComponent|Commands|LATERALITY|False||0000000000044234
 22634|XStrain2DComponent|Error_Messages|TOO_MANY_CYCLES|False||0000000000178B5A
 22635|XStrain2DComponent|Error_Messages|OPERATION_OK|False||00000000000470CC
-22636|XStrain2DComponent|Error_Messages|OPERATION_ERROR|False|following "Cannot process the selected clip for the following reason:"|00000000000470CB
+22636|XStrain2DComponent|Error_Messages|OPERATION_ERROR|False|following  Cannot process the selected clip for the following reason: |00000000000470CB
 22637|XStrain2DComponent|Graphs|BorderAnalysis_TransStrain|False||00000000000441FD
 22638|XStrain2DComponent|Graphs|BorderAnalysis_TransStrainRt|False||00000000000441FE
 22639|XStrain2DComponent|Graphs|SegmentalAnalysis_TransStrain|False||00000000000441FF

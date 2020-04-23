@@ -2,7 +2,7 @@
 using Globe.TranslationServer.Tests.Mocks;
 using Xunit;
 
-namespace Globe.TranslationServer.Tests
+namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
 {
     public class ComponentConceptsTableTableAdapterTests
     {

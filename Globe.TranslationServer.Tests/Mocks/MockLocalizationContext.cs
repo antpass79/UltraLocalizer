@@ -1,6 +1,4 @@
 ﻿using Globe.TranslationServer.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Moq;
 
 namespace Globe.TranslationServer.Tests.Mocks
@@ -11,13 +9,21 @@ namespace Globe.TranslationServer.Tests.Mocks
 
         public Mock<LocalizationContext> Mock()
         {
-            var context = new Mock<LocalizationContext>(new object[] {  });
+            var context = new Mock<LocalizationContext>();
 
-            var mockLocConceptsTable = new MockLocConceptsTable().Mock().Object;
             var databaseFacade = new MockDatabaseFacade().Mock().Object;
 
+            var mockLocConceptsTable = new MockLocConceptsTable().Mock().Object;
+            var mockLocStrings = new MockLocStrings().Mock().Object;
+            var mockLocConcept2Contexts = new MockLocConcept2Context().Mock().Object;
+            var mockLocContexts = new MockLocContexts().Mock().Object;
+
             context.Setup(c => c.Database).Returns(databaseFacade);
+
             context.Setup(c => c.LocConceptsTable).Returns(mockLocConceptsTable);
+            context.Setup(c => c.LocStrings).Returns(mockLocStrings);
+            context.Setup(c => c.LocConcept2Context).Returns(mockLocConcept2Contexts);
+            context.Setup(c => c.LocContexts).Returns(mockLocContexts);
 
             return context;
         }
