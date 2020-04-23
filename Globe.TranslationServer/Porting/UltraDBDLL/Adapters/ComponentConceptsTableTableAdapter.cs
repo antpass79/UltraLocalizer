@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class ComponentConceptsTableTableAdapter
+    public static class ComponentConceptsTableTableAdapter
     {
         // SELECT DISTINCT ComponentNamespace
         // FROM            LOC_ConceptsTable

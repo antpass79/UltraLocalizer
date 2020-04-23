@@ -23,6 +23,8 @@ Some issues:
 
 ## Data from the database for testing purpose
 
+All data for testing comes from the export of the original data in the database to csv files (each file has the name of the correspoding table).
+
 ### LOC_Languages Table
 
 - LanguangeName values:
@@ -81,3 +83,10 @@ Some issues:
 ### LOC_JobList Table
 
 Id values: 299 674 675 1233 1526 1539 1627 1653
+
+## References
+
+### Testing
+
+- <https://asp.net-hacker.rocks/2019/01/15/unit-testing-data-access-dotnetcore.html>
+- <https://www.easeus.com/sql-database-recovery/export-ms-sql-server-to-csv.html>

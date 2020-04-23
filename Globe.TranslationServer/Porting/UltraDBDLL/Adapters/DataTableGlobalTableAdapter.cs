@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class DataTableGlobalTableAdapter
+    public static class DataTableGlobalTableAdapter
     {
         // SELECT
         //      LOC_ConceptsTable.ID,
@@ -79,22 +79,22 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          WHERE (LOC_Job2Concept.IDJobList = {idJobList}) AND
                                (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
                                (LOC_ConceptsTable.InternalNamespace = {InternalNamespace}) AND
-                               (@Internal IS NOT NULL) AND
+                               ({InternalNamespace} IS NOT NULL) AND
                                (LOC_Strings2Context.ID IS NULL) OR
                                (LOC_Job2Concept.IDJobList = {idJobList}) AND
                                (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
                                (LOC_ConceptsTable.InternalNamespace = {InternalNamespace}) AND
-                               (@Internal IS NOT NULL) AND
+                               ({InternalNamespace} IS NOT NULL) AND
                                (LOC_Strings2Context.ID IS NOT NULL) AND
                                (LOC_STRINGS.IDLanguage = 1) OR
                                (LOC_Job2Concept.IDJobList = {idJobList}) AND
                                (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
                                (LOC_ConceptsTable.InternalNamespace IS NULL) AND
-                               (@Internal IS NULL) AND(LOC_Strings2Context.ID IS NULL) OR
+                               ({InternalNamespace} IS NULL) AND(LOC_Strings2Context.ID IS NULL) OR
                                (LOC_Job2Concept.IDJobList = {idJobList}) AND
                                (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
                                (LOC_ConceptsTable.InternalNamespace IS NULL) AND
-                               (@Internal IS NULL) AND(LOC_Strings2Context.ID IS NOT NULL) AND(LOC_STRINGS.IDLanguage = 1)
+                               ({InternalNamespace} IS NULL) AND(LOC_Strings2Context.ID IS NOT NULL) AND(LOC_STRINGS.IDLanguage = 1)
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);

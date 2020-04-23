@@ -11,7 +11,6 @@ namespace Globe.Client.Localizer.ViewModels
     internal class LoginWindowViewModel : BindableBase
     {
         private readonly IViewNavigationService _viewNavigationService;
-        private readonly IRegionManager _regionManager;
         private readonly IAsyncLoginService _loginService;
 
         public LoginWindowViewModel(IViewNavigationService viewNavigationService, IAsyncLoginService loginService)
