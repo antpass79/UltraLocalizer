@@ -7,17 +7,63 @@ using Xunit;
 
 namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
 {
-    public class DataTableGlobalTableAdapterTests
+    [Trait(nameof(DataTableGlobalTableAdapterTests), "Tested all methods")]
+    public class DataTableGlobalTableAdapterTests : AdapterTestsWithSqlCommand
     {
-        [Fact]
+        [Fact(DisplayName = nameof(GetEngDatabyComponentInternal) + " - SqlCommand")]
         public void GetEngDatabyComponentInternal()
         {
-            var optionsBuilder = new DbContextOptionsBuilder<LocalizationContext>();
-            optionsBuilder.UseSqlServer(MockConstants.CONNECTION_STRING);
+            using var context = new LocalizationContext(OptionsBuilder.Options);
+            var result = context.GetEngDatabyComponentInternal(
+                MockConstants.LOC_JOBLIST_ID_10,
+                MockConstants.COMPONENT_NAMESPACE_MEASURECOMPONENT,
+                MockConstants.INTERNAL_NAMESPACE_VASCULAR);
 
-            using var context = new LocalizationContext(optionsBuilder.Options);
+            Assert.True(result.Count() > 0);
+        }
 
-            var result = context.GetEngDatabyComponentInternal(674, "MeasureComponent", "VASCULAR");
+        [Fact(DisplayName = nameof(GetMissingDataByComponentISO) + " - SqlCommand")]
+        public void GetMissingDataByComponentISO()
+        {
+            using var context = new LocalizationContext(OptionsBuilder.Options);
+            var result = context.GetMissingDataByComponentISO(
+                MockConstants.COMPONENT_NAMESPACE_MEASURECOMPONENT,
+                MockConstants.ISO_CODING_EN);
+
+            Assert.True(result.Count() > 0);
+        }
+
+        [Fact(DisplayName = nameof(GetMissingDataByComponentISOInternal) + " - SqlCommand")]
+        public void GetMissingDataByComponentISOInternal()
+        {
+            using var context = new LocalizationContext(OptionsBuilder.Options);
+            var result = context.GetMissingDataByComponentISOInternal(
+                MockConstants.COMPONENT_NAMESPACE_MEASURECOMPONENT,
+                MockConstants.INTERNAL_NAMESPACE_VASCULAR,
+                MockConstants.ISO_CODING_EN);
+
+            Assert.True(result.Count() > 0);
+        }
+
+        [Fact(DisplayName = nameof(GetMissingDataByConceptID) + " - SqlCommand")]
+        public void GetMissingDataByConceptID()
+        {
+            using var context = new LocalizationContext(OptionsBuilder.Options);
+            var result = context.GetMissingDataByConceptID(
+                MockConstants.LOC_CONCEPTSTABLE_ID_10,
+                MockConstants.ISO_CODING_EN);
+
+            Assert.True(result.Count() > 0);
+        }
+
+        [Fact(DisplayName = nameof(GetDatabyComponentISO) + " - SqlCommand")]
+        public void GetDatabyComponentISO()
+        {
+            using var context = new LocalizationContext(OptionsBuilder.Options);
+            var result = context.GetDatabyComponentISO(
+                MockConstants.COMPONENT_NAMESPACE_MEASURECOMPONENT,
+                MockConstants.ISO_CODING_EN);
+
             Assert.True(result.Count() > 0);
         }
     }

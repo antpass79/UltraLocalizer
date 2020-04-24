@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class InternalConceptsTableTableAdapter
+    public static class InternalConceptsTableTableAdapter
     {
         // SELECT DISTINCT InternalNamespace
         // FROM            LOC_ConceptsTable

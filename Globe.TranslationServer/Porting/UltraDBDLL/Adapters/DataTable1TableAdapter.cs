@@ -44,7 +44,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //       (@Internal IS  NULL) AND
         //       (LOC_ConceptsTable.Ignore = 0) AND
         //       (LOC_STRINGS.IDLanguage = @IDiso)
-        internal static IEnumerable<GroupledData> GetComplimentaryDataByComponentInternalISOjob(this LocalizationContext context, int idJobList, string ComponentName, string InternalNamespace, int iso)
+        public static IEnumerable<GroupledData> GetComplimentaryDataByComponentInternalISOjob(this LocalizationContext context, int idJobList, string ComponentName, string InternalNamespace, int iso)
         {
             string query =
                     $@"
@@ -73,13 +73,13 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          WHERE (LOC_Job2Concept.IDJobList = {idJobList}) AND
                                (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
                                (LOC_ConceptsTable.InternalNamespace = {InternalNamespace}) AND
-                               (@Internal IS NOT NULL) AND
+                               ({InternalNamespace} IS NOT NULL) AND
                                (LOC_ConceptsTable.Ignore = 0) AND
                                (LOC_STRINGS.IDLanguage = {iso}) OR
                                (LOC_Job2Concept.IDJobList = {idJobList}) AND
                                (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
                                (LOC_ConceptsTable.InternalNamespace IS NULL) AND
-                               (@Internal IS  NULL) AND
+                               ({InternalNamespace} IS  NULL) AND
                                (LOC_ConceptsTable.Ignore = 0) AND
                                (LOC_STRINGS.IDLanguage = {iso})
                     ";

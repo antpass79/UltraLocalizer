@@ -19,7 +19,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                 $@"
                         SELECT ID, JobName, UserName, IDIsoCoding
                 FROM LOC_JobList
-                WHERE(IDIsoCoding = {idIso})
+                WHERE(IDIsoCoding = '{idIso}')
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -50,7 +50,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         {
             string query =
                 $@"
-                    SELECT ID, JobName, UserName, IDIsoCoding FROM dbo.LOC_JobList where UserName={userName} AND IDIsoCoding={idIsoCoding}
+                    SELECT ID, JobName, UserName, IDIsoCoding FROM dbo.LOC_JobList where UserName='{userName}' AND IDIsoCoding='{idIsoCoding}'
                 ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -86,7 +86,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                 $@"
                             SELECT ID, JobName, UserName, IDIsoCoding
                     FROM LOC_JobList
-                    WHERE(UserName = {UserName}) AND(IDIsoCoding = {idIso})
+                    WHERE(UserName = '{UserName}') AND(IDIsoCoding = '{idIso}')
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);

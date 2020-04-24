@@ -30,7 +30,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                               LOC_Strings2Context.ID AS IDString2Context
                          FROM            LOC_STRINGS INNER JOIN
                                                  LOC_Strings2Context ON LOC_STRINGS.ID = LOC_Strings2Context.IDString
-                         WHERE        (LOC_Strings2Context.IDConcept2Context = {IDConcept2Context})
+                         WHERE        (LOC_Strings2Context.IDConcept2Context = '{IDConcept2Context}')
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -76,7 +76,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                                                  (SELECT        TOP (1) LOC_Strings2Context_1.IDConcept2Context AS Expr1
                                                    FROM            LOC_STRINGS AS LOC_STRINGS_1 INNER JOIN
                                                                              LOC_Strings2Context AS LOC_Strings2Context_1 ON LOC_STRINGS_1.ID = LOC_Strings2Context_1.IDString
-                                                   WHERE        (LOC_Strings2Context_1.IDString = {IDString})))
+                                                   WHERE        (LOC_Strings2Context_1.IDString = '{IDString}')))
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -124,7 +124,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                     $@"
                             SELECT LOC_STRINGS.*
                     FROM LOC_STRINGS
-                    where ID = {ID}
+                    where ID = '{ID}'
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);

@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class LOC_Concept2ContextTableAdapter
+    public static class LOC_Concept2ContextTableAdapter
     {
         // SELECT ID
         // FROM LOC_Concept2Context
@@ -37,13 +37,13 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          FROM LOC_Concept2Context
                          INNER JOIN LOC_Strings2Context ON LOC_Concept2Context.ID = LOC_Strings2Context.IDConcept2Context
                          INNER JOIN LOC_ConceptsTable ON LOC_Concept2Context.IDConcept = LOC_ConceptsTable.ID
-                         WHERE (LOC_Strings2Context.IDString = {stringID}) AND (LOC_ConceptsTable.Ignore = 0) and LOC_Concept2Context.ID
+                         WHERE (LOC_Strings2Context.IDString = '{stringID}') AND (LOC_ConceptsTable.Ignore = 0) and LOC_Concept2Context.ID
                          NOT IN
                               (SELECT LOC_Concept2Context_1.ID
                                FROM LOC_Strings2Context AS LOC_Strings2Context_1
                                INNER JOIN LOC_Concept2Context AS LOC_Concept2Context_1 ON LOC_Strings2Context_1.IDConcept2Context = LOC_Concept2Context_1.ID
                                INNER JOIN LOC_STRINGS AS LOC_STRINGS_1 ON LOC_Strings2Context_1.IDString = LOC_STRINGS_1.ID
-                               WHERE (LOC_STRINGS_1.IDLanguage = {isocoding}))
+                               WHERE (LOC_STRINGS_1.IDLanguage = '{isocoding}'))
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);

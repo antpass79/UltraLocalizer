@@ -4,7 +4,7 @@
     {
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }
-        public int LocalizationID { get; set; }
+        public string LocalizationID { get; set; }
         public string ISOCoding { get; set; }
         public string ContextName { get; set; }
         public string DataString { get; set; }

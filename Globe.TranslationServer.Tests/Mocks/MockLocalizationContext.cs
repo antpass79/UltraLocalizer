@@ -17,6 +17,9 @@ namespace Globe.TranslationServer.Tests.Mocks
             var mockLocStrings = new MockLocStrings().Mock().Object;
             var mockLocConcept2Contexts = new MockLocConcept2Context().Mock().Object;
             var mockLocContexts = new MockLocContexts().Mock().Object;
+            var mockLocJobList = new MockLocJobList().Mock().Object;
+            var mockLocStringsacceptable = new MockLocStringsacceptable().Mock().Object;
+            var mockLocStrings2Context = new MockLocStrings2Context().Mock().Object;
 
             context.Setup(c => c.Database).Returns(databaseFacade);
 
@@ -24,6 +27,9 @@ namespace Globe.TranslationServer.Tests.Mocks
             context.Setup(c => c.LocStrings).Returns(mockLocStrings);
             context.Setup(c => c.LocConcept2Context).Returns(mockLocConcept2Contexts);
             context.Setup(c => c.LocContexts).Returns(mockLocContexts);
+            context.Setup(c => c.LocJobList).Returns(mockLocJobList);
+            context.Setup(c => c.LocStringsacceptable).Returns(mockLocStringsacceptable);
+            context.Setup(c => c.LocStrings2Context).Returns(mockLocStrings2Context);
 
             return context;
         }

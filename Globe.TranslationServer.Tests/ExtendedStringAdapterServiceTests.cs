@@ -9,6 +9,7 @@ using Xunit;
 
 namespace Globe.TranslationServer.Tests
 {
+    [Trait(nameof(ExtendedStringAdapterServiceTests), "NOT Tested all methods")]
     public class ExtendedStringAdapterServiceTests
     {
         DbContextOptionsBuilder<LocalizationContext> _optionsBuilder;
@@ -28,8 +29,8 @@ namespace Globe.TranslationServer.Tests
             IAsyncExtendedStringService extendedStringService = new ExtendedStringAdapterService(ultraDBEditConcept);
 
             var result = await extendedStringService.GetAllAsync(
-                MockConstants.FAKE_COMPONENT_NAMESPACE,
-                MockConstants.FAKE_INTERNAL_NAMESPACE,
+                MockConstants.COMPONENT_NAMESPACE_MEASURECOMPONENT,
+                MockConstants.INTERNAL_NAMESPACE_VASCULAR,
                 MockConstants.ISO_CODING_EN,
                 MockConstants.LOC_JOBLIST_ID_10,
                 MockConstants.LOC_CONCEPTSTABLE_ID_10);

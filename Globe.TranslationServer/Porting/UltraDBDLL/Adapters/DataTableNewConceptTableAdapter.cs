@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class DataTableNewConceptTableAdapter
+    public static class DataTableNewConceptTableAdapter
     {
         // SELECT DISTINCT
         //      LOC_ConceptsTable.ID,
@@ -41,7 +41,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                         INNER JOIN LOC_Concept2Context ON LOC_ConceptsTable.ID = LOC_Concept2Context.IDConcept
                         INNER JOIN LOC_CONTEXTS ON LOC_Concept2Context.IDContext = LOC_CONTEXTS.ID
                         CROSS JOIN LOC_Strings2Context
-                        WHERE LOC_ConceptsTable.ComponentNamespace= {ComponentName} AND LOC_ConceptsTable.InternalNamespace IS NULL AND (LOC_Concept2Context.ID NOT IN
+                        WHERE LOC_ConceptsTable.ComponentNamespace= '{ComponentName}' AND LOC_ConceptsTable.InternalNamespace IS NULL AND (LOC_Concept2Context.ID NOT IN
                             (SELECT DISTINCT IDConcept2Context
                             FROM LOC_Strings2Context AS LOC_Strings2Context_1))
                     ";
@@ -103,7 +103,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          INNER JOIN LOC_Concept2Context ON LOC_ConceptsTable.ID = LOC_Concept2Context.IDConcept
                          INNER JOIN LOC_CONTEXTS ON LOC_Concept2Context.IDContext = LOC_CONTEXTS.ID
                          CROSS JOIN LOC_Strings2Context
-                         WHERE LOC_ConceptsTable.ComponentNamespace= {ComponentName} AND LOC_ConceptsTable.InternalNamespace= {InternalNamespace} AND (LOC_Concept2Context.ID NOT IN
+                         WHERE LOC_ConceptsTable.ComponentNamespace= '{ComponentName}' AND LOC_ConceptsTable.InternalNamespace= '{InternalNamespace}' AND (LOC_Concept2Context.ID NOT IN
                               (SELECT DISTINCT IDConcept2Context
                                FROM LOC_Strings2Context AS LOC_Strings2Context_1))
                     ";

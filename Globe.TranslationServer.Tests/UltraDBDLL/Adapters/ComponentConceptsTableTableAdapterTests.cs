@@ -4,6 +4,7 @@ using Xunit;
 
 namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
 {
+    [Trait(nameof(ComponentConceptsTableTableAdapterTests), "Tested all methods")]
     public class ComponentConceptsTableTableAdapterTests
     {
         [Fact]

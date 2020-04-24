@@ -76,25 +76,25 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          INNER JOIN LOC_ConceptsTable
                          INNER JOIN LOC_Concept2Context ON LOC_ConceptsTable.ID = LOC_Concept2Context.IDConcept
                          INNER JOIN LOC_Job2Concept ON LOC_Concept2Context.ID = LOC_Job2Concept.IDConcept2Context ON LOC_CONTEXTS.ID = LOC_Concept2Context.IDContext ON LOC_Strings2Context.IDConcept2Context = LOC_Concept2Context.ID
-                         WHERE (LOC_Job2Concept.IDJobList = {idJobList}) AND
-                               (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
-                               (LOC_ConceptsTable.InternalNamespace = {InternalNamespace}) AND
-                               ({InternalNamespace} IS NOT NULL) AND
+                         WHERE (LOC_Job2Concept.IDJobList = '{idJobList}') AND
+                               (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND
+                               (LOC_ConceptsTable.InternalNamespace = '{InternalNamespace}') AND
+                               ('{InternalNamespace}' IS NOT NULL) AND
                                (LOC_Strings2Context.ID IS NULL) OR
-                               (LOC_Job2Concept.IDJobList = {idJobList}) AND
-                               (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
-                               (LOC_ConceptsTable.InternalNamespace = {InternalNamespace}) AND
-                               ({InternalNamespace} IS NOT NULL) AND
+                               (LOC_Job2Concept.IDJobList = '{idJobList}') AND
+                               (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND
+                               (LOC_ConceptsTable.InternalNamespace = '{InternalNamespace}') AND
+                               ('{InternalNamespace}' IS NOT NULL) AND
                                (LOC_Strings2Context.ID IS NOT NULL) AND
                                (LOC_STRINGS.IDLanguage = 1) OR
-                               (LOC_Job2Concept.IDJobList = {idJobList}) AND
-                               (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
+                               (LOC_Job2Concept.IDJobList = '{idJobList}') AND
+                               (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND
                                (LOC_ConceptsTable.InternalNamespace IS NULL) AND
-                               ({InternalNamespace} IS NULL) AND(LOC_Strings2Context.ID IS NULL) OR
-                               (LOC_Job2Concept.IDJobList = {idJobList}) AND
-                               (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
+                               ('{InternalNamespace}' IS NULL) AND(LOC_Strings2Context.ID IS NULL) OR
+                               (LOC_Job2Concept.IDJobList = '{idJobList}') AND
+                               (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND
                                (LOC_ConceptsTable.InternalNamespace IS NULL) AND
-                               ({InternalNamespace} IS NULL) AND(LOC_Strings2Context.ID IS NOT NULL) AND(LOC_STRINGS.IDLanguage = 1)
+                               ('{InternalNamespace}' IS NULL) AND(LOC_Strings2Context.ID IS NOT NULL) AND(LOC_STRINGS.IDLanguage = 1)
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -161,7 +161,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //           INNER JOIN LOC_STRINGS AS LOC_STRINGS_1
         //           INNER JOIN LOC_Languages AS LOC_Languages_1 ON LOC_STRINGS_1.IDLanguage = LOC_Languages_1.ID ON LOC_Strings2Context_1.IDString = LOC_STRINGS_1.ID
         //           WHERE (LOC_ConceptsTable_1.ComponentNamespace = @Component) AND (LOC_Languages_1.ISOCoding = @ISO) AND (LOC_ConceptsTable_1.InternalNamespace = @Internal))) AND (LOC_ConceptsTable.InternalNamespace = @Internal)
-        internal static IEnumerable<DataTableGlobal> GetMissingDataByComponentISOInternal(this LocalizationContext context, string componentName, string internalNamespace, string isocoding)
+        public static IEnumerable<DataTableGlobal> GetMissingDataByComponentISOInternal(this LocalizationContext context, string componentName, string internalNamespace, string isocoding)
         {
             string query =
                     $@"
@@ -186,7 +186,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          INNER JOIN LOC_Languages ON LOC_STRINGS.IDLanguage = LOC_Languages.ID ON LOC_Strings2Context.IDString = LOC_STRINGS.ID
                          INNER JOIN LOC_StringTypes ON LOC_STRINGS.IDType = LOC_StringTypes.ID
                          INNER JOIN LOC_StringTypes AS LOC_StringTypes_1 ON LOC_STRINGS.IDType = LOC_StringTypes_1.ID
-                         WHERE (LOC_ConceptsTable.Ignore = 0) AND (LOC_ConceptsTable.ComponentNamespace = @Component) AND (LOC_Languages.ISOCoding = 'en')
+                         WHERE (LOC_ConceptsTable.Ignore = 0) AND (LOC_ConceptsTable.ComponentNamespace = '{componentName}') AND (LOC_Languages.ISOCoding = 'en')
                               AND (LOC_Concept2Context.ID NOT IN
                                   (SELECT LOC_Concept2Context_1.ID
                                    FROM LOC_Strings2Context AS LOC_Strings2Context_1
@@ -195,7 +195,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                                    INNER JOIN LOC_CONTEXTS AS LOC_CONTEXTS_1 ON LOC_Concept2Context_1.IDContext = LOC_CONTEXTS_1.ID ON LOC_Strings2Context_1.IDConcept2Context = LOC_Concept2Context_1.ID
                                    INNER JOIN LOC_STRINGS AS LOC_STRINGS_1
                                    INNER JOIN LOC_Languages AS LOC_Languages_1 ON LOC_STRINGS_1.IDLanguage = LOC_Languages_1.ID ON LOC_Strings2Context_1.IDString = LOC_STRINGS_1.ID
-                                   WHERE (LOC_ConceptsTable_1.ComponentNamespace = @Component) AND (LOC_Languages_1.ISOCoding = @ISO) AND (LOC_ConceptsTable_1.InternalNamespace = @Internal))) AND (LOC_ConceptsTable.InternalNamespace = @Internal)
+                                   WHERE (LOC_ConceptsTable_1.ComponentNamespace = '{componentName}') AND (LOC_Languages_1.ISOCoding = '{isocoding}') AND (LOC_ConceptsTable_1.InternalNamespace = '{internalNamespace}'))) AND (LOC_ConceptsTable.InternalNamespace = '{internalNamespace}')
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -213,7 +213,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                         ID = (int)reader[0],
                         ComponentNamespace = reader[1] as string,
                         InternalNamespace = reader[2] as string,
-                        LocalizationID = (int)reader[3],
+                        LocalizationID = reader[3] as string,
                         ISOCoding = isocoding,
                         ContextName = reader[5] as string,
                         String = reader[6] as string,
@@ -261,7 +261,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //      INNER JOIN LOC_STRINGS AS LOC_STRINGS_1
         //      INNER JOIN LOC_Languages AS LOC_Languages_1 ON LOC_STRINGS_1.IDLanguage = LOC_Languages_1.ID ON LOC_Strings2Context_1.IDString = LOC_STRINGS_1.ID
         //      WHERE (LOC_ConceptsTable_1.ComponentNamespace = @Component) AND (LOC_Languages_1.ISOCoding = @ISO) AND (LOC_ConceptsTable_1.InternalNamespace IS NULL))) AND (LOC_ConceptsTable.InternalNamespace IS NULL)
-        internal static IEnumerable<DataTableGlobal> GetMissingDataByComponentISO(this LocalizationContext context, string componentName, string isocoding)
+        public static IEnumerable<DataTableGlobal> GetMissingDataByComponentISO(this LocalizationContext context, string componentName, string isocoding)
         {
             string query =
                     $@"
@@ -285,7 +285,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          INNER JOIN LOC_STRINGS
                          INNER JOIN LOC_Languages ON LOC_STRINGS.IDLanguage = LOC_Languages.ID ON LOC_Strings2Context.IDString = LOC_STRINGS.ID
                          INNER JOIN LOC_StringTypes ON LOC_STRINGS.IDType = LOC_StringTypes.ID
-                         WHERE (LOC_ConceptsTable.Ignore = 0) AND (LOC_ConceptsTable.ComponentNamespace = {componentName}) AND (LOC_Languages.ISOCoding = 'en') AND (LOC_Concept2Context.ID
+                         WHERE (LOC_ConceptsTable.Ignore = 0) AND (LOC_ConceptsTable.ComponentNamespace = '{componentName}') AND (LOC_Languages.ISOCoding = 'en') AND (LOC_Concept2Context.ID
                          NOT IN 
                               (SELECT LOC_Concept2Context_1.ID
                               FROM LOC_Strings2Context AS LOC_Strings2Context_1
@@ -294,7 +294,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                               INNER JOIN LOC_CONTEXTS AS LOC_CONTEXTS_1 ON LOC_Concept2Context_1.IDContext = LOC_CONTEXTS_1.ID ON LOC_Strings2Context_1.IDConcept2Context = LOC_Concept2Context_1.ID
                               INNER JOIN LOC_STRINGS AS LOC_STRINGS_1
                               INNER JOIN LOC_Languages AS LOC_Languages_1 ON LOC_STRINGS_1.IDLanguage = LOC_Languages_1.ID ON LOC_Strings2Context_1.IDString = LOC_STRINGS_1.ID
-                              WHERE (LOC_ConceptsTable_1.ComponentNamespace = {componentName}) AND (LOC_Languages_1.ISOCoding = {isocoding}) AND (LOC_ConceptsTable_1.InternalNamespace IS NULL))) AND (LOC_ConceptsTable.InternalNamespace IS NULL)
+                              WHERE (LOC_ConceptsTable_1.ComponentNamespace = '{componentName}') AND (LOC_Languages_1.ISOCoding = '{isocoding}') AND (LOC_ConceptsTable_1.InternalNamespace IS NULL))) AND (LOC_ConceptsTable.InternalNamespace IS NULL)
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -312,7 +312,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                         ID = (int)reader[0],
                         ComponentNamespace = reader[1] as string,
                         InternalNamespace = reader[2] as string,
-                        LocalizationID = (int)reader[3],
+                        LocalizationID = reader[3] as string,
                         ISOCoding = isocoding,
                         ContextName = reader[5] as string,
                         String = reader[6] as string,
@@ -391,7 +391,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                                     INNER JOIN LOC_CONTEXTS AS LOC_CONTEXTS_1 ON LOC_Concept2Context_1.IDContext = LOC_CONTEXTS_1.ID ON LOC_Strings2Context_1.IDConcept2Context = LOC_Concept2Context_1.ID
                                     INNER JOIN LOC_STRINGS AS LOC_STRINGS_1
                                     INNER JOIN LOC_Languages AS LOC_Languages_1 ON LOC_STRINGS_1.IDLanguage = LOC_Languages_1.ID ON LOC_Strings2Context_1.IDString = LOC_STRINGS_1.ID
-                                    WHERE (LOC_ConceptsTable_1.ID = {ConceptID}) AND (LOC_Languages_1.ISOCoding = {isocoding}))) AND (LOC_ConceptsTable.ID = {ConceptID})
+                                    WHERE (LOC_ConceptsTable_1.ID = '{ConceptID}') AND (LOC_Languages_1.ISOCoding = '{isocoding}'))) AND (LOC_ConceptsTable.ID = '{ConceptID}')
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -409,7 +409,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                         ID = (int)reader[0],
                         ComponentNamespace = reader[1] as string,
                         InternalNamespace = reader[2] as string,
-                        LocalizationID = (int)reader[3],
+                        LocalizationID = reader[3] as string,
                         ISOCoding = isocoding,
                         ContextName = reader[5] as string,
                         String = reader[6] as string,
@@ -492,10 +492,10 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                           LOC_Languages ON LOC_STRINGS.IDLanguage = LOC_Languages.ID ON LOC_Strings2Context.IDString = LOC_STRINGS.ID
                      INNER JOIN
                           LOC_StringTypes ON LOC_STRINGS.IDType = LOC_StringTypes.ID
-                     WHERE(LOC_ConceptsTable.ComponentNamespace = {componentName})
-                          AND(LOC_Languages.ISOCoding = {isoCoding})
+                     WHERE(LOC_ConceptsTable.ComponentNamespace = '{componentName}')
+                          AND(LOC_Languages.ISOCoding = '{isoCoding}')
                           AND(LOC_ConceptsTable.Ignore = 0)
-                          OR(LOC_ConceptsTable.ComponentNamespace = {componentName})
+                          OR(LOC_ConceptsTable.ComponentNamespace = '{componentName}')
                           AND(LOC_Languages.ISOCoding = 'en')
                           AND(LOC_ConceptsTable.Ignore = 1)";
 
@@ -514,8 +514,8 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                         ID = (int)reader[0],
                         ComponentNamespace = reader[1] as string,
                         InternalNamespace = reader[2] as string,
-                        LocalizationID = (int)reader[3],
-                        ISOCoding = isoCoding,
+                        LocalizationID = reader[3] as string,
+                        ISOCoding = reader[4] as string,
                         ContextName = reader[5] as string,
                         String = reader[6] as string,
                         IDType = (int)reader[7],
@@ -523,8 +523,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                         StringID = (int)reader[9],
                         Ignore = (bool)reader[10],
                         ConceptID = (int)reader[11],
-                        Expr1 = (int)reader[12],
-                        IsAcceptable = (bool)reader[13]
+                        IsAcceptable = (bool)reader[12],
                     });
                 }
             }

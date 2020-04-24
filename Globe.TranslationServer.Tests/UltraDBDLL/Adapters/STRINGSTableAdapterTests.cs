@@ -7,30 +7,25 @@ using Xunit;
 
 namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
 {
-    public class STRINGSTableAdapterTests
+    [Trait(nameof(STRINGSTableAdapterTests), "Tested all methods")]
+    public class STRINGSTableAdapterTests : AdapterTestsWithSqlCommand
     {
-        DbContextOptionsBuilder<LocalizationContext> _optionsBuilder;
-
-        public STRINGSTableAdapterTests()
-        {
-            _optionsBuilder = new DbContextOptionsBuilder<LocalizationContext>();
-            _optionsBuilder.UseSqlServer(MockConstants.CONNECTION_STRING);
-        }
-
-        [Fact]
+        [Fact(DisplayName = nameof(GetDataByConcept2ContextStrings) + " - SqlCommand")]
         public void GetDataByConcept2ContextStrings()
         {
-            using var context = new LocalizationContext(_optionsBuilder.Options);
-            var result = context.GetDataByConcept2ContextStrings(10);
+            using var context = new LocalizationContext(OptionsBuilder.Options);
+            var result = context.GetDataByConcept2ContextStrings(
+                MockConstants.LOC_STRING2CONTEXT_IDConcept2Context_10);
 
             Assert.True(result.Count() > 0);
         }
 
-        [Fact]
+        [Fact(DisplayName = nameof(GetConceptContextEquivalentStrings) + " - SqlCommand")]
         public void GetConceptContextEquivalentStrings()
         {
-            using var context = new LocalizationContext(_optionsBuilder.Options);
-            var result = context.GetConceptContextEquivalentStrings(10);
+            using var context = new LocalizationContext(OptionsBuilder.Options);
+            var result = context.GetConceptContextEquivalentStrings(
+                MockConstants.LOC_STRING2CONTEXT_IDString_10);
 
             Assert.True(result.Count() > 0);
         }
@@ -39,21 +34,25 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         public void GetStringByID()
         {
             using var context = new MockLocalizationContext().Mock().Object;
-            var result = context.GetStringByID(10);
+            var result = context.GetStringByID(
+                MockConstants.LOC_STRINGS_ID_10);
 
             Assert.True(result.Count() == 1);
+            Assert.False(true, "GetStringByID should return a single item because ID is Primary Key");
         }
 
         [Fact]
         public void UpdatebyID()
         {
             using var context = new MockLocalizationContext().Mock().Object;
-            var result = context.GetStringByID(10);
+            var result = context.GetStringByID(
+                MockConstants.LOC_STRINGS_ID_10);
 
             var stringValue = result.ElementAt(0).String;
             context.UpdatebyID("stringValue after update", result.ElementAt(0).ID);
 
-            var updatedResult = context.GetStringByID(10);
+            var updatedResult = context.GetStringByID(
+                MockConstants.LOC_STRINGS_ID_10);
 
             Assert.Equal("stringValue after update", updatedResult.ElementAt(0).String);
         }

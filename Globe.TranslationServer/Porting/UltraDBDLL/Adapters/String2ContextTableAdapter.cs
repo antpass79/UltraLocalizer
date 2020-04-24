@@ -2,7 +2,7 @@
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class String2ContextTableAdapter
+    public static class String2ContextTableAdapter
     {
         public static void DeletebyIDStringIDConcept2Context(this LocalizationContext context, int idString, int idConcept2Context)
         {

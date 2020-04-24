@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class DataTableEditConceptsTableAdapter
+    public static class DataTableEditConceptsTableAdapter
     {
         // SELECT
         //      LOC_ConceptsTable.ComponentNamespace,
@@ -42,7 +42,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          INNER JOIN LOC_ConceptsTable ON LOC_Concept2Context.IDConcept = LOC_ConceptsTable.ID
                          INNER JOIN LOC_CONTEXTS ON LOC_Concept2Context.IDContext = LOC_CONTEXTS.ID
                          INNER JOIN LOC_Job2Concept ON LOC_Concept2Context.ID = LOC_Job2Concept.IDConcept2Context
-                         WHERE (LOC_Job2Concept.IDJobList = {IDJobList})
+                         WHERE (LOC_Job2Concept.IDJobList = '{IDJobList}')
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -91,7 +91,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //       (LOC_ConceptsTable.ComponentNamespace = @Component) AND
         //       (LOC_ConceptsTable.InternalNamespace IS NULL) AND
         //       (@Internal IS NULL)
-        internal static IEnumerable<DataTableEditConcept> GetEditDataByComponentInternal(this LocalizationContext context, string ComponentName, string InternalNamespace)
+        public static IEnumerable<DataTableEditConcept> GetEditDataByComponentInternal(this LocalizationContext context, string ComponentName, string InternalNamespace)
         {
             string query =
                     $@"
@@ -108,11 +108,11 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          FROM LOC_Concept2Context
                          INNER JOIN LOC_ConceptsTable ON LOC_Concept2Context.IDConcept = LOC_ConceptsTable.ID
                          INNER JOIN LOC_CONTEXTS ON LOC_Concept2Context.IDContext = LOC_CONTEXTS.ID
-                         WHERE (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
-                               (LOC_ConceptsTable.InternalNamespace = {InternalNamespace}) OR
-                               (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
+                         WHERE (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND
+                               (LOC_ConceptsTable.InternalNamespace = '{InternalNamespace}') OR
+                               (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND
                                (LOC_ConceptsTable.InternalNamespace IS NULL) AND
-                               ({InternalNamespace} IS NULL)
+                               ('{InternalNamespace}' IS NULL)
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -163,7 +163,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //       (LOC_ConceptsTable.ComponentNamespace = @Component) AND(LOC_ConceptsTable.InternalNamespace IS NULL) AND
         //       (LOC_Job2Concept.IDJobList = @IDJobList) AND
         //       (@Internal IS NULL)
-        internal static IEnumerable<DataTableEditConcept> GetDatabyComponentInternalJob(this LocalizationContext context, string ComponentName, string InternalNamespace, int idJobList)
+        public static IEnumerable<DataTableEditConcept> GetDatabyComponentInternalJob(this LocalizationContext context, string ComponentName, string InternalNamespace, int idJobList)
         {
             string query =
                     $@"
@@ -181,12 +181,12 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          INNER JOIN LOC_ConceptsTable ON LOC_Concept2Context.IDConcept = LOC_ConceptsTable.ID
                          INNER JOIN LOC_CONTEXTS ON LOC_Concept2Context.IDContext = LOC_CONTEXTS.ID
                          INNER JOIN LOC_Job2Concept ON LOC_Concept2Context.ID = LOC_Job2Concept.IDConcept2Context
-                         WHERE (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
-                               (LOC_ConceptsTable.InternalNamespace = {InternalNamespace}) AND
-                               (LOC_Job2Concept.IDJobList = {idJobList}) OR
-                               (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND(LOC_ConceptsTable.InternalNamespace IS NULL) AND
-                               (LOC_Job2Concept.IDJobList = {idJobList}) AND
-                               ({InternalNamespace} IS NULL)
+                         WHERE (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND
+                               (LOC_ConceptsTable.InternalNamespace = '{InternalNamespace}') AND
+                               (LOC_Job2Concept.IDJobList = '{idJobList}') OR
+                               (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND(LOC_ConceptsTable.InternalNamespace IS NULL) AND
+                               (LOC_Job2Concept.IDJobList = '{idJobList}') AND
+                               ('{InternalNamespace}' IS NULL)
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);

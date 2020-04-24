@@ -2,7 +2,7 @@
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class Concept2ContextTableAdapter
+    public static class Concept2ContextTableAdapter
     {
         public static int InsertNewConcept2Context(this LocalizationContext context, int IDConcept, int IDContext)
         {

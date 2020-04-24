@@ -1,6 +1,5 @@
 ﻿using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -61,7 +60,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          INNER JOIN LOC_STRINGS AS LOC_STRINGS_1
                          INNER JOIN LOC_Languages ON LOC_STRINGS_1.IDLanguage = LOC_Languages.ID ON LOC_Strings2Context.IDString = LOC_STRINGS_1.ID
                          INNER JOIN LOC_StringTypes ON LOC_STRINGS_1.IDType = LOC_StringTypes.ID
-                         WHERE (LOC_Strings2Context.IDConcept2Context = {Concept2Context}) AND (LOC_Languages.ISOCoding = {ISO})
+                         WHERE (LOC_Strings2Context.IDConcept2Context = '{Concept2Context}') AND (LOC_Languages.ISOCoding = '{ISO}')
                     ";
 
             using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
@@ -82,8 +81,8 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                         String = reader[3] as string,
                         ISOCoding = reader[4] as string,
                         IDConcept2Context = (int)reader[5],
-                        IsLocked = (bool)reader[6],
-                        Is2Translate = (bool)reader[7],
+                        IsLocked = (int)reader[6] != 0,
+                        Is2Translate = (int)reader[7] != 7,
                         ContextName = reader[8] as string,
                         Type = reader[9] as string,
                         IDContext = (int)reader[10],

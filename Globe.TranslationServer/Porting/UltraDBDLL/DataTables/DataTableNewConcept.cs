@@ -1,6 +1,6 @@
 ﻿namespace Globe.TranslationServer.Porting.UltraDBDLL.DataTables
 {
-    internal class DataTableNewConcept
+    public class DataTableNewConcept
     {
         public int ID { get; set; }
         public string ComponentNamespace { get; set; }

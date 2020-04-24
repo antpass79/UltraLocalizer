@@ -1,11 +1,10 @@
 ﻿using Globe.TranslationServer.Entities;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 using System.Data.SqlClient;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
-    internal static class LOC_STRINGSAcceptableTableAdapter
+    public static class LOC_STRINGSAcceptableTableAdapter
     {
         //DELETE FROM[LOC_STRINGSAcceptable] WHERE([ID_String] = @Original_ID)
         public static void DeleteAcceptable(this LocalizationContext context, int IDString)
