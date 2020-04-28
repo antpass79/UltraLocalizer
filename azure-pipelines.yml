@@ -25,10 +25,9 @@ steps:
   displayName: Build
   inputs:
     command: build
-    projects: '$(Build.SourcesDirectory)/gated-checkin/GatedCheckin.sln'
+    projects: '$(Build.SourcesDirectory)/UltraLocalizer.sln'
     arguments: '--configuration $(buildConfiguration)'
 
-# You just added coverlet.collector to use 'XPlat Code Coverage'
 - task: DotNetCoreCLI@2
   displayName: Test
   inputs:
