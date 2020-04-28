@@ -21,7 +21,7 @@ steps:
     projects: '**/*.csproj'
     feedsToUse: select
     nuGetFeedType: internal
-    vstsFeed: AspNetCoreIdentityFramework
+    vstsFeed: AspNetCoreIdentityFramework/AspNetCoreIdentityFramework
     includeNuGetOrg: true
     workingDirectory: $(Build.SourcesDirectory)
 
