@@ -19,6 +19,9 @@ steps:
   inputs:
     command: restore
     projects: '**/*.csproj'
+    feedsToUse: select
+    vstsFeed: AspNetCoreIdentityFramework/AspNetCoreIdentityFramework
+    includeNuGetOrg: true
     workingDirectory: $(Build.SourcesDirectory)
 
 - task: DotNetCoreCLI@2
