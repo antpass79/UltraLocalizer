@@ -57,7 +57,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings
             context.UpdatebyID(DataString, ID);
         }
 
-
         public DBStrings GetStringbyID(int ID)
         {
             DBStrings db = new DBStrings();
