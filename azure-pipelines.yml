@@ -20,7 +20,8 @@ steps:
     command: restore
     projects: '**/*.csproj'
     feedsToUse: select
-    vstsFeed: AspNetCoreIdentityFramework/AspNetCoreIdentityFramework
+    nuGetFeedType: internal
+    vstsFeed: AspNetCoreIdentityFramework
     includeNuGetOrg: true
     workingDirectory: $(Build.SourcesDirectory)
 
