@@ -5,6 +5,9 @@ trigger:
   branches:
     include:
     - master
+  paths:
+    exclude:
+      - azure-pipelines-gc.yml
 
 # Excluded pull requests
 pr: none
