@@ -1,0 +1,51 @@
+# Gated check-in (GC) build - which build and test
+
+# Excluded master branch
+trigger:
+  branches:
+    include:
+    - '*'
+    exclude:
+    - master
+
+pr:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - azure-pipelines.yml
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+
+- task: DotNetCoreCLI@2
+  displayName: Restore nuget packages
+  inputs:
+    command: restore
+    projects: '**/*.csproj'
+    feedsToUse: select
+    nuGetFeedType: internal
+    vstsFeed: AspNetCoreIdentityFramework/AspNetCoreIdentityFramework
+    includeNuGetOrg: true
+    workingDirectory: $(Build.SourcesDirectory)
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    projects: '$(Build.SourcesDirectory)/UltraLocalizer.sln'
+    arguments: '--configuration $(buildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration) -- RunConfiguration.DisableAppDomain=true'
+    workingDirectory: $(Build.SourcesDirectory)
