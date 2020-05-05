@@ -8,10 +8,12 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 {
     public class JobListAdapterService : IAsyncJobListService
     {
+        //private readonly UserManager<GlobeUser> _userManager;
         private readonly UltraDBJobList _ultraDBJobList;
 
-        public JobListAdapterService(UltraDBJobList ultraDBJobList)
+        public JobListAdapterService(/*UserManager<GlobeUser> userManager, */UltraDBJobList ultraDBJobList)
         {
+            //_userManager = userManager;
             _ultraDBJobList = ultraDBJobList;
         }
 
@@ -27,7 +29,14 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
         async public Task<IEnumerable<JobList>> GetAllAsync(string userName, string ISOCoding)
         {
-            return await Task.FromResult(_ultraDBJobList.GetAllJobListByUserNameIso(userName, ISOCoding));
+            //var user = await _userManager.FindByNameAsync(userName);
+            //var isMaster =
+            //    await _userManager.IsInRoleAsync(user, "Admin") ||
+            //    await _userManager.IsInRoleAsync(user, "MasterTranslator");
+
+            var isMaster = false;
+
+            return await Task.FromResult(_ultraDBJobList.GetAllJobListByUserNameIso(userName, ISOCoding, isMaster));
         }
 
         public Task<JobList> GetAsync(int key)

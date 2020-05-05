@@ -15,7 +15,35 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal
             this.context = context;
         }
 
-        public List<JobList> GetAllJobListByUserNameIso(string UserName, string isocoding)
+        public List<JobList> GetAllJobListByUserNameIso(string UserName, string isocoding, bool isMaster)
+        {
+            //bool l_isMaster = (Roles.IsUserInRole(UserName, "MasterTranslator") ||
+            //                  Roles.IsUserInRole(UserName, "Admin"));
+
+            //var user = await userManager.FindByNameAsync(UserName);
+            //bool l_isMaster = await userManager.IsInRoleAsync(user, "MasterTranslator") || await userManager.IsInRoleAsync(user, "Admin");
+
+            // ANTO check roles before
+            if (!isMaster)
+            {
+                int idIso = (int)UltraDBStrings.UltraDBStrings.ParseFromString(isocoding);
+                var dt = context.GetDataByUserNameIDISO(UserName, idIso);
+                List<JobList> retList = (from p in dt
+                                         select new JobList { IDJob = p.ID, JobName = p.JobName, IDIso = idIso }).Distinct().ToList();
+                return retList;
+            }
+            else
+            {
+                int idIso = (int)UltraDBStrings.UltraDBStrings.ParseFromString(isocoding);
+                var dt = context.GetDataByIDIso(idIso);
+                List<JobList> retList = (from p in dt
+                                         where p.IDIsoCoding == idIso
+                                         select new JobList { IDJob = p.ID, JobName = p.UserName + "-" + p.JobName, IDIso = idIso }).Distinct().ToList();
+                return retList;
+            }
+        }
+
+        public List<JobList> GetAllJobListByUserNameIso_OLD(string UserName, string isocoding)
         {
             //bool l_isMaster = (Roles.IsUserInRole(UserName, "MasterTranslator") ||
             //                  Roles.IsUserInRole(UserName, "Admin"));

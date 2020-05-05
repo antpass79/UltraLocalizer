@@ -1,3 +1,4 @@
+using AutoMapper;
 using FluentValidation.AspNetCore;
 using Globe.Identity.Options;
 using Globe.Identity.Security;
@@ -14,7 +15,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using System;
 using System.Reflection;
 
 namespace Globe.TranslationServer
@@ -56,7 +56,9 @@ namespace Globe.TranslationServer
             services
                 .AddScoped<UltraDBJobList, UltraDBJobList>();
             services
-                .AddScoped<IAsyncJobListService, JobListAdapterService>();
+                .AddScoped<IAsyncJobListService, JobListAdapterService>()
+                .AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
+                .AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>();
 
             // Security
             services
@@ -69,6 +71,8 @@ namespace Globe.TranslationServer
 
                 })
                 .AddJwtBearer();
+
+            services.AddAutoMapper(typeof(Startup));
 
             services
                 .AddControllers()

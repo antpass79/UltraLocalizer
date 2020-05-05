@@ -1,4 +1,6 @@
 ﻿using Globe.TranslationServer.Entities;
+using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
+using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -7,16 +9,19 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 {
     public class LanguageAdapterService : IAsyncLanguageService
     {
-        public LanguageAdapterService()
+        private readonly UltraDBStrings _ultraDBStrings;
+
+        public LanguageAdapterService(UltraDBStrings ultraDBStrings)
         {
+            _ultraDBStrings = ultraDBStrings;
         }
 
-        public Task<IEnumerable<LocLanguages>> GetAllAsync()
+        async public Task<IEnumerable<DBLanguage>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+            return await Task.FromResult(_ultraDBStrings.Getlanguage());
         }
 
-        public Task<LocLanguages> GetAsync(int key)
+        public Task<DBLanguage> GetAsync(int key)
         {
             throw new NotImplementedException();
         }

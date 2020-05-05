@@ -1,4 +1,5 @@
-﻿using Globe.TranslationServer.Entities;
+﻿using AutoMapper;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -9,17 +10,20 @@ namespace Globe.TranslationServer.Controllers
     [Route("api/[controller]")]
     public class LanguageController : Controller
     {
+        private readonly IMapper _mapper;
         private readonly IAsyncLanguageService _languageService;
 
-        public LanguageController(IAsyncLanguageService languageService)
+        public LanguageController(IMapper mapper, IAsyncLanguageService languageService)
         {
+            _mapper = mapper;
             _languageService = languageService;
         }
 
         [HttpGet]
-        async public Task<IEnumerable<LocLanguages>> Get()
+        async public Task<IEnumerable<LanguageDTO>> Get()
         {
-            return await _languageService.GetAllAsync();
+            var result = await _languageService.GetAllAsync();
+            return await Task.FromResult(_mapper.Map< IEnumerable<LanguageDTO>>(result));
         }
     }
 }
