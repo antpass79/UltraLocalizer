@@ -28,14 +28,14 @@ namespace Globe.TranslationServer.Tests.Controllers
         {
             using var client = _webProxyBuilder.Build();
 
-            var search = new JobListSearchDTO
+            var search = new JobItemSearchDTO
             {
                 UserName = MockConstants.USERNAME_MARCODELPIANO,
-                coding = MockConstants.ISO_CODING_EN
+                ISOCoding = MockConstants.ISO_CODING_EN
             };
 
-            var result = await client.SendAsync<JobListSearchDTO>(HttpMethod.Get, "JobList", search);
-            var jobList = await result.GetValue<IEnumerable<JobListDTO>>();
+            var result = await client.SendAsync<JobItemSearchDTO>(HttpMethod.Get, "JobList", search);
+            var jobList = await result.GetValue<IEnumerable<JobItemDTO>>();
 
             Assert.NotEmpty(jobList);
             Assert.Equal(4, jobList.Count());

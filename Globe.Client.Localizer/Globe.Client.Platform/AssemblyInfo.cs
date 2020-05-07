@@ -5,6 +5,7 @@ using System.Windows.Markup;
 [assembly: XmlnsDefinition("http://schemas.platform.com/", "Globe.Client.Platform.Controls")]
 [assembly: XmlnsDefinition("http://schemas.platform.com/", "Globe.Client.Platform.Views")]
 [assembly: XmlnsDefinition("http://schemas.platform.com/", "Globe.Client.Platform.Converters")]
+[assembly: XmlnsDefinition("http://schemas.platform.com/", "Globe.Client.Platform.Behaviours")]
 
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located

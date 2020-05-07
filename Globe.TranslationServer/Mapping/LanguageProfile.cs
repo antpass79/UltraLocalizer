@@ -8,8 +8,10 @@ namespace Globe.TranslationServer.Mapping
     {
         public LanguageProfile()
         {
-            CreateMap<DBLanguage, LanguageDTO>();
-            CreateMap<LanguageDTO, DBLanguage>();
+            CreateMap<DBLanguage, LanguageDTO>()
+                .ForMember(dest => dest.ISOCoding, opt => opt.MapFrom(src => src.DataString));
+            CreateMap<LanguageDTO, DBLanguage>()
+                .ForMember(dest => dest.DataString, opt => opt.MapFrom(src => src.ISOCoding));
         }
     }
 }

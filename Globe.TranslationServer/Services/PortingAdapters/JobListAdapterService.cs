@@ -34,7 +34,7 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             //    await _userManager.IsInRoleAsync(user, "Admin") ||
             //    await _userManager.IsInRoleAsync(user, "MasterTranslator");
 
-            var isMaster = false;
+            var isMaster = true;
 
             return await Task.FromResult(_ultraDBJobList.GetAllJobListByUserNameIso(userName, ISOCoding, isMaster));
         }

@@ -16,6 +16,8 @@ namespace Globe.Client.Localizer
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(HomeWindow));
             regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(HomeWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(LoginWindow));
+            regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(CurrentJobWindow));
+            regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(CurrentJobWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(JobsWindow));
             regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(JobsWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(MergeWindow));
@@ -32,6 +34,8 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IProxyLocalizableStringService, ProxyLocalizableStringService>();
             containerRegistry.Register<IFileSystemLocalizableStringService, FileSystemLocalizableStringService>();
             containerRegistry.Register<IHttpLocalizableStringService, HttpLocalizableStringService>();
+            containerRegistry.Register<ICurrentJobFiltersService, CurrentJobFiltersService>();
+            containerRegistry.Register<ICurrentJobStringItemsService, CurrentJobStringItemsService>();
             containerRegistry.Register<IStringMergeService, StringsMergeService>();
         }
 

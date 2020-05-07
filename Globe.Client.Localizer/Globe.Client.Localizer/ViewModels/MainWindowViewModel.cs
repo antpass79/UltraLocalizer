@@ -54,6 +54,14 @@ namespace Globe.Client.Localizer.ViewModels
                 },
                 new MenuOption
                 {
+                    Title = "Current Job",
+                    IsSelected = false,
+                    Roles = string.Empty,
+                    AlwaysVisible = true,
+                    ViewName = ViewNames.CURRENT_JOB_VIEW
+                },
+                new MenuOption
+                {
                     Title = "Jobs",
                     IsSelected = false,
                     Roles = "Admin, UserManager",

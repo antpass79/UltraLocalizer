@@ -3,6 +3,7 @@ using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.PortingAdapters
@@ -23,7 +24,14 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
         async public Task<IEnumerable<InternalConceptsTable>> GetAllAsync(string componentNamespace)
         {
-            return await Task.FromResult(_context.GetInternalByComponent(componentNamespace));
+            var result = _context
+                .GetInternalByComponent(componentNamespace)
+                .OrderBy(item => item.InternalNamespace).ToList();
+            result.Insert(0, new InternalConceptsTable
+            {
+                InternalNamespace = "all"
+            });
+            return await Task.FromResult(result);
         }
 
         public Task<InternalConceptsTable> GetAsync(int key)

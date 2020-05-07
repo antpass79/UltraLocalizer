@@ -9,10 +9,16 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\CurrentJobWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\HomeWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\HomeWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CurrentJobWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MergeWindowToolBar.xaml">

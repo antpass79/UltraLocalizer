@@ -4,6 +4,7 @@ using Globe.Identity.Options;
 using Globe.Identity.Security;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
+using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
 using Globe.TranslationServer.Repositories;
 using Globe.TranslationServer.Services;
 using Globe.TranslationServer.Services.PortingAdapters;
@@ -54,8 +55,12 @@ namespace Globe.TranslationServer
 
             // Adapters
             services
-                .AddScoped<UltraDBJobList, UltraDBJobList>();
+                .AddScoped<UltraDBEditConcept, UltraDBEditConcept>()
+                .AddScoped<UltraDBJobList, UltraDBJobList>()
+                .AddScoped<UltraDBStrings, UltraDBStrings>();
             services
+                .AddScoped<IAsyncGroupedStringEntityService, GroupedStringEntityAdapterService>()
+                .AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncJobListService, JobListAdapterService>()
                 .AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
                 .AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>();
@@ -68,7 +73,6 @@ namespace Globe.TranslationServer
                 {
                     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
                 })
                 .AddJwtBearer();
 

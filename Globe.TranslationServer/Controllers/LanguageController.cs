@@ -3,6 +3,7 @@ using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
@@ -23,7 +24,7 @@ namespace Globe.TranslationServer.Controllers
         async public Task<IEnumerable<LanguageDTO>> Get()
         {
             var result = await _languageService.GetAllAsync();
-            return await Task.FromResult(_mapper.Map< IEnumerable<LanguageDTO>>(result));
+            return await Task.FromResult(_mapper.Map<IEnumerable<LanguageDTO>>(result.OrderBy(item => item.DataString)));
         }
     }
 }

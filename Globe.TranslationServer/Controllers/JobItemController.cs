@@ -9,27 +9,27 @@ using System.Threading.Tasks;
 namespace Globe.TranslationServer.Controllers
 {
     [Route("api/[controller]")]
-    public class JobListController : ControllerBase
+    public class JobItemController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly IAsyncJobListService _jobListService;
 
-        public JobListController(IMapper mapper, IAsyncJobListService jobListService)
+        public JobItemController(IMapper mapper, IAsyncJobListService jobListService)
         {
             _mapper = mapper;
             _jobListService = jobListService;
         }
 
         [HttpGet]
-        async public Task<IEnumerable<JobListDTO>> Get([FromBody] JobListSearchDTO search)
+        async public Task<IEnumerable<JobItemDTO>> Get([FromBody] JobItemSearchDTO search)
         {
             if (!ModelState.IsValid)
             {
                 throw new System.Exception("search");
             }
 
-            var result = await _jobListService.GetAllAsync(search.UserName, search.coding);
-            return await Task.FromResult(_mapper.Map<IEnumerable<JobListDTO>>(result));
+            var result = await _jobListService.GetAllAsync(search.UserName, search.ISOCoding);
+            return await Task.FromResult(_mapper.Map<IEnumerable<JobItemDTO>>(result));
         }
 
         [Microsoft.AspNetCore.Mvc.HttpPost]

@@ -1,8 +1,8 @@
 ﻿namespace Globe.TranslationServer.DTOs
 {
-    public class JobListSearchDTO
+    public class JobItemSearchDTO
     {
-        public string coding { get; set; }
         public string UserName { get; set; }
+        public string ISOCoding { get; set; }
     }
 }

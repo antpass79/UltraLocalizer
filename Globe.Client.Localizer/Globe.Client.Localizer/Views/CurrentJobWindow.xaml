@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="Globe.Client.Localizer.Views.CurrentJobWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Globe.Client.Localizer"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:core="http://schemas.localizer.com/core"
+        xmlns:platform="http://schemas.platform.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </UserControl.Resources>
+
+    <DockPanel>
+
+        <DockPanel DockPanel.Dock="Left" MinWidth="300">
+            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                <Label DockPanel.Dock="Top">Working Mode</Label>
+            </DockPanel>
+
+            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                <Label DockPanel.Dock="Top">Preferences</Label>
+            </DockPanel>
+
+            <Grid DockPanel.Dock="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                
+                <Label Grid.ColumnSpan="2">Filters</Label>
+                <TextBlock Grid.Row="1" Grid.Column="0">Job Name</TextBlock>
+                <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding JobItems}" SelectedItem="{Binding SelectedJobItem}" DisplayMemberPath="JobName"></ComboBox>
+                <TextBlock Grid.Row="2" Grid.Column="0">Component Namespace</TextBlock>
+                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}"></ComboBox>
+                <TextBlock Grid.Row="3" Grid.Column="0">Internal Namespace</TextBlock>
+                <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description"></ComboBox>
+                <TextBlock Grid.Row="4" Grid.Column="0">Language</TextBlock>
+                <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="ISOCoding" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}"></ComboBox>
+                <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource LoginPageButtonLogin}" Command="{Binding SearchCommand}">Search</Button>
+            </Grid>
+        </DockPanel>
+
+        <DockPanel>
+            <Label>Grid</Label>
+        </DockPanel>
+
+    </DockPanel>
+</UserControl>

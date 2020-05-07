@@ -7,22 +7,23 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
 {
-    public class ComponentConceptsController : ControllerBase
+    [Route("api/[controller]")]
+    public class ComponentNamespaceController : Controller
     {
         private readonly IMapper _mapper;
         private readonly IAsyncComponentConceptsService _componentConceptsService;
 
-        public ComponentConceptsController(IMapper mapper, IAsyncComponentConceptsService componentConceptsService)
+        public ComponentNamespaceController(IMapper mapper, IAsyncComponentConceptsService componentConceptsService)
         {
             _mapper = mapper;
             _componentConceptsService = componentConceptsService;
         }
 
         [HttpGet]
-        async public Task<IEnumerable<ComponentConceptsDTO>> Get()
+        async public Task<IEnumerable<ComponentNamespaceDTO>> Get()
         {
             var result = await _componentConceptsService.GetAllAsync();
-            return await Task.FromResult(_mapper.Map<IEnumerable<ComponentConceptsDTO>>(result));
+            return await Task.FromResult(_mapper.Map<IEnumerable<ComponentNamespaceDTO>>(result));
         }
     }
 }
