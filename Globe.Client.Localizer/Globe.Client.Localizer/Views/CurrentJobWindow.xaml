@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Globe.Client.Localizer"
+        xmlns:models="clr-namespace:Globe.Client.Localizer.Models"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:core="http://schemas.localizer.com/core"
         xmlns:platform="http://schemas.platform.com/"
@@ -21,13 +22,57 @@
         <Style TargetType="{x:Type ComboBox}">
             <Setter Property="Margin" Value="5" />
         </Style>
+
+        <Style TargetType="{x:Type DataGrid}">
+            <Setter Property="AlternationCount" Value="2" />
+            <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
+            <Setter Property="HorizontalGridLinesBrush" Value="LightGray" />
+            <Setter Property="SelectionMode" Value="Single" />
+            <Setter Property="SelectionUnit" Value="FullRow" />
+        </Style>
+        <Style TargetType="{x:Type DataGridRow}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Height" Value="auto"/>
+        </Style>
+        <Style TargetType="{x:Type DataGridCell}">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="true">
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Background" Value="LightBlue"/>
+                </Trigger>
+                <Trigger Property="IsEditing" Value="true">
+                    <Setter Property="Background" Value="Transparent"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="MinWidth" Value="250"/>
+        </Style>
     </UserControl.Resources>
 
     <DockPanel>
 
         <DockPanel DockPanel.Dock="Left" MinWidth="300">
-            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+            <DockPanel DockPanel.Dock="Top" LastChildFill="False" Height="100">
                 <Label DockPanel.Dock="Top">Working Mode</Label>
+                <RadioButton IsChecked="True" DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromXml}">From Xml</RadioButton>
+                <RadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromDatabase}">From Database</RadioButton>
+                <RadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.EditUnsatisfiedConstrains}">Edit Unsatisfied Constrains</RadioButton>
             </DockPanel>
 
             <DockPanel DockPanel.Dock="Top" LastChildFill="False">
@@ -42,27 +87,72 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                
+
                 <Label Grid.ColumnSpan="2">Filters</Label>
-                <TextBlock Grid.Row="1" Grid.Column="0">Job Name</TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding JobItems}" SelectedItem="{Binding SelectedJobItem}" DisplayMemberPath="JobName"></ComboBox>
-                <TextBlock Grid.Row="2" Grid.Column="0">Component Namespace</TextBlock>
-                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}"></ComboBox>
-                <TextBlock Grid.Row="3" Grid.Column="0">Internal Namespace</TextBlock>
-                <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description"></ComboBox>
-                <TextBlock Grid.Row="4" Grid.Column="0">Language</TextBlock>
-                <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="ISOCoding" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}"></ComboBox>
+                <TextBlock Grid.Row="1" Grid.Column="0">Language</TextBlock>
+                <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="ISOCoding" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}"></ComboBox>
+                <TextBlock Grid.Row="2" Grid.Column="0">Job Name</TextBlock>
+                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding JobItems}" SelectedItem="{Binding SelectedJobItem}" DisplayMemberPath="JobName"></ComboBox>
+                <TextBlock Grid.Row="3" Grid.Column="0">Component Namespace</TextBlock>
+                <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}"></ComboBox>
+                <TextBlock Grid.Row="4" Grid.Column="0">Internal Namespace</TextBlock>
+                <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description"></ComboBox>
                 <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource LoginPageButtonLogin}" Command="{Binding SearchCommand}">Search</Button>
+
+                <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
             </Grid>
         </DockPanel>
 
         <DockPanel>
-            <Label>Grid</Label>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label>Grid</Label>
+                <DataGrid Grid.Row="1" ItemsSource="{Binding StringViewItems}" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <DataGrid.Resources>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="FontSize" Value="20"/>
+                            <Setter Property="FontWeight" Value="DemiBold"/>
+                        </Style>
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn IsReadOnly="True" Header="Component Namespace" Binding="{Binding ComponentNamespace}" />
+                        <DataGridTextColumn IsReadOnly="True" Header="Internal Namespace" Binding="{Binding InternalNamespace}" />
+                        <DataGridTextColumn IsReadOnly="True" Header="Concept"  Binding="{Binding Concept}"/>
+                        <DataGridTemplateColumn IsReadOnly="True" Header="Contexts">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DataGrid ItemsSource="{Binding ContextViewItems}" IsReadOnly="True" CanUserAddRows="False" BorderThickness="0">
+                                        <DataGrid.Resources>
+                                            <Style TargetType="{x:Type DataGridRow}">
+                                                <Setter Property="Foreground" Value="Black"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                                <Setter Property="Height" Value="auto"/>
+                                            </Style>
+                                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                                <Setter Property="Foreground" Value="Black"/>
+                                                <Setter Property="FontSize" Value="15"/>
+                                                <Setter Property="FontWeight" Value="DemiBold"/>
+                                                <Setter Property="MinWidth" Value="250"/>
+                                            </Style>
+                                        </DataGrid.Resources>
+                                    </DataGrid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <platform:Spinner Grid.Row="1" Busy="{Binding GridBusy}" />
+            </Grid>
         </DockPanel>
 
     </DockPanel>

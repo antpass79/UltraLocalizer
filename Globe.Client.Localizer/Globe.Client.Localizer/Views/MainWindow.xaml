@@ -45,7 +45,8 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <ContentControl Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <!--Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}"-->
+            <ContentControl>
                 <DockPanel Background="Transparent">
                     <ContentControl prism:RegionManager.RegionName="{x:Static platform:RegionNames.TOOLBAR_REGION}" prism:RegionManager.RegionContext="{Binding ElementName=contentRegion, Path=Content.DataContext}" />
                 </DockPanel>
@@ -67,7 +68,7 @@
         <!--Content-->
         <Grid>
             <ContentControl x:Name="contentRegion" prism:RegionManager.RegionName="{x:Static platform:RegionNames.MAIN_REGION}" />
-            <platform:Spinner Diameter="100" Color1="Blue" Color2="Transparent" Visibility="{Binding Busy, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            <platform:Spinner Diameter="100" Busy="{Binding Busy}" />
         </Grid>
     </DockPanel>
 </Window>

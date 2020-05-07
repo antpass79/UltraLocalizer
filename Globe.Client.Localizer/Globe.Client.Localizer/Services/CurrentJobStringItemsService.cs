@@ -10,7 +10,7 @@ namespace Globe.Client.Localizer.Services
 {
     class CurrentJobStringItemsService : ICurrentJobStringItemsService
     {
-        private const string ENDPOINT_StringItemView = "StringItemView";
+        private const string ENDPOINT_StringViewItem = "StringViewItem";
 
         private readonly IAsyncSecureHttpClient _secureHttpClient;
 
@@ -20,10 +20,10 @@ namespace Globe.Client.Localizer.Services
             _secureHttpClient.BaseAddress(ConfigurationManager.AppSettings["LocalizableStringBaseAddress"]);
         }
 
-        async public Task<IEnumerable<StringItemView>> GetStringItemsAsync(StringItemViewSearch search)
+        async public Task<IEnumerable<StringViewItem>> GetStringViewItemsAsync(StringItemViewSearch search)
         {
-            var result = await _secureHttpClient.SendAsync<StringItemViewSearch>(HttpMethod.Get, ENDPOINT_StringItemView, search);
-            return await result.GetValue<IEnumerable<StringItemView>>();
+            var result = await _secureHttpClient.SendAsync<StringItemViewSearch>(HttpMethod.Get, ENDPOINT_StringViewItem, search);
+            return await result.GetValue<IEnumerable<StringViewItem>>();
         }
     }
 }

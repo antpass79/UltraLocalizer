@@ -3,9 +3,9 @@ using Globe.TranslationServer.DTOs;
 
 namespace Globe.TranslationServer.Validations
 {
-    public class StringItemViewSearchDTOValidator : AbstractValidator<StringItemViewSearchDTO>
+    public class StringViewItemSearchDTOValidator : AbstractValidator<StringItemViewSearchDTO>
     {
-        public StringItemViewSearchDTOValidator()
+        public StringViewItemSearchDTOValidator()
         {
             RuleFor(model => model.ComponentNamespace)
                 .NotEmpty();

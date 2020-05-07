@@ -3,11 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Globe.Client.Platform.Controls"
+             xmlns:local="clr-namespace:Globe.Client.Platform.Converters"
              mc:Ignorable="d"
              x:Name="control"
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <UserControl.Resources>
+        <local:BooleanToVisibilityConverter
+            x:Key="BooleanToVisibilityConverter" 
+            True="Visible" 
+            False="Collapsed" />
+    </UserControl.Resources>
+    
+    <Grid DataContext="{Binding RelativeSource={RelativeSource Self}}" Visibility="{Binding ElementName=control, Path=Busy, Converter={StaticResource BooleanToVisibilityConverter}}">
         <Path Stroke="Transparent" StrokeThickness=".1" RenderTransformOrigin=".5,.5" Width="{Binding ElementName=control, Path=Diameter}" Height="{Binding ElementName=control, Path=Diameter}">
             <Path.Data>
                 <CombinedGeometry GeometryCombineMode="Xor">

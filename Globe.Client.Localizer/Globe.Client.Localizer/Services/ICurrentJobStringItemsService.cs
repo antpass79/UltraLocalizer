@@ -6,6 +6,6 @@ namespace Globe.Client.Localizer.Services
 {
     interface ICurrentJobStringItemsService
     {
-        Task<IEnumerable<StringItemView>> GetStringItemsAsync(StringItemViewSearch search);
+        Task<IEnumerable<StringViewItem>> GetStringViewItemsAsync(StringItemViewSearch search);
     }
 }

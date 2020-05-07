@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Globe.Client.Localizer"
         xmlns:prism="http://prismlibrary.com/"
-        xmlns:core="http://schemas.localizer.com/core"
-        prism:ViewModelLocator.AutoWireViewModel="True"
         xmlns:platform="http://schemas.platform.com/"
         mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
     <platform:ContextToolBar.Resources>
