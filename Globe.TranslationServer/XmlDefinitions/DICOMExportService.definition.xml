@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="DICOM Service" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="WRITEERROR">
+      <Comments>Input / output error during export operation. It is displayed when user executes an export with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">ERROR WRITING ON THE DEVICE</String>
+    </Concept>
+    <Concept Id="DISKFULL">
+      <Comments>There is not enough space on the destination device. It is displayed when user executes an export with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">LOW DEVICE SPACE</String>
+    </Concept>
+    <Concept Id="BURNERROR">
+      <Comments>Error burning cd/dvd. It is displayed when user executes an export with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">BURNING ERROR</String>
+    </Concept>
+    <Concept Id="BURNNOTINITIALIZED">
+      <Comments>Error burning cd/dvd. It's the error detail provided when burner is not initialized</Comments>
+      <String Context="Generic_Warning">BURNER MANAGER NOT INITIALIZED</String>
+    </Concept>
+    <Concept Id="MEDIANOTPRESENT">
+      <Comments>Error burning cd/dvd. It's the error detail provided when CD/DVD disk is not inserted</Comments>
+      <String Context="Generic_Warning">MEDIA NOT PRESENT</String>
+    </Concept>
+    <Concept Id="MEDIANOTWRITABLE">
+      <Comments>Error burning cd/dvd. It's the error detail provided when CD/DVD disk is inserted but not writable</Comments>
+      <String Context="Generic_Warning">MEDIA NOT WRITABLE</String>
+    </Concept>
+    <Concept Id="FAILEDCOPYOF_VLITE">
+      <Comments>Error burning cd/dvd. It's the error detail provided when copying BiopacsLite gets error</Comments>
+      <String Context="Generic_Warning">FAILED COPY OF VLITE</String>
+    </Concept>
+    <Concept Id="SEHEXCEPTION">
+      <Comments>External component failure</Comments>
+      <String Context="Generic_Warning">EXTERNAL COMPONENT HAS THROWN AN EXCEPTION</String>
+    </Concept>
+    <Concept Id="UNKNOWNERROR">
+      <Comments>It is displayed when user executes an export with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">UNKNOWN ERROR</String>
+    </Concept>
+    <Concept Id="GROUPIDERROR">
+      <Comments>It is displayed when user executes an export dicom and then abort that operation. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">OPERATION ABORTED DUE TO: </String>
+    </Concept>
+    <Concept Id="SOPINSTANCEALREADYEXIST">
+      <Comments>It is displayed when an export dicom fails for an image conflict. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">SOPINSTANCE ALREADY EXIST</String>
+    </Concept>
+    <Concept Id="IOERROR">
+      <Comments>It is displayed when an export dicom fails for an error accessing the device. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">ERROR ACCESSING THE DEVICE</String>
+    </Concept>
+    <Concept Id="WRONGCHARACTERSET">
+      <Comments>It is displayed when a dicom operation fails why a not supported character set is used. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">NOT SUPPORTED CHARACTER SET</String>
+    </Concept>
+    <Concept Id="CHARACTERSETERROR">
+      <Comments>It is displayed when a dicom operation fails why a generic character set error occurs. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">CHARACTER SET ERROR</String>
+    </Concept>
+    <Concept Id="IMAGENOTDICOMIZABLE">
+      <Comments>It is displayed when an export dicom fails for an image not "dicomizable". This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">INVALID IMAGE TYPE</String>
+    </Concept>
+    <Concept Id="BIGIMAGESNOTSENT">
+      <Comments>It is displayed when some DICOM images are not sent to a server becaus of their huge size. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">BIG IMAGES NOT SENT</String>
+    </Concept>
+    <Concept Id="BurnAbort">
+      <Comments>; It is displayed when user executes a dicom export with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">BURNING ABORTED</String>
+    </Concept>
+    <Concept Id="MORETHAN4GB">
+      <Comments>; It is displayed when the DICOM image's size is greater than 4GB, forbidden from standard. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">IMAGE'S SIZE GREATER THAN 4Gb</String>
+    </Concept>
+    <Concept Id="OUTOFPROCESSDATAERROR">
+      <Comments>; It is displayed when a DICOM operation fails because no valid data are available from OutOfProcess. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">NO VALID RETURN DATA AVAILABLE</String>
+    </Concept>
+    <Concept Id="INVALIDREPORT">
+      <Comments>; It is displayed when a report export DICOM operation fails because report file is invalid or corrupted. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">INVALID OR CORRUPTED REPORT FILE</String>
+    </Concept>
+    <Concept Id="PENDINGIMAGES">
+      <Comments>It is displayed during a DICOM RETRIEVE from server operation. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">PENDING OPERATIONS</String>
+    </Concept>
+    <Concept Id="RECEIVEDIMAGES">
+      <Comments>It is displayed when a DICOM RETRIEVE from server operation is completed. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">IMPORTED</String>
+    </Concept>
+    <Concept Id="FAILEDIMAGES">
+      <Comments>It is displayed when a DICOM RETRIEVE from server operation is completed. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">FAILED</String>
+    </Concept>
+    <Concept Id="AssociationError">
+      <Comments>It is displayed when user executes an export with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">ASSOCIATION ERROR</String>
+    </Concept>
+    <Concept Id="NONIMPORTABLE_ALREADYEXIST">
+      <Comments>Images retrieve are already present in the archive [RTC 10685]</Comments>
+      <String Context="Generic_Warning">Retrieved images are already in the local database</String>
+    </Concept>    
+    <Concept Id="IOERROR_FORMATUSB">
+      <Comments>It is displayed when an export dicom fails for an error accessing a USB device. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">Damaged USB device, try to erase or re-format it</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

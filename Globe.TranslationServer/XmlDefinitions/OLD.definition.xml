@@ -1,0 +1,4309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource ComponentNamespace="OLD" Language="en" Version="1">
+  <LocalizationSection InternalNamespace="MESSAGES">
+    <Concept Id="FREE DISK SPACE">
+      <String Context="MD_RT13HelpLine">FREE DISK SPACE</String>
+    </Concept>
+    <Concept Id="CD/DVD">
+      <String Context="MD_RT13HelpLine">CD/DVD</String>
+    </Concept>
+    <Concept Id="Device">
+      <String Context="MD_RT13HelpLine">Device</String>
+    </Concept>
+    <Concept Id="The requested operation can't be performed on all selected items.">
+      <String Context="MD_RT13HelpLine">The requested operation can't be performed on all selected items.</String>
+    </Concept>
+    <Concept Id="The device is not ready: cannot continue.">
+      <String Context="MD_RT13HelpLine">The device is not ready: cannot continue.</String>
+    </Concept>
+    <Concept Id="Select an option">
+      <String Context="MD_RT13HelpLine">Select an option</String>
+    </Concept>
+    <Concept Id="The Preset memory is full!">
+      <String Context="MD_RT13HelpLine">The Preset memory is full!</String>
+    </Concept>
+    <Concept Id="Saving Preset…">
+      <String Context="MD_RT13HelpLine">Saving Preset…</String>
+    </Concept>
+    <Concept Id="Do you want to confirm?">
+      <String Context="MD_RT13HelpLine">Do you want to confirm?</String>
+    </Concept>
+    <Concept Id="Do you want to save changes?">
+      <String Context="MD_RT13HelpLine">Do you want to save changes?</String>
+    </Concept>
+    <Concept Id="Please, enter your license numbers">
+      <String Context="MD_RT13HelpLine">Please, enter your license numbers</String>
+    </Concept>
+    <Concept Id="Select the source drive">
+      <String Context="MD_RT13HelpLine">Select the source drive</String>
+    </Concept>
+    <Concept Id="The Acoustic Output Indexes are not compatible with your unit configuration!">
+      <String Context="MD_RT13HelpLine">The Acoustic Output Indexes are not compatible with your unit configuration!</String>
+    </Concept>
+    <Concept Id="System configuration error: board(s) not available or not  compatible.">
+      <String Context="MD_RT13HelpLine">System configuration error: board(s) not available or not  compatible.</String>
+    </Concept>
+    <Concept Id="WARNING: please wait till the hourglass disappears (about 60 s) to allow the system to reprogram its registers. Then turn the unit off.">
+      <String Context="MD_RT13HelpLine">WARNING: please wait till the hourglass disappears (about 60 s) to allow the system to reprogram its registers. Then turn the unit off.</String>
+    </Concept>
+    <Concept Id="Not enough space on the selected device!">
+      <String Context="MD_RT13HelpLine">Not enough space on the selected device!</String>
+    </Concept>
+    <Concept Id="The destination device is not accessible!">
+      <String Context="MD_RT13HelpLine">The destination device is not accessible!</String>
+    </Concept>
+    <Concept Id="No more free space in the DATABASE!">
+      <String Context="MD_RT13HelpLine">No more free space in the DATABASE!</String>
+    </Concept>
+    <Concept Id="The DATABASE is being saturated!">
+      <String Context="MD_RT13HelpLine">The DATABASE is being saturated!</String>
+    </Concept>
+    <Concept Id="The unit has been turned off without closing the last exam!">
+      <String Context="MD_RT13HelpLine">The unit has been turned off without closing the last exam!</String>
+    </Concept>
+    <Concept Id="Press &lt;EXAM REV&gt; to review and edit this exam prior to ending it.">
+      <String Context="MD_RT13HelpLine">Press &lt;EXAM REV&gt; to review and edit this exam prior to ending it.</String>
+    </Concept>
+    <Concept Id="The DATABASE starts being too full!">
+      <String Context="MD_RT13HelpLine">The DATABASE starts being too full!</String>
+    </Concept>
+    <Concept Id="Please free some space on the DATABASE">
+      <String Context="MD_RT13HelpLine">Please free some space on the DATABASE</String>
+    </Concept>
+    <Concept Id="Please wait; the system is saving the exam…">
+      <String Context="MD_RT13HelpLine">Please wait; the system is saving the exam…</String>
+    </Concept>
+    <Concept Id="Communication error with the CONTROL BOARD (TGC)">
+      <String Context="MD_RT13HelpLine">Communication error with the CONTROL BOARD (TGC)</String>
+    </Concept>
+    <Concept Id="Press &lt;PROBE&gt; to continue">
+      <String Context="MD_RT13HelpLine">Press &lt;PROBE&gt; to continue</String>
+    </Concept>
+    <Concept Id="WARNING: the probe is overheating!">
+      <String Context="MD_RT13HelpLine">WARNING: the probe is overheating!</String>
+    </Concept>
+    <Concept Id="Please, refer to the OPERATOR MANUAL or wait for the system to restart.">
+      <String Context="MD_RT13HelpLine">Please, refer to the OPERATOR MANUAL or wait for the system to restart.</String>
+    </Concept>
+    <Concept Id="Invalid date format!">
+      <String Context="MD_RT13HelpLine">Invalid date format!</String>
+    </Concept>
+    <Concept Id="Invalid password!">
+      <String Context="MD_RT13HelpLine">Invalid password!</String>
+    </Concept>
+    <Concept Id="Invalid field!">
+      <String Context="MD_RT13HelpLine">Invalid field!</String>
+    </Concept>
+    <Concept Id="Press &lt;FREEZE&gt; to continue">
+      <String Context="MD_RT13HelpLine">Press &lt;FREEZE&gt; to continue</String>
+    </Concept>
+    <Concept Id="Please, eject CD/DVD once the erasing procedure has been completed">
+      <String Context="MD_RT13HelpLine">Please, eject CD/DVD once the erasing procedure has been completed</String>
+    </Concept>
+    <Concept Id="It is now safe to turn off your unit.">
+      <String Context="MD_RT13HelpLine">It is now safe to turn off your unit.</String>
+    </Concept>
+    <Concept Id="Operation successfully completed">
+      <String Context="MD_RT13HelpLine">Operation successfully completed</String>
+    </Concept>
+    <Concept Id="Do you really want to shut down the unit?">
+      <String Context="MD_RT13HelpLine">Do you really want to shut down the unit?</String>
+    </Concept>
+    <Concept Id="Please wait; the system is recovering the archive">
+      <String Context="MD_RT13HelpLine">Please wait; the system is recovering the archive</String>
+    </Concept>
+    <Concept Id="Loading Preset">
+      <String Context="MD_RT13HelpLine">Loading Preset</String>
+    </Concept>
+    <Concept Id="Exporting system configuration">
+      <String Context="MD_RT13HelpLine">Exporting system configuration</String>
+    </Concept>
+    <Concept Id="Please wait">
+      <String Context="MD_RT13HelpLine">Please wait</String>
+    </Concept>
+    <Concept Id="Warning: by restoring factory settings you'll permanently lose your modifications. Do you want to continue?">
+      <String Context="MD_RT13HelpLine">Warning: by restoring factory settings you'll permanently lose your modifications. Do you want to continue?</String>
+    </Concept>
+    <Concept Id="To end your WM protocol, select all PRIMARY QUADS:">
+      <String Context="MD_RT13HelpLine">To end your WM protocol, select all PRIMARY QUADS:</String>
+    </Concept>
+    <Concept Id="press &lt;PRIMARY&gt; to select the PRIMARY QUADS">
+      <String Context="MD_RT13HelpLine">press &lt;PRIMARY&gt; to select the PRIMARY QUADS</String>
+    </Concept>
+    <Concept Id="press &lt;CLEAR&gt; to erase all other QUADS.">
+      <String Context="MD_RT13HelpLine">press &lt;CLEAR&gt; to erase all other QUADS.</String>
+    </Concept>
+    <Concept Id="Warning: this procedure will erase ALL NOT PRIMARY QUADS.">
+      <String Context="MD_RT13HelpLine">Warning: this procedure will erase ALL NOT PRIMARY QUADS.</String>
+    </Concept>
+    <Concept Id="Warning: this procedure will restart WM ANALYSIS and erase ALL QUADS.">
+      <String Context="MD_RT13HelpLine">Warning: this procedure will restart WM ANALYSIS and erase ALL QUADS.</String>
+    </Concept>
+    <Concept Id="The system configuration is corrupted!">
+      <String Context="MD_RT13HelpLine">The system configuration is corrupted!</String>
+    </Concept>
+    <Concept Id="Warning: archival can't be performed on all selected pages">
+      <String Context="MD_RT13HelpLine">Warning: archival can't be performed on all selected pages</String>
+    </Concept>
+    <Concept Id="Please wait; the system is shutting down">
+      <String Context="MD_RT13HelpLine">Please wait; the system is shutting down</String>
+    </Concept>
+    <Concept Id="The system was not correctly shut down">
+      <String Context="MD_RT13HelpLine">The system was not correctly shut down</String>
+    </Concept>
+    <Concept Id="Please, contact the Service department">
+      <String Context="MD_RT13HelpLine">Please, contact the Service department</String>
+    </Concept>
+    <Concept Id="Warning: limited archival frame rate!">
+      <String Context="MD_RT13HelpLine">Warning: limited archival frame rate!</String>
+    </Concept>
+    <Concept Id="This procedure will terminate WM Analysis">
+      <String Context="MD_RT13HelpLine">This procedure will terminate WM Analysis</String>
+    </Concept>
+    <Concept Id="Warning: check current tables.">
+      <String Context="MD_RT13HelpLine">Warning: check current tables.</String>
+    </Concept>
+    <Concept Id="This printer profile description already exists">
+      <String Context="MD_RT13HelpLine">This printer profile description already exists</String>
+    </Concept>
+    <Concept Id="This printer description already exists">
+      <String Context="MD_RT13HelpLine">This printer description already exists</String>
+    </Concept>
+    <Concept Id="Please disconnect at once the probe from the system.">
+      <String Context="MD_RT13HelpLine">Please disconnect at once the probe from the system.</String>
+    </Concept>
+    <Concept Id="To be able to use another probe, disconnect first the TEE.">
+      <String Context="MD_RT13HelpLine">To be able to use another probe, disconnect first the TEE.</String>
+    </Concept>
+    <Concept Id="Please, enter an integer within the range 5-20.">
+      <String Context="MD_RT13HelpLine">Please, enter an integer within the range 5-20.</String>
+    </Concept>
+    <Concept Id="Please, fill the field NAME as it cannot be left blank.">
+      <String Context="MD_RT13HelpLine">Please, fill the field NAME as it cannot be left blank.</String>
+    </Concept>
+    <Concept Id="Duplicated views on the same stage not allowed!">
+      <String Context="MD_RT13HelpLine">Duplicated views on the same stage not allowed!</String>
+    </Concept>
+    <Concept Id="Warning: user defined presets will be deleted for current probe/application. Do you want to continue?">
+      <String Context="MD_RT13HelpLine">Warning: user defined presets will be deleted for current probe/application. Do you want to continue?</String>
+    </Concept>
+    <Concept Id="The available space on the hard disk is less than 5 GB. Once this space is exhausted, no image will be stored and no storing tool will be available.">
+      <String Context="MD_RT13HelpLine">The available space on the hard disk is less than 5 GB. Once this space is exhausted, no image will be stored and no storing tool will be available.</String>
+    </Concept>
+    <Concept Id="No space left on the hard disk. No image will be stored and no storing tool will be available.">
+      <String Context="MD_RT13HelpLine">No space left on the hard disk. No image will be stored and no storing tool will be available.</String>
+    </Concept>
+    <Concept Id="The archive is corrupted. Do you want to recover it now?">
+      <String Context="MD_RT13HelpLine">The archive is corrupted. Do you want to recover it now?</String>
+    </Concept>
+    <Concept Id="The medium is not empty.">
+      <String Context="MD_RT13HelpLine">The medium is not empty.</String>
+    </Concept>
+    <Concept Id="Please, select two images with different views.">
+      <String Context="MD_RT13HelpLine">Please, select two images with different views.</String>
+    </Concept>
+    <Concept Id="Warning: reduced ultrasound power! Please contact the Service department.">
+      <String Context="MD_RT13HelpLine">Warning: reduced ultrasound power! Please contact the Service department.</String>
+    </Concept>
+    <Concept Id="Please wait: the probe is performing its centering calibration.">
+      <String Context="MD_RT13HelpLine">Please wait: the probe is performing its centering calibration.</String>
+    </Concept>
+    <Concept Id="Warning: the calibration procedure failed. Please contact the Service department.">
+      <String Context="MD_RT13HelpLine">Warning: the calibration procedure failed. Please contact the Service department.</String>
+    </Concept>
+    <Concept Id="Warning: the probe could not be centered. It is not granted that the needle path lies on the visualized image. Please contact the Service department.">
+      <String Context="MD_RT13HelpLine">Warning: the probe could not be centered. It is not granted that the needle path lies on the visualized image. Please contact the Service department.</String>
+    </Concept>
+    <Concept Id="Please, place markers manually.">
+      <String Context="MD_RT13HelpLine">Please, place markers manually.</String>
+    </Concept>
+    <Concept Id="Draw septal and lateral points of the annulus and the apex point.">
+      <String Context="MD_RT13HelpLine">Draw septal and lateral points of the annulus and the apex point.</String>
+    </Concept>
+    <Concept Id="Insert all points and press &lt;CONFIRM&gt; to continue.">
+      <String Context="MD_RT13HelpLine">Insert all points and press &lt;CONFIRM&gt; to continue.</String>
+    </Concept>
+    <Concept Id="A clip is going to be generated. Press &lt;ENTER&gt; to confirm.">
+      <String Context="MD_RT13HelpLine">A clip is going to be generated. Press &lt;ENTER&gt; to confirm.</String>
+    </Concept>
+    <Concept Id="Please, enter DEMO LICENCE RESET CODE n.%1d">
+      <String Context="MD_RT13HelpLine">Please, enter DEMO LICENCE RESET CODE n.%1d</String>
+    </Concept>
+    <Concept Id="The value in the following field is not correct">
+      <String Context="MD_RT13HelpLine">The value in the following field is not correct</String>
+    </Concept>
+    <Concept Id="The operation was aborted by the user">
+      <String Context="MD_RT13HelpLine">The operation was aborted by the user</String>
+    </Concept>
+    <Concept Id="The target directory is not empty: cannot continue">
+      <String Context="MD_RT13HelpLine">The target directory is not empty: cannot continue</String>
+    </Concept>
+    <Concept Id="Error while updating data: cannot continue">
+      <String Context="MD_RT13HelpLine">Error while updating data: cannot continue</String>
+    </Concept>
+    <Concept Id="Data directory not found: cannot continue">
+      <String Context="MD_RT13HelpLine">Data directory not found: cannot continue</String>
+    </Concept>
+    <Concept Id="The version of the selected archive is not correct. Data integrity is not guaranteed, do you want to continue?">
+      <String Context="MD_RT13HelpLine">The version of the selected archive is not correct. Data integrity is not guaranteed, do you want to continue?</String>
+    </Concept>
+    <Concept Id="Error: no DICOM printer has been configured">
+      <String Context="MD_RT13HelpLine">Error: no DICOM printer has been configured</String>
+    </Concept>
+    <Concept Id="The target directory is not writable">
+      <String Context="MD_RT13HelpLine">The target directory is not writable</String>
+    </Concept>
+    <Concept Id="The target directory does not exist: cannot continue">
+      <String Context="MD_RT13HelpLine">The target directory does not exist: cannot continue</String>
+    </Concept>
+    <Concept Id="Error: no Windows printer has been configured">
+      <String Context="MD_RT13HelpLine">Error: no Windows printer has been configured</String>
+    </Concept>
+    <Concept Id="The following studies were skipped as an error occurred while copying">
+      <String Context="MD_RT13HelpLine">The following studies were skipped as an error occurred while copying</String>
+    </Concept>
+    <Concept Id="The following studies were skipped as they are already in the archive">
+      <String Context="MD_RT13HelpLine">The following studies were skipped as they are already in the archive</String>
+    </Concept>
+    <Concept Id="The following studies were skipped as the user stopped the restore procedure">
+      <String Context="MD_RT13HelpLine">The following studies were skipped as the user stopped the restore procedure</String>
+    </Concept>
+    <Concept Id="PATIENT DATA fields are too long">
+      <String Context="MD_RT13HelpLine">PATIENT DATA fields are too long</String>
+    </Concept>
+    <Concept Id="(Last^First^Middle &lt;= 64 chars)">
+      <String Context="MD_RT13HelpLine">(Last^First^Middle &lt;= 64 chars)</String>
+    </Concept>
+    <Concept Id="USER NAME fields are too long">
+      <String Context="MD_RT13HelpLine">USER NAME fields are too long</String>
+    </Concept>
+    <Concept Id="Operation failed!">
+      <String Context="MD_RT13HelpLine">Operation failed!</String>
+    </Concept>
+    <Concept Id="To activate your modifications, please start a new exam.">
+      <String Context="MD_RT13HelpLine">To activate your modifications, please start a new exam.</String>
+    </Concept>
+    <Concept Id="PATIENT DATA fields are blank.">
+      <String Context="MD_RT13HelpLine">PATIENT DATA fields are blank.</String>
+    </Concept>
+    <Concept Id="Do you really want to start the exam?">
+      <String Context="MD_RT13HelpLine">Do you really want to start the exam?</String>
+    </Concept>
+    <Concept Id="Please, check &quot;Reconnect at logon&quot; in the Map Network Drive window.">
+      <String Context="MD_RT13HelpLine">Please, check "Reconnect at logon" in the Map Network Drive window.</String>
+    </Concept>
+    <Concept Id="This description already exists.">
+      <String Context="MD_RT13HelpLine">This description already exists.</String>
+    </Concept>
+    <Concept Id="This printer model already exists. Do you want to overwrite it?">
+      <String Context="MD_RT13HelpLine">This printer model already exists. Do you want to overwrite it?</String>
+    </Concept>
+    <Concept Id="The maximum number of configurable servers has been reached.">
+      <String Context="MD_RT13HelpLine">The maximum number of configurable servers has been reached.</String>
+    </Concept>
+    <Concept Id="Do you really want to delete the entire stage?">
+      <String Context="MD_RT13HelpLine">Do you really want to delete the entire stage?</String>
+    </Concept>
+    <Concept Id="This exam is currently opened by another user: cannot continue.">
+      <String Context="MD_RT13HelpLine">This exam is currently opened by another user: cannot continue.</String>
+    </Concept>
+    <Concept Id="All data on this device will be lost; do you want to continue?">
+      <String Context="MD_RT13HelpLine">All data on this device will be lost; do you want to continue?</String>
+    </Concept>
+    <Concept Id="The archive version is more recent and therefore not compatible: cannot continue.">
+      <String Context="MD_RT13HelpLine">The archive version is more recent and therefore not compatible: cannot continue.</String>
+    </Concept>
+    <Concept Id="Do you really want to change current patient's data?">
+      <String Context="MD_RT13HelpLine">Do you really want to change current patient's data?</String>
+    </Concept>
+    <Concept Id="Error while deleting the selected images: cannot continue.">
+      <String Context="MD_RT13HelpLine">Error while deleting the selected images: cannot continue.</String>
+    </Concept>
+    <Concept Id="The selected exam is read-only: any modification will not be stored.">
+      <String Context="MD_RT13HelpLine">The selected exam is read-only: any modification will not be stored.</String>
+    </Concept>
+    <Concept Id="This operation can only be performed from the exam list: cannot continue.">
+      <String Context="MD_RT13HelpLine">This operation can only be performed from the exam list: cannot continue.</String>
+    </Concept>
+    <Concept Id="Please wait; the system is initializing the off-line function components.">
+      <String Context="MD_RT13HelpLine">Please wait; the system is initializing the off-line function components.</String>
+    </Concept>
+    <Concept Id="Insert the key into the USB port.">
+      <String Context="MD_RT13HelpLine">Insert the key into the USB port.</String>
+    </Concept>
+    <Concept Id="Error while opening the file.">
+      <String Context="MD_RT13HelpLine">Error while opening the file.</String>
+    </Concept>
+    <Concept Id="Error while writing the file.">
+      <String Context="MD_RT13HelpLine">Error while writing the file.</String>
+    </Concept>
+    <Concept Id="Error while reading the file.">
+      <String Context="MD_RT13HelpLine">Error while reading the file.</String>
+    </Concept>
+    <Concept Id="Data are not compatible.">
+      <String Context="MD_RT13HelpLine">Data are not compatible.</String>
+    </Concept>
+    <Concept Id="Insufficient memory!">
+      <String Context="MD_RT13HelpLine">Insufficient memory!</String>
+    </Concept>
+    <Concept Id="The two passwords you entered do not match.">
+      <String Context="MD_RT13HelpLine">The two passwords you entered do not match.</String>
+    </Concept>
+    <Concept Id="The username or password you entered is not valid.">
+      <String Context="MD_RT13HelpLine">The username or password you entered is not valid.</String>
+    </Concept>
+    <Concept Id="Flushing printer jobs">
+      <String Context="MD_RT13HelpLine">Flushing printer jobs</String>
+    </Concept>
+    <Concept Id="The system has stopped printing.">
+      <String Context="MD_RT13HelpLine">The system has stopped printing.</String>
+    </Concept>
+    <Concept Id="Wrong startup code.">
+      <String Context="MD_RT13HelpLine">Wrong startup code.</String>
+    </Concept>
+    <Concept Id="Error while creating log file.">
+      <String Context="MD_RT13HelpLine">Error while creating log file.</String>
+    </Concept>
+    <Concept Id="No USB digital video printer found.">
+      <String Context="MD_RT13HelpLine">No USB digital video printer found.</String>
+    </Concept>
+    <Concept Id="Communication timeout">
+      <String Context="MD_RT13HelpLine">Communication timeout</String>
+    </Concept>
+    <Concept Id="Error in the USB digital video printer driver.">
+      <String Context="MD_RT13HelpLine">Error in the USB digital video printer driver.</String>
+    </Concept>
+    <Concept Id="An unknown error occurred.">
+      <String Context="MD_RT13HelpLine">An unknown error occurred.</String>
+    </Concept>
+    <Concept Id="Invalid image size">
+      <String Context="MD_RT13HelpLine">Invalid image size</String>
+    </Concept>
+    <Concept Id="Invalid paper size">
+      <String Context="MD_RT13HelpLine">Invalid paper size</String>
+    </Concept>
+    <Concept Id="Couldn't initialize the device.">
+      <String Context="MD_RT13HelpLine">Couldn't initialize the device.</String>
+    </Concept>
+    <Concept Id="Coudn't end communication.">
+      <String Context="MD_RT13HelpLine">Coudn't end communication.</String>
+    </Concept>
+    <Concept Id="No paper left">
+      <String Context="MD_RT13HelpLine">No paper left</String>
+    </Concept>
+    <Concept Id="Communication error">
+      <String Context="MD_RT13HelpLine">Communication error</String>
+    </Concept>
+    <Concept Id="Error while printing">
+      <String Context="MD_RT13HelpLine">Error while printing</String>
+    </Concept>
+    <Concept Id="Paper jam">
+      <String Context="MD_RT13HelpLine">Paper jam</String>
+    </Concept>
+    <Concept Id="No sheet cassette placed">
+      <String Context="MD_RT13HelpLine">No sheet cassette placed</String>
+    </Concept>
+    <Concept Id="Ink exhausted">
+      <String Context="MD_RT13HelpLine">Ink exhausted</String>
+    </Concept>
+    <Concept Id="No ink sheet information">
+      <String Context="MD_RT13HelpLine">No ink sheet information</String>
+    </Concept>
+    <Concept Id="Wrong ink/paper combination">
+      <String Context="MD_RT13HelpLine">Wrong ink/paper combination</String>
+    </Concept>
+    <Concept Id="The ink sheet is unusable.">
+      <String Context="MD_RT13HelpLine">The ink sheet is unusable.</String>
+    </Concept>
+    <Concept Id="Press OK to try again.">
+      <String Context="MD_RT13HelpLine">Press OK to try again.</String>
+    </Concept>
+    <Concept Id="The paper specifications are not correct">
+      <String Context="MD_RT13HelpLine">The paper specifications are not correct</String>
+    </Concept>
+    <Concept Id="The system is overheating">
+      <String Context="MD_RT13HelpLine">The system is overheating</String>
+    </Concept>
+    <Concept Id="The printer door is open.">
+      <String Context="MD_RT13HelpLine">The printer door is open.</String>
+    </Concept>
+    <Concept Id="There might be a mechanical problem or the door might be open.">
+      <String Context="MD_RT13HelpLine">There might be a mechanical problem or the door might be open.</String>
+    </Concept>
+    <Concept Id="Error during the mechanical reset.">
+      <String Context="MD_RT13HelpLine">Error during the mechanical reset.</String>
+    </Concept>
+    <Concept Id="Please restart the system.">
+      <String Context="MD_RT13HelpLine">Please restart the system.</String>
+    </Concept>
+    <Concept Id="Click the button, to shutdown the system.">
+      <String Context="MD_RT13HelpLine">Click the button, to shutdown the system.</String>
+    </Concept>
+    <Concept Id="This view name has already been used.">
+      <String Context="MD_RT13HelpLine">This view name has already been used.</String>
+    </Concept>
+    <Concept Id="The selected clip is too long: please reduce it to 1 or 3 cycles before processing it.">
+      <String Context="MD_RT13HelpLine">The selected clip is too long: please reduce it to 1 or 3 cycles before processing it.</String>
+    </Concept>
+    <Concept Id="Deleting images or exams is not allowed if an export operation is still in progress.">
+      <String Context="MD_RT13HelpLine">Deleting images or exams is not allowed if an export operation is still in progress.</String>
+    </Concept>
+    <Concept Id="Please, insert values within the indicated range.">
+      <String Context="MD_RT13HelpLine">Please, insert values within the indicated range.</String>
+    </Concept>
+    <Concept Id="Batteries are exhausted.">
+      <String Context="MD_RT13HelpLine">Batteries are exhausted.</String>
+    </Concept>
+    <Concept Id="An error occurred while initializing the system. Please restart the system.">
+      <String Context="MD_RT13HelpLine">An error occurred while initializing the system. Please restart the system.</String>
+    </Concept>
+    <Concept Id="Warning: the lines refer to the central handle position.">
+      <String Context="MD_RT13HelpLine">Warning: the lines refer to the central handle position.</String>
+    </Concept>
+    <Concept Id="Warning: please rotate the handle to display the selected needle.">
+      <String Context="MD_RT13HelpLine">Warning: please rotate the handle to display the selected needle.</String>
+    </Concept>
+    <Concept Id="Warning: due to some communication errors, information on batteries may not be correct.">
+      <String Context="MD_RT13HelpLine">Warning: due to some communication errors, information on batteries may not be correct.</String>
+    </Concept>
+    <Concept Id="Batteries are overheating.">
+      <String Context="MD_RT13HelpLine">Batteries are overheating.</String>
+    </Concept>
+    <Concept Id="An error occurred while shutting down the system. Please switch the unit off.">
+      <String Context="MD_RT13HelpLine">An error occurred while shutting down the system. Please switch the unit off.</String>
+    </Concept>
+    <Concept Id="Warning: the provided values are averaged over segments.">
+      <String Context="MD_RT13HelpLine">Warning: the provided values are averaged over segments.</String>
+    </Concept>
+    <Concept Id="Please, check that the image orientation corresponds to the icon shown on the left.">
+      <String Context="MD_RT13HelpLine">Please, check that the image orientation corresponds to the icon shown on the left.</String>
+    </Concept>
+    <Concept Id="Unknown error while processing data: please try to change the points positioning.">
+      <String Context="MD_RT13HelpLine">Unknown error while processing data: please try to change the points positioning.</String>
+    </Concept>
+    <Concept Id="Please refer to the User Manual.">
+      <String Context="MD_RT13HelpLine">Please refer to the User Manual.</String>
+    </Concept>
+    <Concept Id="All DEMO LICENCE RESET CODES have expired.">
+      <String Context="MD_RT13HelpLine">All DEMO LICENCE RESET CODES have expired.</String>
+    </Concept>
+    <Concept Id="This password has already been used.">
+      <String Context="MD_RT13HelpLine">This password has already been used.</String>
+    </Concept>
+    <Concept Id="The password is shorter than required.">
+      <String Context="MD_RT13HelpLine">The password is shorter than required.</String>
+    </Concept>
+    <Concept Id="This user name is already in use.">
+      <String Context="MD_RT13HelpLine">This user name is already in use.</String>
+    </Concept>
+    <Concept Id="Your password has expired.">
+      <String Context="MD_RT13HelpLine">Your password has expired.</String>
+    </Concept>
+    <Concept Id="Unable to proceed: please perform a new trace">
+      <String Context="MD_RT13HelpLine">Unable to proceed: please perform a new trace</String>
+    </Concept>
+    <Concept Id="Processing data ..">
+      <String Context="MD_RT13HelpLine">Processing data ..</String>
+    </Concept>
+    <Concept Id="Press &lt;ENTER&gt; to insert border points.">
+      <String Context="MD_RT13HelpLine">Press &lt;ENTER&gt; to insert border points.</String>
+    </Concept>
+    <Concept Id="Press &lt;UNDO&gt; to set the last point and to close session.">
+      <String Context="MD_RT13HelpLine">Press &lt;UNDO&gt; to set the last point and to close session.</String>
+    </Concept>
+    <Concept Id="Loading previous session ..">
+      <String Context="MD_RT13HelpLine">Loading previous session ..</String>
+    </Concept>
+    <Concept Id="This drive has already been associated.">
+      <String Context="MD_RT13HelpLine">This drive has already been associated.</String>
+    </Concept>
+    <Concept Id="The operations list is not available.">
+      <String Context="MD_RT13HelpLine">The operations list is not available.</String>
+    </Concept>
+    <Concept Id="Please deselect one view/stage, before selecting another one.">
+      <String Context="MD_RT13HelpLine">Please deselect one view/stage, before selecting another one.</String>
+    </Concept>
+    <Concept Id="Corrupted records found">
+      <String Context="MD_RT13HelpLine">Corrupted records found</String>
+    </Concept>
+    <Concept Id="No results found based on these query parameters">
+      <String Context="MD_RT13HelpLine">No results found based on these query parameters</String>
+    </Concept>
+    <Concept Id="Right click to exit">
+      <String Context="MD_RT13HelpLine">Right click to exit</String>
+    </Concept>
+    <Concept Id="Warning: when the service key will be removed, the connected drive will be no longer available.">
+      <String Context="MD_RT13HelpLine">Warning: when the service key will be removed, the connected drive will be no longer available.</String>
+    </Concept>
+    <Concept Id="Warning: the emergency access won't allow to review from the DB neither already available exams nor the exams you are going to perform.">
+      <String Context="MD_RT13HelpLine">Warning: the emergency access won't allow to review from the DB neither already available exams nor the exams you are going to perform.</String>
+    </Concept>
+    <Concept Id="Please restart the application">
+      <String Context="MD_RT13HelpLine">Please restart the application</String>
+    </Concept>
+    <Concept Id="The hardware configuration of your PC doesn't support 3D review.">
+      <String Context="MD_RT13HelpLine">The hardware configuration of your PC doesn't support 3D review.</String>
+    </Concept>
+    <Concept Id="If the &quot;Browse for folder&quot; window doesn't show a network folder, please type its full path into the &quot;Folder&quot; field.">
+      <String Context="MD_RT13HelpLine">If the "Browse for folder" window doesn't show a network folder, please type its full path into the "Folder" field.</String>
+    </Concept>
+    <Concept Id="To activate your modifications, the unit needs to be immediately restarted.">
+      <String Context="MD_RT13HelpLine">To activate your modifications, the unit needs to be immediately restarted.</String>
+    </Concept>
+    <Concept Id="Warning: this exam already contains a view with the selected name. If you continue, the less recent view will be overwritten.">
+      <String Context="MD_RT13HelpLine">Warning: this exam already contains a view with the selected name. If you continue, the less recent view will be overwritten.</String>
+    </Concept>
+    <Concept Id="Warning: the selected user will be deleted. Do you want to continue?">
+      <String Context="MD_RT13HelpLine">Warning: the selected user will be deleted. Do you want to continue?</String>
+    </Concept>
+    <Concept Id="Cannot process the selected clip: requirements are not matched.">
+      <String Context="MD_RT13HelpLine">Cannot process the selected clip: requirements are not matched.</String>
+    </Concept>
+    <Concept Id="The system hasn't completed yet size estimation: cannot continue.">
+      <String Context="MD_RT13HelpLine">The system hasn't completed yet size estimation: cannot continue.</String>
+    </Concept>
+    <Concept Id="This is a read-only archive: cannot continue.">
+      <String Context="MD_RT13HelpLine">This is a read-only archive: cannot continue.</String>
+    </Concept>
+    <Concept Id="Warning: to activate the modifications of the LOCAL AE TITLE and TCP LISTEN PORT, you need to restart the unit.">
+      <String Context="MD_RT13HelpLine">Warning: to activate the modifications of the LOCAL AE TITLE and TCP LISTEN PORT, you need to restart the unit.</String>
+    </Concept>
+    <Concept Id="Error while accessing the selected network folder.">
+      <String Context="MD_RT13HelpLine">Error while accessing the selected network folder.</String>
+    </Concept>
+    <Concept Id="An error occurred during the EXPORT LOG procedure.">
+      <String Context="MD_RT13HelpLine">An error occurred during the EXPORT LOG procedure.</String>
+    </Concept>
+    <Concept Id="Activate USB Remove Request">
+      <String Context="MD_RT13HelpLine">Activate USB Remove Request</String>
+    </Concept>
+    <Concept Id="Your USB can be now safely removed">
+      <String Context="MD_RT13HelpLine">Your USB can be now safely removed</String>
+    </Concept>
+    <Concept Id="The printer is not installed.">
+      <String Context="MD_RT13HelpLine">The printer is not installed.</String>
+    </Concept>
+    <Concept Id="This user is not allowed to perform this operation">
+      <String Context="MD_RT13HelpLine">This user is not allowed to perform this operation</String>
+    </Concept>
+    <Concept Id="Do you really want to delete the selected images?">
+      <String Context="MD_RT13HelpLine">Do you really want to delete the selected images?</String>
+    </Concept>
+    <Concept Id="Do you really want to delete the selected studies?">
+      <String Context="MD_RT13HelpLine">Do you really want to delete the selected studies?</String>
+    </Concept>
+    <Concept Id="To activate your modifications, please restart the unit.">
+      <String Context="MD_RT13HelpLine">To activate your modifications, please restart the unit.</String>
+    </Concept>
+    <Concept Id="Press &lt;START END&gt; to start real time before completing the Database start-up.">
+      <String Context="MD_RT13HelpLine">Press &lt;START END&gt; to start real time before completing the Database start-up.</String>
+    </Concept>
+    <Concept Id="Modification of PATIENT DATA failed. Do you want to retry?">
+      <String Context="MD_RT13HelpLine">Modification of PATIENT DATA failed. Do you want to retry?</String>
+    </Concept>
+    <Concept Id="Void report or duplicated measure not allowed!">
+      <String Context="MD_RT13HelpLine">Void report or duplicated measure not allowed!</String>
+    </Concept>
+    <Concept Id="Invalid ESAOTE hardware key">
+      <String Context="MD_RT13HelpLine">Invalid ESAOTE hardware key</String>
+    </Concept>
+    <Concept Id="MyLab Desk hardware key not found">
+      <String Context="MD_RT13HelpLine">MyLab Desk hardware key not found</String>
+    </Concept>
+    <Concept Id="The system hasn't completed yet size estimation. Do you want to continue?">
+      <String Context="MD_RT13HelpLine">The system hasn't completed yet size estimation. Do you want to continue?</String>
+    </Concept>
+    <Concept Id="Error while saving or updating user presets: please check entered data.">
+      <String Context="MD_RT13HelpLine">Error while saving or updating user presets: please check entered data.</String>
+    </Concept>
+    <Concept Id="Warning: some of the selected exams will not be exported as they do not match the set Dicom character requirements.">
+      <String Context="MD_RT13HelpLine">Warning: some of the selected exams will not be exported as they do not match the set Dicom character requirements.</String>
+    </Concept>
+    <Concept Id="The selected exam has been removed from the current worklist or its data have been changed. Please, refresh the worklist by pressing OK and then select the exam again.">
+      <String Context="MD_RT13HelpLine">The selected exam has been removed from the current worklist or its data have been changed. Please, refresh the worklist by pressing OK and then select the exam again.</String>
+    </Concept>
+    <Concept Id="Error while refreshing data. The old exam data will be used.">
+      <String Context="MD_RT13HelpLine">Error while refreshing data. The old exam data will be used.</String>
+    </Concept>
+    <Concept Id="Updating worklist data …">
+      <String Context="MD_RT13HelpLine">Updating worklist data …</String>
+    </Concept>
+    <Concept Id="This protocol already exists">
+      <String Context="MD_RT13HelpLine">This protocol already exists</String>
+    </Concept>
+    <Concept Id="The first cycle is not complete.">
+      <String Context="MD_RT13HelpLine">The first cycle is not complete.</String>
+    </Concept>
+    <Concept Id="The last cycle is not complete.">
+      <String Context="MD_RT13HelpLine">The last cycle is not complete.</String>
+    </Concept>
+    <Concept Id="The first and last cycles are not complete.">
+      <String Context="MD_RT13HelpLine">The first and last cycles are not complete.</String>
+    </Concept>
+    <Concept Id="This operation will delete the temporary directories. Please check that no operation is in progress. Do you want to continue?">
+      <String Context="MD_RT13HelpLine">This operation will delete the temporary directories. Please check that no operation is in progress. Do you want to continue?</String>
+    </Concept>
+    <Concept Id="The target archive version is older than the current one; if you continue, other units may not be able to open the archive.">
+      <String Context="MD_RT13HelpLine">The target archive version is older than the current one; if you continue, other units may not be able to open the archive.</String>
+    </Concept>
+    <Concept Id="Please check the Caps Lock key status.">
+      <String Context="MD_RT13HelpLine">Please check the Caps Lock key status.</String>
+    </Concept>
+    <Concept Id="Warning: this option should be used just in case of compatibility problems. Please note that it heavily affects the converted clips size and the conversion time.">
+      <String Context="MD_RT13HelpLine">Warning: this option should be used just in case of compatibility problems. Please note that it heavily affects the converted clips size and the conversion time.</String>
+    </Concept>
+    <Concept Id="Warning: to activate the modifications made on Storage Commitment settings, you need to restart the unit.">
+      <String Context="MD_RT13HelpLine">Warning: to activate the modifications made on Storage Commitment settings, you need to restart the unit.</String>
+    </Concept>
+    <Concept Id="Updating Presets …">
+      <String Context="MD_RT13HelpLine">Updating Presets …</String>
+    </Concept>
+    <Concept Id="Removing selected exams …">
+      <String Context="MD_RT13HelpLine">Removing selected exams …</String>
+    </Concept>
+    <Concept Id="Alternatively, the archive can be opened in a read-only mode, in which case modifications will not be stored.">
+      <String Context="MD_RT13HelpLine">Alternatively, the archive can be opened in a read-only mode, in which case modifications will not be stored.</String>
+    </Concept>
+    <Concept Id="The archive version is more recent and therefore not compatible.">
+      <String Context="MD_RT13HelpLine">The archive version is more recent and therefore not compatible.</String>
+    </Concept>
+    <Concept Id="DISTANCE = Indicative lenght of the biopsy needle">
+      <String Context="MD_RT13HelpLine">DISTANCE = Indicative lenght of the biopsy needle</String>
+    </Concept>
+    <Concept Id="Warning: Always verify that the whole needle working area, from its insertion point up to the target, doesn’t include anatomical structures that could be touched and damaged, thus compromising the patient’s safety.">
+      <String Context="MD_RT13HelpLine">Warning: Always verify that the whole needle working area, from its insertion point up to the target, doesn’t include anatomical structures that could be touched and damaged, thus compromising the patient’s safety.</String>
+    </Concept>
+    <Concept Id="The alert threshold of the archive has been exceeded. It is highly recommended to backup the data.">
+      <String Context="MD_RT13HelpLine">The alert threshold of the archive has been exceeded. It is highly recommended to backup the data.</String>
+    </Concept>
+    <Concept Id="Remind me later">
+      <String Context="MD_RT13HelpLine">Remind me later</String>
+    </Concept>
+    <Concept Id="Please, select the attachment layout">
+      <String Context="MD_RT13HelpLine">Please, select the attachment layout</String>
+    </Concept>
+    <Concept Id="Press the POINTER key and change the cycle by moving the trackball.">
+      <String Context="MD_RT13HelpLine">Press the POINTER key and change the cycle by moving the trackball.</String>
+    </Concept>
+    <Concept Id="Press the POINTER key to select the frame interval.">
+      <String Context="MD_RT13HelpLine">Press the POINTER key to select the frame interval.</String>
+    </Concept>
+    <Concept Id="Select the first frame and press Enter to confirm.">
+      <String Context="MD_RT13HelpLine">Select the first frame and press Enter to confirm.</String>
+    </Concept>
+    <Concept Id="Select the last frame and press Enter to confirm.">
+      <String Context="MD_RT13HelpLine">Select the last frame and press Enter to confirm.</String>
+    </Concept>
+    <Concept Id="The operation is being processed. Once completed, the system will shut down.">
+      <String Context="MD_RT13HelpLine">The operation is being processed. Once completed, the system will shut down.</String>
+    </Concept>
+    <Concept Id="There's at least one operation still in progress. Would you like to wait till it is completed?">
+      <String Context="MD_RT13HelpLine">There's at least one operation still in progress. Would you like to wait till it is completed?</String>
+    </Concept>
+    <Concept Id="Warning: the biopsy line displayed on the screen refers to the needle which is closest to the probe. The other two needles lie on different planes and can not be displayed.">
+      <String Context="MD_RT13HelpLine">Warning: the biopsy line displayed on the screen refers to the needle which is closest to the probe. The other two needles lie on different planes and can not be displayed.</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="GENERIC">
+    <Concept Id="PULSED WAVE DOPPLER">
+      <String Context="Generic_Medium">PULSED WAVE DOPPLER</String>
+      <String Context="TS_SButton">PW</String>
+      <String Context="MD_RT11MeasName">PW</String>
+    </Concept>
+    <Concept Id="TIME">
+      <String Context="Generic_Medium">TIME</String>
+      <String Context="TS_SButton">TIME</String>
+    </Concept>
+    <Concept Id="HEIGHT">
+      <String Context="Generic_Medium">HEIGHT</String>
+      <String Context="TS_SButton">HEIGHT</String>
+      <String Context="MD_RT11MeasName">H</String>
+    </Concept>
+    <Concept Id="OPERATIONS ON CD/DVD">
+      <String Context="Generic_Medium">OPERATIONS ON CD/DVD</String>
+    </Concept>
+    <Concept Id="OPERATIONS ON USB">
+      <String Context="Generic_Medium">OPERATIONS ON USB</String>
+    </Concept>
+    <Concept Id="OPERATIONS ON DICOM SERVER">
+      <String Context="Generic_Medium">OPERATIONS ON DICOM SERVER</String>
+    </Concept>
+    <Concept Id="OPERATIONS ON NETWORK DIRECTORY">
+      <String Context="Generic_Medium">OPERATIONS ON NETWORK DIRECTORY</String>
+    </Concept>
+    <Concept Id="UNLIMITED">
+      <String Context="Generic_Medium">UNLIMITED</String>
+      <String Context="TS_SButton">UNLIMITED</String>
+    </Concept>
+    <Concept Id="FLASH">
+      <String Context="Generic_Medium">FLASH</String>
+      <String Context="TS_SButton">FLASH</String>
+    </Concept>
+    <Concept Id="C-MIX">
+      <String Context="Generic_Medium">C-MIX</String>
+      <String Context="TS_SButton">C-MIX</String>
+    </Concept>
+    <Concept Id="FLASH DURATION">
+      <String Context="Generic_Medium">FLASH DURATION</String>
+      <String Context="TS_SButton">FLASH DUR</String>
+    </Concept>
+    <Concept Id="FREE">
+      <String Context="Generic_Medium">FREE</String>
+      <String Context="TS_SButton">FREE</String>
+    </Concept>
+    <Concept Id="1 SEC">
+      <String Context="Generic_Medium">1 SEC</String>
+      <String Context="TS_SButton">1 SEC</String>
+    </Concept>
+    <Concept Id="FUNDAMENTAL">
+      <String Context="Generic_Medium">FUNDAMENTAL</String>
+      <String Context="TS_SButton">FUNDAMENT</String>
+    </Concept>
+    <Concept Id="DUAL PROC">
+      <String Context="Generic_Medium">DUAL PROC</String>
+    </Concept>
+    <Concept Id="STRESS ECHO">
+      <String Context="Generic_Medium">STRESS ECHO</String>
+    </Concept>
+    <Concept Id="CnTI PRESET">
+      <String Context="Generic_Medium">CnTI PRESET</String>
+    </Concept>
+    <Concept Id="TGC RESET">
+      <String Context="Generic_Medium">TGC RESET</String>
+    </Concept>
+    <Concept Id="GENERIC MEASUREMENTS">
+      <String Context="Generic_Medium">GENERIC MEASUREMENTS</String>
+      <String Context="TS_SButton">GENERIC</String>
+    </Concept>
+    <Concept Id="APPLICATION MEASUREMENTS">
+      <String Context="Generic_Medium">APPLICATION MEASUREMENTS</String>
+      <String Context="TS_SButton">APPLIC</String>
+    </Concept>
+    <Concept Id="GLOSSARY">
+      <String Context="Generic_Medium">GLOSSARY</String>
+      <String Context="TS_SButton">GLOSSARY</String>
+    </Concept>
+    <Concept Id="HEADER">
+      <String Context="Generic_Medium">HEADER</String>
+      <String Context="TS_SButton">HEADER</String>
+    </Concept>
+    <Concept Id="EDIT OBSERVATIONS">
+      <String Context="Generic_Medium">EDIT OBSERVATIONS</String>
+      <String Context="TS_SButton">EDIT OBS</String>
+    </Concept>
+    <Concept Id="DERATED PRESSURE">
+      <String Context="Generic_Medium">DERATED PRESSURE</String>
+      <String Context="MD_RT11MeasName">DP</String>
+    </Concept>
+    <Concept Id="RESOLUTION">
+      <String Context="Generic_Medium">RESOLUTION</String>
+      <String Context="TS_SButton">RESOL</String>
+      <String Context="MD_RT11MeasName">R</String>
+    </Concept>
+    <Concept Id="ACQUISITION TIMING">
+      <String Context="Generic_Medium">ACQUISITION TIMING</String>
+      <String Context="TS_SButton">ACQ TIME</String>
+    </Concept>
+    <Concept Id="ACQUISITION DELAY">
+      <String Context="Generic_Medium">ACQUISITION DELAY</String>
+      <String Context="TS_SButton">ACQ DEL</String>
+      <String Context="MD_RT11MeasName">DLY</String>
+    </Concept>
+    <Concept Id="ACQUISITION FRAMES">
+      <String Context="Generic_Medium">ACQUISITION FRAMES</String>
+    </Concept>
+    <Concept Id="PRINT LAYOUT STYLE">
+      <String Context="Generic_Medium">PRINT LAYOUT STYLE</String>
+      <String Context="TS_SButton">PR STYLE</String>
+    </Concept>
+    <Concept Id="STANDARD">
+      <String Context="Generic_Medium">STANDARD</String>
+    </Concept>
+    <Concept Id="INTERMITTENT">
+      <String Context="Generic_Medium">INTERMITTENT</String>
+    </Concept>
+    <Concept Id="SIGNATURE">
+      <String Context="Generic_Medium">SIGNATURE</String>
+    </Concept>
+    <Concept Id="ADD SELECTED TEXT">
+      <String Context="Generic_Medium">ADD SELECTED TEXT</String>
+    </Concept>
+    <Concept Id="PAGE">
+      <String Context="Generic_Medium">PAGE</String>
+      <String Context="TS_SButton">PAGE</String>
+    </Concept>
+    <Concept Id="REPORT DATE">
+      <String Context="Generic_Medium">REPORT DATE</String>
+    </Concept>
+    <Concept Id="TITLE">
+      <String Context="Generic_Medium">TITLE</String>
+    </Concept>
+    <Concept Id="EDIT">
+      <String Context="Generic_Medium">EDIT</String>
+      <String Context="TS_SButton">EDIT</String>
+    </Concept>
+    <Concept Id="FIELD">
+      <String Context="Generic_Medium">FIELD</String>
+    </Concept>
+    <Concept Id="CONTENT">
+      <String Context="Generic_Medium">CONTENT</String>
+    </Concept>
+    <Concept Id="CHANGE">
+      <String Context="Generic_Medium">CHANGE</String>
+      <String Context="TS_SButton">CHANGE</String>
+    </Concept>
+    <Concept Id="CENTER LOGO">
+      <String Context="Generic_Medium">CENTER LOGO</String>
+    </Concept>
+    <Concept Id="SHOW">
+      <String Context="Generic_Medium">SHOW</String>
+    </Concept>
+    <Concept Id="SKIP EMPTY MEASURES">
+      <String Context="Generic_Medium">SKIP EMPTY MEASURES</String>
+    </Concept>
+    <Concept Id="USE MEASURE DESCRIPTION">
+      <String Context="Generic_Medium">USE MEASURE DESCRIPTION</String>
+    </Concept>
+    <Concept Id="SHOW AVERAGE ONLY">
+      <String Context="Generic_Medium">SHOW AVERAGE ONLY</String>
+    </Concept>
+    <Concept Id="SKIP OBSERVATIONS EMPTY FIELDS">
+      <String Context="Generic_Medium">SKIP OBSERVATIONS EMPTY FIELDS</String>
+    </Concept>
+    <Concept Id="SKIP OBSERVATIONS TITLES">
+      <String Context="Generic_Medium">SKIP OBSERVATIONS TITLES</String>
+    </Concept>
+    <Concept Id="SKIP HEADER EMPTY FIELDS">
+      <String Context="Generic_Medium">SKIP HEADER EMPTY FIELDS</String>
+    </Concept>
+    <Concept Id="ENABLE HEADER FIELDS">
+      <String Context="Generic_Medium">ENABLE HEADER FIELDS</String>
+    </Concept>
+    <Concept Id="PREVIEW OPTIONS">
+      <String Context="Generic_Medium">PREVIEW OPTIONS</String>
+    </Concept>
+    <Concept Id="ACTIVE SECTION">
+      <String Context="Generic_Medium">ACTIVE SECTION</String>
+    </Concept>
+    <Concept Id="FONT">
+      <String Context="Generic_Medium">FONT</String>
+    </Concept>
+    <Concept Id="FONT COLOR">
+      <String Context="Generic_Medium">FONT COLOR</String>
+    </Concept>
+    <Concept Id="BACKGROUND">
+      <String Context="Generic_Medium">BACKGROUND</String>
+    </Concept>
+    <Concept Id="TEXT ALIGNMENT">
+      <String Context="Generic_Medium">TEXT ALIGNMENT</String>
+    </Concept>
+    <Concept Id="TEST CONNECTION">
+      <String Context="Generic_Medium">TEST CONNECTION</String>
+    </Concept>
+    <Concept Id="CONNECTION LOG">
+      <String Context="Generic_Medium">CONNECTION LOG</String>
+    </Concept>
+    <Concept Id="SCROLL">
+      <String Context="Generic_Medium">SCROLL</String>
+      <String Context="TS_SButton">SCROLL</String>
+    </Concept>
+    <Concept Id="ANNOTATIONS">
+      <String Context="Generic_Medium">ANNOTATIONS</String>
+      <String Context="TS_SButton">ANNOT</String>
+      <String Context="MD_RT11MeasName">ANNOT</String>
+    </Concept>
+    <Concept Id="NETWORK CONFIGURATION">
+      <String Context="Generic_Medium">NETWORK CONFIGURATION</String>
+      <String Context="TS_SButton">NETW CONF</String>
+    </Concept>
+    <Concept Id="SERVER CONFIGURATION">
+      <String Context="Generic_Medium">SERVER CONFIGURATION</String>
+      <String Context="TS_SButton">SERV CONF</String>
+    </Concept>
+    <Concept Id="DICOM CONFIGURATION">
+      <String Context="Generic_Medium">DICOM CONFIGURATION</String>
+      <String Context="TS_SButton">DIC CONF</String>
+    </Concept>
+    <Concept Id="ERASE DEVICE">
+      <String Context="Generic_Medium">ERASE DEVICE</String>
+    </Concept>
+    <Concept Id="RESET FAILURE FLAG">
+      <String Context="Generic_Medium">RESET FAILURE FLAG</String>
+    </Concept>
+    <Concept Id="CD/DVD ERASING">
+      <String Context="Generic_Medium">CD/DVD ERASING</String>
+    </Concept>
+    <Concept Id="DICOM SERVER (STORAGE SCP)">
+      <String Context="Generic_Medium">DICOM SERVER (STORAGE SCP)</String>
+    </Concept>
+    <Concept Id="EXPORT LOG FILE TO USB">
+      <String Context="Generic_Medium">EXPORT LOG FILE TO USB</String>
+    </Concept>
+    <Concept Id="RECOVER ARCHIVE">
+      <String Context="Generic_Medium">RECOVER ARCHIVE</String>
+    </Concept>
+    <Concept Id="ANNOT UP">
+      <String Context="Generic_Medium">ANNOT UP</String>
+      <String Context="TS_SButton">ANNOT ↑</String>
+    </Concept>
+    <Concept Id="ANNOT DOWN">
+      <String Context="Generic_Medium">ANNOT DOWN</String>
+      <String Context="TS_SButton">ANNOT ↓</String>
+    </Concept>
+    <Concept Id="SYSTEM INTERNAL ERROR">
+      <String Context="Generic_Medium">SYSTEM INTERNAL ERROR</String>
+    </Concept>
+    <Concept Id="EXAMS NOT ARCHIVED">
+      <String Context="Generic_Medium">EXAMS NOT ARCHIVED</String>
+    </Concept>
+    <Concept Id="PRINT PREVIEW">
+      <String Context="Generic_Medium">PRINT PREVIEW</String>
+      <String Context="TS_SButton">PREVIEW</String>
+    </Concept>
+    <Concept Id="FOOTSWITCH">
+      <String Context="Generic_Medium">FOOTSWITCH</String>
+    </Concept>
+    <Concept Id="CONTRAST MAP">
+      <String Context="Generic_Medium">CONTRAST MAP</String>
+      <String Context="TS_SButton">C-MAP</String>
+    </Concept>
+    <Concept Id="SONY THERMAL COLOR PRINTER">
+      <String Context="Generic_Medium">SONY THERMAL COLOR PRINTER</String>
+    </Concept>
+    <Concept Id="MITSUBISHI THERMAL COLOR PRINTER">
+      <String Context="Generic_Medium">MITSUBISHI THERMAL COLOR PRINTER</String>
+    </Concept>
+    <Concept Id="ACQUIRED">
+      <String Context="Generic_Medium">ACQUIRED</String>
+    </Concept>
+    <Concept Id="EXPORT TO OTHER SERVERS">
+      <String Context="Generic_Medium">EXPORT TO OTHER SERVERS</String>
+    </Concept>
+    <Concept Id="EXPORT TO BIOPACS">
+      <String Context="Generic_Medium">EXPORT TO BIOPACS</String>
+    </Concept>
+    <Concept Id="THETA ANGLE">
+      <String Context="Generic_Medium">THETA ANGLE</String>
+      <String Context="TS_SButton">TH ANGLE</String>
+    </Concept>
+    <Concept Id="NEXT Θ ANGLE">
+      <String Context="Generic_Medium">NEXT Θ ANGLE</String>
+      <String Context="TS_SButton">Θ ANGLE →</String>
+    </Concept>
+    <Concept Id="PREVIOUS Θ ANGLE">
+      <String Context="Generic_Medium">PREVIOUS Θ ANGLE</String>
+      <String Context="TS_SButton">Θ ANGLE ←</String>
+    </Concept>
+    <Concept Id="DUAL IMAGING">
+      <String Context="Generic_Medium">DUAL IMAGING</String>
+      <String Context="TS_SButton">DI</String>
+      <String Context="MD_RT11MeasName">DI</String>
+    </Concept>
+    <Concept Id="TOOLS">
+      <String Context="Generic_Medium">TOOLS</String>
+    </Concept>
+    <Concept Id="VPAN">
+      <String Context="Generic_Medium">VPAN</String>
+    </Concept>
+    <Concept Id="VPAN ACQUISITION">
+      <String Context="Generic_Medium">VPAN ACQUISITION</String>
+    </Concept>
+    <Concept Id="VPAN PRESENTATION">
+      <String Context="Generic_Medium">VPAN PRESENTATION</String>
+    </Concept>
+    <Concept Id="TVM MAP">
+      <String Context="Generic_Medium">TVM MAP</String>
+    </Concept>
+    <Concept Id="MODE KEY ON">
+      <String Context="Generic_Medium">MODE KEY ON</String>
+    </Concept>
+    <Concept Id="MODE KEY STATUS">
+      <String Context="Generic_Medium">MODE KEY STATUS</String>
+    </Concept>
+    <Concept Id="LINES">
+      <String Context="Generic_Medium">LINES</String>
+      <String Context="TS_SButton">LINES</String>
+    </Concept>
+    <Concept Id="NEXT LINE">
+      <String Context="Generic_Medium">NEXT LINE</String>
+      <String Context="TS_SButton">LINE →</String>
+    </Concept>
+    <Concept Id="PREVIOUS LINE">
+      <String Context="Generic_Medium">PREVIOUS LINE</String>
+      <String Context="TS_SButton">LINE ←</String>
+    </Concept>
+    <Concept Id=" ARCHIVE">
+      <String Context="Generic_Medium"> ARCHIVE</String>
+    </Concept>
+    <Concept Id="AUTO SAVE">
+      <String Context="Generic_Medium">AUTO SAVE</String>
+    </Concept>
+    <Concept Id="FETAL AGE">
+      <String Context="Generic_Medium">FETAL AGE</String>
+    </Concept>
+    <Concept Id="FETAL GROWTH">
+      <String Context="Generic_Medium">FETAL GROWTH</String>
+    </Concept>
+    <Concept Id="COMPASS M-MODE">
+      <String Context="Generic_Medium">COMPASS M-MODE</String>
+      <String Context="TS_SButton">CMM</String>
+    </Concept>
+    <Concept Id="NEW MODEL">
+      <String Context="Generic_Medium">NEW MODEL</String>
+    </Concept>
+    <Concept Id="TOOLS SETTINGS">
+      <String Context="Generic_Medium">TOOLS SETTINGS</String>
+    </Concept>
+    <Concept Id="NEXT PLANE">
+      <String Context="Generic_Medium">NEXT PLANE</String>
+      <String Context="TS_SButton">PLANE →</String>
+    </Concept>
+    <Concept Id="PREVIOUS PLANE">
+      <String Context="Generic_Medium">PREVIOUS PLANE</String>
+      <String Context="TS_SButton">PLANE ←</String>
+    </Concept>
+    <Concept Id="WORKLIST">
+      <String Context="Generic_Medium">WORKLIST</String>
+      <String Context="TS_SButton">WORKLIST</String>
+    </Concept>
+    <Concept Id="3D/4D PRESET">
+      <String Context="Generic_Medium">3D/4D PRESET</String>
+      <String Context="TS_SButton">3D PRESET</String>
+    </Concept>
+    <Concept Id="SMART DOPPLER">
+      <String Context="Generic_Medium">SMART DOPPLER</String>
+      <String Context="TS_SButton">SMART D</String>
+    </Concept>
+    <Concept Id="3 STEPS">
+      <String Context="Generic_Medium">3 STEPS</String>
+    </Concept>
+    <Concept Id="7 STEPS">
+      <String Context="Generic_Medium">7 STEPS</String>
+    </Concept>
+    <Concept Id="VIEW DIRECTION">
+      <String Context="Generic_Medium">VIEW DIRECTION</String>
+      <String Context="TS_SButton">VIEW DIR</String>
+    </Concept>
+    <Concept Id="VIEW PLANE">
+      <String Context="Generic_Medium">VIEW PLANE</String>
+      <String Context="TS_SButton">VIEW PL</String>
+    </Concept>
+    <Concept Id="FRONT TO BACK">
+      <String Context="Generic_Medium">FRONT TO BACK</String>
+      <String Context="TS_SButton">F → B</String>
+    </Concept>
+    <Concept Id="BACK TO FRONT">
+      <String Context="Generic_Medium">BACK TO FRONT</String>
+      <String Context="TS_SButton">B → F</String>
+    </Concept>
+    <Concept Id="EDIT VIEW LABELS">
+      <String Context="Generic_Medium">EDIT VIEW LABELS</String>
+    </Concept>
+    <Concept Id="SYSTOLIC">
+      <String Context="Generic_Medium">SYSTOLIC</String>
+      <String Context="TS_SButton">SYST</String>
+    </Concept>
+    <Concept Id="CYCLE">
+      <String Context="Generic_Medium">CYCLE</String>
+      <String Context="TS_SButton">CYCLE</String>
+    </Concept>
+    <Concept Id="MONITORING">
+      <String Context="Generic_Medium">MONITORING</String>
+    </Concept>
+    <Concept Id="ECG DISPLAY">
+      <String Context="Generic_Medium">ECG DISPLAY</String>
+    </Concept>
+    <Concept Id="PARASTERNAL LONG AXIS">
+      <String Context="Generic_Medium">PARASTERNAL LONG AXIS</String>
+      <String Context="TS_SButton">LAX</String>
+      <String Context="MD_RT11MeasName">LAX</String>
+    </Concept>
+    <Concept Id="SHORT AXIS PAPILLARY MUSCLE">
+      <String Context="Generic_Medium">SHORT AXIS PAPILLARY MUSCLE</String>
+      <String Context="TS_SButton">SAX PM</String>
+    </Concept>
+    <Concept Id="APICAL FOUR CHAMBERS">
+      <String Context="Generic_Medium">APICAL FOUR CHAMBERS</String>
+      <String Context="TS_SButton">A4C</String>
+    </Concept>
+    <Concept Id="APICAL TWO CHAMBERS">
+      <String Context="Generic_Medium">APICAL TWO CHAMBERS</String>
+      <String Context="TS_SButton">A2C</String>
+    </Concept>
+    <Concept Id="SHORT AXIS MITRAL VALVE">
+      <String Context="Generic_Medium">SHORT AXIS MITRAL VALVE</String>
+      <String Context="TS_SButton">SAX MV</String>
+    </Concept>
+    <Concept Id="SHORT AXIS APEX">
+      <String Context="Generic_Medium">SHORT AXIS APEX</String>
+      <String Context="TS_SButton">SAX AP</String>
+    </Concept>
+    <Concept Id="PERFORMING PHYSICIAN">
+      <String Context="Generic_Medium">PERFORMING PHYSICIAN</String>
+      <String Context="TS_SButton">PERF PHYS</String>
+    </Concept>
+    <Concept Id="ABANDONED PROCEDURE">
+      <String Context="Generic_Medium">ABANDONED PROCEDURE</String>
+    </Concept>
+    <Concept Id="NICKNAME">
+      <String Context="Generic_Medium">NICKNAME</String>
+    </Concept>
+    <Concept Id="NEW">
+      <String Context="Generic_Medium">NEW</String>
+    </Concept>
+    <Concept Id="MODIFY">
+      <String Context="Generic_Medium">MODIFY</String>
+      <String Context="TS_SButton">MODIFY</String>
+    </Concept>
+    <Concept Id="FIRST DGA DATE">
+      <String Context="Generic_Medium">FIRST DGA DATE</String>
+    </Concept>
+    <Concept Id="POST MENO-PAUSE">
+      <String Context="Generic_Medium">POST MENO-PAUSE</String>
+    </Concept>
+    <Concept Id="CYCLE'S DAY">
+      <String Context="Generic_Medium">CYCLE'S DAY</String>
+    </Concept>
+    <Concept Id="C50">
+      <String Context="Generic_Medium">C50</String>
+    </Concept>
+    <Concept Id="B FORMAT">
+      <String Context="Generic_Medium">B FORMAT</String>
+      <String Context="TS_SButton">B FORMAT</String>
+    </Concept>
+    <Concept Id="B-REF DUAL">
+      <String Context="Generic_Medium">B-REF DUAL</String>
+      <String Context="TS_SButton">B DUAL</String>
+    </Concept>
+    <Concept Id="REC/PRINT 3">
+      <String Context="Generic_Medium">REC/PRINT 3</String>
+    </Concept>
+    <Concept Id="DICOM PRINTER">
+      <String Context="Generic_Medium">DICOM PRINTER</String>
+    </Concept>
+    <Concept Id="DEFAULT PRINTER">
+      <String Context="Generic_Medium">DEFAULT PRINTER</String>
+    </Concept>
+    <Concept Id="VTR">
+      <String Context="Generic_Medium">VTR</String>
+      <String Context="TS_SButton">VTR</String>
+    </Concept>
+    <Concept Id="CLIP QUALITY">
+      <String Context="Generic_Medium">CLIP QUALITY</String>
+    </Concept>
+    <Concept Id="SERVER">
+      <String Context="Generic_Medium">SERVER</String>
+    </Concept>
+    <Concept Id="QUALITY">
+      <String Context="Generic_Medium">QUALITY</String>
+      <String Context="TS_SButton">QUALITY</String>
+    </Concept>
+    <Concept Id="FETUS">
+      <String Context="Generic_Medium">FETUS</String>
+      <String Context="TS_SButton">FETUS</String>
+    </Concept>
+    <Concept Id="SINGLE FETUS">
+      <String Context="Generic_Medium">SINGLE FETUS</String>
+      <String Context="TS_SButton">SINGLE</String>
+    </Concept>
+    <Concept Id="FETUS COMPARISON">
+      <String Context="Generic_Medium">FETUS COMPARISON</String>
+      <String Context="TS_SButton">COMPAR</String>
+    </Concept>
+    <Concept Id="CURVE/BAR">
+      <String Context="Generic_Medium">CURVE/BAR</String>
+    </Concept>
+    <Concept Id="TOTAL IMAGES">
+      <String Context="Generic_Medium">TOTAL IMAGES</String>
+    </Concept>
+    <Concept Id="MODULES">
+      <String Context="Generic_Medium">MODULES</String>
+    </Concept>
+    <Concept Id="DENSITY">
+      <String Context="Generic_Medium">DENSITY</String>
+      <String Context="TS_SButton">DENSITY</String>
+    </Concept>
+    <Concept Id="PRINTERS">
+      <String Context="Generic_Medium">PRINTERS</String>
+    </Concept>
+    <Concept Id="VIEW PROFILES">
+      <String Context="Generic_Medium">VIEW PROFILES</String>
+    </Concept>
+    <Concept Id="MODEL">
+      <String Context="Generic_Medium">MODEL</String>
+    </Concept>
+    <Concept Id="LAYOUT">
+      <String Context="Generic_Medium">LAYOUT</String>
+      <String Context="TS_SButton">LAYOUT</String>
+    </Concept>
+    <Concept Id="FILM ORIENTATION">
+      <String Context="Generic_Medium">FILM ORIENTATION</String>
+    </Concept>
+    <Concept Id="FILM SIZE">
+      <String Context="Generic_Medium">FILM SIZE</String>
+    </Concept>
+    <Concept Id="COLOR CAPABILITY">
+      <String Context="Generic_Medium">COLOR CAPABILITY</String>
+    </Concept>
+    <Concept Id="NUMBER OF COPIES">
+      <String Context="Generic_Medium">NUMBER OF COPIES</String>
+    </Concept>
+    <Concept Id="PROFILES FOR">
+      <String Context="Generic_Medium">PROFILES FOR</String>
+    </Concept>
+    <Concept Id="ROWS">
+      <String Context="Generic_Medium">ROWS</String>
+    </Concept>
+    <Concept Id="COLUMNS">
+      <String Context="Generic_Medium">COLUMNS</String>
+    </Concept>
+    <Concept Id="TREND">
+      <String Context="Generic_Medium">TREND</String>
+      <String Context="TS_SButton">TREND</String>
+    </Concept>
+    <Concept Id="TEI PENETRATION">
+      <String Context="Generic_Medium">TEI PENETRATION</String>
+      <String Context="TS_SButton">PEN</String>
+      <String Context="MD_RT11MeasName">P</String>
+    </Concept>
+    <Concept Id="TEI RESOLUTION">
+      <String Context="Generic_Medium">TEI RESOLUTION</String>
+      <String Context="TS_SButton">RES</String>
+      <String Context="MD_RT11MeasName">R</String>
+    </Concept>
+    <Concept Id="PLANE">
+      <String Context="Generic_Medium">PLANE</String>
+    </Concept>
+    <Concept Id="TRACKBALL">
+      <String Context="Generic_Medium">TRACKBALL</String>
+    </Concept>
+    <Concept Id="LEFT BUTTON">
+      <String Context="Generic_Medium">LEFT BUTTON</String>
+    </Concept>
+    <Concept Id="CLICK=ENTER">
+      <String Context="Generic_Medium">CLICK=ENTER</String>
+    </Concept>
+    <Concept Id="CONTEXTMENU=UNDO">
+      <String Context="Generic_Medium">CONTEXTMENU=UNDO</String>
+    </Concept>
+    <Concept Id="ECTOPIC">
+      <String Context="Generic_Medium">ECTOPIC</String>
+    </Concept>
+    <Concept Id="SPECIAL PROBES">
+      <String Context="Generic_Medium">SPECIAL PROBES</String>
+    </Concept>
+    <Concept Id="PEAK+MEAN">
+      <String Context="Generic_Medium">PEAK+MEAN</String>
+    </Concept>
+    <Concept Id="TRACE MODE">
+      <String Context="Generic_Medium">TRACE MODE</String>
+      <String Context="TS_SButton">TR MODE</String>
+    </Concept>
+    <Concept Id="SCREENSAVER">
+      <String Context="Generic_Medium">SCREENSAVER</String>
+    </Concept>
+    <Concept Id="FLOATING LOGO">
+      <String Context="Generic_Medium">FLOATING LOGO</String>
+    </Concept>
+    <Concept Id="SNOWRAIN">
+      <String Context="Generic_Medium">SNOWRAIN</String>
+    </Concept>
+    <Concept Id="MODIFY PRESET">
+      <String Context="Generic_Medium">MODIFY PRESET</String>
+    </Concept>
+    <Concept Id="REFERENCE FRAME">
+      <String Context="Generic_Medium">REFERENCE FRAME</String>
+      <String Context="TS_SButton">REF FRAME</String>
+    </Concept>
+    <Concept Id="GA INVALID">
+      <String Context="Generic_Medium">GA INVALID</String>
+    </Concept>
+    <Concept Id="GA OUT OF RANGE">
+      <String Context="Generic_Medium">GA OUT OF RANGE</String>
+    </Concept>
+    <Concept Id="GROWTH OUT OF RANGE">
+      <String Context="Generic_Medium">GROWTH OUT OF RANGE</String>
+    </Concept>
+    <Concept Id="DISPLAY GRID">
+      <String Context="Generic_Medium">DISPLAY GRID</String>
+    </Concept>
+    <Concept Id="MEDIUM TYPE">
+      <String Context="Generic_Medium">MEDIUM TYPE</String>
+    </Concept>
+    <Concept Id="LAST MODIFICATION">
+      <String Context="Generic_Medium">LAST MODIFICATION</String>
+    </Concept>
+    <Concept Id="CLOSED">
+      <String Context="Generic_Medium">CLOSED</String>
+    </Concept>
+    <Concept Id="OPEN">
+      <String Context="Generic_Medium">OPEN</String>
+    </Concept>
+    <Concept Id="MATERNAL DATA">
+      <String Context="Generic_Medium">MATERNAL DATA</String>
+    </Concept>
+    <Concept Id="CnTI HI CNT">
+      <String Context="Generic_Medium">CnTI HI CNT</String>
+      <String Context="TS_SButton">HI CNT</String>
+    </Concept>
+    <Concept Id="CnTI MACRO C">
+      <String Context="Generic_Medium">CnTI MACRO C</String>
+      <String Context="TS_SButton">MACRO C</String>
+    </Concept>
+    <Concept Id="THICK SLICE IMAGING">
+      <String Context="Generic_Medium">THICK SLICE IMAGING</String>
+      <String Context="TS_SButton">TSI</String>
+    </Concept>
+    <Concept Id="TOMOGRAPHIC IMAGING">
+      <String Context="Generic_Medium">TOMOGRAPHIC IMAGING</String>
+      <String Context="TS_SButton">TMI</String>
+    </Concept>
+    <Concept Id="AMPLIFICATION">
+      <String Context="Generic_Medium">AMPLIFICATION</String>
+      <String Context="TS_SButton">AMPLIF</String>
+    </Concept>
+    <Concept Id="BASIC">
+      <String Context="Generic_Medium">BASIC</String>
+    </Concept>
+    <Concept Id="TRIPLANAR IMAGING VIEW">
+      <String Context="Generic_Medium">TRIPLANAR IMAGING VIEW</String>
+      <String Context="TS_SButton">TPI VIEW</String>
+    </Concept>
+    <Concept Id="CORONARY RESERVE STUDY">
+      <String Context="Generic_Medium">CORONARY RESERVE STUDY</String>
+      <String Context="TS_SButton">CRS</String>
+      <String Context="MD_RT11MeasName">CRS</String>
+    </Concept>
+    <Concept Id="RESET DEMO">
+      <String Context="Generic_Medium">RESET DEMO</String>
+    </Concept>
+    <Concept Id="EDIT PRIMARY">
+      <String Context="Generic_Medium">EDIT PRIMARY</String>
+      <String Context="TS_SButton">EDIT PR</String>
+    </Concept>
+    <Concept Id="VOLUME PALETTE">
+      <String Context="Generic_Medium">VOLUME PALETTE</String>
+    </Concept>
+    <Concept Id="SURFACE PALETTE">
+      <String Context="Generic_Medium">SURFACE PALETTE</String>
+    </Concept>
+    <Concept Id="VOLUME - ADVANCED">
+      <String Context="Generic_Medium">VOLUME - ADVANCED</String>
+    </Concept>
+    <Concept Id="SURFACE - ADVANCED">
+      <String Context="Generic_Medium">SURFACE - ADVANCED</String>
+    </Concept>
+    <Concept Id="B/W - ADVANCED">
+      <String Context="Generic_Medium">B/W - ADVANCED</String>
+    </Concept>
+    <Concept Id="COLOR - ADVANCED">
+      <String Context="Generic_Medium">COLOR - ADVANCED</String>
+    </Concept>
+    <Concept Id="HORIZONTAL">
+      <String Context="Generic_Medium">HORIZONTAL</String>
+      <String Context="TS_SButton">HORIZ</String>
+    </Concept>
+    <Concept Id="VERTICAL">
+      <String Context="Generic_Medium">VERTICAL</String>
+      <String Context="TS_SButton">VERT</String>
+    </Concept>
+    <Concept Id="ANTEROGRADE">
+      <String Context="Generic_Medium">ANTEROGRADE</String>
+    </Concept>
+    <Concept Id="RETROGRADE">
+      <String Context="Generic_Medium">RETROGRADE</String>
+    </Concept>
+    <Concept Id="EDD (LMP)">
+      <String Context="Generic_Medium">EDD (LMP)</String>
+    </Concept>
+    <Concept Id="DGA (EDD WEEK)">
+      <String Context="Generic_Medium">DGA (EDD WEEK)</String>
+    </Concept>
+    <Concept Id="DGA (LMP WEEK)">
+      <String Context="Generic_Medium">DGA (LMP WEEK)</String>
+    </Concept>
+    <Concept Id="DGA (LMP DAY)">
+      <String Context="Generic_Medium">DGA (LMP DAY)</String>
+    </Concept>
+    <Concept Id="DGA (LMP)">
+      <String Context="Generic_Medium">DGA (LMP)</String>
+    </Concept>
+    <Concept Id="FIRST DGA WEEK">
+      <String Context="Generic_Medium">FIRST DGA WEEK</String>
+    </Concept>
+    <Concept Id="FIRST DGA DAY">
+      <String Context="Generic_Medium">FIRST DGA DAY</String>
+    </Concept>
+    <Concept Id="EDD (FDGA)">
+      <String Context="Generic_Medium">EDD (FDGA)</String>
+    </Concept>
+    <Concept Id="DGA (FDGA WEEK)">
+      <String Context="Generic_Medium">DGA (FDGA WEEK)</String>
+    </Concept>
+    <Concept Id="DGA (FDGA DAY)">
+      <String Context="Generic_Medium">DGA (FDGA DAY)</String>
+    </Concept>
+    <Concept Id="DGA (FDGA)">
+      <String Context="Generic_Medium">DGA (FDGA)</String>
+    </Concept>
+    <Concept Id="IP ADDRESS CONFIGURATION">
+      <String Context="Generic_Medium">IP ADDRESS CONFIGURATION</String>
+    </Concept>
+    <Concept Id="RESTORE ARCHIVE">
+      <String Context="Generic_Medium">RESTORE ARCHIVE</String>
+    </Concept>
+    <Concept Id="BACKUP ARCHIVE">
+      <String Context="Generic_Medium">BACKUP ARCHIVE</String>
+    </Concept>
+    <Concept Id="SELECT ALL EXAMS">
+      <String Context="Generic_Medium">SELECT ALL EXAMS</String>
+    </Concept>
+    <Concept Id="PRINT NOW TO DICOM PRINTER">
+      <String Context="Generic_Medium">PRINT NOW TO DICOM PRINTER</String>
+    </Concept>
+    <Concept Id="RESET ADDED IMAGES">
+      <String Context="Generic_Medium">RESET ADDED IMAGES</String>
+    </Concept>
+    <Concept Id="BACKUP PROCEDURE">
+      <String Context="Generic_Medium">BACKUP PROCEDURE</String>
+    </Concept>
+    <Concept Id="RESTORE PROCEDURE">
+      <String Context="Generic_Medium">RESTORE PROCEDURE</String>
+    </Concept>
+    <Concept Id="SOURCE">
+      <String Context="Generic_Medium">SOURCE</String>
+    </Concept>
+    <Concept Id="START">
+      <String Context="Generic_Medium">START</String>
+      <String Context="TS_SButton">START</String>
+    </Concept>
+    <Concept Id="BACKUP IN PROGRESS">
+      <String Context="Generic_Medium">BACKUP IN PROGRESS</String>
+    </Concept>
+    <Concept Id="RESTORE IN PROGRESS">
+      <String Context="Generic_Medium">RESTORE IN PROGRESS</String>
+    </Concept>
+    <Concept Id="SELECTED BACKUP DIRECTORY">
+      <String Context="Generic_Medium">SELECTED BACKUP DIRECTORY</String>
+    </Concept>
+    <Concept Id="SELECTED RESTORE DIRECTORY">
+      <String Context="Generic_Medium">SELECTED RESTORE DIRECTORY</String>
+    </Concept>
+    <Concept Id="MASK">
+      <String Context="Generic_Medium">MASK</String>
+    </Concept>
+    <Concept Id="GATEWAY">
+      <String Context="Generic_Medium">GATEWAY</String>
+    </Concept>
+    <Concept Id="USE THE FOLLOWING IP ADDRESS">
+      <String Context="Generic_Medium">USE THE FOLLOWING IP ADDRESS</String>
+    </Concept>
+    <Concept Id="GET AN IP ADDRESS AUTOMATICALLY">
+      <String Context="Generic_Medium">GET AN IP ADDRESS AUTOMATICALLY</String>
+    </Concept>
+    <Concept Id="INVALID GATEWAY">
+      <String Context="Generic_Medium">INVALID GATEWAY</String>
+    </Concept>
+    <Concept Id="INVALID MASK">
+      <String Context="Generic_Medium">INVALID MASK</String>
+    </Concept>
+    <Concept Id="INVALID IP ADDRESS">
+      <String Context="Generic_Medium">INVALID IP ADDRESS</String>
+    </Concept>
+    <Concept Id="ALL EXAMS">
+      <String Context="Generic_Medium">ALL EXAMS</String>
+    </Concept>
+    <Concept Id="DETAILS OF IP ADDRESS CONFIGURATION RESULT">
+      <String Context="Generic_Medium">DETAILS OF IP ADDRESS CONFIGURATION RESULT</String>
+    </Concept>
+    <Concept Id="OPERATORS">
+      <String Context="Generic_Medium">OPERATORS</String>
+    </Concept>
+    <Concept Id="ONE STAGE MORE">
+      <String Context="Generic_Medium">ONE STAGE MORE</String>
+      <String Context="TS_SButton">1 ST MORE</String>
+      <String Context="MD_RT11MeasName">+1S</String>
+    </Concept>
+    <Concept Id="ONE VIEW MORE">
+      <String Context="Generic_Medium">ONE VIEW MORE</String>
+      <String Context="TS_SButton">1 VW MORE</String>
+      <String Context="MD_RT11MeasName">+1V</String>
+    </Concept>
+    <Concept Id="TRANSTHORACIC">
+      <String Context="Generic_Medium">TRANSTHORACIC</String>
+      <String Context="TS_SButton">TRANSTH</String>
+    </Concept>
+    <Concept Id="TRANSESOPHAGEAL">
+      <String Context="Generic_Medium">TRANSESOPHAGEAL</String>
+      <String Context="TS_SButton">TRANSES</String>
+    </Concept>
+    <Concept Id="ENDOVAGINAL">
+      <String Context="Generic_Medium">ENDOVAGINAL</String>
+      <String Context="TS_SButton">ENDOVAG</String>
+    </Concept>
+    <Concept Id="PREGN FIRST TRIM">
+      <String Context="Generic_Medium">PREGN FIRST TRIM</String>
+      <String Context="TS_SButton">PREG 1TR</String>
+    </Concept>
+    <Concept Id="PREGN SECOND TRIM">
+      <String Context="Generic_Medium">PREGN SECOND TRIM</String>
+      <String Context="TS_SButton">PREG 2TR</String>
+    </Concept>
+    <Concept Id="PREGN THIRD TRIM">
+      <String Context="Generic_Medium">PREGN THIRD TRIM</String>
+      <String Context="TS_SButton">PREG 3TR</String>
+    </Concept>
+    <Concept Id="FETAL HEART">
+      <String Context="Generic_Medium">FETAL HEART</String>
+      <String Context="TS_SButton">FETHEART</String>
+    </Concept>
+    <Concept Id="ENDORECTAL">
+      <String Context="Generic_Medium">ENDORECTAL</String>
+      <String Context="TS_SButton">ENDORECT</String>
+    </Concept>
+    <Concept Id="PERIPHERAL ARTERIES">
+      <String Context="Generic_Medium">PERIPHERAL ARTERIES</String>
+      <String Context="TS_SButton">PER ART</String>
+    </Concept>
+    <Concept Id="PERIPHERAL VEINS">
+      <String Context="Generic_Medium">PERIPHERAL VEINS</String>
+      <String Context="TS_SButton">PER VEI</String>
+    </Concept>
+    <Concept Id="GENERIC 2">
+      <String Context="Generic_Medium">GENERIC 2</String>
+      <String Context="TS_SButton">GENER 2</String>
+    </Concept>
+    <Concept Id="KEYBOARD">
+      <String Context="Generic_Medium">KEYBOARD</String>
+    </Concept>
+    <Concept Id="CONTROL PANEL LIGHT">
+      <String Context="Generic_Medium">CONTROL PANEL LIGHT</String>
+    </Concept>
+    <Concept Id="SOFTKEYS LIGHT">
+      <String Context="Generic_Medium">SOFTKEYS LIGHT</String>
+    </Concept>
+    <Concept Id="LCD CONTRAST">
+      <String Context="Generic_Medium">LCD CONTRAST</String>
+    </Concept>
+    <Concept Id="LCD BACKLIGHT">
+      <String Context="Generic_Medium">LCD BACKLIGHT</String>
+    </Concept>
+    <Concept Id="3D PRESENTATION">
+      <String Context="Generic_Medium">3D PRESENTATION</String>
+    </Concept>
+    <Concept Id="APPLICATIONS">
+      <String Context="Generic_Medium">APPLICATIONS</String>
+    </Concept>
+    <Concept Id="OPTIONS">
+      <String Context="Generic_Medium">OPTIONS</String>
+    </Concept>
+    <Concept Id="GENERAL IMAGING">
+      <String Context="Generic_Medium">GENERAL IMAGING</String>
+    </Concept>
+    <Concept Id="OB-GYN">
+      <String Context="Generic_Medium">OB-GYN</String>
+    </Concept>
+    <Concept Id="STRESS">
+      <String Context="Generic_Medium">STRESS</String>
+    </Concept>
+    <Concept Id="ADVANCED VASCULAR">
+      <String Context="Generic_Medium">ADVANCED VASCULAR</String>
+    </Concept>
+    <Concept Id="MARK">
+      <String Context="Generic_Medium">MARK</String>
+      <String Context="TS_SButton">MARK</String>
+    </Concept>
+    <Concept Id="END REPORT">
+      <String Context="Generic_Medium">END REPORT</String>
+      <String Context="TS_SButton">END REP</String>
+    </Concept>
+    <Concept Id="GRAPH COMPARISON">
+      <String Context="Generic_Medium">GRAPH COMPARISON</String>
+    </Concept>
+    <Concept Id="ADVANCED CARDIAC">
+      <String Context="Generic_Medium">ADVANCED CARDIAC</String>
+    </Concept>
+    <Concept Id="3D-4D">
+      <String Context="Generic_Medium">3D-4D</String>
+    </Concept>
+    <Concept Id="CnTI">
+      <String Context="Generic_Medium">CnTI</String>
+      <String Context="TS_SButton">CnTI</String>
+    </Concept>
+    <Concept Id="VERIFY">
+      <String Context="Generic_Medium">VERIFY</String>
+    </Concept>
+    <Concept Id="DEMO">
+      <String Context="Generic_Medium">DEMO</String>
+    </Concept>
+    <Concept Id="LICENSE NUMBER">
+      <String Context="Generic_Medium">LICENSE NUMBER</String>
+    </Concept>
+    <Concept Id="HARDWARE ID">
+      <String Context="Generic_Medium">HARDWARE ID</String>
+    </Concept>
+    <Concept Id="INPUT SIGNAL">
+      <String Context="Generic_Medium">INPUT SIGNAL</String>
+      <String Context="TS_SButton">IN SIGNAL</String>
+    </Concept>
+    <Concept Id="SYSTEM VERSION">
+      <String Context="Generic_Medium">SYSTEM VERSION</String>
+      <String Context="TS_SButton">SYST VERS</String>
+    </Concept>
+    <Concept Id="MAIN SOFTWARE">
+      <String Context="Generic_Medium">MAIN SOFTWARE</String>
+      <String Context="TS_SButton">MAIN SW</String>
+    </Concept>
+    <Concept Id="PENETRATION - HIGH">
+      <String Context="Generic_Medium">PENETRATION - HIGH</String>
+      <String Context="TS_SButton">PEN - H</String>
+      <String Context="MD_RT11MeasName">PEN-H</String>
+    </Concept>
+    <Concept Id="PENETRATION - MEDIUM">
+      <String Context="Generic_Medium">PENETRATION - MEDIUM</String>
+      <String Context="TS_SButton">PEN - M</String>
+      <String Context="MD_RT11MeasName">PEN-M</String>
+    </Concept>
+    <Concept Id="PENETRATION - LOW">
+      <String Context="Generic_Medium">PENETRATION - LOW</String>
+      <String Context="TS_SButton">PEN - L</String>
+      <String Context="MD_RT11MeasName">PEN-L</String>
+    </Concept>
+    <Concept Id="GENERAL - HIGH">
+      <String Context="Generic_Medium">GENERAL - HIGH</String>
+      <String Context="TS_SButton">GEN - H</String>
+      <String Context="MD_RT11MeasName">GEN-H</String>
+    </Concept>
+    <Concept Id="GENERAL - MEDIUM">
+      <String Context="Generic_Medium">GENERAL - MEDIUM</String>
+      <String Context="TS_SButton">GEN - M</String>
+      <String Context="MD_RT11MeasName">GEN-M</String>
+    </Concept>
+    <Concept Id="GENERAL - LOW">
+      <String Context="Generic_Medium">GENERAL - LOW</String>
+      <String Context="TS_SButton">GEN - L</String>
+      <String Context="MD_RT11MeasName">GEN-L</String>
+    </Concept>
+    <Concept Id="RESOLUTION - HIGH">
+      <String Context="Generic_Medium">RESOLUTION - HIGH</String>
+      <String Context="TS_SButton">RES - H</String>
+      <String Context="MD_RT11MeasName">RES-H</String>
+    </Concept>
+    <Concept Id="RESOLUTION - MEDIUM">
+      <String Context="Generic_Medium">RESOLUTION - MEDIUM</String>
+      <String Context="TS_SButton">RES - M</String>
+      <String Context="MD_RT11MeasName">RES-M</String>
+    </Concept>
+    <Concept Id="RESOLUTION - LOW">
+      <String Context="Generic_Medium">RESOLUTION - LOW</String>
+      <String Context="TS_SButton">RES - L</String>
+      <String Context="MD_RT11MeasName">RES-L</String>
+    </Concept>
+    <Concept Id="PERMANENT">
+      <String Context="Generic_Medium">PERMANENT</String>
+      <String Context="TS_SButton">PERMANENT</String>
+    </Concept>
+    <Concept Id="SCAN ANGLE">
+      <String Context="Generic_Medium">SCAN ANGLE</String>
+      <String Context="TS_SButton">SCAN ANGL</String>
+      <String Context="MD_RT11MeasName">SA</String>
+    </Concept>
+    <Concept Id="ACQUISITION SPEED">
+      <String Context="Generic_Medium">ACQUISITION SPEED</String>
+      <String Context="TS_SButton">ACQ SPEED</String>
+    </Concept>
+    <Concept Id="4D ACQUISITION">
+      <String Context="Generic_Medium">4D ACQUISITION</String>
+      <String Context="TS_SButton">4D ACQ</String>
+    </Concept>
+    <Concept Id="XVIEW">
+      <String Context="Generic_Medium">XVIEW</String>
+      <String Context="TS_SButton">XVIEW</String>
+      <String Context="MD_RT11MeasName">XV</String>
+    </Concept>
+    <Concept Id="ENHANCEMENT">
+      <String Context="Generic_Medium">ENHANCEMENT</String>
+      <String Context="TS_SButton">ENHANC</String>
+    </Concept>
+    <Concept Id="SWAP">
+      <String Context="Generic_Medium">SWAP</String>
+      <String Context="TS_SButton">SWAP</String>
+    </Concept>
+    <Concept Id="CALIPERS">
+      <String Context="Generic_Medium">CALIPERS</String>
+      <String Context="TS_SButton">CALIPERS</String>
+    </Concept>
+    <Concept Id="AXIS">
+      <String Context="Generic_Medium">AXIS</String>
+      <String Context="TS_SButton">AXIS</String>
+    </Concept>
+    <Concept Id="ROTATE">
+      <String Context="Generic_Medium">ROTATE</String>
+      <String Context="TS_SButton">ROTATE</String>
+    </Concept>
+    <Concept Id="SYSTOLIC WINDOW">
+      <String Context="Generic_Medium">SYSTOLIC WINDOW</String>
+      <String Context="TS_SButton">SYST WIND</String>
+    </Concept>
+    <Concept Id="BACKTRACE">
+      <String Context="Generic_Medium">BACKTRACE</String>
+      <String Context="TS_SButton">BACKTR</String>
+    </Concept>
+    <Concept Id="VIRTUAL BIOPSY">
+      <String Context="Generic_Medium">VIRTUAL BIOPSY</String>
+    </Concept>
+    <Concept Id="3D PAN">
+      <String Context="Generic_Medium">3D PAN</String>
+    </Concept>
+    <Concept Id="HD-CFM">
+      <String Context="Generic_Medium">HD-CFM</String>
+      <String Context="TS_SButton">HD-CFM</String>
+    </Concept>
+    <Concept Id="BORDER">
+      <String Context="Generic_Medium">BORDER</String>
+      <String Context="TS_SButton">BORDER</String>
+    </Concept>
+    <Concept Id="APERTURE">
+      <String Context="Generic_Medium">APERTURE</String>
+      <String Context="TS_SButton">APERTURE</String>
+    </Concept>
+    <Concept Id="COMBINE">
+      <String Context="Generic_Medium">COMBINE</String>
+      <String Context="TS_SButton">COMBINE</String>
+    </Concept>
+    <Concept Id="CONFIRM">
+      <String Context="Generic_Medium">CONFIRM</String>
+      <String Context="TS_SButton">CONFIRM</String>
+    </Concept>
+    <Concept Id="GAMMA">
+      <String Context="Generic_Medium">GAMMA</String>
+      <String Context="TS_SButton">GAMMA</String>
+    </Concept>
+    <Concept Id="IMPROVED QUALITY AND COMPRESSION">
+      <String Context="Generic_Medium">IMPROVED QUALITY AND COMPRESSION</String>
+    </Concept>
+    <Concept Id="IMPROVED COMPATIBILITY">
+      <String Context="Generic_Medium">IMPROVED COMPATIBILITY</String>
+    </Concept>
+    <Concept Id="SESSION">
+      <String Context="Generic_Medium">SESSION</String>
+    </Concept>
+    <Concept Id="TIME TO PEAK ANALYSIS">
+      <String Context="Generic_Medium">TIME TO PEAK ANALYSIS</String>
+    </Concept>
+    <Concept Id="NOTES">
+      <String Context="Generic_Medium">NOTES</String>
+    </Concept>
+    <Concept Id="BASAL">
+      <String Context="Generic_Medium">BASAL</String>
+      <String Context="TS_SButton">BASAL</String>
+    </Concept>
+    <Concept Id="MID">
+      <String Context="Generic_Medium">MID</String>
+      <String Context="TS_SButton">MID</String>
+    </Concept>
+    <Concept Id="ANTERIOR SEPTUM">
+      <String Context="Generic_Medium">ANTERIOR SEPTUM</String>
+      <String Context="TS_SButton">ANT SEPT</String>
+    </Concept>
+    <Concept Id="LATERAL">
+      <String Context="Generic_Medium">LATERAL</String>
+      <String Context="TS_SButton">LAT</String>
+    </Concept>
+    <Concept Id="INFERIOR">
+      <String Context="Generic_Medium">INFERIOR</String>
+      <String Context="TS_SButton">INF</String>
+    </Concept>
+    <Concept Id="INFERIOR SEPTUM">
+      <String Context="Generic_Medium">INFERIOR SEPTUM</String>
+      <String Context="TS_SButton">INF SEPT</String>
+    </Concept>
+    <Concept Id="PROJECTION">
+      <String Context="Generic_Medium">PROJECTION</String>
+    </Concept>
+    <Concept Id="TTP ANNOTATIONS">
+      <String Context="Generic_Medium">TTP ANNOTATIONS</String>
+    </Concept>
+    <Concept Id="ALL GRAPHS">
+      <String Context="Generic_Medium">ALL GRAPHS</String>
+    </Concept>
+    <Concept Id="NO GRAPH">
+      <String Context="Generic_Medium">NO GRAPH</String>
+    </Concept>
+    <Concept Id="EFW GRAPHS ONLY">
+      <String Context="Generic_Medium">EFW GRAPHS ONLY</String>
+    </Concept>
+    <Concept Id="OB GRAPHS ONLY">
+      <String Context="Generic_Medium">OB GRAPHS ONLY</String>
+    </Concept>
+    <Concept Id="OB GRAPHS DISPLAY">
+      <String Context="Generic_Medium">OB GRAPHS DISPLAY</String>
+    </Concept>
+    <Concept Id="DERIVED">
+      <String Context="Generic_Medium">DERIVED</String>
+    </Concept>
+    <Concept Id="CUSTOM">
+      <String Context="Generic_Medium">CUSTOM</String>
+      <String Context="TS_SButton">CUSTOM</String>
+    </Concept>
+    <Concept Id="CONCAVITY">
+      <String Context="Generic_Medium">CONCAVITY</String>
+      <String Context="TS_SButton">CONCAV</String>
+    </Concept>
+    <Concept Id="LOCK SYSTEM">
+      <String Context="Generic_Medium">LOCK SYSTEM</String>
+    </Concept>
+    <Concept Id="SIZE - TRAPEZOID">
+      <String Context="Generic_Medium">SIZE - TRAPEZOID</String>
+      <String Context="TS_SButton">SIZE-TP</String>
+    </Concept>
+    <Concept Id="AUTOMATIC STORAGE OF FLASH FIRST FRAME">
+      <String Context="Generic_Medium">AUTOMATIC STORAGE OF FLASH FIRST FRAME</String>
+    </Concept>
+    <Concept Id="LOCK KEYBOARD ON CLIP">
+      <String Context="Generic_Medium">LOCK KEYBOARD ON CLIP</String>
+    </Concept>
+    <Concept Id="VIEW LINE SELECTION">
+      <String Context="Generic_Medium">VIEW LINE SELECTION</String>
+      <String Context="TS_SButton">VIEWL SEL</String>
+    </Concept>
+    <Concept Id="FLASH &amp; FREEZE">
+      <String Context="Generic_Medium">FLASH &amp; FREEZE</String>
+      <String Context="TS_SButton">FLASH&amp;FZ</String>
+    </Concept>
+    <Concept Id="DYNAMIC COMPRESSION">
+      <String Context="Generic_Medium">DYNAMIC COMPRESSION</String>
+      <String Context="TS_SButton">DYN COMPR</String>
+      <String Context="MD_RT11MeasName">C</String>
+    </Concept>
+    <Concept Id="LOCKING TIMEOUT (MINUTES)">
+      <String Context="Generic_Medium">LOCKING TIMEOUT (MINUTES)</String>
+    </Concept>
+    <Concept Id="DECORRELATED CONTRAST TUNED IMAGING">
+      <String Context="Generic_Medium">DECORRELATED CONTRAST TUNED IMAGING</String>
+      <String Context="TS_SButton">DCTI</String>
+      <String Context="MD_RT11MeasName">DCTI</String>
+    </Concept>
+    <Concept Id="OWNER'S NAME">
+      <String Context="Generic_Medium">OWNER'S NAME</String>
+      <String Context="TS_SButton">OWNER</String>
+    </Concept>
+    <Concept Id="ANIMAL'S NAME">
+      <String Context="Generic_Medium">ANIMAL'S NAME</String>
+      <String Context="TS_SButton">ANIMAL</String>
+    </Concept>
+    <Concept Id="SPECIES">
+      <String Context="Generic_Medium">SPECIES</String>
+      <String Context="TS_SButton">SPECIES</String>
+    </Concept>
+    <Concept Id="DELETE PROTOCOL">
+      <String Context="Generic_Medium">DELETE PROTOCOL</String>
+    </Concept>
+    <Concept Id="QIMT ADVANCED">
+      <String Context="Generic_Medium">QIMT ADVANCED</String>
+    </Concept>
+    <Concept Id="XSTRAIN">
+      <String Context="Generic_Medium">XSTRAIN</String>
+      <String Context="TS_SButton">XSTRAIN</String>
+    </Concept>
+    <Concept Id="DELETE TEMPORARY DIRECTORIES">
+      <String Context="Generic_Medium">DELETE TEMPORARY DIRECTORIES</String>
+    </Concept>
+    <Concept Id="SWAP AXIS">
+      <String Context="Generic_Medium">SWAP AXIS</String>
+      <String Context="TS_SButton">SWAP AXIS</String>
+    </Concept>
+    <Concept Id="REFRESH DATA WHEN STARTING AN EXAM">
+      <String Context="Generic_Medium">REFRESH DATA WHEN STARTING AN EXAM</String>
+    </Concept>
+    <Concept Id="LEFT ECG MARKER">
+      <String Context="Generic_Medium">LEFT ECG MARKER</String>
+      <String Context="TS_SButton">L MARK</String>
+    </Concept>
+    <Concept Id="RIGHT ECG MARKER">
+      <String Context="Generic_Medium">RIGHT ECG MARKER</String>
+      <String Context="TS_SButton">R MARK</String>
+    </Concept>
+    <Concept Id="CORONARY HEART DISEASE">
+      <String Context="Generic_Medium">CORONARY HEART DISEASE</String>
+      <String Context="TS_SButton">CHD</String>
+    </Concept>
+    <Concept Id="PREDICTORS">
+      <String Context="Generic_Medium">PREDICTORS</String>
+    </Concept>
+    <Concept Id="CYCLES">
+      <String Context="Generic_Medium">CYCLES</String>
+      <String Context="TS_SButton">CYCLES</String>
+    </Concept>
+    <Concept Id="CPI - LOW">
+      <String Context="Generic_Medium">CPI - LOW</String>
+      <String Context="TS_SButton">CPI - L</String>
+      <String Context="MD_RT11MeasName">CPI-L</String>
+    </Concept>
+    <Concept Id="CPI - MEDIUM">
+      <String Context="Generic_Medium">CPI - MEDIUM</String>
+      <String Context="TS_SButton">CPI - M</String>
+      <String Context="MD_RT11MeasName">CPI-M</String>
+    </Concept>
+    <Concept Id="CPI - HIGH">
+      <String Context="Generic_Medium">CPI - HIGH</String>
+      <String Context="TS_SButton">CPI - H</String>
+      <String Context="MD_RT11MeasName">CPI-H</String>
+    </Concept>
+    <Concept Id="EDIT ID">
+      <String Context="Generic_Medium">EDIT ID</String>
+      <String Context="TS_SButton">EDIT ID</String>
+    </Concept>
+    <Concept Id="ROI WIDTH">
+      <String Context="Generic_Medium">ROI WIDTH</String>
+      <String Context="TS_SButton">ROI WIDTH</String>
+    </Concept>
+    <Concept Id="LASER GUIDANCE">
+      <String Context="Generic_Medium">LASER GUIDANCE</String>
+    </Concept>
+    <Concept Id="NEEDLE">
+      <String Context="Generic_Medium">NEEDLE</String>
+      <String Context="TS_SButton">NEEDLE</String>
+    </Concept>
+    <Concept Id="NEEDLE GUIDE">
+      <String Context="Generic_Medium">NEEDLE GUIDE</String>
+      <String Context="TS_SButton">N GUIDE</String>
+    </Concept>
+    <Concept Id="PERCUTANEOUS LASER ABLATION">
+      <String Context="Generic_Medium">PERCUTANEOUS LASER ABLATION</String>
+    </Concept>
+    <Concept Id=" ALL">
+      <String Context="Generic_Medium"> ALL</String>
+      <String Context="TS_SButton">ALL</String>
+    </Concept>
+    <Concept Id="EXPORT LMP">
+      <String Context="Generic_Medium">EXPORT LMP</String>
+    </Concept>
+    <Concept Id="EXPORT FDGA">
+      <String Context="Generic_Medium">EXPORT FDGA</String>
+    </Concept>
+    <Concept Id="TOOLBAR">
+      <String Context="Generic_Medium">TOOLBAR</String>
+      <String Context="TS_SButton">TOOLBAR</String>
+    </Concept>
+    <Concept Id="SYNCHRO">
+      <String Context="Generic_Medium">SYNCHRO</String>
+      <String Context="TS_SButton">SYNCHRO</String>
+    </Concept>
+    <Concept Id="NO NAME">
+      <String Context="Generic_Medium">NO NAME</String>
+      <String Context="TS_SButton">NO NAME</String>
+    </Concept>
+    <Concept Id="DEFAULT IMAGE PRESENTATION">
+      <String Context="Generic_Medium">DEFAULT IMAGE PRESENTATION</String>
+    </Concept>
+    <Concept Id="MOVE TO FIRST FLASH">
+      <String Context="Generic_Medium">MOVE TO FIRST FLASH</String>
+    </Concept>
+    <Concept Id="CONVEX/LINEAR">
+      <String Context="Generic_Medium">CONVEX/LINEAR</String>
+      <String Context="TS_SButton">CVX/LNR</String>
+    </Concept>
+    <Concept Id="STOP CLIP WHEN FREEZING">
+      <String Context="Generic_Medium">STOP CLIP WHEN FREEZING</String>
+    </Concept>
+    <Concept Id="ARCHIVE VERSION">
+      <String Context="Generic_Medium">ARCHIVE VERSION</String>
+      <String Context="TS_SButton">ARCH VERS</String>
+    </Concept>
+    <Concept Id="ARCHIVE 1">
+      <String Context="Generic_Medium">ARCHIVE 1</String>
+      <String Context="TS_SButton">ARCH 1</String>
+    </Concept>
+    <Concept Id="ARCHIVE 2">
+      <String Context="Generic_Medium">ARCHIVE 2</String>
+      <String Context="TS_SButton">ARCH 2</String>
+    </Concept>
+    <Concept Id="EXPORT DICOM STRUCTURED REPORTS">
+      <String Context="Generic_Medium">EXPORT DICOM STRUCTURED REPORTS</String>
+    </Concept>
+    <Concept Id="EFW FORMULA">
+      <String Context="Generic_Medium">EFW FORMULA</String>
+    </Concept>
+    <Concept Id="ADD TO REPORT">
+      <String Context="Generic_Medium">ADD TO REPORT</String>
+      <String Context="TS_SButton">ADD TO RP</String>
+    </Concept>
+    <Concept Id="WALL MOTION SCORE">
+      <String Context="Generic_Medium">WALL MOTION SCORE</String>
+      <String Context="TS_SButton">WMS</String>
+      <String Context="MD_RT11MeasName">WMS</String>
+    </Concept>
+    <Concept Id="ENDOCARDIUM">
+      <String Context="Generic_Medium">ENDOCARDIUM</String>
+      <String Context="TS_SButton">ENDO</String>
+    </Concept>
+    <Concept Id="X GAIN">
+      <String Context="Generic_Medium">X GAIN</String>
+      <String Context="TS_SButton">X GAIN</String>
+    </Concept>
+    <Concept Id="X SCALE">
+      <String Context="Generic_Medium">X SCALE</String>
+      <String Context="TS_SButton">X SCALE</String>
+    </Concept>
+    <Concept Id="X GAIN + X SCALE">
+      <String Context="Generic_Medium">X GAIN + X SCALE</String>
+      <String Context="TS_SButton">X G+S</String>
+    </Concept>
+    <Concept Id="FIRST FRAME">
+      <String Context="Generic_Medium">FIRST FRAME</String>
+      <String Context="TS_SButton">1ST FRAME</String>
+    </Concept>
+    <Concept Id="SINGLE">
+      <String Context="Generic_Medium">SINGLE</String>
+      <String Context="TS_SButton">SINGLE</String>
+    </Concept>
+    <Concept Id="DESTROY">
+      <String Context="Generic_Medium">DESTROY</String>
+      <String Context="TS_SButton">DESTROY</String>
+    </Concept>
+    <Concept Id="NOISE REDUCTION FILTER">
+      <String Context="Generic_Medium">NOISE REDUCTION FILTER</String>
+      <String Context="TS_SButton">NOISE RED</String>
+    </Concept>
+    <Concept Id="NO ACTION">
+      <String Context="Generic_Medium">NO ACTION</String>
+      <String Context="TS_SButton">NO ACTION</String>
+    </Concept>
+    <Concept Id="USED DISK SPACE">
+      <String Context="Generic_Medium">USED DISK SPACE</String>
+    </Concept>
+    <Concept Id="ABORT">
+      <String Context="Generic_Medium">ABORT</String>
+    </Concept>
+    <Concept Id="MOVE">
+      <String Context="Generic_Medium">MOVE</String>
+      <String Context="TS_SButton">MOVE</String>
+    </Concept>
+    <Concept Id="ATTACH">
+      <String Context="Generic_Medium">ATTACH</String>
+      <String Context="TS_SButton">ATTACH</String>
+    </Concept>
+    <Concept Id="NUMBER OF SELECTED IMAGES">
+      <String Context="Generic_Medium">NUMBER OF SELECTED IMAGES</String>
+    </Concept>
+    <Concept Id="CONTINUE">
+      <String Context="Generic_Medium">CONTINUE</String>
+    </Concept>
+    <Concept Id="OPEN AS READ-ONLY">
+      <String Context="Generic_Medium">OPEN AS READ-ONLY</String>
+    </Concept>
+    <Concept Id="EXTRACT">
+      <String Context="Generic_Medium">EXTRACT</String>
+      <String Context="TS_SButton">EXTRACT</String>
+    </Concept>
+    <Concept Id="NEUTERED">
+      <String Context="Generic_Medium">NEUTERED</String>
+      <String Context="TS_SButton">NEUTERED</String>
+    </Concept>
+    <Concept Id="CANINE">
+      <String Context="Generic_Medium">CANINE</String>
+      <String Context="TS_SButton">CANINE</String>
+    </Concept>
+    <Concept Id="FELINE">
+      <String Context="Generic_Medium">FELINE</String>
+      <String Context="TS_SButton">FELINE</String>
+    </Concept>
+    <Concept Id="EQUINE">
+      <String Context="Generic_Medium">EQUINE</String>
+      <String Context="TS_SButton">EQUINE</String>
+    </Concept>
+    <Concept Id="BOVINE">
+      <String Context="Generic_Medium">BOVINE</String>
+      <String Context="TS_SButton">BOVINE</String>
+    </Concept>
+    <Concept Id="OVINE">
+      <String Context="Generic_Medium">OVINE</String>
+      <String Context="TS_SButton">OVINE</String>
+    </Concept>
+    <Concept Id="CAPRINE">
+      <String Context="Generic_Medium">CAPRINE</String>
+      <String Context="TS_SButton">CAPRINE</String>
+    </Concept>
+    <Concept Id="VETERINARY">
+      <String Context="Generic_Medium">VETERINARY</String>
+      <String Context="TS_SButton">VET</String>
+    </Concept>
+    <Concept Id="QIMT">
+      <String Context="Generic_Medium">QIMT</String>
+      <String Context="TS_SButton">QIMT</String>
+      <String Context="MD_RT11MeasName">QIMT</String>
+    </Concept>
+    <Concept Id="TPVIEW">
+      <String Context="Generic_Medium">TPVIEW</String>
+    </Concept>
+    <Concept Id="AUTOGAIN">
+      <String Context="Generic_Medium">AUTOGAIN</String>
+    </Concept>
+    <Concept Id="AUTOMATIC UNFREEZE ON 3D">
+      <String Context="Generic_Medium">AUTOMATIC UNFREEZE ON 3D</String>
+    </Concept>
+    <Concept Id="QIMT SETTINGS">
+      <String Context="Generic_Medium">QIMT SETTINGS</String>
+    </Concept>
+    <Concept Id="QIMT REFERENCE LINE DISTANCE">
+      <String Context="Generic_Medium">QIMT REFERENCE LINE DISTANCE</String>
+    </Concept>
+    <Concept Id="CONCAVITY UP">
+      <String Context="Generic_Medium">CONCAVITY UP</String>
+      <String Context="TS_SButton">CONCAV ↑</String>
+    </Concept>
+    <Concept Id="CONCAVITY DOWN">
+      <String Context="Generic_Medium">CONCAVITY DOWN</String>
+      <String Context="TS_SButton">CONCAV ↓</String>
+    </Concept>
+    <Concept Id="BACKPLANE UP">
+      <String Context="Generic_Medium">BACKPLANE UP</String>
+      <String Context="TS_SButton">BACKPL ↑</String>
+    </Concept>
+    <Concept Id="BACKPLANE DOWN">
+      <String Context="Generic_Medium">BACKPLANE DOWN</String>
+      <String Context="TS_SButton">BACKPL ↓</String>
+    </Concept>
+    <Concept Id="ADD RIGHT">
+      <String Context="Generic_Medium">ADD RIGHT</String>
+      <String Context="TS_SButton">ADD R</String>
+    </Concept>
+    <Concept Id="ADD LEFT">
+      <String Context="Generic_Medium">ADD LEFT</String>
+      <String Context="TS_SButton">ADD L</String>
+    </Concept>
+    <Concept Id="QIMT TABLE">
+      <String Context="Generic_Medium">QIMT TABLE</String>
+      <String Context="TS_SButton">QIMT TAB</String>
+    </Concept>
+    <Concept Id="EXTREME VOLUME RATE">
+      <String Context="Generic_Medium">EXTREME VOLUME RATE</String>
+      <String Context="TS_SButton">XVR</String>
+      <String Context="MD_RT11MeasName">XVR</String>
+    </Concept>
+    <Concept Id="CONVEX">
+      <String Context="Generic_Medium">CONVEX</String>
+      <String Context="TS_SButton">CONVEX</String>
+      <String Context="MD_RT11MeasName">CON</String>
+    </Concept>
+    <Concept Id="BODYMARKS">
+      <String Context="Generic_Medium">BODYMARKS</String>
+    </Concept>
+    <Concept Id="INTIMA MEDIA THICKNESS">
+      <String Context="Generic_Medium">INTIMA MEDIA THICKNESS</String>
+      <String Context="TS_SButton">IMT</String>
+      <String Context="MD_RT11MeasName">IMT</String>
+    </Concept>
+    <Concept Id="CAROTID IMT">
+      <String Context="Generic_Medium">CAROTID IMT</String>
+      <String Context="TS_SButton">CAROT IMT</String>
+    </Concept>
+    <Concept Id="ENTER">
+      <String Context="Generic_Medium">ENTER</String>
+    </Concept>
+    <Concept Id="UNDO">
+      <String Context="Generic_Medium">UNDO</String>
+    </Concept>
+    <Concept Id="KEYS BEEP DURATION">
+      <String Context="Generic_Medium">KEYS BEEP DURATION</String>
+    </Concept>
+    <Concept Id="PORCINE">
+      <String Context="Generic_Medium">PORCINE</String>
+      <String Context="TS_SButton">PORCINE</String>
+    </Concept>
+    <Concept Id="STANDARD (280 DAYS)">
+      <String Context="Generic_Medium">STANDARD (280 DAYS)</String>
+    </Concept>
+    <Concept Id="FRANCE (290 DAYS)">
+      <String Context="Generic_Medium">FRANCE (290 DAYS)</String>
+    </Concept>
+    <Concept Id="INSIDE CONTOUR">
+      <String Context="Generic_Medium">INSIDE CONTOUR</String>
+      <String Context="TS_SButton">INS CONT</String>
+    </Concept>
+    <Concept Id="OUTSIDE CONTOUR">
+      <String Context="Generic_Medium">OUTSIDE CONTOUR</String>
+      <String Context="TS_SButton">OUTS CONT</String>
+    </Concept>
+    <Concept Id="APPLY">
+      <String Context="Generic_Medium">APPLY</String>
+      <String Context="TS_SButton">APPLY</String>
+    </Concept>
+    <Concept Id="CUTTING DEPTH">
+      <String Context="Generic_Medium">CUTTING DEPTH</String>
+      <String Context="TS_SButton">CUT DEPTH</String>
+    </Concept>
+    <Concept Id="SHADING">
+      <String Context="Generic_Medium">SHADING</String>
+      <String Context="TS_SButton">SHADING</String>
+    </Concept>
+    <Concept Id="UNDO LAST">
+      <String Context="Generic_Medium">UNDO LAST</String>
+      <String Context="TS_SButton">UNDO LAST</String>
+    </Concept>
+    <Concept Id="UNDO ALL">
+      <String Context="Generic_Medium">UNDO ALL</String>
+      <String Context="TS_SButton">UNDO ALL</String>
+    </Concept>
+    <Concept Id="EXPORT SETTINGS">
+      <String Context="Generic_Medium">EXPORT SETTINGS</String>
+    </Concept>
+    <Concept Id="HIFU SUPERFICIAL">
+      <String Context="Generic_Medium">HIFU SUPERFICIAL</String>
+    </Concept>
+    <Concept Id="HIFU MEDIUM DEPTH">
+      <String Context="Generic_Medium">HIFU MEDIUM DEPTH</String>
+    </Concept>
+    <Concept Id="HIFU LOW DEPTH">
+      <String Context="Generic_Medium">HIFU LOW DEPTH</String>
+    </Concept>
+    <Concept Id="HIFU HIGH DEPTH">
+      <String Context="Generic_Medium">HIFU HIGH DEPTH</String>
+    </Concept>
+    <Concept Id="EPICARDIUM">
+      <String Context="Generic_Medium">EPICARDIUM</String>
+      <String Context="TS_SButton">EPI</String>
+    </Concept>
+    <Concept Id="ENDOCARDIUM VELOCITY">
+      <String Context="Generic_Medium">ENDOCARDIUM VELOCITY</String>
+      <String Context="TS_SButton">ENDO VEL</String>
+    </Concept>
+    <Concept Id="ENDOCARDIUM STRAIN">
+      <String Context="Generic_Medium">ENDOCARDIUM STRAIN</String>
+      <String Context="TS_SButton">ENDO STR</String>
+    </Concept>
+    <Concept Id="ENDOCARDIUM DISPLACEMENT">
+      <String Context="Generic_Medium">ENDOCARDIUM DISPLACEMENT</String>
+      <String Context="TS_SButton">ENDO DISP</String>
+    </Concept>
+    <Concept Id="EPICARDIUM VELOCITY">
+      <String Context="Generic_Medium">EPICARDIUM VELOCITY</String>
+      <String Context="TS_SButton">EPI VEL</String>
+    </Concept>
+    <Concept Id="EPICARDIUM STRAIN">
+      <String Context="Generic_Medium">EPICARDIUM STRAIN</String>
+      <String Context="TS_SButton">EPI STR</String>
+    </Concept>
+    <Concept Id="EPICARDIUM DISPLACEMENT">
+      <String Context="Generic_Medium">EPICARDIUM DISPLACEMENT</String>
+      <String Context="TS_SButton">EPI DISP</String>
+    </Concept>
+    <Concept Id="ENDOCARDIUM VIEWPOINT VELOCITY">
+      <String Context="Generic_Medium">ENDOCARDIUM VIEWPOINT VELOCITY</String>
+      <String Context="TS_SButton">ENDO VP</String>
+    </Concept>
+    <Concept Id="EPICARDIUM VIEWPOINT VELOCITY">
+      <String Context="Generic_Medium">EPICARDIUM VIEWPOINT VELOCITY</String>
+      <String Context="TS_SButton">EPI VP</String>
+    </Concept>
+    <Concept Id="RADIAL STRAIN">
+      <String Context="Generic_Medium">RADIAL STRAIN</String>
+      <String Context="TS_SButton">RAD STR</String>
+    </Concept>
+    <Concept Id="SHEAR">
+      <String Context="Generic_Medium">SHEAR</String>
+      <String Context="TS_SButton">SHEAR</String>
+    </Concept>
+    <Concept Id="ENDO ROT VEL">
+      <String Context="Generic_Medium">ENDO ROT VEL</String>
+    </Concept>
+    <Concept Id="ENDO TRANSV VEL">
+      <String Context="Generic_Medium">ENDO TRANSV VEL</String>
+    </Concept>
+    <Concept Id="ENDO RADIAL VEL">
+      <String Context="Generic_Medium">ENDO RADIAL VEL</String>
+    </Concept>
+    <Concept Id="CLEAR SELECTION">
+      <String Context="Generic_Medium">CLEAR SELECTION</String>
+      <String Context="TS_SButton">CLEAR SEL</String>
+    </Concept>
+    <Concept Id="CLEAR TEXT">
+      <String Context="Generic_Medium">CLEAR TEXT</String>
+      <String Context="TS_SButton">CLEAR TXT</String>
+    </Concept>
+    <Concept Id="CLEAR MEASURE">
+      <String Context="Generic_Medium">CLEAR MEASURE</String>
+      <String Context="TS_SButton">CLEAR MSR</String>
+    </Concept>
+    <Concept Id="FAST">
+      <String Context="Generic_Medium">FAST</String>
+      <String Context="TS_SButton">FAST</String>
+    </Concept>
+    <Concept Id="SLOW">
+      <String Context="Generic_Medium">SLOW</String>
+      <String Context="TS_SButton">SLOW</String>
+    </Concept>
+    <Concept Id="FFT RESOLUTION">
+      <String Context="Generic_Medium">FFT RESOLUTION</String>
+      <String Context="TS_SButton">FFT RES</String>
+    </Concept>
+    <Concept Id="PARALLEL">
+      <String Context="Generic_Medium">PARALLEL</String>
+      <String Context="TS_SButton">PARALLEL</String>
+    </Concept>
+    <Concept Id="ONE STAGE LESS">
+      <String Context="Generic_Medium">ONE STAGE LESS</String>
+      <String Context="TS_SButton">1 ST LESS</String>
+      <String Context="MD_RT11MeasName">-1S</String>
+    </Concept>
+    <Concept Id="ONE VIEW LESS">
+      <String Context="Generic_Medium">ONE VIEW LESS</String>
+      <String Context="TS_SButton">1 VW LESS</String>
+      <String Context="MD_RT11MeasName">-1V</String>
+    </Concept>
+    <Concept Id="QUAD OBSERVE">
+      <String Context="Generic_Medium">QUAD OBSERVE</String>
+    </Concept>
+    <Concept Id="ROTATION">
+      <String Context="Generic_Medium">ROTATION</String>
+      <String Context="TS_SButton">ROTAT</String>
+    </Concept>
+    <Concept Id="VOLUME ALGORITHM">
+      <String Context="Generic_Medium">VOLUME ALGORITHM</String>
+      <String Context="TS_SButton">VOL ALGO</String>
+    </Concept>
+    <Concept Id="SURFACE ALGORITHM">
+      <String Context="Generic_Medium">SURFACE ALGORITHM</String>
+      <String Context="TS_SButton">SURF ALGO</String>
+    </Concept>
+    <Concept Id="COLOR ALGORITHM">
+      <String Context="Generic_Medium">COLOR ALGORITHM</String>
+      <String Context="TS_SButton">COL ALGO</String>
+    </Concept>
+    <Concept Id="CUT">
+      <String Context="Generic_Medium">CUT</String>
+    </Concept>
+    <Concept Id="VOLUME SETTINGS">
+      <String Context="Generic_Medium">VOLUME SETTINGS</String>
+    </Concept>
+    <Concept Id="ALGORITHMS">
+      <String Context="Generic_Medium">ALGORITHMS</String>
+    </Concept>
+    <Concept Id="SLICES">
+      <String Context="Generic_Medium">SLICES</String>
+    </Concept>
+    <Concept Id="ADVANCED">
+      <String Context="Generic_Medium">ADVANCED</String>
+    </Concept>
+    <Concept Id="IMAGE PROCESSING">
+      <String Context="Generic_Medium">IMAGE PROCESSING</String>
+    </Concept>
+    <Concept Id="ROTATE X">
+      <String Context="Generic_Medium">ROTATE X</String>
+      <String Context="TS_SButton">ROT X</String>
+    </Concept>
+    <Concept Id="ROTATE Y">
+      <String Context="Generic_Medium">ROTATE Y</String>
+      <String Context="TS_SButton">ROT Y</String>
+    </Concept>
+    <Concept Id="ROTATE Z">
+      <String Context="Generic_Medium">ROTATE Z</String>
+      <String Context="TS_SButton">ROT Z</String>
+    </Concept>
+    <Concept Id="SLICE X">
+      <String Context="Generic_Medium">SLICE X</String>
+      <String Context="TS_SButton">SLICE X</String>
+    </Concept>
+    <Concept Id="SLICE Y">
+      <String Context="Generic_Medium">SLICE Y</String>
+      <String Context="TS_SButton">SLICE Y</String>
+    </Concept>
+    <Concept Id="SLICE Z">
+      <String Context="Generic_Medium">SLICE Z</String>
+      <String Context="TS_SButton">SLICE Z</String>
+    </Concept>
+    <Concept Id="CUT PLANE DEPTH">
+      <String Context="Generic_Medium">CUT PLANE DEPTH</String>
+      <String Context="TS_SButton">CUTPL DEP</String>
+    </Concept>
+    <Concept Id="REF CUT PLANE">
+      <String Context="Generic_Medium">REF CUT PLANE</String>
+      <String Context="TS_SButton">REF CUTPL</String>
+    </Concept>
+    <Concept Id="RENDERING">
+      <String Context="Generic_Medium">RENDERING</String>
+      <String Context="TS_SButton">RENDERING</String>
+    </Concept>
+    <Concept Id="TRIPLANAR">
+      <String Context="Generic_Medium">TRIPLANAR</String>
+      <String Context="TS_SButton">TRIPLANAR</String>
+    </Concept>
+    <Concept Id="FULL SCREEN">
+      <String Context="Generic_Medium">FULL SCREEN</String>
+      <String Context="TS_SButton">FULL SCR</String>
+    </Concept>
+    <Concept Id="3D ACQUISITION">
+      <String Context="Generic_Medium">3D ACQUISITION</String>
+      <String Context="TS_SButton">3D ACQ</String>
+    </Concept>
+    <Concept Id="DEPTH WEIGHT">
+      <String Context="Generic_Medium">DEPTH WEIGHT</String>
+      <String Context="TS_SButton">DEPTH WEI</String>
+    </Concept>
+    <Concept Id="LOW THRESHOLD">
+      <String Context="Generic_Medium">LOW THRESHOLD</String>
+      <String Context="TS_SButton">L THRESH</String>
+    </Concept>
+    <Concept Id="HIGH THRESHOLD">
+      <String Context="Generic_Medium">HIGH THRESHOLD</String>
+      <String Context="TS_SButton">H THRESH</String>
+    </Concept>
+    <Concept Id="TRANSPARENCY">
+      <String Context="Generic_Medium">TRANSPARENCY</String>
+      <String Context="TS_SButton">TRANSP</String>
+    </Concept>
+    <Concept Id="PALETTE">
+      <String Context="Generic_Medium">PALETTE</String>
+      <String Context="TS_SButton">PALETTE</String>
+    </Concept>
+    <Concept Id="FILTERS">
+      <String Context="Generic_Medium">FILTERS</String>
+      <String Context="TS_SButton">FILTERS</String>
+    </Concept>
+    <Concept Id="SPEED">
+      <String Context="Generic_Medium">SPEED</String>
+      <String Context="TS_SButton">SPEED</String>
+    </Concept>
+    <Concept Id="LIGHTING">
+      <String Context="Generic_Medium">LIGHTING</String>
+      <String Context="TS_SButton">LIGHTING</String>
+    </Concept>
+    <Concept Id="SURFACE">
+      <String Context="Generic_Medium">SURFACE</String>
+      <String Context="TS_SButton">SURFACE</String>
+    </Concept>
+    <Concept Id="RENDERING VIEW DIRECTION">
+      <String Context="Generic_Medium">RENDERING VIEW DIRECTION</String>
+    </Concept>
+    <Concept Id="ORTHO PLANES">
+      <String Context="Generic_Medium">ORTHO PLANES</String>
+      <String Context="TS_SButton">ORTHO PL</String>
+    </Concept>
+    <Concept Id="2D SAGITTAL">
+      <String Context="Generic_Medium">2D SAGITTAL</String>
+      <String Context="TS_SButton">2D SAG</String>
+    </Concept>
+    <Concept Id="2D CORONAL">
+      <String Context="Generic_Medium">2D CORONAL</String>
+      <String Context="TS_SButton">2D COR</String>
+    </Concept>
+    <Concept Id="2D TRANSVERSAL">
+      <String Context="Generic_Medium">2D TRANSVERSAL</String>
+      <String Context="TS_SButton">2D TRANSV</String>
+    </Concept>
+    <Concept Id="START PREVIEW">
+      <String Context="Generic_Medium">START PREVIEW</String>
+      <String Context="TS_SButton">STR PREV</String>
+    </Concept>
+    <Concept Id="STOP PREVIEW">
+      <String Context="Generic_Medium">STOP PREVIEW</String>
+      <String Context="TS_SButton">STP PREV</String>
+    </Concept>
+    <Concept Id="ALGORITHM">
+      <String Context="Generic_Medium">ALGORITHM</String>
+      <String Context="TS_SButton">ALGORITHM</String>
+    </Concept>
+    <Concept Id="SCALE FACTOR">
+      <String Context="Generic_Medium">SCALE FACTOR</String>
+      <String Context="TS_SButton">SCALE FAC</String>
+    </Concept>
+    <Concept Id="2D CONTRAST">
+      <String Context="Generic_Medium">2D CONTRAST</String>
+      <String Context="TS_SButton">2D CONTR</String>
+    </Concept>
+    <Concept Id="2D BRIGHTNESS">
+      <String Context="Generic_Medium">2D BRIGHTNESS</String>
+      <String Context="TS_SButton">2D BRIGHT</String>
+    </Concept>
+    <Concept Id="SELECT VIEW">
+      <String Context="Generic_Medium">SELECT VIEW</String>
+      <String Context="TS_SButton">SEL VIEW</String>
+    </Concept>
+    <Concept Id="SLICE POSITION">
+      <String Context="Generic_Medium">SLICE POSITION</String>
+      <String Context="TS_SButton">SLICE POS</String>
+    </Concept>
+    <Concept Id="VIEW PLANE DEPTH">
+      <String Context="Generic_Medium">VIEW PLANE DEPTH</String>
+      <String Context="TS_SButton">VIEW PL D</String>
+    </Concept>
+    <Concept Id="LOCK">
+      <String Context="Generic_Medium">LOCK</String>
+      <String Context="TS_SButton">LOCK</String>
+    </Concept>
+    <Concept Id="MAX IP">
+      <String Context="Generic_Medium">MAX IP</String>
+      <String Context="TS_SButton">MAX IP</String>
+    </Concept>
+    <Concept Id="MID IP">
+      <String Context="Generic_Medium">MID IP</String>
+      <String Context="TS_SButton">MID IP</String>
+    </Concept>
+    <Concept Id="MIN IP">
+      <String Context="Generic_Medium">MIN IP</String>
+      <String Context="TS_SButton">MIN IP</String>
+    </Concept>
+    <Concept Id="GRADIENT">
+      <String Context="Generic_Medium">GRADIENT</String>
+      <String Context="TS_SButton">GRADIENT</String>
+    </Concept>
+    <Concept Id="SEMITRANSPARENT">
+      <String Context="Generic_Medium">SEMITRANSPARENT</String>
+      <String Context="TS_SButton">SEMITR</String>
+    </Concept>
+    <Concept Id="INVERSE SEMITRANSPARENT">
+      <String Context="Generic_Medium">INVERSE SEMITRANSPARENT</String>
+      <String Context="TS_SButton">INV SEMTR</String>
+    </Concept>
+    <Concept Id="COLOR">
+      <String Context="Generic_Medium">COLOR</String>
+      <String Context="TS_SButton">COLOR</String>
+    </Concept>
+    <Concept Id="B/W">
+      <String Context="Generic_Medium">B/W</String>
+      <String Context="TS_SButton">B/W</String>
+    </Concept>
+    <Concept Id="B/W + COLOR">
+      <String Context="Generic_Medium">B/W + COLOR</String>
+      <String Context="TS_SButton">B/W+COLOR</String>
+    </Concept>
+    <Concept Id="MEDIAN3">
+      <String Context="Generic_Medium">MEDIAN3</String>
+      <String Context="TS_SButton">MEDIAN3</String>
+    </Concept>
+    <Concept Id="GAUSSIAN3">
+      <String Context="Generic_Medium">GAUSSIAN3</String>
+      <String Context="TS_SButton">GAUSSIAN3</String>
+    </Concept>
+    <Concept Id="GAUSSIAN5">
+      <String Context="Generic_Medium">GAUSSIAN5</String>
+      <String Context="TS_SButton">GAUSSIAN5</String>
+    </Concept>
+    <Concept Id="MEAN3">
+      <String Context="Generic_Medium">MEAN3</String>
+      <String Context="TS_SButton">MEAN3</String>
+    </Concept>
+    <Concept Id="MEAN5">
+      <String Context="Generic_Medium">MEAN5</String>
+      <String Context="TS_SButton">MEAN5</String>
+    </Concept>
+    <Concept Id="BIG">
+      <String Context="Generic_Medium">BIG</String>
+      <String Context="TS_SButton">BIG</String>
+    </Concept>
+    <Concept Id="ALL">
+      <String Context="Generic_Medium">ALL</String>
+      <String Context="TS_SButton">ALL</String>
+    </Concept>
+    <Concept Id="BEGIN-END/BEGIN-END">
+      <String Context="Generic_Medium">BEGIN-END/BEGIN-END</String>
+      <String Context="TS_SButton">BE/BE</String>
+    </Concept>
+    <Concept Id="BEGIN-END/END-BEGIN">
+      <String Context="Generic_Medium">BEGIN-END/END-BEGIN</String>
+      <String Context="TS_SButton">BE/EB</String>
+    </Concept>
+    <Concept Id="GOLD">
+      <String Context="Generic_Medium">GOLD</String>
+      <String Context="TS_SButton">GOLD</String>
+    </Concept>
+    <Concept Id="SEPIA">
+      <String Context="Generic_Medium">SEPIA</String>
+      <String Context="TS_SButton">SEPIA</String>
+    </Concept>
+    <Concept Id="SEPIA1">
+      <String Context="Generic_Medium">SEPIA1</String>
+      <String Context="TS_SButton">SEPIA1</String>
+    </Concept>
+    <Concept Id="RENDERING MODE">
+      <String Context="Generic_Medium">RENDERING MODE</String>
+    </Concept>
+    <Concept Id="ENABLE CLIP PLANE">
+      <String Context="Generic_Medium">ENABLE CLIP PLANE</String>
+    </Concept>
+    <Concept Id="SURFACE CONTRAST">
+      <String Context="Generic_Medium">SURFACE CONTRAST</String>
+    </Concept>
+    <Concept Id="SURFACE BRIGHTNESS">
+      <String Context="Generic_Medium">SURFACE BRIGHTNESS</String>
+    </Concept>
+    <Concept Id="SURFACE LOW THRESHOLD">
+      <String Context="Generic_Medium">SURFACE LOW THRESHOLD</String>
+    </Concept>
+    <Concept Id="SURFACE HIGH THRESHOLD">
+      <String Context="Generic_Medium">SURFACE HIGH THRESHOLD</String>
+    </Concept>
+    <Concept Id="VOLUME CONTRAST">
+      <String Context="Generic_Medium">VOLUME CONTRAST</String>
+    </Concept>
+    <Concept Id="VOLUME BRIGHTNESS">
+      <String Context="Generic_Medium">VOLUME BRIGHTNESS</String>
+    </Concept>
+    <Concept Id="VOLUME LOW THRESHOLD">
+      <String Context="Generic_Medium">VOLUME LOW THRESHOLD</String>
+    </Concept>
+    <Concept Id="VOLUME HIGH THRESHOLD">
+      <String Context="Generic_Medium">VOLUME HIGH THRESHOLD</String>
+    </Concept>
+    <Concept Id="USER 3D/4D PRESET">
+      <String Context="Generic_Medium">USER 3D/4D PRESET</String>
+    </Concept>
+    <Concept Id="MIXING">
+      <String Context="Generic_Medium">MIXING</String>
+      <String Context="TS_SButton">MIXING</String>
+    </Concept>
+    <Concept Id="MIXING LEVEL">
+      <String Context="Generic_Medium">MIXING LEVEL</String>
+      <String Context="TS_SButton">MIX LEVEL</String>
+    </Concept>
+    <Concept Id="FULL RENDERING">
+      <String Context="Generic_Medium">FULL RENDERING</String>
+    </Concept>
+    <Concept Id="NEXT LEFT ECG MARKER">
+      <String Context="Generic_Medium">NEXT LEFT ECG MARKER</String>
+      <String Context="TS_SButton">L MARK  →</String>
+    </Concept>
+    <Concept Id="PREVIOUS LEFT ECG MARKER">
+      <String Context="Generic_Medium">PREVIOUS LEFT ECG MARKER</String>
+      <String Context="TS_SButton">L MARK ←</String>
+    </Concept>
+    <Concept Id="NEXT RIGHT ECG MARKER">
+      <String Context="Generic_Medium">NEXT RIGHT ECG MARKER</String>
+      <String Context="TS_SButton">R MARK  →</String>
+    </Concept>
+    <Concept Id="PREVIOUS RIGHT ECG MARKER">
+      <String Context="Generic_Medium">PREVIOUS RIGHT ECG MARKER</String>
+      <String Context="TS_SButton">R MARK ←</String>
+    </Concept>
+    <Concept Id="AUTOMATIC PRINTING OF ACQUIRED IMAGES">
+      <String Context="Generic_Medium">AUTOMATIC PRINTING OF ACQUIRED IMAGES</String>
+    </Concept>
+    <Concept Id="CURVE UP">
+      <String Context="Generic_Medium">CURVE UP</String>
+      <String Context="TS_SButton">CURVE ↑</String>
+    </Concept>
+    <Concept Id="CURVE DOWN">
+      <String Context="Generic_Medium">CURVE DOWN</String>
+      <String Context="TS_SButton">CURVE ↓</String>
+    </Concept>
+    <Concept Id="STRETCH SATURATION UP">
+      <String Context="Generic_Medium">STRETCH SATURATION UP</String>
+      <String Context="TS_SButton">STR SAT ↑</String>
+    </Concept>
+    <Concept Id="STRETCH SATURATION DOWN">
+      <String Context="Generic_Medium">STRETCH SATURATION DOWN</String>
+      <String Context="TS_SButton">STR SAT ↓</String>
+    </Concept>
+    <Concept Id="REJECT UP">
+      <String Context="Generic_Medium">REJECT UP</String>
+      <String Context="TS_SButton">REJ ↑</String>
+    </Concept>
+    <Concept Id="REJECT DOWN">
+      <String Context="Generic_Medium">REJECT DOWN</String>
+      <String Context="TS_SButton">REJ ↓</String>
+    </Concept>
+    <Concept Id="Θ REJECT UP">
+      <String Context="Generic_Medium">Θ REJECT UP</String>
+      <String Context="TS_SButton">Θ REJ ↑</String>
+    </Concept>
+    <Concept Id="Θ REJECT DOWN">
+      <String Context="Generic_Medium">Θ REJECT DOWN</String>
+      <String Context="TS_SButton">Θ REJ ↓</String>
+    </Concept>
+    <Concept Id="Θ SATURATION UP">
+      <String Context="Generic_Medium">Θ SATURATION UP</String>
+      <String Context="TS_SButton">Θ SAT ↑</String>
+    </Concept>
+    <Concept Id="Θ SATURATION DOWN">
+      <String Context="Generic_Medium">Θ SATURATION DOWN</String>
+      <String Context="TS_SButton">Θ SAT ↓</String>
+    </Concept>
+    <Concept Id="LOCK PARAMETERS">
+      <String Context="Generic_Medium">LOCK PARAMETERS</String>
+      <String Context="TS_SButton">LOCK</String>
+    </Concept>
+    <Concept Id="STRETCH REJECT UP">
+      <String Context="Generic_Medium">STRETCH REJECT UP</String>
+      <String Context="TS_SButton">STR REJ ↑</String>
+    </Concept>
+    <Concept Id="STRETCH REJECT DOWN">
+      <String Context="Generic_Medium">STRETCH REJECT DOWN</String>
+      <String Context="TS_SButton">STR REJ ↓</String>
+    </Concept>
+    <Concept Id="REPORT LAYOUT">
+      <String Context="Generic_Medium">REPORT LAYOUT</String>
+    </Concept>
+    <Concept Id="SHOW FRAME RATE">
+      <String Context="Generic_Medium">SHOW FRAME RATE</String>
+    </Concept>
+    <Concept Id="SEND REPORT">
+      <String Context="Generic_Medium">SEND REPORT</String>
+      <String Context="TS_SButton">SEND REP</String>
+    </Concept>
+    <Concept Id="UNILATERAL">
+      <String Context="Generic_Medium">UNILATERAL</String>
+    </Concept>
+    <Concept Id="RETRIEVE">
+      <String Context="Generic_Medium">RETRIEVE</String>
+      <String Context="TS_SButton">RETRIEVE</String>
+    </Concept>
+    <Concept Id="FETAL TREND">
+      <String Context="Generic_Medium">FETAL TREND</String>
+      <String Context="TS_SButton">FET TREND</String>
+    </Concept>
+    <Concept Id="DEVICE CAPACITY">
+      <String Context="Generic_Medium">DEVICE CAPACITY</String>
+    </Concept>
+    <Concept Id="MODALITY">
+      <String Context="Generic_Medium">MODALITY</String>
+      <String Context="TS_SButton">MODAL</String>
+    </Concept>
+    <Concept Id="CURVED">
+      <String Context="Generic_Medium">CURVED</String>
+      <String Context="TS_SButton">CURVED</String>
+    </Concept>
+    <Concept Id="FIT TO SCREEN">
+      <String Context="Generic_Medium">FIT TO SCREEN</String>
+      <String Context="TS_SButton">FIT SCR</String>
+    </Concept>
+    <Concept Id="OFFLINE">
+      <String Context="Generic_Medium">OFFLINE</String>
+      <String Context="TS_SButton">OFFLINE</String>
+    </Concept>
+    <Concept Id="CENTERED">
+      <String Context="Generic_Medium">CENTERED</String>
+      <String Context="TS_SButton">CENTER</String>
+    </Concept>
+    <Concept Id="LEFT FOOT">
+      <String Context="Generic_Medium">LEFT FOOT</String>
+    </Concept>
+    <Concept Id="RIGHT FOOT">
+      <String Context="Generic_Medium">RIGHT FOOT</String>
+    </Concept>
+    <Concept Id="B/M OFF">
+      <String Context="Generic_Medium">B/M OFF</String>
+      <String Context="TS_SButton">B/M OFF</String>
+    </Concept>
+    <Concept Id="REFRESH PBI">
+      <String Context="Generic_Medium">REFRESH PBI</String>
+      <String Context="TS_SButton">REFR PBI</String>
+    </Concept>
+    <Concept Id="STATISTICAL">
+      <String Context="Generic_Medium">STATISTICAL</String>
+      <String Context="TS_SButton">STATIST</String>
+    </Concept>
+    <Concept Id="EYE">
+      <String Context="Generic_Medium">EYE</String>
+      <String Context="TS_SButton">EYE</String>
+    </Concept>
+    <Concept Id="TGC - ABS">
+      <String Context="Generic_Medium">TGC - ABS</String>
+      <String Context="TS_SButton">TGC-ABS</String>
+    </Concept>
+    <Concept Id="TGC - REL">
+      <String Context="Generic_Medium">TGC - REL</String>
+      <String Context="TS_SButton">TGC-REL</String>
+    </Concept>
+    <Concept Id="X-GAIN">
+      <String Context="Generic_Medium">X-GAIN</String>
+      <String Context="TS_SButton">X-GAIN</String>
+    </Concept>
+    <Concept Id="OFFSET Y1 UP">
+      <String Context="Generic_Medium">OFFSET Y1 UP</String>
+      <String Context="TS_SButton">OFFS Y1 ↑</String>
+    </Concept>
+    <Concept Id="OFFSET Y1 DOWN">
+      <String Context="Generic_Medium">OFFSET Y1 DOWN</String>
+      <String Context="TS_SButton">OFFS Y1 ↓</String>
+    </Concept>
+    <Concept Id="OFFSET Y2 UP">
+      <String Context="Generic_Medium">OFFSET Y2 UP</String>
+      <String Context="TS_SButton">OFFS Y2 ↑</String>
+    </Concept>
+    <Concept Id="OFFSET Y2 DOWN">
+      <String Context="Generic_Medium">OFFSET Y2 DOWN</String>
+      <String Context="TS_SButton">OFFS Y2 ↓</String>
+    </Concept>
+    <Concept Id="TEI - GENERAL">
+      <String Context="Generic_Medium">TEI - GENERAL</String>
+      <String Context="TS_SButton">GEN</String>
+      <String Context="MD_RT11MeasName">G</String>
+    </Concept>
+    <Concept Id="TEI - FINE">
+      <String Context="Generic_Medium">TEI - FINE</String>
+      <String Context="TS_SButton">FINE</String>
+      <String Context="MD_RT11MeasName">F</String>
+    </Concept>
+    <Concept Id="NETWORK DRIVES CONFIGURATION">
+      <String Context="Generic_Medium">NETWORK DRIVES CONFIGURATION</String>
+    </Concept>
+    <Concept Id="CONNECT DRIVE">
+      <String Context="Generic_Medium">CONNECT DRIVE</String>
+    </Concept>
+    <Concept Id="DISCONNECT DRIVE">
+      <String Context="Generic_Medium">DISCONNECT DRIVE</String>
+    </Concept>
+    <Concept Id="STORAGE">
+      <String Context="Generic_Medium">STORAGE</String>
+    </Concept>
+    <Concept Id="MPPS">
+      <String Context="Generic_Medium">MPPS</String>
+    </Concept>
+    <Concept Id="STORAGE COMMITMENT">
+      <String Context="Generic_Medium">STORAGE COMMITMENT</String>
+      <String Context="TS_SButton">SC</String>
+      <String Context="MD_RT11MeasName">SC</String>
+    </Concept>
+    <Concept Id="IMAGE QUALITY">
+      <String Context="Generic_Medium">IMAGE QUALITY</String>
+    </Concept>
+    <Concept Id="DO NOT EXPORT">
+      <String Context="Generic_Medium">DO NOT EXPORT</String>
+    </Concept>
+    <Concept Id="AUTOMATIC STORAGE OF ACQUIRED IMAGES">
+      <String Context="Generic_Medium">AUTOMATIC STORAGE OF ACQUIRED IMAGES</String>
+    </Concept>
+    <Concept Id="AUTOMATIC STORAGE OF ACQUIRED CLIPS">
+      <String Context="Generic_Medium">AUTOMATIC STORAGE OF ACQUIRED CLIPS</String>
+    </Concept>
+    <Concept Id="MOVE UP">
+      <String Context="Generic_Medium">MOVE UP</String>
+      <String Context="TS_SButton">MOVE ↑</String>
+    </Concept>
+    <Concept Id="MOVE DOWN">
+      <String Context="Generic_Medium">MOVE DOWN</String>
+      <String Context="TS_SButton">MOVE ↓</String>
+    </Concept>
+    <Concept Id="NO ARCHIVE FOUND">
+      <String Context="Generic_Medium">NO ARCHIVE FOUND</String>
+    </Concept>
+    <Concept Id="CD/DVD ARCHIVE">
+      <String Context="Generic_Medium">CD/DVD ARCHIVE</String>
+    </Concept>
+    <Concept Id="USB ARCHIVE">
+      <String Context="Generic_Medium">USB ARCHIVE</String>
+    </Concept>
+    <Concept Id="NETWORK ARCHIVE">
+      <String Context="Generic_Medium">NETWORK ARCHIVE</String>
+    </Concept>
+    <Concept Id="OPERATIONS ON HD">
+      <String Context="Generic_Medium">OPERATIONS ON HD</String>
+    </Concept>
+    <Concept Id="LAYOUT 1X1 (PHOTO)">
+      <String Context="Generic_Medium">LAYOUT 1X1 (PHOTO)</String>
+    </Concept>
+    <Concept Id="DESTINATION DETAILS">
+      <String Context="Generic_Medium">DESTINATION DETAILS</String>
+    </Concept>
+    <Concept Id="CHANGE LAYOUT">
+      <String Context="Generic_Medium">CHANGE LAYOUT</String>
+    </Concept>
+    <Concept Id="REMOVE SOURCE">
+      <String Context="Generic_Medium">REMOVE SOURCE</String>
+    </Concept>
+    <Concept Id="BROWSE">
+      <String Context="Generic_Medium">BROWSE</String>
+    </Concept>
+    <Concept Id="CENTER UP">
+      <String Context="Generic_Medium">CENTER UP</String>
+      <String Context="TS_SButton">CENTER ↑</String>
+    </Concept>
+    <Concept Id="CENTER DOWN">
+      <String Context="Generic_Medium">CENTER DOWN</String>
+      <String Context="TS_SButton">CENTER ↓</String>
+    </Concept>
+    <Concept Id="SLOPE UP">
+      <String Context="Generic_Medium">SLOPE UP</String>
+      <String Context="TS_SButton">SLOPE ↑</String>
+    </Concept>
+    <Concept Id="SLOPE DOWN">
+      <String Context="Generic_Medium">SLOPE DOWN</String>
+      <String Context="TS_SButton">SLOPE ↓</String>
+    </Concept>
+    <Concept Id="PEAK UP">
+      <String Context="Generic_Medium">PEAK UP</String>
+      <String Context="TS_SButton">PEAK ↑</String>
+    </Concept>
+    <Concept Id="PEAK DOWN">
+      <String Context="Generic_Medium">PEAK DOWN</String>
+      <String Context="TS_SButton">PEAK ↓</String>
+    </Concept>
+    <Concept Id="REFERENCE PLANE">
+      <String Context="Generic_Medium">REFERENCE PLANE</String>
+      <String Context="TS_SButton">REF PLANE</String>
+    </Concept>
+    <Concept Id="3D FILTER">
+      <String Context="Generic_Medium">3D FILTER</String>
+      <String Context="TS_SButton">3D FILTER</String>
+    </Concept>
+    <Concept Id="4D ALGORITHM">
+      <String Context="Generic_Medium">4D ALGORITHM</String>
+      <String Context="TS_SButton">4D ALGO</String>
+    </Concept>
+    <Concept Id="IDLE">
+      <String Context="Generic_Medium">IDLE</String>
+      <String Context="TS_SButton">IDLE</String>
+    </Concept>
+    <Concept Id="NAVIGATION">
+      <String Context="Generic_Medium">NAVIGATION</String>
+    </Concept>
+    <Concept Id="CROPPING">
+      <String Context="Generic_Medium">CROPPING</String>
+    </Concept>
+    <Concept Id="CENTER">
+      <String Context="Generic_Medium">CENTER</String>
+      <String Context="TS_SButton">CENTER</String>
+      <String Context="MD_RT11MeasName">C</String>
+    </Concept>
+    <Concept Id="SLOPE">
+      <String Context="Generic_Medium">SLOPE</String>
+      <String Context="TS_SButton">SLOPE</String>
+      <String Context="MD_RT11MeasName">S</String>
+    </Concept>
+    <Concept Id="STRESS IMAGES">
+      <String Context="Generic_Medium">STRESS IMAGES</String>
+      <String Context="TS_SButton">STRESS</String>
+    </Concept>
+    <Concept Id="REST IMAGES">
+      <String Context="Generic_Medium">REST IMAGES</String>
+    </Concept>
+    <Concept Id="HI FU">
+      <String Context="Generic_Medium">HI FU</String>
+      <String Context="TS_SButton">HI FU</String>
+    </Concept>
+    <Concept Id="REGIONAL CURVES ANALYSIS">
+      <String Context="Generic_Medium">REGIONAL CURVES ANALYSIS</String>
+      <String Context="TS_SButton">RCA</String>
+      <String Context="MD_RT11MeasName">RCA</String>
+    </Concept>
+    <Concept Id="CnTI STANDARD">
+      <String Context="Generic_Medium">CnTI STANDARD</String>
+      <String Context="TS_SButton">CnTI STD</String>
+    </Concept>
+    <Concept Id="CnTI GOLD">
+      <String Context="Generic_Medium">CnTI GOLD</String>
+      <String Context="TS_SButton">CnTI GLD</String>
+    </Concept>
+    <Concept Id="GUIDE">
+      <String Context="Generic_Medium">GUIDE</String>
+      <String Context="TS_SButton">GUIDE</String>
+    </Concept>
+    <Concept Id="LINE">
+      <String Context="Generic_Medium">LINE</String>
+      <String Context="TS_SButton">LINE</String>
+    </Concept>
+    <Concept Id="GENERAL 2">
+      <String Context="Generic_Medium">GENERAL 2</String>
+      <String Context="TS_SButton">GENER 2</String>
+    </Concept>
+    <Concept Id="BICYCLE ERGOMETER">
+      <String Context="Generic_Medium">BICYCLE ERGOMETER</String>
+    </Concept>
+    <Concept Id="DIPYRIDAMOLE">
+      <String Context="Generic_Medium">DIPYRIDAMOLE</String>
+    </Concept>
+    <Concept Id="DOBUTAMINE">
+      <String Context="Generic_Medium">DOBUTAMINE</String>
+    </Concept>
+    <Concept Id="STRESS STATE">
+      <String Context="Generic_Medium">STRESS STATE</String>
+    </Concept>
+    <Concept Id="PEAK STRESS STATE">
+      <String Context="Generic_Medium">PEAK STRESS STATE</String>
+    </Concept>
+    <Concept Id="CARDIAC RECOVERY STATE">
+      <String Context="Generic_Medium">CARDIAC RECOVERY STATE</String>
+    </Concept>
+    <Concept Id="BASELINE STATE">
+      <String Context="Generic_Medium">BASELINE STATE</String>
+    </Concept>
+    <Concept Id="DICOM PROTOCOL">
+      <String Context="Generic_Medium">DICOM PROTOCOL</String>
+    </Concept>
+    <Concept Id="MEASURED AUA">
+      <String Context="Generic_Medium">MEASURED AUA</String>
+      <String Context="TS_SButton">MEAS AUA</String>
+    </Concept>
+    <Concept Id="START-UP VISUALIZATION">
+      <String Context="Generic_Medium">START-UP VISUALIZATION</String>
+    </Concept>
+    <Concept Id="TRIPLANAR IMAGING">
+      <String Context="Generic_Medium">TRIPLANAR IMAGING</String>
+      <String Context="TS_SButton">TPI</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN">
+      <String Context="Generic_Medium">TRANSVERSAL STRAIN</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN RATE">
+      <String Context="Generic_Medium">TRANSVERSAL STRAIN RATE</String>
+    </Concept>
+    <Concept Id="CALIBRATION IN PROGRESS">
+      <String Context="Generic_Medium">CALIBRATION IN PROGRESS</String>
+    </Concept>
+    <Concept Id="AUTOMATIC PLAY">
+      <String Context="Generic_Medium">AUTOMATIC PLAY</String>
+    </Concept>
+    <Concept Id="GENERAL CONFIGURATION">
+      <String Context="Generic_Medium">GENERAL CONFIGURATION</String>
+    </Concept>
+    <Concept Id="SYSTEM INFO">
+      <String Context="Generic_Medium">SYSTEM INFO</String>
+    </Concept>
+    <Concept Id="WRITE PRIORITY">
+      <String Context="Generic_Medium">WRITE PRIORITY</String>
+      <String Context="TS_SButton">WR PRIOR</String>
+    </Concept>
+    <Concept Id="VIRTUAL NAVIGATOR - BASIC">
+      <String Context="Generic_Medium">VIRTUAL NAVIGATOR - BASIC</String>
+    </Concept>
+    <Concept Id="VIRTUAL NAVIGATOR - ADVANCED">
+      <String Context="Generic_Medium">VIRTUAL NAVIGATOR - ADVANCED</String>
+    </Concept>
+    <Concept Id="VIRTUAL NAVIGATOR - EXTENDED">
+      <String Context="Generic_Medium">VIRTUAL NAVIGATOR - EXTENDED</String>
+    </Concept>
+    <Concept Id="ABSOLUTE ANGLE">
+      <String Context="Generic_Medium">ABSOLUTE ANGLE</String>
+    </Concept>
+    <Concept Id="NAVIGATOR/RT">
+      <String Context="Generic_Medium">NAVIGATOR/RT</String>
+      <String Context="TS_SButton">NAV/RT</String>
+    </Concept>
+    <Concept Id="DB NAVIGATOR/RT">
+      <String Context="Generic_Medium">DB NAVIGATOR/RT</String>
+      <String Context="TS_SButton">DB NAV/RT</String>
+    </Concept>
+    <Concept Id="RULES">
+      <String Context="Generic_Medium">RULES</String>
+      <String Context="TS_SButton">RULES</String>
+    </Concept>
+    <Concept Id="MONITOR">
+      <String Context="Generic_Medium">MONITOR</String>
+    </Concept>
+    <Concept Id="AVAILABLE">
+      <String Context="Generic_Medium">AVAILABLE</String>
+    </Concept>
+    <Concept Id="NOT COMPATIBLE">
+      <String Context="Generic_Medium">NOT COMPATIBLE</String>
+    </Concept>
+    <Concept Id="DAMAGED">
+      <String Context="Generic_Medium">DAMAGED</String>
+    </Concept>
+    <Concept Id="NOT FOUND">
+      <String Context="Generic_Medium">NOT FOUND</String>
+    </Concept>
+    <Concept Id="ARCHIVE PRESET">
+      <String Context="Generic_Medium">ARCHIVE PRESET</String>
+    </Concept>
+    <Concept Id="ANTERIOR/LATERAL">
+      <String Context="Generic_Medium">ANTERIOR/LATERAL</String>
+      <String Context="TS_SButton">ANT/LAT</String>
+    </Concept>
+    <Concept Id="PAN">
+      <String Context="Generic_Medium">PAN</String>
+      <String Context="TS_SButton">PAN</String>
+    </Concept>
+    <Concept Id="APPLICATION PRESET">
+      <String Context="Generic_Medium">APPLICATION PRESET</String>
+    </Concept>
+    <Concept Id="CFM DISPLAY">
+      <String Context="Generic_Medium">CFM DISPLAY</String>
+    </Concept>
+    <Concept Id="2D-CFM">
+      <String Context="Generic_Medium">2D-CFM</String>
+      <String Context="TS_SButton">2D-CFM</String>
+    </Concept>
+    <Concept Id="WIDER">
+      <String Context="Generic_Medium">WIDER</String>
+    </Concept>
+    <Concept Id="COLOR REPRESENTATION M-MODE">
+      <String Context="Generic_Medium">COLOR REPRESENTATION M-MODE</String>
+      <String Context="TS_SButton">CR MMODE</String>
+      <String Context="MD_RT11MeasName">CRM</String>
+    </Concept>
+    <Concept Id="SEGMENT+POINTS">
+      <String Context="Generic_Medium">SEGMENT+POINTS</String>
+      <String Context="TS_SButton">SEGM+PTS</String>
+    </Concept>
+    <Concept Id="VIEWPOINT">
+      <String Context="Generic_Medium">VIEWPOINT</String>
+      <String Context="TS_SButton">VIEWPOINT</String>
+    </Concept>
+    <Concept Id="KIDNEY">
+      <String Context="Generic_Medium">KIDNEY</String>
+      <String Context="TS_SButton">KIDNEY</String>
+    </Concept>
+    <Concept Id="LIVER">
+      <String Context="Generic_Medium">LIVER</String>
+      <String Context="TS_SButton">LIVER</String>
+    </Concept>
+    <Concept Id="ELBOW">
+      <String Context="Generic_Medium">ELBOW</String>
+      <String Context="TS_SButton">ELBOW</String>
+    </Concept>
+    <Concept Id="FINGER">
+      <String Context="Generic_Medium">FINGER</String>
+      <String Context="TS_SButton">FINGER</String>
+    </Concept>
+    <Concept Id="ANKLE">
+      <String Context="Generic_Medium">ANKLE</String>
+      <String Context="TS_SButton">ANKLE</String>
+    </Concept>
+    <Concept Id="HIP">
+      <String Context="Generic_Medium">HIP</String>
+      <String Context="TS_SButton">HIP</String>
+    </Concept>
+    <Concept Id="ENDO NORM VEL">
+      <String Context="Generic_Medium">ENDO NORM VEL</String>
+    </Concept>
+    <Concept Id="ENDO VP VEL">
+      <String Context="Generic_Medium">ENDO VP VEL</String>
+    </Concept>
+    <Concept Id="ENDO CIRC STRAIN">
+      <String Context="Generic_Medium">ENDO CIRC STRAIN</String>
+    </Concept>
+    <Concept Id="ENDO TRANSV STRAIN">
+      <String Context="Generic_Medium">ENDO TRANSV STRAIN</String>
+    </Concept>
+    <Concept Id="ENDO RADIAL STRAIN">
+      <String Context="Generic_Medium">ENDO RADIAL STRAIN</String>
+    </Concept>
+    <Concept Id="ENDO CIRC STRAIN RATE">
+      <String Context="Generic_Medium">ENDO CIRC STRAIN RATE</String>
+    </Concept>
+    <Concept Id="ENDO TRANSV STRAIN RATE">
+      <String Context="Generic_Medium">ENDO TRANSV STRAIN RATE</String>
+    </Concept>
+    <Concept Id="ENDO RADIAL STRAIN RATE">
+      <String Context="Generic_Medium">ENDO RADIAL STRAIN RATE</String>
+    </Concept>
+    <Concept Id="ENDO ROT DISPL">
+      <String Context="Generic_Medium">ENDO ROT DISPL</String>
+    </Concept>
+    <Concept Id="ENDO TRANSV DISPL">
+      <String Context="Generic_Medium">ENDO TRANSV DISPL</String>
+    </Concept>
+    <Concept Id="ENDO RADIAL DISPL">
+      <String Context="Generic_Medium">ENDO RADIAL DISPL</String>
+    </Concept>
+    <Concept Id="EPI ROT VEL">
+      <String Context="Generic_Medium">EPI ROT VEL</String>
+    </Concept>
+    <Concept Id="EPI TRANSV VEL">
+      <String Context="Generic_Medium">EPI TRANSV VEL</String>
+    </Concept>
+    <Concept Id="EPI RADIAL VEL">
+      <String Context="Generic_Medium">EPI RADIAL VEL</String>
+    </Concept>
+    <Concept Id="EPI CIRC STRAIN">
+      <String Context="Generic_Medium">EPI CIRC STRAIN</String>
+    </Concept>
+    <Concept Id="EPI TRANSV STRAIN">
+      <String Context="Generic_Medium">EPI TRANSV STRAIN</String>
+    </Concept>
+    <Concept Id="EPI RADIAL STRAIN">
+      <String Context="Generic_Medium">EPI RADIAL STRAIN</String>
+    </Concept>
+    <Concept Id="EPI CIRC STRAIN RATE">
+      <String Context="Generic_Medium">EPI CIRC STRAIN RATE</String>
+    </Concept>
+    <Concept Id="EPI TRANSV STRAIN RATE">
+      <String Context="Generic_Medium">EPI TRANSV STRAIN RATE</String>
+    </Concept>
+    <Concept Id="EPI RADIAL STRAIN RATE">
+      <String Context="Generic_Medium">EPI RADIAL STRAIN RATE</String>
+    </Concept>
+    <Concept Id="EPI ROT DISPL">
+      <String Context="Generic_Medium">EPI ROT DISPL</String>
+    </Concept>
+    <Concept Id="EPI TRANSV DISPL">
+      <String Context="Generic_Medium">EPI TRANSV DISPL</String>
+    </Concept>
+    <Concept Id="EPI RADIAL DISPL">
+      <String Context="Generic_Medium">EPI RADIAL DISPL</String>
+    </Concept>
+    <Concept Id="EPI NORM VEL">
+      <String Context="Generic_Medium">EPI NORM VEL</String>
+    </Concept>
+    <Concept Id="EPI VP VEL">
+      <String Context="Generic_Medium">EPI VP VEL</String>
+    </Concept>
+    <Concept Id="RADIAL STRAIN RATE">
+      <String Context="Generic_Medium">RADIAL STRAIN RATE</String>
+    </Concept>
+    <Concept Id="B/W ALGORITHM">
+      <String Context="Generic_Medium">B/W ALGORITHM</String>
+      <String Context="TS_SButton">B/W ALGO</String>
+    </Concept>
+    <Concept Id="LINE NUMBER">
+      <String Context="Generic_Medium">LINE NUMBER</String>
+      <String Context="TS_SButton">LINE NUMB</String>
+    </Concept>
+    <Concept Id="LINE SPACING">
+      <String Context="Generic_Medium">LINE SPACING</String>
+      <String Context="TS_SButton">LINE SPAC</String>
+    </Concept>
+    <Concept Id="AUTOMATIC GAIN">
+      <String Context="Generic_Medium">AUTOMATIC GAIN</String>
+      <String Context="MD_RT11MeasName">AG</String>
+    </Concept>
+    <Concept Id="PLANES DISTANCE">
+      <String Context="Generic_Medium">PLANES DISTANCE</String>
+      <String Context="TS_SButton">PL DIST</String>
+    </Concept>
+    <Concept Id="SHOW LINES">
+      <String Context="Generic_Medium">SHOW LINES</String>
+      <String Context="TS_SButton">SHOW LIN</String>
+    </Concept>
+    <Concept Id="SHOW VOLUMES">
+      <String Context="Generic_Medium">SHOW VOLUMES</String>
+      <String Context="TS_SButton">SHOW VOL</String>
+    </Concept>
+    <Concept Id="PANELS">
+      <String Context="Generic_Medium">PANELS</String>
+      <String Context="TS_SButton">PANELS</String>
+    </Concept>
+    <Concept Id="SKIN TRANSPARENCY">
+      <String Context="Generic_Medium">SKIN TRANSPARENCY</String>
+      <String Context="TS_SButton">SKIN TRSP</String>
+    </Concept>
+    <Concept Id="1x2">
+      <String Context="Generic_Medium">1x2</String>
+      <String Context="TS_SButton">1x2</String>
+    </Concept>
+    <Concept Id="2x2">
+      <String Context="Generic_Medium">2x2</String>
+      <String Context="TS_SButton">2x2</String>
+    </Concept>
+    <Concept Id="3x3">
+      <String Context="Generic_Medium">3x3</String>
+      <String Context="TS_SButton">3x3</String>
+    </Concept>
+    <Concept Id="VOLUME">
+      <String Context="Generic_Medium">VOLUME</String>
+      <String Context="TS_SButton">VOLUME</String>
+    </Concept>
+    <Concept Id="VOLUME+SKIN">
+      <String Context="Generic_Medium">VOLUME+SKIN</String>
+      <String Context="TS_SButton">VOL+SKIN</String>
+    </Concept>
+    <Concept Id="SKIN">
+      <String Context="Generic_Medium">SKIN</String>
+      <String Context="TS_SButton">SKIN</String>
+    </Concept>
+    <Concept Id="COLOR SHADING">
+      <String Context="Generic_Medium">COLOR SHADING</String>
+      <String Context="TS_SButton">COL SHAD</String>
+    </Concept>
+    <Concept Id="MIX COLOR STATE">
+      <String Context="Generic_Medium">MIX COLOR STATE</String>
+    </Concept>
+    <Concept Id="MIX COLOR LEVEL">
+      <String Context="Generic_Medium">MIX COLOR LEVEL</String>
+    </Concept>
+    <Concept Id="COLOR 2D CONTRAST">
+      <String Context="Generic_Medium">COLOR 2D CONTRAST</String>
+    </Concept>
+    <Concept Id="COLOR 2D BRIGHTNESS">
+      <String Context="Generic_Medium">COLOR 2D BRIGHTNESS</String>
+    </Concept>
+    <Concept Id="VOLUME MEASUREMENTS">
+      <String Context="Generic_Medium">VOLUME MEASUREMENTS</String>
+      <String Context="TS_SButton">VOL MEAS</String>
+    </Concept>
+    <Concept Id="APICAL ANTEROSEPTAL">
+      <String Context="Generic_Medium">APICAL ANTEROSEPTAL</String>
+      <String Context="TS_SButton">AP ANTSEP</String>
+    </Concept>
+    <Concept Id="SHEAR RATE">
+      <String Context="Generic_Medium">SHEAR RATE</String>
+    </Concept>
+    <Concept Id="TORSION">
+      <String Context="Generic_Medium">TORSION</String>
+      <String Context="TS_SButton">TORSION</String>
+    </Concept>
+    <Concept Id="PEAK VALUES AND TIME TO PEAK">
+      <String Context="Generic_Medium">PEAK VALUES AND TIME TO PEAK</String>
+    </Concept>
+    <Concept Id="ENDO LONG VEL">
+      <String Context="Generic_Medium">ENDO LONG VEL</String>
+    </Concept>
+    <Concept Id="EPI LONG VEL">
+      <String Context="Generic_Medium">EPI LONG VEL</String>
+    </Concept>
+    <Concept Id="ENDO LONG STRAIN">
+      <String Context="Generic_Medium">ENDO LONG STRAIN</String>
+    </Concept>
+    <Concept Id="EPI LONG STRAIN">
+      <String Context="Generic_Medium">EPI LONG STRAIN</String>
+    </Concept>
+    <Concept Id="ENDO LONG STRAIN RATE">
+      <String Context="Generic_Medium">ENDO LONG STRAIN RATE</String>
+    </Concept>
+    <Concept Id="EPI LONG STRAIN RATE">
+      <String Context="Generic_Medium">EPI LONG STRAIN RATE</String>
+    </Concept>
+    <Concept Id="MEASURE TYPE">
+      <String Context="Generic_Medium">MEASURE TYPE</String>
+      <String Context="TS_SButton">MEAS TYPE</String>
+    </Concept>
+    <Concept Id="SEMIAUTOMATIC">
+      <String Context="Generic_Medium">SEMIAUTOMATIC</String>
+      <String Context="TS_SButton">SEMIAUT</String>
+    </Concept>
+    <Concept Id="MULTIGATE SIZE UP">
+      <String Context="Generic_Medium">MULTIGATE SIZE UP</String>
+      <String Context="TS_SButton">MG SIZE↑</String>
+    </Concept>
+    <Concept Id="MULTIGATE SIZE DOWN">
+      <String Context="Generic_Medium">MULTIGATE SIZE DOWN</String>
+      <String Context="TS_SButton">MG SIZE↓</String>
+    </Concept>
+    <Concept Id="MARKER">
+      <String Context="Generic_Medium">MARKER</String>
+      <String Context="TS_SButton">MARKER</String>
+    </Concept>
+    <Concept Id="OPEN SIZE">
+      <String Context="Generic_Medium">OPEN SIZE</String>
+      <String Context="TS_SButton">OPEN SIZE</String>
+    </Concept>
+    <Concept Id="HALF">
+      <String Context="Generic_Medium">HALF</String>
+      <String Context="TS_SButton">HALF</String>
+    </Concept>
+    <Concept Id="QAS SETTINGS">
+      <String Context="Generic_Medium">QAS SETTINGS</String>
+    </Concept>
+    <Concept Id="ALWAYS REQUEST PRESSURE VALUES">
+      <String Context="Generic_Medium">ALWAYS REQUEST PRESSURE VALUES</String>
+    </Concept>
+    <Concept Id="DIASTOLIC PRESSURE">
+      <String Context="Generic_Medium">DIASTOLIC PRESSURE</String>
+      <String Context="TS_SButton">DIA PRESS</String>
+      <String Context="MD_RT11MeasName">Pdia</String>
+    </Concept>
+    <Concept Id="SYSTOLIC PRESSURE">
+      <String Context="Generic_Medium">SYSTOLIC PRESSURE</String>
+      <String Context="TS_SButton">SYS PRESS</String>
+      <String Context="MD_RT11MeasName">Psys</String>
+    </Concept>
+    <Concept Id="DICOM STAGE">
+      <String Context="Generic_Medium">DICOM STAGE</String>
+    </Concept>
+    <Concept Id="LIGAMENT/TENDON">
+      <String Context="Generic_Medium">LIGAMENT/TENDON</String>
+      <String Context="TS_SButton">LIG/TEND</String>
+    </Concept>
+    <Concept Id="HIGH DEFINITION ZOOM">
+      <String Context="Generic_Medium">HIGH DEFINITION ZOOM</String>
+    </Concept>
+    <Concept Id="ANESTHESIA">
+      <String Context="Generic_Medium">ANESTHESIA</String>
+      <String Context="TS_SButton">ANESTH</String>
+    </Concept>
+    <Concept Id="MULTIGATE">
+      <String Context="Generic_Medium">MULTIGATE</String>
+      <String Context="MD_RT11MeasName">MG</String>
+    </Concept>
+    <Concept Id="VOLUME RENDERING &amp; ANALYSIS">
+      <String Context="Generic_Medium">VOLUME RENDERING &amp; ANALYSIS</String>
+      <String Context="TS_SButton">VRA</String>
+      <String Context="MD_RT11MeasName">VRA</String>
+    </Concept>
+    <Concept Id="VOLUME MIXING">
+      <String Context="Generic_Medium">VOLUME MIXING</String>
+      <String Context="TS_SButton">VOL MIX</String>
+    </Concept>
+    <Concept Id="ENDO LONG DISPL">
+      <String Context="Generic_Medium">ENDO LONG DISPL</String>
+    </Concept>
+    <Concept Id="EPI LONG DISPL">
+      <String Context="Generic_Medium">EPI LONG DISPL</String>
+    </Concept>
+    <Concept Id="GLOBAL TORSION ANALYSIS">
+      <String Context="Generic_Medium">GLOBAL TORSION ANALYSIS</String>
+    </Concept>
+    <Concept Id="ELASTOGRAPHY">
+      <String Context="Generic_Medium">ELASTOGRAPHY</String>
+      <String Context="TS_SButton">ELAXTO</String>
+    </Concept>
+    <Concept Id="DUAL ELASTOGRAPHY">
+      <String Context="Generic_Medium">DUAL ELASTOGRAPHY</String>
+      <String Context="TS_SButton">DUAL ELAX</String>
+    </Concept>
+    <Concept Id="FRAME REJECTION">
+      <String Context="Generic_Medium">FRAME REJECTION</String>
+      <String Context="TS_SButton">FRAME REJ</String>
+    </Concept>
+    <Concept Id="NOISE REJECTION">
+      <String Context="Generic_Medium">NOISE REJECTION</String>
+      <String Context="TS_SButton">NOISE REJ</String>
+    </Concept>
+    <Concept Id="PC MODEL">
+      <String Context="Generic_Medium">PC MODEL</String>
+    </Concept>
+    <Concept Id="EXAM TYPE UPON RETRIEVAL">
+      <String Context="Generic_Medium">EXAM TYPE UPON RETRIEVAL</String>
+    </Concept>
+    <Concept Id="CUSTOM 1">
+      <String Context="Generic_Medium">CUSTOM 1</String>
+      <String Context="TS_SButton">C1</String>
+    </Concept>
+    <Concept Id="CUSTOM 2">
+      <String Context="Generic_Medium">CUSTOM 2</String>
+      <String Context="TS_SButton">C2</String>
+    </Concept>
+    <Concept Id="CUSTOM 3">
+      <String Context="Generic_Medium">CUSTOM 3</String>
+      <String Context="TS_SButton">C3</String>
+    </Concept>
+    <Concept Id="VOL+VRA">
+      <String Context="Generic_Medium">VOL+VRA</String>
+      <String Context="TS_SButton">VOL+VRA</String>
+    </Concept>
+    <Concept Id="VRA PARAMETERS">
+      <String Context="Generic_Medium">VRA PARAMETERS</String>
+      <String Context="TS_SButton">VRA PAR</String>
+    </Concept>
+    <Concept Id="VOLUME TRANSPARENCY">
+      <String Context="Generic_Medium">VOLUME TRANSPARENCY</String>
+      <String Context="TS_SButton">VOL TRSP</String>
+    </Concept>
+    <Concept Id="4D ZOOM">
+      <String Context="Generic_Medium">4D ZOOM</String>
+    </Concept>
+    <Concept Id="XML">
+      <String Context="Generic_Medium">XML</String>
+    </Concept>
+    <Concept Id="HTML">
+      <String Context="Generic_Medium">HTML</String>
+    </Concept>
+    <Concept Id="LEG">
+      <String Context="Generic_Medium">LEG</String>
+      <String Context="TS_SButton">LEG</String>
+    </Concept>
+    <Concept Id="AIDED HEART SEGMENTATION">
+      <String Context="Generic_Medium">AIDED HEART SEGMENTATION</String>
+      <String Context="TS_SButton">AHS</String>
+    </Concept>
+    <Concept Id="VIOLET">
+      <String Context="Generic_Medium">VIOLET</String>
+      <String Context="TS_SButton">VIOLET</String>
+    </Concept>
+    <Concept Id="CPU">
+      <String Context="Generic_Medium">CPU</String>
+      <String Context="TS_SButton">CPU</String>
+    </Concept>
+    <Concept Id="UNITS">
+      <String Context="Generic_Medium">UNITS</String>
+      <String Context="TS_SButton">UNITS</String>
+    </Concept>
+    <Concept Id="DIRECTION">
+      <String Context="Generic_Medium">DIRECTION</String>
+      <String Context="TS_SButton">DIR</String>
+    </Concept>
+    <Concept Id="QUALITY DOPPLER PROFILES">
+      <String Context="Generic_Medium">QUALITY DOPPLER PROFILES</String>
+      <String Context="TS_SButton">QDP</String>
+      <String Context="MD_RT11MeasName">QDP</String>
+    </Concept>
+    <Concept Id="ECG MENU">
+      <String Context="Generic_Medium">ECG MENU</String>
+      <String Context="TS_SButton">ECG MENU</String>
+    </Concept>
+    <Concept Id="SWAP CALIPERS">
+      <String Context="Generic_Medium">SWAP CALIPERS</String>
+      <String Context="TS_SButton">SWAP CAL</String>
+    </Concept>
+    <Concept Id="RESTORE">
+      <String Context="Generic_Medium">RESTORE</String>
+      <String Context="TS_SButton">RESTORE</String>
+    </Concept>
+    <Concept Id="ROI PLACEMENT">
+      <String Context="Generic_Medium">ROI PLACEMENT</String>
+      <String Context="TS_SButton">ROI PLAC</String>
+    </Concept>
+    <Concept Id="ROI DIMENSION">
+      <String Context="Generic_Medium">ROI DIMENSION</String>
+      <String Context="TS_SButton">ROI DIM</String>
+    </Concept>
+    <Concept Id="PLANES">
+      <String Context="Generic_Medium">PLANES</String>
+      <String Context="TS_SButton">PLANES</String>
+    </Concept>
+    <Concept Id="STEP ANGLE">
+      <String Context="Generic_Medium">STEP ANGLE</String>
+      <String Context="TS_SButton">STEP (°)</String>
+    </Concept>
+    <Concept Id="INVERTED">
+      <String Context="Generic_Medium">INVERTED</String>
+      <String Context="TS_SButton">INVERTED</String>
+    </Concept>
+    <Concept Id="ECG">
+      <String Context="Generic_Medium">ECG</String>
+      <String Context="TS_SButton">ECG</String>
+    </Concept>
+    <Concept Id="YYYY/MM/DD">
+      <String Context="Generic_Medium">YYYY/MM/DD</String>
+    </Concept>
+    <Concept Id="NEXT B-STEER">
+      <String Context="Generic_Medium">NEXT B-STEER</String>
+      <String Context="TS_SButton">B-STEER →</String>
+    </Concept>
+    <Concept Id="PREVIOUS B-STEER">
+      <String Context="Generic_Medium">PREVIOUS B-STEER</String>
+      <String Context="TS_SButton">B-STEER ←</String>
+    </Concept>
+    <Concept Id="NEXT D-STEER">
+      <String Context="Generic_Medium">NEXT D-STEER</String>
+      <String Context="TS_SButton">D-STEER →</String>
+    </Concept>
+    <Concept Id="PREVIOUS D-STEER">
+      <String Context="Generic_Medium">PREVIOUS D-STEER</String>
+      <String Context="TS_SButton">D-STEER ←</String>
+    </Concept>
+    <Concept Id="NEXT CONTRAST">
+      <String Context="Generic_Medium">NEXT CONTRAST</String>
+      <String Context="TS_SButton">CONTR →</String>
+    </Concept>
+    <Concept Id="PREVIOUS CONTRAST">
+      <String Context="Generic_Medium">PREVIOUS CONTRAST</String>
+      <String Context="TS_SButton">CONTR ←</String>
+    </Concept>
+    <Concept Id="NEXT GAIN">
+      <String Context="Generic_Medium">NEXT GAIN</String>
+      <String Context="TS_SButton">GAIN →</String>
+    </Concept>
+    <Concept Id="PREVIOUS GAIN">
+      <String Context="Generic_Medium">PREVIOUS GAIN</String>
+      <String Context="TS_SButton">GAIN ←</String>
+    </Concept>
+    <Concept Id="NEXT SWEEP">
+      <String Context="Generic_Medium">NEXT SWEEP</String>
+      <String Context="TS_SButton">SWEEP →</String>
+    </Concept>
+    <Concept Id="PREVIOUS SWEEP">
+      <String Context="Generic_Medium">PREVIOUS SWEEP</String>
+      <String Context="TS_SButton">SWEEP ←</String>
+    </Concept>
+    <Concept Id="TIME (HH:MM:SS)">
+      <String Context="Generic_Medium">TIME (HH:MM:SS)</String>
+    </Concept>
+    <Concept Id="PLEX STATUS">
+      <String Context="Generic_Medium">PLEX STATUS</String>
+    </Concept>
+    <Concept Id="DISABLE LICENSES">
+      <String Context="Generic_Medium">DISABLE LICENSES</String>
+    </Concept>
+    <Concept Id="ENABLE/DISABLE DEMO LICENSES">
+      <String Context="Generic_Medium">ENABLE/DISABLE DEMO LICENSES</String>
+    </Concept>
+    <Concept Id="SAVE/LOAD PRESETS &amp; SETTINGS">
+      <String Context="Generic_Medium">SAVE/LOAD PRESETS &amp; SETTINGS</String>
+    </Concept>
+    <Concept Id="SAVE PRESETS &amp; SETTINGS">
+      <String Context="Generic_Medium">SAVE PRESETS &amp; SETTINGS</String>
+    </Concept>
+    <Concept Id="LOAD PRESETS &amp; SETTINGS">
+      <String Context="Generic_Medium">LOAD PRESETS &amp; SETTINGS</String>
+    </Concept>
+    <Concept Id="SAVE CONFIGURATION">
+      <String Context="Generic_Medium">SAVE CONFIGURATION</String>
+    </Concept>
+    <Concept Id="LOAD CONFIGURATION">
+      <String Context="Generic_Medium">LOAD CONFIGURATION</String>
+    </Concept>
+    <Concept Id="SYSTEM LICENSES">
+      <String Context="Generic_Medium">SYSTEM LICENSES</String>
+    </Concept>
+    <Concept Id="PW FILTER (Hz)">
+      <String Context="Generic_Medium">PW FILTER (Hz)</String>
+    </Concept>
+    <Concept Id="CW FILTER (Hz)">
+      <String Context="Generic_Medium">CW FILTER (Hz)</String>
+    </Concept>
+    <Concept Id="SAMPLE VOLUME (mm)">
+      <String Context="Generic_Medium">SAMPLE VOLUME (mm)</String>
+      <String Context="TS_SButton">SV (mm)</String>
+      <String Context="MD_RT11MeasName">SV (mm)</String>
+    </Concept>
+    <Concept Id="PW VELOCITY">
+      <String Context="Generic_Medium">PW VELOCITY</String>
+    </Concept>
+    <Concept Id="CW VELOCITY">
+      <String Context="Generic_Medium">CW VELOCITY</String>
+    </Concept>
+    <Concept Id="HOURS">
+      <String Context="Generic_Medium">HOURS</String>
+      <String Context="MD_RT11MeasName">H</String>
+    </Concept>
+    <Concept Id="UPWARDS">
+      <String Context="Generic_Medium">UPWARDS</String>
+      <String Context="TS_SButton">UPWARDS</String>
+    </Concept>
+    <Concept Id="DOWNWARDS">
+      <String Context="Generic_Medium">DOWNWARDS</String>
+      <String Context="TS_SButton">DOWNWARDS</String>
+    </Concept>
+    <Concept Id="NEXT VIEW PLANE">
+      <String Context="Generic_Medium">NEXT VIEW PLANE</String>
+      <String Context="TS_SButton">VIEW PL →</String>
+    </Concept>
+    <Concept Id="PREVIOUS VIEW PLANE">
+      <String Context="Generic_Medium">PREVIOUS VIEW PLANE</String>
+      <String Context="TS_SButton">VIEW PL ←</String>
+    </Concept>
+    <Concept Id="SCROLL VOLUMES">
+      <String Context="Generic_Medium">SCROLL VOLUMES</String>
+      <String Context="TS_SButton">SCR VOL</String>
+    </Concept>
+    <Concept Id="USER NAME">
+      <String Context="Generic_Medium">USER NAME</String>
+    </Concept>
+    <Concept Id="OLD PASSWORD">
+      <String Context="Generic_Medium">OLD PASSWORD</String>
+    </Concept>
+    <Concept Id="NEW PASSWORD">
+      <String Context="Generic_Medium">NEW PASSWORD</String>
+    </Concept>
+    <Concept Id="CONFIRM NEW PASSWORD">
+      <String Context="Generic_Medium">CONFIRM NEW PASSWORD</String>
+    </Concept>
+    <Concept Id="EMERGENCY">
+      <String Context="Generic_Medium">EMERGENCY</String>
+    </Concept>
+    <Concept Id="LOG OFF">
+      <String Context="Generic_Medium">LOG OFF</String>
+    </Concept>
+    <Concept Id="SECURITY">
+      <String Context="Generic_Medium">SECURITY</String>
+    </Concept>
+    <Concept Id="CHANGE PASSWORD">
+      <String Context="Generic_Medium">CHANGE PASSWORD</String>
+    </Concept>
+    <Concept Id="APICAL LAX">
+      <String Context="Generic_Medium">APICAL LAX</String>
+      <String Context="TS_SButton">ALAX</String>
+      <String Context="MD_RT11MeasName">ALAX</String>
+    </Concept>
+    <Concept Id="STRAIN">
+      <String Context="Generic_Medium">STRAIN</String>
+      <String Context="TS_SButton">STRAIN</String>
+    </Concept>
+    <Concept Id="REGIONAL STRAIN">
+      <String Context="Generic_Medium">REGIONAL STRAIN</String>
+      <String Context="TS_SButton">REGIONAL</String>
+    </Concept>
+    <Concept Id="STRAIN RATE">
+      <String Context="Generic_Medium">STRAIN RATE</String>
+      <String Context="TS_SButton">STR RT</String>
+    </Concept>
+    <Concept Id="FRAME">
+      <String Context="Generic_Medium">FRAME</String>
+      <String Context="TS_SButton">FRAME</String>
+    </Concept>
+    <Concept Id="PROCESS">
+      <String Context="Generic_Medium">PROCESS</String>
+      <String Context="TS_SButton">PROCESS</String>
+    </Concept>
+    <Concept Id="NEW TRACE">
+      <String Context="Generic_Medium">NEW TRACE</String>
+      <String Context="TS_SButton">NEW TRACE</String>
+    </Concept>
+    <Concept Id="APICAL">
+      <String Context="Generic_Medium">APICAL</String>
+      <String Context="TS_SButton">APICAL</String>
+    </Concept>
+    <Concept Id="TRACK">
+      <String Context="Generic_Medium">TRACK</String>
+    </Concept>
+    <Concept Id="POINTS">
+      <String Context="Generic_Medium">POINTS</String>
+    </Concept>
+    <Concept Id="SEGMENTS">
+      <String Context="Generic_Medium">SEGMENTS</String>
+      <String Context="TS_SButton">SEGMENTS</String>
+    </Concept>
+    <Concept Id="VECTORS">
+      <String Context="Generic_Medium">VECTORS</String>
+      <String Context="TS_SButton">VECTORS</String>
+    </Concept>
+    <Concept Id="RESAMPLE">
+      <String Context="Generic_Medium">RESAMPLE</String>
+      <String Context="TS_SButton">RESAMPLE</String>
+    </Concept>
+    <Concept Id="WINDOW">
+      <String Context="Generic_Medium">WINDOW</String>
+      <String Context="TS_SButton">WINDOW</String>
+    </Concept>
+    <Concept Id="INCLUDE LOGO">
+      <String Context="Generic_Medium">INCLUDE LOGO</String>
+    </Concept>
+    <Concept Id="VERSION">
+      <String Context="Generic_Medium">VERSION</String>
+    </Concept>
+    <Concept Id="WORKLIST QUERY">
+      <String Context="Generic_Medium">WORKLIST QUERY</String>
+    </Concept>
+    <Concept Id="SHOW QUERY PARAMETERS">
+      <String Context="Generic_Medium">SHOW QUERY PARAMETERS</String>
+    </Concept>
+    <Concept Id="SELECT EXAM">
+      <String Context="Generic_Medium">SELECT EXAM</String>
+    </Concept>
+    <Concept Id="PERFORM PROCEDURE AS REQUESTED">
+      <String Context="Generic_Medium">PERFORM PROCEDURE AS REQUESTED</String>
+    </Concept>
+    <Concept Id="AUTOMATIC QUERY">
+      <String Context="Generic_Medium">AUTOMATIC QUERY</String>
+    </Concept>
+    <Concept Id="ASSOCIATION ERROR">
+      <String Context="Generic_Medium">ASSOCIATION ERROR</String>
+    </Concept>
+    <Concept Id="TRANSMISSION ERROR">
+      <String Context="Generic_Medium">TRANSMISSION ERROR</String>
+    </Concept>
+    <Concept Id="UNUSABLE RECORDS">
+      <String Context="Generic_Medium">UNUSABLE RECORDS</String>
+    </Concept>
+    <Concept Id="START DATE">
+      <String Context="Generic_Medium">START DATE</String>
+    </Concept>
+    <Concept Id="EXAM ID">
+      <String Context="Generic_Medium">EXAM ID</String>
+    </Concept>
+    <Concept Id="QUERY PARAMETERS">
+      <String Context="Generic_Medium">QUERY PARAMETERS</String>
+    </Concept>
+    <Concept Id="ALL UNITS">
+      <String Context="Generic_Medium">ALL UNITS</String>
+    </Concept>
+    <Concept Id="THIS UNIT">
+      <String Context="Generic_Medium">THIS UNIT</String>
+    </Concept>
+    <Concept Id="SPECIFIC UNIT (AE TITLE)">
+      <String Context="Generic_Medium">SPECIFIC UNIT (AE TITLE)</String>
+    </Concept>
+    <Concept Id="ID OF REQUESTED PROCEDURE">
+      <String Context="Generic_Medium">ID OF REQUESTED PROCEDURE</String>
+      <String Context="TS_SButton">ID REQ PR</String>
+    </Concept>
+    <Concept Id="DATE RANGE">
+      <String Context="Generic_Medium">DATE RANGE</String>
+    </Concept>
+    <Concept Id="QUERY IN PROGRESS">
+      <String Context="Generic_Medium">QUERY IN PROGRESS</String>
+    </Concept>
+    <Concept Id="SHOW STORAGE COMMITMENT SUMMARY">
+      <String Context="Generic_Medium">SHOW STORAGE COMMITMENT SUMMARY</String>
+    </Concept>
+    <Concept Id="STORAGE COMMITMENT SUMMARY">
+      <String Context="Generic_Medium">STORAGE COMMITMENT SUMMARY</String>
+    </Concept>
+    <Concept Id="COPY MYLAB DESK SETUP">
+      <String Context="Generic_Medium">COPY MYLAB DESK SETUP</String>
+    </Concept>
+    <Concept Id="INACTIVITY TIME DISABLING LOGIN (DAYS)">
+      <String Context="Generic_Medium">INACTIVITY TIME DISABLING LOGIN (DAYS)</String>
+    </Concept>
+    <Concept Id="PASSWORD EXPIRATION (DAYS)">
+      <String Context="Generic_Medium">PASSWORD EXPIRATION (DAYS)</String>
+    </Concept>
+    <Concept Id="PASSWORD MINIMUM LENGTH">
+      <String Context="Generic_Medium">PASSWORD MINIMUM LENGTH</String>
+    </Concept>
+    <Concept Id="NUMBER OF STORED PASSWORDS">
+      <String Context="Generic_Medium">NUMBER OF STORED PASSWORDS</String>
+    </Concept>
+    <Concept Id="IMPORT FROM USB">
+      <String Context="Generic_Medium">IMPORT FROM USB</String>
+      <String Context="TS_SButton">USB IMP</String>
+    </Concept>
+    <Concept Id="EXPORT TO USB">
+      <String Context="Generic_Medium">EXPORT TO USB</String>
+      <String Context="TS_SButton">USB EXP</String>
+    </Concept>
+    <Concept Id="DISABLE ACCESS CONTROL">
+      <String Context="Generic_Medium">DISABLE ACCESS CONTROL</String>
+    </Concept>
+    <Concept Id="ASSIGN PASSWORD">
+      <String Context="Generic_Medium">ASSIGN PASSWORD</String>
+    </Concept>
+    <Concept Id="ADMINISTRATOR">
+      <String Context="Generic_Medium">ADMINISTRATOR</String>
+    </Concept>
+    <Concept Id="CHANGE PASSWORD AT NEXT LOGON">
+      <String Context="Generic_Medium">CHANGE PASSWORD AT NEXT LOGON</String>
+    </Concept>
+    <Concept Id="USERS">
+      <String Context="Generic_Medium">USERS</String>
+    </Concept>
+    <Concept Id="FULL NAME">
+      <String Context="Generic_Medium">FULL NAME</String>
+    </Concept>
+    <Concept Id="3D STRAIN">
+      <String Context="Generic_Medium">3D STRAIN</String>
+      <String Context="TS_SButton">3D STR</String>
+    </Concept>
+    <Concept Id="3D STRAIN RATE">
+      <String Context="Generic_Medium">3D STRAIN RATE</String>
+      <String Context="TS_SButton">3D STR RT</String>
+    </Concept>
+    <Concept Id="3D VELOCITY">
+      <String Context="Generic_Medium">3D VELOCITY</String>
+      <String Context="TS_SButton">3D VEL</String>
+    </Concept>
+    <Concept Id="BASAL ANTERIOR">
+      <String Context="Generic_Medium">BASAL ANTERIOR</String>
+      <String Context="TS_SButton">BAS ANT</String>
+    </Concept>
+    <Concept Id="BASAL ANTEROSEPTAL">
+      <String Context="Generic_Medium">BASAL ANTEROSEPTAL</String>
+      <String Context="TS_SButton">BASANTSEP</String>
+    </Concept>
+    <Concept Id="BASAL SEPTAL">
+      <String Context="Generic_Medium">BASAL SEPTAL</String>
+      <String Context="TS_SButton">BAS SEP</String>
+    </Concept>
+    <Concept Id="BASAL INFERIOR">
+      <String Context="Generic_Medium">BASAL INFERIOR</String>
+      <String Context="TS_SButton">BAS INF</String>
+    </Concept>
+    <Concept Id="BASAL POSTERIOR">
+      <String Context="Generic_Medium">BASAL POSTERIOR</String>
+      <String Context="TS_SButton">BAS POST</String>
+    </Concept>
+    <Concept Id="BASAL LATERAL">
+      <String Context="Generic_Medium">BASAL LATERAL</String>
+      <String Context="TS_SButton">BAS LAT</String>
+    </Concept>
+    <Concept Id="MIDDLE ANTERIOR">
+      <String Context="Generic_Medium">MIDDLE ANTERIOR</String>
+      <String Context="TS_SButton">MID ANT</String>
+    </Concept>
+    <Concept Id="MIDDLE ANTEROSEPTAL">
+      <String Context="Generic_Medium">MIDDLE ANTEROSEPTAL</String>
+      <String Context="TS_SButton">MIDANTSEP</String>
+    </Concept>
+    <Concept Id="MIDDLE SEPTAL">
+      <String Context="Generic_Medium">MIDDLE SEPTAL</String>
+      <String Context="TS_SButton">MID SEP</String>
+    </Concept>
+    <Concept Id="MIDDLE INFERIOR">
+      <String Context="Generic_Medium">MIDDLE INFERIOR</String>
+      <String Context="TS_SButton">MID INF</String>
+    </Concept>
+    <Concept Id="MIDDLE POSTERIOR">
+      <String Context="Generic_Medium">MIDDLE POSTERIOR</String>
+      <String Context="TS_SButton">MID POST</String>
+    </Concept>
+    <Concept Id="MIDDLE LATERAL">
+      <String Context="Generic_Medium">MIDDLE LATERAL</String>
+      <String Context="TS_SButton">MID LAT</String>
+    </Concept>
+    <Concept Id="APICAL ANTERIOR">
+      <String Context="Generic_Medium">APICAL ANTERIOR</String>
+      <String Context="TS_SButton">APIC ANT</String>
+    </Concept>
+    <Concept Id="APICAL SEPTAL">
+      <String Context="Generic_Medium">APICAL SEPTAL</String>
+      <String Context="TS_SButton">APIC SEP</String>
+    </Concept>
+    <Concept Id="APICAL INFERIOR">
+      <String Context="Generic_Medium">APICAL INFERIOR</String>
+      <String Context="TS_SButton">APIC INF</String>
+    </Concept>
+    <Concept Id="APICAL LATERAL">
+      <String Context="Generic_Medium">APICAL LATERAL</String>
+      <String Context="TS_SButton">APIC LAT</String>
+    </Concept>
+    <Concept Id="APEX">
+      <String Context="Generic_Medium">APEX</String>
+      <String Context="TS_SButton">APEX</String>
+    </Concept>
+    <Concept Id="WALL MOTION SCORE INDEX">
+      <String Context="Generic_Medium">WALL MOTION SCORE INDEX</String>
+      <String Context="TS_SButton">WMSI</String>
+    </Concept>
+    <Concept Id="ERROR">
+      <String Context="Generic_Medium">ERROR</String>
+    </Concept>
+    <Concept Id="RESPONSE TIME">
+      <String Context="Generic_Medium">RESPONSE TIME</String>
+    </Concept>
+    <Concept Id="BY STAGE">
+      <String Context="Generic_Medium">BY STAGE</String>
+    </Concept>
+    <Concept Id="BY VIEW">
+      <String Context="Generic_Medium">BY VIEW</String>
+    </Concept>
+    <Concept Id="SINGLE VIEW">
+      <String Context="Generic_Medium">SINGLE VIEW</String>
+    </Concept>
+    <Concept Id="TCP LISTEN PORT">
+      <String Context="Generic_Medium">TCP LISTEN PORT</String>
+    </Concept>
+    <Concept Id="PRINT TEST">
+      <String Context="Generic_Medium">PRINT TEST</String>
+    </Concept>
+    <Concept Id="SOP INSTANCE UID">
+      <String Context="Generic_Medium">SOP INSTANCE UID</String>
+    </Concept>
+    <Concept Id="SEGMENT">
+      <String Context="Generic_Medium">SEGMENT</String>
+      <String Context="TS_SButton">SEGMENT</String>
+    </Concept>
+    <Concept Id="AKINETIC">
+      <String Context="Generic_Medium">AKINETIC</String>
+      <String Context="TS_SButton">AKINETIC</String>
+    </Concept>
+    <Concept Id="AKINETIC WITH SCAR">
+      <String Context="Generic_Medium">AKINETIC WITH SCAR</String>
+      <String Context="TS_SButton">AK/SCAR</String>
+    </Concept>
+    <Concept Id="ANEURYSMAL">
+      <String Context="Generic_Medium">ANEURYSMAL</String>
+      <String Context="TS_SButton">ANEURYSM</String>
+    </Concept>
+    <Concept Id="DYSKINETIC WITH SCAR">
+      <String Context="Generic_Medium">DYSKINETIC WITH SCAR</String>
+      <String Context="TS_SButton">DISK/SCAR</String>
+    </Concept>
+    <Concept Id="HYPOKINETIC">
+      <String Context="Generic_Medium">HYPOKINETIC</String>
+      <String Context="TS_SButton">HYPOKIN</String>
+    </Concept>
+    <Concept Id="LEGEND">
+      <String Context="Generic_Medium">LEGEND</String>
+    </Concept>
+    <Concept Id="HISTOGRAM">
+      <String Context="Generic_Medium">HISTOGRAM</String>
+      <String Context="TS_SButton">HISTO</String>
+    </Concept>
+    <Concept Id="VOLUME (SINGLE)">
+      <String Context="Generic_Medium">VOLUME (SINGLE)</String>
+      <String Context="TS_SButton">V-SINGLE</String>
+      <String Context="MD_RT11MeasName">V</String>
+    </Concept>
+    <Concept Id="VOLUME (RATIO)">
+      <String Context="Generic_Medium">VOLUME (RATIO)</String>
+      <String Context="TS_SButton">V-RATIO</String>
+      <String Context="MD_RT11MeasName">R</String>
+    </Concept>
+    <Concept Id="VOLUME (AXIS)">
+      <String Context="Generic_Medium">VOLUME (AXIS)</String>
+      <String Context="TS_SButton">V-AXIS</String>
+      <String Context="MD_RT11MeasName">V</String>
+    </Concept>
+    <Concept Id="VOLUME (PLANES)">
+      <String Context="Generic_Medium">VOLUME (PLANES)</String>
+      <String Context="TS_SButton">V-PLANES</String>
+      <String Context="MD_RT11MeasName">V</String>
+    </Concept>
+    <Concept Id="VOLUME (VOXEL)">
+      <String Context="Generic_Medium">VOLUME (VOXEL)</String>
+      <String Context="TS_SButton">V-VOXEL</String>
+      <String Context="MD_RT11MeasName">V</String>
+    </Concept>
+    <Concept Id="VASCULARIZATION IDX">
+      <String Context="Generic_Medium">VASCULARIZATION IDX</String>
+      <String Context="TS_SButton">VASC IDX</String>
+      <String Context="MD_RT11MeasName">VI</String>
+    </Concept>
+    <Concept Id="FLOW INDEX">
+      <String Context="Generic_Medium">FLOW INDEX</String>
+      <String Context="TS_SButton">FLOW IDX</String>
+      <String Context="MD_RT11MeasName">FI</String>
+    </Concept>
+    <Concept Id="VASCULARIZ FLOW IDX">
+      <String Context="Generic_Medium">VASCULARIZ FLOW IDX</String>
+      <String Context="TS_SButton">VASC FL I</String>
+      <String Context="MD_RT11MeasName">VFI</String>
+    </Concept>
+    <Concept Id="FROM TOP TO BOTTOM">
+      <String Context="Generic_Medium">FROM TOP TO BOTTOM</String>
+      <String Context="TS_SButton">T → B</String>
+    </Concept>
+    <Concept Id="4D TPI WORKFLOW">
+      <String Context="Generic_Medium">4D TPI WORKFLOW</String>
+    </Concept>
+    <Concept Id="CORONARY FLOW RESERVE">
+      <String Context="Generic_Medium">CORONARY FLOW RESERVE</String>
+      <String Context="TS_SButton">CFR</String>
+      <String Context="MD_RT11MeasName">CFR</String>
+    </Concept>
+    <Concept Id="ELAXTO MEASURES">
+      <String Context="Generic_Medium">ELAXTO MEASURES</String>
+    </Concept>
+    <Concept Id="BEEP DURATION">
+      <String Context="Generic_Medium">BEEP DURATION</String>
+    </Concept>
+    <Concept Id="GAIN ADJ">
+      <String Context="Generic_Medium">GAIN ADJ</String>
+    </Concept>
+    <Concept Id="EXAM REVIEW">
+      <String Context="Generic_Medium">EXAM REVIEW</String>
+    </Concept>
+    <Concept Id="ARCHIVE REVIEW">
+      <String Context="Generic_Medium">ARCHIVE REVIEW</String>
+    </Concept>
+    <Concept Id="PLEX">
+      <String Context="Generic_Medium">PLEX</String>
+    </Concept>
+    <Concept Id="PHYSIO">
+      <String Context="Generic_Medium">PHYSIO</String>
+    </Concept>
+    <Concept Id="DELETE LAST WORD">
+      <String Context="Generic_Medium">DELETE LAST WORD</String>
+      <String Context="TS_SButton">DEL LAST</String>
+    </Concept>
+    <Concept Id="WORD/SENTENCE">
+      <String Context="Generic_Medium">WORD/SENTENCE</String>
+      <String Context="TS_SButton">WRD/SENT</String>
+    </Concept>
+    <Concept Id="WARNING">
+      <String Context="Generic_Medium">WARNING</String>
+      <String Context="TS_SButton">WARNING</String>
+    </Concept>
+    <Concept Id="BRIGHTNESS UP">
+      <String Context="Generic_Medium">BRIGHTNESS UP</String>
+      <String Context="TS_SButton">BRIGHTN ↑</String>
+    </Concept>
+    <Concept Id="BRIGHTNESS DOWN">
+      <String Context="Generic_Medium">BRIGHTNESS DOWN</String>
+      <String Context="TS_SButton">BRIGHTN ↓</String>
+    </Concept>
+    <Concept Id="BASELINE UP">
+      <String Context="Generic_Medium">BASELINE UP</String>
+      <String Context="TS_SButton">BASEL ↑</String>
+    </Concept>
+    <Concept Id="BASELINE DOWN">
+      <String Context="Generic_Medium">BASELINE DOWN</String>
+      <String Context="TS_SButton">BASEL ↓</String>
+    </Concept>
+    <Concept Id="B-MODE SIZE">
+      <String Context="Generic_Medium">B-MODE SIZE</String>
+    </Concept>
+    <Concept Id="CFM SIZE (%)">
+      <String Context="Generic_Medium">CFM SIZE (%)</String>
+    </Concept>
+    <Concept Id="X SMOOTH">
+      <String Context="Generic_Medium">X SMOOTH</String>
+      <String Context="TS_SButton">X SMOOTH</String>
+    </Concept>
+    <Concept Id="X DETAIL">
+      <String Context="Generic_Medium">X DETAIL</String>
+      <String Context="TS_SButton">X DETAIL</String>
+    </Concept>
+    <Concept Id="X ENHAN">
+      <String Context="Generic_Medium">X ENHAN</String>
+      <String Context="TS_SButton">X ENHAN</String>
+    </Concept>
+    <Concept Id="VOXEL">
+      <String Context="Generic_Medium">VOXEL</String>
+      <String Context="TS_SButton">VOXEL</String>
+    </Concept>
+    <Concept Id="SCORES">
+      <String Context="Generic_Medium">SCORES</String>
+    </Concept>
+    <Concept Id="NORMAL MUSCLE PERCENTAGE">
+      <String Context="Generic_Medium">NORMAL MUSCLE PERCENTAGE</String>
+    </Concept>
+    <Concept Id="DISABLE EMERGENCY ACCESS">
+      <String Context="Generic_Medium">DISABLE EMERGENCY ACCESS</String>
+    </Concept>
+    <Concept Id="DYSKINETIC">
+      <String Context="Generic_Medium">DYSKINETIC</String>
+      <String Context="TS_SButton">DYSKIN</String>
+    </Concept>
+    <Concept Id="NOT VISUALIZED">
+      <String Context="Generic_Medium">NOT VISUALIZED</String>
+      <String Context="TS_SButton">NOT VIS</String>
+    </Concept>
+    <Concept Id="ALL NORMAL">
+      <String Context="Generic_Medium">ALL NORMAL</String>
+      <String Context="TS_SButton">ALL NORM</String>
+    </Concept>
+    <Concept Id="GAMMA CORRECTION">
+      <String Context="Generic_Medium">GAMMA CORRECTION</String>
+    </Concept>
+    <Concept Id="BACK PLANE VIEW">
+      <String Context="Generic_Medium">BACK PLANE VIEW</String>
+      <String Context="TS_SButton">BACKPL</String>
+    </Concept>
+    <Concept Id="IMAGE REVIEW CONFIGURATION">
+      <String Context="Generic_Medium">IMAGE REVIEW CONFIGURATION</String>
+    </Concept>
+    <Concept Id="SATURATION">
+      <String Context="Generic_Medium">SATURATION</String>
+      <String Context="TS_SButton">SATUR</String>
+      <String Context="MD_RT11MeasName">S</String>
+    </Concept>
+    <Concept Id=" PEAK">
+      <String Context="Generic_Medium"> PEAK</String>
+      <String Context="TS_SButton">PEAK</String>
+      <String Context="MD_RT11MeasName">PEAK</String>
+    </Concept>
+    <Concept Id="TOOTH">
+      <String Context="Generic_Medium">TOOTH</String>
+    </Concept>
+    <Concept Id="LINEAR">
+      <String Context="Generic_Medium">LINEAR</String>
+      <String Context="TS_SButton">LINEAR</String>
+      <String Context="MD_RT11MeasName">LIN</String>
+    </Concept>
+    <Concept Id="C CURVE">
+      <String Context="Generic_Medium">C CURVE</String>
+    </Concept>
+    <Concept Id="S CURVE">
+      <String Context="Generic_Medium">S CURVE</String>
+    </Concept>
+    <Concept Id="GRAY MAP SAVED">
+      <String Context="Generic_Medium">GRAY MAP SAVED</String>
+    </Concept>
+    <Concept Id="ARTEFACT SUPPRESSOR FILTER">
+      <String Context="Generic_Medium">ARTEFACT SUPPRESSOR FILTER</String>
+      <String Context="TS_SButton">ARTEF SUP</String>
+      <String Context="MD_RT11MeasName">AS</String>
+    </Concept>
+    <Concept Id="OPTIMIZED FOR">
+      <String Context="Generic_Medium">OPTIMIZED FOR</String>
+    </Concept>
+    <Concept Id="NO OPTIMIZATION">
+      <String Context="Generic_Medium">NO OPTIMIZATION</String>
+    </Concept>
+    <Concept Id="CRT">
+      <String Context="Generic_Medium">CRT</String>
+    </Concept>
+    <Concept Id="LCD (HIGH CONTRAST)">
+      <String Context="Generic_Medium">LCD (HIGH CONTRAST)</String>
+    </Concept>
+    <Concept Id="LCD (LOW CONTRAST)">
+      <String Context="Generic_Medium">LCD (LOW CONTRAST)</String>
+    </Concept>
+    <Concept Id="AUTO START WHEN CHANGING APPLICATION">
+      <String Context="Generic_Medium">AUTO START WHEN CHANGING APPLICATION</String>
+    </Concept>
+    <Concept Id="DEFAULT OB EXAM TYPE">
+      <String Context="Generic_Medium">DEFAULT OB EXAM TYPE</String>
+    </Concept>
+    <Concept Id="EXAM OPTIONS">
+      <String Context="Generic_Medium">EXAM OPTIONS</String>
+    </Concept>
+    <Concept Id="INVALID USER">
+      <String Context="Generic_Medium">INVALID USER</String>
+    </Concept>
+    <Concept Id="NAVIGATOR">
+      <String Context="Generic_Medium">NAVIGATOR</String>
+    </Concept>
+    <Concept Id="WINDOWS PRINT PROFILES">
+      <String Context="Generic_Medium">WINDOWS PRINT PROFILES</String>
+    </Concept>
+    <Concept Id="CINE SPEED UP">
+      <String Context="Generic_Medium">CINE SPEED UP</String>
+      <String Context="TS_SButton">SPEED ↑</String>
+    </Concept>
+    <Concept Id="CINE SPEED DOWN">
+      <String Context="Generic_Medium">CINE SPEED DOWN</String>
+      <String Context="TS_SButton">SPEED ↓</String>
+    </Concept>
+    <Concept Id="SET AS DEFAULT">
+      <String Context="Generic_Medium">SET AS DEFAULT</String>
+    </Concept>
+    <Concept Id="VIEW WINDOWS PRINT PROFILES">
+      <String Context="Generic_Medium">VIEW WINDOWS PRINT PROFILES</String>
+    </Concept>
+    <Concept Id="PROFILE">
+      <String Context="Generic_Medium">PROFILE</String>
+      <String Context="TS_SButton">PROFILE</String>
+    </Concept>
+    <Concept Id="WINDOWS PRINTERS CONFIGURATION">
+      <String Context="Generic_Medium">WINDOWS PRINTERS CONFIGURATION</String>
+    </Concept>
+    <Concept Id="BLACK">
+      <String Context="Generic_Medium">BLACK</String>
+    </Concept>
+    <Concept Id="WHITE">
+      <String Context="Generic_Medium">WHITE</String>
+    </Concept>
+    <Concept Id="FORMAT">
+      <String Context="Generic_Medium">FORMAT</String>
+      <String Context="TS_SButton">FORMAT</String>
+    </Concept>
+    <Concept Id="PORTRAIT">
+      <String Context="Generic_Medium">PORTRAIT</String>
+    </Concept>
+    <Concept Id="LANDSCAPE">
+      <String Context="Generic_Medium">LANDSCAPE</String>
+    </Concept>
+    <Concept Id="HEADER ON THE LEFT">
+      <String Context="Generic_Medium">HEADER ON THE LEFT</String>
+    </Concept>
+    <Concept Id="HEADER ON TOP">
+      <String Context="Generic_Medium">HEADER ON TOP</String>
+    </Concept>
+    <Concept Id="SCAN MODE">
+      <String Context="Generic_Medium">SCAN MODE</String>
+      <String Context="TS_SButton">SCAN MODE</String>
+    </Concept>
+    <Concept Id="ANGULAR">
+      <String Context="Generic_Medium">ANGULAR</String>
+      <String Context="TS_SButton">ANGULAR</String>
+    </Concept>
+    <Concept Id="SCAN LENGTH">
+      <String Context="Generic_Medium">SCAN LENGTH</String>
+      <String Context="TS_SButton">SC LENGTH</String>
+      <String Context="MD_RT11MeasName">SL</String>
+    </Concept>
+    <Concept Id="SCAN LENGTH/ANGLE">
+      <String Context="Generic_Medium">SCAN LENGTH/ANGLE</String>
+      <String Context="TS_SButton">SC L/ANG</String>
+    </Concept>
+    <Concept Id="AUTOMATIC DOPPLER MEASUREMENTS">
+      <String Context="Generic_Medium">AUTOMATIC DOPPLER MEASUREMENTS</String>
+      <String Context="TS_SButton">ADM</String>
+      <String Context="MD_RT11MeasName">ADM</String>
+    </Concept>
+    <Concept Id="SETUP">
+      <String Context="Generic_Medium">SETUP</String>
+      <String Context="TS_SButton">SETUP</String>
+    </Concept>
+    <Concept Id="KNEE">
+      <String Context="Generic_Medium">KNEE</String>
+      <String Context="TS_SButton">KNEE</String>
+    </Concept>
+    <Concept Id="SHOULDER">
+      <String Context="Generic_Medium">SHOULDER</String>
+      <String Context="TS_SButton">SHOULDER</String>
+    </Concept>
+    <Concept Id="WRIST">
+      <String Context="Generic_Medium">WRIST</String>
+      <String Context="TS_SButton">WRIST</String>
+    </Concept>
+    <Concept Id="TESTIS">
+      <String Context="Generic_Medium">TESTIS</String>
+      <String Context="TS_SButton">TESTIS</String>
+    </Concept>
+    <Concept Id="FONTANEL">
+      <String Context="Generic_Medium">FONTANEL</String>
+      <String Context="TS_SButton">FONTANEL</String>
+    </Concept>
+    <Concept Id="CAROTID">
+      <String Context="Generic_Medium">CAROTID</String>
+      <String Context="TS_SButton">CAROTID</String>
+    </Concept>
+    <Concept Id="AORTA">
+      <String Context="Generic_Medium">AORTA</String>
+      <String Context="TS_SButton">AORTA</String>
+    </Concept>
+    <Concept Id="RENAL ARTERY">
+      <String Context="Generic_Medium">RENAL ARTERY</String>
+      <String Context="TS_SButton">REN ART</String>
+    </Concept>
+    <Concept Id="3D BOX">
+      <String Context="Generic_Medium">3D BOX</String>
+      <String Context="TS_SButton">3D BOX</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

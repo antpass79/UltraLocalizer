@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="VirtualNavigator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Messages">
+	<Concept Id="EXAM_IN_USE_NO_OPEN">
+      <Comments>Warning Message: Some Exams are in use</Comments>
+      <String Context="Generic_Warning">Warning: some of the selected exams are currently opened by another process: cannot open it.</String>
+    </Concept >
+	<Concept Id="SAVE_CFG_ERROR">
+      <Comments>[StoryID: 22808]Warning Message: An error occurred while saving a configuration file.</Comments>
+      <String Context="Generic_Warning">Warning: Unable to save Virtual Navigator configuration.</String>
+    </Concept >
+	<Concept Id="LOAD_CFG_ERROR">
+      <Comments>[StoryID: 22808]Warning Message: An error occurred while loading configuration file.</Comments>
+      <String Context="Generic_Warning">Warning: Unable to load Virtual Navigator configuration.</String>
+    </Concept >
+	<Concept Id="SAVE_3D_ERROR">
+      <Comments>[StoryID: 22960]Warning Message: An error occurred while saving a 3D Volume file.</Comments>
+      <String Context="Generic_Warning">Warning: Unable to save Virtual Navigator 3D Volume.</String>
+    </Concept >
+	<Concept Id="LOAD_3D_ERROR">
+      <Comments>[StoryID: 22960]Warning Message: An error occurred while loading a 3D Volume file.</Comments>
+      <String Context="Generic_Warning">Warning: Unable to load Virtual Navigator 3D Volume.</String>
+    </Concept >
+	<Concept Id="CanEndExam">
+      <Comments>[DefectID: 26992]Warning Message: Closing the exam the fusion data shall be deleted. Do you want to continue?</Comments>
+      <String Context="Generic_Warning">Closing the exam the fusion data shall be deleted. Do you want to continue?</String>
+    </Concept >
+	
+  </LocalizationSection>
+</LocalizationResource>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ReportSectionProviderComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Cardio.B">
+    <Concept Id="EF (AREA-LENGTH)">
+      <Comments>B-Mode ejection fraction</Comments>
+      <String Context="MD_RT11MeasName">EF (Area-Length)</String>
+      <String Context="TS_AButton">EF (A-L)</String>
+      <String Context="Generic_Short">EF</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Cardio.D">
+    <Concept Id="AORTIC FLOW PROFILE">
+      <Comments>Doppler aortic flow profile</Comments>
+      <String Context="MD_RT11MeasName">Aortic Flow Profile</String>
+      <String Context="TS_AButton">AO FLOW</String>
+      <String Context="Generic_Short">AFVI</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

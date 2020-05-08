@@ -1,0 +1,512 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizationResource ComponentNamespace="QElaxto2DQuantificationComponent" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="Commands">
+	<Concept Id="QElaxto2D">
+      <String Context="TS_TabName">QElaxto2D</String>
+    </Concept>
+	<Concept Id="ExitQElaxto2DQuantification">
+      <String Context="TS_AButton">Exit</String>
+    </Concept>
+	 <Concept Id="CONFIGURATOR NAME">
+      <Comments>QElaxto2DQuantification configurator definition</Comments>
+      <String Context="Generic_Medium">QElaxto 2D</String>
+    </Concept>
+	<Concept Id="ClearMeasure">
+      <String Context="TS_TButton">Clear Measure</String>
+    </Concept>
+	<Concept Id="ChangeMeasureUnit">
+      <String Context="TS_TButton">Measure Unit</String>
+    </Concept>
+	<Concept Id="ClearLastMeasure">
+      <String Context="TS_TButton">Clear Last Meas</String>
+    </Concept>
+	<Concept Id="ChangeSessions">
+      <String Context="TS_TButton">Session</String>
+    </Concept>
+	<Concept Id="ChangeCursorDiameter">
+      <String Context="TS_TButton">Ball Diameter</String>
+    </Concept>
+	<Concept Id="BoxResize">
+      <String Context="TS_TButton">Box Resize</String>
+    </Concept>
+	<Concept Id="Remove">
+      <Comments>Remove Current Session from Worksheet/Report</Comments>
+      <String Context="Generic_Medium">Remove Current Session</String>
+    </Concept>
+  </LocalizationSection>
+   <LocalizationSection InternalNamespace="DrawingSection">
+	<Concept Id="ELLIPSE">
+      <String Context="TS_SButton">ELLIPSE</String>
+    </Concept>
+	<Concept Id="BOX">
+      <String Context="TS_SButton">BOX</String>
+    </Concept>
+	<Concept Id="TRACE">
+      <String Context="TS_SButton">TRACE</String>
+    </Concept>
+	<Concept Id="VERTEX">
+      <String Context="TS_SButton">VERTEX</String>
+    </Concept>
+	<Concept Id="CURSOR">
+      <String Context="TS_SButton">BALL</String>
+    </Concept>
+  </LocalizationSection>
+    <LocalizationSection InternalNamespace="General">
+	<Concept Id="ROIs">
+      <Comments>ROIs</Comments>
+      <String Context="MD_RT14aTrackballStrings">ROIs</String>
+    </Concept>
+	<Concept Id="ROIsMod">
+      <Comments>ROIs Edit</Comments>
+      <String Context="MD_RT14aTrackballStrings">ROIs EDIT</String>
+    </Concept>
+	 <Concept Id="CONFIGURATION_CHANGED_MESSAGE">
+      <String Context="Generic_Warning">QElaxto2D Quantification configuration is changed. Modifications will be available after starting a new exam</String>
+    </Concept>
+	 <Concept Id="OVERRIDE MEASURE">
+      <Comments>End measure sequence</Comments>
+      <String Context="Generic_Warning">Sequence ended. A new ROI insertion shall overwrite the sequence.</String>
+    </Concept>
+  </LocalizationSection>
+   <LocalizationSection InternalNamespace="QElaxto2DConfiguration">
+  <Concept Id="QElaxtoMeasureUnitLabel">
+      <Comments>QElaxto measure unit</Comments>
+      <String Context="Generic_Long">QElaxto measure unit</String>
+    </Concept>
+	<Concept Id="QElaxtoValuesLabel">
+      <Comments>QElaxto Values</Comments>
+      <String Context="Generic_Long">Global Measure Values</String>
+    </Concept>
+	<Concept Id="Avg">
+      <Comments>Average</Comments>
+      <String Context="Generic_Medium">Avg</String>
+    </Concept>
+	<Concept Id="Median">
+      <Comments>Median</Comments>
+      <String Context="Generic_Medium">Median</String>
+    </Concept>
+		<Concept Id="SD">
+      <Comments>Standard Deviation</Comments>
+      <String Context="Generic_Medium">SD</String>
+    </Concept>
+	<Concept Id="AREA">
+	<Comments>Area</Comments>
+      <String Context="Generic_Medium">Area</String>
+    </Concept>
+	<Concept Id="IQR">
+      <Comments>IQR</Comments>
+      <String Context="Generic_Medium">IQR</String>
+    </Concept>
+	<Concept Id="IQR/M">
+      <Comments>IQR/M</Comments>
+      <String Context="Generic_Medium">IQR/M</String>
+    </Concept>
+	<Concept Id="Depth">
+      <Comments>Depth</Comments>
+      <String Context="Generic_Medium">Depth</String>
+    </Concept>
+	<Concept Id="Ratio">
+      <Comments>Ratio</Comments>
+      <String Context="Generic_Medium">Ratio</String>
+    </Concept>
+	<Concept Id="kPa">
+      <Comments>Measure unit KPa</Comments>
+      <String Context="Generic_Medium">kPa</String>
+    </Concept>
+	<Concept Id="Meter_per_sec">
+      <Comments>Measure unit m/s</Comments>
+      <String Context="Generic_Medium">m/s</String>
+    </Concept>
+	<Concept Id="ENABLED">
+      <Comments>ENABLED</Comments>
+      <String Context="Generic_Medium">ENABLED</String>
+    </Concept>
+	<Concept Id="WORKSHEET LABEL">
+      <Comments>WORKSHEET LABEL</Comments>
+      <String Context="Generic_Medium">WORKSHEET LABEL</String>
+    </Concept>
+	<Concept Id="ENCODER LABEL">
+      <Comments>ENCODER LABEL</Comments>
+      <String Context="Generic_Medium">ENCODER LABEL</String>
+    </Concept>
+	<Concept Id="Session">
+      <Comments>Session in Worksheett and Report</Comments>
+      <String Context="Generic_Medium">SESSION</String>
+    </Concept>	
+	<Concept Id="Session1">
+      <Comments>Session in Worksheett and Report</Comments>
+      <String Context="Generic_Medium">SESSION1</String>
+    </Concept>	
+	<Concept Id="Session2">
+      <Comments>Session in Worksheett and Report</Comments>
+      <String Context="Generic_Medium">SESSION2</String>
+    </Concept>	
+	<Concept Id="Session3">
+      <Comments>Session in Worksheett and Report</Comments>
+      <String Context="Generic_Medium">SESSION3</String>
+    </Concept>	
+	<Concept Id="Session4">
+      <Comments>Session in Worksheett and Report</Comments>
+      <String Context="Generic_Medium">SESSION4</String>
+    </Concept>	
+	<Concept Id="Session5">
+      <Comments>Session in Worksheett and Report</Comments>
+      <String Context="Generic_Medium">SESSION5</String>
+    </Concept>	
+	<Concept Id="SESSION MANAGEMENT">
+      <Comments>SESSION MANAGEMENT</Comments>
+      <String Context="Generic_Medium">SESSION MANAGEMENT</String>
+    </Concept>
+	<Concept Id="FibrosisStageLabel">
+      <Comments>Fibrosis Stage</Comments>
+      <String Context="Generic_Long">Fibrosis Stage</String>
+    </Concept>
+	<Concept Id="MeasuresNumber">
+      <Comments>Number of available measures before overwriting</Comments>
+      <String Context="Generic_Long">Number of ROIs</String>
+    </Concept>
+	<Concept Id="DefaultROILabel">
+      <Comments>Default ROI</Comments>
+      <String Context="Generic_Long">Default ROI</String>
+    </Concept>
+	<Concept Id="CursorDiameter">
+      <Comments>Diameter of Cursor</Comments>
+      <String Context="Generic_Long">Ball Diameter</String>
+    </Concept>
+	<Concept Id="Yes">
+      <Comments>Yes</Comments>
+      <String Context="Generic_Medium">Y</String>
+    </Concept>
+	<Concept Id="No">
+      <Comments>No</Comments>
+      <String Context="Generic_Medium">N</String>
+    </Concept>
+	<Concept Id="ELLIPSE">
+      <String Context="Generic_Medium">ELLIPSE</String>
+    </Concept>
+	<Concept Id="TRACE">
+      <String Context="Generic_Medium">TRACE</String>
+    </Concept>
+	<Concept Id="VERTEX">
+      <String Context="Generic_Medium">VERTEX</String>
+    </Concept>
+	<Concept Id="CURSOR">
+      <String Context="Generic_Medium">BALL</String>
+    </Concept>
+	<Concept Id="NONE">
+      <String Context="Generic_Medium">NONE</String>
+    </Concept>
+	<Concept Id="BOX">
+      <String Context="Generic_Medium">BOX</String>
+    </Concept>
+		<Concept Id="AvgMed">
+      <Comments>ROI Avg/Med</Comments>
+      <String Context="Generic_Medium">Avg/Med</String>
+    </Concept>
+	<Concept Id="ScreenLine1">
+	<Comments>Lines in the header treeview</Comments>
+      <String Context="Generic_Medium">Title</String>
+    </Concept>
+	<Concept Id="ScreenCombo">
+	<Comments>Lines in the  body treeview</Comments>
+      <String Context="Generic_Medium">Measures</String>
+    </Concept>
+	<Concept Id="Report">
+	<Comments>Attributes in the report table</Comments>
+      <String Context="Generic_Medium">Report</String>
+    </Concept>
+	<Concept Id="Global">
+	<Comments>Attributes in the Macro measure</Comments>
+      <String Context="Generic_Medium">Global Measure</String>
+    </Concept>
+	<Concept Id="Measure">
+      <String Context="Generic_Medium">Measure</String>
+    </Concept>
+	<Concept Id="MEASURE CUSTOMIZATION">
+      <String Context="Generic_Medium">CONFIGURATION</String>
+    </Concept>
+	<Concept Id="ShowEndSequenceInfoLabel">
+      <Comments>Show End Sequence info</Comments>
+      <String Context="Generic_Long">Show End Sequence info</String>
+    </Concept>
+	<Concept Id="SaveAcqDataLabel">
+      <Comments>Save Data Acquisition</Comments>
+      <String Context="Generic_Long">Save Data Acquisition</String>
+    </Concept>
+	<Concept Id="AutoRepeatLabel">
+      <Comments>Automatically repeat the measure</Comments>
+      <String Context="Generic_Long">Auto Repeat</String>
+    </Concept>
+	<Concept Id="DefaultDepthLabel">
+      <Comments>Set Default Depth</Comments>
+      <String Context="Generic_Long">Default Depth</String>
+    </Concept>
+	<Concept Id="TypeLabel">
+      <Comments>Set Global Measure Type</Comments>
+      <String Context="Generic_Long">Global Measure Type</String>
+    </Concept>
+	<Concept Id="AutoSaveImageAtEachAcq">
+      <Comments>Auto save image at each acquisition</Comments>
+      <String Context="Generic_Long">Auto save image at each acquisition</String>
+    </Concept>
+	 </LocalizationSection>
+    <LocalizationSection InternalNamespace="HelpAreaMessages"> 
+    <Concept Id="EllipsePositionId">
+      <String Context="MD_RT13HelpLine">ROI (Ellipse): Place Caliper on First point</String>
+    </Concept>
+    <Concept Id="EllipseFirstAxisId">
+      <String Context="MD_RT13HelpLine">ROI (Ellipse): Place Caliper on Second point. ENTER to start second axis size</String>
+    </Concept>
+    <Concept Id="EllipseSecondAxisId">
+      <String Context="MD_RT13HelpLine">ROI (Ellipse): Use Trackball to size the Ellipse. ENTER to confirm</String>
+    </Concept>
+    <Concept Id="TracePositionId">
+      <String Context="MD_RT13HelpLine">ROI (Trace): Place Caliper on First point</String>
+    </Concept>
+    <Concept Id="TraceNextPointId">
+      <String Context="MD_RT13HelpLine">ROI (Trace): Place Next Trace point. Double click to end</String>
+    </Concept>
+    <Concept Id="VertexPositionId">
+      <String Context="MD_RT13HelpLine">ROI(Vertex): Place Caliper on First point</String>
+    </Concept>
+    <Concept Id="VertexNextPointId">
+      <String Context="MD_RT13HelpLine">ROI(Vertex): Place Next Vertex point. Double Click to end</String>
+    </Concept>
+    <Concept Id="CursorPositionId">
+      <String Context="MD_RT13HelpLine">ROI(Ball): Use trackball to pan the ROI. LEFT click to confirm. RIGHT click to delete.</String>
+    </Concept>
+    <Concept Id="ROISelectionId">
+      <String Context="MD_RT13HelpLine">Insert a new ROI.</String>
+    </Concept>
+    <Concept Id="ROIEditingId">
+      <String Context="MD_RT13HelpLine">ROI editing: LEFT click on anchor point to modify. RIGHT click to delete.</String>
+    </Concept>
+    <Concept Id="START_PROCESSING">
+      <String Context="MD_RT13HelpLine">Processing...</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Factory">
+    <Concept Id="Cardiac">
+      <Comments>Cardiac Application</Comments>
+      <String Context="Generic_Long">CARDIAC</String>
+    </Concept>
+    <Concept Id="Vascular">
+      <Comments>Vascular Application</Comments>
+      <String Context="Generic_Long">VASCULAR</String>
+    </Concept>
+    <Concept Id="Abdominal">
+      <Comments>Abdominal Application</Comments>
+      <String Context="Generic_Long">ABDOMINAL</String>
+    </Concept>
+    <Concept Id="Obstetric">
+      <Comments>Obstetric Application</Comments>
+      <String Context="Generic_Long">OBSTETRIC</String>
+    </Concept>
+    <Concept Id="Transcranic">
+      <Comments>Transcranic Application</Comments>
+      <String Context="Generic_Long">TRANSCRANIC</String>
+    </Concept>
+    <Concept Id="Neonatal">
+      <Comments>Neonatal Application</Comments>
+      <String Context="Generic_Long">NEONATAL</String>
+    </Concept>
+    <Concept Id="CardiacPediatric">
+      <Comments>CardiacPediatric Application</Comments>
+      <String Context="Generic_Long">CARDIACPEDIATRIC</String>
+    </Concept>
+    <Concept Id="Pediatric">
+      <Comments>Pediatric Application</Comments>
+      <String Context="Generic_Long">PEDIATRIC</String>
+    </Concept>
+    <Concept Id="Gynecology">
+      <Comments>Gynecology Application</Comments>
+      <String Context="Generic_Long">GYNECOLOGY</String>
+    </Concept>
+    <Concept Id="Urologic">
+      <Comments>Urologic Application</Comments>
+      <String Context="Generic_Long">UROLOGIC</String>
+    </Concept>
+    <Concept Id="MusculoSkeletal">
+      <Comments>MusculoSkeletal Application</Comments>
+      <String Context="Generic_Long">MUSCOLOSKELETAL</String>
+    </Concept>
+    <Concept Id="Breast">
+      <Comments>Breast Application</Comments>
+      <String Context="Generic_Long">BREAST</String>
+    </Concept>
+    <Concept Id="Thyroid">
+      <Comments>Thyroid Application</Comments>
+      <String Context="Generic_Long">THYROID</String>
+    </Concept>
+    <Concept Id="SmallParts">
+      <Comments>SmallParts Application</Comments>
+      <String Context="Generic_Long">SMALLPARTS</String>
+    </Concept>
+    <Concept Id="Generic">
+      <Comments>Generic Application</Comments>
+      <String Context="Generic_Long">GENERIC</String>
+    </Concept>
+    <Concept Id="AbdominalCanine">
+      <Comments>AbdominalCanine Application</Comments>
+      <String Context="Generic_Long">ABDOMINALCANINE</String>
+    </Concept>
+    <Concept Id="AbdominalFeline">
+      <Comments>AbdominalFeline Application</Comments>
+      <String Context="Generic_Long">ABDOMINALFELINE</String>
+    </Concept>
+    <Concept Id="AbdominalEquine">
+      <Comments>AbdominalEquine Application</Comments>
+      <String Context="Generic_Long">ABDOMINALEQUINE</String>>
+    </Concept>
+    <Concept Id="ReproductionCanine">
+      <Comments>ReproductionCanine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONCANINE</String>
+    </Concept>
+    <Concept Id="ReproductionFeline">
+      <Comments>ReproductionFeline Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONFELINE</String>
+    </Concept>
+    <Concept Id="ReproductionEquine">
+      <Comments>ReproductionEquine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONEQUINE</String>
+    </Concept>
+    <Concept Id="Tendon">
+      <Comments>Tendon Application</Comments>
+      <String Context="Generic_Long">TENDON</String>
+    </Concept>
+    <Concept Id="CardioCanine">
+      <Comments>CardioCanine Application</Comments>
+      <String Context="Generic_Long">CARDIOCANINE</String>
+    </Concept>
+    <Concept Id="CardioFeline">
+      <Comments>CardioFeline Application</Comments>
+      <String Context="Generic_Long">CARDIOFELINE</String>
+    </Concept>
+    <Concept Id="CardioEquine">
+      <Comments>CardioEquine Application</Comments>
+      <String Context="Generic_Long">CARDIOEQUINE</String>
+    </Concept>
+    <Concept Id="OvaryEquine">
+      <Comments>OvaryEquine Application</Comments>
+      <String Context="Generic_Long">OVARYEQUINE</String>
+    </Concept>
+    <Concept Id="OvaryBovine">
+      <Comments>OvaryBovine Application</Comments>
+      <String Context="Generic_Long">OVARYBOVINE</String>
+    </Concept>
+    <Concept Id="ReproductionBovine">
+      <Comments>ReproductionBovine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONBOVINE</String>
+    </Concept>
+    <Concept Id="VascularVet">
+      <Comments>VascularVet Application</Comments>
+      <String Context="Generic_Long">VASCULARVET</String>
+    </Concept>
+    <Concept Id="AnimalScience">
+      <Comments>AnimalScience Application</Comments>
+      <String Context="Generic_Long">ANIMALSCIENCE</String>
+    </Concept>
+    <Concept Id="ReproductionOvine">
+      <Comments>ReproductionOvine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONOVINE</String>
+    </Concept>
+    <Concept Id="ReproductionPorcine">
+      <Comments>ReproductionPorcine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONPORCINE</String>
+    </Concept>
+    <Concept Id="ReproductionCaprine">
+      <Comments>ReproductionCaprine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONCAPRINE</String>
+    </Concept>
+    <Concept Id="RegAnest">
+      <Comments>RegAnest Application</Comments>
+      <String Context="Generic_Long">REGANEST</String>
+    </Concept>
+    <Concept Id="Aesthetic">
+      <Comments>Aesthetic Application</Comments>
+      <String Context="Generic_Long">AESTHETIC</String>
+    </Concept>
+    <Concept Id="AbdominalBovine">
+      <Comments>Abdominal Bovine Application</Comments>
+      <String Context="Generic_Long">ABDOMINAL BOVINE</String>
+    </Concept>
+    <Concept Id="CardioBovine">
+      <Comments>Cardio Bovine Application</Comments>
+      <String Context="Generic_Long">CARDIO BOVINE</String>
+    </Concept>
+    <Concept Id="OtherAbdominal">
+      <Comments>Other Abdominal Application</Comments>
+      <String Context="Generic_Long">OTHER ABDOMINAL</String>
+    </Concept>
+    <Concept Id="OtherCardio">
+      <Comments>Other Cardio Application</Comments>
+      <String Context="Generic_Long">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OtherReproduction">
+      <Comments>Other Reproduction Application</Comments>
+      <String Context="Generic_Long">OTHER REPRODUCTION</String>
+    </Concept>
+  </LocalizationSection>
+   <LocalizationSection InternalNamespace="Area11">
+	 <Concept Id="ROI">
+	  <Comments>Region Of Interest</Comments>
+      <String Context="Generic_Long">ROI</String>
+    </Concept>
+	<Concept Id="AREA">
+	<Comments>Area</Comments>
+      <String Context="Generic_Long">Area</String>
+    </Concept>
+	<Concept Id="AXIS_A">
+	<Comments>Axis of an ellipse</Comments>
+      <String Context="Generic_Long">Axis A</String>
+    </Concept>
+	<Concept Id="AXIS_B">
+	<Comments>Axis of an ellipse</Comments>
+      <String Context="Generic_Long">Axis B</String>
+    </Concept>
+	<Concept Id="Avg">
+      <Comments>Average</Comments>
+      <String Context="Generic_Long">Avg</String>
+    </Concept>
+	<Concept Id="SD">
+      <Comments>Standard Deviation</Comments>
+      <String Context="Generic_Long">SD</String>
+    </Concept>
+	<Concept Id="Median">
+      <Comments>Median</Comments>
+      <String Context="Generic_Long">Median</String>
+    </Concept>
+	<Concept Id="IQR">
+      <Comments>IQR</Comments>
+      <String Context="Generic_Long">IQR</String>
+    </Concept>
+	<Concept Id="IQR/M">
+      <Comments>IQR/M</Comments>
+      <String Context="Generic_Long">IQR/M</String>
+    </Concept>
+	<Concept Id="Depth">
+      <Comments>Depth</Comments>
+      <String Context="Generic_Long">Depth</String>
+    </Concept>
+	<Concept Id="Ratio">
+      <Comments>Ratio between ROIs</Comments>
+      <String Context="Generic_Long">Ratio</String>
+    </Concept>
+	<Concept Id="ROIsAvg">
+      <Comments>Label of the Global Measure</Comments>
+      <String Context="Generic_Long">ROIs Avg</String>
+    </Concept>
+	<Concept Id="ROIsRatioAvg">
+      <Comments>Label of the Global Measure</Comments>
+      <String Context="Generic_Long">ROIs Avg Ratio</String>
+    </Concept>
+		<Concept Id="ROIsMed">
+      <Comments>Label of the Global Measure</Comments>
+      <String Context="Generic_Long">ROIs Median</String>
+    </Concept>
+		<Concept Id="ROIsRatioMed">
+      <Comments>Label of the Global Measure</Comments>
+      <String Context="Generic_Long">ROIs Median Ratio</String>
+    </Concept>
+  </LocalizationSection>
+  </LocalizationResource>

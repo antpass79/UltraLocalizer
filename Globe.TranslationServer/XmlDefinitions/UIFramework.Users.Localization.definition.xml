@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="UsersManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Users">
+    <Concept Id="LockCommand">
+      <Comments>Lock Command</Comments>
+      <String Context="TS_AButton">Lock</String>
+    </Concept>
+    <Concept Id="LogoutCommand">
+      <Comments>Logout Command</Comments>
+      <String Context="TS_AButton">Logout</String>
+    </Concept>
+    <Concept Id="ProblemInConfiguration">
+      <Comments>This message appears when there are some problem  loading users configuartion</Comments>
+      <String Context="Generic_Warning">Some problem to load configuration file! the emergency or HK user will be enabled </String>
+    </Concept>
+    <Concept Id="DifferentPassword">
+      <Comments>This message appears when the user digit a confirm pawwsord different than passord</Comments>
+      <String Context="Generic_Warning">Warning: Please check your password, the confirmation entry does not match</String>
+    </Concept>
+    <Concept Id="TooShortPassword">
+      <Comments>This message appears when the user digit a password  too short</Comments>
+      <String Context="Generic_Warning">Warning: Please check your password, the edited password is too short</String>
+    </Concept>
+    <Concept Id="NewPasswordShort">
+      <Comments>This message appears when the user digit a password  too short</Comments>
+      <String Context="Generic_Warning">Warning: Please check your password, the new password is too short</String>
+    </Concept>
+    <Concept Id="NewPasswordEqualOldPassword">
+      <Comments>This message appears when the user digit a new password equal to old password</Comments>
+      <String Context="Generic_Warning">Warning: Please check your password, the new password is equal to old one</String>
+    </Concept>
+    <Concept Id="OldPasswordInvalid">
+      <Comments>This message appears when the user digit old password invalid</Comments>
+      <String Context="Generic_Warning">Warning: Please check your password, the old password is invalid</String>
+    </Concept>
+    <Concept Id="InvalidPassword">
+      <Comments>This message appears when the password edited is not valid</Comments>
+      <String Context="Generic_Warning">Warning: the password is not valid!</String>
+    </Concept>
+    <Concept Id="UserLOggedNoRigth">
+      <Comments>This message appears when the user is not administrator</Comments>
+      <String Context="Generic_Warning">Warning: To access the security configuration you need to log in as a security administrator!</String>
+    </Concept>
+    <Concept Id="ChangePasswordMessage">
+      <Comments>This message appears when the user should change password</Comments>
+      <String Context="Generic_Warning">Please change your password!</String>
+    </Concept>
+    <Concept Id="InvalidUser">
+      <Comments>This message appears when the username edited is not valid</Comments>
+      <String Context="Generic_Warning">Warning: the username is not valid!</String>
+    </Concept>
+    <Concept Id="InvalidFirstName">
+      <Comments>This message appears when the FirstName edited is not valid</Comments>
+      <String Context="Generic_Warning">Warning: the FirstName is not valid, some invalid characters!</String>
+    </Concept>
+    <Concept Id="InvalidFirstNameTooLong">
+      <Comments>This message appears when the User Full Name edited is too long</Comments>
+      <String Context="Generic_Warning">Warning: the User Name is too long, max 60 characters has admitted!</String>
+    </Concept>
+    <Concept Id="InvalidLastName">
+      <Comments>This message appears when the LastName edited is not valid</Comments>
+      <String Context="Generic_Warning">Warning: the LastName is not valid, some invalid characters!</String>
+    </Concept>
+    <Concept Id="InvalidLastNameTooLong">
+      <Comments>This message appears when the LastName edited is too long</Comments>
+      <String Context="Generic_Warning">Warning: the LastNamee is too long, max 64 characters has admitted!</String>
+    </Concept>
+    <Concept Id="InvalidMiddleName">
+      <Comments>This message appears when the MiddleName edited is not valid</Comments>
+      <String Context="Generic_Warning">Warning: the MiddleName is not valid, some invalid characters!</String>
+    </Concept>
+    <Concept Id="InvalidMiddleNameTooLong">
+      <Comments>This message appears when the MiddleName edited is too long</Comments>
+      <String Context="Generic_Warning">Warning: the MiddleName is too long, max 64 characters has admitted!</String>
+    </Concept>
+    <Concept Id="UnebledUser">
+      <Comments>This message appears when the username edited is not enabled</Comments>
+      <String Context="Generic_Warning">Warning: Username is not enebled!</String>
+    </Concept>
+    <Concept Id="ChangePassword">
+      <Comments>ChangePassword configuration button name</Comments>
+      <String Context="Generic_Medium">Change Password</String>
+    </Concept>
+    <Concept Id="Security">
+      <Comments>Security configuration button name</Comments>
+      <String Context="Generic_Medium">Security</String>
+    </Concept>
+    <Concept Id="InvalidHK">
+      <Comments>his message appears when the Hardare Key  edited is not valid</Comments>
+      <String Context="Generic_Warning">Warning: the Hardare Key is not valid!</String>
+    </Concept>
+    <Concept Id="PasswordCharLenght">
+      <Comments>message in security configuarion dialog to set Minimum Password length 8 chars</Comments>
+      <String Context="Generic_Warning">Minimum "Min Password Char Lenght" permitted is  8 chars</String>
+    </Concept>
+    <Concept Id="PasswordCharLenghtTooLong">
+      <Comments>message in security configuarion dialog to set Max Minimum Password length 20 chars</Comments>
+      <String Context="Generic_Warning">Max "Min Password Char Lenght" permitted is  20 chars</String>
+    </Concept>
+    <Concept Id="PasswordCharLenghtNumeric">
+      <Comments>message in security configuarion dialog to set Minimum Password length as a number</Comments>
+      <String Context="Generic_Warning">"Min Password Char Lenght" should be a number</String>
+    </Concept>
+    <Concept Id="DaysOfInactivitiesDisableLoginTooShort">
+      <Comments>message in security configuarion dialog to set  Minimum of Days Of Inactivities Disable Login at 1</Comments>
+      <String Context="Generic_Warning">Minimum "Days Of Inactivities Disable Login" permitted is 1</String>
+    </Concept>
+    <Concept Id="LockingTimeoutTooShort">
+      <Comments>message in security configuarion dialog to set Minimum Locking Timeout at 1</Comments>
+      <String Context="Generic_Warning">Minimum "Locking Timeout" permitted is 1 minute</String>
+    </Concept>
+    <Concept Id="DaysOfInactivitiesDisableLoginTooLong">
+      <Comments>message in security configuarion dialog to set  Max of Days Of Inactivities Disable Login at 1</Comments>
+      <String Context="Generic_Warning">Maximum "Days Of Inactivities Disable Login" permitted is 9999</String>
+    </Concept>
+    <Concept Id="DaysOfInactivitiesDisableLoginNumeric">
+      <Comments>message in security configuarion dialog to set Days Of Inactivities Disable Login as a number</Comments>
+      <String Context="Generic_Warning">"Days Of Inactivities Disable Login" should be a number.</String>
+    </Concept>
+    <Concept Id="LockingTimeoutTooLong">
+      <Comments>message in security configuarion dialog to set Maximum Locking Timeout at 99999 minutes</Comments>
+      <String Context="Generic_Warning">Maximum "Locking Timeout" permitted is 9999 minutes</String>
+    </Concept>
+    <Concept Id="LockingTimeoutNumeric">
+      <Comments>message in security configuarion dialog to set Maximum Locking Timeout as a number</Comments>
+      <String Context="Generic_Warning">"Locking Timeout" should be a number</String>
+    </Concept>
+    <Concept Id="PasswordExpiringTimeTooShort">
+      <Comments>message in security configuarion dialog to set Minimum Password Expiring Time at 1</Comments>
+      <String Context="Generic_Warning">Minimum "Password Expiring Time" permitted is 1 day</String>
+    </Concept>
+    <Concept Id="PasswordExpiringTimeTooLong">
+      <Comments>message in security configuarion dialog to set Maximum Password Expiring Time at 9999</Comments>
+      <String Context="Generic_Warning">Maximum "Password Expiring Time" permitted is 9999 day</String>
+    </Concept>
+    <Concept Id="PasswordExpiringTimeNumeric">
+      <Comments>message in security configuarion dialog to set Password Expiring Time as a number</Comments>
+      <String Context="Generic_Warning">"Password Expiring Time" should be a positive number</String>
+    </Concept>
+    <Concept Id="MODIFICATION_AVAILABLE_NEXT_EXAM">
+      <Comments>message exiting configuration manager to advise the user that security configuration will be applied at next start up</Comments>
+      <String Context="Generic_Warning">security configuration will be applied at next start up</String>
+    </Concept>
+    <Concept Id="EnabledTrue">
+      <Comments>User Status Enabled "true"</Comments>
+      <String Context="Generic_Short">true</String>
+    </Concept>
+    <Concept Id="EnabledFalse">
+      <Comments>User Status Enabled "false"</Comments>
+      <String Context="Generic_Short">false</String>
+    </Concept>
+    <Concept Id="Administrator">
+      <Comments>User type "Administrator"</Comments>
+      <String Context="Generic_Medium">Administrator</String>
+    </Concept>
+    <Concept Id="Normal">
+      <Comments>User type "Normal"</Comments>
+      <String Context="Generic_Medium">Normal</String>
+    </Concept>
+    <Concept Id="USBnotPresent">
+      <Comments>message to advice the user that USB is not Present</Comments>
+      <String Context="Generic_Warning">Warning: USB not Present!</String>
+    </Concept>
+    <Concept Id="OperationNoValid">
+      <Comments>message to advice the user that Operation no valid for this user</Comments>
+      <String Context="Generic_Warning">Warning: Operation no valid for this user!</String>
+    </Concept>
+    <Concept Id="problem">
+      <Comments>message to advice the user that Some problem occurred during Log export</Comments>
+      <String Context="Generic_Warning">Warning: Some problem occurred during Log export!</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="AddUser">
+    <Concept Id="UserNameLabel">
+      <Comments>User Name Label in Add User Dialog</Comments>
+      <String Context="Generic_Medium">User Name</String>
+    </Concept>
+    <Concept Id="FirstNameLabel">
+      <Comments>First Name Label in Add User Dialog</Comments>
+      <String Context="Generic_Medium">First Name</String>
+    </Concept>
+    <Concept Id="MiddleNameLabel">
+      <Comments>Middle Name Label in Add User Dialog</Comments>
+      <String Context="Generic_Medium">Middle Nameì</String>
+    </Concept>
+    <Concept Id="LastNameLabel">
+      <Comments>Last Name Label in Add User Dialog</Comments>
+      <String Context="Generic_Medium">Last Name</String>
+    </Concept>
+    <Concept Id="InsertPasswordLabel">
+      <Comments>Insert Password Label in Add User Dialog</Comments>
+      <String Context="Generic_Long">Insert Password</String>
+    </Concept>
+    <Concept Id="ConfirmPasswordLabel">
+      <Comments>Confirm Password Label in Add User Dialog</Comments>
+      <String Context="Generic_Long">Confirm Password</String>
+    </Concept>
+    <Concept Id="ChangePasswordFirstLoginLabel">
+      <Comments>Change Password First Login Label in Add User Dialog</Comments>
+      <String Context="Generic_Long">Change Password First Login</String>
+    </Concept>
+    <Concept Id="CanModifyConfigurationLabel">
+      <Comments>Can Access to Menu Label in Add User Dialog</Comments>
+      <String Context="Generic_Long">Can Modify Configuration</String>
+    </Concept>
+    <Concept Id="AdministratorLabel">
+      <Comments>Is Administrator Label in Add User Dialog</Comments>
+      <String Context="Generic_Medium">Is Administrator</String>
+    </Concept>
+    <Concept Id="IsEnabledLabel">
+      <Comments>Is Enabled Label in Add User Dialog</Comments>
+      <String Context="Generic_Medium">Is Enabled</String>
+    </Concept>
+    <Concept Id="OKBUtton">
+      <Comments>OK Button Label in Add User Dialog</Comments>
+      <String Context="Generic_Medium">OK</String>
+    </Concept>
+    <Concept Id="LOGINBUtton">
+      <Comments>LOGIN button</Comments>
+      <String Context="Generic_Medium">LOGIN</String>
+    </Concept>
+    <Concept Id="CancelBUtton">
+      <Comments>CANCEL Button Label in Add User Dialog</Comments>
+      <String Context="Generic_Medium">CANCEL</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="LoginControl">
+    <Concept Id="PasswordLabel">
+      <Comments>Password Label in Login Dialog</Comments>
+      <String Context="Generic_Medium">Password</String>
+    </Concept>
+    <Concept Id="Emergency">
+      <Comments>Emergency Label in Login Button to emercency login</Comments>
+      <String Context="Generic_Medium">Emergency</String>
+    </Concept>
+    <Concept Id="LoginWarningMessage">
+      <Comments>Warning message when a user access the security configuration and is not logged as a security administrator</Comments>
+      <String Context="Generic_Warning">To access the security configuration you need to log in as a security administrator</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="ChangePassword">
+    <Concept Id="OldPasswordLabel">
+      <Comments>OldPassword Label in ChangePassword Dialog</Comments>
+      <String Context="Generic_Long">Old Password</String>
+    </Concept>
+    <Concept Id="NewPasswordLabel">
+      <Comments>NewPassword Label in ChangePassword Dialog</Comments>
+      <String Context="Generic_Long">New Password</String>
+    </Concept>
+    <Concept Id="ConfirmPasswordLabel">
+      <Comments>Confirm Password Label in ChangePassword Dialog</Comments>
+      <String Context="Generic_Long">Confirm Password</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="UsersEditor">
+    <Concept Id="DaysInactivityLabel">
+      <Comments>"Days of inactivity to disable login" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Long">Days of inactivity to disable login</String>
+    </Concept>
+    <Concept Id="Settings">
+      <Comments>"SETTINGS" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Medium">SETTINGS</String>
+    </Concept>
+    <Concept Id="PasswordCharLenght">
+      <Comments>"Password char length" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Long">Min Password char length</String>
+    </Concept>
+    <Concept Id="PasswordExpiringTimeLabel">
+      <Comments>"Password expiring time (days)" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Long">Password expiring time (days)</String>
+    </Concept>
+    <Concept Id="LockingTimeoutLabel">
+      <Comments>"Locking timeout (minutes)" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Long">Locking timeout (minutes)</String>
+    </Concept>
+    <Concept Id="DisableEmercencyLogin">
+      <Comments>"Disable emercency login" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Long">Disable emercency login</String>
+    </Concept>
+    <Concept Id="DisableAccess">
+      <Comments>"Disable access control" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Long">Disable access control</String>
+    </Concept>
+    <Concept Id="Export">
+      <Comments>"EXPORT LOG to usb" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Long">EXPORT LOG to usb</String>
+    </Concept>
+    <Concept Id="Users">
+      <Comments>"USERS" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Medium">USERS</String>
+    </Concept>
+    <Concept Id="Username">
+      <Comments>"Username" Label in Users Editor HEadre List</Comments>
+      <String Context="Generic_Medium">Username</String>
+    </Concept>
+    <Concept Id="FullName">
+      <Comments>"FullName" Label in Users Editor HEadre List</Comments>
+      <String Context="Generic_Medium">FullName</String>
+    </Concept>
+    <Concept Id="Enabled">
+      <Comments>"Enabled" Label in Users Editor HEadre List</Comments>
+      <String Context="Generic_Medium">Enabled</String>
+    </Concept>
+    <Concept Id="Type">
+      <Comments>"Type" Label in Users Editor HEadre List</Comments>
+      <String Context="Generic_Medium">Type</String>
+    </Concept>
+    <Concept Id="Add">
+      <Comments>"Add" Button  in Users Editor Dialog</Comments>
+      <String Context="Generic_Medium">Add</String>
+    </Concept>
+    <Concept Id="Edit">
+      <Comments>"Edit" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Medium">Edit</String>
+    </Concept>
+    <Concept Id="Delete">
+      <Comments>"Delete" Label in Users Editor Dialog</Comments>
+      <String Context="Generic_Medium">Delete</String>
+    </Concept>
+    <Concept Id="DeleteConfirm">
+      <Comments>Dialog to confirm delete user</Comments>
+      <String Context="Generic_Warning">Are you sure to delete the selected user?</String>
+    </Concept>
+    <Concept Id="WarnigDefaultUser">
+      <Comments>warning message: the default user is not editable and can't be deleted</Comments>
+      <String Context="Generic_Warning">The default user is not editable and can't be deleted</String>
+    </Concept>
+    <Concept Id="ChangePasswordMessage">
+      <Comments>the password has to be canghed</Comments>
+      <String Context="Generic_Long"> Please change your password</String>
+    </Concept> 
+  </LocalizationSection>
+</LocalizationResource>

@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ThreeDComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  
+
+  <!--TS PRESET FACTORY NAME - START-->
+  <LocalizationSection InternalNamespace="FactoryGroups">
+
+    <Concept Id="FACTORY">
+      <Comments>Factory name is valid for each application in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">FACTORY</String>
+    </Concept>
+
+    <Concept Id="GENERAL">
+      <Comments>This name is valid for each application in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">GENERAL</String>
+    </Concept>
+
+    <Concept Id="SURFACE">
+      <Comments>This name is valid for each application (except OB-Fetal) in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">SURFACE</String>
+    </Concept>
+
+    <Concept Id="BABY FACE">
+      <Comments>This name is valid only for OB-Fetal application in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">BABY FACE</String>
+    </Concept>
+
+    <Concept Id="SPINE">
+      <Comments>This name is valid only for OB-Fetal application in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">SPINE</String>
+    </Concept>
+
+    <Concept Id="DEEP">
+      <Comments>This name is valid only for Gynecological application in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">DEEP</String>
+    </Concept>
+
+  </LocalizationSection>
+  <!--TS PRESET FACTORY NAME - END-->
+
+
+
+  <!--TS GENERAL MESSAGE - START-->
+  <LocalizationSection InternalNamespace="GeneralMessage">
+
+    <Concept Id="ERROR_IMPORTING_PRESET">
+      <Comments>An error has been verified during a import preset operation</Comments>
+      <String Context="Generic_Warning">An error has been verified during the import of a configuration.</String>
+    </Concept>
+
+    <Concept Id="ONE_APP_AT_LEAST">
+      <Comments>Before saving a new preset the user has to select the appropriate application</Comments>
+      <String Context="Generic_Warning">Please, select the application before saving.</String>
+    </Concept>
+
+    <Concept Id="ONE_BMP_AT_LEAST">
+      <Comments>Before saving a new preset the user has to create a group with at least 1 icon.</Comments>
+      <String Context="Generic_Warning">Please, add one or more icons before saving.</String>
+    </Concept>
+
+	<Concept Id="USEFACTORYIFCORRUPTED">
+      <Comments>The configuration is invalid the system will try to apply factory data.</Comments>
+      <String Context="Generic_Warning">Invalid specific configuration data, factory will be applied!</String>
+    </Concept>
+
+  </LocalizationSection>
+  <!--TS GENERAL MESSAGE - END-->
+
+
+
+  <!--TS APPLICATION NAME - START-->
+  <LocalizationSection InternalNamespace="Applications">
+
+    <Concept Id="CARDIAC">
+      <Comments>Cardiac Application</Comments>
+      <String Context="Generic_Long">CARDIAC</String>
+      <String Context="TS_SButton">CARDIAC</String>
+    </Concept >
+    <Concept Id="VASCULAR">
+      <Comments>Vascular Application</Comments>
+      <String Context="Generic_Long">VASCULAR</String>
+      <String Context="TS_SButton">VASCULAR</String>
+    </Concept >
+    <Concept Id="ABDOMINAL">
+      <Comments>Abdominal Application</Comments>
+      <String Context="Generic_Long">ABDOMINAL</String>
+      <String Context="TS_SButton">ABDOMINAL</String>
+    </Concept >
+    <Concept Id="OBSTETRIC">
+      <Comments>Obstetric Application</Comments>
+      <String Context="Generic_Long">OBSTETRIC</String>
+      <String Context="TS_SButton">OBSTETRIC</String>
+    </Concept >
+    <Concept Id="NEONATAL">
+      <Comments>Neonatal Application</Comments>
+      <String Context="Generic_Long">NEONATAL</String>
+      <String Context="TS_SButton">NEONATAL</String>
+    </Concept >
+    <Concept Id="CARDIACPEDIATRIC">
+      <Comments>CardiacPediatric Application</Comments>
+      <String Context="Generic_Long">CARDIACPEDIATRIC</String>
+      <String Context="TS_SButton">CARDIACPEDIATRIC</String>
+    </Concept >
+    <Concept Id="PEDIATRIC">
+      <Comments>Pediatric Application</Comments>
+      <String Context="Generic_Long">PEDIATRIC</String>
+      <String Context="TS_SButton">PEDIATRIC</String>
+    </Concept>
+    <Concept Id="GYNECOLOGY">
+      <Comments>Gynecology Application</Comments>
+      <String Context="Generic_Long">GYNECOLOGY</String>
+      <String Context="TS_SButton">GYNECOLOGY</String>
+    </Concept >
+    <Concept Id="UROLOGIC">
+      <Comments>Urologic Application</Comments>
+      <String Context="Generic_Long">UROLOGIC</String>
+      <String Context="TS_SButton">UROLOGIC</String>
+    </Concept >
+    <Concept Id="MUSCULOSKELETAL">
+      <Comments>MusculoSkeletal Application</Comments>
+      <String Context="Generic_Long">MUSCULOSKELETAL</String>
+      <String Context="TS_SButton">MUSCULOSKELETAL</String>
+    </Concept>
+    <Concept Id="BREAST">
+      <Comments>Breast Application</Comments>
+      <String Context="Generic_Long">BREAST</String>
+      <String Context="TS_SButton">BREAST</String>
+    </Concept >
+    <Concept Id="THYROID">
+      <Comments>Thyroid Application</Comments>
+      <String Context="Generic_Long">THYROID</String>
+      <String Context="TS_SButton">THYROID</String>
+    </Concept >
+    <Concept Id="SMALLPARTS">
+      <Comments>SmallParts Application</Comments>
+      <String Context="Generic_Long">SMALLPARTS</String>
+      <String Context="TS_SButton">SMALLPARTS</String>
+    </Concept>
+    <Concept Id="GENERIC">
+      <Comments>Generic Application</Comments>
+      <String Context="Generic_Long">GENERIC</String>
+      <String Context="TS_SButton">GENERIC</String>
+    </Concept >
+    <Concept Id="ABDOMINALBOVINE">
+      <Comments>AbdominalBovine Application</Comments>
+      <String Context="TS_SButton">ABDOMINALBOVINE</String>
+      <String Context="Generic_Long">ABDOMINALBOVINE</String>
+    </Concept>
+    <Concept Id="ABDOMINALCANINE">
+      <Comments>AbdominalCanine Application</Comments>
+      <String Context="TS_SButton">ABDOMINALCANINE</String>
+      <String Context="Generic_Long">ABDOMINALCANINE</String>
+    </Concept>
+    <Concept Id="ABDOMINALFELINE">
+      <Comments>AbdominalFeline Application</Comments>
+      <String Context="TS_SButton">ABDOMINALFELINE</String>
+      <String Context="Generic_Long">ABDOMINALFELINE</String>
+    </Concept>
+    <Concept Id="ABDOMINALEQUINE">
+      <Comments>AbdominalEquine Application</Comments>
+      <String Context="TS_SButton">ABDOMINALEQUINE</String>
+      <String Context="Generic_Long">ABDOMINALEQUINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONCANINE">
+      <Comments>ReproductionCanine Application</Comments>
+      <String Context="TS_SButton">REPRODUCTIONCANINE</String>
+      <String Context="Generic_Long">REPRODUCTIONCANINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONFELINE">
+      <Comments>ReproductionFeline Application</Comments>
+      <String Context="TS_SButton">REPRODUCTIONFELINE</String>
+      <String Context="Generic_Long">REPRODUCTIONFELINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONEQUINE">
+      <Comments>ReproductionEquine Application</Comments>
+      <String Context="TS_SButton">REPRODUCTIONEQUINE</String>
+      <String Context="Generic_Long">REPRODUCTIONEQUINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONBOVINE">
+      <Comments>ReproductionBovine Application</Comments>
+      <String Context="TS_SButton">REPRODUCTIONBOVINE</String>
+      <String Context="Generic_Long">REPRODUCTIONBOVINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONOVINE">
+      <Comments>ReproductionOvine Application</Comments>
+      <String Context="TS_SButton">REPRODUCTIONOVINE</String>
+      <String Context="Generic_Long">REPRODUCTIONOVINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONPORCINE">
+      <Comments>ReproductionPorcine Application</Comments>
+      <String Context="TS_SButton">REPRODUCTIONPORCINE</String>
+      <String Context="Generic_Long">REPRODUCTIONPORCINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONCAPRINE">
+      <Comments>ReproductionCaprine Application</Comments>
+      <String Context="TS_SButton">REPRODUCTIONCAPRINE</String>
+      <String Context="Generic_Long">REPRODUCTIONCAPRINE</String>
+    </Concept>
+    <Concept Id="OTHERREPRODUCTION">
+      <Comments>Other Reproduction</Comments>
+      <String Context="TS_SButton">OTHERREPRODUCTION</String>
+      <String Context="Generic_Long">OTHERREPRODUCTION</String>
+    </Concept>
+    <Concept Id="OTHERABDOMINAL">
+      <Comments>Other Abdominal</Comments>
+      <String Context="TS_SButton">OTHERABDOMINAL</String>
+      <String Context="Generic_Long">OTHERABDOMINAL</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>
+  <!--TS APPLICATION NAME - END-->

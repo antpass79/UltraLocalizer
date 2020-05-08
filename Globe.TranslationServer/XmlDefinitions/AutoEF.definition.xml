@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="AutoEF" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="AutoEF">
+      <Comments>Command on touchscreen to activate Auto EF</Comments>
+      <String Context="TS_AButton">AUTO EF</String>
+      <String Context="Generic_Long">AUTO EF</String>
+    </Concept>
+    <Concept Id="AutoEFBack">
+      <Comments>Command on touchscreen to exit from Auto EF environment</Comments>
+      <String Context="TS_AButton">EXIT</String>
+      <String Context="Generic_Long">EXIT</String>
+    </Concept>
+    <Concept Id="Process">
+      <Comments>Command on touchscreen to start AUTO EF calculation</Comments>
+      <String Context="TS_AButton">PROCESS</String>
+      <String Context="Generic_Long">PROCESS</String>
+    </Concept>
+    <Concept Id="FRAME">
+      <Comments>TCommand on touchscreen to move to the next/previous frame of current clip</Comments>
+      <String Context="TS_AButton">FRAME</String>
+      <String Context="Generic_Long">FRAME</String>
+    </Concept>
+    <Concept Id="DIASTOLICFRAME">
+      <Comments>TCommand on touchscreen to go to proposed diastolic frame</Comments>
+      <String Context="TS_AButton">PROPOSED DIASTOLE</String>
+      <String Context="Generic_Long">PROPOSED DIASTOLE</String>
+    </Concept>
+    <Concept Id="SYSTOLICFRAME">
+      <Comments>TCommand on touchscreen to go to proposed diastolic frame</Comments>
+      <String Context="TS_AButton">PROPOSED SYSTOLE</String>
+      <String Context="Generic_Long">PROPOSED SYSTOLE</String>
+    </Concept>
+    <Concept Id="AttachEFToReport">
+      <Comments>TCommand on touchscreen to attach the calculated Ejection Fraction to report</Comments>
+      <String Context="TS_AButton">ATTACH EF TO REPORT</String>
+      <String Context="Generic_Long">ATTACH EF TO REPORT</String>
+    </Concept>
+    <Concept Id="ShowVolumeGraph">
+      <Comments>TCommand on touchscreen to show/hide the graph of volumes</Comments>
+      <String Context="TS_AButton">ATTACH EF TO REPORT</String>
+      <String Context="Generic_Long">ATTACH EF TO REPORT</String>
+    </Concept>
+    <Concept Id="ModifyInputPoints">
+      <Comments>TCommand on touchscreen to change the user canditate points</Comments>
+      <String Context="TS_AButton">MODIFY INPUT POINTS</String>
+      <String Context="Generic_Long">MODIFY INPUT POINTS</String>
+    </Concept>
+    <Concept Id="TagAsSystolic">
+      <Comments>TCommand on touchscreen to tag the current frame as systolic</Comments>
+      <String Context="TS_AButton">TAG AS SYSTOLIC</String>
+      <String Context="Generic_Long">TAG CURRENT FRAME AS SYSTOLIC</String>
+    </Concept>
+    <Concept Id="TagAsDiastolic">
+      <Comments>TCommand on touchscreen to tag the current frame as diastolic</Comments>
+      <String Context="TS_AButton">TAG AS DIASTOLIC</String>
+      <String Context="Generic_Long">TAG CURRENT FRAME AS DIASTOLIC</String>
+    </Concept>
+    <Concept Id="InsertPoints">
+      <Comments>Message on help area to advise the user to insert the candidate points to perform AF analysis</Comments>
+      <String Context="Generic_Long">Insert candidate points to perform the analysis</String>
+    </Concept>
+    <Concept Id="EFTag">
+      <Comments>Auto EF analysis</Comments>
+      <String Context="Generic_Long">AUTOMATIC EJECTION FRACTION</String>
+      <String Context="Generic_Medium">EJECTION FRACTION</String>
+      <String Context="Generic_Short">AUTO EF</String>
+    </Concept>
+    <Concept Id="SystolicVolume">
+      <Comments>Systolic volume</Comments>
+      <String Context="Generic_Long">Systolic Volume</String>
+      <String Context="Generic_Short">Sys. Vol.</String>
+    </Concept>
+    <Concept Id="DiastolicVolume">
+      <Comments>Diastolic volume</Comments>
+      <String Context="Generic_Long">Diastolic Volume</String>
+      <String Context="Generic_Short">Dia. Vol.</String>
+    </Concept>
+    <Concept Id="Milliliters">
+      <Comments>UDM in report</Comments>
+      <String Context="Generic_Long">milliliters</String>
+    </Concept>
+    <Concept Id="DateOfAcquiredClip">
+      <Comments>Date Of Clip where auto ef has been performed on</Comments>
+      <String Context="Generic_Long">Date of acquired clip</String>
+    </Concept>
+    <Concept Id="ErrorDiastolicSystolicCoincident">
+      <Comments>Error message if systolic and diastolic frames are coincident</Comments>
+      <String Context="Generic_Warning">Date of acquired clip</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

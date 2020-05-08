@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="VPanReviewComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+
+  <!--TS COMMANDS - START-->
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="VPAN" Ignore="false">
+      <Comments>TS command VPAN</Comments>
+      <String Context="TS_TabName">VPAN</String>
+    </Concept>  
+    <Concept Id="ROTATE" Ignore="false">
+      <Comments>TS command for rotating VPAN image</Comments>
+      <String Context="TS_TButton">Rotate</String>
+    </Concept>
+    <Concept Id="FILTER" Ignore="false">
+      <Comments>TS command for selecting VPAN filtering value</Comments>
+      <String Context="TS_TButton">Filter</String>
+    </Concept>
+    <Concept Id="ZOOM" Ignore="false">
+      <Comments>TS command for rotation zooming in VPAN</Comments>
+      <String Context="TS_TButton">Zoom</String>
+    </Concept>
+    <Concept Id="REF. FRAME" Ignore="false">
+      <Comments>TS command for selecting reference frame mode in VPAN</Comments>
+      <String Context="TS_AButton">Ref. Frame</String>
+      <String Context="TS_TButton">Ref. Frame</String>
+    </Concept>
+
+    <Concept Id="SMALL" Ignore="false">
+      <Comments>TS value of SMALL reference frame mode in VPAN</Comments>
+      <String Context="TS_TButton">Small</String>
+    </Concept>
+    <Concept Id="DUAL" Ignore="false">
+      <Comments>TS value of DUAL reference frame mode in VPAN</Comments>
+      <String Context="TS_TButton">Dual</String>
+    </Concept>
+    <Concept Id="FULL" Ignore="false">
+      <Comments>TS value of FULL reference frame mode in VPAN</Comments>
+      <String Context="TS_TButton">Full</String>
+    </Concept>
+    <Concept Id="MEDIUM" Ignore="false">
+      <Comments>TS value of MEDIUM reference frame mode in VPAN</Comments>
+      <String Context="TS_TButton">Medium</String>
+    </Concept>
+
+    <Concept Id="OFFLINE" Ignore="false">
+      <Comments>TS command for selecting offline VPAN acquisition</Comments>
+      <String Context="TS_TButton">Offline</String>
+    </Concept>
+    <Concept Id="CENTERED" Ignore="false">
+      <Comments>TS command for selecting CENTERED VPAN modality</Comments>
+      <String Context="TS_TButton">Centered</String>
+    </Concept>
+    <Concept Id="FIT SCREEN" Ignore="false">
+      <Comments>TS command for selecting FIT SCREEN VPAN modality</Comments>
+      <String Context="TS_TButton">Fit Screen</String>
+    </Concept>	
+    <Concept Id="OPEN FILE" Ignore="false">
+      <Comments>Open a file</Comments>
+      <String Context="TS_AButton">Open File</String>
+    </Concept>
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="Information">
+    <Concept Id="CALCULATING" Ignore="false">
+      <Comments>Waiting information when calculating VPan</Comments>
+      <String Context="Generic_Warning">Calculating..</String>
+    </Concept>
+    <Concept Id="VPAN OFFLINE ERRROR" Ignore="false">
+      <Comments>VPan offline core returns false, mostly due to memory error</Comments>
+      <String Context="Generic_Warning">VPAN is unable to process the acquired data. Please acquire a new session.</String>
+    </Concept>
+  </LocalizationSection>
+  
+</LocalizationResource>

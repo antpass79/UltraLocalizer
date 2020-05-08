@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="VPanRealtimeComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+
+  <!--TS COMMANDS - START-->
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="OFFLINE" Ignore="false">
+      <Comments>TS command for selecting offline VPAN acquisition</Comments>
+      <String Context="TS_TButton">OFFLINE</String>
+    </Concept>
+    <Concept Id="CENTERED" Ignore="false">
+      <Comments>TS command for selecting CENTERED VPAN acquisition</Comments>
+      <String Context="TS_TButton">CENTERED</String>
+    </Concept>
+    <Concept Id="CURVED" Ignore="false">
+      <Comments>TS command for selecting CURVED VPAN acquisition</Comments>
+      <String Context="TS_TButton">CURVED</String>
+    </Concept>
+    <Concept Id="FITSCREEN" Ignore="false">
+      <Comments>TS command for selecting FITSCREEN VPAN acquisition</Comments>
+      <String Context="TS_TButton">FITSCREEN</String>
+    </Concept>
+    <Concept Id="OPEN FILE" Ignore="false">
+      <Comments>Open a file</Comments>
+      <String Context="TS_TButton">OPEN FILE</String>
+    </Concept>
+  </LocalizationSection>
+
+</LocalizationResource>

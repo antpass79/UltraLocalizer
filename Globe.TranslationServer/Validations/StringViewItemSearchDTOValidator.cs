@@ -3,7 +3,7 @@ using Globe.TranslationServer.DTOs;
 
 namespace Globe.TranslationServer.Validations
 {
-    public class StringViewItemSearchDTOValidator : AbstractValidator<StringItemViewSearchDTO>
+    public class StringViewItemSearchDTOValidator : AbstractValidator<StringViewItemSearchDTO>
     {
         public StringViewItemSearchDTOValidator()
         {

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="MediaExport OutOfProcess Service" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="WRITEERROR">
+      <Comments>Input / output error during copy operation; It is displayed when user executes an export avi/bmp with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">ERROR WRITING ON THE DEVICE</String>
+    </Concept>
+    <Concept Id="DISKFULL">
+      <Comments>There is not enough space on the destination device; It is displayed when user executes an export avi/bmp with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">LOW DEVICE SPACE</String>
+    </Concept>
+    <Concept Id="BURNERROR">
+      <Comments>Error burning cd/dvd; It is displayed when user executes an export avi/bmp with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">BURNING ERROR</String>
+    </Concept>
+    <Concept Id="UNKNOWNERROR">
+      <Comments>; It is displayed when user executes an export avi/bmp with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">UNKNOWN ERROR</String>
+    </Concept>
+    <Concept Id="GROUPIDERROR">
+      <Comments>It is displayed when user executes an export avi/bmp and then abort that operation. This string is displayed when user open Operations dialog in info area,  to see details</Comments>
+      <String Context="Generic_Warning">OPERATION ABORTED DUE TO: </String>
+    </Concept>
+    <Concept Id="BurnAbort">
+      <Comments>; It is displayed when user executes an export avi/bmp with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">BURNING ABORTED</String>
+    </Concept>
+    <Concept Id="PATHTOOLONG">
+      <Comments>The destination folder path choosen for the export is too long. Shown opening the Operations dialog in the info area,  to see error details</Comments>
+      <String Context="Generic_Warning">THE DESTINATION PATH IS TOO LONG</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

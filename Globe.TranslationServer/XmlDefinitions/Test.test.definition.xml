@@ -1,0 +1,85 @@
+﻿<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="TEST" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+   <LocalizationSection InternalNamespace="TEST">
+    <Concept Id="OTHER_ABDOMINAL1">
+      <String Context="TS_AButton">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL2">
+      <String Context="TS_BButton">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL3">
+      <String Context="TS_TButton">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL4">
+      <String Context="TS_SButton">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL5">
+      <String Context="TS_TabName">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL6">
+      <String Context="MD_RT11MeasName">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL7">
+      <String Context="MD_RT11UnitMeas">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL8">
+      <String Context="MD_RT14aTrackballStrings">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL9">
+      <String Context="MD_RT13HelpLine">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL10">
+      <String Context="MD_RT8Info">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL11">
+      <String Context="MD_RT7Application">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL12">
+      <String Context="MD_RT910">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL13">
+      <String Context="MD_RT16TabColumnName">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL14">
+      <String Context="Generic_Warning">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL15">
+      <String Context="Generic_Long">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL16">
+      <String Context="Generic_Medium">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL17">
+      <String Context="Generic_Short">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL18">
+      <String Context="MD_IconArea">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL19">
+      <String Context="MD_RT11MeasHeader">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL20">
+      <String Context="MD_RT11MeasSpan2">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL21">
+      <String Context="TS_AButtonWithIcon">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL22">
+      <String Context="MD_RT11MeasHeaderMagnified">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL23">
+      <String Context="TS_MButton">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL24">
+      <String Context="MD_RT17Label">OTHER CARDIOcc</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL25">
+      <String Context="MD_RT17Label">OTHER CARDIOdd</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL26">
+      <String Context="MD_RT17Label">OTHER CARDIOpp</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL27">
+      <String Context="MD_RT17Label">OTHER CARDIO</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

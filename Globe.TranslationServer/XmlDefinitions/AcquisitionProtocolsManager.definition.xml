@@ -1,0 +1,540 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="AcquisitionProtocolsManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="NOW">
+      <Comments>It's the current step</Comments>
+      <String Context="Generic_Long">NOW</String>
+    </Concept>
+    <Concept Id="NEXT">
+      <Comments>It's the next session</Comments>
+      <String Context="Generic_Long">NEXT</String>
+    </Concept>
+		<Concept Id="NEXTSTEPBTN">
+			<Comments>Next step button on Touch screen </Comments>
+			<String Context="TS_BButton">NEXT STEP</String>
+		</Concept>
+		<Concept Id="NEXTSESSIONBTN">
+			<Comments>Next session button on touch screen</Comments>
+			<String Context="TS_BButton">NEXT SESSION</String>
+		</Concept>
+		<Concept Id="TABTITLE">
+			<Comments>The tile of the touch screen TAB</Comments>
+			<String Context="TS_TabName">Protocols</String>
+		</Concept>
+		<Concept Id="NOPROTOCOLAVAILABLE">
+			<Comments>This message appears when no protocol is available for current application</Comments>
+			<String Context="Generic_Warning">No protocol is available for the current application</String>
+		</Concept>
+    <Concept Id="OUTOFSEQUENCE_1">
+      <Comments>This message appears when the user goes out of a protocol sequence</Comments>
+      <String Context="Generic_Warning">According to the current protocol, the acquisition status is different from the expected one</String>
+    </Concept>
+		<Concept Id="OUTOFSEQUENCE_1_0">
+			<Comments>This message appears when the user goes out of a protocol sequence</Comments>
+			<String Context="Generic_Warning">Please check that all listed conditions are satisfied.</String>
+		</Concept>
+		<Concept Id="OUTOFSEQUENCE_2">
+			<Comments>This message appears when the current protocol can't set the device in a specific status</Comments>
+			<String Context="Generic_Warning">Impossible to set the system in the following status</String>
+		</Concept>
+		<Concept Id="OUTOFSEQUENCE_3">
+			<Comments>This message appears when the user goes out of a protocol sequence</Comments>
+			<String Context="Generic_Warning">Expected status</String>
+		</Concept>
+		<Concept Id="OUTOFSEQUENCE_4">
+			<Comments>This message appears when the user goes out of a protocol sequence</Comments>
+			<String Context="Generic_Warning">System status</String>
+		</Concept>
+		<Concept Id="ABORTPROTOCOLMESSAGE">
+			<Comments>This message appears, for confirmation, when the user wants to close current protocol</Comments>
+			<String Context="Generic_Warning">Do you want to abort the current acquisition protocol</String>
+		</Concept>
+		<Concept Id="SUMMARYTITLE">
+			<Comments>This message appears when the current protocol has been completed</Comments>
+			<String Context="Generic_Long">Current protocol completed</String>
+		</Concept>
+		<Concept Id="SUMMARYTITLE_SECTION_1">
+			<Comments>This message appears when the current protocol has been completed</Comments>
+			<String Context="Generic_Long">Number of sessions</String>
+		</Concept>
+		<Concept Id="SUMMARYTITLE_SECTION_2">
+			<Comments>This message appears when the current protocol has been completed</Comments>
+			<String Context="Generic_Long">Number of fully executed sessions</String>
+		</Concept>
+		<Concept Id="SUMMARYTITLE_SECTION_3">
+			<Comments>This message appears when the current protocol has been completed</Comments>
+			<String Context="Generic_Long">Number of partially skipped sessions</String>
+		</Concept>
+		<Concept Id="SUMMARYTITLE_SECTION_4">
+			<Comments>This message appears when the current protocol has been completed</Comments>
+			<String Context="Generic_Long">Number of totally skipped sessions</String>
+		</Concept>
+		<Concept Id="SUMMARYTITLE_SECTION_5">
+			<Comments>This message appears when the current protocol has been completed</Comments>
+			<String Context="Generic_Long">Number of skipped sessions</String>
+		</Concept>
+		<Concept Id="CANCEL">
+			<Comments>Button for closing the out of sequence dialog</Comments>
+			<String Context="TS_AButton">CANCEL</String>
+			<String Context="Generic_Long">CANCEL</String>
+		</Concept>
+		<Concept Id="ABORT">
+			<Comments>Button for closing the out of sequence dialog and aborting the current protocol</Comments>
+			<String Context="TS_AButton">ABORT</String>
+			<String Context="Generic_Long">ABORT</String>
+		</Concept>
+		<Concept Id="SKIP">
+			<Comments>Button for closing the out of sequence dialog and skipping the current session</Comments>
+			<String Context="TS_AButton">SKIP</String>
+			<String Context="Generic_Long">SKIP</String>
+		</Concept>
+		<Concept Id="Live-true">
+			<Comments>This message appears if the device is in live mode</Comments>
+			<String Context="Generic_Long">LIVE</String>
+		</Concept>
+		<Concept Id="Live-false">
+			<Comments>This message appears if the device is not in live mode</Comments>
+			<String Context="Generic_Long">FROZEN</String>
+		</Concept>
+    <Concept Id="Mode-B">
+      <Comments>This message appears if the device is not expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B</String>
+    </Concept>
+    <Concept Id="Mode-M">
+      <Comments>This message appears if the device is not in expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: M</String>
+    </Concept>
+    <Concept Id="Mode-PW">
+      <Comments>This message appears if the device is not in expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: PW</String>
+    </Concept>
+    <Concept Id="Mode-CW">
+      <Comments>This message appears if the device is not in expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: CW</String>
+    </Concept>
+    <Concept Id="Mode-B_CFM">
+      <Comments>This message appears if the device is not in expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: CFM</String>
+    </Concept>
+    <Concept Id="Mode-M_CFM">
+      <Comments>This message appears if the device is not in expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: M + CFM</String>
+    </Concept>
+    <Concept Id="Mode-B_M_LIVE">
+      <Comments>This message appears if the device is not in expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B &amp; M PLEX</String>
+    </Concept>
+    <Concept Id="Mode-B_PW_LIVE">
+      <Comments>This message appears if the device is not in expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B &amp; PW PLEX</String>
+    </Concept>
+    <Concept Id="Mode-B_M_CFM_LIVE">
+      <Comments>This message appears if the device is not in expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B &amp; M + CFM PLEX</String>
+    </Concept>
+    <Concept Id="Mode-B_CFM_PW_LIVE">
+      <Comments>This message appears if the device is not in expected mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B + CFM &amp; PW PLEX</String>
+    </Concept>
+    <Concept Id="Mode-B_CFM_M_CFM_LIVE">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B + CFM &amp; M + CFM PLEX</String>
+    </Concept>
+    <Concept Id="Mode-B_M_UPDT">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B STILL &amp; M</String>
+    </Concept>
+    <Concept Id="Mode-B_PW_UPDT">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B STILL &amp; PW</String>
+    </Concept>
+    <Concept Id="Mode-B_CW_UPDT">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B STILL &amp; CW</String>
+    </Concept>
+    <Concept Id="Mode-B_CFM_PW_UPDT">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B + CFM STILL &amp; PW</String>
+    </Concept>
+    <Concept Id="Mode-B_CFM_CW_UPDT">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B + CFM STILL &amp; CW</String>
+    </Concept>
+    <Concept Id="Mode-B_CFM_M_CFM_UPDT">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B + CFM STILL &amp; M + CFM</String>
+    </Concept>
+    <Concept Id="Mode-B_M_BLSF">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B &amp; M STILL</String>
+    </Concept>
+    <Concept Id="Mode-B_PW_BLSF">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B &amp; PW STILL</String>
+    </Concept>
+    <Concept Id="Mode-B_CW_BLSF">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B &amp; CW STILL</String>
+    </Concept>
+    <Concept Id="Mode-B_CFM_PW_BLSF">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B + CFM &amp; PW STILL</String>
+    </Concept>
+    <Concept Id="Mode-B_CFM_CW_BLSF">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B + CFM &amp; CW STILL</String>
+    </Concept>
+    <Concept Id="Mode-B_CFM_M_CFM_BLSF">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Acquisition mode: B + CFM &amp; M + CFM STILL</String>
+    </Concept>
+    <Concept Id="DopplerScale-Speed">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Doppler velocity in m/s or cm/s</String>
+    </Concept>
+    <Concept Id="DopplerScale-KHz">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Doppler velocity in Hz</String>
+    </Concept>
+    <Concept Id="LineOnScreen-true">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Line on the screen</String>
+    </Concept>
+    <Concept Id="LineOnScreen-false">
+      <Comments>This message appears if the device is in live mode</Comments>
+      <String Context="Generic_Long">Line not on the screen</String>
+    </Concept>
+		<Concept Id="VersionError">
+			<Comments>This message appears if the software version is minor than protocol version</Comments>
+			<String Context="Generic_Long">Impossible to load the selected protocol</String>
+		</Concept>
+    <Concept Id="OK">
+      <Comments>Button for closing the Acquisition steps' detail dialog</Comments>
+      <String Context="TS_AButton">OK</String>
+      <String Context="Generic_Long">OK</String>
+    </Concept>
+    <Concept Id="TRACE_FULL_SCREEN">
+      <Comments>The message for trace full screen check box in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">TRACE FULL SCREEN</String>
+    </Concept>
+    <Concept Id="PLEX_ENABLE">
+      <Comments>The message for plex enable check box in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">PLEX ENABLE</String>
+    </Concept>
+    <Concept Id="LINE_ON_IMG">
+      <Comments>The message for line on image check box in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">LINE ON IMAGE</String>
+    </Concept>
+    <Concept Id="DOPPLER_SCALE">
+      <Comments>The message for doppler scale combobox's title label in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">DOPPLER SCALE</String>
+    </Concept>
+    <Concept Id="CORRECTION_ANGLE">
+      <Comments>The message for correction angle textbox's title label in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">CORRECTION ANGLE(*)</String>
+    </Concept>
+    <Concept Id="AUTOMATIC_DOPPLER_PROFILE">
+      <Comments>The message for ADM check box in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">AUTOMATIC DOPPLER PROFILE</String>
+    </Concept>
+    <Concept Id="ADM_PROFILE">
+      <Comments>The message for ADM profile combobox's title label in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">ADM PROFILE</String>
+    </Concept>
+    <Concept Id="SUMMARY">
+      <Comments>The message summary textbox title label in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">SUMMARY</String>
+    </Concept>
+    <Concept Id="ACQUISITION_MODE">
+      <Comments>The message for acquisition mode combobox's title label in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">ACQUISITION MODE</String>
+    </Concept>
+    <Concept Id="ACQUISITION_TAG">
+      <Comments>The message for acquisition tag groupbox's header title label in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">ACQUISITION TAG</String>
+    </Concept>
+    <Concept Id="REMOVE_ALL_PREVIOUS_ANNOTATIONS">
+      <Comments>The message for 'remove all previous annotations' checkbox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">REMOVE ALL PREVIOUS ANNOTATIONS</String>
+    </Concept>
+    <Concept Id="ANNOTATION">
+      <Comments>The message for 'annotation' textbox title label in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">ANNOTATION</String>
+    </Concept>
+    <Concept Id="BW">
+      <Comments>The message for 'acquisition mode' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">BW</String>
+    </Concept>
+    <Concept Id="M-MODE">
+      <Comments>The message for 'acquisition mode' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">M-MODE</String>
+    </Concept>
+    <Concept Id="PW">
+      <Comments>The message for 'acquisition mode' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">PW</String>
+    </Concept>
+    <Concept Id="CW">
+      <Comments>The message for 'acquisition mode' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">CW</String>
+    </Concept>
+    <Concept Id="CFM">
+      <Comments>The message for 'acquisition mode' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">CFM</String>
+    </Concept>
+    <Concept Id="M-MODE+CFM">
+      <Comments>The message for 'acquisition mode' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">M-MODE + CFM</String>
+    </Concept>
+    <Concept Id="CFM+PW">
+      <Comments>The message for 'acquisition mode' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">CFM + PW</String>
+    </Concept>
+    <Concept Id="CFM+CW">
+      <Comments>The message for 'acquisition mode' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">CFM + CW</String>
+    </Concept>
+    <Concept Id="SPEED">
+      <Comments>The message for 'doppler scale' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">SPEED</String>
+    </Concept>
+    <Concept Id="KHZ">
+      <Comments>The message for 'doppler scale' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">kHz</String>
+    </Concept>
+    <Concept Id="FULL">
+      <Comments>The message for 'ADM profile' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">FULL</String>
+    </Concept>
+    <Concept Id="POS">
+      <Comments>The message for 'ADM profile' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">POS</String>
+    </Concept>
+    <Concept Id="NEG">
+      <Comments>The message for 'ADM profile' combobox in set acquisition step detail view</Comments>
+      <String Context="Generic_Long">NEG</String>
+    </Concept>
+    <Concept Id="MANA_ANNO_HINT">
+      <Comments>The message for 'annotation to be added' textbox's hit infomation in manage annotation step detail view</Comments>
+      <String Context="Generic_Long">Leave this field empty and check REMOVE ALL PREVIOUS ANNOTATIONS to clear text from image</String>
+    </Concept>
+    <Concept Id="ANNOTATION_TO_BE_ADDED">
+      <Comments>The message for 'annotation to be added' textbox's title label in manage annotation step detail view</Comments>
+      <String Context="Generic_Long">ANNOTATION TO BE ADDED</String>
+    </Concept>
+    <Concept Id="POSITION">
+      <Comments>The message for 'position' combobox's title label in manage annotation step detail view</Comments>
+      <String Context="Generic_Long">POSITION</String>
+    </Concept>
+    <Concept Id="HOME">
+      <Comments>The message for 'position' combobox's in manage annotation step detail view</Comments>
+      <String Context="Generic_Long">HOME</String>
+    </Concept>
+    <Concept Id="UPPER_LEFT">
+      <Comments>The message for 'position' combobox's in manage annotation step detail view</Comments>
+      <String Context="Generic_Long">UPPER LEFT</String>
+    </Concept>
+    <Concept Id="UPPER_RIGHT">
+      <Comments>The message for 'position' combobox's in manage annotation step detail view</Comments>
+      <String Context="Generic_Long">UPPER RIGHT</String>
+    </Concept>
+    <Concept Id="LOWER_LEFT">
+      <Comments>The message for 'position' combobox's in manage annotation step detail view</Comments>
+      <String Context="Generic_Long">LOWER LEFT</String>
+    </Concept>
+    <Concept Id="LOWER_RIGHT">
+      <Comments>The message for 'position' combobox's in manage annotation step detail view</Comments>
+      <String Context="Generic_Long">LOWER RIGHT</String>
+    </Concept>
+    <Concept Id="MIDDLE">
+      <Comments>The message for 'position' combobox's in manage annotation step detail view</Comments>
+      <String Context="Generic_Long">MIDDLE</String>
+    </Concept>
+    <Concept Id="STORE_IMG_MEASURES">
+      <Comments>The message for 'STORE IMAGE and MEASURE(S)' checkbox in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">STORE IMAGE and MEASURE(S)</String>
+    </Concept>
+    <Concept Id="SELECT_GROUP">
+      <Comments>The message for measure listview header of 'SELECT GROUP' in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">SELECT GROUP</String>
+    </Concept>
+    <Concept Id="SELECT_MEASURE">
+      <Comments>The message for measure listview header of 'SELECT MEASURE' in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">SELECT MEASURE</String>
+    </Concept>
+    <Concept Id="SELECT_SIDE">
+      <Comments>The message for measure listview header of 'SELECT SIDE' in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">SELECT SIDE</String>
+    </Concept>
+    <Concept Id="SELECT_FETUS">
+      <Comments>The message for measure listview header of 'SELECT FETUS' in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">SELECT FETUS</String>
+    </Concept>
+    <Concept Id="ADD_NEW_MEASURE">
+      <Comments>Button for add new measure in select frame and measure step detail view</Comments>
+      <String Context="TS_AButton">ADD NEW MEASURE ON SAME IMAGE</String>
+      <String Context="Generic_Long">ADD NEW MEASURE ON SAME IMAGE</String>
+    </Concept>
+    <Concept Id="LEFT">
+      <Comments>The message for select side combobox in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">LEFT</String>
+    </Concept>
+    <Concept Id="RIGHT">
+      <Comments>The message for select side combobox in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">RIGHT</String>
+    </Concept>
+    <Concept Id="FETUES_A">
+      <Comments>The message for select fetus combobox in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">FETUS #A</String>
+    </Concept>
+    <Concept Id="FETUES_B">
+      <Comments>The message for select fetus combobox in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">FETUS #B</String>
+    </Concept>
+    <Concept Id="FETUES_C">
+      <Comments>The message for select fetus combobox in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">FETUS #C</String>
+    </Concept>
+    <Concept Id="FETUES_D">
+      <Comments>The message for select fetus combobox in select frame and measure step detail view</Comments>
+      <String Context="Generic_Long">FETUS #D</String>
+    </Concept>
+    <Concept Id="NEW">
+      <Comments>Button for new a session in session view</Comments>
+      <String Context="TS_AButton">NEW</String>
+      <String Context="Generic_Long">NEW</String>
+    </Concept>
+    <Concept Id="DELETE">
+      <Comments>Button for delete a session in session view</Comments>
+      <String Context="TS_AButton">DELETE</String>
+      <String Context="Generic_Long">DELETE</String>
+    </Concept>
+    <Concept Id="SESSION">
+      <Comments>The message for session group header in session view</Comments>
+      <String Context="Generic_Long">SESSION</String>
+    </Concept>
+    <Concept Id="VERIFY_PROTOCOL">
+      <Comments>Button for verify protocol in session view</Comments>
+      <String Context="TS_AButton">VERIFY PROTOCOL</String>
+      <String Context="Generic_Long">VERIFY PROTOCOL</String>
+    </Concept>
+    <Concept Id="STEP_NAME">
+      <Comments>The message for steps listview header of 'STEP NAME' in steps view</Comments>
+      <String Context="Generic_Long">STEP NAME</String>
+    </Concept>
+    <Concept Id="ACTION">
+      <Comments>The message for steps listview header of 'ACTION' in steps view</Comments>
+      <String Context="Generic_Long">ACTION</String>
+    </Concept>
+    <Concept Id="NEW_STEP">
+      <Comments>Button for add new step in steps view</Comments>
+      <String Context="TS_AButton">NEW STEP</String>
+      <String Context="Generic_Long">NEW STEP</String>
+    </Concept>
+    <Concept Id="DETAIL">
+      <Comments>Button for detail step in in steps view</Comments>
+      <String Context="TS_AButton">DETAIL</String>
+      <String Context="Generic_Long">DETAIL</String>
+    </Concept>
+    <Concept Id="SESSION_NAME">
+      <Comments>The message for 'session name' textbox in session view</Comments>
+      <String Context="Generic_Long">SESSION NAME</String>
+    </Concept>
+    <Concept Id="STEP">
+      <Comments>The message for 'step' groupbox in session view</Comments>
+      <String Context="Generic_Long">STEP</String>
+    </Concept>
+
+    <Concept Id="SET_ACQ">
+      <Comments>The message for action combobox in steps view</Comments>
+      <String Context="Generic_Long">Set acquisition</String>
+    </Concept>
+    <Concept Id="SEL_FRAME_STORE">
+      <Comments>The message for action combobox in steps view</Comments>
+      <String Context="Generic_Long">Select frame and store</String>
+    </Concept>
+    <Concept Id="SEL_FRAME_MEASURE">
+      <Comments>The message for action combobox in steps view</Comments>
+      <String Context="Generic_Long">Select frame and measure</String>
+    </Concept>
+    <Concept Id="MANAGE_ANNO">
+      <Comments>The message for action combobox in steps view</Comments>
+      <String Context="Generic_Long">Manage annotation</String>
+    </Concept>
+    <Concept Id="SAVE_CLIP">
+      <Comments>The message for action combobox in steps view</Comments>
+      <String Context="Generic_Long">Save Clip</String>
+    </Concept>
+    <Concept Id="SESSION_NAME_TOO_LONG">
+      <Comments>The message for session name in text box too long</Comments>
+      <String Context="Generic_Long">Length of session name should less or equal to 16</String>
+    </Concept>
+    <Concept Id="STEP_NAME_EMPTY">
+      <Comments>The message for error tip when step name is empty</Comments>
+      <String Context="Generic_Long">Step name could not be empty</String>
+    </Concept>
+    <Concept Id="STEP_NOT_CONFIG">
+      <Comments>The message for error tip when step is not config</Comments>
+      <String Context="Generic_Long">Step is not configed</String>
+    </Concept>
+    <Concept Id="SESSION_NAME_EMPTY">
+      <Comments>The message for error tip when session name is empty</Comments>
+      <String Context="Generic_Long">Session Name could not be empty</String>
+    </Concept>
+    <Concept Id="SESSION_NOT_CONFIG">
+      <Comments>The message for error tip when session is not config</Comments>
+      <String Context="Generic_Long">Session is not configed</String>
+    </Concept>
+    <Concept Id="FIRST_STEP_NOT_SET_ACQ">
+      <Comments>The message for error tip when first step of a session is not type "set acquisition"</Comments>
+      <String Context="Generic_Long">First step of a session should be 'Set acquisition</String>
+    </Concept>
+    <Concept Id="SUMMARY_TOO_LONG">
+      <Comments>The message for error tip when summary length bigger than 64"</Comments>
+      <String Context="Generic_Long">Length of summary should less or equal to 64</String>
+    </Concept>
+    <Concept Id="PROTOCOL_FILE_CORRUPTED">
+      <Comments>The message for error tip when user selected protocol file is corrupted"</Comments>
+      <String Context="Generic_Warning">The protocol file you select is corrupted</String>
+    </Concept>
+    <Concept Id="INSERT_STEP_NAME">
+      <Comments>The message for step name text box when it's empty"</Comments>
+      <String Context="Generic_Long">Insert step name</String>
+    </Concept>
+    <Concept Id="NEW_SESSION">
+      <Comments>The message for session name when user create a totally new session"</Comments>
+      <String Context="Generic_Long">New session</String>
+    </Concept>
+    <Concept Id="VERIFY_PROTOCOL_SUCCESS">
+      <Comments>The message for verify protocol successfully when the verify protocol button is pressed"</Comments>
+      <String Context="Generic_Long">Verify protocol successful</String>
+    </Concept>
+    <Concept Id="VERIFY_PROTOCOL_FAILED">
+      <Comments>The message for verify protocol failed when the verify protocol button is pressed"</Comments>
+      <String Context="Generic_Long">Verify protocol failed</String>
+    </Concept>
+    <Concept Id="NO_MEASURE_FOUND">
+      <Comments>The message for when no measure form system is found in select frame and measure detail view"</Comments>
+      <String Context="Generic_Long">No measure is found for this application</String>
+    </Concept>
+    <Concept Id="FETUS_A">
+      <Comments>fetus a string in fetus selection combobox</Comments>
+      <String Context="Generic_Long">FETUS A</String>
+    </Concept>
+    <Concept Id="FETUS_B">
+      <Comments>fetus b string in fetus selection combobox</Comments>
+      <String Context="Generic_Long">FETUS B</String>
+    </Concept>
+    <Concept Id="FETUS_C">
+      <Comments>fetus c string in fetus selection combobox</Comments>
+      <String Context="Generic_Long">FETUS C</String>
+    </Concept>
+    <Concept Id="FETUS_D">
+      <Comments>fetus d string in fetus selection combobox</Comments>
+      <String Context="Generic_Long">FETUS D</String>
+    </Concept>
+    <Concept Id="INSERT_ANNOT">
+      <Comments>default string for insert annotation text box in "set acq" detail view and "manage annotations" detail view</Comments>
+      <String Context="Generic_Long">Insert annotation here</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

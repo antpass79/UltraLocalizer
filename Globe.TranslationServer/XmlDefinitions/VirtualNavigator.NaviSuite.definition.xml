@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="VirtualNavigator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="NaviSuite">
+	<Concept Id="Scroll Slice">
+      <Comments>[StoryID: 1438] Navigate between the slice</Comments>
+      <String Context="TS_AButton">Series image</String>
+    </Concept>	
+	<Concept Id="Undo">
+      <Comments>[StoryID: 1438] Undo</Comments>
+      <String Context="TS_AButton">Undo</String>
+    </Concept>	
+	<Concept Id="Set Target">
+      <Comments>[StoryID: 1438] Define a target in the volume</Comments>
+      <String Context="TS_AButton">Set Target</String>
+    </Concept>
+	<Concept Id="Confirm Target">
+      <Comments>[StoryID: 1438] Confirm the target definition</Comments>
+      <String Context="TS_AButton">Confirm Target</String>
+    </Concept>
+	<Concept Id="Preset">
+      <Comments>[StoryID: 1438] Open preset list</Comments>
+      <String Context="TS_AButton">Preset</String>
+    </Concept>
+	<Concept Id="Ren.Opt">
+      <Comments>[StoryID: 1438] Change image attributes</Comments>
+      <String Context="TS_AButton">Palette&amp;Rendering</String>
+    </Concept>
+	<Concept Id="3D Serie Details">
+      <Comments>[StoryID: 1438] Show patient name, ID, study date</Comments>
+      <String Context="TS_AButton">Serie Details</String>
+    </Concept>
+	<Concept Id="Full Screen">
+      <Comments>[StoryID: 1438] Full Screen</Comments>
+      <String Context="TS_AButton">Full Screen</String>
+    </Concept>
+	<Concept Id="C&amp;B">
+      <Comments>[StoryID: 1438] Change contrast brightness of the image</Comments>
+      <String Context="TS_AButton">Contrast&amp;Bright</String>
+    </Concept>
+	<Concept Id="Menu">
+      <Comments>[StoryID: 1438] Open the settings menu</Comments>
+      <String Context="TS_AButton">Menu</String>
+    </Concept>
+	<Concept Id="Zoom">
+      <Comments>[StoryID: 1438] Zoom</Comments>
+      <String Context="TS_AButton">Zoom</String>
+    </Concept>	
+	<Concept Id="Split View">
+      <Comments>[StoryID: 1438] Chessboard  overlap</Comments>
+      <String Context="TS_AButton">Split View</String>
+    </Concept>
+	<Concept Id="Autoswitch">
+      <Comments>[StoryID: 1438] Change serie automatically</Comments>
+      <String Context="TS_AButton">Auto Switch</String>
+    </Concept>
+	<Concept Id="Target radius">
+      <Comments>[StoryID: 1438] Define the target radius</Comments>
+      <String Context="TS_AButton">Target Dimensions</String>
+    </Concept>
+	<Concept Id="Radius">
+      <Comments>[StoryID: 1438] Define the target radius</Comments>
+      <String Context="TS_AButton">Target Radius</String>
+    </Concept>
+	<Concept Id="Image Overlap">
+      <Comments>[StoryID: 1438] Superimpose US and second modality image</Comments>
+      <String Context="TS_AButton">Images Overlap</String>
+    </Concept>
+	<Concept Id="Volume Rotation">
+      <Comments>[StoryID: 1438] Volume Rotation</Comments>
+      <String Context="TS_AButton">Volume Rotation</String>
+    </Concept>
+	<Concept Id="Workflow">
+      <Comments>[StoryID: 1438] Define the application workflow</Comments>
+      <String Context="TS_AButton">Workflow</String>
+    </Concept>
+	<Concept Id="Move">
+      <Comments>[StoryID: 1438] Pan the image</Comments>
+      <String Context="TS_AButton">Adjust serie</String>
+    </Concept>	
+	<Concept Id="DM1Acquire">
+      <Comments>[StoryID: 1438] Confirm the target definition</Comments>
+      <String Context="TS_AButton">Confirm Target</String>
+    </Concept>
+	<Concept Id="DMAcquire">
+      <Comments>[StoryID: 1438] Confirm the new position of the two dataset</Comments>
+      <String Context="TS_AButton">Confirm Alignment</String>
+    </Concept>	
+	<Concept Id="Slice Rotation">
+      <Comments>[StoryID: 1438] Rotate the selected image</Comments>
+      <String Context="TS_AButton">Slice Rotation</String>
+    </Concept>
+	<Concept Id="Stop US">
+      <Comments>[StoryID: 1438] Freeze US Image</Comments>
+      <String Context="TS_AButton">Freeze US Image</String>
+    </Concept>
+	<Concept Id="Set Point Reg">
+      <Comments>[StoryID: 1438] Define a registration point in the image</Comments>
+      <String Context="TS_AButton">Set Point Reg</String>
+    </Concept>
+	<Concept Id="OPAcquire">
+      <Comments>[StoryID: 1438] Confirm the plane registration</Comments>
+      <String Context="TS_AButton">Confirm Registration</String>
+    </Concept>
+	<Concept Id="OPRotation">
+      <Comments>[StoryID: 1438] Rotate the selected image</Comments>
+      <String Context="TS_AButton">Slice Rotation</String>
+    </Concept>	
+	<Concept Id="Set Skin Mark">
+      <Comments>[StoryID: 1438] Record the skin marker</Comments>
+      <String Context="TS_AButton">Set Skin Mark</String>
+    </Concept>
+	<Concept Id="EMAcquire">
+      <Comments>[StoryID: 1438] Confirm the acquired registration</Comments>
+      <String Context="TS_AButton">Confirm Registartion</String>
+    </Concept>
+	<Concept Id="EMRotation">
+      <Comments>[StoryID: 1438] Volume Rotation</Comments>
+      <String Context="TS_AButton">Volume Rotation</String>
+    </Concept>
+	<Concept Id="Freeze Modality">
+      <Comments>[StoryID: 1438] Freeze the second modality image</Comments>
+      <String Context="TS_AButton">Freeze 2nd Modality</String>
+    </Concept>
+	<Concept Id="Freeze US Image">
+      <Comments>[StoryID: 1438] Freeze the ultrasound image</Comments>
+      <String Context="TS_AButton">Freeze Ultrasound</String>
+    </Concept>
+	<Concept Id="PAN">
+      <Comments>[StoryID: 1438] Pan the image</Comments>
+      <String Context="TS_AButton">Pan Slice</String>
+    </Concept>
+	<Concept Id="FTAcquire">
+      <Comments>[StoryID: 1438] Confirm the new registration</Comments>
+      <String Context="TS_AButton">Confirm Tuning</String>
+    </Concept>	
+	<Concept Id="Set Breathing Level">
+      <Comments>[StoryID: 1438] Define the respiratory treshold</Comments>
+      <String Context="TS_AButton">Set Breathing Level</String>
+    </Concept>
+	<Concept Id="Set Inspiration Position">
+      <Comments>[StoryID: 1438] Set inspiration position</Comments>
+      <String Context="TS_AButton">Set inspiration position</String>
+    </Concept>
+	<Concept Id="Set Expiration Position">
+      <Comments>[StoryID: 1438] Set expiration position</Comments>
+      <String Context="TS_AButton">Set expiration position</String>
+    </Concept>
+	<Concept Id="IMAcquire">
+      <Comments>[StoryID: 1438] Confirm the new registration</Comments>
+      <String Context="TS_AButton">Confirm Tuning</String>
+    </Concept>
+	<Concept Id="Center Image">
+      <Comments>[StoryID: 1438] Center Image</Comments>
+      <String Context="TS_AButton">Center Image</String>
+    </Concept>
+	<Concept Id="Hide All">
+      <Comments>[StoryID: 1438] Hide All</Comments>
+      <String Context="TS_AButton">Hide All</String>
+    </Concept>
+	<Concept Id="NUS">
+      <Comments>[StoryID: 1438] Define a ball target in US image</Comments>
+      <String Context="TS_AButton">US Target</String>
+    </Concept>
+	<Concept Id="N2M">
+      <Comments>[StoryID: 1438] Define a ball target in the volume</Comments>
+      <String Context="TS_AButton">Set Target</String>
+    </Concept>
+	<Concept Id="NAcquire">
+      <Comments>[StoryID: 1438] Confirm the target definition</Comments>
+      <String Context="TS_AButton">Confirm Target</String>
+    </Concept>
+	<Concept Id="Needle ON/OFF">
+      <Comments>[StoryID: 1438] Open the needle protocol selection</Comments>
+      <String Context="TS_AButton">Instrument protocol</String>
+    </Concept>
+	<Concept Id="Layout">
+      <Comments>[StoryID: 1438] Change between the possible layouts </Comments>
+      <String Context="TS_AButton">Layout</String>
+    </Concept>
+	<Concept Id="Needle Tracking Protocol">
+      <Comments>[StoryID: 1438] Open the needle protocol selection </Comments>
+      <String Context="TS_AButton">Instrument Protocol</String>
+	</Concept>
+	<Concept Id="Draw">
+      <Comments>[StoryID: 1438] Define a region in the volume</Comments>
+      <String Context="TS_AButton">Draw Craniotomy</String>
+    </Concept>
+	<Concept Id="Project">
+      <Comments>[StoryID: 1438] Project the region over the volume</Comments>
+      <String Context="TS_AButton">Project Craniotomy</String>
+    </Concept>
+	<Concept Id="Extend">
+      <Comments>[StoryID: 1438] Extend the pointer tip projection</Comments>
+      <String Context="TS_AButton">Tip Extension</String>
+    </Concept>
+	<Concept Id="3D Acquire">
+      <Comments>[StoryID: 1438] 3D Acquire</Comments>
+      <String Context="TS_AButton">3D Acquire</String>
+    </Concept>
+	<Concept Id="Show 3D">
+      <Comments>[StoryID: 1438] Show the acquired volume</Comments>
+      <String Context="TS_AButton">Show 3D</String>
+    </Concept>
+	<Concept Id="View Step">
+      <Comments>[StoryID: 1438] Change the visualization layout</Comments>
+      <String Context="TS_AButton">Layout</String>
+    </Concept>
+	<Concept Id="Record Plan Images">
+      <Comments>[StoryID: 1438] Record a plan image</Comments>
+      <String Context="TS_AButton">Record Procedure</String>
+    </Concept>
+	<Concept Id="Camera">
+      <Comments>[StoryID: 1438] Activate Camera Image</Comments>
+      <String Context="TS_AButton">Activate Camera Image</String>
+    </Concept>
+	<Concept Id="Bodymark">
+      <Comments>[StoryID: 1438] Load BodyMark</Comments>
+      <String Context="TS_AButton">Load BodyMark</String>
+    </Concept>
+	<Concept Id="Confirm Registration">
+      <Comments>[StoryID: 1438] Confirm Alignement</Comments>
+      <String Context="TS_AButton">Confirm Alignement</String>
+    </Concept>
+	<Concept Id="BUS">
+      <Comments>[StoryID: 1438] Define a target in the image</Comments>
+      <String Context="TS_AButton">US Target</String>
+    </Concept>
+	<Concept Id="BMAcquire">
+      <Comments>[StoryID: 1438] Confirm the target definition</Comments>
+      <String Context="TS_AButton">Set Skin Mark </String>
+    </Concept>
+		<Concept Id="BMConfirmTarget">
+      <Comments>[StoryID: 1438] Confirm the target definition</Comments>
+      <String Context="TS_AButton">Confirm Target </String>
+    </Concept>
+		<Concept Id="Delete Last">
+      <Comments>[StoryID: 1438] Confirm the target definition</Comments>
+      <String Context="TS_AButton">Reset Skin Mark </String>
+    </Concept>
+	<Concept Id="Delete All">
+      <Comments>[StoryID: 1438] Confirm the target definition</Comments>
+      <String Context="TS_AButton">Reset All Skin Marks </String>
+    </Concept>
+	<Concept Id="Interventional Protocol">
+      <Comments>[StoryID: 1438] Open the needle protocol selection</Comments>
+      <String Context="TS_AButton">Instrument Protocol</String>
+    </Concept>
+	<Concept Id="View Angle">
+      <Comments>[StoryID: 1438] Change the virtual probe point of view</Comments>
+      <String Context="TS_AButton">Probe View</String>
+    </Concept>
+	<Concept Id="IPUSConfirmTarget">
+      <Comments>[StoryID: 1438] Confirm the target definition</Comments>
+      <String Context="TS_AButton">Confirm Target</String>
+    </Concept>
+	<Concept Id="IPUS Target">
+      <Comments>[StoryID: 1438] Define a ball target in US image</Comments>
+      <String Context="TS_AButton">US Target</String>
+    </Concept>	
+	<Concept Id="DATA NAVIGATION">
+      <Comments>[StoryID: 1438] SERIES MANAGEMENT</Comments>
+      <String Context="TS_AButton">Series Management</String>
+    </Concept>	
+	<Concept Id="DATA ALIGNMENT">
+      <Comments>[StoryID: 1438] SERIES ALIGNMENT</Comments>
+      <String Context="TS_AButton">Series Alignment</String>
+    </Concept>
+	<Concept Id="TARGET">
+      <Comments>[StoryID: 1438] TARGET</Comments>
+      <String Context="TS_AButton">Target</String>
+    </Concept>
+	<Concept Id="BODY SENSOR">
+      <Comments>[StoryID: 1438] BODY SENSOR</Comments>
+      <String Context="TS_AButton">Body Sensor</String>
+    </Concept>	
+	<Concept Id="PATIENT POINT REG">
+      <Comments>[StoryID: 1438] FAST ALIGNMENT</Comments>
+      <String Context="TS_AButton">Fast Alignment</String>
+    </Concept>
+	<Concept Id="PATIENT MARKER REG">
+      <Comments>[StoryID: 1438] MARKERS ALIGNMENT</Comments>
+      <String Context="TS_AButton">Markers Alignment</String>
+    </Concept>
+	<Concept Id="FREEHAND TUNING">
+      <Comments>[StoryID: 1438] Fast Tuning</Comments>
+      <String Context="TS_AButton">Fast Tuning</String>
+    </Concept>
+<Concept Id="Marker Tuning">
+      <Comments>[StoryID: 1438] MARKER TUNING</Comments>
+      <String Context="TS_AButton"> Markers Tuning</String>
+    </Concept>
+	<Concept Id="NAVIGATION">
+      <Comments>[StoryID: 1438] NAVIGATION</Comments>
+      <String Context="TS_AButton">Navigation</String>
+    </Concept>
+	<Concept Id="PERFORMED PROCEDURE">
+      <Comments>[StoryID: 1438] PERFORMED PROCEDURE</Comments>
+      <String Context="TS_AButton">Performed Procedure</String>
+    </Concept>
+<Concept Id="CRANIOTOMY">
+      <Comments>[StoryID: 1438] CRANIOTOMY</Comments>
+      <String Context="TS_AButton">Craniotomy </String>
+    </Concept>
+	<Concept Id="IMAGE SETTINGS">
+      <Comments>[StoryID: 1438] IMAGE SETTINGS</Comments>
+      <String Context="TS_AButton">Image Settings</String>
+    </Concept>
+	<Concept Id="SYSTEM SETTINGS">
+      <Comments>[StoryID: 1438] SYSTEM SETTINGS</Comments>
+      <String Context="TS_AButton">System Settings</String>
+    </Concept>
+	<Concept Id="Navigate dataset">
+      <Comments>[StoryID: 1438] Navigate dataset</Comments>
+      <String Context="TS_AButton">Navigate dataset</String>
+    </Concept>
+	<Concept Id="Navigate multiple dataset">
+      <Comments>[StoryID: 1438] Navigate multiple dataset</Comments>
+      <String Context="TS_AButton">Navigate multiple dataset</String>
+    </Concept>
+	<Concept Id="Remove Serie">
+      <Comments>[StoryID: 1438] Remove serie</Comments>
+      <String Context="TS_AButton">Remove serie</String>
+    </Concept>
+	<Concept Id="Adjust serie manually">
+      <Comments>[StoryID: 1438] Adjust serie manually</Comments>
+      <String Context="TS_AButton">Adjust serie manually</String>
+    </Concept>
+	<Concept Id="Adjust serie automatically">
+      <Comments>[StoryID: 1438] Adjust serie automatically</Comments>
+      <String Context="TS_AButton">Adjust serie automatically</String>
+    </Concept>
+	<Concept Id="Confirm adjustment">
+      <Comments>[StoryID: 1438] Confirm adjustment</Comments>
+      <String Context="TS_AButton">Confirm adjustment</String>
+    </Concept>
+		<Concept Id="Rotate">
+      <Comments>[StoryID: 1438] Sample Rotation</Comments>
+      <String Context="TS_AButton">Sample Rotation</String>
+    </Concept>
+	<Concept Id="View Steps">
+      <Comments>[StoryID: 1438] Samples Steps</Comments>
+      <String Context="TS_AButton">Samples Steps</String>
+    </Concept>
+	<Concept Id="Set overlap 50%">
+      <Comments>[StoryID: 1438] Set overlap 50%</Comments>
+      <String Context="TS_AButton">Set overlap 50%</String>
+    </Concept>
+	<Concept Id="Save a configuration">
+      <Comments>[StoryID: 1438] Save a configuration</Comments>
+      <String Context="TS_AButton">Save a configuration</String>
+    </Concept>
+	<Concept Id="AutoSwitch">
+      <Comments>[StoryID: 1438] Auto switch plane</Comments>
+      <String Context="TS_AButton">Auto Switch Plane</String>
+    </Concept>
+	<Concept Id="Ball Target">
+      <Comments>[StoryID: 1438] Ball Target</Comments>
+      <String Context="TS_AButton">Ball Target </String>
+    </Concept>
+	<Concept Id="Slice Target">
+      <Comments>[StoryID: 1438] Slice Target</Comments>
+      <String Context="TS_AButton">Slice Target</String>
+    </Concept>
+	<Concept Id="Auto Target">
+      <Comments>[StoryID: 1438] Auto Target</Comments>
+      <String Context="TS_AButton">Auto Target</String>
+    </Concept>
+	<Concept Id="Vessel Target">
+      <Comments>[StoryID: 1438] Vessel Target</Comments>
+      <String Context="TS_AButton">Vessel Target</String>
+    </Concept>
+<Concept Id="Triplanar Target">
+      <Comments>[StoryID: 1438] Triplanar Targe</Comments>
+      <String Context="TS_AButton">Triplanar Targe</String>
+    </Concept>
+	<Concept Id="Motion Detection">
+      <Comments>[StoryID: 1438] Motion alarm</Comments>
+      <String Context="TS_AButton">Motion Detection</String>
+    </Concept>
+	<Concept Id="Motion Correction">
+      <Comments>[StoryID: 1438] Motion compensation</Comments>
+      <String Context="TS_AButton">Motion correction</String>
+    </Concept>
+	<Concept Id="Breathing Trace">
+      <Comments>[StoryID: 1438] Respiratory gate</Comments>
+      <String Context="TS_AButton">Breathing Trace</String>
+    </Concept>
+	<Concept Id="One Plane">
+      <Comments>[StoryID: 1438] One Plane</Comments>
+      <String Context="TS_AButton">One Plane</String>
+    </Concept>
+	<Concept Id="External Marker">
+      <Comments>[StoryID: 1438] External Marker</Comments>
+      <String Context="TS_AButton">External Marker</String>
+    </Concept>
+	<Concept Id="Set Omnitrax Mark">
+      <Comments>[StoryID: 1438] OmniTrax</Comments>
+      <String Context="TS_AButton">Set Omnitrax</String>
+    </Concept>
+	<Concept Id="Fine Tuning">
+      <Comments>[StoryID: 1438] Fine Tuning</Comments>
+      <String Context="TS_AButton">Fine Tuning</String>
+    </Concept>	
+	<Concept Id="Anatomical marker">
+      <Comments>[StoryID: 1438] Anatomical marker</Comments>
+      <String Context="TS_AButton">Anatomical marker</String>
+    </Concept>
+	<Concept Id="US Navigation">
+      <Comments>[StoryID: 1438] US Navigation</Comments>
+      <String Context="TS_AButton">US Navigation</String>
+    </Concept>
+	<Concept Id="Multi-View">
+      <Comments>[StoryID: 1438] Multi-View</Comments>
+      <String Context="TS_AButton">Multi-View</String>
+    </Concept>
+	<Concept Id="Needle View ">
+      <Comments>[StoryID: 1438] Needle View</Comments>
+      <String Context="TS_AButton">Needle View</String>
+    </Concept>
+	<Concept Id="Ultrasound View">
+      <Comments>[StoryID: 1438] Ultrasound View</Comments>
+      <String Context="TS_AButton">Ultrasound View</String>
+    </Concept>
+	<Concept Id="Craniotomy">
+      <Comments>[StoryID: 1438] Craniotomy</Comments>
+      <String Context="TS_AButton">Craniotomy</String>
+    </Concept>
+	<Concept Id="PLANNING">
+      <Comments>[StoryID: 1438] Planning</Comments>
+      <String Context="TS_AButton">Planning</String>
+    </Concept>
+	<Concept Id="Define a needle protocol">
+      <Comments>[StoryID: 1438] Define a needle protocol</Comments>
+      <String Context="TS_AButton">Define a needle protocol</String>
+    </Concept>
+	<Concept Id="Select needle Protocol">
+      <Comments>[StoryID: 1438] Select needle Protocol</Comments>
+      <String Context="TS_AButton">Select needle Protocol</String>
+    </Concept>
+	<Concept Id="Contrast&amp;Bright">
+      <Comments>[StoryID: 1438] Contrast&amp;Bright</Comments>
+      <String Context="TS_AButton">Contrast &amp; Brightness</String>
+    </Concept>
+	<Concept Id="2D zoom">
+      <Comments>[StoryID: 1438] 2D zoom</Comments>
+      <String Context="TS_AButton">2D zoom</String>
+    </Concept>
+	<Concept Id="3D zoom">
+      <Comments>[StoryID: 1438] 3D zoom</Comments>
+      <String Context="TS_AButton">3D zoom</String>
+    </Concept>
+	<Concept Id="General Settings">
+      <Comments>[StoryID: 1438] General Settings</Comments>
+      <String Context="TS_AButton">General Settings</String>
+    </Concept>
+	<Concept Id="Palette&amp;Rendering">
+      <Comments>[StoryID: 1438] Palette &amp; Rendering</Comments>
+      <String Context="TS_AButton">Palette &amp; Rendering</String>
+    </Concept>
+	<Concept Id="Probe Calibration">
+      <Comments>[StoryID: 1438] Probe Calibration</Comments>
+      <String Context="TS_AButton">Probe Calibration</String>
+    </Concept>	
+	<Concept Id="Circle radius">
+      <Comments>[StoryID: 1438] body map reference pointer</Comments>
+      <String Context="TS_AButton">Pointer Size</String>
+    </Concept>	
+	<Concept Id="3D Contour">
+      <Comments>[StoryID: 1438] </Comments>
+      <String Context="TS_AButton">3D Contour</String>
+    </Concept>		
+	<Concept Id="Pan Images">
+      <Comments>[StoryID: 1438]</Comments>
+      <String Context="TS_AButton">Pan Images</String>
+    </Concept>	
+	<Concept Id="Fusion Region">
+      <Comments>[StoryID: 1438] Set ROI)</Comments>
+      <String Context="TS_AButton">Set ROI</String>
+    </Concept>
+	<Concept Id="Auto Serie Fusion">
+      <Comments>[StoryID: 1438] Auto Fusion</Comments>
+      <String Context="TS_AButton">Auto Fusion</String>
+    </Concept>
+	<Concept Id="Adjust Serie">
+      <Comments>[StoryID: 1438] Adjust Serie</Comments>
+      <String Context="TS_AButton">Adjust Serie</String>
+    </Concept>
+	<Concept Id="Confirm Serie Alignment">
+      <Comments>[StoryID: 1438] Confirm Alignment</Comments>
+      <String Context="TS_AButton">Confirm Alignment</String>
+    </Concept>
+	<Concept Id="Auto Registration">
+      <Comments>[StoryID: 1438] Auto Registration</Comments>
+      <String Context="TS_AButton">Auto Registration</String>
+    </Concept>
+	<Concept Id="Autoreg Acquire">
+      <Comments>[StoryID: 1438] Autoreg Acquire</Comments>
+      <String Context="TS_AButton">Autoreg Acquire</String>
+    </Concept>
+	<Concept Id="Instrument Protocol">
+      <Comments>[StoryID: 1438] Instrument Protocol</Comments>
+      <String Context="TS_AButton">Instrument Protocol</String>
+    </Concept>
+	<Concept Id="3D Nav">
+      <Comments>[StoryID: 1438] 3D Nav</Comments>
+      <String Context="TS_AButton">3D Nav</String>
+    </Concept>
+	<Concept Id="Flip V">
+      <Comments>[StoryID: 1438] Flip V</Comments>
+      <String Context="TS_AButton">Flip V</String>
+    </Concept>
+	<Concept Id="Flip H">
+      <Comments>[StoryID: 1438] Flip H</Comments>
+      <String Context="TS_AButton">Flip H</String>
+    </Concept>
+	<Concept Id="Abdominal">
+      <Comments>[StoryID: 1438] Abdominal</Comments>
+      <String Context="TS_AButton">Abdominal</String>
+    </Concept>
+	<Concept Id="Urology">
+      <Comments>[StoryID: 1438] Urology</Comments>
+      <String Context="TS_AButton">Urology</String>
+    </Concept>
+	<Concept Id="Neurosonology">
+      <Comments>[StoryID: 1438] Neurosonology</Comments>
+      <String Context="TS_AButton">Neurosonology</String>
+    </Concept>
+	<Concept Id="NeurosonologyZH">
+      <Comments>[StoryID: 1438] Neurosonology</Comments>
+      <String Context="TS_AButton">Transcranic</String>
+    </Concept>
+	<Concept Id="Neurosurgery">
+      <Comments>[StoryID: 1438] Neurosurgery</Comments>
+      <String Context="TS_AButton">Neurosurgery</String>
+    </Concept>
+	<Concept Id="Musculoskeletal">
+      <Comments>[StoryID: 1438] Muscoloskeletal</Comments>
+      <String Context="TS_AButton">Muscleskeletal</String>
+    </Concept>
+	<Concept Id="CT Guidance">
+      <Comments>[StoryID: 1438] CT Guidance</Comments>
+      <String Context="TS_AButton">CT Guidance</String>
+    </Concept>
+	<Concept Id="Gynecology">
+      <Comments>[StoryID: 1438] Gynecology</Comments>
+      <String Context="TS_AButton">Gynecology</String>
+    </Concept>
+	<Concept Id="Stepper TRUS">
+      <Comments>[StoryID: 1438] Stepper TRUS</Comments>
+      <String Context="TS_AButton">Stepper TRUS</String>
+    </Concept>
+	<Concept Id="Demo">
+      <Comments>[StoryID: 1438] Demo</Comments>
+      <String Context="TS_AButton">Demo</String>
+    </Concept>
+	<Concept Id="Other">
+      <Comments>[StoryID: 1438] Other</Comments>
+      <String Context="TS_AButton">Other</String>
+    </Concept>
+	<Concept Id="General">
+      <Comments>[StoryID: 1438] General</Comments>
+      <String Context="TS_AButton">General</String>
+    </Concept>
+	<Concept Id="3DSTARTSTOP">
+      <Comments>[StoryID: 1438] 3D start stop acquisition</Comments>
+      <String Context="TS_AButton">Start/Stop</String>
+    </Concept>
+	<Concept Id="Presets">
+      <Comments>[StoryID: 1438] Presets</Comments>
+      <String Context="TS_AButton">Presets</String>
+    </Concept>
+	<Concept Id="Record Plain Images">
+      <Comments>[StoryID: 1438] Record Plain Images</Comments>
+      <String Context="TS_AButton">Record Plain Images</String>
+    </Concept>
+	<Concept Id="Acquire">
+      <Comments>[StoryID: 1438] Acquire</Comments>
+      <String Context="TS_AButton">Acquire</String>
+    </Concept>
+		<Concept Id="3D ACQUISITION">
+      <Comments>[StoryID: 1438] 3D ACQUISITION</Comments>
+      <String Context="TS_AButton">3D ACQUISITION</String>
+    </Concept>
+	<Concept Id="Activate Stylus">
+      <Comments>[StoryID: 1438] Activate Stylus </Comments>
+      <String Context="TS_AButton">Activate Stylus </String>
+    </Concept>
+		<Concept Id="Sample Rotation  ">
+      <Comments>[StoryID: 1438] Sample Rotation  </Comments>
+      <String Context="TS_AButton">Sample Rotation </String>
+    </Concept>
+	<Concept Id="Slice">
+      <String Context="TS_AButton">Scroll serie</String>
+    </Concept>	
+  </LocalizationSection>
+</LocalizationResource>

@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="RT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="General">
+	<Concept Id="PEN-L">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">PEN-L</String>
+    </Concept>
+    <Concept Id="PEN-M">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">PEN-M</String>
+    </Concept>
+    <Concept Id="PEN-H">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">PEN-H</String>
+    </Concept>
+    <Concept Id="CPI-L">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">CPI-L</String>
+    </Concept>
+    <Concept Id="CPI-M">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">CPI-M</String>
+    </Concept>
+    <Concept Id="CPI-H">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">CPI-H</String>
+    </Concept>
+    <Concept Id="GEN-L">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">GEN-L</String>
+    </Concept>
+    <Concept Id="GEN-M">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">GEN-M</String>
+    </Concept>
+    <Concept Id="GEN-H">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">GEN-H</String>
+    </Concept>
+    <Concept Id="RES-L">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">RES-L</String>
+    </Concept>
+    <Concept Id="RES-M">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">RES-M</String>
+    </Concept>
+    <Concept Id="RES-H">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">RES-H</String>
+    </Concept>
+    <Concept Id="TISSUE ENHANCEMENT IMAGING">
+      <Comments>Info area</Comments>
+      <String Context="MD_RT8Info">TEI</String>
+    </Concept>
+    <Concept Id="CNTI">
+      <Comments>Info area</Comments>
+      <String Context="MD_RT8Info">CnTI</String>
+    </Concept>
+    <Concept Id="OFF">
+      <Comments>Info area</Comments>
+      <String Context="MD_RT8Info">OFF</String>
+    </Concept>
+    <Concept Id="MODE B TAB">
+      <Comments>Tab Mode B</Comments>
+      <String Context="TS_TabName">BW</String>
+    </Concept>
+    <Concept Id="MODE CFM TAB">
+      <Comments>Tab Mode CFM</Comments>
+      <String Context="TS_TabName">CFM</String>
+    </Concept>
+    <Concept Id="MODE M TAB">
+      <Comments>Tab Mode M</Comments>
+      <String Context="TS_TabName">M</String>
+    </Concept>
+    <Concept Id="MODE PW TAB">
+      <Comments>Tab Mode PW</Comments>
+      <String Context="TS_TabName">PW</String>
+    </Concept>
+    <Concept Id="MODE CW TAB">
+      <Comments>Tab Mode CW</Comments>
+      <String Context="TS_TabName">CW</String>
+    </Concept>
+    <Concept Id="MODE ELASTO TAB">
+      <Comments>Tab Mode Elasto</Comments>
+      <String Context="TS_TabName">ELASTO</String>
+    </Concept>
+    <Concept Id="PLA TAB">
+      <Comments>Percutaneous laser ablation</Comments>
+      <String Context="TS_TabName">PLA</String>
+    </Concept>
+    <Concept Id="ELASTO PALETTE HARD">
+      <Comments>Palette value</Comments>
+      <String Context="MD_RT8Info">HARD</String>
+    </Concept>
+    <Concept Id="ELASTO PALETTE SOFT">
+      <Comments>Palette value</Comments>
+      <String Context="MD_RT8Info">SOFT</String>
+    </Concept>
+    <Concept Id="USPOWER TAB">
+      <Comments>Tab Uspower</Comments>
+      <String Context="TS_TabName">USPOWER</String>
+    </Concept>
+    <Concept Id="XVIEW TAB">
+      <Comments>Tab Xview</Comments>
+      <String Context="TS_TabName">XVIEW</String>
+    </Concept>
+    <Concept Id="Xview TAB CV">
+      <Comments>Tab Xview Context Vision</Comments>
+      <String Context="TS_TabName">XView+</String>
+    </Concept>
+    <Concept Id="Xview TAB C2">
+      <Comments>Tab Xview Esaote GPU II (Custom 2)</Comments>
+      <String Context="TS_TabName">XViewC2</String>
+    </Concept>
+    <Concept Id="Xview TAB ES">
+      <Comments>Tab Xview Esaote Hw/Gpu I (Custom 1)</Comments>
+      <String Context="TS_TabName">XViewC</String>
+    </Concept>
+    <Concept Id="MVIEW TAB">
+      <Comments>Tab Mview</Comments>
+      <String Context="TS_TabName">MVIEW</String>
+    </Concept>
+    <Concept Id="SVIEW TAB">
+      <Comments>Tab Sview</Comments>
+      <String Context="TS_TabName">SVIEW</String>
+    </Concept>
+    <Concept Id="BIOPSY TAB">
+      <Comments>Tab Biopsy</Comments>
+      <String Context="TS_TabName">BIOPSY</String>
+    </Concept>
+    <Concept Id="FORMAT TAB">
+      <Comments>Tab Format</Comments>
+      <String Context="TS_TabName">FORMAT</String>
+    </Concept>
+    <Concept Id="DYNAMIC IMAGING TAB">
+      <Comments>Tab Dynamic Imaging</Comments>
+      <String Context="TS_TabName">DYNAMIC IMAGING</String>
+    </Concept>
+    <Concept Id="PHYSIO TAB">
+      <Comments>Tab Physio</Comments>
+      <String Context="TS_TabName">PHYSIO</String>
+    </Concept>
+    <Concept Id="PHYSIO EDR TAB">
+      <Comments>Tab Physio EDR (Breathing Curve)</Comments>
+      <String Context="TS_TabName">PHYSIO EDR</String>
+    </Concept>
+    <Concept Id="PHYSIO QAS TRACKS TAB">
+      <Comments>Tab Physio QAS Distension, Velocity, Acceleration Curve</Comments>
+      <String Context="TS_TabName">PHYSIO QAS</String>
+    </Concept>
+    <Concept Id="CLIPSET TAB">
+      <Comments>Tab Clip Settings</Comments>
+      <String Context="TS_TabName">CLIP SET</String>
+    </Concept>
+    <Concept Id="CMM TAB">
+      <Comments>Tab Compass M-Mode</Comments>
+      <String Context="TS_TabName">CMM</String>
+    </Concept>
+    <Concept Id="ADM TAB">
+      <Comments>Tab ADM</Comments>
+      <String Context="TS_TabName">ADM</String>
+    </Concept>
+    <Concept Id="QIMT TAB">
+      <Comments>Tab QIMT</Comments>
+      <String Context="TS_TabName">QIMT</String>
+    </Concept>
+    <Concept Id="QAS TAB">
+      <Comments>Tab QAS</Comments>
+      <String Context="TS_TabName">QAS</String>
+    </Concept>
+    <Concept Id="AUTOGAIN TAB">
+      <Comments>Tab Autogain</Comments>
+      <String Context="TS_TabName">AUTOGAIN</String>
+    </Concept>
+    <Concept Id="CMAP TAB">
+      <Comments>Tab CMap</Comments>
+      <String Context="TS_TabName">CMAP</String>
+    </Concept>
+    <Concept Id="GMAPB TAB">
+      <Comments>Tab Grey Map of BW</Comments>
+      <String Context="TS_TabName">GMAP_B</String>
+    </Concept>
+    <Concept Id="GMAPM TAB">
+      <Comments>Tab Grey Map of M</Comments>
+      <String Context="TS_TabName">GMAP_M</String>
+    </Concept>
+    <Concept Id="GMAPD TAB">
+      <Comments>Tab Grey Map of Doppler</Comments>
+      <String Context="TS_TabName">GMAP_D</String>
+    </Concept>
+    <Concept Id="NAV TAB">
+      <Comments>Tab Nav</Comments>
+      <String Context="TS_TabName">NAV</String>
+    </Concept>
+    <Concept Id="CNTI TAB">
+      <Comments>Tab CnTi</Comments>
+      <String Context="TS_TabName">CNTI</String>
+    </Concept>
+    <Concept Id="FLASH TAB">
+      <Comments>Tab Flash</Comments>
+      <String Context="TS_TabName">FLASH</String>
+    </Concept>
+    <Concept Id="3D-4D TAB">
+      <Comments>Tab 3D-4D acquisition's parameters</Comments>
+      <String Context="TS_TabName">ACQ 3D</String>
+    </Concept>
+    <Concept Id="VPAN TAB">
+      <Comments>Tab VPAN</Comments>
+      <String Context="TS_TabName">VPAN</String>
+    </Concept>
+    <Concept Id="TGC TAB">
+      <Comments>Tab TGC</Comments>
+      <String Context="TS_TabName">TGC</String>
+    </Concept>
+    <Concept Id="NEEDLE TAB">
+      <Comments>Tab Needle</Comments>
+      <String Context="TS_TabName">NEEDLE</String>
+    </Concept>
+    <Concept Id="QAS DIALOG TAB">
+      <Comments>Distension Dialog Tab</Comments>
+      <String Context="TS_TabName">DISTENSION DIALOG</String>
+    </Concept>
+    <Concept Id="MODE B LABEL">
+      <Comments>Info area Mode B</Comments>
+      <String Context="MD_RT8Info">B</String>
+    </Concept>
+    <Concept Id="MODE M LABEL">
+      <Comments>Info area Mode M</Comments>
+      <String Context="MD_RT8Info">M</String>
+    </Concept>
+    <Concept Id="PULSED WAVE DOPPLER LABEL">
+      <Comments>Info area Mode PW</Comments>
+      <String Context="MD_RT8Info">PW</String>
+    </Concept>
+    <Concept Id="CONTINUOUS WAVE DOPPLER LABEL">
+      <Comments>Info area Mode CW</Comments>
+      <String Context="MD_RT8Info">CW</String>
+    </Concept>
+    <Concept Id="COLOR FLOW MAPPING LABEL">
+      <Comments>Info area Mode CFM</Comments>
+      <String Context="MD_RT8Info">CFM</String>
+    </Concept>
+    <Concept Id="MECHANICAL INDEX LABEL">
+      <Comments>Info area MI</Comments>
+      <String Context="MD_RT8Info">MI</String>
+    </Concept>
+    <Concept Id="BONE THERMAL INDEX LABEL">
+      <Comments>Info area Tib</Comments>
+      <String Context="MD_RT8Info">TIB</String>
+    </Concept>
+    <Concept Id="CRANIAL BONE THERMAL INDEX LABEL">
+      <Comments>Info area Tic</Comments>
+      <String Context="MD_RT8Info">TIC</String>
+    </Concept>
+    <Concept Id="SOFT TISSUES THERMAL INDEX LABEL">
+      <Comments>Info area Tis</Comments>
+      <String Context="MD_RT8Info">TIS</String>
+    </Concept>
+    <Concept Id="SPEED OF SOUND">
+      <Comments>Speed Of Sound</Comments>
+      <String Context="MD_RT8Info">ES</String>
+    </Concept>
+    <Concept Id="FREQUENCY LABEL">
+      <Comments>Info area Frequency</Comments>
+      <String Context="MD_RT8Info">F</String>
+    </Concept>
+    <Concept Id="GAIN LABEL">
+      <Comments>Info area Gain</Comments>
+      <String Context="MD_RT8Info">G</String>
+    </Concept>
+    <Concept Id="AGAIN LABEL">
+      <Comments>Info area Automatic Gain</Comments>
+      <String Context="MD_RT8Info">AG</String>
+    </Concept>
+    <Concept Id="PULSE REPETITION FREQUENCY LABEL">
+      <Comments>Info area PRF</Comments>
+      <String Context="MD_RT8Info">PRF</String>
+    </Concept>
+    <Concept Id="HIGH PULSE REPETITION FREQUENCY LABEL">
+      <Comments>Info area HPRF</Comments>
+      <String Context="MD_RT8Info">HPRF</String>
+    </Concept>
+    <Concept Id="PROCESSING LABEL">
+      <Comments>Info area PRC</Comments>
+      <String Context="MD_RT8Info">PRC</String>
+    </Concept>
+    <Concept Id="PERSISTENCE LABEL">
+      <Comments>Info area PRS</Comments>
+      <String Context="MD_RT8Info">PRS</String>
+    </Concept>
+    <Concept Id="FILTER LABEL">
+      <Comments>Info area WF</Comments>
+      <String Context="MD_RT8Info">WF</String>
+    </Concept>
+    <Concept Id="DEPTH LABEL">
+      <Comments>Info area Depth</Comments>
+      <String Context="MD_RT8Info">D</String>
+    </Concept>
+    <Concept Id="X-VIEW LABEL">
+      <Comments>Info area X-VIEW</Comments>
+      <String Context="MD_RT8Info">X</String>
+    </Concept>
+    <Concept Id="M-VIEW LABEL">
+      <Comments>Info area M-VIEW</Comments>
+      <String Context="MD_RT8Info">M</String>
+    </Concept>
+    <Concept Id="POST LABEL">
+      <Comments>Info area Post P.</Comments>
+      <String Context="MD_RT8Info">PST</String>
+    </Concept>
+    <Concept Id="DYNAMIC COMPRESSION LABEL">
+      <Comments>Info area Dynamic Compression</Comments>
+      <String Context="MD_RT8Info">C</String>
+    </Concept>
+    <Concept Id="SAMPLE VOLUME LABEL">
+      <Comments>Info area Sample volume</Comments>
+      <String Context="MD_RT8Info">SV</String>
+    </Concept>
+    <Concept Id="TETA ANGLE LABEL">
+      <Comments>Info area Angle</Comments>
+      <String Context="MD_RT8Info">Θ</String>
+    </Concept>
+    <Concept Id="TV">
+      <Comments>Display of the TV activation status on screen</Comments>
+      <String Context="MD_RT8Info">TV</String>
+    </Concept>
+    <Concept Id="TVM">
+      <Comments>Display of the TVM activation status on screen</Comments>
+      <String Context="MD_RT8Info">TVM</String>
+    </Concept>
+    <Concept Id="BOX MOVE">
+      <Comments>Box Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">MOVE COLOR BOX</String>
+    </Concept>
+    <Concept Id="BOX SIZE">
+      <Comments>Box ReSize</Comments>
+      <String Context="MD_RT14aTrackballStrings">RESIZE COLOR BOX</String>
+    </Concept>
+    <Concept Id="FOCUS MOVE">
+      <Comments>Focus Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">FOCUS</String>
+    </Concept>
+    <Concept Id="BEAM MOVE">
+      <Comments>Beam Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">BEAMLINE</String>
+    </Concept>
+    <Concept Id="CINE MOVE">
+      <Comments>Cine Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">CINE LOOP</String>
+    </Concept>
+	<Concept Id="ROIs">
+      <Comments>ROIs</Comments>
+      <String Context="MD_RT14aTrackballStrings">ROIs</String>
+    </Concept>
+    <Concept Id="NEEDLE MEASURE">
+      <Comments>NEEDLE MEASURE</Comments>
+      <String Context="MD_RT14aTrackballStrings">NEEDLE</String>
+    </Concept>
+    <Concept Id="POINTER">
+      <Comments>Pointer Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">POINTER</String>
+    </Concept>
+    <Concept Id="ZOOM MOVE">
+      <Comments>Zoom Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">PAN ZOOM</String>
+    </Concept>
+    <Concept Id="BUFFER FULL">
+      <Comments>Please Reboot the equipment.</Comments>
+      <String Context="Generic_Warning">Please Reboot the equipment</String>
+    </Concept>    
+    <Concept Id="CONTACT SERVICE">
+      <Comments>Advice to ask help from Service Dept.</Comments>
+      <String Context="Generic_Warning">Please,contact the Service department</String>
+    </Concept>
+    <Concept Id="POWER SUPPLY ALARM">
+      <Comments>Warning to be displayed when no communication with power supply is available</Comments>
+      <String Context="Generic_Warning">Communication error with POWER SUPPLY (#1): The automatic shut-down is disabled</String>
+    </Concept>
+    <Concept Id="OVERRIDE MEASURE">
+      <Comments>End measure sequence</Comments>
+      <String Context="Generic_Warning">Sequence ended. A new acquisition shall overwrite the acquired sequence.</String>
+    </Concept>
+    <Concept Id="BATTERY LOGIC ALARM">
+      <Comments>Warning to be displayed when no info from batteries is available</Comments>
+      <String Context="Generic_Warning">Communication error with BATTERY LOGIC (#2): The automatic shut-down is disabled</String>
+    </Concept>
+    <Concept Id="BATTERY CHARGE ALARM">
+      <Comments>Warning to be displayed when a failure on charging batteries occurred</Comments>
+      <String Context="Generic_Warning">Errors with BATTERY'S CHARGE (#3)</String>
+    </Concept>
+    <Concept Id="BATTERY TEMPERATURE ALARM">
+      <Comments>Warning to be displayed when batteries' temperature is over maximum allowed</Comments>
+      <String Context="Generic_Warning">Errors with BATTERY STATUS (#4): The automatic shut-down will start in a few seconds</String>
+    </Concept>
+    <Concept Id="TEMPERATURE ALARM">
+      <Comments>Warning to be displayed when temperature is over maximum allowed</Comments>
+      <String Context="Generic_Warning">Error with overtemperature (#5)</String>
+    </Concept>
+    <Concept Id="FAN ALARM">
+      <Comments>Warning to be displayed when at least one fan is blocked</Comments>
+      <String Context="Generic_Warning">Error with fan (#6)</String>
+    </Concept>
+    <Concept Id="VOLTAGE ALARM">
+      <Comments>Warning to be displayed when anomalies on internal voltage occurred</Comments>
+      <String Context="Generic_Warning">Error with internal voltage (#7)</String>
+    </Concept>
+    <Concept Id="IMPULSE ALARM">
+      <Comments>Warning to be displayed when anomalies on impulse voltage occurred</Comments>
+      <String Context="Generic_Warning">Error with impulse voltage (#8)</String>
+    </Concept>
+    <Concept Id="QELAXTO FIRST ALARM">
+      <Comments>Warning to be displayed when anomalies on impulse voltage occurred</Comments>
+      <String Context="Generic_Warning">Error with impulse voltage (#9).Repeat an acquisition in the air. If the problem persists, the tool will be disabled.</String>
+    </Concept>
+    <Concept Id="QELAXTO SECOND ALARM">
+      <Comments>Warning to be displayed when anomalies on impulse voltage occurred</Comments>
+      <String Context="Generic_Warning">Error with impulse voltage (#9).The tool will be disabled.</String>
+    </Concept>
+    <Concept Id="QELAXTO IAT ALARM">
+      <Comments>Warning to be displayed when anomalies on impulse voltage occurred</Comments>
+      <String Context="Generic_Warning">Error with impulse voltage (#12).The tool will be disabled.</String>
+    </Concept>
+    <Concept Id="CAPACITOR ALARM">
+      <Comments>Warning to be displayed when anomalies on power supply</Comments>
+      <String Context="Generic_Warning">Error on power supply (#11).</String>
+    </Concept>
+    <Concept Id="CANT_REMOVE_ALL_PRESET">
+      <Comments>Warning to be displayed when the user try to remove the last preset of a probe/application</Comments>
+      <String Context="Generic_Warning">You can't remove the last preset of a Probe/Application.</String>
+    </Concept>
+    <Concept Id="MAIN_TIMER">
+      <Comments>Main timer on progress bar in Cnti</Comments>
+      <String Context="MD_RT8Info">MT</String>
+    </Concept>
+    <Concept Id="ROI MOVE">
+      <Comments>Move Region Of Interest</Comments>
+      <String Context="MD_RT14aTrackballStrings">MOVE ROI</String>
+    </Concept>
+    <Concept Id="ROI SIZE">
+      <Comments>ReSize Region Of Interest</Comments>
+      <String Context="MD_RT14aTrackballStrings">RESIZE ROI</String>
+    </Concept>
+    <Concept Id="TEE ALARM LEVEL1">
+      <Comments>First Level Alarm for TEE temperature</Comments>
+      <String Context="Generic_Warning">
+        WARNING: The probe is overheating! Please refer to the OPERATOR MANUAL or wait for the system to restart. To be able to use another probe, disconnect first the ST probe.
+      </String>
+    </Concept>
+    <Concept Id="TEE ALARM LEVEL2">
+      <Comments>Secon Level Alarm for TEE temperature</Comments>
+      <String Context="Generic_Warning">
+        WARNING: The probe is overheating! Please disconnect at once the probe from the system
+      </String>
+    </Concept>
+    <Concept Id="TEMPERATURE">
+      <Comments>TEE Temperature</Comments>
+      <String Context="MD_RT8Info">T</String>
+    </Concept>
+    <Concept Id="TEE MOTOR CENTER">
+      <Comments>TEE Initialize Motor</Comments>
+      <String Context="Generic_Warning">Warning: wait the initializing of transesophageal probe</String>
+    </Concept>
+    <Concept Id="TEE INITIALIZATION FAILED">
+      <Comments>TEE Initialization failed</Comments>
+      <String Context="Generic_Warning">The initialization procedure is failed, please start again the exam, if you read the message the first time it's not a problem, otherwise, please, the Esaote assistance service</String>
+    </Concept>
+    <Concept Id="TEE FAILED">
+      <Comments>TEE failed</Comments>
+      <String Context="Generic_Warning">The system: ultrasound device or transesophagea probe could be demaged, please contact the service to solve the problem</String>
+    </Concept>
+    <Concept Id="QIMT">
+      <Comments>QIMT</Comments>
+      <String Context="MD_RT11MeasName">QIMT</String>
+    </Concept>
+    <Concept Id="QIMT DIAMETER">
+      <Comments>QIMT Diameter</Comments>
+      <String Context="MD_RT11MeasName">Diam</String>
+    </Concept>
+    <Concept Id="QIMT AVG">
+      <Comments>QIMT Diameter</Comments>
+      <String Context="MD_RT11MeasName">AVG</String>
+    </Concept>
+    <Concept Id="QIMT SD">
+      <Comments>QIMT Standard Deviation</Comments>
+      <String Context="MD_RT11MeasName">SD</String>
+    </Concept>
+    <Concept Id="QIMT WIDTH">
+      <Comments>QIMT WIDTH</Comments>
+      <String Context="MD_RT11MeasName">W</String>
+    </Concept>
+    <Concept Id="QAS">
+      <Comments>QAS</Comments>
+      <String Context="MD_RT11MeasName">QAS</String>
+    </Concept>
+    <Concept Id="QAS DISTENSION">
+      <Comments>QAS</Comments>
+      <String Context="MD_RT11MeasName">Dist</String>
+    </Concept>
+    <Concept Id="QAS DIAMETER">
+      <Comments>QAS Diameter</Comments>
+      <String Context="MD_RT11MeasName">Diam</String>
+    </Concept>
+    <Concept Id="QAS AVG">
+      <Comments>QAS Diameter</Comments>
+      <String Context="MD_RT11MeasName">AVG</String>
+    </Concept>
+    <Concept Id="QAS SD">
+      <Comments>QAS Standard Deviation</Comments>
+      <String Context="MD_RT11MeasName">SD</String>
+    </Concept>
+    <Concept Id="QAS WIDTH">
+      <Comments>QAS WIDTH</Comments>
+      <String Context="MD_RT11MeasName">W</String>
+    </Concept>
+    <Concept Id="PLANE">
+      <Comments>Plane position</Comments>
+      <String Context="MD_RT11MeasSpan2">PLANE</String>
+      <String Context="MD_RT8Info">PL</String>
+    </Concept>
+    <Concept Id="ADM FVI">
+      <Comments>Flow Velocity Integral</Comments>
+      <String Context="MD_RT11MeasName">FVI</String>
+    </Concept>
+    <Concept Id="ADM SVp">
+      <Comments>Systolic Peak velocity</Comments>
+      <String Context="MD_RT11MeasName">SVp</String>
+    </Concept>
+    <Concept Id="ADM EDV">
+      <Comments>End Diastolic Velocity</Comments>
+      <String Context="MD_RT11MeasName">EDV</String>
+    </Concept>
+    <Concept Id="ADM Vmn">
+      <Comments>Mean Velocity</Comments>
+      <String Context="MD_RT11MeasName">Vmn</String>
+    </Concept>
+    <Concept Id="ADM Vrev">
+      <Comments>Retrograde Velocity</Comments>
+      <String Context="MD_RT11MeasName">Vrev</String>
+    </Concept>
+    <Concept Id="ADM PI">
+      <Comments>Pulsatility Index</Comments>
+      <String Context="MD_RT11MeasName">PI</String>
+    </Concept>
+    <Concept Id="ADM RI">
+      <Comments>Resistive Index</Comments>
+      <String Context="MD_RT11MeasName">RI</String>
+    </Concept>
+    <Concept Id="ADM SVDV">
+      <Comments>Systolic Velocity/Diastolic Velocity</Comments>
+      <String Context="MD_RT11MeasName">SVDV</String>
+    </Concept>
+    <Concept Id="ADM Gp">
+      <Comments>Peak Pressure Gradient</Comments>
+      <String Context="MD_RT11MeasName">Gp</String>
+    </Concept>
+    <Concept Id="ADM Gmn">
+      <Comments>Mean Pressure Gradient</Comments>
+      <String Context="MD_RT11MeasName">Gmn</String>
+    </Concept>
+    <Concept Id="ADM Acc">
+      <Comments>Acceleration</Comments>
+      <String Context="MD_RT11MeasName">A</String>
+    </Concept>
+    <Concept Id="ADM At">
+      <Comments>Accelaration Time</Comments>
+      <String Context="MD_RT11MeasName">AT</String>
+    </Concept>
+    <Concept Id="ADM Vp">
+      <Comments>Peak Velocity</Comments>
+      <String Context="MD_RT11MeasName">Vp</String>
+    </Concept>
+    <Concept Id="ADM HR">
+      <Comments>Hearth Rate</Comments>
+      <String Context="MD_RT11MeasName">HR</String>
+    </Concept>
+    <Concept Id="BIOPSY WARNING">
+      <Comments>Biopsy warning message</Comments>
+      <String Context="Generic_Warning">WARNING: Always verify that the whole needle working area, from its insertion point up to the target, doesn’t include anatomical structures that could be touched and damaged, thus compromising the patient’s safety.</String>
+    </Concept>
+    <Concept Id="BIOPSY WARNING 2">
+      <Comments>Biopsy warning message</Comments>
+      <String Context="Generic_Warning">Contact service if buttons are not enabled.</String>
+    </Concept>
+    <Concept Id="BIOPSY WARNING 3">
+      <Comments>Biopsy warning message</Comments>
+      <String Context="Generic_Warning">Warning: the calibration procedure failed. Please contact the Service department.</String>
+    </Concept>
+    <Concept Id="BIOPSY WARNING 4">
+      <Comments>Biopsy warning message</Comments>
+      <String Context="Generic_Warning">Please wait: the probe is performing its centering calibration.</String>
+    </Concept>
+    <Concept Id="BIOPSY WARNING 5">
+      <Comments>Biopsy warning message</Comments>
+      <String Context="Generic_Warning">Warning: The probe could not be centered. It is not granted that the needle path lies on the visualized image. Please contact the Service department.</String>
+    </Concept>
+    <Concept Id="NEUROSURGERY WARNING">
+      <Comments>Neurosurgery warning message</Comments>
+      <String Context="Generic_Warning">Neurosurgery Application - The probe has to be enclosed in a sterile non-pyrogenic sheath.</String>
+    </Concept>
+    <Concept Id="NEUROSURGERY WARNING 2">
+      <Comments>Neurosurgery warning message</Comments>
+      <String Context="Generic_Warning">If the probe is used on a patient with known or suspected Creutzfeldt-Jakob Disease (CJD), the probe shall be destroyed.</String>
+    </Concept>
+	<Concept Id="NEUROSURGERY WARNING 3">
+      <Comments>[StoryID: 10352] Neurosurgery warning message related to Virtual Navigator</Comments>
+      <String Context="Generic_Warning">The Virtual Pointer has to be enclosed in a sterile non-pyrogenic sheath. If the Virtual Pointer is used on a patient with known or suspected Creutzfeldt-Jakob Disease (CJD) the Virtual Pointer shall be destroyed.</String>
+    </Concept>
+    <Concept Id="BIOPSY NEEDLE LENGTH">
+      <Comments>Biopsy needle length</Comments>
+      <String Context="Generic_Warning">DISTANCE - Indicative lenght of the biopsy needle</String>
+    </Concept>
+    <Concept Id="SAVE ERROR">
+      <Comments>Save Error</Comments>
+      <String Context="Generic_Warning">An error was detected while saving data. Please acquire data again</String>
+    </Concept>
+    <Concept Id="EDIT READ ERROR">
+      <Comments>Edit Read Error</Comments>
+      <String Context="Generic_Warning">An error was detected while reading data</String>
+    </Concept>
+    <Concept Id="QAS DATA ERROR">
+      <Comments>Qas data Error</Comments>
+      <String Context="Generic_Warning">WAVEFORM SHAPES ARE NOT GOOD ENOUGH FOR QAS CALCULATIONS</String>
+    </Concept>
+    <Concept Id="STOP ACQUISITION">
+      <Comments>Stop Acquisiton</Comments>
+      <String Context="Generic_Warning">Are you sure you want to stop the acquisition?</String>
+    </Concept>
+    <Concept Id="STIC ERROR">
+      <Comments>3D Error</Comments>
+      <String Context="Generic_Warning">Unable to load STIC presentation</String>
+    </Concept>
+    <Concept Id="LVO">
+      <Comments>Left Ventricle Opacification</Comments>
+      <String Context="MD_RT8Info">LVO</String>
+    </Concept>
+    <Concept Id="PSYS">
+      <Comments>Systolic pressure</Comments>
+      <String Context="Generic_Medium">PSYS</String>
+    </Concept>
+    <Concept Id="PDIST">
+      <Comments>Dyastolic pressure</Comments>
+      <String Context="Generic_Medium">PDIST</String>
+    </Concept>
+    <Concept Id="PRESSURE">
+      <Comments>Brachial Pressure</Comments>
+      <String Context="Generic_Medium">Brachial Pressure</String>
+    </Concept>
+    <Concept Id="TIME">
+      <Comments>Elaxto Graph</Comments>
+      <String Context="Generic_Medium">Time</String>
+    </Concept>
+    <Concept Id="DISPLACEMENT">
+      <Comments>Elaxto Graph</Comments>
+      <String Context="Generic_Medium">Displacement</String>
+    </Concept>
+    <Concept Id="PROPAGATION">
+      <Comments>Elaxto Graph</Comments>
+      <String Context="Generic_Medium">Propagation</String>
+    </Concept>
+    <Concept Id="WRITEERROR">
+      <Comments>Error during saving preset operation</Comments>
+      <String Context="Generic_Warning">ERROR WRITING FILE</String>
+    </Concept>
+    <Concept Id="ASK_PRESETNAME_HEADER">
+      <Comments>Indicates the name of the preset.</Comments>
+      <String Context="Generic_Short">Preset name</String>
+    </Concept>
+    <Concept Id="STIC LOW FRAME RATE">
+      <Comments>Low Frame Rate</Comments>
+      <String Context="MD_RT13HelpLine">Please, increase Frame rate</String>
+    </Concept>
+	<Concept Id="GENERIC OPERATION ERROR">
+      <Comments>Generic Error</Comments>
+      <String Context="Generic_Warning">An error was detected during the operation. Please try again</String>
+    </Concept>
+  </LocalizationSection> 
+  <LocalizationSection InternalNamespace="Error_Messages">
+    <Concept Id="ELIGIBILITY_MSG">
+     <String Context="Generic_Warning">The selected clip cannot be processed for the following reasons:</String>
+    </Concept>
+    <Concept Id="NOT_HIGHFRAMERATE">
+	<Comments>XStrain 2D from RT/Exam Review: the frame rate is too low</Comments>
+     <String Context="Generic_Warning">low frame rate</String>
+    </Concept>
+	 <Concept Id="NON_CALIBRATIONREGIONSHOMOGENEOUS">
+	  <Comments>XStrain 2D from RT/Exam Review: A change of sections occured</Comments>
+      <String Context="Generic_Warning">calibration regions are not homogenous</String>
+    </Concept>
+    <Concept Id="QELAXTO REPORT WARNING">
+      <Comments>The measures were not included in the Report</Comments>
+      <String Context="Generic_Warning">Measurements are not stored on the report. Do you want to exit anyway?</String>
+    </Concept>
+    <Concept Id="VNAV BATTERY WARNING">
+      <Comments>Battery active with Virtual Navigator</Comments>
+      <String Context="Generic_Warning">AC line is off. Some tools will be turned off</String>
+    </Concept>
+  </LocalizationSection>
+ <LocalizationSection InternalNamespace="ProgressBar">
+    <Concept Id="START_PROCESSING">
+      <String Context="Generic_Long">Processing...</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="UIFramework" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="DESKTITLE">
+      <Comments>This is the desktop version title</Comments>
+      <String Context="Generic_Long">MyLabDesk^3 - This viewer is not intended for official interpretation</String>
+    </Concept>
+    <Concept Id="DESKTITLELigth">
+      <Comments>This is the desktop Light version title</Comments>
+      <String Context="Generic_Long">MyLabDeskLight^3 - This viewer is not intended for official interpretation</String>
+    </Concept>
+    <Concept Id="NOTENOUGHFREEDISKSPACE">
+      <Comments>This message appears if free disk space is getting low</Comments>
+      <String Context="Generic_Warning">Free disk space is getting low. It won't be possible to store further exams</String>
+    </Concept>
+    <Concept Id="NO FREE DISK">
+      <Comments>This message appears if free disk space is under first threshold [Defect 10322]</Comments>
+      <String Context="Generic_Warning">Low Hard Disk space. Once Hard Disk icon will become red, no more images and clips will be stored.</String>
+    </Concept>
+    <Concept Id="NO STORE">
+      <Comments>This message appears if free disk space is under second threshold [Defect 10322] </Comments>
+      <String Context="Generic_Warning">No space left on the Hard Disk. Images and clips cannot be anymore stored.</String>
+    </Concept>
+    <Concept Id="ERRORINITIALIZINGDEVICE">
+      <Comments>This message appears if an error occurs during device startup</Comments>
+      <String Context="Generic_Warning">The initialization is not successful: the system will shutdown automatically. Please restart it</String>
+    </Concept>
+    <Concept Id="BATTERYLIFETIME">
+      <Comments>Minutes before shutdown if 6400 is unplugged from AC link</Comments>
+      <String Context="Generic_Warning">Battery lifetime (min.)</String>
+    </Concept>
+    <Concept Id="NOBATTERYCONDITIONFORSTARTING">
+      <Comments>This message may apperar at boot-resuming if there's not enough battery charge</Comments>
+      <String Context="Generic_Warning">No conditions for starting. Battery level (%)</String>
+    </Concept>
+    <Concept Id="NOACSTATUSCONDITIONFORSTARTING">
+      <Comments>This message may apperar at boot-resuming if, on 64xx, the device is resumed without AC-Link</Comments>
+      <String Context="Generic_Warning">No conditions for starting. AC Status</String>
+    </Concept>
+    <Concept Id="BATTERYCHARGE">
+      <Comments>Level of battery charge if 6400 is unplugged from AC link</Comments>
+      <String Context="Generic_Warning">Battery charge (%)</String>
+    </Concept>
+    <Concept Id="TIMEBEFORESHUTDOWN">
+      <Comments>Seconds before forced shutdown in case of alarm</Comments>
+      <String Context="Generic_Warning">The application will close in (sec.)</String>
+    </Concept>
+    <Concept Id="LOWBATTERYWARNING">
+      <Comments>This message may appear on 7400 for advising the user to close the ingoing operation due to low battery level</Comments>
+      <String Context="Generic_Warning">Low battery level. Plug the AC-Link for not losing current operations</String>
+    </Concept>
+    <Concept Id="CONFIRMSHUTDOWNWARNING">
+      <Comments>This message appears on the device for advising the user that the shutdown will be performed</Comments>
+      <String Context="Generic_Warning">The shut down procedure will be automatically performed after</String>
+    </Concept>
+    <Concept Id="PAUSED_EXAMS">
+      <Comments>This message appears on the device for advising the user that any pending exam will be closed during the shutdown</Comments>
+      <String Context="Generic_Warning">Number of paused exams that will be automatically closed:</String>
+    </Concept>
+    <Concept Id="CONFIRMSHUTDOWNWARNING_SEC">
+      <Comments>This message appears on the device for advising the user that the shutdown will be performed</Comments>
+      <String Context="Generic_Warning">seconds</String>
+    </Concept>
+    <Concept Id="CLOSENOW">
+      <Comments>Force the application to close</Comments>
+      <String Context="TS_AButton">CLOSE NOW</String>
+      <String Context="Generic_Long">CLOSE NOW</String>
+    </Concept>
+    <Concept Id="SHUTDOWN">
+      <Comments>Force the application to perform shutdown</Comments>
+      <String Context="TS_AButton">SHUT DOWN</String>
+      <String Context="Generic_Long">SHUT DOWN</String>
+    </Concept>
+    <Concept Id="HIBERNATE">
+      <Comments>Force the application to hibernate</Comments>
+      <String Context="TS_AButton">HIBERNATE</String>
+      <String Context="Generic_Long">HIBERNATE</String>
+    </Concept>
+    <Concept Id="MIXED">
+      <Comments>Force the operating system to hibernate. Translation can be the same as the concept above</Comments>
+      <String Context="TS_AButton">MIXED</String>
+      <String Context="Generic_Long">MIXED</String>
+    </Concept>
+    <Concept Id="STANDBY">
+      <Comments>Force the application to go in standby (suspend to ram, sometimes called sleep)</Comments>
+      <String Context="TS_AButton">STANDBY</String>
+      <String Context="Generic_Long">STANDBY</String>
+    </Concept>
+    <Concept Id="CONTROLLEDSTANDBY">
+      <Comments>Force the application to reboot and to go in standby (called controlled standby)</Comments>
+      <String Context="TS_AButton">CONTROLLED STANDBY</String>
+      <String Context="Generic_Long">CONTROLLED STANDBY</String>
+    </Concept>        
+    <Concept Id="WAIT">
+      <Comments>Wait for all in-progress processes to complete before shutting down the application</Comments>
+      <String Context="TS_AButton">WAIT</String>
+      <String Context="Generic_Long">WAIT</String>
+    </Concept>
+    <Concept Id="CANCEL">
+      <Comments></Comments>
+      <String Context="TS_AButton">CANCEL</String>
+      <String Context="Generic_Long">CANCEL</String>
+    </Concept>
+    <Concept Id="PRINT NOW">
+      <Comments>$$RC</Comments>
+      <String Context="TS_AButton">PRINT NOW</String>
+      <String Context="Generic_Long">PRINT NOW</String>
+    </Concept>
+    <Concept Id="ERRORTOUSB">
+      <Comments>Button to copy error logs to usb logs after a system error</Comments>
+      <String Context="TS_AButton">EXPORT ERROR LOG TO USB KEY</String>
+      <String Context="Generic_Medium">EXPORT ERROR LOG TO USB KEY</String>
+    </Concept>
+    <Concept Id="CLOSE">
+      <Comments></Comments>
+      <String Context="TS_AButton">CLOSE</String>
+      <String Context="Generic_Long">CLOSE</String>
+    </Concept>
+    <Concept Id="EXIT">
+      <Comments></Comments>
+      <String Context="TS_AButton">EXIT</String>
+      <String Context="Generic_Long">EXIT</String>
+    </Concept>
+    <Concept Id="REBOOT">
+      <Comments>Button to reboot the application after a system error</Comments>
+      <String Context="TS_AButton">REBOOT</String>
+      <String Context="Generic_Long">REBOOT</String>
+    </Concept>
+    <Concept Id="SYSTEMINTERNALERROR">
+      <Comments>This message appears on all system errors</Comments>
+      <String Context="Generic_Long">SYSTEM INTERNAL ERROR</String>
+    </Concept>
+    <Concept Id="EXPORTING">
+      <Comments>Title of waiting dialog while exporting</Comments>
+      <String Context="Generic_Long">EXPORTING ON USB</String>
+    </Concept>
+    <Concept Id="USBNOTPRESENT">
+      <Comments>This message appears when there's no USB key inserted and the user tries to copy error logs there</Comments>
+      <String Context="Generic_Long">USB KEY NOT PRESENT!</String>
+    </Concept>
+      <Concept Id="FileExist">
+      <Comments>This message appears when the log file for users is already presents in USB</Comments>
+      <String Context="Generic_Long">File exist!</String>
+    </Concept>
+    <Concept Id="OPerationSuccesfullycompleted">
+      <Comments>This message appears when the log file are exported with success</Comments>
+      <String Context="Generic_Long">Operation Succesfully completed!</String>
+    </Concept>
+    <Concept Id="USBNOTWRITABLE">
+      <Comments>This message appears when the user tries to copy error logs to a not writable USB key</Comments>
+      <String Context="Generic_Warning">USB KEY NOT WRITABLE!</String>
+    </Concept>
+    <Concept Id="NOTENOUGHFREESPACEONUSB">
+      <Comments>This message appears when the user tries to copy error logs to a full USB key</Comments>
+      <String Context="Generic_Long">NOT ENOUGH FREE SPACE ON USB KEY!</String>
+    </Concept>
+    <Concept Id="GENERIC_ERROR">
+      <Comments>This message appears when the user tries to copy logs to a full USB key</Comments>
+      <String Context="Generic_Warning">PROBLEM WHILE EXPORTING ON USB: LOGS NOT EXPORTED</String>
+    </Concept>
+    <Concept Id="OK">
+      <Comments></Comments>
+      <String Context="TS_AButton">OK</String>
+    </Concept>
+    <Concept Id="YES">
+      <Comments></Comments>
+      <String Context="TS_AButton">YES</String>
+    </Concept>
+    <Concept Id="NO">
+      <Comments></Comments>
+      <String Context="TS_AButton">NO</String>
+    </Concept>
+    <Concept Id="DARK_ROOM">
+      <Comments>Monitor lighting settings preset for a dark room [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_AButton">Dark Room</String>
+    </Concept>
+    <Concept Id="MEDIUM_DARK_ROOM">
+      <Comments>Monitor lighting settings preset for a medium-dark room [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_AButton">Medium-Dark Room</String>
+    </Concept>
+    <Concept Id="BRIGHT_ROOM">
+      <Comments>Monitor lighting settings preset for a bright room [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_AButton">Bright Room</String>
+    </Concept>
+    <Concept Id="USER_DEFINED">
+      <Comments>User defined monitor lighting settings (brigthness, contrast, color temperature) [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_AButton">User Defined</String>
+    </Concept>
+    <Concept Id="FACTORY_DEFAULT">
+      <Comments>Reset to factory default monitor lighting settings (brigthness, contrast, color temperature) [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_AButton">Factory Default</String>
+    </Concept>
+    <Concept Id="DETECT">
+      <Comments>A button to rescan the connected HW and so to refresh (detect) freshly attached monitors</Comments>
+      <String Context="TS_AButton">Detect</String>
+    </Concept>
+    <Concept Id="PHYSICAL_CLONE">
+      <Comments>A button to switch the external monitor from a configuration where the Echo image is cloned by the software in a windows that can adapt to any resolution to a real hard cloned copy of the main monitor</Comments>
+      <String Context="TS_AButton">Physical Clone</String>
+    </Concept>
+    <Concept Id="SMART_CLONE">
+      <Comments>A button to switch the external monitor from a real hard cloned copy of the main monitor to a configuration where the Echo image is cloned by the software in a windows that can adapt to any resolution</Comments>
+      <String Context="TS_AButton">Smart Clone</String>
+    </Concept>
+    <Concept Id="CONTRAST">
+      <Comments>Increase or decrease monitor contrast when user defined settings are selected [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_TButton">Contrast</String>
+    </Concept>
+    <Concept Id="BRIGHTNESS">
+      <Comments>Increase or decrease monitor brightness when user defined settings are selected [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_TButton">Brightness</String>
+    </Concept>
+    <Concept Id="RED">
+      <Comments>Increase or decrease monitor red contribution to white point when user defined settings are selected [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_TButton">Red</String>
+    </Concept>
+    <Concept Id="GREEN">
+      <Comments>Increase or decrease monitor green contribution to white point when user defined settings are selected [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_TButton">Green</String>
+    </Concept>
+    <Concept Id="BLUE">
+      <Comments>Increase or decrease monitor blue contribution to white point when user defined settings are selected [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_TButton">Blue</String>
+    </Concept>
+    <Concept Id="GAMMA">
+      <Comments>Increase or decrease monitor gamma (R/G/B) contribution to white point when user defined settings are selected [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_TButton">Gamma</String>
+    </Concept>
+    <Concept Id="APPLICATIONSTARTS">
+      <Comments>This message appears on the splash window when the application starts</Comments>
+      <String Context="Generic_Long">The application is starting</String>
+    </Concept>
+    <Concept Id="GINKONOTSUPPORTED">
+      <Comments>This message appears on desktop version if graphics card is not supported</Comments>
+      <String Context="Generic_Warning">The Application could not Start: graphics card not supported!</String>
+    </Concept>
+    <Concept Id="WindowsVersionNotSupported">
+      <Comments>This message appears on desktop version if Operating System is not supported</Comments>
+      <String Context="Generic_Warning">The Application could not Start: Operating System not supported!</String>
+    </Concept>
+    <Concept Id="RESOLUTIONNOTSUPPORTED">
+      <Comments>This message appears on desktop version if resolution is not supported</Comments>
+      <String Context="Generic_Warning">Window size not supported!</String>
+    </Concept>
+    <Concept Id="MONITOR_NOT_SUPPORTED">
+      <Comments>Message to inform any user that the main monitor is not in the list of the supported models. If final user a call to the service is suggested</Comments>
+      <String Context="Generic_Warning">MONITOR NOT SUPPORTED, CALL THE SERVICE</String>
+    </Concept>
+    <Concept Id="MONITOR_NOT_DETECTED">
+      <Comments>Message to inform any user that was not possible to retrieve the main monitor model so the auto-detection process failed. If final user a call to the service is suggested</Comments>
+      <String Context="Generic_Warning">MONITOR NOT DETECTED, CALL THE SERVICE</String>
+    </Concept>
+    <Concept Id="INITIALIZINGTOUCHSCREEN">
+      <Comments>This message appears on the splash window when the touch screen is initializing</Comments>
+      <String Context="Generic_Long">Initializing touch screen</String>
+    </Concept>
+    <Concept Id="InitOutOfProcess">
+      <Comments>This message appears on the splash window when off line processes(Out Of Process hosts) are initializing</Comments>
+      <String Context="Generic_Long">Initializing off line processes</String>
+    </Concept>
+    <Concept Id="INITIALIZINGARCHIVE">
+      <Comments>This message appears on the splash window when the archive is initializing</Comments>
+      <String Context="Generic_Long">Initializing archive</String>
+    </Concept>
+    <Concept Id="ARCHIVECORRUPTED">
+      <Comments>This message appears on the splash window when the archive is corrupted and the recovering procedure is running</Comments>
+      <String Context="Generic_Warning">Archive has been corrupted. The recovering procedure is running</String>
+    </Concept>
+    <Concept Id="ACLINKUNPLUGGED">
+      <Comments>This message appears on the 64XX Touch Screen when AC line of the device has been unplugged</Comments>
+      <String Context="Generic_Warning">The AC line has been unplugged. Please plug it for resuming the job</String>
+    </Concept>
+    <Concept Id="PLUGINSTARTUP">
+      <Comments>This message appears on the splash window when the component is initializing</Comments>
+      <String Context="Generic_Long">Initializing component</String>
+    </Concept>
+    <Concept Id="SERVICESTARTUP">
+      <Comments>This message appears on the splash window when the background service is initializing</Comments>
+      <String Context="Generic_Long">Initializing background service</String>
+    </Concept>
+    <Concept Id="SYSTEMSHUTTINGDOWN">
+      <Comments>This message appears on the splash window when the system is suspending</Comments>
+      <String Context="Generic_Long">The system is suspending</String>
+    </Concept>
+    <Concept Id="SYSTEMRESUMING">
+      <Comments>This message appears on the splash window when the system is resuming</Comments>
+      <String Context="Generic_Long">The system is resuming</String>
+    </Concept>
+    <Concept Id="ESTIMATEDTIMEREMAINIG">
+      <Comments>This message appears during shutdown if there are some in progress operation</Comments>
+      <String Context="Generic_Long">Estimated time remaining</String>
+    </Concept>
+    <Concept Id="OPERATIONCOMPLETED">
+      <Comments></Comments>
+      <String Context="Generic_Long">Operation successfully completed</String>
+    </Concept>
+    <Concept Id="FULLBOOTRUNNING">
+      <Comments>This message appears on the splash to advise the user that the application startup may take a lot of time</Comments>
+      <String Context="Generic_Long">Full boot is running: please wait</String>
+    </Concept>
+    <Concept Id="FULLBOOTRUNNINGNOBOOTAVAILABLE">
+        <Comments>This message appears on the splash to advise the user that is not possible to shutdown the user during the boot phase</Comments>
+        <String Context="Generic_Long">It's impossible to turn off the unit during startup</String>
+    </Concept>
+    <Concept Id="FULLSHUTDOWNRUNNING">
+      <Comments>This message appears during the shutdown to advise the user that the application startup may take a lot of time</Comments>
+      <String Context="Generic_Warning">Full shutdown is running: next boot may take a lot of time</String>
+    </Concept>
+    <Concept Id="LICSTATUS_RS">
+      <Comments>License enabled 'cause of dongle key used to log</Comments>
+      <String Context="Generic_Medium">RS</String>
+    </Concept>
+    <Concept Id="LICSTATUS_WIP">
+      <Comments>License enabled 'cause of dongle key used to log</Comments>
+      <String Context="Generic_Medium">WIP</String>
+    </Concept>
+    <Concept Id="LICSTATUS_DEFAULT">
+      <Comments>License enabled by default 'cause of model</Comments>
+      <String Context="Generic_Medium">DEFAULT</String>
+    </Concept>
+    <Concept Id="LICSTATUS_DISABLED">
+      <Comments>License not enabled</Comments>
+      <String Context="Generic_Medium">DISABLED</String>
+    </Concept>
+    <Concept Id="LICSTATUS_BOUGHT">
+      <Comments>License permanently enabled</Comments>
+      <String Context="Generic_Medium">PERMANENT</String>
+    </Concept>
+    <Concept Id="LICSTATUS_DEMO">
+      <Comments>License temporarily enabled </Comments>
+      <String Context="Generic_Medium">DEMO</String>
+    </Concept>
+    <Concept Id="ACTIVE_ON_NEXT_SESSION">
+      <Comments>This message appears when saving a license to advise the user that a restart is necessary to activate license</Comments>
+      <String Context="Generic_Warning">To activate your modifications, please restart the unit.</String>
+    </Concept>
+    <Concept Id="HARDWARE_ID">
+      <Comments>Equipment's numeric unique identifier</Comments>
+      <String Context="Generic_Long">HARDWARE ID</String>
+    </Concept>
+    <Concept Id="VERIFY_ON">
+      <Comments>Verification of key's validity end with success</Comments>
+      <String Context="Generic_Medium">ON</String>
+    </Concept>
+    <Concept Id="VERIFY_OFF">
+      <Comments>Verification of key's validity end with failure</Comments>
+      <String Context="Generic_Medium">OFF</String>
+    </Concept>
+    <Concept Id="INCLUDED_LBL">
+      <Comments>Title of column containing other licenses included</Comments>
+      <String Context="Generic_Medium">INCLUDED LIST</String>
+    </Concept>
+    <Concept Id="KEY_LBL">
+      <Comments>Title of column containing licenses' keys</Comments>
+      <String Context="Generic_Medium">KEY</String>
+    </Concept>
+    <Concept Id="DEMO_LBL">
+      <Comments>Title of column showing checkbox used to enable demo on licenses</Comments>
+      <String Context="Generic_Medium">DEMO</String>
+    </Concept>
+    <Concept Id="BOUGHT_LBL">
+      <Comments>Title of column showing checkbox used to remove sold licenses</Comments>
+      <String Context="Generic_Medium">BOUGHT</String>
+    </Concept>
+    <Concept Id="ELAPSED_LBL">
+      <Comments>Title of column showing time elapsed for demo licenses</Comments>
+      <String Context="Generic_Medium">ELAPSED TIME</String>
+    </Concept>
+    <Concept Id="REMAIN_LBL">
+      <Comments>Title of column showing time remaining for demo licenses</Comments>
+      <String Context="Generic_Medium">REMAINING TIME</String>
+    </Concept>
+    <Concept Id="EXPIRATIONDATE_LBL">
+      <Comments>Title of column showing expiration date for demo licenses [Story 26962]</Comments>
+      <String Context="Generic_Medium">EXPIRATION DATE</String>
+    </Concept>
+    <Concept Id="ISPATIENTID">
+      <Comments>Patient ID window is active [andrea.anzalone@esaote.com]</Comments>
+      <String Context="TS_AButton">PATIENTID</String>
+    </Concept>
+    <Concept Id="ISPROBESEL">
+      <Comments>Probe selection is active [andrea.anzalone@esaote.com]</Comments>
+      <String Context="TS_AButton">PROBESEL</String>
+    </Concept>
+     <Concept Id="ISACQUISITION">
+      <Comments>RealTime environment is active [andrea.anzalone@esaote.com]</Comments>
+      <String Context="TS_AButton">ACQUISITION</String>
+    </Concept>
+    <Concept Id="ISNAVIGATION">
+      <Comments>VirtualNavigator is active</Comments>
+      <String Context="TS_AButton">NAVIGATION</String>
+    </Concept>
+    <Concept Id="ISREVIEW">
+      <Comments>Review environment is active [andrea.anzalone@esaote.com]</Comments>
+      <String Context="TS_AButton">REVIEW</String>
+    </Concept>   
+    <Concept Id="ISREPORT">
+      <Comments>Report environment is active [andrea.anzalone@esaote.com]</Comments>
+      <String Context="TS_AButton">REPORT</String>
+    </Concept> 
+    <Concept Id="ISSTARTEXAM">
+      <Comments>Start/End is active [andrea.anzalone@esaote.com]</Comments>
+      <String Context="TS_AButton">STARTEXAM</String>
+    </Concept> 
+    <Concept Id="ISENDEXAM">
+      <Comments>Start/End is active [andrea.anzalone@esaote.com]</Comments>
+      <String Context="TS_AButton">ENDEXAM</String>
+    </Concept>
+    <Concept Id="TOOLS">
+      <Comments>it appears on the b8 button on the touch screen device. If pressed, it opens the tools mode</Comments>
+      <String Context="TS_BButton">TOOLS</String>
+    </Concept>
+    <Concept Id="SAVE_BUTTON">
+      <Comments>The button used to save changes</Comments>
+      <String Context="Generic_Medium">SAVE</String>
+      <String Context="TS_AButton">SAVE</String>
+    </Concept>
+    <Concept Id="VERIFY_BUTTON">
+      <Comments>The button used to verify keys inserted</Comments>
+      <String Context="Generic_Medium">VERIFY</String>
+    </Concept>
+    <Concept Id="CLEAR_DEMO_BUTTON">
+      <Comments>The button used to reset all demo licenses</Comments>
+      <String Context="Generic_Medium">CLEAR DEMOS</String>
+    </Concept>
+    <Concept Id="APPLICATION_TAB">
+      <Comments>Title of tab containing licenses for applications</Comments>
+      <String Context="Generic_Medium">APPLICATIONS</String>
+    </Concept>
+    <Concept Id="OPTION_TAB">
+      <Comments>Title of tab containing licenses for options</Comments>
+      <String Context="Generic_Medium">OPTIONS</String>
+    </Concept>
+    <Concept Id="DEMORESET_TAB">
+      <Comments>Title of tab where insert key for resetting time available for demo licenses</Comments>
+      <String Context="Generic_Medium">DEMO RESET</String>
+    </Concept>
+    <Concept Id="MODEL_TAB">
+      <Comments>Title of tab where insert key for changing equipment's model</Comments>
+      <String Context="Generic_Medium">MODEL</String>
+    </Concept>
+    <Concept Id="MODEL_KEY_LBL">
+      <Comments>Label of field for inserting key for changing equipment's model</Comments>
+      <String Context="Generic_Medium">MODEL KEY</String>
+    </Concept>
+    <Concept Id="SERIAL_NUMBER_LBL">
+      <Comments>Label of field for inserting equipment's serial number</Comments>
+      <String Context="Generic_Medium">SERIAL NUMBER</String>
+    </Concept>
+    <Concept Id="DONGLE_NOT_FOUND">
+      <Comments>Dongle USB not available</Comments>
+      <String Context="Generic_Medium">DONGLE NOT FOUND</String>
+    </Concept>
+    <Concept Id="LOCKEDMESSAGETITLE">
+      <Comments>The string is a pop-up message for locked state</Comments>
+      <String Context="Generic_Warning">THE SYSTEM IS LOCKED.</String>
+    </Concept>
+    <Concept Id="LOCKEDMESSAGEDESCRIPTION">
+      <Comments>The string describes how to unlock the system</Comments>
+      <String Context="Generic_Warning">In order to unlock press the Freeze Key while holding pressed the Esaote Key.</String>
+    </Concept>
+    <Concept Id="INCOMPATIBLEMONITOR">
+      <Comments>The plugged secondary monitor is incompatible with the primary monitor and cannot be activated</Comments>
+      <String Context="Generic_Warning">The system resolution is not supported by the plugged monitor.</String>
+    </Concept>
+    <Concept Id="F9INCOMPATIBLEMONITOR">
+      <Comments>The plugged secondary monitor is incompatible with the full screen viewer. Disconnect the secondary monitor if you want to use this feature</Comments>
+      <String Context="Generic_Warning">The plugged secondary monitor is incompatible with the full screen viewer. Disconnect the secondary monitor if you want to use this feature.</String>
+    </Concept>
+    <Concept Id="COMPATIBLEMONITOR">
+      <Comments>The plugged secondary monitor is compatible with the primary monitor resolution and will be activated</Comments>
+      <String Context="Generic_Warning">Secondary monitor activation successfully completed.</String>
+    </Concept>
+    <Concept Id="PLUGPLAYNOTSUPPORTED">
+      <Comments>The plugged secondary monitor should be activated but the version does not support runtime activation</Comments>
+      <String Context="Generic_Warning">Runtime secondary monitor activation is not supported.</String>
+    </Concept>
+    <Concept Id="DEFAULTEDTOSMARTCLONE">
+      <Comments>The plugged secondary monitor is incompatible with the primary monitor resolution so the "Smart" clone will be activated instead of the Physical clone</Comments>
+      <String Context="Generic_Warning">Physical Clone not possible, clone type defaulted to "Smart" clone. Secondary monitor activation successfully completed.</String>
+    </Concept>
+    <Concept Id="January" >
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short" >JAN</String>
+    </Concept>
+    <Concept Id="February" >
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short" >FEB</String>
+    </Concept>
+    <Concept Id="March" >
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short" >MAR</String>
+    </Concept>
+    <Concept Id="April" >
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short" >APR</String>
+    </Concept>
+    <Concept Id="May" >
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short" >MAY</String>
+    </Concept>
+    <Concept Id="June" >
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short" >JUN</String>
+    </Concept>
+    <Concept Id="July" >
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short" >JUL</String>
+    </Concept>
+      <Concept Id="August" >
+        <Comments>month in formatted date</Comments>
+        <String Context="Generic_Short" >AUG</String>
+      </Concept>
+      <Concept Id="September" >
+        <Comments>month in formatted date</Comments>
+        <String Context="Generic_Short" >SEP</String>
+      </Concept>
+      <Concept Id="October" >
+        <Comments>month in formatted date</Comments>
+        <String Context="Generic_Short" >OCT</String>
+      </Concept>
+      <Concept Id="November" >
+        <Comments>month in formatted date</Comments>
+        <String Context="Generic_Short" >NOV</String>
+      </Concept>
+      <Concept Id="December" >
+        <Comments>month in formatted date</Comments>
+        <String Context="Generic_Short" >DEC</String>
+      </Concept>
+    <Concept Id="FULLSCREENF9">
+      <Comments>A button to toogle the viewer from normal size to full screen and viceversa</Comments>
+      <String Context="TS_BButton">FULL SCREEN</String>
+    </Concept>
+    <Concept Id="SERVICE_WND_MSG_TITLE">
+      <Comments>Title for message that appears when equipment has not been checked by service for a certain time [Story 23490] </Comments>
+      <String Context="Generic_Warning">WARNING-MAINTENANCE RECOMMENDED:</String>
+    </Concept>
+    <Concept Id="SERVICE_WND_MSG_LINE_1">
+      <Comments>First line for message that appears when equipment has not been checked by service for a certain time [Story 23490] </Comments>
+      <String Context="Generic_Warning">The unit has reached the Manufacturers recommended interval for Preventative Maintenance.</String>
+    </Concept>
+    <Concept Id="SERVICE_WND_MSG_LINE_2">
+      <Comments>First line for message that appears when equipment has not been checked by service for a certain time [Story 23490] </Comments>
+      <String Context="Generic_Warning">A Preventative Maintenance Inspection is recommended in order to remain compliant with the Manufacturers specifications for this medical device.</String>
+    </Concept>
+    <Concept Id="SERVICE_WND_MSG_LINE_3">
+      <Comments>First line for message that appears when equipment has not been checked by service for a certain time [Story 23490] </Comments>
+      <String Context="Generic_Warning">PLEASE CONTACT ESAOTE SERVICE OR VISIT THE ESAOTE WEBSITE (WWW.ESAOTE.COM) TO FIND THE LOCAL REPRESENTATIVE.</String>
+    </Concept>
+    <Concept Id="LICENSE_CV_NOT_UPDATED">
+      <Comments>License CV CPU not upgraded to CV GPU [Defect 31132] </Comments>
+      <String Context="Generic_Warning">Xview not upgraded, please insert license code.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_SCAN_BUTTON">
+      <Comments>Antivirus SCAN Button</Comments>
+	  <String Context="TS_AButton">SCAN</String>
+    </Concept>
+	<Concept Id="ANTIVIRUS_SCAN">
+      <Comments>Antivirus scan waiting message popup</Comments>
+      <String Context="Generic_Long">Scan starting...</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_FOUND_THREATS_SYSTEM_DRIVE">
+      <Comments>Antivirus found threats on system drive message popup.</Comments>
+      <String Context="Generic_Long">Antivirus found threats on system drive.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_ERROR">
+      <Comments>Antivirus error popup</Comments>
+      <String Context="Generic_Long">Antivirus error! Please retry.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_SCAN_CONFIRMATION">
+      <Comments>This message appears on the device for advising the user that the virus scan will be performed</Comments>
+      <String Context="Generic_Warning">The virus scan procedure will be automatically performed after</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_SCAN_CONFIRMATION_SEC">
+      <Comments>This message appears on the device for advising the user that the virus scan will be performed</Comments>
+      <String Context="Generic_Warning">seconds</String>
+    </Concept>
+    <Concept Id="USERCHANGED">
+      <Comments>This message appears when user identity switches (inserting, removing or changing an USB token) during a resume procedure</Comments>
+      <String Context="Generic_Warning">Current user different from previous one: forcing shutdown</String>
+    </Concept>
+  </LocalizationSection> 
+  <LocalizationSection InternalNamespace="ConfSetEvent">
+    <Concept Id="SPECIFICFILECORRUPTED">
+      <Comments>The configuration (factory) is invalid because the specific configuration file is corrupted</Comments>
+      <String Context="Generic_Warning">Invalid factory configuration data, the specific configuration file is corrupted!</String>
+    </Concept>
+    <Concept Id="SPECIFICFILEABSENT">
+      <Comments>The configuration (factory) is invalid because the specific configuration file is not found</Comments>
+      <String Context="Generic_Warning">Invalid factory configuration data, the system can't find the specific configuration file!</String>
+    </Concept>
+    <Concept Id="CONFFILECORRUPTED">
+      <Comments>The configuration is invalid because the configuration file is corrupted</Comments>
+      <String Context="Generic_Warning">Invalid configuration data, the configuration file is corrupted!</String>
+    </Concept>
+    <Concept Id="CONFFILEABSENT">
+      <Comments>The configuration is invalid because the configuration file is not found</Comments>
+      <String Context="Generic_Warning">Invalid configuration data, the system can't find the configuration file!</String>
+    </Concept>
+    <Concept Id="USEFACTORYIFCORRUPTED">
+      <Comments>The configuration is invalid the system will try to apply factory data.</Comments>
+      <String Context="Generic_Warning">Invalid specific configuration data, factory will be applied!</String>
+    </Concept>
+    <Concept Id="USEFACTORYIFABSENT">
+      <Comments>The configuration is invalid the system will try to apply factory data.</Comments>
+      <String Context="Generic_Warning">Specific configuration data not found, factory will be applied!</String>
+    </Concept>
+    <Concept Id="CONFINVALID">
+      <Comments>The name of an invalid configuration</Comments>
+      <String Context="Generic_Warning">Invalid Configuration</String>
+    </Concept>
+   </LocalizationSection>
+</LocalizationResource>

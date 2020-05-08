@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ClinicalConfSetPivot" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="CONFIGURATOR NAME">
+      <Comments>Clinical preset's configurator definition</Comments>
+      <String Context="Generic_Medium">Clinical Preset Management</String>
+    </Concept>
+    <Concept Id="APPLICATION CONFIGURATOR NAME">
+      <Comments>Default application preset's configurator definition</Comments>
+      <String Context="Generic_Medium">Default Application Management</String>
+    </Concept>
+    <Concept Id="SHOW APPLICATION">
+      <Comments>Show application preset's configurator definition [Story 16368]</Comments>
+      <String Context="Generic_Medium">Show Application</String>
+    </Concept>
+  </LocalizationSection>
+
+
+  <LocalizationSection InternalNamespace="Factory">
+    <Concept Id="DefApplPreset">
+      <Comments>Default application preset's definition</Comments>
+      <String Context="Generic_Medium">Default</String>
+    </Concept>
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="Applications">
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="UserInterface">
+    <Concept Id="ComponentColumnHeader">
+      <Comments>System Preset Manager Component Column Header</Comments>
+      <String Context="Generic_Medium">Component</String>
+    </Concept>
+    <Concept Id="ConfigurationColumnHeader">
+      <Comments>System Preset Manager Configuration Column Header</Comments>
+      <String Context="Generic_Medium">Configuration</String>
+    </Concept>
+    <Concept Id="MODIFICATION_AVAILABLE_NEXT_EXAM">
+      <Comments>The modification will be available from the next exam.</Comments>
+      <String Context="Generic_Warning">The modification will be available from the next exam.</String>
+    </Concept>
+    <Concept Id="NO Default application">
+      <Comments>No selected application</Comments>
+      <String Context="Generic_Long">NO Default application.</String>
+    </Concept>
+  </LocalizationSection>
+
+</LocalizationResource>

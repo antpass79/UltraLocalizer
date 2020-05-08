@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ImageAttachmentsComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Attachments">
+    <Concept Id="AttachCommand">
+      <Comments>Label on Attach Command</Comments>
+      <String Context="TS_AButton">Attach</String>
+    </Concept >
+    <Concept Id="ImagesAttachments">
+      <Comments>Title in Report Image Attachments section</Comments>
+      <String Context="Generic_Medium">Images Attachments</String>
+    </Concept >
+	<Concept Id="AttachmentsReadOnly">
+      <Comments>Text shown to the user when the system is unable to save the attachment xml file.</Comments>
+      <String Context="Generic_Warning">Unable to save attachment file.</String>
+    </Concept >
+  </LocalizationSection>
+</LocalizationResource>

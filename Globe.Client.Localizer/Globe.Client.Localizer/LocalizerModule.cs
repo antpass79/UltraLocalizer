@@ -1,4 +1,7 @@
-﻿using Globe.Client.Localizer.Services;
+﻿using Globe.Client.Localizer.Dialogs.ViewModels;
+using Globe.Client.Localizer.Dialogs.Views;
+using Globe.Client.Localizer.Services;
+using Globe.Client.Localizer.ViewModels;
 using Globe.Client.Localizer.Views;
 using Globe.Client.Platform;
 using Globe.Client.Platform.Services;
@@ -36,7 +39,10 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IHttpLocalizableStringService, HttpLocalizableStringService>();
             containerRegistry.Register<ICurrentJobFiltersService, CurrentJobFiltersService>();
             containerRegistry.Register<ICurrentJobStringItemsService, CurrentJobStringItemsService>();
+            containerRegistry.Register<IStringEditingService, StringEditingService>();
             containerRegistry.Register<IStringMergeService, StringsMergeService>();
+
+            containerRegistry.RegisterDialog<StringEditorDialog, StringEditorDialogViewModel>();
         }
 
         private void ActivateDefaultView(IContainerProvider containerProvider)

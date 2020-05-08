@@ -1,0 +1,1787 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="RT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="PRESET CMD">
+      <Comments>Command to start a form to save and update presets</Comments>
+      <String Context="TS_AButton">Preset Manager</String>
+    </Concept>
+    <Concept Id="SMART_PRESET">
+      <Comments>Access to the presets of a Smart preset group</Comments>
+      <String Context="TS_AButton">Smart preset</String>
+    </Concept>
+    <Concept Id="PROBE_SEL">
+      <Comments>Go to probe selection menu</Comments>
+      <String Context="TS_AButton">PROBE</String>
+    </Concept>
+    <Concept Id="PROBE_OK">
+      <Comments>Exit from probe selection menu saving changes</Comments>
+      <String Context="TS_AButton">OK</String>
+    </Concept>
+    <Concept Id="PROBE_EXIT">
+      <Comments>Exit from probe selection menu without saving changes</Comments>
+      <String Context="TS_AButton">EXIT</String>
+    </Concept>
+    <Concept Id="PROBE_ADVANCED">
+      <Comments>Advanced probe menu selection</Comments>
+      <String Context="TS_AButton">Advanced</String>
+    </Concept>
+    <Concept Id="BACK_MODAL">
+      <Comments>Go back button for modal menu if all is ok</Comments>
+      <String Context="TS_AButton">BACK</String>
+    </Concept>
+    <Concept Id="BUTTON_ON">
+      <Comments>Value for each button set to ON status</Comments>
+      <String Context="TS_AButton">ON</String>
+    </Concept>
+    <Concept Id="BUTTON_OFF">
+      <Comments>Value for each button set to OFF status</Comments>
+      <String Context="TS_AButton">OFF</String>
+    </Concept>
+    <Concept Id="EASYTUNING">
+      <Comments>Button used to turn on/off easy tuning controls</Comments>
+      <String Context="TS_BButton">EASY TUNING</String>
+    </Concept>    
+    <Concept Id="EASYTUNING_CFM_SPEED">
+      <Comments>Label related to slider control 2 for easy tuning (upper value)</Comments>
+      <String Context="TS_TButton">SPEED</String>
+    </Concept>
+    <Concept Id="EASYTUNING_CFM_DETAIL">
+      <Comments>Label related to slider control 2 for easy tuning (lower value)</Comments>
+      <String Context="TS_TButton">DETAIL</String>
+    </Concept>
+    
+    <Concept Id="EASYTUNING_SMOOTHNESS">
+      <Comments>Label related to slider control 1 for easy tuning (lower value)</Comments>
+      <String Context="TS_TButton">SMOOTHNESS</String>
+    </Concept>
+    <Concept Id="EASYTUNING_CONTRAST">
+      <Comments>Label related to slider control 1 for easy tuning (upper value)</Comments>
+      <String Context="TS_TButton">CONTRAST</String>
+    </Concept>
+    <Concept Id="EASYTUNING_SPEED">
+      <Comments>Label related to slider control 2 for easy tuning (lower value)</Comments>
+      <String Context="TS_TButton">SPEED</String>
+    </Concept>
+    <Concept Id="EASYTUNING_DETAIL">
+      <Comments>Label related to slider control 2 for easy tuning (upper value)</Comments>
+      <String Context="TS_TButton">DETAIL</String>
+    </Concept>
+    <Concept Id="EASYTUNING_PENETRATION">
+      <Comments>Label related to slider control 3 for easy tuning (lower value)</Comments>
+      <String Context="TS_TButton">PENETRATION</String>
+    </Concept>
+    <Concept Id="EASYTUNING_RESOLUTION">
+      <Comments>Label related to slider control 3 for easy tuning (upper value)</Comments>
+      <String Context="TS_TButton">RESOLUTION</String>
+    </Concept>
+    <Concept Id="EASYTUNING_SUPERFICIAL">
+      <Comments>Label related to slider control 1 for easy tuning (lower value)</Comments>
+      <String Context="TS_TButton">SUPERFICIAL</String>
+    </Concept>
+    <Concept Id="EASYTUNING_DEEP">
+      <Comments>Label related to slider control 1 for easy tuning (upper value)</Comments>
+      <String Context="TS_TButton">DEEP</String>
+    </Concept>
+    <Concept Id="EASYTUNING_FASTFLOW">
+      <Comments>Label related to slider control 2 for easy tuning (lower value)</Comments>
+      <String Context="TS_TButton">FAST FLOW</String>
+    </Concept>
+    <Concept Id="EASYTUNING_SLOWFLOW">
+      <Comments>Label related to slider control 2 for easy tuning (upper value)</Comments>
+      <String Context="TS_TButton">SLOW FLOW</String>
+    </Concept>
+    <Concept Id="EASYTUNING_LARGEVESSEL">
+      <Comments>Label related to slider control 3 for easy tuning (lower value)</Comments>
+      <String Context="TS_TButton">LARGE VESSEL</String>
+    </Concept>
+    <Concept Id="EASYTUNING_SMALLVESSEL">
+      <Comments>Label related to slider control 3 for easy tuning (upper value)</Comments>
+      <String Context="TS_TButton">SMALL VESSEL</String>
+    </Concept>
+    <Concept Id="EASYTUNING_LOW_FLOW">
+      <Comments>Label related to slider control 3 for CFM easy tuning (lower value)</Comments>
+      <String Context="TS_TButton">LOW FLOW</String>
+    </Concept>
+    <Concept Id="EASYTUNING_HIGH_FLOW">
+      <Comments>Label related to slider control 3 for CFM easy tuning (upper value)</Comments>
+      <String Context="TS_TButton">HIGH FLOW</String>
+    </Concept>
+  	<Concept Id="PLEX">
+      <Comments>Enable/disable duplex simultaneous acquisition</Comments>
+      <String Context="TS_AButton">PLEX</String>
+    </Concept>
+    <Concept Id="USPOWER_TAB">
+      <Comments>Open power management modal menu</Comments>
+      <String Context="TS_AButton">US POWER</String>
+    </Concept>
+    <Concept Id="USPOWER_VALUE">
+      <Comments>Set the power to the desired value</Comments>
+      <String Context="TS_TButton">US POWER</String>
+    </Concept>
+    <Concept Id="USPOWER_AUXILIARY">
+      <Comments>Set the power to the desired value (auxiliary Vat)</Comments>
+      <String Context="TS_TButton">US POWER AUX</String>
+    </Concept>
+    <Concept Id="USPOWER_LINEAR">
+      <Comments>Set the power to the desired value</Comments>
+      <String Context="TS_TButton">US LINEAR</String>
+    </Concept>
+    <Concept Id="USPOWER_BIPOLAR">
+      <Comments>Set the power to the desired value</Comments>
+      <String Context="TS_TButton">US BIPOLAR</String>
+    </Concept>
+    <Concept Id="DUTY_CYCLE">
+      <Comments>Set the duty cycle of TX waveform</Comments>
+      <String Context="TS_TButton">DUTY CYCLE</String>
+    </Concept>
+    <Concept Id="DERPR_VALUE">
+      <Comments>Set the pression of CNTI to the desired value </Comments>
+      <String Context="TS_TButton">DER PR</String>
+    </Concept>
+    <Concept Id="USPOWER_DEFAULT">
+      <Comments>Set the power to the initial value, for each mode change</Comments>
+      <String Context="TS_AButton">DEFAULT</String>
+    </Concept>
+    <Concept Id="USPOWER_50P">
+      <Comments>Set the power to the fifty percent value</Comments>
+      <String Context="TS_AButton">50%</String>
+    </Concept>
+    <Concept Id="USPOWER_100P">
+      <Comments>Set the power to the max value</Comments>
+      <String Context="TS_AButton">100%</String>
+    </Concept>
+    <Concept Id="PHYSIO">
+      <Comments>Open the modal touch screen for physio</Comments>
+      <String Context="TS_AButton">PHYSIO</String>
+    </Concept>
+    <Concept Id="PHYSIO_ECG">
+      <Comments>Allow to enable/disable ECG</Comments>
+      <String Context="TS_AButton">ECG</String>
+    </Concept>
+    <Concept Id="PHYSIO_EDR">
+      <Comments>Allow to enable/disable EDR (Breathing Curve)</Comments>
+      <String Context="TS_AButton">EDR</String>
+    </Concept>
+    <Concept Id="PHYSIO_DISTENSION">
+      <Comments>Allow to enable/disable DISTENSION (Trace in QAS)</Comments>
+      <String Context="TS_AButton">DISTENSION</String>
+    </Concept>
+    <Concept Id="ABS_TGC">
+      <Comments>Allow to select between absolute or relative distribution of TGC slider</Comments>
+      <String Context="TS_AButton">TGC-ABS</String>
+    </Concept>
+    <Concept Id="FRONTLAT">
+      <Comments>Set what side of biplane probe is currently used</Comments>
+      <String Context="TS_AButton">CVX/LIN</String>
+    </Concept>
+    <Concept Id="GMAP_B_ENTER">
+      <Comments>Open the modal touch screen to modify gray map and configuration parameters</Comments>
+      <String Context="TS_AButton">GRAY MAP</String>
+    </Concept>
+    <Concept Id="GMAP_M_ENTER">
+      <Comments>Open the modal touch screen to modify gray map and configuration parameters</Comments>
+      <String Context="TS_AButton">GRAY MAP</String>
+    </Concept>
+    <Concept Id="GMAP_D_ENTER">
+      <Comments>Open the modal touch screen to modify gray map and configuration parameters</Comments>
+      <String Context="TS_AButton">GRAY MAP</String>
+    </Concept>
+    <Concept Id="COLORIZE">
+      <Comments>Let change the color of the palette of the BW image</Comments>
+      <String Context="TS_TButton">COLORIZE</String>
+    </Concept>
+    <Concept Id="CFM_REVERSE">
+      <Comments>It reverses the CFM palette</Comments>
+      <String Context="TS_AButton">CFM REVERSE</String>
+    </Concept>
+    <Concept Id="ELASTO_REVERSE">
+      <Comments>It reverses the CFM palette</Comments>
+      <String Context="TS_AButton">ELASTO REVERSE</String>
+    </Concept>
+    <Concept Id="CFM_HIDE">
+      <Comments>Hide the color doppler from the image</Comments>
+      <String Context="TS_AButton">HIDE CFM</String>
+    </Concept>
+    <Concept Id="ELASTO_HIDE">
+      <Comments>Hide the color doppler elasto from the image</Comments>
+      <String Context="TS_AButton">HIDE ELASTO</String>
+    </Concept>
+    <Concept Id="CMAP_ENTER">
+      <Comments>Open the modal touch screen to modify color map parameters</Comments>
+      <String Context="TS_AButton">C-MAP</String>
+    </Concept>
+    <Concept Id="POWER_DOPPLER">
+      <Comments>Set power doppler color modality instead of current modality</Comments>
+      <String Context="TS_AButton">PWD</String>
+    </Concept>
+        <Concept Id="ELASTO">
+      <Comments>Set power elasto color modality instead of current modality</Comments>
+      <String Context="TS_AButton">ELASTO</String>
+    </Concept>
+    <Concept Id="FORMAT">
+      <Comments>Modify relative size of 2D ref and trace</Comments>
+      <String Context="TS_AButton">FORMAT</String>
+    </Concept>
+	<Concept Id="CANCEL">
+      <Comments>Exit From Edit Environment without save modification</Comments>
+      <String Context="TS_BButton">CANCEL</String>
+    </Concept>
+    <Concept Id="FORMAT_SMALL">
+      <Comments>Set the size of 2D ref to SMALL</Comments>
+      <String Context="TS_AButton">2D IMAGING SMALL</String>
+    </Concept>
+    <Concept Id="FORMAT_MEDIUM">
+      <Comments>Set the size of 2D ref to MEDIUM</Comments>
+      <String Context="TS_AButton">2D IMAGING MEDIUM</String>
+    </Concept>
+    <Concept Id="FORMAT_LARGE">
+      <Comments>Set the size of 2D ref to LARGE</Comments>
+      <String Context="TS_AButton">2D IMAGING LARGE</String>
+    </Concept>
+    <Concept Id="FORMAT_DUAL">
+      <Comments>Set the size of 2D ref to DUAL</Comments>
+      <String Context="TS_AButton">DUAL</String>
+    </Concept>
+    <Concept Id="FORMAT_SMALL_VALUE">
+      <Comments>Display value when the size of 2D ref is SMALL</Comments>
+      <String Context="TS_AButton">SMALL</String>
+    </Concept>
+    <Concept Id="FORMAT_MEDIUM_VALUE">
+      <Comments>Display value when the size of 2D ref is MEDIUM</Comments>
+      <String Context="TS_AButton">MEDIUM</String>
+    </Concept>
+	 <Concept Id="FORMAT_FULL_VALUE">
+      <Comments>Display value when the size of 2D ref is FULL</Comments>
+      <String Context="TS_AButton">FULL</String>
+    </Concept>
+    <Concept Id="DYN_IMAGING">
+      <Comments>Open dynamic imaging menu</Comments>
+      <String Context="TS_AButton">DYNAMIC-IMG</String>
+    </Concept>
+    <Concept Id="DYN_IMG">
+      <Comments>Set the dynamic imaging selector</Comments>
+      <String Context="TS_TButton">DYN-IMG</String>
+    </Concept>
+    <Concept Id="FORMAT_LARGE_VALUE">
+      <Comments>Display value when the size of 2D ref is LARGE</Comments>
+      <String Context="TS_AButton">LARGE</String>
+    </Concept>
+    <Concept Id="FORMAT_DUAL_VALUE">
+      <Comments>Display value when the size of 2D ref is DUAL</Comments>
+      <String Context="TS_AButton">DUAL</String>
+    </Concept>
+    <Concept Id="DUAL_CFM">
+      <Comments>Set the CFM dual representation</Comments>
+      <String Context="TS_AButton">DUAL CFM</String>
+    </Concept>
+    <Concept Id="B_REF">
+      <Comments>Enable/disable 2D reference</Comments>
+      <String Context="TS_AButton">B-REF</String>
+    </Concept>
+    <Concept Id="PW_REVERSE">
+      <Comments>Execute up/down</Comments>
+      <String Context="TS_AButton">PW REVERSE</String>
+    </Concept>
+    <Concept Id="SMART_CFM">
+      <Comments>Inverting steering</Comments>
+      <String Context="TS_AButton">SMART CFM</String>
+    </Concept>
+    <Concept Id="SMART_DOPPLER">
+      <Comments>Inverting steering</Comments>
+      <String Context="TS_AButton">SMART_DOPPLER</String>
+    </Concept>
+    <Concept Id="CW_REVERSE">
+      <Comments>Execute up/down</Comments>
+      <String Context="TS_AButton">CW REVERSE</String>
+    </Concept>
+  	<Concept Id="M_REVERSE">
+      <Comments>It flips the image up/down</Comments>
+      <String Context="TS_AButton">M REVERSE</String>
+    </Concept>
+    <Concept Id="PEN-L">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">PEN-L</String>
+    </Concept>
+    <Concept Id="PEN-M">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">PEN-M</String>
+    </Concept>
+    <Concept Id="PEN-H">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">PEN-H</String>
+    </Concept>
+    <Concept Id="CPI-L">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">CPI-L</String>
+    </Concept>
+    <Concept Id="CPI-M">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">CPI-M</String>
+    </Concept>
+    <Concept Id="CPI-H">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">CPI-H</String>
+    </Concept>
+    <Concept Id="GEN-L">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">GEN-L</String>
+    </Concept>
+    <Concept Id="GEN-M">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">GEN-M</String>
+    </Concept>
+    <Concept Id="GEN-H">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">GEN-H</String>
+    </Concept>
+    <Concept Id="RES-L">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">RES-L</String>
+    </Concept>
+    <Concept Id="RES-M">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">RES-M</String>
+    </Concept>
+    <Concept Id="RES-H">
+      <Comments>Info area Frequency</Comments>
+      <String Context="TS_TButton">RES-H</String>
+    </Concept>
+    <Concept Id="BUTTON_TON">
+      <Comments>Value for each button set to ON status</Comments>
+      <String Context="TS_TButton">ON</String>
+    </Concept>
+    <Concept Id="BUTTON_TOFF">
+      <Comments>Value for each button set to OFF status</Comments>
+      <String Context="TS_TButton">OFF</String>
+    </Concept>
+    <Concept Id="CV_DEFAULT">
+      <Comments>Allow to set the default value for the current XView ID filter </Comments>
+      <String Context="TS_AButton">Default</String>
+    </Concept>
+    <Concept Id="XV_XVIEW">
+      <Comments>Allow to change the current XView ID filter </Comments>
+      <String Context="TS_TButton">XView</String>
+    </Concept>
+    <Concept Id="XV_XVIEW_CV">
+      <Comments>Allow to change the current XView Context Vision ID filter </Comments>
+      <String Context="TS_TButton">XView</String>
+    </Concept>
+    <Concept Id="FILTER CV0">
+      <Comments>The first filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+0</String>
+    </Concept>
+    <Concept Id="FILTER CV1">
+      <Comments>The second filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+1</String>
+    </Concept>
+    <Concept Id="FILTER CV2">
+      <Comments>The third filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+2</String>
+    </Concept>
+    <Concept Id="FILTER CV3">
+      <Comments>The forth filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+3</String>
+    </Concept>
+    <Concept Id="FILTER CV4">
+      <Comments>The fifth filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+4</String>
+    </Concept>
+    <Concept Id="FILTER CV5">
+      <Comments>The sixth filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+5</String>
+    </Concept>
+    <Concept Id="FILTER CV6">
+      <Comments>The seventh filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+6</String>
+    </Concept>
+    <Concept Id="FILTER CV7">
+      <Comments>The eighth filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+7</String>
+    </Concept>
+    <Concept Id="FILTER CV8">
+      <Comments>The ninth filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+8</String>
+    </Concept>
+    <Concept Id="FILTER CV9">
+      <Comments>The tenth filter of Context Vision filter </Comments>
+      <String Context="TS_TButton">+9</String>
+    </Concept>
+    <Concept Id="F0V.gop">
+      <Comments>The "OFF" filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+0</String>
+    </Concept>
+    <Concept Id="F1V.gop">
+      <Comments>The first filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+1</String>
+    </Concept>
+    <Concept Id="F2V.gop">
+      <Comments>The second filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+2</String>
+    </Concept>
+    <Concept Id="F3V.gop">
+      <Comments>The third filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+3</String>
+    </Concept>
+    <Concept Id="F4V.gop">
+      <Comments>The forth filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+4</String>
+    </Concept>
+    <Concept Id="F5V.gop">
+      <Comments>The fifth filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+5</String>
+    </Concept>
+    <Concept Id="F6V.gop">
+      <Comments>The sixth filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+6</String>
+    </Concept>
+    <Concept Id="F7V.gop">
+      <Comments>The seventh filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+7</String>
+    </Concept>
+    <Concept Id="F8V.gop">
+      <Comments>The eighth filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+8</String>
+    </Concept>
+    <Concept Id="F9V.gop">
+      <Comments>The ninth filter of Context Vision filter </Comments>
+      <String Context="TS_AButton">+9</String>
+    </Concept>
+    <Concept Id="CV_DETAIL">
+      <Comments>DI filter Detail of Context Vision filter </Comments>
+      <String Context="TS_TButton">X-DET</String>
+    </Concept>
+    <Concept Id="CV_STRLP">
+      <Comments>DI filter StrLP of Context Vision filter </Comments>
+      <String Context="TS_TButton">X-BALANCE LOW</String>
+    </Concept>
+    <Concept Id="CV_STRHP">
+      <Comments>DI filter StrHP of Context Vision filter </Comments>
+      <String Context="TS_TButton">X-BALANCE HIGH</String>
+    </Concept>
+    <Concept Id="CV_EDGE">
+      <Comments>DI filter Edge of Context Vision filter </Comments>
+      <String Context="TS_TButton">X-ENHANCE</String>
+    </Concept>
+    <Concept Id="CV_NOISEREDUCTION">
+      <Comments>DI filter Noise Reduction of Context Vision filter </Comments>
+      <String Context="TS_TButton">X-SMOOTH</String>
+    </Concept>
+    <Concept Id="CV_UPPERLIMIT">
+      <Comments>DI filter Upper Limit of Context Vision filter </Comments>
+      <String Context="TS_TButton">X-LIM HIGH</String>
+    </Concept>
+    <Concept Id="CV_LOWERLIMIT">
+      <Comments>DI filter Lower Limit of Context Vision filter </Comments>
+      <String Context="TS_TButton">X-LIM LOW</String>
+    </Concept>
+    <Concept Id="F1E.esa">
+      <Comments>The first filter of Esaote Custom filter </Comments>
+      <String Context="TS_AButton">C1</String>
+    </Concept>
+    <Concept Id="F2E.esa">
+      <Comments>The second filter of Esaote Custom filter </Comments>
+      <String Context="TS_AButton">C2</String>
+    </Concept>
+    <Concept Id="F3E.esa">
+      <Comments>The third filter of Esaote Custom filter </Comments>
+      <String Context="TS_AButton">C3</String>
+    </Concept>
+    <Concept Id="FILTER C1">
+      <Comments>The first filter of Esaote Custom filter </Comments>
+      <String Context="TS_TButton">C1</String>
+    </Concept>
+    <Concept Id="FILTER C2">
+      <Comments>The second filter of Esaote Custom filter </Comments>
+      <String Context="TS_TButton">C2</String>
+    </Concept>
+    <Concept Id="FILTER C3">
+      <Comments>The third filter of Esaote Custom filter </Comments>
+      <String Context="TS_TButton">C3</String>
+    </Concept>
+    <Concept Id="NO FILTER">
+      <Comments>No filter has been selected </Comments>
+      <String Context="TS_TButton">OFF</String>
+    </Concept>
+    <Concept Id="XV_OFF">
+      <Comments>Put off the XView Filter</Comments>
+      <String Context="TS_AButton">XVIEW OFF</String>
+    </Concept>
+    <Concept Id="C2_NOISES">
+      <Comments>Change the noise suppression parameter for current Custom 2 XView filter</Comments>
+      <String Context="TS_TButton">NOISE SUPPRESSION</String>
+    </Concept>
+    <Concept Id="C2_EDGE">
+      <Comments>Change the edge parameter for current Custom 2 XView filter</Comments>
+      <String Context="TS_TButton">EDGE</String>
+    </Concept>
+    <Concept Id="C2_STRENGTHL">
+      <Comments>Change the large structures strength parameter for current Custom 2 XView filter</Comments>
+      <String Context="TS_TButton">LARGE STRUCT STRENGTH</String>
+    </Concept>
+    <Concept Id="C2_STRENGTHF">
+      <Comments>Change the fine structures strength parameter for current Custom 2 XView filter</Comments>
+      <String Context="TS_TButton">FINE STRUCT STRENGTH</String>
+    </Concept>
+    <Concept Id="C2_UNDERSHOOTL">
+      <Comments>Change the undershoot limit parameter for current Custom 2 XView filter</Comments>
+      <String Context="TS_TButton">UNDERSHOOT LIMIT</String>
+    </Concept>
+    <Concept Id="C2_OVERSHOOTL">
+      <Comments>Change the overshoot limit parameter for current Custom 2 XView filter</Comments>
+      <String Context="TS_TButton">OVERSHOOT LIMIT</String>
+    </Concept>
+    <Concept Id="XV_SMOOTH">
+      <Comments>Change the smooth parameter for current XView filter </Comments>
+      <String Context="TS_TButton">X-SMT</String>
+    </Concept>
+    <Concept Id="XV_BALANCE">
+      <Comments>Change the balance parameter for current XView filter </Comments>
+      <String Context="TS_TButton">X-BLC</String>
+    </Concept>
+    <Concept Id="XV_DETAIL">
+      <Comments>Change the detail parameter for current XView filter </Comments>
+      <String Context="TS_TButton">X-DET</String>
+    </Concept>
+    <Concept Id="XV_ENHANCEMENT">
+      <Comments>Change the enhancement parameter for current XView filter</Comments>
+      <String Context="TS_TButton">X-ENH</String>
+    </Concept>
+    <Concept Id="XV_DARKHOLES">
+      <Comments>Change the darkest halos parameter for current XView filter</Comments>
+      <String Context="TS_TButton">X-DAR</String>
+    </Concept>
+    <Concept Id="XV_HIREZ">
+      <Comments>Change the XView algorithm</Comments>
+      <String Context="TS_AButton">HD</String>
+    </Concept>
+    <Concept Id="MVIEW_MVIEW">
+      <Comments>Allow to change the current MView Set</Comments>
+      <String Context="TS_AButton">MVIEW</String>
+      <String Context="TS_TButton">MVIEW</String>
+    </Concept>
+    <Concept Id="MVIEW_COMBINE">
+      <Comments>Allow to change the current MView parameter Combine</Comments>
+      <String Context="TS_TButton">COMBINE</String>
+    </Concept>
+    <Concept Id="TP_VIEW">
+      <Comments>Allow enter/exit to/from trapezoid acquisition</Comments>
+      <String Context="TS_AButton">TPVIEW</String>
+    </Concept>
+    <Concept Id="TP_VIEW_CONVEX">
+      <Comments>Allow enter/exit Extend of view (EFV) (trapezoid acquisition for convex probes)</Comments>
+      <String Context="TS_AButton">EFV</String>
+    </Concept>
+    <Concept Id="S_VIEW">
+      <Comments>Allow enter/exit to/from the menu that sets the parameters for Sview imaging</Comments>
+      <String Context="TS_AButton">SVIEW</String>
+    </Concept>
+   <Concept Id="S_VALUE">
+      <Comments>Allow to set the selector for Sview imaging</Comments>
+      <String Context="TS_TButton">S-VALUE</String>
+    </Concept>
+   <Concept Id="S_LA">
+      <Comments>Allow to set the lateral parameter for Sview imaging</Comments>
+      <String Context="TS_TButton">S-LA</String>
+    </Concept>
+   <Concept Id="S_RA">
+      <Comments>Allow to set the range parameter for Sview imaging</Comments>
+      <String Context="TS_TButton">S-RA</String>
+    </Concept>
+    <Concept Id="ADM">
+      <Comments>Enter to the ADM</Comments>
+      <String Context="TS_AButton">ADM</String>
+    </Concept>
+    <Concept Id="ADM_SETTINGS">
+      <Comments>Enter to the ADM menu</Comments>
+      <String Context="TS_AButton">ADM SETTINGS</String>
+    </Concept>
+    <Concept Id="AUTO CYCLE">
+      <Comments>Automatic cycle detection</Comments>
+      <String Context="TS_AButton">CYCLE</String>
+    </Concept>
+    <Concept Id="ADA_SETTINGS">
+      <Comments>Enter to the ADA menu</Comments>
+      <String Context="TS_AButton">ADA SETTINGS</String>
+    </Concept>
+    <Concept Id="BIOPSY_SETTINGS">
+      <Comments>Enter to the Biopsy menu</Comments>
+      <String Context="TS_AButton">BIOPSY</String>
+    </Concept>
+    <Concept Id="BIOPSY_OK">
+      <Comments>Chosen biopsy kit and angle</Comments>
+      <String Context="TS_AButton">OK</String>
+    </Concept>
+    <Concept Id="BIOPSY_CANCEL">
+      <Comments>Give up to choose biopsy kit and angle</Comments>
+      <String Context="TS_AButton">CANCEL</String>
+    </Concept>
+    <Concept Id="BIOPSY_MORE_KIT">
+      <Comments>More biopsy kits and angles</Comments>
+      <String Context="TS_TButton">KIT SEL</String>
+    </Concept>
+    <Concept Id="BIOPSY_MORE_ANGLE">
+      <Comments>More biopsy kits and angles</Comments>
+      <String Context="TS_TButton">ANGLE SEL</String>
+    </Concept>
+    <Concept Id="PROFILE">
+      <Comments>Let to show the ADM profile</Comments>
+      <String Context="TS_AButton">PROFILE</String>
+    </Concept>
+    <Concept Id="PROFILE_TYPE">
+      <Comments>Let to set the type of the ADM doppler profile</Comments>
+      <String Context="TS_TButton">TYPE</String>
+    </Concept>
+    <Concept Id="PROFILE_RANGE">
+      <Comments>Let to set the range of the ADM doppler profile</Comments>
+      <String Context="TS_TButton">RANGE</String>
+    </Concept>
+    <Concept Id="PROFILE_MEAN">
+      <Comments>Set the Mean type for ADM profiles</Comments>
+      <String Context="TS_AButton">MEAN</String>
+    </Concept>
+    <Concept Id="PROFILE_MODE">
+      <Comments>Set the Mode type for ADM profiles</Comments>
+      <String Context="TS_AButton">MODE</String>
+    </Concept>
+    <Concept Id="PROFILE_PEAK">
+      <Comments>Set the Peak type for ADM profiles</Comments>
+      <String Context="TS_AButton">PEAK</String>
+    </Concept>
+    <Concept Id="PROFILE_ALL">
+      <Comments>Set the All range for ADM profiles</Comments>
+      <String Context="TS_AButton">ALLRANGE</String>
+    </Concept>
+    <Concept Id="PROFILE_POSITIVE">
+      <Comments>Set the Positive range for ADM profiles</Comments>
+      <String Context="TS_AButton">POSITIVE</String>
+    </Concept>
+    <Concept Id="PROFILE_NEGATIVE">
+      <Comments>Set the Negative range for ADM profiles</Comments>
+      <String Context="TS_AButton">NEGATIVE</String>
+    </Concept>
+    <Concept Id="PROFILE_UPPER">
+      <Comments>Set the Upper range for ADM profiles</Comments>
+      <String Context="TS_AButton">UPPER</String>
+    </Concept>
+    <Concept Id="PROFILE_LOWER">
+      <Comments>Set the Lower range for ADM profiles</Comments>
+      <String Context="TS_AButton">LOWER</String>
+    </Concept>
+    <Concept Id="ADM_ISSYNC_TRUE">
+      <Comments>Set the synchronous period for ADM data for arterial flows</Comments>
+      <String Context="TS_TButton">ARTERIAL</String>
+    </Concept>
+    <Concept Id="ADM_ISSYNC_FALSE">
+      <Comments>Set the synchronous period for ADM data for venous flows</Comments>
+      <String Context="TS_TButton">VENOUS</String>
+    </Concept>
+    <Concept Id="ADM_SYNC_LABEL">
+      <Comments>Label used to mark the status ISSYNC == TRUE </Comments>
+      <String Context="TS_TButton">SYNC</String>
+    </Concept>
+    <Concept Id="ADM_AVERAGE">
+      <Comments>Let to set the number of ADM data to use for average</Comments>
+      <String Context="TS_TButton">AVERAGE</String>
+    </Concept>
+     <Concept Id="ADM_THRESHOLD">
+      <Comments>Let to set the threshold of the ADM data</Comments>
+      <String Context="TS_TButton">THRESHOLD</String>
+    </Concept>
+     <Concept Id="ADM_ADD_TO_REPORT">
+      <Comments>Button used to send the Adm measures to the report</Comments>
+      <String Context="TS_AButton">ADD TO REPORT</String>
+    </Concept>    
+    <Concept Id="TABCNTI">
+      <Comments>Allow to change the current FType to Cnti</Comments>
+      <String Context="TS_AButton">CNTI</String>
+    </Concept>
+    <Concept Id="DEPTH">
+      <Comments>Allow to change the acquisition depth</Comments>
+      <String Context="TS_TButton">DEPTH</String>
+      <String Context="MD_RT17LabelJoyPush">DEPTH</String>
+	  <String Context="MD_RT17LabelJoyEnc">DEPTH</String>
+    </Concept>
+    <Concept Id="ZOOM">
+      <Comments>Used to change the zoom factor</Comments>
+      <String Context="TS_TButton">ZOOM</String>
+      <String Context="MD_RT17LabelJoyPush">ZOOM</String>
+	  <String Context="MD_RT17LabelJoyEnc">ZOOM</String>
+    </Concept>
+    <Concept Id="HDZOOM">
+      <Comments>Used to turn on/off HD-Zoom function</Comments>
+      <String Context="TS_AButton">HD-ZOOM</String>
+      <String Context="MD_RT17LabelJoyPush">HD-ZOOM</String>
+	  <String Context="MD_RT17LabelJoyEnc">HD-ZOOM</String>
+    </Concept>
+    <Concept Id="LVO">
+      <Comments>Used to turn on/off Left Ventricle Opacification</Comments>
+      <String Context="TS_AButton">LVO</String>
+    </Concept>
+    <Concept Id="NEEDLE">
+      <Comments>Used to turn on/off needle visibility</Comments>
+      <String Context="TS_AButton">NEEDLE</String>
+    </Concept>
+    <Concept Id="NEEDLE_LEFT">
+      <Comments>Direction of insert needle</Comments>
+      <String Context="TS_TButton">LEFT</String>
+    </Concept>
+    <Concept Id="NEEDLE_RIGHT">
+      <Comments>Direction of insert needle</Comments>
+      <String Context="TS_TButton">RIGHT</String>
+    </Concept>
+    <Concept Id="SCANSION_PARALLEL">
+      <Comments>In 3d freehand rappresent the type of scansion used for acquire a volume</Comments>
+      <String Context="TS_TButton">PARALLEL</String>
+    </Concept>
+    <Concept Id="ACQ_TIME">
+      <Comments>In 3d freehand rappresent the time of scansion.</Comments>
+      <String Context="TS_TButton">Acq Time</String>
+    </Concept>
+    <Concept Id="SPEED_ACQ">
+      <Comments>In 3d freehand rappresent for parallel scansion the velocity of manual scansion.</Comments>
+      <String Context="TS_TButton">Speed</String>
+    </Concept>
+    <Concept Id="CLEAR ELASTO MEASURE">
+      <Comments>Clear Measure.</Comments>
+      <String Context="TS_TButton">Clear Measure</String>
+    </Concept>
+    <Concept Id="CLEAR LAST ELAXTO MEASURE">
+      <Comments>Clear Last Measure.</Comments>
+      <String Context="TS_TButton">Clear Last Measure</String>
+    </Concept>
+    <Concept Id="QELAXTO_SHOW_GRAPH">
+      <Comments>Show/hide QElaxto measure graph</Comments>
+      <String Context="TS_AButton">QELAXTO GRAPH</String>
+    </Concept>
+    <Concept Id="FOCUS_POS">
+      <Comments>Allow to change the position of BW TX focus</Comments>
+      <String Context="TS_TButton">FOCUS POS</String>
+      <String Context="MD_RT17LabelJoyPush">FOCUS POS</String>
+      <String Context="MD_RT17LabelJoyEnc">FOCUS POS</String>
+    </Concept>
+    <Concept Id="FOCUS_NUM">
+      <Comments>Add or remove TX foci</Comments>
+      <String Context="TS_TButton">FOCUS</String>
+    </Concept>
+    <Concept Id="SIZE_FOV">
+      <Comments>Allow to change the Field Of View</Comments>
+      <String Context="TS_TButton">SIZE</String>
+    </Concept>
+    <Concept Id="TILT_FOV">
+      <Comments>Allow to change the Field Of View inclination</Comments>
+      <String Context="TS_TButton">TILT</String>
+    </Concept>
+    <Concept Id="B_STEER">
+      <Comments>Allow user to change the BW steering</Comments>
+      <String Context="TS_TButton">BSTEER</String>
+      <String Context="MD_RT17LabelJoyPush">BSTEER</String>
+      <String Context="MD_RT17LabelJoyEnc">BSTEER</String>
+    </Concept>
+    <Concept Id="NEEDLE_STEER">
+      <Comments>Allow user to change the Needle steering</Comments>
+      <String Context="TS_TButton">NSTEER</String>
+    </Concept>
+    <Concept Id="BW_DYNAMIC_RANGE">
+      <Comments>Change the dynamic range to fit the desired quality of the images</Comments>
+      <String Context="TS_TButton">DYN RANGE</String>
+    </Concept>
+    <Concept Id="BW_DYNAMIC_COMPRESSION">
+      <Comments>Change the dynamic compression to fit the desired quality of the images</Comments>
+      <String Context="TS_TButton">DYN COMPR</String>
+    </Concept>
+    <Concept Id="BW_PERSISTENCE">
+      <Comments>Change the persistence to fit the desired quality of the images</Comments>
+      <String Context="TS_TButton">PERS</String>
+    </Concept>
+    <Concept Id="BW_DENSITY">
+      <Comments>Distance, in terms of address, between two view lines acquired in succession</Comments>
+      <String Context="TS_TButton">DENSITY</String>
+    </Concept>
+    <Concept Id="ENHANCEMENT">
+      <Comments>Change the enhancement to fit the desired quality of the images</Comments>
+      <String Context="TS_TButton">ENH</String>
+    </Concept>
+    <Concept Id="FUND">
+      <Comments>Set the frequencies for the "Fundamental" setting status of the device</Comments>
+      <String Context="TS_TButton">FUND</String>
+    </Concept>
+    <Concept Id="TEI">
+      <Comments>Set the frequencies for the "Tissue Enhancement Imaging" setting status of the device</Comments>
+      <String Context="TS_TButton">TEI</String>
+    </Concept>
+    <Concept Id="SV_SIZE">
+      <Comments>Sample volume selection</Comments>
+      <String Context="TS_TButton">SV SIZE</String>
+    </Concept>
+    <Concept Id="SV_DEPTH">
+      <Comments>Sample volume depth, fine selection</Comments>
+      <String Context="TS_TButton">FINE DEPTH</String>
+    </Concept>
+    <Concept Id="SV_DEPTHCOARSE">
+      <Comments>Sample volume depth, coarse selection</Comments>
+      <String Context="TS_TButton">COARSE DEPTH</String>
+    </Concept>
+    <Concept Id="COARSE_ADJ">
+      <Comments>Angle correction coarse selection</Comments>
+      <String Context="TS_TButton">ADJ</String>
+    </Concept>
+    <Concept Id="FINE_ADJ">
+      <Comments>Angle correction fine selection</Comments>
+      <String Context="TS_TButton">FINE ADJ</String>
+    </Concept>
+    <Concept Id="CLIP_LENGTH">
+      <Comments>It is used to change the max length of a clip</Comments>
+      <String Context="TS_TButton">CLIP LENGTH</String>
+    </Concept>
+    <Concept Id="CLIP_INFINITE">
+      <Comments>It is used to display the label for clip of very long duration</Comments>
+      <String Context="TS_TButton">UNLIMITED</String>
+    </Concept>
+    <Concept Id="CYCLE">
+      <Comments>Ecg Cycle</Comments>
+      <String Context="TS_TButton">CYCLE</String>
+    </Concept>
+    <Concept Id="PHYSIO_HEIGHT">
+      <Comments>Set the height of the ECG signal</Comments>
+      <String Context="TS_TButton">HEIGHT</String>
+    </Concept>
+    <Concept Id="PHYSIO_POSITION">
+      <Comments>Set the position of the ECG signal</Comments>
+      <String Context="TS_TButton">POSITION</String>
+    </Concept>
+    <Concept Id="PHYSIO_GAIN">
+      <Comments>Set the gain of the ECG signal</Comments>
+      <String Context="TS_TButton">GAIN</String>
+    </Concept>
+    <Concept Id="PHYSIO_MIRROR">
+      <Comments>Mirror ECG signal</Comments>
+      <String Context="TS_TButton">MIRROR</String>
+    </Concept>
+    <Concept Id="PHYSIO_EDR_HEIGHT">
+      <Comments>Set the height of the EDR (Breathing Curve) signal</Comments>
+      <String Context="TS_TButton">HEIGHT</String>
+    </Concept>
+    <Concept Id="PHYSIO_EDR_POSITION">
+      <Comments>Set the position of the EDR (Breathing Curve) signal</Comments>
+      <String Context="TS_TButton">POSITION</String>
+    </Concept>
+    <Concept Id="PHYSIO_EDR_GAIN">
+      <Comments>Set the gain of the EDR (Breathing Curve) signal</Comments>
+      <String Context="TS_TButton">GAIN</String>
+    </Concept>   
+    <Concept Id="PHYSIO_DISTENSION_HEIGHT">
+      <Comments>Set the height of the DISTENSION (Trace in QAS) signal</Comments>
+      <String Context="TS_TButton">HEIGHT</String>
+    </Concept>
+    <Concept Id="PHYSIO_DISTENSION_POSITION">
+      <Comments>Set the position of the DISTENSION (Trace in QAS) signal</Comments>
+      <String Context="TS_TButton">POSITION</String>
+    </Concept>
+    <Concept Id="PHYSIO_DISTENSION_GAIN">
+      <Comments>Set the gain of the DISTENSION (Trace in QAS) signal</Comments>
+      <String Context="TS_TButton">GAIN</String>
+    </Concept>   
+    <Concept Id="CLIP_SET">
+      <Comments>Open the menu that set the options for real time clip</Comments>
+      <String Context="TS_AButton">CLIP SETTINGS</String>
+    </Concept>
+    <Concept Id="CLIP_PROTYPE">
+      <Comments>Set prospective as live clip type</Comments>
+      <String Context="TS_AButton">CLIP LIVE PROSPECTIVE</String>
+    </Concept>
+    <Concept Id="CLIP_RETROTYPE">
+      <Comments>Set retrospective as live clip type</Comments>
+      <String Context="TS_AButton">CLIP LIVE RETROSPECTIVE</String>
+    </Concept>
+    <Concept Id="CLIP_DURSEC">
+      <Comments>Set clip duration is seconds</Comments>
+      <String Context="TS_TButton">CLIP SEC</String>
+    </Concept>
+    <Concept Id="CLIP_DURCYCLE">
+      <Comments>Set clip duration in heart cycles</Comments>
+      <String Context="TS_TButton">CLIP CYCLE</String>
+    </Concept>    
+    <Concept Id="AUTOGAIN_OFF">
+      <Comments>Set OFF the autogain</Comments>
+      <String Context="TS_AButton">AUTOGAIN OFF</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_SETTINGS">
+      <Comments>Enter to the menu to set autogain parameters</Comments>
+      <String Context="TS_AButton">AUTOGAIN SETTINGS</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_LEVEL_ADJ">
+      <Comments>Level Adjust for new analog autogain</Comments>
+      <String Context="TS_TButton">LEVEL ADJ</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_GRAY_LOW">
+      <Comments>Current grey level for Low cumulative histogram percentile </Comments>
+      <String Context="TS_TButton">GRAY LOW</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_GRAY_HIGH">
+      <Comments>Current grey level for High cumulative histogram percentile </Comments>
+      <String Context="TS_TButton">GRAY HIGH</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_OFFSET_DB">
+      <Comments>Autogain offset in dB (Decibel)</Comments>
+      <String Context="TS_TButton">AUTOGAIN OFFSET</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_GRAY_SATURED">
+      <Comments>Current grey level for Satured cumulative histogram percentile </Comments>
+      <String Context="TS_TButton">GRAY SATURED</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_MAX_PERC">
+      <Comments>Maximum percentage of correction for full frame grey scale </Comments>
+      <String Context="TS_TButton">MAX PERC</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_MODALITY">
+      <Comments>Set the autogain modality: analog a/o digital</Comments>
+      <String Context="TS_TButton">MODALITY</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_ANALOG">
+      <Comments>Label in the toggle Modality if the modality is analog</Comments>
+      <String Context="TS_TButton">ANALOGICAL</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_DIGITAL">
+      <Comments>Label in the toggle Modality if the modality is digital</Comments>
+      <String Context="TS_TButton">DIGITAL</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_ANALOGDIGITAL">
+      <Comments>Label in the toggle Modality if the modality is analog/digital</Comments>
+      <String Context="TS_TButton">ANALOG/DIGIT</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_TYPE">
+      <Comments>Parameter type for digital autogain elaboration</Comments>
+      <String Context="TS_TButton">TYPE</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_STRETCHRELATIVE">
+      <Comments>Label in the toggle Type if the type is "Relative Stretch"</Comments>
+      <String Context="TS_TButton">REL STRETCH</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_STRETCHLINEAR">
+      <Comments>Label in the toggle Type if the type is "Linear Stretch"</Comments>
+      <String Context="TS_TButton">LIN STRETCH</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_STRETCHSTATISTIC">
+      <Comments>Label in the toggle Type if the type is "Statistic Stretch"</Comments>
+      <String Context="TS_TButton">STAT STRETCH</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_STRETCHAUTO">
+      <Comments>Label in the toggle Type if the type is "Auto Stretch"</Comments>
+      <String Context="TS_TButton">AUTO STRETCH</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_STRETCHEYE">
+      <Comments>Label in the toggle Type if the type is "Eye Stretch"</Comments>
+      <String Context="TS_TButton">EYE STRETCH</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_STRETCHNONE">
+      <Comments>Label in the toggle Type if the type is "No Stretch"</Comments>
+      <String Context="TS_TButton">NONE STRETCH</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_PERCLOW">
+      <Comments>Parameter percentile low for digital autogain elaboration</Comments>
+      <String Context="TS_TButton">PERC LOW</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_PERCHIGH">
+      <Comments>Parameter percentile high for digital autogain elaboration</Comments>
+      <String Context="TS_TButton">PERC HIGH</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_REFLEVELHIGH">
+      <Comments>Parameter reference level high for digital autogain elaboration</Comments>
+      <String Context="TS_TButton">REF LEVEL HIGH</String>
+    </Concept>
+    <Concept Id="AUTOGAIN_CONTINUOUS">
+      <Comments>The autogain procedure is performed continuously</Comments>
+      <String Context="TS_AButton">AUTOGAIN CONTINUOUS</String>
+    </Concept>
+    <Concept Id="GMAP_B_GRAY_MAP">
+      <Comments>Allow to change the current Gray Map</Comments>
+      <String Context="TS_TButton">GRAY MAP</String>
+    </Concept>
+    <Concept Id="GMAP_B_SLOPE">
+      <Comments>Allow to change the Slope parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">SLOPE</String>
+    </Concept>
+    <Concept Id="GMAP_B_REJECT">
+      <Comments>Allow to change the Reject parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">REJECT</String>
+    </Concept>
+    <Concept Id="GMAP_B_SATURATION">
+      <Comments>Allow to change the Saturation parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">SATURATION</String>
+    </Concept>
+    <Concept Id="GMAP_B_PEAK">
+      <Comments>Allow to change the Peak parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">PEAK</String>
+    </Concept>
+    <Concept Id="GMAP_B_CENTER">
+      <Comments>Allow to change the Center parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">CENTER</String>
+    </Concept>
+    <Concept Id="GMAP_M_GRAY_MAP">
+      <Comments>Allow to change the current Gray Map</Comments>
+      <String Context="TS_TButton">GRAY MAP</String>
+    </Concept>
+    <Concept Id="GMAP_M_SLOPE">
+      <Comments>Allow to change the Slope parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">SLOPE</String>
+    </Concept>
+    <Concept Id="GMAP_M_REJECT">
+      <Comments>Allow to change the Reject parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">REJECT</String>
+    </Concept>
+    <Concept Id="GMAP_M_SATURATION">
+      <Comments>Allow to change the Saturation parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">SATURATION</String>
+    </Concept>
+    <Concept Id="GMAP_M_PEAK">
+      <Comments>Allow to change the Peak parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">PEAK</String>
+    </Concept>
+    <Concept Id="GMAP_M_CENTER">
+      <Comments>Allow to change the Center parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">CENTER</String>
+    </Concept>
+    <Concept Id="GMAP_D_GRAY_MAP">
+      <Comments>Allow to change the current Gray Map</Comments>
+      <String Context="TS_TButton">GRAY MAP</String>
+    </Concept>
+    <Concept Id="GMAP_D_SLOPE">
+      <Comments>Allow to change the Slope parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">SLOPE</String>
+    </Concept>
+    <Concept Id="GMAP_D_REJECT">
+      <Comments>Allow to change the Reject parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">REJECT</String>
+    </Concept>
+    <Concept Id="GMAP_D_SATURATION">
+      <Comments>Allow to change the Saturation parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">SATURATION</String>
+    </Concept>
+    <Concept Id="GMAP_D_PEAK">
+      <Comments>Allow to change the Peak parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">PEAK</String>
+    </Concept>
+    <Concept Id="GMAP_D_CENTER">
+      <Comments>Allow to change the Center parameter for current Gray Map</Comments>
+      <String Context="TS_TButton">CENTER</String>
+    </Concept>
+  	<Concept Id="DCTI">
+      <Comments>Button to set the DCTI in CNTI modality</Comments>
+      <String Context="TS_AButton">DCTI</String>
+    </Concept>
+  	<Concept Id="FLASH">
+      <Comments>Button to set the FLASH in CNTI modality</Comments>
+      <String Context="TS_AButton">FLASH</String>
+    </Concept>
+  	<Concept Id="FLASH_DUR">
+      <Comments>Button to set the FLASH DURATION in CNTI modality</Comments>
+      <String Context="TS_AButton">FLASH DCTI SET</String>
+    </Concept>
+    <Concept Id="COMPOSITE_IMAGE">
+      <Comments>Button to set the COMPOSITE IMAGE in CNTI modality</Comments>
+      <String Context="TS_AButton">COMPOSITE IMAGE</String>
+    </Concept>
+    <Concept Id="POST_PROC">
+      <Comments>Button to set advanced management gain</Comments>
+      <String Context="TS_AButton">ADV-GAIN</String>
+    </Concept>
+    <Concept Id="C_CAPT">
+      <Comments>Contrast Capture in CNTI modality</Comments>
+      <String Context="TS_AButton">C-CAPT</String>
+    </Concept>
+  	<Concept Id="CIRCLE_ROI">
+      <Comments>Button to set the Circle Roi in Composite image in CNTI modality</Comments>
+      <String Context="TS_AButton">ROI</String>
+    </Concept>
+    <Concept Id="AUTO_STORE">
+      <Comments>Button to set the AUTO STORE in CNTI modality</Comments>
+      <String Context="TS_AButton">AUTO STORE</String>
+    </Concept>
+  	<Concept Id="NUM_FRAME">
+      <Comments>Button to set the num of frames in CNTI modality</Comments>
+      <String Context="TS_TButton">NUM FRAME</String>
+    </Concept>
+    <Concept Id="FIRST FRAME">
+      <Comments>CNti first frame</Comments>
+      <String Context="TS_AButton">1ST FRAME</String>
+    </Concept>
+    <Concept Id="MAIN_TIMER">
+      <Comments>Let the main timer of the CNTI to be displayed</Comments>
+      <String Context="TS_AButton">MAIN TIMER</String>
+    </Concept>
+    <Concept Id="CLIP_ON_FREEZE">
+      <Comments>Let to choose the clip on freeze</Comments>
+      <String Context="TS_AButton">STOP CLIP WHEN FREEZE</String>
+    </Concept>
+    <Concept Id="LOCK_KEYBOARD">
+      <Comments>Disable all button when CNTI clip</Comments>
+      <String Context="TS_AButton">LOCK KEYBOARD ON CLIP</String>
+    </Concept>
+    <Concept Id="OPTIMIZE QPACK CEUS">
+      <Comments>Optimize Qpack Ceus clip</Comments>
+      <String Context="TS_AButton">OPTIMIZE QPACK CEUS</String>
+    </Concept>
+    <Concept Id="CFM_PRF">
+      <Comments>Used to change PRF for CFM</Comments>
+      <String Context="TS_TButton">PRF</String>
+      <String Context="MD_RT17LabelJoyPush">PRF</String>
+	  <String Context="MD_RT17LabelJoyEnc">PRF</String>
+    </Concept>
+    <Concept Id="CFM_FREQUENCY">
+      <Comments>It drives frequency for CFM</Comments>
+      <String Context="TS_TButton">FREQUENCY</String>
+    </Concept>
+    <Concept Id="CFM_SENSITIVITY">
+      <Comments>Used to change sensitivity for CFM to achieve the desired representation</Comments>
+      <String Context="TS_TButton">SENSITIVITY</String>
+    </Concept>
+    <Concept Id="CFM_STEERING">
+      <Comments>Set the steer angle only of the CFM box</Comments>
+      <String Context="TS_TButton">CFMSTEER</String>
+      <String Context="MD_RT17LabelJoyPush">CFMSTEER</String>
+	  <String Context="MD_RT17LabelJoyEnc">CFMSTEER</String>
+    </Concept>
+    <Concept Id="CFM_DENSITY">
+      <Comments>Distance, in terms of address, between two CFM view lines acquired in succession</Comments>
+      <String Context="TS_TButton">DENSITY</String>
+    </Concept>
+    <Concept Id="CFM_PERSISTENCE">
+      <Comments>Used to modify the persistence</Comments>
+      <String Context="TS_TButton">PERSISTENCE</String>
+    </Concept>
+    <Concept Id="CFM_FILTER">
+      <Comments>Used to modify the wall filter index</Comments>
+      <String Context="TS_TButton">WALL FILTER</String>
+    </Concept>
+    <Concept Id="CFM_SMOOTH">
+      <Comments>Used to modify the smooth</Comments>
+      <String Context="TS_TButton">SMOOTH</String>
+    </Concept>
+    <Concept Id="CFM_SMOOTH_LOW">
+      <Comments>Notation for the LOW value of the smooth</Comments>
+      <String Context="TS_TButton">LOW</String>
+    </Concept>
+    <Concept Id="CFM_SMOOTH_MEDIUM">
+      <Comments>Notation for the MEDIUM value of the smooth</Comments>
+      <String Context="TS_TButton">MEDIUM</String>
+    </Concept>
+    <Concept Id="CFM_SMOOTH_HIGH">
+      <Comments>Notation for the HIGH value of the smooth</Comments>
+      <String Context="TS_TButton">HIGH</String>
+    </Concept>
+    <Concept Id="CFM_BASELINE">
+      <Comments>Used to modify the baseline position</Comments>
+      <String Context="TS_TButton">BASELINE</String>
+      <String Context="MD_RT17LabelJoyPush">BASELINE</String>
+	  <String Context="MD_RT17LabelJoyEnc">BASELINE</String>
+    </Concept>
+    <Concept Id="HD_CFM">
+      <Comments>Used to activate HD CFM modality</Comments>
+      <String Context="TS_TButton">HD-CFM</String>
+    </Concept>
+    <Concept Id="TV">
+      <Comments>Used to enter in TV modality for PW</Comments>
+      <String Context="TS_AButton">TV</String>
+    </Concept>
+    <Concept Id="TVM">
+      <Comments>Used to enter in TVM modality for CFM</Comments>
+      <String Context="TS_AButton">TVM</String>
+    </Concept>
+    <Concept Id="XFW">
+      <Comments>Enter in XFW modality. Keep this string in translations, since XFLOW can be considered a trade mark name</Comments>
+      <String Context="TS_AButton">XFLOW</String>
+    </Concept>
+    <Concept Id="MCV">
+      <Comments>Enter in MicroV modality. Keep this string in translations, since MicroV can be considered a trade mark name</Comments>
+      <String Context="TS_AButton">MICROV</String>
+    </Concept>
+    <Concept Id="CFM_MOT_COMP">
+      <Comments>Enable Motion Compensation when CFM mode is active</Comments>
+      <String Context="TS_AButton">iMOTION</String>
+    </Concept>
+    <Concept Id="CMAP_CMAP">
+      <Comments>Allow to change the current Color Map</Comments>
+      <String Context="TS_TButton">C-MAP</String>
+    </Concept>
+    <Concept Id="CMAP_WPRIORITY">
+      <Comments>Allow to change the current Color Map</Comments>
+      <String Context="TS_TButton">W PRIORITY</String>
+    </Concept>
+    <Concept Id="CMAP_POWVISUALTH">
+      <Comments>Allow to change the current Color Map</Comments>
+      <String Context="TS_TButton">POW VISL TH</String>
+    </Concept>
+    <Concept Id="CMAP_VELVISUALTH">
+      <Comments>Allow to change the current Color Map</Comments>
+      <String Context="TS_TButton">VEL VISL TH</String>
+    </Concept>
+    <Concept Id="CMAP_TRANSPARENCY">
+      <Comments>Allow to change the current Color Map</Comments>
+      <String Context="TS_TButton">TRANSPARENCY</String>
+    </Concept>
+    <Concept Id="COLOR_PRIORITY_TABLE_IDX">
+      <Comments>Line Index in the color priority table, used to select the current values of S and R</Comments>
+      <String Context="TS_TButton">COLOR PRIORITY</String>
+    </Concept>
+    <Concept Id="CMM_ACTIVE">
+      <Comments>Set On/Off the CMM modality</Comments>
+      <String Context="TS_AButton">CMM</String>
+    </Concept>
+    <Concept Id="CMM_SETTINGS">
+      <Comments>Enter to the CMM menu</Comments>
+      <String Context="TS_AButton">CMM SETTINGS</String>
+    </Concept>
+    <Concept Id="CMM_FREE">
+      <Comments>Lock/unlock the CMM lines</Comments>
+      <String Context="TS_AButton">FREE</String>
+    </Concept>
+    <Concept Id="CMM_LINE">
+      <Comments>Set the total number of active lines</Comments>
+      <String Context="TS_TButton">LINE</String>
+    </Concept>
+    <Concept Id="CMM_ANGLE">
+      <Comments>Set the angle direction of the active line</Comments>
+      <String Context="TS_TButton">ANGLE</String>
+    </Concept>
+    <Concept Id="SWEEP">
+      <Comments>Modify sweep time</Comments>
+      <String Context="TS_TButton">SWEEP</String>
+    </Concept>
+    <Concept Id="SWEEP_MIN">
+      <Comments>Set sweep time to MIN value</Comments>
+      <String Context="TS_TButton">MIN</String>
+    </Concept>
+    <Concept Id="SWEEP_SLOW">
+      <Comments>Set sweep time to SLOW value</Comments>
+      <String Context="TS_TButton">SLOW</String>
+    </Concept>
+    <Concept Id="SWEEP_MEDIUM">
+      <Comments>Set sweep time to MEDIUM value</Comments>
+      <String Context="TS_TButton">MEDIUM</String>
+    </Concept>
+    <Concept Id="SWEEP_FAST">
+      <Comments>Set sweep time to FAST value</Comments>
+      <String Context="TS_TButton">FAST</String>
+    </Concept>
+    <Concept Id="SWEEP_MAX">
+      <Comments>Set sweep time to MAX value</Comments>
+      <String Context="TS_TButton">MAX</String>
+    </Concept>
+    <Concept Id="PW_FREQUENCY">
+      <Comments>Modify doppler frequency</Comments>
+      <String Context="TS_TButton">FREQUENCY</String>
+    </Concept>
+    <Concept Id="FREQUENCY_SCALE">
+      <Comments>Scale of the frequency (Khz vs Mhz)</Comments>
+      <String Context="TS_AButton">FREQUENCY SCALE</String>
+    </Concept>
+    <Concept Id="PW_PRF">
+      <Comments>Velocity scale regulation</Comments>
+      <String Context="TS_TButton">PRF</String>
+      <String Context="MD_RT17LabelJoyPush">PRF</String>
+	  <String Context="MD_RT17LabelJoyEnc">PRF</String>
+    </Concept>
+    <Concept Id="PW_BASELINE">
+      <Comments>Modify baseline</Comments>
+      <String Context="TS_TButton">BASELINE</String>
+      <String Context="MD_RT17LabelJoyPush">BASELINE</String>
+	  <String Context="MD_RT17LabelJoyEnc">BASELINE</String>
+    </Concept>
+    <Concept Id="PW_STEER">
+      <Comments>Allow user to change the PW steering</Comments>
+      <String Context="TS_TButton">LINE STEER</String>
+      <String Context="MD_RT17LabelJoyPush">LINE STEER</String>
+	  <String Context="MD_RT17LabelJoyEnc">LINE STEER</String>
+    </Concept>
+    <Concept Id="PW_ADA">
+      <Comments>Allow user to enable Automatic Doppler Angle</Comments>
+      <String Context="TS_AButton">ADA</String>
+    </Concept>
+    <Concept Id="PW_AUDIO">
+      <Comments>Modify volume</Comments>
+      <String Context="TS_TButton">AUDIO</String>
+    </Concept>
+    <Concept Id="AUDIO_MUTE">
+      <Comments>Set no volume</Comments>
+      <String Context="TS_TButton">AUDIO MUTE</String>
+    </Concept>
+    <Concept Id="PW_DYNAMIC_RANGE">
+      <Comments>Dynamic range selection</Comments>
+      <String Context="TS_TButton">DYNAMIC RANGE</String>
+    </Concept>
+    <Concept Id="PW_FILTER">
+      <Comments>Wall filter selection</Comments>
+      <String Context="TS_TButton">FILTER</String>
+    </Concept>
+    <Concept Id="PW_FFT">
+      <Comments>Set the value of FFT resolution for Doppler</Comments>
+      <String Context="TS_TButton">FFT</String>
+    </Concept>
+    <Concept Id="CW_VELOCITY">
+      <Comments>Velocity scale regulation</Comments>
+      <String Context="TS_TButton">VELOCITY</String>
+    </Concept>
+    <Concept Id="CW_FILTER">
+      <Comments>Wall filter selection</Comments>
+      <String Context="TS_TButton">FILTER</String>
+    </Concept>
+    <Concept Id="CW_BASELINE">
+      <Comments>Modify baseline</Comments>
+      <String Context="TS_TButton">BASELINE</String>
+    </Concept>
+    <Concept Id="CW_AUDIO">
+      <Comments>Modify volume</Comments>
+      <String Context="TS_TButton">AUDIO</String>
+    </Concept>
+    <Concept Id="CW_DYNAMIC_RANGE">
+      <Comments>Dynamic range selection</Comments>
+      <String Context="TS_TButton">DYNAMIC RANGE</String>
+    </Concept>
+    <Concept Id="CW_FFT">
+      <Comments>Set the value of FFT resolution for CW</Comments>
+      <String Context="TS_TButton">FFT</String>
+    </Concept>
+    <Concept Id="FFT_MIN">
+      <Comments>Notation  for the MIN value of FFT resolution for PW</Comments>
+      <String Context="TS_TButton">MIN</String>
+    </Concept>
+    <Concept Id="FFT_LOW">
+      <Comments>Notation  for the LOW value of FFT resolution for PW</Comments>
+      <String Context="TS_TButton">LOW</String>
+    </Concept>
+    <Concept Id="FFT_MEDIUM">
+      <Comments>Notation  for the MEDIUM value of FFT resolution for PW</Comments>
+      <String Context="TS_TButton">MEDIUM</String>
+    </Concept>
+    <Concept Id="FFT_MAX">
+      <Comments>Notation  for the MAX value of FFT resolution for PW</Comments>
+      <String Context="TS_TButton">MAX</String>
+    </Concept>
+    <Concept Id="M_DYNAMIC_RANGE">
+      <Comments>Change the dynamic range to fit the desired quality of the images</Comments>
+      <String Context="TS_TButton">DYN RANGE</String>
+    </Concept>
+    <Concept Id="M_DYNAMIC_COMPRESSION">
+      <Comments>Change the dynamic compression to fit the desired quality of the images</Comments>
+      <String Context="TS_TButton">DYN COMPR</String>
+    </Concept>
+    <Concept Id="CW_FREQUENCY">
+      <Comments>Modify CW frequency</Comments>
+      <String Context="TS_TButton">FREQUENCY</String>
+    </Concept>
+    <Concept Id="CLEAR TEXT">
+      <Comments>Remove all annotations visible on screen</Comments>
+      <String Context="TS_AButton">CLEAR TEXT</String>
+    </Concept>
+    <Concept Id="PLAY">
+      <Comments>Cine Play</Comments>
+      <String Context="TS_AButton">PLAY</String>
+    </Concept>
+    <Concept Id="STOP">
+      <Comments>Cine Stop</Comments>
+      <String Context="TS_AButton">STOP</String>
+    </Concept>
+    <Concept Id="BEGIN">
+      <Comments>Encoder to move cine to the first frame</Comments>
+      <String Context="TS_AButton">BEGIN</String>
+    </Concept>
+    <Concept Id="END">
+      <Comments>Encoder to move cine to the last frame</Comments>
+      <String Context="TS_AButton">END</String>
+    </Concept>
+    <Concept Id="PAUSE">
+      <Comments>Cine Pause</Comments>
+      <String Context="TS_AButton">PAUSE</String>
+    </Concept>
+    <Concept Id="FRAME">
+      <Comments>Encoder to move cine frame by frame</Comments>
+      <String Context="TS_TButton">FRAME</String>
+      <String Context="MD_RT17LabelJoyPush">FRAME</String>
+	  <String Context="MD_RT17LabelJoyEnc">FRAME</String>
+    </Concept>
+    <Concept Id="CINESPEED">
+      <Comments>Encoder to move cine frame by frame</Comments>
+      <String Context="TS_TButton">SPEED</String>
+    </Concept>
+    <Concept Id="_US_PLANE">
+      <Comments>Render view for 3D-4D automatic</Comments>
+      <String Context="TS_AButton">AUTO</String>
+    </Concept>
+    <Concept Id="_FRONT_BACK">
+      <Comments>Render view for 3D-4D front to back</Comments>
+      <String Context="TS_AButton">FRONT BACK</String>
+    </Concept>
+    <Concept Id="_TOP_DOWN">
+      <Comments>Render view for 3D-4D top to down</Comments>
+      <String Context="TS_AButton">TOP DOWN</String>
+    </Concept>
+    <Concept Id="ThreeDTs">
+      <Comments>Tool 3D - physical button duplicated on TouchScreen</Comments>
+      <String Context="TS_BButton">ThreeD</String>
+    </Concept>
+    <Concept Id="VPAN">
+      <Comments>Tool Virtual Panoramic</Comments>
+      <String Context="TS_BButton">VPAN</String>
+    </Concept>
+    <Concept Id="STRESS">
+      <Comments>Tool STRESS</Comments>
+      <String Context="TS_BButton">STRESS</String>
+    </Concept>
+    <Concept Id="QIMT">
+      <Comments>Tool QIMT</Comments>
+      <String Context="TS_BButton">QIMT</String>
+    </Concept>
+    <Concept Id="QAS">
+      <Comments>Tool QAS</Comments>
+      <String Context="TS_BButton">QAS</String>
+    </Concept>
+    <Concept Id="AUTOEF">
+      <Comments>Tool AUTOEF</Comments>
+      <String Context="TS_BButton">AUTOEF</String>
+    </Concept>
+    <Concept Id="PLA">
+      <Comments>Tool PLA</Comments>
+      <String Context="TS_BButton">PLA</String>
+    </Concept>
+    <Concept Id="CENTRAL">
+      <Comments>Show all lines</Comments>
+      <String Context="TS_BButton">CENTRAL</String>
+    </Concept>
+    <Concept Id="XSTRAIN2D">
+      <Comments>Tool XSTRAIN2D</Comments>
+      <String Context="TS_BButton">XSTRAIN2D</String>
+    </Concept>
+	<Concept Id="FlowQuantification">
+      <Comments>Tool "Flow Quantification"</Comments>
+      <String Context="TS_BButton">QPack</String>
+    </Concept>
+    <Concept Id="PROSPECTIVE_CLIP">
+      <Comments>Prospective Clip</Comments>
+      <String Context="MD_RT13HelpLine">REAL TIME CLIP ....</String>
+    </Concept>
+    <Concept Id="TRIGGER_MISSING">
+      <Comments>Clip</Comments>
+      <String Context="MD_RT13HelpLine">TRIGGER MISSING</String>
+    </Concept>
+    <Concept Id="RETROSPECTIVE_CLIP">
+      <Comments>Retrospective Clip</Comments>
+      <String Context="MD_RT13HelpLine">RECORDING ....</String>
+    </Concept>
+    <Concept Id="QELAXTO INVALID">
+      <Comments>Qelaxto Invalid Measure</Comments>
+      <String Context="MD_RT13HelpLine">Qelaxto Invalid Measure</String>
+    </Concept>
+    <Concept Id="QELAXTO">
+      <Comments>Qelaxto Tool</Comments>
+      <String Context="TS_BButton">Qelaxto</String>
+    </Concept>
+    <Concept Id="QELAXTO2D">
+      <Comments>QElaXto Tool</Comments>
+      <String Context="TS_BButton">QElaXto 2D</String>
+    </Concept>
+    <Concept Id="QUALITY">
+      <Comments>Encoder for 3D quality acquisition</Comments>
+      <String Context="TS_TButton">QUALITY</String>
+    </Concept>
+    <Concept Id="SCAN ANGLE">
+      <Comments>Encoder for 3D scan angle value</Comments>
+      <String Context="TS_TButton">SCAN ANGLE</String>
+    </Concept>
+    <Concept Id="ANGLE_SKETCH">
+      <Comments>Enable the dispaly of the sketch of TEE angle</Comments>
+      <String Context="TS_AButton">ANGLE SKETCH</String>
+    </Concept>
+    <Concept Id="RENDER VIEW">
+      <Comments>Encoder for select render view to be used in 3D</Comments>
+      <String Context="TS_TButton">RENDER VIEW</String>
+    </Concept>
+    <Concept Id="PLANE">
+      <Comments>Encoder used to change central plane for a 3D-4D acquisition</Comments>
+      <String Context="TS_TButton">PLANE</String>
+    </Concept>
+    <Concept Id="ANGULAR_STEP">
+      <Comments>Encoder used to change the angle step for TEE probes</Comments>
+      <String Context="TS_TButton">ANGULAR STEP</String>
+    </Concept>
+    <Concept Id="VPAN_ACQUISITION">
+      <Comments>Acquiring images for VPAN tool</Comments>
+      <String Context="MD_RT13HelpLine">VPAN ACQUIRING ....</String>
+    </Concept>
+    <Concept Id="REFLINE_QIMT">
+      <Comments>Qimt Reference Line Distance</Comments>
+      <String Context="TS_TButton">REF LINE</String>
+    </Concept>
+    <Concept Id="SEND_LEFT_QIMT">
+      <Comments>In Freeze mode the user saves the QIMT values acquired Worksheet/Report</Comments>
+      <String Context="TS_AButton">SEND TO REP LEFT</String>
+    </Concept>
+    <Concept Id="SEND_RIGHT_QIMT">
+      <Comments>In Freeze mode the user saves the QIMT values acquired Worksheet/Report</Comments>
+      <String Context="TS_AButton">SEND TO REP RIGHT</String>
+    </Concept>
+    <Concept Id="EXIT_QIMT">
+      <Comments>Shortcut to QIMT icon deselection in TOOLS page</Comments>
+      <String Context="TS_AButton">EXIT QIMT</String>
+    </Concept>
+    <Concept Id="REFLINE_QAS">
+      <Comments>Qas Reference Line Distance</Comments>
+      <String Context="TS_TButton">REF LINE</String>
+    </Concept>
+    <Concept Id="QAS_DISTENSION_TRACK">
+      <Comments>Selection of Qas distension track</Comments>
+      <String Context="TS_AButton">DIST TRACK</String>
+    </Concept>
+    <Concept Id="QAS_VELOCITY_TRACK">
+      <Comments>Selection of Qas velocity track</Comments>
+      <String Context="TS_AButton">VEL TRACK</String>
+    </Concept>
+    <Concept Id="QAS_ACCELERATION_TRACK">
+      <Comments>Selection of Qas acceleration track</Comments>
+      <String Context="TS_AButton">ACC TRACK</String>
+    </Concept>
+    <Concept Id="QAS_DISTENSION_TRACK_T">
+      <Comments>Selection of Qas distension track</Comments>
+      <String Context="TS_TButton">DIST TRACK</String>
+    </Concept>
+    <Concept Id="QAS_VELOCITY_TRACK_T">
+      <Comments>Selection of Qas velocity track</Comments>
+      <String Context="TS_TButton">VEL TRACK</String>
+    </Concept>
+    <Concept Id="QAS_ACCELERATION_TRACK_T">
+      <Comments>Selection of Qas acceleration track</Comments>
+      <String Context="TS_TButton">ACC TRACK</String>
+    </Concept>
+    <Concept Id="QAS_TRACK_SELECTOR">
+      <Comments>Selection of Qas track type (distension/velocity)</Comments>
+      <String Context="TS_TButton">TRACK SEL</String>
+    </Concept>
+    <Concept Id="QAS_AVERAGES">
+      <Comments>Turn on/off average only visualization</Comments>
+      <String Context="TS_AButton">AVERAGES ONLY</String>
+    </Concept>
+    <Concept Id="SEND_LEFT_QAS">
+      <Comments>In Freeze mode the user saves the QAS values acquired Worksheet/Report</Comments>
+      <String Context="TS_AButton">SEND TO REP LEFT</String>
+    </Concept>
+    <Concept Id="SEND_RIGHT_QAS">
+      <Comments>In Freeze mode the user saves the QAS values acquired Worksheet/Report</Comments>
+      <String Context="TS_AButton">SEND TO REP RIGHT</String>
+    </Concept>
+    <Concept Id="EXIT_QAS">
+      <Comments>Shortcut to QAS icon deselection in TOOLS page</Comments>
+      <String Context="TS_AButton">EXIT QAS</String>
+    </Concept>
+    <Concept Id="ELST_DUAL">
+      <Comments>Enable Dual presentation</Comments>
+      <String Context="TS_AButton">DUAL</String>
+    </Concept>
+    <Concept Id="ELST_DETAIL">
+      <Comments>Change the level of detail (High, low, Medium)</Comments>
+      <String Context="TS_TButton">DETAIL</String>
+    </Concept>
+    <Concept Id="ELST_TRASPARENCY">
+      <Comments>Change the level of trasparency (0-100%)</Comments>
+      <String Context="TS_TButton">TRASPARENCY</String>
+    </Concept>
+    <Concept Id="ELST_FREQUENCYSET">
+      <Comments>Change the set of frequency elasto</Comments>
+      <String Context="TS_TButton">FREQ SET</String>
+    </Concept>
+    <Concept Id="ELST_FRAMEREJ">
+      <Comments>Set the Frame Rejection (0-10 levels)</Comments>
+      <String Context="TS_TButton">FRAME REJ</String>
+    </Concept>
+    <Concept Id="ELST_NOISEREJ">
+      <Comments>Set the Noise Rejection (0-10 levels)</Comments>
+      <String Context="TS_TButton">NOISE REJ</String>
+    </Concept>
+    <Concept Id="ELST_DYNAMICRANGE">
+      <Comments>Set the Dynamic Rejection (0-20 levels)</Comments>
+      <String Context="TS_TButton">DYNAMIC RANGE</String>
+    </Concept>
+    <Concept Id="ELST_OFFSET">
+      <Comments>Set the Offset parameter (from 0.10 to 3.00 step 0.01)</Comments>
+      <String Context="TS_TButton">OFFSET</String>
+    </Concept>
+    <Concept Id="OFFLINE VPAN">
+      <Comments>TS command for selecting offline VPAN acquisition</Comments>
+      <String Context="TS_TButton">OFFLINE</String>
+    </Concept>
+    <Concept Id="CENTERED VPAN">
+      <Comments>TS command for selecting CENTERED VPAN modality</Comments>
+      <String Context="TS_TButton">CENTERED</String>
+    </Concept>
+    <Concept Id="FIT SCREEN VPAN">
+      <Comments>TS command for selecting FIT SCREEN VPAN modality</Comments>
+      <String Context="TS_TButton">FIT SCREEN</String>
+    </Concept>
+    <Concept Id="CURVED VPAN">
+      <Comments>TS command for selecting CURVED VPAN modality</Comments>
+      <String Context="TS_TButton">CURVED</String>
+    </Concept>
+    <Concept Id="LIBRARY VIEWER">
+      <Comments>Tool Library Viewer</Comments>
+      <String Context="TS_BButton">LIBRARY</String>
+    </Concept>
+    <Concept Id="FOLLOW UP">
+      <Comments>Link to archive FOLLOW UP</Comments>
+      <String Context="TS_BButton">FOLLOW UP</String>
+    </Concept>
+    <Concept Id="RESET">
+      <Comments>Button used to reset TGC sliders positions to their default</Comments>
+      <String Context="TS_AButton">RESET</String>
+    </Concept>
+    <Concept Id="STANDARD">
+      <Comments>Button used to set TGC sliders positions according to a line curve</Comments>
+      <String Context="TS_AButton">STANDARD</String>
+    </Concept>
+    <Concept Id="POWER">
+      <Comments>Button used to set TGC sliders positions according to a line curve</Comments>
+      <String Context="TS_AButton">POWER</String>
+    </Concept>
+    <Concept Id="SOFT">
+      <Comments>Button used to set TGC sliders positions according to a line curve</Comments>
+      <String Context="TS_AButton">SOFT</String>
+    </Concept>
+    <Concept Id="AGC_IN_PROGRESS">
+      <Comments>AGC in Progress</Comments>
+      <String Context="MD_RT13HelpLine">AGC in Progress</String>
+    </Concept>
+    <Concept Id="ADA_IN_PROGRESS">
+      <Comments>ADA in Progress</Comments>
+      <String Context="MD_RT13HelpLine">ADA in Progress</String>
+    </Concept>
+    <Concept Id="ACCEPT">
+      <Comments>Distension accept button</Comments>
+      <String Context="TS_AButton">ACCEPT</String>
+    </Concept>
+    <Concept Id="DISCARD">
+      <Comments>Distension discard button</Comments>
+      <String Context="TS_AButton">DISCARD</String>
+    </Concept>
+    <Concept Id="NEEDLE OVERLAP">
+      <Comments>Enable/Disable Needle overlap</Comments>
+      <String Context="TS_AButton">OVERLAP</String>
+    </Concept>
+    <Concept Id="ACCEPT QAS">
+      <Comments>Accept Qas</Comments>
+      <String Context="TS_TButton">ACCEPT</String>
+    </Concept>
+    <Concept Id="DISCARD QAS">
+      <Comments>Discard Qas</Comments>
+      <String Context="TS_TButton">DISCARD</String>
+    </Concept>
+    <Concept Id="EnterVirtualNavigator">
+      <Comments>Tool Virtual Navigator</Comments>
+      <String Context="TS_AButton">VNAV</String>
+    </Concept>
+	<Concept Id="EnterVirtualNavigatorZH">
+      <Comments>Tool Virtual Navigator</Comments>
+      <String Context="TS_AButton">Fusion</String>
+    </Concept>
+    <Concept Id="EnterVirtualBiopsy">
+      <Comments>Tool Virtual Biopsy</Comments>
+      <String Context="TS_AButton">VIRTUAL BIOPSY</String>
+    </Concept>
+    <Concept Id="EnterBodyMap">
+      <Comments>Tool Body Maps</Comments>
+      <String Context="TS_AButton">BODY MAPS</String>
+    </Concept>
+   <Concept Id="Enter3DPan">
+      <Comments>Tool 3DPan</Comments>
+      <String Context="TS_AButton">3D PAN</String>
+    </Concept>
+	<Concept Id="EnterBreastNav">
+      <Comments>Tool BreastNav</Comments>
+      <String Context="TS_AButton">BREAST NAV</String>
+    </Concept>
+    <Concept Id="PHYSIO_LEADSEL">
+      <Comments>Lead</Comments>
+      <String Context="TS_TButton">LEAD</String>
+    </Concept>
+	<Concept Id="Resize">
+      <Comments>Resize viewer for flow quantification</Comments>
+      <String Context="TS_AButton">RESIZE</String>
+    </Concept>
+    <Concept Id="TrimLeft">
+      <Comments>Set left margin for flow quantification</Comments>
+      <String Context="TS_AButton">Trim Left</String>
+    </Concept>
+    <Concept Id="TrimRight">
+      <Comments>Set right margin for flow quantification</Comments>
+      <String Context="TS_AButton">Trim Right</String>
+    </Concept>
+    <Concept Id="ChangeLoop">
+      <Comments>Change the section of flow quantification</Comments>
+      <String Context="TS_AButton">Change Loop</String>
+    </Concept>
+    <Concept Id="Calculate">
+      <Comments>Flow quantification calculating</Comments>
+      <String Context="TS_AButton">Calculate</String>
+    </Concept>
+    <Concept Id="ENTER">
+      <Comments>Left button in trackball area (visualized only in Area17)</Comments>
+	  <String Context="MD_RT17LabelJoyEnc">ENTER</String>
+    </Concept>
+    <Concept Id="UNDO">
+      <Comments>Right button in trackball area (visualized only in Area17)</Comments>
+	  <String Context="MD_RT17LabelJoyEnc">UNDO</String>
+    </Concept>
+    <Concept Id="AUTO">
+      <Comments>Bottom button in trackball area (visualized only in Area17)</Comments>
+	  <String Context="MD_RT17LabelJoyEnc">AUTO</String>
+    </Concept>
+    <Concept Id="QELAXTO ADD TO REPORT">
+      <Comments>Button used to send the QElaxto measures to the report</Comments>
+      <String Context="TS_AButton">ADD TO REPORT</String>
+    </Concept>
+     <Concept Id="QELAXTOPALETTERANGE">
+      <Comments>Button used to modify range of QElaxto palette </Comments>
+      <String Context="TS_TButton">PALETTE RANGE</String>
+    </Concept>
+    <Concept Id="VC_EXIT">
+      <Comments>Exit from visual comparison tool</Comments>
+      <String Context="TS_AButton">EXIT</String>
+    </Concept>
+    <Concept Id="QELAXTO PALETTE SCALE">
+      <Comments>QElaxto palette scale</Comments>
+      <String Context="TS_TButton">SCALE</String>
+    </Concept>
+    <Concept Id="QELAXTO PALETTE TYPE">
+      <Comments>QElaxto palette type</Comments>
+      <String Context="TS_TButton">PALETTE TYPE</String>
+    </Concept>
+    <Concept Id="QELAXTO PALETTE RANGE">
+      <Comments>QElaxto palette range</Comments>
+      <String Context="TS_TButton">RANGE</String>
+    </Concept>
+    <Concept Id="QELAXTO CHANGE UNIT">
+      <Comments>Change Unit</Comments>
+      <String Context="TS_AButton">CHANGE UNIT</String>
+    </Concept>
+    <Concept Id="QELAXTO_CA2D">
+      <Comments>On/off of continuous acquisition option</Comments>
+      <String Context="TS_AButton">CONTINUOUS ACQUISITION</String>
+    </Concept>
+    <Concept Id="QELAXTO_RELIABILITY">
+      <Comments>Reliability</Comments>
+      <String Context="TS_TButton">RELIABILITY</String>
+    </Concept>
+    <Concept Id="SPEED_OF_SOUND">
+      <Comments>Speed of Sound used for RX dynamic focalization</Comments>
+      <String Context="TS_TButton">SPEED OF SOUND</String>
+    </Concept>
+    <Concept Id="QUAD">
+      <Comments>Enter/Exit Quad</Comments>
+      <String Context="TS_AButton">QUAD</String>
+    </Concept>
+    <Concept Id="CLEAR_ALL">
+      <Comments>Clear all text or measure on screen</Comments>
+      <String Context="TS_AButton">CLEAR ALL</String>
+    </Concept>
+    <Concept Id="AVF">
+      <Comments>Selection of option Avf (Adaptative virtual focusing)</Comments>
+      <String Context="TS_AButton">AVF</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

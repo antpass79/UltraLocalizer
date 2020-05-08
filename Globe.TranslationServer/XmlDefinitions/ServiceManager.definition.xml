@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by STEFANO MUGNAI (ESAOTE SpA) -->
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ServiceManagerComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Languages">
+    <Concept Id="en">
+      <Comments>English language</Comments>
+      <String Context="Generic_Long">ENGLISH</String>
+    </Concept>
+    <Concept Id="it">
+      <Comments>Italian language</Comments>
+      <String Context="Generic_Long">ITALIAN</String>
+    </Concept>
+    <Concept Id="de">
+      <Comments>German language</Comments>
+      <String Context="Generic_Long">GERMAN</String>
+    </Concept>
+    <Concept Id="es">
+      <Comments>Spanish language</Comments>
+      <String Context="Generic_Long">SPANISH</String>
+    </Concept>
+    <Concept Id="fr">
+      <Comments>French language</Comments>
+      <String Context="Generic_Long">FRENCH</String>
+    </Concept>
+    <Concept Id="pt">
+      <Comments>Portuguese language</Comments>
+      <String Context="Generic_Long">PORTUGUESE</String>
+    </Concept>
+    <Concept Id="ru">
+      <Comments>Russian language</Comments>
+      <String Context="Generic_Long">RUSSIAN</String>
+    </Concept>
+    <Concept Id="zh">
+      <Comments>Chinese language</Comments>
+      <String Context="Generic_Long">CHINESE</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Generic">
+    <Concept Id="CONFIGURATOR NAME">
+      <Comments>Service's configurator definition</Comments>
+      <String Context="Generic_Medium">SERVICE</String>
+    </Concept>
+    <Concept Id="ACTIVE_ON_NEXT_SESSION">
+      <Comments>This message appears to advise the user that a restart is necessary</Comments>
+      <String Context="Generic_Warning">To activate your modifications, please restart the unit.</String>
+    </Concept>
+    <Concept Id="SYS_LANGUAGE">
+      <Comments>Label for combo used to change system's language</Comments>
+      <String Context="Generic_Long">SYSTEM LANGUAGE</String>
+    </Concept>
+    <Concept Id="MONITOR">
+      <Comments>Label for combo used to change system's monitor</Comments>
+      <String Context="Generic_Long">MONITOR</String>
+    </Concept>
+    <Concept Id="MONITOR_DEFAULT">
+      <Comments>Label for disabled combo since system's monitor forced to be the default one</Comments>
+      <String Context="Generic_Long">MONITOR (DEFAULT)</String>
+    </Concept>
+    <Concept Id="MONITOR_AUTODETECTED">
+      <Comments>Label for disabled combo since system's monitor has been autodetected</Comments>
+      <String Context="Generic_Long">MONITOR (AUTODETECTED)</String>
+    </Concept>
+    <Concept Id="AC_LINE_FREQUENCY">
+      <Comments>Label for radio buttons used to change AC line frequency</Comments>
+      <String Context="Generic_Long">AC LINE FREQUENCY</String>
+    </Concept>
+    <Concept Id="MONITOR_AUTDETECTION_DISABLED">
+      <Comments>Label for check box used to disable monitor auto detection</Comments>
+      <String Context="Generic_Long">DISABLE MONITOR AUTO DETECTION</String>
+    </Concept>
+    <Concept Id="MONITOR_KEY_PAD_UNLOCKED">
+      <Comments>Label for check box used to unlock monitor settings keypad</Comments>
+      <String Context="Generic_Long">UNLOCK MONITOR KEYPAD</String>
+    </Concept>
+    <Concept Id="SHOW_FRAME_RATE">
+      <Comments>Label for check box used to enable frame rate display</Comments>
+      <String Context="Generic_Long">SHOW FRAME RATE</String>
+    </Concept>
+    <Concept Id="RESET CALIBRATION ON NEXT">
+      <Comments>Checkbox for resetting touchscreen calibration at following reboot</Comments>
+      <String Context="Generic_Long">TOUCHSCREEN CALIBRATION AFTER REBOOT</String>
+    </Concept>
+    <Concept Id="APPARATUS LOGO">
+      <Comments>Checkbox for enabling system to change logo according to apparatus</Comments>
+      <String Context="Generic_Long">APPARATUS LOGO</String>
+    </Concept>
+    <Concept Id="FIREWALL ENABLED">
+      <Comments>Checkbox for enabling operating system's network firewall</Comments>
+      <String Context="Generic_Long">FIREWALL ENABLED</String>
+    </Concept>
+    <Concept Id="SHOW BIRTHDATE">
+      <Comments>Checkbox for enabling birthdate in patient info caption</Comments>
+      <String Context="Generic_Long">SHOW BIRTHDATE IN PATIENT INFO CAPTION</String>
+    </Concept>
+    <Concept Id="SHOW OPERATOR INITIALS">
+      <Comments>Checkbox for enabling operator's first chars in patient info caption</Comments>
+      <String Context="Generic_Long">SHOW OPERATOR'S FIRST CHARS IN PATIENT INFO CAPTION</String>
+    </Concept>
+    <Concept Id="WIFI DISABLE">
+      <Comments>Checkbox for disabling wireless network</Comments>
+      <String Context="Generic_Long">WIFI DISABLE</String>
+    </Concept>
+    <Concept Id="SCREENSAVER TIMEOUT">
+      <Comments>Label for edit box used to change screensaver's timeout in minutes </Comments>
+      <String Context="Generic_Long">SCREENSAVER TIMEOUT ( min )</String>
+    </Concept>
+    <Concept Id="MONITOR CHANGE MSG">
+      <Comments>Message to inform user he needs to accept the resolution for the monitor </Comments>
+      <String Context="Generic_Warning">Press OK to accept the resolution of selected monitor</String>
+    </Concept>
+	<Concept Id="MONITOR_NOT_SUPPORTED">
+      <Comments>Message to inform service user that the monitor selected is not supported </Comments>
+      <String Context="Generic_Warning">MONITOR NOT SUPPORTED</String>
+    </Concept>
+    <Concept Id="TEST RESOLUTION">
+      <Comments>Label for button used to check selected monitor's resolution</Comments>
+      <String Context="Generic_Long">TEST RESOLUTION</String>
+    </Concept>
+    <Concept Id="SHUTDOWN_ON_SAVE_WRNG">
+      <Comments>This message appears to advise the user that a shutdown will start as soon as the button SAVE will be pressed</Comments>
+      <String Context="Generic_Long">Pressing save a full shutdown will start automatically.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_TAB_HEADER">
+      <Comments>Antivirus TAB header</Comments>
+      <String Context="TS_TabName">Antivirus</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_SCAN_BUTTON">
+      <Comments>Antivirus SCAN Button</Comments>
+      <String Context="TS_AButton">SCAN</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_UPDATE_BUTTON">
+      <Comments>Antivirus UPDATE Button</Comments>
+      <String Context="TS_AButton">UPDATE</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_SCAN">
+      <Comments>Antivirus scan waiting message popup</Comments>
+      <String Context="Generic_Long">Scan starting...</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_FOUND_THREATS_SYSTEM_DRIVE">
+      <Comments>Antivirus found threats on system drive message popup.</Comments>
+      <String Context="Generic_Long">Antivirus found threats on system drive.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_FOUND_THREATS_REMOVABLE_DRIVE">
+      <Comments>Antivirus found threats on removable drive message popup.</Comments>
+      <String Context="Generic_Long">Antivirus found threats on removable drive.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_NO_THREATS_FOUND">
+      <Comments>Antivirus No threats found message popup.</Comments>
+      <String Context="Generic_Long">Antivirus No threats found.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_UPDATE">
+      <Comments>Antivirus update waiting message popup</Comments>
+      <String Context="Generic_Long">UPDATE</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITION_NOT_VALID">
+      <Comments>Antivirus definition not valid message popup</Comments>
+      <String Context="Generic_Long">Antivirus definition not valid!</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_ERROR">
+      <Comments>Antivirus error popup</Comments>
+      <String Context="Generic_Long">Antivirus error! Please retry.</String>
+    </Concept>
+    <Concept Id="MAINTENANCE_HEADER">
+      <Comments>Maintanance box label [Story 23490]</Comments>
+      <String Context="Generic_Long">MAINTENANCE</String>
+    </Concept>
+    <Concept Id="MAINTENANCE_MSG_ENABLED">
+      <Comments>Check box to enable Service Reminder Message [Story 23490]</Comments>
+      <String Context="Generic_Long">Service Reminder Message enabled:</String>
+    </Concept>
+    <Concept Id="MAINTENANCE_BTN_TIME_RESET">
+      <Comments>Button to reset time interval whose expiration displays a message [Story 23490]</Comments>
+      <String Context="TS_AButton">Main timer reset</String>
+    </Concept>
+    <Concept Id="MAINTENANCE_RESET_RESULT_SUCCESS">
+      <Comments>Reset of time interval successful [Story 23490]</Comments>
+      <String Context="Generic_Warning">Main timer reset successfully</String>
+    </Concept>
+    <Concept Id="MAINTENANCE_RESET_RESULT_FAILED">
+      <Comments>Reset of time interval failed [Story 23490]</Comments>
+      <String Context="Generic_Warning">Main timer reset failed. Some problem in registry occurred.</String>
+    </Concept>
+      <Concept Id="BITLOCKER_TAB_HEADER">
+      <Comments>BitLocker TAB header</Comments>
+      <String Context="TS_TabName">Encryption</String>
+    </Concept>
+    <Concept Id="BITLOCKER_SCAN_BUTTON">
+      <Comments>BitLocker SCAN Button</Comments>
+      <String Context="TS_AButton">Show</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITIONS_VERSION">
+      <Comments>Label to track the virus definitions version installed on the machine</Comments>
+      <String Context="Generic_Long">Definitions Version</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITION_CONFIRMATION">
+      <Comments>Popup to confirm or refuse the virus definition update</Comments>
+      <String Context="Generic_Long">Do you want to perform the following update ?</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITION_OLDER">
+      <Comments>Antivirus definition older than the current one message popup</Comments>
+      <String Context="Generic_Long">Antivirus definition older than the curren tone!</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

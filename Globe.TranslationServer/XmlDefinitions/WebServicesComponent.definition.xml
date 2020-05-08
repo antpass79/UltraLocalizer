@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="WebServicesComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection>
+      <Concept Id="Address" >
+          <Comments>IP Address</Comments>
+          <String Context="Generic_Medium" >Address:</String>
+      </Concept >
+      <Concept Id="StreamingPassword" >
+          <Comments></Comments>
+          <String Context="Generic_Medium" >Password:</String>
+      </Concept >      
+      <Concept Id="RemotePassword" >
+          <Comments></Comments>
+          <String Context="Generic_Medium" >MyLab Remote Password:</String>
+      </Concept >      
+      <Concept Id="EnableStreaming" >
+          <Comments></Comments>
+          <String Context="Generic_Medium" >Enable Streaming:</String>
+      </Concept >
+    <Concept Id="EnableRemote" >
+      <Comments></Comments>
+      <String Context="Generic_Medium" >Enable MyLab Remote:</String>
+    </Concept >
+        <Concept Id="EnableRemoteLabel" >
+      <Comments></Comments>
+      <String Context="Generic_Medium" >MyLab Remote</String>
+    </Concept >
+
+    <Concept Id="EnforcePrivacy" >
+          <Comments></Comments>
+          <String Context="Generic_Medium" >Enforce Privacy:</String>
+      </Concept >
+      <Concept Id="EnforcePrivacyText" >
+          <Comments></Comments>
+          <String Context="MD_RT13HelpLine" >By enabling this check, the Archive Patient List will be automatically hidden on the client side.</String>
+      </Concept >
+      <Concept Id="FrameForSecond" >
+          <Comments></Comments>
+          <String Context="Generic_Medium" >Frame For Second:</String>
+      </Concept >
+      <Concept Id="JpegQuality" >
+          <Comments>Jpeg Quality</Comments>
+          <String Context="Generic_Medium" >Jpeg Quality:</String>
+      </Concept >
+      <Concept Id="FullQualityJpeg" >
+          <Comments>Jpeg Quality</Comments>
+          <String Context="Generic_Short" >Full</String>
+      </Concept >
+      <Concept Id="HighQualityJpeg" >
+          <Comments>Jpeg Quality</Comments>
+          <String Context="Generic_Short" >High</String>
+      </Concept >
+      <Concept Id="LowQualityJpeg" >
+          <Comments>Jpeg Quality</Comments>
+          <String Context="Generic_Short" >Low</String>
+      </Concept >
+      <Concept Id="Portal" >
+          <Comments>Menu Button Title</Comments>
+          <String Context="Generic_Short" >Portal</String>
+      </Concept >
+      <Concept Id="MaxClientNumber" >
+          <Comments></Comments>
+          <String Context="Generic_Medium" >Max Client Number:</String>
+      </Concept >
+      <Concept Id="USRegion" >
+          <Comments></Comments>
+          <String Context="Generic_Medium" >USRegion streaming:</String>
+      </Concept >
+      <Concept Id="FullScreen" >
+          <Comments></Comments>
+          <String Context="Generic_Medium" >Fullscreen streaming:</String>
+      </Concept >
+      <Concept Id="StreamingDisclaimer" >
+          <Comments></Comments>
+          <String Context="Generic_Warning" >By enabling the streaming, the video signal will be replicated on external devices connected to the unit. Take care that on these external devices the examination could be digitally recorded.</String>
+      </Concept >
+      <Concept Id="WrongPassword" >
+          <Comments></Comments>
+          <String Context="Generic_Long" >Wrong Password</String>
+      </Concept >
+      <Concept Id="WrongRemotePassword" >
+          <Comments></Comments>
+          <String Context="Generic_Long" >Wrong MyLab Remote Password</String>
+      </Concept >
+      <Concept Id="PasswordAndRemoteDifferent" >
+          <Comments></Comments>
+          <String Context="MD_RT13HelpLine" >Password and MyLab Remote Password must be different!</String>
+      </Concept >
+      <Concept Id="AtLeastOneSelection" >
+          <Comments></Comments>
+          <String Context="MD_RT13HelpLine" >Fullscreen and UsRegion disabled is not a valid configuration!</String>
+      </Concept >
+  </LocalizationSection>
+</LocalizationResource>

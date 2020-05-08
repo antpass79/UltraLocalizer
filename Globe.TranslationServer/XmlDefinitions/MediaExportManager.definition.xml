@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="MediaExportManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="COMPONENT_TITLE" >
+      <Comments>This string is used in Choose destination dialog: it is BOTH the title of Multimedia export sector AND the string in specific touch screen tab</Comments>
+      <String Context="TS_TabName" >MEDIA EXPORT</String>
+    </Concept >
+    <Concept Id="CLIP_QUALITY" >
+      <Comments>Multimedia export configuration</Comments>
+      <String Context="Generic_Medium" >CLIP QUALITY</String>
+    </Concept >
+    <Concept Id="MPEG4_V2" >
+      <Comments>Multimedia export configuration</Comments>
+      <String Context="Generic_Long" >MS-MPEG4 V2 CODEC (BEST QUALITY/COMPRESSION RATIO, MICROSOFT COMPATIBILITY)</String>
+    </Concept >
+    <Concept Id="MS_VIDEO1" >
+      <Comments>Multimedia export configuration</Comments>
+      <String Context="Generic_Long" >MS-VIDEO1 CODEC (MAC OS COMPATIBILITY)</String>
+    </Concept >
+    <Concept Id="IMAGE_QUALITY" >
+      <Comments>Multimedia export configuration</Comments>
+      <String Context="Generic_Medium" >IMAGE QUALITY</String>
+    </Concept >
+    <Concept Id="HIGH" >
+      <Comments>Multimedia export configuration</Comments>
+      <String Context="Generic_Long" >HIGH (UNCOMPRESSED BMP)</String>
+    </Concept >
+    <Concept Id="MEDIUM" >
+      <Comments>Multimedia export configuration</Comments>
+      <String Context="Generic_Long" >MEDIUM (LOSSLESS PNG)</String>
+    </Concept >
+    <Concept Id="LOW" >
+      <Comments>Multimedia export configuration</Comments>
+      <String Context="Generic_Long" >LOW (LOSSY JPEG)</String>
+    </Concept >
+    <Concept Id="MultiMediaExport" >
+      <Comments>Multimedia export configuration item of MENU dialog</Comments>
+      <String Context="Generic_Medium" >Multimedia Export</String>
+    </Concept >
+    <Concept Id="ReasonToStopShutdown" >
+      <Comments>used when framework ask to mediaexport if it is possible to perform shutdown</Comments>
+      <String Context="Generic_Warning" >THE MULTI-MEDIA EXPORT OPERATIONS IN PROGRESS ARE</String>
+    </Concept >
+    <Concept Id="ExportImages">
+      <Comments>ExportImages button on touch screen</Comments>
+      <String Context="TS_AButton">EXPORT</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

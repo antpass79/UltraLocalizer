@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="EventsBrowser" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="QueryFields">    
+    <Concept Id="LASTNAME">
+      <Comments>Patient Lastname label in query mask</Comments>
+      <String Context="Generic_Medium">LAST NAME</String>
+    </Concept>
+    <Concept Id="FIRSTNAME">
+      <Comments>Patient Firstname label in query mask</Comments>
+      <String Context="Generic_Medium">FIRST NAME</String>
+    </Concept>
+    <Concept Id="MIDDLENAME">
+      <Comments>Patient Middlename label in query mask</Comments>
+      <String Context="Generic_Medium">MIDDLE NAME</String>
+    </Concept>
+    <Concept Id="OWNERNAME">
+      <Comments>Owner name label in query mask in Veterinary systems</Comments>
+      <String Context="Generic_Medium">OWNER NAME</String>
+    </Concept>
+    <Concept Id="ANIMALNAME">
+      <Comments>Animal name label in query mask in Veterinary systems</Comments>
+      <String Context="Generic_Medium">ANIMAL NAME</String>
+    </Concept>
+    <Concept Id="PERFORMINGPHYSICIAN">
+      <Comments>Performing physician label in query mask</Comments>
+      <String Context="Generic_Medium">PERFORM. PHYS.</String>
+      <String Context="Generic_Long">PERFORMING PHYSICIAN</String>
+    </Concept>
+    <Concept Id="REFERRINGPHYSICIAN">
+      <Comments>Referring physician label in query mask</Comments>
+      <String Context="Generic_Medium">REFERRING PHYS.</String>
+      <String Context="Generic_Long">REFERRING PHYSICIAN</String>
+    </Concept>
+    <Concept Id="DIAGNOSIS">
+      <Comments>Admitting diagnosis label in query mask</Comments>
+	  <String Context="Generic_Medium" >ADM DIAGNOSIS</String>
+    </Concept>
+    <Concept Id="ID">
+      <Comments>Patient Id label in query mask</Comments>
+      <String Context="Generic_Medium">ID</String>
+    </Concept>
+    <Concept Id="OPERATOR">
+      <Comments>Operator label in query mask</Comments>
+      <String Context="Generic_Medium">OPERATOR</String>
+      <String Context="Generic_Long">OPERATOR</String>
+    </Concept>
+    <Concept Id="APPLICATION">
+      <Comments>Application label in query mask</Comments>
+      <String Context="Generic_Medium">APPLICATION</String>
+    </Concept>
+    <Concept Id="BIRTHDATE">
+      <Comments>Patient Birthdate label in query mask</Comments>
+      <String Context="Generic_Medium">BIRTHDATE</String>
+    </Concept>
+    <Concept Id="EXAMDATE">
+      <Comments>Exam date label in query mask</Comments>
+      <String Context="Generic_Medium">EXAM DATE</String>
+    </Concept>
+    <Concept Id="EVENTDATE">
+      <Comments>Clinical Event date label in query mask</Comments>
+      <String Context="Generic_Medium">CLINICAL EVENT DATE</String>
+    </Concept>
+    <Concept Id="GENDER">
+      <Comments>Gender label in query mask</Comments>
+      <String Context="Generic_Short">GENDER</String>
+    </Concept>
+    <Concept Id="AGE">
+      <Comments>Age label in query mask</Comments>
+      <String Context="Generic_Short">AGE</String>
+    </Concept>
+    <Concept Id="MALE">
+      <Comments>Male label in query mask</Comments>
+      <String Context="Generic_Medium">MALE</String>
+      <String Context="Generic_Short">M</String>
+    </Concept>
+    <Concept Id="FEMALE">
+      <Comments>Female label in query mask</Comments>
+      <String Context="Generic_Medium">FEMALE</String>
+      <String Context="Generic_Short">F</String>
+    </Concept>
+    <Concept Id="Years">
+      <Comments>Years label in query mask</Comments>
+      <String Context="Generic_Medium">YEARS</String>
+      <String Context="Generic_Short">Y</String>
+    </Concept>
+    <Concept Id="Months">
+      <Comments>Months label in query mask</Comments>
+      <String Context="Generic_Medium">MONTHS</String>
+      <String Context="Generic_Short">M</String>
+    </Concept>
+    <Concept Id="Weeks">
+      <Comments>Weeks label in query mask</Comments>
+      <String Context="Generic_Medium">WEEKS</String>
+      <String Context="Generic_Short">W</String>
+    </Concept>
+    <Concept Id="Days">
+      <Comments>Days label in query mask</Comments>
+      <String Context="Generic_Medium">DAYS</String>
+      <String Context="Generic_Short">D</String>
+    </Concept>
+    <Concept Id="FROM">
+      <Comments>Label before the start date in query mask</Comments>
+      <String Context="Generic_Short">FROM</String>
+    </Concept>
+    <Concept Id="TO">
+      <Comments>Label between start date and end date in query mask</Comments>
+      <String Context="Generic_Short">TO</String>
+    </Concept>
+    <Concept Id="EVENTTYPE">
+      <Comments>Label of the clinical event type in query mask</Comments>
+      <String Context="Generic_Medium">TYPE</String>
+    </Concept>
+    <Concept Id="EVENTSTATUS">
+      <Comments>Label of the clinical event status in query mask</Comments>
+      <String Context="Generic_Medium">STATUS</String>
+    </Concept>
+    <Concept Id="EVENTDESTINATION">
+      <Comments>Label of the clinical event destination in query mask</Comments>
+      <String Context="Generic_Medium">DESTINATION</String>
+    </Concept>
+    <Concept Id="EVENTDESCRIPTION">
+      <Comments>Event Description Label in EvenstList</Comments>
+      <String Context="Generic_Medium">DESCRIPTION</String>
+    </Concept>
+    <Concept Id="NativeExport">
+      <Comments></Comments>
+      <String Context="Generic_Long">NATIVE EXPORT</String>
+    </Concept>
+    <Concept Id="Dicom">
+      <Comments></Comments>
+      <String Context="Generic_Long">DICOM</String>
+    </Concept>
+    <Concept Id="MultimediaExport">
+      <Comments></Comments>
+      <String Context="Generic_Long">MEDIA EXPORT</String>
+    </Concept>    
+    <Concept Id="StudyDeletion">
+      <Comments></Comments>
+      <String Context="Generic_Long">STUDY DELETION</String>
+    </Concept>
+    <Concept Id="ImageAdded">
+      <Comments></Comments>
+      <String Context="Generic_Long">IMAGE ADDED</String>
+    </Concept>
+    <Concept Id="ImageDeletion">
+      <Comments></Comments>
+      <String Context="Generic_Long">IMAGE DELETED</String>
+    </Concept>
+    <Concept Id="ImageModification">
+      <Comments></Comments>
+      <String Context="Generic_Long">IMAGE MODIFIED</String>
+    </Concept>
+    <Concept Id="PatientIDModification">
+      <Comments></Comments>
+      <String Context="Generic_Long">ID MODIFIED</String>
+    </Concept>
+    <Concept Id="Printed">
+      <Comments></Comments>
+      <String Context="Generic_Long">PRINTED</String>
+    </Concept>
+    <Concept Id="ObservationsChanged">
+      <Comments></Comments>
+      <String Context="Generic_Long">OBSERVATION CHANGED</String>
+    </Concept>
+    <Concept Id="BodymarkChanged">
+      <Comments></Comments>
+      <String Context="Generic_Long">BODYMARK CHANGED</String>
+    </Concept>
+    <Concept Id="AnnotationsChanged">
+      <Comments></Comments>
+      <String Context="Generic_Long">ANNOTATIONS CHANGED</String>
+    </Concept>
+    <Concept Id="ReportClosed">
+      <Comments></Comments>
+      <String Context="Generic_Long">REPORT CLOSED</String>
+    </Concept>
+    <Concept Id="ANYPERFORMEDSTATUS">
+      <Comments></Comments>
+      <String Context="Generic_Long">ANY PERFORMED STATUS</String>
+    </Concept>
+    <Concept Id="Failed">
+      <Comments></Comments>
+      <String Context="Generic_Long">FAILED</String>
+    </Concept>
+    <Concept Id="InProgress">
+      <Comments></Comments>
+      <String Context="Generic_Long">IN PROGRESS</String>
+    </Concept>
+    <Concept Id="NotPerformed">
+      <Comments></Comments>
+      <String Context="Generic_Long">NOT PERFORMED</String>
+    </Concept>
+    <Concept Id="PartiallyFailed">
+      <Comments></Comments>
+      <String Context="Generic_Long">PARTIALLY FAILED</String>
+    </Concept>
+    <Concept Id="SuccessfullyCompleted">
+      <Comments></Comments>
+      <String Context="Generic_Long">COMPLETED</String>
+    </Concept>
+    <Concept Id="Pending">
+      <Comments></Comments>
+      <String Context="Generic_Long">PENDING</String>
+    </Concept>
+    <Concept Id="CD">
+      <Comments></Comments>
+      <String Context="Generic_Long">CD/DVD</String>
+    </Concept>
+    <Concept Id="Dicomserver">
+      <Comments></Comments>
+      <String Context="Generic_Long">DICOM SERVER</String>
+    </Concept>
+    <Concept Id="HD">
+      <Comments></Comments>
+      <String Context="Generic_Long">HD</String>
+    </Concept>
+    <Concept Id="LocalArchive">
+      <Comments></Comments>
+      <String Context="Generic_Long">LOCAL ARCHIVE</String>
+    </Concept>
+    <Concept Id="NetworkDir">
+      <Comments></Comments>
+      <String Context="Generic_Long">NETWORK</String>
+    </Concept>
+    <Concept Id="USB1">
+      <Comments></Comments>
+      <String Context="Generic_Long">USB</String>
+    </Concept>
+    <Concept Id="USB">
+      <Comments></Comments>
+      <String Context="Generic_Long">USB</String>
+    </Concept>
+    <Concept Id="Printer">
+      <Comments></Comments>
+      <String Context="Generic_Long">PRINTER</String>
+    </Concept>
+    <Concept Id="MyLabTablet">
+      <Comments></Comments>
+      <String Context="Generic_Long">MYLABTABLET</String>
+    </Concept>
+    <Concept Id="Unspecified">
+      <Comments>Device unspecified</Comments>
+      <String Context="Generic_Long"></String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

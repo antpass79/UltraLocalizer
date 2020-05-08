@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizationResource ComponentNamespace="Report.Toolkit.ReportFactory" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="MESSAGES">
+    <Concept Id="INSERT_DLG_TITLE">
+      <String Context="Generic_Long">Insert text</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>
+

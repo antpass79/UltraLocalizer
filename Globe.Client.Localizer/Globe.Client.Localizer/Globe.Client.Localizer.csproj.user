@@ -9,6 +9,11 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Dialogs\Views\StringEditorDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Page Update="Views\CurrentJobWindowToolBar.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -37,6 +42,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\Views\StringEditorDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

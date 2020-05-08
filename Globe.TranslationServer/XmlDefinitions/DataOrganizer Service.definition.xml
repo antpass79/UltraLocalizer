@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="DataOrganizer Service" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="WRITEERROR">
+      <Comments>Input / output error during copy operation</Comments>
+      <String Context="Generic_Warning">ERROR WRITING ON THE DEVICE</String>
+    </Concept>
+    <Concept Id="PATHTOOLONG">
+      <Comments>Input / output error during copy operation</Comments>
+      <String Context="Generic_Warning">THE SELECTED DESTINATION PATH IS TOO LONG.</String>
+    </Concept>
+    <Concept Id="DISKFULL">
+      <Comments>There is not enough space on the destination device</Comments>
+      <String Context="Generic_Warning">LOW DEVICE SPACE</String>
+    </Concept>
+    <Concept Id="BURNERROR">
+      <Comments>Error burning cd/dvd</Comments>
+      <String Context="Generic_Warning">BURNING ERROR</String>
+    </Concept>
+    <Concept Id="UNKNOWNERROR">
+      <Comments></Comments>
+      <String Context="Generic_Warning">UNKNOWN ERROR</String>
+    </Concept>
+    <Concept Id="GROUPIDERROR">
+      <Comments></Comments>
+      <String Context="Generic_Warning">OPERATION ABORTED DUE TO: </String>
+    </Concept>
+    <Concept Id="STUDYEXISTS">
+      <Comments>The exam is included in the index of the destination archive.
+      </Comments>
+      <String Context="Generic_Warning">STUDY ALREADY PRESENT</String>
+    </Concept>
+    <Concept Id="DESTINETIONPATHEXISTS">
+      <Comments>The exam is not included in the index of the destination archive, but the
+        associated exam directory is included in the file system of the destination archive.
+      </Comments>
+      <String Context="Generic_Warning">DESTINATION PATH ALREADY PRESENT</String>
+    </Concept>
+    <Concept Id="STUDYNOTFOUND">
+      <Comments>
+        The exam to be copied can't be found in the source archive.
+      </Comments>
+      <String Context="Generic_Warning">STUDY NOT FOUND</String>
+    </Concept>
+    <Concept Id="BurnAbort">
+      <Comments>; It is displayed when user executes a native export with error and then open Operations dialog in info area,  to see error details</Comments>
+      <String Context="Generic_Warning">BURNING ABORTED</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

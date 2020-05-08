@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by STEFANO MUGNAI (ESAOTE SpA) -->
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="MeasureComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<LocalizationSection InternalNamespace="Factory">
+		<Concept Id="LOWER EXTREMITY VEINS">
+			<Comments>LOWER EXTREMITY VEINS MEASURE GROUP FOR VASCULAR APPLICATION</Comments>
+			<String Context="TS_SButton">LOWER EXTREMITY VEINS</String>
+		</Concept>
+		<Concept Id="RENAL">
+			<Comments>RENAL MEASURE GROUP FOR VASCULAR APPLICATION</Comments>
+			<String Context="TS_SButton">RENAL</String>
+		</Concept>
+		<Concept Id="CAROTID">
+			<Comments>CAROTID MEASURE GROUP FOR VASCULAR APPLICATION</Comments>
+			<String Context="TS_SButton">CAROTID</String>
+		</Concept>
+		<Concept Id="LOWER EXTREMITY">
+			<Comments>LOWER EXTREMITY MEASURE GROUP FOR VASCULAR APPLICATION</Comments>
+			<String Context="TS_SButton">LOWER EXTREMITY</String>
+		</Concept>
+		<Concept Id="ARTERIAL GRAFT GROUP">
+			<Comments>ARTERIAL GRAFT GROUP MEASURE GROUP FOR VASCULAR APPLICATION</Comments>
+			<String Context="TS_SButton">ARTERIAL GRAFT GROUP</String>
+		</Concept>
+		<Concept Id="UPPER EXTREMITY">
+			<Comments>UPPER EXTREMITY MEASURE GROUP FOR VASCULAR APPLICATION</Comments>
+			<String Context="TS_SButton">UPPER EXTREMITY</String>
+		</Concept>
+		<Concept Id="ABDOMEN">
+			<Comments>ABDOMEN MEASURE GROUP FOR VASCULAR APPLICATION</Comments>
+			<String Context="TS_SButton">ABDOMEN</String>
+		</Concept>
+		<Concept Id="DIALYSIS GRAFT GROUP">
+			<Comments>DIALYSIS GRAFT GROUP MEASURE GROUP FOR VASCULAR APPLICATION</Comments>
+			<String Context="TS_SButton">DIALYSIS GRAFT GROUP</String>
+		</Concept>
+		<Concept Id="AORTA">
+			<Comments>AORTA MEASURE GROUP FOR VASCULAR APPLICATION</Comments>
+			<String Context="TS_SButton">AORTA</String>
+		</Concept>
+		<Concept Id="RIGHT VENTRICLE">
+			<Comments>RIGHT VENTRICLE MEASURE GROUP FOR CARDIAC APPLICATION</Comments>
+			<String Context="TS_SButton">RIGHT VENTRICLE</String>
+		</Concept>
+		<Concept Id="INF. VENA CAVA">
+			<Comments>INF. VENA CAVA MEASURE GROUP FOR CARDIAC APPLICATION</Comments>
+			<String Context="TS_SButton">INF. VENA CAVA</String>
+		</Concept>
+		<Concept Id="CORONARY FLOW">
+			<Comments>CORONARY FLOW IMAGING  MEASURE GROUP FOR CARDIAC APPLICATION</Comments>
+			<String Context="TS_SButton">CORONARY FLOW</String>
+		</Concept>
+		<Concept Id="LEFT VENTRICLE">
+			<Comments>MEASURE GROUP FOR CARDIAC APPLICATION TO STUDY LEFT VENTRICLE</Comments>
+			<String Context="TS_SButton">LEFT VENTRICLE</String>
+		</Concept>
+		<Concept Id="TRICUSPID VALVE">
+			<Comments>MEASURE GROUP FOR CARDIAC APPLICATION TO STUDY TRICUSPID VALVE</Comments>
+			<String Context="TS_SButton">TRICUSPID VALVE</String>
+		</Concept>
+		<Concept Id="LEFT ATRIUM">
+			<Comments>MEASURE GROUP FOR CARDIAC APPLICATION TO STUDY LEFT ATRIUM</Comments>
+			<String Context="TS_SButton">LEFT ATRIUM</String>
+		</Concept>
+		<Concept Id="AORTIC VALVE">
+			<Comments>MEASURE GROUP FOR CARDIAC APPLICATION TO STUDY AORTIC VALVE</Comments>
+			<String Context="TS_SButton">AORTIC VALVE</String>
+		</Concept>
+		<Concept Id="PULMONARY VALVE">
+			<Comments>MEASURE GROUP FOR CARDIAC APPLICATION TO STUDY PULMONARY VALVE</Comments>
+			<String Context="TS_SButton">PULMONARY VALVE</String>
+		</Concept>
+		<Concept Id="ASCENDING AORTA">
+			<Comments>MEASURE GROUP FOR CARDIAC APPLICATION TO STUDY ASCENDING AORTA</Comments>
+			<String Context="TS_SButton">ASCENDING AORTA</String>
+		</Concept>
+		<Concept Id="MITRAL VALVE">
+			<Comments>MEASURE GROUP FOR CARDIAC APPLICATION TO STUDY MITRAL VALVE</Comments>
+			<String Context="TS_SButton">MITRAL VALVE</String>
+		</Concept>
+		<Concept Id="RIGHT ATRIUM">
+			<Comments>MEASURE GROUP FOR CARDIAC APPLICATION TO STUDY RIGHT ATRIUM</Comments>
+			<String Context="TS_SButton">RIGHT ATRIUM</String>
+		</Concept>
+		<Concept Id="GENERIC">
+			<Comments>MEASURE GROUP FOR ANYAPPLICATION</Comments>
+			<String Context="TS_SButton">GENERIC</String>
+		</Concept>
+		<Concept Id="FETAL BIOMETRY">
+			<Comments>MEASURE GROUP FOR OB APPLICATION</Comments>
+			<String Context="TS_SButton">FETAL BIOMETRY</String>
+		</Concept>
+		<Concept Id="1ST TRIM">
+			<Comments>MEASURE GROUP FOR OB APPLICATION</Comments>
+			<String Context="TS_SButton">1ST TRIM</String>
+		</Concept>
+		<Concept Id="MOTHER">
+			<Comments>MEASURE GROUP FOR OB APPLICATION</Comments>
+			<String Context="TS_SButton">MOTHER</String>
+		</Concept>
+		<Concept Id="ROUTINE">
+			<Comments>MEASURE GROUP FOR CARDIO MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">ROUTINE</String>
+		</Concept>
+	<Concept Id="PORTAL VEIN">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">PORTAL VEIN</String>
+		</Concept>
+	<Concept Id="PANCREAS">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">PANCREAS</String>
+		</Concept>
+	<Concept Id="OVARY">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">OVARY</String>
+		</Concept>
+	<Concept Id="PROSTATE">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">PROSTATE</String>
+		</Concept>
+	<Concept Id="LIVER">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">LIVER</String>
+		</Concept>
+	<Concept Id="GALLBLADDER">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">GALLBLADDER</String>
+		</Concept>
+	<Concept Id="GASTROINTESTINAL">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">GASTROINTESTINAL</String>
+		</Concept>
+	<Concept Id="URINARY">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">URINARY</String>
+		</Concept>
+	<Concept Id="KIDNEY">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">KIDNEY</String>
+		</Concept>
+	<Concept Id="UTERUS">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">UTERUS</String>
+		</Concept>
+	<Concept Id="LYMPH NODES">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">LYMPH NODES</String>
+		</Concept>
+	<Concept Id="ADRENAL GLANDS">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">ADRENAL GLANDS</String>
+		</Concept>
+	<Concept Id="CAUDAL VENA CAVA">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">CAUDAL VENA CAVA</String>
+		</Concept>
+		<Concept Id="SPLEEN">
+			<Comments>MEASURE GROUP FOR ABDO VET MOST COMMON MEASURES</Comments>
+			<String Context="TS_SButton">SPLEEN</String>
+		</Concept>
+		<Concept Id="RENAL B-MODE">
+			<Comments>NEW HUMAN ABDOMINAL GROUP [RTC: 10135]</Comments>
+			<String Context="TS_SButton">RENAL B-MODE</String>
+		</Concept>
+		<Concept Id="ORGAN B-MODE">
+			<Comments>NEW HUMAN ABDOMINAL GROUP [RTC: 10135]</Comments>
+			<String Context="TS_SButton">ORGAN B-MODE</String>
+		</Concept>
+		<Concept Id="BLADDER B-MODE">
+			<Comments>NEW HUMAN ABDOMINAL GROUP [RTC: 10135]</Comments>
+			<String Context="TS_SButton">BLADDER B-MODE</String>
+		</Concept>
+		<Concept Id="ABDOMEN DOPPLER">
+			<Comments>NEW HUMAN ABDOMINAL GROUP [RTC: 10135]</Comments>
+			<String Context="TS_SButton">ABDOMEN DOPPLER</String>
+		</Concept>
+		<Concept Id="BREAST LESION">
+			<Comments>NEW HUMAN BREAST GROUP [RTC: 10429]</Comments>
+			<String Context="TS_SButton">BREAST LESION</String>
+		</Concept>		
+		<Concept Id="Events Timing">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Events Timing</String>
+		</Concept>	
+		<Concept Id="LV Dimensions">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">LV Dimensions</String>
+		</Concept>	
+		<Concept Id="Pulmonic Valve">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Pulmonic Valve</String>
+		</Concept>
+		<Concept Id="PISA">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">PISA</String>
+		</Concept>
+		<Concept Id="Volume (LVEF)">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Volume (LVEF)</String>
+		</Concept>
+		<Concept Id="Dimensions">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Dimensions</String>
+		</Concept>
+		<Concept Id="Tricuspid Valve">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Tricuspid Valve</String>
+		</Concept>	
+		<Concept Id="Mass">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Mass</String>
+		</Concept>	
+		<Concept Id="LA/Ao">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">LA/Ao</String>
+		</Concept>
+		<Concept Id="Qp/Qs">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Qp/Qs</String>
+		</Concept>
+		<Concept Id="Aortic Valve">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Aortic Valve</String>
+		</Concept>
+		<Concept Id="Area">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Area</String>
+		</Concept>
+		<Concept Id="Mitral Valve">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Mitral Valve</String>
+		</Concept>
+		<Concept Id="Pulmonary Vein">
+			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+			<String Context="TS_SButton">Pulmonary Vein</String>
+		</Concept>		
+	</LocalizationSection>
+</LocalizationResource>

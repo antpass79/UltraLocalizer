@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="NetworkDirManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="NETWORKDIRECTORIES" >
+      <Comments>In network dir configuration </Comments>
+      <String Context="Generic_Long" >NETWORK DIRECTORIES</String>
+    </Concept>
+
+    <Concept Id="ADD" >
+      <Comments>In network dir configuration</Comments>
+      <String Context="Generic_Medium" >ADD</String>
+    </Concept>
+    <Concept Id="EDIT" >
+      <Comments>In network dir configuration</Comments>
+      <String Context="Generic_Medium" >EDIT</String>
+    </Concept>
+    <Concept Id="REMOVE" >
+      <Comments>In network dir configuration</Comments>
+      <String Context="Generic_Medium" >REMOVE</String>
+    </Concept>
+
+    <Concept Id="NO" >
+      <Comments>In network dir configuration</Comments>
+      <String Context="Generic_Short" >NO</String>
+    </Concept>
+    <Concept Id="YES" >
+      <Comments>In network dir configuration</Comments>
+      <String Context="Generic_Short" >YES</String>
+    </Concept>
+    <Concept Id="AVAILABLE" >
+      <Comments>In network dir configuration, wireless tab, each network listed can assume values like "available", "not available" and "Connected"</Comments>
+      <String Context="Generic_Medium" >AVAILABLE</String>
+    </Concept>
+    <Concept Id="NOT_AVAILABLE" >
+      <Comments>In network dir configuration, wireless tab, each network listed can assume values like "available", "not available" and "Connected"</Comments>
+      <String Context="Generic_Medium" >NOT AVAILABLE</String>
+    </Concept>
+
+    <Concept Id="DESCRIPTION" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >DESCRIPTION</String>
+      <String Context="Generic_Long" >DESCRIPTION</String>
+    </Concept>
+    <Concept Id="PATH" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >PATH</String>
+    </Concept>
+    <Concept Id="USER" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >USER</String>
+    </Concept>
+    <!--$$RC Task 24268--> 
+    <Concept Id="DOMAIN_USER" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >Domain\User</String>
+    </Concept>
+    <Concept Id="PASSWORD" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >PASSWORD</String>
+    </Concept>
+    <!--//$$RC  Task 24269-->
+    <!--<Concept Id="ENCRYPTION" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >ENCRYPTION</String>
+    </Concept>
+    --><!--//$$RC  Task 24269--><!--
+    <Concept Id="AUTENTICATION" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >AUTENTICATION</String>
+    </Concept>-->
+    <!--$$RC Task 24270-->
+    <Concept Id="SHOW_PWD_CHARACTERS" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >Show characters</String>
+    </Concept>
+    <Concept Id="ENABLED" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >ENABLED</String>
+    </Concept>
+    <!--$$RC Task 24488-->
+    <Concept Id="WARNING_SECURITY_WEP" >
+      <Comments>In network dir configuration, network info dialog, it is visualized if wifi is type WEP or OPEN</Comments>
+      <String Context="Generic_Warning" >PLEASE NOTE WEP SECURITY COULD BE COMPROMISED, DO NOT USE SUCH NETWORKS WHEN POSSIBLE.</String>
+    </Concept>
+    <!--$$RC Task 24702-->
+    <Concept Id="SELECT_CERTIFICATE" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >Select Certificate</String>
+    </Concept>
+    <!--$$RC Task 24702-->
+    <Concept Id="CERTIFICATE" >
+      <Comments>In network dir configuration, network info dialog</Comments>
+      <String Context="Generic_Medium" >Certificate</String>
+    </Concept>
+    
+
+    <Concept Id="DESCRIPTION_ALREADY_PRESENT" >
+      <Comments>In network dir configuration, network info dialog, it is visualized if description is already used</Comments>
+      <String Context="Generic_Warning" >DESCRIPTION ALREADY PRESENT IN LIST</String>
+    </Concept>
+    <Concept Id="PATH_ALREADY_PRESENT" >
+      <Comments>In network dir configuration, network info dialog, it is visualized if path is already used</Comments>
+      <String Context="Generic_Warning" >PATH ALREADY PRESENT IN LIST</String>
+    </Concept>
+    <Concept Id="PROBLEM_CONNECTING_NETWORK_DIR" >
+      <Comments>In network dir configuration, network info dialog, it is visualized if the connection is not established</Comments>
+      <String Context="Generic_Warning" >IT ISN'T POSSIBLE TO ESTABLISH THE CONNECTION: CHECK INPUT DATA AND VERIFY THAT REMOTE MACHINE IS TURNED ON</String>
+    </Concept>
+    <Concept Id="DIR_NOT_EXISTS" >
+      <Comments>In network dir configuration, network info dialog, it is visualized if the connection is estabilished but dir does not exist</Comments>
+      <String Context="Generic_Warning" >DIRECTORY DOESN'T EXIST</String>
+    </Concept>
+    <Concept Id="NETWORK_DIR_CONFIGURATION" >
+      <Comments>ITEM IN MENU DIALOG</Comments>
+      <String Context="Generic_Medium" >Network Configuration</String>
+    </Concept>
+    <Concept Id="WIRELESS" >
+      <Comments>WIRELESS TAB TITLE</Comments>
+      <String Context="Generic_Medium" >WIRELESS</String>
+    </Concept>
+    <Concept Id="NETWORK_ID" >
+      <Comments>WIFI tab, title of network id column; also used in connect dialog for hidden wifi networks</Comments>
+      <String Context="Generic_Medium" >NETWORK ID</String>
+    </Concept>
+    <Concept Id="CONNECT_TO" >
+      <Comments>WIFI dialog connection, wifi network name</Comments>
+      <String Context="Generic_Medium" >CONNECT TO</String>
+    </Concept>
+    <Concept Id="AUTO_CONNECTION" >
+      <Comments>WIFI tab, title of auto connection column</Comments>
+      <String Context="Generic_Medium" >AUTO CONNECTION</String>
+    </Concept>
+    <Concept Id="PASS_PHRASE" >
+      <Comments>WIFI tab, dialog of connection to wifi net</Comments>
+      <String Context="Generic_Medium" >PASS PHRASE</String>
+    </Concept>
+    <Concept Id="CONNECTED" >
+      <Comments>WIFI tab, status column of wifi net</Comments>
+      <String Context="Generic_Medium" >CONNECTED</String>
+    </Concept>
+    <Concept Id="SIGNAL" >
+      <Comments>WIFI tab, SIGNAL column of wifi net</Comments>
+      <String Context="Generic_Medium" >SIGNAL</String>
+    </Concept>
+    <Concept Id="SECURE" >
+      <Comments>WIFI tab, SECURE column of wifi net</Comments>
+      <String Context="Generic_Medium" >SECURE</String>
+    </Concept>
+    <!--$$RC Task 24268-->
+    <Concept Id="SECURITY_TYPE" >
+      <Comments>WIFI tab, SECURITY TYPE column of wifi net</Comments>
+      <String Context="Generic_Medium" >Security Type</String>
+    </Concept>
+    <Concept Id="DESCRIPTION_EMPTY" >
+      <Comments>In network dir configuration, network info dialog, it is visualized if description is empty</Comments>
+      <String Context="Generic_Warning" >DESCRIPTION IS EMPTY</String>
+    </Concept>
+
+    <Concept Id="WIRELESS_ENABLED" >
+      <Comments>in wireless tab, wireless enabled checkbox</Comments>
+      <String Context="Generic_Long" >WIRELESS ENABLED</String>
+    </Concept>
+
+    <Concept Id="CONNECT" >
+      <Comments>in wireless tab, connect button</Comments>
+      <String Context="Generic_Medium" >CONNECT</String>
+    </Concept>
+    <Concept Id="DISCONNECT" >
+      <Comments>in wireless tab, disconnect button</Comments>
+      <String Context="Generic_Medium" >DISCONNECT</String>
+    </Concept>
+    <Concept Id="REFRESH_LIST" >
+      <Comments>in wireless tab, REFRESH LIST  button</Comments>
+      <String Context="Generic_Medium" >REFRESH LIST</String>
+    </Concept>
+    <Concept Id="DISABLE_AUTO" >
+      <Comments>in wireless tab, disable auto connection button</Comments>
+      <String Context="Generic_Medium" >DISABLE AUTOCONN.</String>
+    </Concept>
+    <Concept Id="ENABLE_AUTO" >
+      <Comments>in wireless tab, enable auto connection button</Comments>
+      <String Context="Generic_Medium" >ENABLE AUTOCONN.</String>
+    </Concept>
+    <Concept Id="ADD_HIDDEN" >
+      <Comments>in wireless tab, open a dialog to connect to a hidden wifi</Comments>
+      <String Context="Generic_Medium" >ADD A HIDDEN NET</String>
+    </Concept>
+    <Concept Id="CONNECTION_FAILED" >
+      <Comments>in wireless tab, error when connection fails</Comments>
+      <String Context="Generic_Warning" >CONNECTION FAILED. CHECK PASSPHRASE AND CHECK IF NETWORK SECURITY MODE IS SUPPORTED (ASK TO NETWORK ADMINISTRATOR)</String>
+    </Concept>
+    <Concept Id="CONNECTION_FAILED_HARDWARE_PROBLEM" >
+      <Comments>in wireless tab, error when connection fails DUE TO AN HARDWARE PROBLEM</Comments>
+      <String Context="Generic_Warning" >CONNECTION FAILED - MAYBE IT IS DUE TO AN HARDWARE FAILURE - PLEASE CONTACT THE SERVICE TEAM</String>
+    </Concept>
+	<Concept Id="CONNECTION_FAILED_BAD_IP_ADDRESS" >
+      <Comments>in wireless tab, error when connection fails due to a invalid address being assigned by DHCP</Comments>
+      <String Context="Generic_Long" >CONNECTION FAILED BAD IP ADDRESS</String>
+    </Concept>
+    <Concept Id="DISCONNECTION_FAILED" >
+      <Comments>in wireless tab, error when dis-connection fails</Comments>
+      <String Context="Generic_Warning" >DISCONNECTION FAILED</String>
+    </Concept>
+    <Concept Id="DISCONNECTION_FAILED_HARDWARE_PROBLEM" >
+      <Comments>in wireless tab, error when dis-connection fails DUE TO AN HARDWARE PROBLEM</Comments>
+      <String Context="Generic_Warning" >DISCONNECTION FAILED - MAYBE IT IS DUE TO AN HARDWARE FAILURE - PLEASE CONTACT THE SERVICE TEAM</String>
+    </Concept>
+
+    <Concept Id="CONNECTING" >
+      <Comments>in wireless tab, title of progress dialog while executing connection operation</Comments>
+      <String Context="Generic_Medium" >CONNECTING</String>
+    </Concept>
+
+    <Concept Id="DISCONNECTING" >
+    <Comments>in wireless tab, title of progress dialog while executing dis-connection operation</Comments>
+    <String Context="Generic_Medium" >DISCONNECTING</String>
+    </Concept>
+
+    <Concept Id="DOWN" >
+      <Comments>in wireless tab, DOWN button </Comments>
+      <String Context="Generic_Short" >DOWN</String>
+    </Concept>
+    <Concept Id="UP" >
+      <Comments>in wireless tab, UP button </Comments>
+      <String Context="Generic_Short" >UP</String>
+    </Concept>
+    <Concept Id="DELETE" >
+      <Comments>in wireless tab, DELETE button </Comments>
+      <String Context="Generic_Short" >DELETE</String>
+    </Concept>
+
+    <Concept Id="WIFI_NET_ALREADY_IN_LIST" >
+      <Comments>In network dir configuration, add hidden wifi dialog, it is visualized if SSID is already in wifi list</Comments>
+      <String Context="Generic_Warning" >WIFI NET SSID ALREADY IN LIST</String>
+    </Concept>
+
+    <Concept Id="ENABLE_WIRELESS_ERROR" >
+      <Comments>in wireless tab, error message that can occur when enabling wireless device</Comments>
+      <String Context="Generic_Warning" >ENABLE WIRELESS DEVICE OPERATION FAILED</String>
+    </Concept>
+
+    <Concept Id="DISABLE_WIRELESS_ERROR" >
+      <Comments>in wireless tab, error message that can occur when disabling wireless device</Comments>
+      <String Context="Generic_Warning" >DISABLE WIRELESS DEVICE OPERATION FAILED</String>
+    </Concept>
+
+    <Concept Id="WIRELESS_DEVICE_ENABLE" >
+      <Comments>in wireless tab, title of progress dialog while enabling wireless device operation</Comments>
+      <String Context="Generic_Medium" >ENABLING WIRELESS DEVICE</String>
+    </Concept>
+
+    <Concept Id="WIRELESS_DEVICE_DISABLE" >
+      <Comments>in wireless tab, title of progress dialog while disabling wireless device operation</Comments>
+      <String Context="Generic_Medium" >DISABLING WIRELESS DEVICE</String>
+    </Concept>
+	
+	<Concept Id="WIRELESS_NETWORKS_REFRESH" >
+      <Comments>in wireless tab, title of waiting dialog while refreshing wireless networks list</Comments>
+      <String Context="Generic_Long" >WIRELESS NETWORKS REFRESH</String>
+    </Concept>
+
+    <Concept Id="ADDRESS_NOT_VALID" >
+      <Comments>In IP tab, while setting manual IP, when there is an invalid address</Comments>
+      <String Context="Generic_Warning" >ADDRESS_NOT_VALID</String>
+    </Concept>
+
+    <Concept Id="OPERATION_FAILED" >
+      <Comments>In IP tab, while setting DHCP or manual and operation completed successfully</Comments>
+      <String Context="Generic_Warning" >OPERATION FAILED</String>
+    </Concept>
+
+    <Concept Id="OPERATION_COMPLETED" >
+      <Comments>In IP tab, while setting DHCP or manual and operation completed successfully</Comments>
+      <String Context="Generic_Warning" >OPERATION COMPLETED SUCCESSFULLY</String>
+    </Concept>
+
+    <Concept Id="IP_CONFIG" >
+    <Comments>IP CONFIGURATION  TAB TITLE</Comments>
+    <String Context="Generic_Medium" >IP CONFIGURATION</String>
+    </Concept>
+
+    <Concept Id="LAN" >
+      <Comments>IP CONFIGURATION  LAN SECTION TITLE</Comments>
+      <String Context="Generic_Medium" >LAN</String>
+    </Concept>
+    
+    <Concept Id="OPERATION_NOT_ALLOWED" >
+      <Comments>In IP tab, it occurs when user want set dhcp or ip, while a wifi net is connected</Comments>
+      <String Context="Generic_Warning" >OPERATION NOT ALLOWED: DISCONNECT THE CURRENT WIFI NETWORK THAT IS CONNECTED AT THE MOMENT</String>
+    </Concept>
+
+    <Concept Id="IP_LABEL" >
+      <Comments>IP CONFIGURATION, IP FIELD NAME</Comments>
+      <String Context="Generic_Medium" >IP</String>
+    </Concept>
+    <Concept Id="SUB_MASK_LABEL" >
+      <Comments>IP CONFIGURATION, subnet mask FIELD NAME</Comments>
+      <String Context="Generic_Medium" >SUB. MASK</String>
+    </Concept>
+    <Concept Id="DEF_GATEWAY_LABEL" >
+      <Comments>IP CONFIGURATION, default gateway FIELD NAME</Comments>
+      <String Context="Generic_Medium" >DEF. GATEWAY</String>
+    </Concept>
+    <Concept Id="DHCP" >
+      <Comments>IP CONFIGURATION, DHCP radio button</Comments>
+      <String Context="Generic_Medium" >DHCP</String>
+    </Concept>
+    <Concept Id="MANUAL_IP" >
+      <Comments>IP CONFIGURATION, MANUAL IP radio button</Comments>
+      <String Context="Generic_Medium" >MANUAL IP</String>
+    </Concept>
+    <Concept Id="APPLY" >
+      <Comments>In Ip config tab, it is the label of button used to apply ip numbers to the system</Comments>
+      <String Context="Generic_Medium" >APPLY</String>
+    </Concept>
+    <Concept Id="INVALIDPATH" >
+      <Comments>warning message displayed if the path, edited in add/edit network directory, is not valid</Comments>
+      <String Context="Generic_Warning" >INVALID PATH</String>
+    </Concept>
+    <Concept Id="VERIFY_CONNECTION_SUCCESS" >
+      <Comments>message displayed if the verification of remote dir connection is completed successfully</Comments>
+      <String Context="Generic_Warning" >VERIFICATION SUCCESSFULLY COMPLETED</String>
+    </Concept>
+    <Concept Id="VERIFICATION" >
+      <Comments>title of waiting progress during verification of remote dir connection</Comments>
+      <String Context="Generic_Medium" >VERIFICATION</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

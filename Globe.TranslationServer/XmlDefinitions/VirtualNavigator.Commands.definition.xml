@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="VirtualNavigator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Commands">
+      <Concept Id="NAV/RT">
+      <Comments>Switch the layout from Virtual Navigator to RT and back</Comments>
+      <String Context="TS_AButton">NAV/RT</String>
+    </Concept >	
+    <Concept Id="VNTab">
+      <Comments>Virtual Navigator tab label</Comments>
+      <String Context="TS_TabName">Virtual Navigator</String>
+    </Concept >
+    <Concept Id="VirtualBiopsyTab">
+      <Comments>Virtual Navigator tab label</Comments>
+      <String Context="TS_TabName">Virtual Biopsy</String>
+    </Concept >
+    <Concept Id="BodyMapTab">
+      <Comments>Virtual Navigator tab label</Comments>
+      <String Context="TS_TabName">BodyMap</String>
+    </Concept >
+    <Concept Id="3DPanTab">
+      <Comments>Virtual Navigator tab label</Comments>
+      <String Context="TS_TabName">3DPanoramic</String>
+    </Concept >	
+	<Concept Id="BreastNavTab">
+      <Comments>Virtual Navigator tab label</Comments>
+      <String Context="TS_TabName">BreastNav</String>
+    </Concept >
+	<Concept Id="Abort">
+      <Comments>Abort NaviSuite.exe running computations</Comments>
+      <String Context="TS_TabName">Abort</String>
+    </Concept >	
+	<Concept Id="NavigatorClip">
+      <Comments>Starts/Stops a clip from Virtual Navigator</Comments>
+      <String Context="Generic_Medium">NavigatorClip</String>
+    </Concept >
+	<Concept Id="NavigatorConfiguration">
+      <Comments>Virtual Navigator configuration [RTC 15581]</Comments>
+      <String Context="Generic_Medium">NavigatorConfig</String>
+    </Concept >	
+	<Concept Id="VNavArchiveAutoSelection">
+      <Comments>Virtual Navigator archive automatic selection [RTC 15581]</Comments>
+      <String Context="Generic_Long">VNavArchiveAutoSelection</String>
+    </Concept>
+	<Concept Id="BodyMapArchiveAutoSelection">
+      <Comments>Body Map archive automatic selection [RTC 15581]</Comments>
+      <String Context="Generic_Long">BodyMapArchiveAutoSelection</String>
+    </Concept>	
+	<Concept Id="ApplicationFamily">
+      <Comments>GroupBox to identify the Exe family</Comments>
+      <String Context="Generic_Long">ApplicationFamily</String>
+    </Concept>	
+	<Concept Id="FusionNav">
+      <Comments>Navisuite executable tools</Comments>
+      <String Context="Generic_Long">FusionNav</String>
+    </Concept>	
+	<Concept Id="BreastNav">
+      <Comments>Breast executable tools</Comments>
+      <String Context="Generic_Long">BreastNav</String>
+    </Concept>
+  <Concept Id="NAV_CONFIGURATION_CHANGED_MESSAGE">
+     <String Context="Generic_Warning">Application Family is changed. To activate your modifications, please restart the unit.</String>
+  </Concept>
+	<Concept Id="VNTabZH">
+      <Comments>Fusion tab label</Comments>
+      <String Context="TS_TabName">Fusion</String>
+    </Concept >
+  </LocalizationSection>
+</LocalizationResource>

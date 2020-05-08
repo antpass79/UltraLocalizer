@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="StressEcho" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="General">
+    <Concept Id="CINE MOVE">
+      <Comments>Cine Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">CINE LOOP</String>
+    </Concept >
+    <Concept Id="POINTER">
+      <Comments>Pointer Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">POINTER</String>
+    </Concept >
+    <Concept Id="ZOOM MOVE">
+      <Comments>Zoom Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">PAN ZOOM</String>
+    </Concept >  
+    <Concept Id="HR">
+      <Comments>Hearth Rate</Comments>
+      <String Context="MD_RT11MeasName">HR</String>
+    </Concept> 
+    <Concept Id="PLEASE WAIT">
+      <Comments>Please wait message</Comments>
+      <String Context="Generic_Long">Please wait...</String>
+    </Concept>
+    <Concept Id="ESTIMATED TIME">
+      <Comments>Estimated time</Comments>
+      <String Context="Generic_Long">Estimated time</String>
+    </Concept>  
+  </LocalizationSection> 
+  
+  
+  <LocalizationSection InternalNamespace="WarningDialog">
+    <Concept Id="Please_fill_all_fields_of_the_form">
+      <String Context="Generic_Warning">Please fill all fields of the form.</String>
+    </Concept>
+    <Concept Id="Please_start_a_new_exam">
+      <String Context="Generic_Warning">To activate your modifications, please start a new exam.</String>
+    </Concept>  
+    <Concept Id="Please_fill_the_fields">
+      <String Context="Generic_Warning">Please, fill the field STAGE as it cannot be left blank</String>
+    </Concept>
+    <Concept Id="Duplicated_views_not_allowed">
+      <String Context="Generic_Warning">Duplicated views on the same stage not allowed</String>
+    </Concept>
+    <Concept Id="THIS_PROCEDURE_WILL_TERMINATE_THE_ANALYSIS">
+      <String Context="Generic_Warning">THIS PROCEDURE WILL TERMINATE THE ANALYSIS</String>
+    </Concept>
+    <Concept Id="DO_YOU_WANT_TO_SAVE">
+      <String Context="Generic_Warning">DO YOU WANT TO SAVE THE ACQUIRED STAGES?</String>
+    </Concept>
+    <Concept Id="The_Wall_Motion_analysis_is_ended">
+      <String Context="Generic_Warning">The Wall Motion analysis is ended.</String>
+    </Concept>
+    <Concept Id="Pressing_OK_the exam_will_be_terminated">
+      <String Context="Generic_Warning">Pressing OK, the exam will be terminated</String>
+    </Concept>
+    <Concept Id="Pressing_CANCEL_it_is_possible_to_reacquire_the_last_capture">
+      <String Context="Generic_Warning">Pressing CANCEL, it is possible to reacquire the last capture</String>
+    </Concept>
+    <Concept Id="DO_YOU_WANT_TO_DELETE_THE_CURRENT_STAGE">
+      <String Context="Generic_Warning">DO YOU WANT TO DELETE THE CURRENT STAGE?</String>
+    </Concept>
+    <Concept Id="DO_YOU_WANT_TO_DELETE_THE_ACQUISITION">
+      <String Context="Generic_Warning">Do you want to delete the acquisition?</String>
+    </Concept>
+    <Concept Id="THE_LOOPS_NOT_ASSIGNED_WILL_BE_DELETED_PERMANENTLY">
+      <String Context="Generic_Warning">The loops not assigned will be deleted permanently</String>
+    </Concept>
+    <Concept Id="REVIEW_NOT_POSSIBLE">
+      <String Context="Generic_Warning">The review of the exam is not possible</String>
+    </Concept>
+  </LocalizationSection>
+  
+  <LocalizationSection InternalNamespace="HelpAreaMessages"> 
+    <Concept Id="DESELECT_ONE_VIEW_OR_STAGE">
+      <Comments>Warning to be displayed when the user wants add a view or stage but the screen is full</Comments>
+      <String Context="Generic_Warning">Please deselect one view/stage, before selecting another one</String>
+    </Concept >  
+    <Concept Id="VIEW_ALREADY_EXISTS">
+      <Comments>Warning to be displayed when exam already contains a view with the selected name</Comments>
+      <String Context="Generic_Warning">This exam already contains a view with the selected name</String>
+    </Concept > 
+    <Concept Id="LOOPS_WILL_BE_DELETED">
+      <Comments>Warning to be displayed when a loop is to be deleted in Continuous Capture editing</Comments>
+      <String Context="Generic_Warning">The loops will be permanently deleted</String>
+    </Concept > 
+    
+    <Concept Id="Only_a_consecutive_sequence_is_possible">
+      <Comments>Warning to be displayed in Continuous Capture Editing when the loops are not consecutive</Comments>
+      <String Context="Generic_Warning">Only a consecutive sequence is possible</String>
+    </Concept >
+    
+    <Concept Id="Exceeded_the_maximum_number_of_loops">
+      <Comments>Warning to be displayed in Continuous Capture Editing when the loops associated with a proiection is greater then 8</Comments>
+      <String Context="Generic_Warning">Exceeded the maximum number of loops associated with a projection</String>
+    </Concept >
+    
+    <Concept Id="ALREADY_SELECTED_A_SEQUENCE">
+      <Comments>Warning to be displayed in Continuous Capture Editing when a sequence is already selected</Comments>
+      <String Context="Generic_Warning">You have already selected a sequence for this projetion. Press OK if you want to substitute the previous one</String>
+    </Concept >
+    
+  </LocalizationSection>
+  
+  
+  <LocalizationSection InternalNamespace="Segments">
+    <Concept Id="ApicalAnt">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APIC ANT</String>
+    </Concept>
+    <Concept Id="ApicalSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APIC SEP</String>
+    </Concept>
+    <Concept Id="ApicalInf">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APIC INF</String>
+    </Concept>
+    <Concept Id="ApicalLat">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APIC LAT</String>
+    </Concept>
+    <Concept Id="Apical">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APICAL</String>
+    </Concept>
+    <Concept Id="BasalAnt">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS ANT</String>
+    </Concept>
+    <Concept Id="BasalAntSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BASANTSEP</String>
+    </Concept>
+    <Concept Id="BasalInf">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS INF</String>
+    </Concept>
+    <Concept Id="BasalLat">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS LAT</String>
+    </Concept>
+    <Concept Id="BasalPost">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS POST</String>
+    </Concept>
+    <Concept Id="BasalSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS SEP</String>
+    </Concept>
+    <Concept Id="MidAnt">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID ANT</String>
+    </Concept>
+    <Concept Id="MidAntSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MIDANTSEP</String>
+    </Concept>
+    <Concept Id="MidInf">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID INF</String>
+    </Concept>
+    <Concept Id="MidLat">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID LAT</String>
+    </Concept>
+    <Concept Id="MidPost">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID POST</String>
+    </Concept>
+    <Concept Id="MidSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID SEP</String>
+    </Concept>
+  </LocalizationSection>
+  
+  
+  <LocalizationSection InternalNamespace="StressEchoScores">
+    <Concept Id="UnableToInterpret">
+      <Comments>score name</Comments>
+      <String Context="Generic_Medium">UNABLE EV</String>
+    </Concept>
+    <Concept Id="Normal">
+      <Comments>score name</Comments>
+      <String Context="Generic_Medium">NORMAL</String>
+    </Concept>
+    <Concept Id="Hypokinetic">
+      <Comments>score name</Comments>
+      <String Context="Generic_Medium">HYPOKINETIC</String>
+    </Concept>
+    <Concept Id="Akinetic">
+      <Comments>score name</Comments>
+      <String Context="Generic_Medium">AKINETIC</String>
+    </Concept>
+    <Concept Id="Dyskinetic">
+      <Comments>score name</Comments>
+      <String Context="Generic_Medium">DYSKINETIC</String>
+    </Concept>
+    <Concept Id="Aneurysmal">
+      <Comments>score name</Comments>
+      <String Context="Generic_Medium">ANEURYSMAL</String>
+    </Concept>
+    <Concept Id="Akinetic_scar">
+      <Comments>score name</Comments>
+      <String Context="Generic_Medium">AKIN/SCAR</String>
+    </Concept>
+    <Concept Id="Dyskinetic_scar">
+      <Comments>score name</Comments>
+      <String Context="Generic_Medium">DYSK/SCAR</String>
+    </Concept>
+    <Concept Id="NotVisited">
+      <Comments>score name</Comments>
+      <String Context="Generic_Medium">NOT VISITED</String>
+    </Concept>
+    <Concept Id="AllNormal">
+      <Comments>Command to set all the segments to normal</Comments>
+      <String Context="TS_AButton">ALL NORMAL</String>
+    </Concept>
+  </LocalizationSection>
+  
+  
+  <LocalizationSection InternalNamespace="Report">
+    
+    <Concept Id="REPORT_TITLE">
+      <String Context="Generic_Medium">WALL MOTION SCORE</String>
+    </Concept>
+    <Concept Id="Legend">
+      <String Context="Generic_Medium">LEGEND</String>
+    </Concept>
+    <Concept Id="Segments">
+      <String Context="Generic_Medium">SEGMENTS</String>
+    </Concept>
+    <Concept Id="Scores">
+      <String Context="Generic_Medium">SCORES</String>
+    </Concept>
+    <Concept Id="NORMAL_MUSCLE_PERCENTAGE">
+      <String Context="Generic_Medium">NORMAL MUSCLE PERCENTAGE</String>
+    </Concept>
+    <Concept Id="WMSI">
+      <Comments>Wall Motion Score Index</Comments>
+      <String Context="Generic_Medium">WMSI</String>
+    </Concept>
+    
+    <Concept Id="UnableToEvaluate">
+      <Comments>medium score name</Comments>
+      <String Context="Generic_Medium">UNABLE TO EVALUATE</String>
+    </Concept>
+    <Concept Id="Normal">
+      <Comments>medium score name</Comments>
+      <String Context="Generic_Medium">NORMAL</String>
+    </Concept>
+    <Concept Id="Hypokinetic">
+      <Comments>medium score name</Comments>
+      <String Context="Generic_Medium">HYPOKINETIC</String>
+    </Concept>
+    <Concept Id="Akinetic">
+      <Comments>medium score name</Comments>
+      <String Context="Generic_Medium">AKINETIC</String>
+    </Concept>
+    <Concept Id="Dyskinetic">
+      <Comments>medium score name</Comments>
+      <String Context="Generic_Medium">DYSKINETIC</String>
+    </Concept>
+    <Concept Id="Aneurysmal">
+      <Comments>medium segment name</Comments>
+      <String Context="Generic_Medium">ANEURYSMAL</String>
+    </Concept>
+    <Concept Id="Akinetic_with_scar">
+      <Comments>medium score name</Comments>
+      <String Context="Generic_Medium">AKINETIC WITH SCAR</String>
+    </Concept>
+    <Concept Id="Dyskinetic_with_scar">
+      <Comments>medium score name</Comments>
+      <String Context="Generic_Medium">DYSKINETIC WITH SCAR</String>
+    </Concept>
+    <Concept Id="NotVisited">
+      <Comments>medium score name</Comments>
+      <String Context="Generic_Medium">NOT VISITED</String>
+    </Concept>
+    
+    <Concept Id="BAS_ANT">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">BAS ANT</String>
+    </Concept>
+    <Concept Id="BAS_ANT_SEP">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">BAS ANT SEP</String>
+    </Concept>
+    <Concept Id="BAS_SEP">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">BAS SEP</String>
+    </Concept>
+    <Concept Id="BAS_INF">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">BAS INF</String>
+    </Concept>
+    <Concept Id="BAS_POST">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">BAS POST</String>
+    </Concept>
+    <Concept Id="BAS_LAT">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">BAS LAT</String>
+    </Concept>
+    <Concept Id="MID_ANT">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">MID ANT</String>
+    </Concept>
+    <Concept Id="MID_ANT_SEP">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">MID ANT SEP</String>
+    </Concept>
+    <Concept Id="MID_SEP">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">MID SEP</String>
+    </Concept>
+    <Concept Id="MID_INF">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">MID INF</String>
+    </Concept>
+    <Concept Id="MID_POST">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">MID POST</String>
+    </Concept>
+    <Concept Id="MID_LAT">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">MID LAT</String>
+    </Concept>
+    <Concept Id="APIC_ANT">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">APIC ANT</String>
+    </Concept>
+    <Concept Id="APIC_SEP">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">APIC SEP</String>
+    </Concept>
+    <Concept Id="APIC_INF">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">APIC INF</String>
+    </Concept>
+    <Concept Id="APIC_LAT">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">APIC LAT</String>
+    </Concept>
+    <Concept Id="APEX">
+      <Comments>medium segments name</Comments>
+      <String Context="Generic_Medium">APEX</String>
+    </Concept>
+  </LocalizationSection>
+  
+  <LocalizationSection InternalNamespace="DicomProtocols">
+    <Concept Id="Cicloergometer">
+      <Comments>Item used on the "Dicom Protocol" Combo Box</Comments>
+      <String Context="Generic_Medium">Cicloergometer</String>
+    </Concept>
+    <Concept Id="Dipyridamole">
+      <Comments>Item used on the "Dicom Protocol" Combo Box</Comments>
+      <String Context="Generic_Medium">Dipyridamole</String>
+    </Concept>
+    <Concept Id="Dobutamine">
+      <Comments>Item used on the "Dicom Protocol" Combo Box</Comments>
+      <String Context="Generic_Medium">Dobutamine</String>
+    </Concept>
+    <Concept Id="None">
+      <Comments>Item used to indicate any dicom protocol</Comments>
+      <String Context="Generic_Medium">None</String>
+    </Concept>
+  </LocalizationSection>
+  
+  <LocalizationSection InternalNamespace="DicomStages">
+    <Concept Id="BASELINE_STATE">
+      <Comments>Item used on the "Dicom Stage" Combo Box</Comments>
+      <String Context="Generic_Medium">BASELINE STATE</String>
+    </Concept>
+    <Concept Id="STRESS_STATE">
+      <Comments>Item used on the "Dicom Stage" Combo Box</Comments>
+      <String Context="Generic_Medium">STRESS STATE</String>
+    </Concept>
+    <Concept Id="RECOVERY_STATE">
+      <Comments>Item used on the "Dicom Stage" Combo Box</Comments>
+      <String Context="Generic_Medium">RECOVERY STATE</String>
+    </Concept>
+  </LocalizationSection>
+  
+  <LocalizationSection InternalNamespace="UnitOfMeasure">
+    <Concept Id="ms">
+      <String Context="Generic_Short">ms</String>
+    </Concept>
+    <Concept Id="s">
+      <Comments>Unita` di misura dei secondi</Comments>
+      <String Context="Generic_Short">s</String>
+    </Concept>
+  </LocalizationSection>
+  
+</LocalizationResource>

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizationResource ComponentNamespace="Observations" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="CONFSETNAMES">
+    <Concept Id="Default">
+      <String Context="Generic_Long">Default</String>
+    </Concept>
+    <Concept Id="ObservationsConfiguration">
+      <String Context="Generic_Long">Observations</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="REPORT">
+    <Concept Id="MainTitle">
+      <String Context="Generic_Long">OBSERVATIONS</String>
+    </Concept>
+	    <Concept Id="GenericTitle">
+      <String Context="Generic_Long">FINAL OBSERVATIONS</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="MESSAGES">
+    <Concept Id="Empty_Config">
+      <String Context="Generic_Long">Loading empty configuration</String>
+    </Concept>
+    <Concept Id="NewExam_Activation">
+      <String Context="Generic_Warning">Changes made on fields will be applied when starting a new exam</String>
+    </Concept>
+    <Concept Id="ConfSetInUse">
+      <String Context="Generic_Warning">Canot delete configuration because it is currently in use</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="EDITOR_UI">
+    <Concept Id="AddFieldButtonLabel">
+      <String Context="Generic_Medium">Add field</String>
+    </Concept>
+    <Concept Id="AddPhraseButtonLabel">
+      <String Context="Generic_Medium">Add phrase</String>
+    </Concept>
+    <Concept Id="FieldHeader">
+      <String Context="Generic_Medium">Fields</String>
+    </Concept>
+    <Concept Id="PhraseHeader">
+      <String Context="Generic_Medium">Phrases</String>
+    </Concept>
+    <Concept Id="NewFieldText">
+      <String Context="Generic_Medium">New field</String>
+    </Concept>
+    <Concept Id="NewPhraseText">
+      <String Context="Generic_Medium">New phrase</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

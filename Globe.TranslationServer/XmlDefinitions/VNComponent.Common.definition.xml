@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="VirtualNavigator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Common">
+    <!--<Concept Id="Close">
+      <Comments>Close tab  command</Comments>
+      <String Context="TS_AButton">Close Exam</String>
+    </Concept >-->    
+  </LocalizationSection>
+</LocalizationResource>

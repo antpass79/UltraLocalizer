@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="WorksheetComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Observations">
+    <Concept Id="AllNormal">
+      <String Context="Generic_Medium">ALL NORMAL</String>
+    </Concept>
+    <Concept Id="ClearObs">
+      <String Context="Generic_Medium">CLEAR</String>
+    </Concept> 
+    <Concept Id="NotValid">
+      <String Context="Generic_Medium">-</String>
+    </Concept>
+    <Concept Id="Normal">
+      <String Context="Generic_Medium">Normal</String>
+    </Concept>
+    <Concept Id="Abnormal">
+      <String Context="Generic_Medium">Abnormal</String>
+    </Concept>
+    <Concept Id="UnableToEvaluate">
+      <String Context="Generic_Medium">Unable to Evaluate</String>
+    </Concept>
+    <Concept Id="Cephalic">
+      <String Context="Generic_Medium">Cephalic</String>
+    </Concept>
+    <Concept Id="Breech">
+      <String Context="Generic_Medium">Breech</String>
+    </Concept>
+      <Concept Id="TransverseLie">
+      <String Context="Generic_Medium">Transverse lie</String>
+    </Concept>
+    <Concept Id="ObliqueLie">
+      <String Context="Generic_Medium">Oblique lie</String>
+    </Concept>
+    <Concept Id="Peripheral">
+      <String Context="Generic_Medium">Peripheral</String>
+    </Concept>
+    <Concept Id="Midline">
+      <String Context="Generic_Medium">Midline</String>
+    </Concept>
+     <Concept Id="Left">
+      <String Context="Generic_Medium">Left</String>
+    </Concept>
+    <Concept Id="Right">
+      <String Context="Generic_Medium">Right</String>
+    </Concept>
+    <Concept Id="PlacentaGrade0">
+      <String Context="Generic_Medium">0</String>
+    </Concept>
+    <Concept Id="PlacentaGrade1">
+      <String Context="Generic_Medium">1</String>
+    </Concept>
+   <Concept Id="PlacentaGrade2">
+      <String Context="Generic_Medium">2</String>
+    </Concept>
+    <Concept Id="PlacentaGrade3">
+      <String Context="Generic_Medium">3</String>
+    </Concept>
+    <Concept Id="Anterior">
+      <String Context="Generic_Medium">Anterior</String>
+    </Concept>
+    <Concept Id="Posterior">
+      <String Context="Generic_Medium">Posterior</String>
+    </Concept>
+    <Concept Id="Fundus">
+      <String Context="Generic_Medium">Fundus</String>
+    </Concept>
+    <Concept Id="Central">
+      <String Context="Generic_Medium">Central</String>
+    </Concept>
+     <Concept Id="Low">
+      <String Context="Generic_Medium">Low</String>
+    </Concept>
+    <Concept Id="Previa">
+      <String Context="Generic_Medium">Previa</String>
+    </Concept>
+    <Concept Id="LateralVentricles">
+      <String Context="Generic_Medium">Lateral Ventricles</String>
+    </Concept>
+    <Concept Id="Cerebellum">
+      <String Context="Generic_Medium">Cerebellum</String>
+    </Concept>
+    <Concept Id="CisternaMagna">
+      <String Context="Generic_Medium">CisternaMagna</String>
+    </Concept>
+    <Concept Id="UpperLip">
+      <String Context="Generic_Medium">UpperLip</String>
+    </Concept>
+    <Concept Id="Cervix">
+      <String Context="Generic_Medium">Cervix</String>
+    </Concept> 
+    <Concept Id="LeftAdnexa">
+      <String Context="Generic_Medium">LeftAdnexa</String>
+    </Concept>
+    <Concept Id="RightAdnexa">
+      <String Context="Generic_Medium">RightAdnexa</String>
+    </Concept>
+   
+    <Concept Id="FetalHeadAnatomy">
+      <String Context="Generic_Medium">Fetal Head Anatomy</String>
+    </Concept>
+     <Concept Id="FetalDescription">
+      <String Context="Generic_Medium">Fetal Description</String>
+    </Concept>
+    <Concept Id="MaternalAnatomy">
+      <String Context="Generic_Medium">Maternal Anatomy</String>
+    </Concept>
+    <Concept Id="FetalHeart">
+      <String Context="Generic_Medium">Fetal Heart</String>
+    </Concept>
+    <Concept Id="FetalAbdomen">
+      <String Context="Generic_Medium">Fetal Abdomen</String>
+    </Concept>
+    <Concept Id="LvOutflowTract">
+      <String Context="Generic_Medium">Lv Out flow Tract</String>
+    </Concept>
+    <Concept Id="RvOutflowTract">
+      <String Context="Generic_Medium">Rv Outflow Tract</String>      
+    </Concept>
+    <Concept Id="FourChambers">
+      <String Context="Generic_Medium">Four Chambers</String>
+    </Concept>
+    <Concept Id="AorticArch">
+      <String Context="Generic_Medium">Aortic Arch</String>
+    </Concept>
+    <Concept Id="DuctalArch">
+      <String Context="Generic_Medium">Ductal Arch</String>
+    </Concept>
+    <Concept Id="HeartRhy">
+      <String Context="Generic_Medium">Heart Rhy</String>
+    </Concept>
+    <Concept Id="FetalPosition">
+      <String Context="Generic_Medium">Fetal Position</String>
+    </Concept>
+    <Concept Id="CordInsertion">
+      <String Context="Generic_Medium">Cord Insertion</String>
+    </Concept>
+    <Concept Id="FetalHead">
+      <String Context="Generic_Medium">Fetal Head</String>
+    </Concept>
+    <Concept Id="PlacentaDegree">
+      <String Context="Generic_Medium">Placenta Degree</String>
+    </Concept>
+    <Concept Id="PlacentaLocationH">
+      <String Context="Generic_Medium">Placenta LocationH</String>
+    </Concept>
+    <Concept Id="PlacentaLoocationV">
+      <String Context="Generic_Medium">Placenta Loocation V</String>
+    </Concept> 
+
+   <Concept Id="LeftKeydney">
+    <String Context="Generic_Medium">Left Keydney</String>
+   </Concept>
+    <Concept Id="RightKeydney">
+      <String Context="Generic_Medium">Right Keydney</String>
+    </Concept>
+    <Concept Id="Stomach">
+      <String Context="Generic_Medium">Stomach</String>
+    </Concept>
+    <Concept Id="BladdertAdnexa">
+      <String Context="Generic_Medium">Bladdert Adnexa</String>
+    </Concept>
+    <Concept Id="Bowel">
+      <String Context="Generic_Medium">Bowel</String>
+    </Concept>
+    <Concept Id="FetalSpine">
+      <String Context="Generic_Medium">Fetal Spine</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>
+
+

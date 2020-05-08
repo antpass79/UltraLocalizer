@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="HospitalInfo" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="HOSPITAL_NAME" >
+      <Comments>Hospital info configuration</Comments>
+      <String Context="Generic_Long" >HOSPITAL</String>
+    </Concept >
+    <Concept Id="HospitalNameReport" >
+      <Comments>Hospital info configuration</Comments>
+      <String Context="Generic_Long" >HOSPITAL</String>
+    </Concept >
+    <Concept Id="AdditionalInfo" >
+      <Comments>Hospital info configuration</Comments>
+      <String Context="Generic_Long" >ADDITIONAL INFO</String>
+    </Concept >
+    <Concept Id="HOSPITAL_INFO_CONFIGURATION" >
+      <Comments>item in Menu dialog</Comments>
+      <String Context="Generic_Medium" >Hospital Info</String>
+    </Concept>
+    <Concept Id="DEPARTMENT" >
+      <Comments>department string</Comments>
+      <String Context="Generic_Long" >DEPARTMENT</String>
+    </Concept>
+    <Concept Id="STATION" >
+      <Comments>department string</Comments>
+      <String Context="Generic_Long" >STATION</String>
+    </Concept>
+    <Concept Id="BROWSE_USB" >
+      <Comments>department string</Comments>
+      <String Context="Generic_Long" >BROWSE USB</String>
+    </Concept>
+    <Concept Id="HOSPITAL_LOGO" >
+      <Comments>Hospital logo string</Comments>
+      <String Context="Generic_Long" >HOSPITAL LOGO</String>
+    </Concept>
+    <Concept Id="CONTACT_DETAILS" >
+      <Comments>CONTACT DETAILS string</Comments>
+      <String Context="Generic_Long" >CONTACT DETAILS</String>
+    </Concept>
+    <Concept Id="OTHER" >
+      <Comments>OTHER string</Comments>
+      <String Context="Generic_Long" >OTHER</String>
+    </Concept>
+    <Concept Id="SELECT_IMAGE" >
+      <Comments>SELECT IMAGE button string</Comments>
+      <String Context="Generic_Medium" >SELECT IMAGE</String>
+    </Concept>
+    <Concept Id="REMOVE_IMAGE" >
+      <Comments>REMOVE IMAGE button string</Comments>
+      <String Context="Generic_Medium" >REMOVE IMAGE</String>
+    </Concept>
+    <Concept Id="USB_BROWSE_WARNING" >
+      <Comments>Warning message when usb file path is wrong, for example a folder is selected instead of a jpeg file</Comments>
+      <String Context="Generic_Warning" >PLEASE, SELECT A JPEG, BMP OR PNG IMAGE FILE</String>
+    </Concept>
+    <Concept Id="IMAGE_FILE_DISPLAY_WARNING" >
+      <Comments>Warning message when it is not possible to display the selected image file, for example because this file is corrupted</Comments>
+      <String Context="Generic_Warning" >PLEASE, CHECK IF SELECTED IMAGE FILE IS VALID AND IS NOT CORRUPTED</String>
+    </Concept>
+    <Concept Id="ReportInfo" >
+      <Comments>Report info group box</Comments>
+      <String Context="Generic_Long" >REPORT INFO</String>
+    </Concept>
+    <Concept Id="CenterId">
+      <Comments>Center id group box</Comments>
+      <String Context="Generic_Long" >CENTER ID</String>
+    </Concept>
+    <Concept Id="DicomHeader">
+      <Comments>Dicom header group box</Comments>
+      <String Context="Generic_Long" >DICOM</String>
+    </Concept>
+    
+  </LocalizationSection>
+</LocalizationResource>

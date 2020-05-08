@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="AnnotationsComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Labels">
+    <Concept Id="SEARCH">
+      <Comments>Title of edit field used for searching a word inside existing ones</Comments>
+      <String Context="Generic_Long">SEARCH EXISTING ANNOTATION:</String>
+    </Concept>
+    <Concept Id="ADD">
+      <Comments>Title of edit field used for adding a new word</Comments>
+      <String Context="Generic_Long">ADD NEW ANNOTATION TO THE LIST:</String>
+    </Concept>
+    <Concept Id="EDIT">
+      <Comments>Action available to trackball when caret is visible</Comments>
+      <String Context="MD_RT14aTrackballStrings">EDIT</String>
+      <String Context="Generic_Long">EDIT</String>
+    </Concept>
+    <Concept Id="MOVE">
+      <Comments>Action available to trackball when item is selected</Comments>
+      <String Context="MD_RT14aTrackballStrings">MOVE</String>
+      <String Context="Generic_Long">MOVE</String>
+    </Concept>
+	<Concept Id="FIX">
+      <Comments>Action available to trackball when item is selected: once selected the annotation is fixed as first action Story 8826</Comments>
+      <String Context="MD_RT14aTrackballStrings">FIX</String>
+      <String Context="Generic_Long">FIX</String>
+    </Concept>
+    <Concept Id="WARNING_ON_ARCHIVE">
+      <Comments>Warning for user</Comments>
+      <String Context="MD_RT13HelpLine">Modification on Annotation won't be saved</String>
+    </Concept>
+    <Concept Id="BY WORD">
+      <Comments>Tab header for by word mode used in editor</Comments>
+      <String Context="Generic_Long">BY WORD</String>
+    </Concept>
+    <Concept Id="BY SENTENCE">
+      <Comments>Tab header for by sentence mode used in editor</Comments>
+      <String Context="Generic_Long">BY SENTENCE</String>
+    </Concept>
+    <Concept Id="FACTORY">
+      <Comments>Tab header for factory words' list used in editor</Comments>
+      <String Context="Generic_Medium">FACTORY</String>
+    </Concept>
+    <Concept Id="CUSTOM">
+      <Comments>Tab header for by custom words' list used in editor</Comments>
+      <String Context="Generic_Medium">CUSTOM</String>
+    </Concept>
+    <Concept Id="FONT SIZE">
+      <Comments>Label for font size's choice</Comments>
+      <String Context="Generic_Long">FONT SIZE :</String>
+    </Concept>
+    <Concept Id="AUTOFILLING">
+      <Comments>Label for enabling autofilling on free text</Comments>
+      <String Context="Generic_Long">AUTOFILLING ENABLED :</String>
+    </Concept>
+    <Concept Id="ERASE UNFREEZE">
+      <Comments>Label for enabling erasing of all text when probe status changes to live</Comments>
+      <String Context="Generic_Long">ERASE WHEN UNFREEZE :</String>
+    </Concept>
+	<Concept Id="TEXT REPLACE">
+      <Comments>New labels selected from Touchscreen (ByWord) are placed in Home position eventually replacing the existing one. Task 11626:Manage “text replace” configuration</Comments>
+      <String Context="Generic_Long">TEXT REPLACE ENABLED :</String>
+    </Concept>
+    <Concept Id="FIRST ACTION">
+      <Comments>Label for choice of first action to do when an existing annotation is selected</Comments>
+      <String Context="Generic_Long">FIRST CURSOR ACTION :</String>
+    </Concept>
+    <Concept Id="Small">
+      <Comments>Font size small</Comments>
+      <String Context="Generic_Long">SMALL</String>
+    </Concept>
+    <Concept Id="Medium">
+      <Comments>Font size medium</Comments>
+      <String Context="Generic_Long">MEDIUM</String>
+    </Concept>
+    <Concept Id="Large">
+      <Comments>Font size large</Comments>
+      <String Context="Generic_Long">LARGE</String>
+    </Concept>
+    <Concept Id="ExtraLarge">
+      <Comments>Font size extralarge</Comments>
+      <String Context="Generic_Long">EXTRALARGE</String>
+    </Concept>
+    <Concept Id="ALL APPLICATIONS">
+      <Comments>Menu item for editor with values applicable to all applications</Comments>
+      <String Context="Generic_Long">ALL APPLICATIONS</String>
+    </Concept>
+    <Concept Id="PAGE">
+      <Comments>Label for buttons to select pages in the editor</Comments>
+      <String Context="Generic_Medium">PAGE</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

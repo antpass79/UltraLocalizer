@@ -1,0 +1,1399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ThreeDComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  
+  <!--TS COMMANDS - START-->
+  <LocalizationSection InternalNamespace="Commands">
+
+    <Concept Id="CONFIGURATOR NAME">
+      <Comments>Icon name for 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">ThreeDComponent</String>
+    </Concept>
+    <Concept Id="GENERAL_TAB">
+      <Comments>Tab name in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">GENERAL</String>
+    </Concept>
+    <Concept Id="SLICES_PROCESS_TAB">
+      <Comments>Tab name in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">SLICES PROCESS</String>
+    </Concept>
+    <Concept Id="VOLUME_PROCESS_TAB">
+      <Comments>Tab name in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">VOLUME PROCESS</String>
+    </Concept>
+    <Concept Id="RENDER_CONFIG_TAB">
+      <Comments>Tab name in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">RENDER CONFIG</String>
+    </Concept>
+    <Concept Id="COLOR_TAB">
+      <Comments>Tab name in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">COLOR</String>
+    </Concept>
+    <Concept Id="STARTUP_ENVIRONMENT">
+      <Comments>Label in 3d Preset Menu to select TOOL (TPI, TSI or TMI) at start-up acquisition</Comments>
+      <String Context="Generic_Medium">START-UP ACQ TOOL</String>
+    </Concept>
+    <Concept Id="DISPLAY_TPI_TSI">
+      <Comments>Label in 3d Preset Menu to choose 1x2,2x2,full view for TPI/TSI at start-up with 3d</Comments>
+      <String Context="Generic_Long">DISPLAY 3D TPI / TSI</String>
+    </Concept>
+    <Concept Id="DISPLAY_TMI">
+      <Comments>Label in 3d Preset Menu to choose 1x2,2x2,3x3,full view for TMI at start-up</Comments>
+      <String Context="Generic_Medium">DISPLAY TMI</String>
+    </Concept>
+    <Concept Id="STARTUP_VISUALIZATION">
+      <Comments>Label in 3d Preset Menu to choose Rendering Mode(Volume or Triplanar) at start-up</Comments>
+      <String Context="Generic_Medium">START-UP VISUALIZATION</String>
+    </Concept>
+    <Concept Id="ROTATION X" Ignore="false">
+      <Comments>TS command for rotation along X axis</Comments>
+      <String Context="TS_TButton">ROTATION X</String>
+    </Concept>
+    <Concept Id="ROTATION Y" Ignore="false">
+      <Comments>TS command for rotation along Y axis</Comments>
+      <String Context="TS_TButton">ROTATION Y</String>
+    </Concept>
+    <Concept Id="ROTATION Z" Ignore="false">
+      <Comments>TS command for rotation along Z axis</Comments>
+      <String Context="TS_TButton">ROTATION Z</String>
+    </Concept>
+	<Concept Id="REFERENCE_PLANE" Ignore="false">
+      <Comments>TS command for rotation along reference plane</Comments>
+      <String Context="TS_TButton">REFERENCE PLANE</String>
+    </Concept>
+    <Concept Id="3D ROTATION" Ignore="false">
+      <Comments>Toggle command for rotation along Z axis by +/-90deg for 3D</Comments>
+      <String Context="TS_TButton">3D ROTATION</String>
+    </Concept>
+    <Concept Id="90" Ignore="false">
+      <Comments>String below 3D/4D ROTATION</Comments>
+      <String Context="TS_TButton">+/- 90°</String>
+    </Concept>
+    <Concept Id="4D ROTATION" Ignore="false">
+      <Comments>Toggle command for rotation along Z axis by +/-90deg for 4D</Comments>
+      <String Context="TS_TButton">4D ROTATION</String>
+    </Concept>
+
+    <Concept Id="CHANGE_PRESET" Ignore="false">
+      <Comments>To change preset in 3d Review</Comments>
+      <String Context="TS_AButton">CHANGE PRESET</String>
+      <String Context="TS_TabName">CHANGE PRESET</String>
+    </Concept>
+
+    <Concept Id="FILTERING_TOOL" Ignore="false">
+      <Comments>To open 2d-3d Filtering Tool</Comments>
+      <String Context="TS_AButton">FILTER</String>
+    </Concept>
+    <Concept Id="FILTERING_TAB" Ignore="false">
+      <Comments>Tab name for Filtering Tool</Comments>
+      <String Context="Generic_Medium">FILTER</String>
+    </Concept>
+    <Concept Id="3D_FILTER" Ignore="false">
+      <Comments>To choose between 3d Filters</Comments>
+      <String Context="TS_AButton">3D FILTER</String>
+      <String Context="Generic_Medium">3D FILTER</String>
+    </Concept>
+    <Concept Id="2D_FILTER" Ignore="false">
+      <Comments>To choose between 2d Filters</Comments>
+      <String Context="TS_AButton">2D FILTER</String>
+      <String Context="Generic_Medium">2D FILTER</String>
+    </Concept>
+    <Concept Id="CROSS_SECTION_FILTER" Ignore="false">
+      <Comments>To choose among cross section filters</Comments>
+      <String Context="TS_AButton">CROSS SECTION FILTER</String>
+      <String Context="Generic_Medium">CROSS SECTION FILTER</String>
+    </Concept>	
+    <Concept Id="3D_NONE" Ignore="false">
+      <Comments>Disabled all 3d filters</Comments>
+      <String Context="TS_AButton">NONE</String>
+      <String Context="Generic_Medium">NONE</String>
+      <String Context="MD_RT8Info">0</String>
+    </Concept>
+    <Concept Id="2D_NONE" Ignore="false">
+      <Comments>Disabled all 2d filters</Comments>
+      <String Context="TS_AButton">NONE</String>
+      <String Context="Generic_Medium">NONE</String>
+      <String Context="MD_RT8Info">0</String>
+    </Concept>
+    <Concept Id="FILTER1" Ignore="false">
+      <Comments>Enabled first filter button</Comments>
+      <String Context="TS_AButton">FILTER 1</String>
+      <String Context="Generic_Medium">FILTER 1</String>
+      <String Context="MD_RT8Info">1</String>
+    </Concept>
+    <Concept Id="FILTER2" Ignore="false">
+      <Comments>Enabled second filter button</Comments>
+      <String Context="TS_AButton">FILTER 2</String>
+      <String Context="Generic_Medium">FILTER 2</String>
+      <String Context="MD_RT8Info">2</String>
+    </Concept>
+    <Concept Id="FILTER3" Ignore="false">
+      <Comments>Enabled third filter button</Comments>
+      <String Context="TS_AButton">FILTER 3</String>
+      <String Context="Generic_Medium">FILTER 3</String>
+      <String Context="MD_RT8Info">3</String>
+    </Concept>
+    <Concept Id="FILTER4" Ignore="false">
+      <Comments>Enabled fourth filter button</Comments>
+      <String Context="TS_AButton">FILTER 4</String>
+      <String Context="Generic_Medium">FILTER 4</String>
+      <String Context="MD_RT8Info">4</String>
+    </Concept>
+    <Concept Id="FILTER5" Ignore="false">
+      <Comments>Enabled fifth filter button</Comments>
+      <String Context="TS_AButton">FILTER 5</String>
+      <String Context="Generic_Medium">FILTER 5</String>
+      <String Context="MD_RT8Info">5</String>
+    </Concept>
+    <Concept Id="FILTER6" Ignore="false">
+      <Comments>Enabled sixth filter button</Comments>
+      <String Context="TS_AButton">FILTER 6</String>
+      <String Context="Generic_Medium">FILTER 6</String>
+      <String Context="MD_RT8Info">6</String>
+    </Concept>
+    <Concept Id="FILTER7" Ignore="false">
+      <Comments>Enabled Seventh filter button</Comments>
+      <String Context="TS_AButton">FILTER 7</String>
+      <String Context="Generic_Medium">FILTER 7</String>
+      <String Context="MD_RT8Info">7</String>
+    </Concept>
+    <Concept Id="FILTER8" Ignore="false">
+      <Comments>Enabled eigth filter button</Comments>
+      <String Context="TS_AButton">FILTER 8</String>
+      <String Context="Generic_Medium">FILTER 8</String>
+      <String Context="MD_RT8Info">8</String>
+    </Concept>	
+    <Concept Id="F1" Ignore="false">
+      <Comments>First XviewC filter button</Comments>
+      <String Context="TS_AButton">+1</String>
+      <String Context="Generic_Medium">+1</String>
+      <String Context="MD_RT8Info">+1</String>
+    </Concept>
+    <Concept Id="F2" Ignore="false">
+      <Comments>Second XviewC filter button</Comments>
+      <String Context="TS_AButton">+2</String>
+      <String Context="Generic_Medium">+2</String>
+      <String Context="MD_RT8Info">+2</String>
+    </Concept>
+    <Concept Id="F3" Ignore="false">
+      <Comments>Third Xviewc filter button</Comments>
+      <String Context="TS_AButton">+3</String>
+      <String Context="Generic_Medium">+3</String>
+      <String Context="MD_RT8Info">+3</String>
+    </Concept>
+    <Concept Id="F4" Ignore="false">
+      <Comments>Fourth Xviewc filter button</Comments>
+      <String Context="TS_AButton">+4</String>
+      <String Context="Generic_Medium">+4</String>
+      <String Context="MD_RT8Info">+4</String>
+    </Concept>
+    <Concept Id="F5" Ignore="false">
+      <Comments>Fifth Xviewc filter button</Comments>
+      <String Context="TS_AButton">+5</String>
+      <String Context="Generic_Medium">+5</String>
+      <String Context="MD_RT8Info">+5</String>
+    </Concept>	
+    <Concept Id="F6" Ignore="false">
+      <Comments>Sixth Xviewc filter button</Comments>
+      <String Context="TS_AButton">+6</String>
+      <String Context="Generic_Medium">+6</String>
+      <String Context="MD_RT8Info">+6</String>
+    </Concept>
+    <Concept Id="F7" Ignore="false">
+      <Comments>Seventh Xviewc filter button</Comments>
+      <String Context="TS_AButton">+7</String>
+      <String Context="Generic_Medium">+7</String>
+      <String Context="MD_RT8Info">+7</String>
+    </Concept>
+    <Concept Id="F8" Ignore="false">
+      <Comments>Eigth Xviewc filter button</Comments>
+      <String Context="TS_AButton">+8</String>
+      <String Context="Generic_Medium">+8</String>
+      <String Context="MD_RT8Info">+8</String>
+    </Concept>	
+    <Concept Id="SLICE X" Ignore="false">
+      <Comments>TS command for slice navigation along X axis</Comments>
+      <String Context="TS_TButton">SLICE X</String>
+    </Concept>
+    <Concept Id="SLICE Y" Ignore="false">
+      <Comments>TS command for slice navigation along Y axis</Comments>
+      <String Context="TS_TButton">SLICE Y</String>
+    </Concept>
+    <Concept Id="SLICE Z" Ignore="false">
+      <Comments>TS command for slice navigation along Z axis</Comments>
+      <String Context="TS_TButton">SLICE Z</String>
+    </Concept>
+    <Concept Id="TPI" Ignore="false">
+      <Comments>TS tab command for TPI tool</Comments>
+      <String Context="TS_TabName">TPI</String>
+      <String Context="Generic_Short">TPI</String>
+    </Concept>
+    <Concept Id="TSI" Ignore="false">
+      <Comments>TS tab command for TSI tool</Comments>
+      <String Context="TS_TabName">TSI</String>
+      <String Context="Generic_Short">TSI</String>
+    </Concept>
+    <Concept Id="TMI" Ignore="false">
+      <Comments>TS tab command for TMI tool</Comments>
+      <String Context="TS_TabName">TMI</String>
+      <String Context="Generic_Short">TMI</String>
+    </Concept>
+    <Concept Id="FULL SCREEN" Ignore="false">
+      <Comments>TS command for Full Screen</Comments>
+      <String Context="TS_AButton">FULL SCREEN</String>
+      <String Context="Generic_Medium">Full Screen</String>
+    </Concept>
+    <Concept Id="SHOW BOX" Ignore="false">
+      <Comments>TS command used to show crop box on volume window</Comments>
+      <String Context="TS_AButton">SHOW BOX</String>
+      <String Context="Generic_Medium">Show Box</String>
+    </Concept>
+    <Concept Id="ZOOM PRESET" Ignore="false">
+      <Comments>Label in 3d Preset Menu to change Zoom factor on CrossSection or Volume</Comments>
+      <String Context="Generic_Medium">3D ZOOM (%)</String>
+    </Concept>
+    <Concept Id="FILTER" Ignore="false">
+      <Comments>TS command for changing filter on volume</Comments>
+      <String Context="TS_TButton">FILTER</String>
+    </Concept>
+    <Concept Id="THRESHOLD" Ignore="false">
+      <Comments>TS command for changing a threshold value that removes noise on volume</Comments>
+      <String Context="TS_TButton">THRESHOLD</String>
+      <String Context="Generic_Medium">THRESHOLD</String>
+    </Concept>
+    <Concept Id="SHADING" Ignore="false">
+      <Comments>TS command for changing shading level on rendered volume</Comments>
+      <String Context="TS_TButton">SHADING</String>
+      <String Context="Generic_Medium">SHADING</String>
+    </Concept>
+    <Concept Id="BRIGHTNESS" Ignore="false">
+      <Comments>TS command for changing brightness level on rendered volume</Comments>
+      <String Context="TS_TButton">BRIGHTNESS</String>
+      <String Context="Generic_Medium">BRIGHTNESS</String>
+    </Concept>
+    <Concept Id="CONTRAST" Ignore="false">
+      <Comments>TS command for changing contrast level on rendered volume</Comments>
+      <String Context="TS_TButton">CONTRAST</String>
+      <String Context="Generic_Medium">CONTRAST</String>
+    </Concept>
+    <Concept Id="LINES" Ignore="false">
+      <Comments>TS command for changing lines number in TMI tool (each line refers to a specific slice depth)</Comments>
+      <String Context="TS_TButton">LINES</String>
+    </Concept>
+    <Concept Id="STEP" Ignore="false">
+      <Comments>TS command for changing slices distance in TMI tool</Comments>
+      <String Context="TS_TButton">STEP</String>
+    </Concept>
+    <Concept Id="SCROLL" Ignore="false">
+      <Comments>TS command for slice navigation in TMI tool</Comments>
+      <String Context="TS_TButton">SCROLL</String>
+    </Concept>    
+    <Concept Id="TSI PLANE DISTANCE" Ignore="false">
+      <Comments>TS command for TSI plane distance (between two parallel planes)</Comments>
+      <String Context="TS_TButton">TSI PLANE DIST</String>
+    </Concept>
+    <Concept Id="TSI ORIENTATION" Ignore="false">
+      <Comments>TS command for TSI planes orientation (vertical or horizontal)</Comments>
+      <String Context="TS_AButton">ORIENTATION</String>
+    </Concept>
+    <Concept Id="TSI OVERLAY" Ignore="false">
+      <Comments>TS command for TSI overlay switching (on/off)</Comments>
+      <String Context="TS_AButton">OVERLAY</String>
+    </Concept>
+    <Concept Id="LIGHT" Ignore="false">
+      <Comments>TS command for Lighting overlay switching (on/off)</Comments>
+      <String Context="TS_AButton">LIGHT</String>
+    </Concept>
+    <Concept Id="FLAT XLIGHT" Ignore="false">
+      <Comments>TS command for Flat XLighting rendering (on/off)</Comments>
+      <String Context="TS_AButton">FLAT XLIGHT</String>
+      <String Context="Generic_Medium">FLAT XLIGHT</String>
+    </Concept>
+    <Concept Id="CUT" Ignore="false">
+      <Comments>TS command for cut tool enabling</Comments>
+      <String Context="TS_AButton">CUT</String>
+      <String Context="TS_TabName">CUT</String>
+    </Concept>
+    <Concept Id="BACK" Ignore="false">
+      <Comments>TS command for cut tool exiting</Comments>
+      <String Context="TS_AButton">BACK</String>
+    </Concept>
+    <Concept Id="CUT DEPTH" Ignore="false">
+      <Comments>TS command for cut depth changing</Comments>
+      <String Context="TS_TButton">CUT DEPTH</String>
+    </Concept>
+    <Concept Id="INSIDE CONTOUR" Ignore="false">
+      <Comments>TS command for inside cut contour</Comments>
+      <String Context="TS_TButton">INSIDE CONTOUR</String>
+    </Concept>
+    <Concept Id="OUTSIDE CONTOUR" Ignore="false">
+      <Comments>TS command for outside cut contour</Comments>
+      <String Context="TS_TButton">OUTSIDE CONTOUR</String>
+    </Concept>
+    <Concept Id="UNDO" Ignore="false">
+      <Comments>TS command for removing last cut operation</Comments>
+      <String Context="TS_AButton">UNDO</String>
+    </Concept>
+    <Concept Id="UNDO ALL" Ignore="false">
+      <Comments>TS command for removing all cut operations</Comments>
+      <String Context="TS_AButton">UNDO ALL</String>
+    </Concept>
+    <Concept Id="TSI LINE CURVATURE" Ignore="false">
+      <Comments>TS command for TSI line curvature (parabolic curve)</Comments>
+      <String Context="TS_TButton">LINE CURVATURE</String>
+    </Concept>
+    <Concept Id="ALGORITHM" Ignore="false">
+      <Comments>TS command for Rendering Algorithm </Comments>
+      <String Context="TS_TButton">ALGORITHM</String>
+      <String Context="Generic_Medium">ALGORITHM</String>
+    </Concept>
+    <Concept Id="ALGORITHM_VOL_MENU" Ignore="false">
+      <Comments>Label in 3d Preset Menu for Rendering Algorithm on Volume</Comments>
+      <String Context="Generic_Medium">ALGORITHM VOLUME</String>
+    </Concept>
+    <Concept Id="ALGORITHM_SURF_MENU" Ignore="false">
+      <Comments>Label in 3d Preset Menu for Rendering Algorithm on Surface</Comments>
+      <String Context="Generic_Long">ALGORITHM SURFACE</String>
+    </Concept>
+    <Concept Id="TRIPLANAR" Ignore="false">
+      <Comments>Triplanar rendering mode</Comments>
+      <String Context="TS_AButton">TRIPLANAR</String>
+      <String Context="Generic_Medium">TRIPLANAR</String>
+    </Concept>
+    <Concept Id="VOLUME_MENU" Ignore="false">
+      <Comments>Volume rendering mode - combo-box in 3d preset menu</Comments>
+      <String Context="Generic_Medium">VOLUME</String>
+    </Concept>
+    <Concept Id="VIDEO VOLUME" Ignore="false">
+      <Comments>TS TAB command for video tool on volume panel</Comments>
+      <String Context="TS_TabName">VIDEO VOLUME</String>
+    </Concept>
+    <Concept Id="VIDEO SLICE" Ignore="false">
+      <Comments>TS TAB command for video tool  on active tpi slice</Comments>
+      <String Context="TS_TabName">VIDEO SLICE</String>
+    </Concept>
+    <Concept Id="VIDEO" Ignore="false">
+      <Comments>Activate video tool</Comments>
+      <String Context="TS_AButton">VIDEO</String>
+    </Concept>
+    <Concept Id="INIT POSITION" Ignore="false">
+      <Comments>Initial position for the video clip (video tool)</Comments>
+      <String Context="TS_AButton">INIT POSITION</String>
+    </Concept>
+    <Concept Id="FINAL POSITION" Ignore="false">
+      <Comments>Final position for the video clip (video tool)</Comments>
+      <String Context="TS_AButton">FINAL POSITION</String>
+    </Concept>
+    <Concept Id="STOP PREVIEW" Ignore="false">
+      <Comments>Stops the preview of the video clip (video tool)</Comments>
+      <String Context="TS_AButton">STOP PREVIEW</String>
+	</Concept>
+    <Concept Id="START PREVIEW" Ignore="false">
+      <Comments>Starts the preview of the video clip (video tool)</Comments>
+      <String Context="TS_AButton">START PREVIEW</String>
+    </Concept>
+    <Concept Id="VIDEO SPEED" Ignore="false">
+      <Comments>TS command for changing video clip speed (video tool)</Comments>
+      <String Context="TS_TButton">VIDEO SPEED</String>
+    </Concept>
+    <Concept Id="VIDEO LOOP" Ignore="false">
+      <Comments>TS command for changing video clip loop (video tool)</Comments>
+      <String Context="TS_TButton">VIDEO LOOP</String>
+    </Concept>
+    <Concept Id="SELECTED VIEW" Ignore="false">
+      <Comments>TS command for changing the selected tpi view (slice video tool)</Comments>
+      <String Context="TS_TButton">SELECTED VIEW</String>
+    </Concept>
+    <Concept Id="SLICE DEPTH" Ignore="false">
+      <Comments>TS command for changing the depth of the selected tpi view (slice video tool)</Comments>
+      <String Context="TS_TButton">SLICE DEPTH</String>
+    </Concept>
+    <Concept Id="ZOOM" Ignore="false">
+      <Comments>command used to change volume or cross sections zoom factor</Comments>
+      <String Context="TS_TButton">ZOOM</String>
+	  <String Context="MD_RT17LabelJoyEnc">ZOOM</String>
+    </Concept>
+    <Concept Id="SCALING" Ignore="false">
+      <Comments>TS command for re-scaling a 3D free hand volume if the acquisition speed has not been the one expected</Comments>
+      <String Context="TS_TButton">SCALING</String>
+    </Concept>
+    <Concept Id="GRAY MAP BUTTON" Ignore="false">
+      <Comments>TS command button to open GRAY MAP tool - same string used by RT for Center value</Comments>
+      <String Context="TS_AButton">GRAY MAP</String>
+    </Concept>
+    <Concept Id="GRAY MAP TAB" Ignore="false">
+      <Comments>TS Tab name for GRAY MAP tool - same string used by RT for Center value</Comments>
+      <String Context="TS_TabName">GRAY MAP</String>
+    </Concept>
+    <Concept Id="GMAP_VOL_HEADER" Ignore="false">
+      <Comments>Box-Header for Gray on volume in 3D Preset Menu</Comments>
+      <String Context="Generic_Medium">GRAY MAP on VOLUME</String>
+    </Concept>
+    <Concept Id="GMAP_SLICE_HEADER" Ignore="false">
+      <Comments>Box-Header for Gray Map on slices in 3D Preset Menu</Comments>
+      <String Context="Generic_Medium">GRAY MAP on SLICES</String>
+    </Concept>
+    <Concept Id="GMAP_OPACITY_HEADER" Ignore="false">
+      <Comments>Box-Header for Gray Map as volume Opacity in 3D Preset Menu</Comments>
+      <String Context="Generic_Long">OPACITY MAP on VOLUME</String>
+    </Concept>
+    <Concept Id="GRAY MAP" Ignore="false">
+      <Comments>Allow to change the current Gray Map[0-9] - same string used by RT for Gray Map value</Comments>
+      <String Context="TS_TButton">GRAY MAP</String>
+      <String Context="Generic_Medium">GRAY MAP</String>
+    </Concept>
+    <Concept Id="CENTER" Ignore="false">
+      <Comments>GMap Center value - same string used by RT for Center value</Comments>
+      <String Context="TS_TButton">CENTER</String>
+      <String Context="Generic_Medium">CENTER</String>
+    </Concept>
+    <Concept Id="REJECT" Ignore="false">
+      <Comments>GMap Rejection value - same string used by RT for Rejection value</Comments>
+      <String Context="TS_TButton">REJECT</String>
+      <String Context="Generic_Medium">REJECT</String>
+    </Concept>
+    <Concept Id="SATURATION" Ignore="false">
+      <Comments>GMap Saturation value - same string used by RT for Saturation value</Comments>
+      <String Context="TS_TButton">SATURATION</String>
+      <String Context="Generic_Medium">SATURATION</String>
+    </Concept>
+    <Concept Id="SLOPE" Ignore="false">
+      <Comments>Slope value - same string used by RT for Slope value</Comments>
+      <String Context="TS_TButton">SLOPE</String>
+      <String Context="Generic_Medium">SLOPE</String>
+    </Concept>
+    <Concept Id="PEAK" Ignore="false">
+      <Comments>GMap Peak value - same string used by RT for Peak value</Comments>
+      <String Context="TS_TButton">PEAK</String>
+      <String Context="Generic_Medium">PEAK</String>
+    </Concept>
+    <Concept Id="GMAP_VOLUME" Ignore="false">
+      <Comments>TS command to set GRAY MAP on volume</Comments>
+      <String Context="TS_AButton">VOLUME</String>
+    </Concept>
+    <Concept Id="GMAP_SLICE" Ignore="false">
+      <Comments>TS command to set GRAY MAP on Slices</Comments>
+      <String Context="TS_AButton">SLICE</String>
+    </Concept>
+    <Concept Id="GMAP_OPACITY" Ignore="false">
+      <Comments>TS command to use GRAY MAP for changing volume Opacity/Transparence</Comments>
+      <String Context="TS_AButton">OPACITY</String>
+    </Concept>
+    <Concept Id="OPACITY_MAP" Ignore="false">
+      <Comments>Toggle command to use a different gamma for changing volume Opacity/Transparence</Comments>
+      <String Context="TS_TButton">OPACITY MAP</String>
+      <String Context="Generic_Medium">OPACITY MAP</String>
+    </Concept>
+    <Concept Id="GMAP_RESET" Ignore="false">
+      <Comments>TS command to reset only the current GRAY MAP</Comments>
+      <String Context="TS_AButton">RESET</String>
+    </Concept>
+    <Concept Id="GMAP_RESET_ALL" Ignore="false">
+      <Comments>TS command to reset all GRAY MAPs</Comments>
+      <String Context="TS_AButton">RESET ALL</String>
+    </Concept>
+
+    <Concept Id="COLORIZE_TOOL" Ignore="false">
+      <Comments>TS command to open COLORIZE tool</Comments>
+      <String Context="TS_AButton">COLORIZE</String>
+    </Concept>
+    <Concept Id="COLORIZE_TAB" Ignore="false">
+      <Comments>TS tab name for COLORIZE tool</Comments>
+      <String Context="TS_TabName">COLORIZE</String>
+    </Concept>
+    <Concept Id="COLORIZE_VOLUME" Ignore="false">
+      <Comments>TS command to set COLORIZE on Volume</Comments>
+      <String Context="TS_AButton">VOLUME</String>
+    </Concept>
+    <Concept Id="COLORIZE_SLICE" Ignore="false">
+      <Comments>TS command to set COLORIZE on Slices</Comments>
+      <String Context="TS_AButton">SLICE</String>
+    </Concept>
+    <Concept Id="COLORIZE_SLICE_MENU" Ignore="false">
+      <Comments>Label in 3d Preset Menu - tab SLICES</Comments>
+      <String Context="Generic_Medium">COLORIZE SLICES</String>
+    </Concept>
+    <Concept Id="COLORIZE_VOLUME_MENU" Ignore="false">
+      <Comments>Label in 3d Preset Menu - tab VOLUME PROCESS</Comments>
+      <String Context="Generic_Medium">COLORIZE VOLUME</String>
+    </Concept>
+    <Concept Id="BW" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">BW</String>
+    </Concept>
+    <Concept Id="GOLD" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">GOLD</String>
+    </Concept>
+    <Concept Id="SEPIA" Ignore="false">
+        <Comments>Palette value</Comments>
+        <String Context="TS_AButton">SEPIA</String>
+    </Concept>
+    <Concept Id="SEPIA1" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">SEPIA1</String>
+    </Concept>
+    <Concept Id="BLUE" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">BLUE</String>
+    </Concept>
+    <Concept Id="VIOLET" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">VIOLET</String>
+    </Concept>
+    <Concept Id="ACQ_COLORIZE" Ignore="false">
+      <Comments>Palette value (the colorize is the one selected in RT during 3D/4D acquisition)</Comments>
+      <String Context="TS_AButton">ACQ COLORIZE</String>
+    </Concept>
+    <Concept Id="ROT_PAGE" Ignore="false">
+      <Comments>Rotation Page</Comments>
+      <String Context="TS_AButton">ROT</String>
+    </Concept>
+    <Concept Id="SLICE_PAGE" Ignore="false">
+      <Comments>button to open Slice Page in TPI/TSI/TMI</Comments>
+      <String Context="TS_AButton">SLICE</String>
+    </Concept>
+    <Concept Id="VOLUME_PAGE" Ignore="false">
+      <Comments>button to open Volume process Page in TPI/TSI/TMI</Comments>
+      <String Context="TS_AButton">VOLUME PROCESS</String>
+    </Concept>
+    <Concept Id="VRA_PROCESS_PAGE" Ignore="false">
+      <Comments>button to open VRA Process Page in TPI</Comments>
+      <String Context="TS_AButton">VRA PROCESS</String>
+    </Concept>
+    <Concept Id="LINES_PAGE" Ignore="false">
+      <Comments>button to open Lines Page in TPI/TSI/TMI</Comments>
+      <String Context="TS_AButton">LINES</String>
+    </Concept>
+    <Concept Id="1x2" Ignore="false">
+      <Comments>Command to enabled Dual View modality for TPI/TSI/TMI</Comments>
+      <String Context="TS_AButton">1x2</String>
+    </Concept>
+    <Concept Id="DUAL_VIEW_MENU" Ignore="false">
+      <Comments>combo-box item (in 3D Preset Menu) to choose Dual Views modality for TPI/TSI/TMI</Comments>
+      <String Context="Generic_Medium">DUAL VIEW (1x2)</String>
+    </Concept>
+    <Concept Id="2x2" Ignore="false">
+      <Comments>Command to enabled Four Views modality for TPI/TSI/TMI</Comments>
+      <String Context="TS_AButton">2x2</String>
+    </Concept>
+    <Concept Id="FOUR_VIEW_MENU" Ignore="false">
+      <Comments>combo-box item (in 3D Preset Menu) to choose Four Views modality for TPI/TSI/TMI</Comments>
+      <String Context="Generic_Medium">FOUR VIEWS (2x2)</String>
+    </Concept>
+    <Concept Id="3x3" Ignore="false">
+      <Comments>Command to enabled Nine Views modality for TMI</Comments>
+      <String Context="TS_AButton">3x3</String>
+    </Concept>
+    <Concept Id="NINE_VIEW_MENU" Ignore="false">
+      <Comments>combo-box item (in 3D Preset Menu) to choose Nine Views modality for TMI</Comments>
+      <String Context="Generic_Medium">NINE VIEWS (3x3)</String>
+    </Concept>
+    <Concept Id="SLOPE TR" Ignore="false">
+      <Comments>TS command for changing the slope of the transition between main palette and depth palette</Comments>
+      <String Context="TS_TButton">SLOPE TR</String>
+      <String Context="Generic_Medium">Slope Tr</String>
+    </Concept>
+    <Concept Id="START TR" Ignore="false">
+      <Comments>TS command for changing the starting point of the transition between main palette and depth palette</Comments>
+      <String Context="TS_TButton">START TR</String>
+      <String Context="Generic_Medium">Start Tr</String>
+    </Concept>
+    <Concept Id="DEPTH CLR TYPE" Ignore="false">
+      <Comments>TS command for changing the color of the depth palette</Comments>
+      <String Context="TS_TButton">DEPTH CLR</String>
+      <String Context="Generic_Medium">Slope Tr</String>
+    </Concept>
+    <Concept Id="DEPTH COLOR" Ignore="false">
+      <Comments>Command to enable the depth color palette</Comments>
+      <String Context="TS_AButton">DEPTH COLOR</String>
+      <String Context="Generic_Medium">Depth Color</String>
+    </Concept>
+
+    <Concept Id="RENDER CONFIG" Ignore="false">
+      <Comments>To open Render Config tool</Comments>
+      <String Context="TS_AButton">RENDER CONFIG</String>
+    </Concept>
+    <Concept Id="RENDER CONFIG TAB" Ignore="false">
+      <Comments>Tab name for Render Config Tool</Comments>
+      <String Context="Generic_Medium">RENDER CONFIG</String>
+    </Concept>
+    <Concept Id="GENERAL TAB" Ignore="false">
+      <Comments>Tab name for General Tool</Comments>
+      <String Context="Generic_Medium">GENERAL</String>
+    </Concept>
+    <Concept Id="MIX ENABLED" Ignore="false">
+      <Comments>Enabled/disabled MIXING between rendering algorithm</Comments>
+      <String Context="TS_AButton">MIX ENABLED</String>
+      <String Context="Generic_Medium">MIX ENABLED</String>
+    </Concept>
+    <Concept Id="MIXING_VALUE_LABEL" Ignore="false">
+      <Comments>label in 3d Preset Menu - MIXING Value (%) between rendering algorithm</Comments>
+      <String Context="Generic_Medium">MIXING LEVEL %</String>
+    </Concept>
+    <Concept Id="VOLUME" Ignore="false">
+      <Comments>To choose between VOLUME MIXING algorithm</Comments>
+      <String Context="TS_AButton">VOLUME</String>
+	  <String Context="MD_RT17LabelJoyEnc">VOLUME</String>
+    </Concept>
+    <Concept Id="SURFACE" Ignore="false">
+      <Comments>To choose between SURFACE MIXING algorithm</Comments>
+      <String Context="TS_AButton">SURFACE</String>
+    </Concept>
+    <Concept Id="SEMIT" Ignore="false">
+      <Comments>Semitrasparent rendering algorithm</Comments>
+      <String Context="TS_AButton">SEMIT</String>
+    </Concept>
+    <Concept Id="MAX IP" Ignore="false">
+      <Comments>Maximum Intensity projection rendering algorithm</Comments>
+      <String Context="TS_AButton">MAX IP</String>
+    </Concept>
+    <Concept Id="MIN IP" Ignore="false">
+      <Comments>Maximum Intensity projection rendering algorithm</Comments>
+      <String Context="TS_AButton">MIN IP</String>
+    </Concept>
+    <Concept Id="MED IP" Ignore="false">
+      <Comments>Medium Intensity projection rendering algorithm</Comments>
+      <String Context="TS_AButton">MED IP</String>
+    </Concept>
+    <Concept Id="INVERTED" Ignore="false">
+      <Comments>Inverted rendering algorithm</Comments>
+      <String Context="TS_AButton">INVERTED</String>
+    </Concept>
+    <Concept Id="STRING_SEMIT" Ignore="false">
+      <Comments>Semitrasparent rendering algorithm - short string for encoder</Comments>
+      <String Context="TS_TButton">SEMIT</String>
+    </Concept>
+    <Concept Id="STRING_MAXIP" Ignore="false">
+      <Comments>Maximum Intensity projection rendering algorithm - short string for encoder</Comments>
+      <String Context="TS_TButton">MAXIP</String>
+    </Concept>
+    <Concept Id="STRING_MINIP" Ignore="false">
+      <Comments>Maximum Intensity projection rendering algorithm - short string for encoder</Comments>
+      <String Context="TS_TButton">MINIP</String>
+    </Concept>
+    <Concept Id="STRING_MEDIP" Ignore="false">
+      <Comments>Medium Intensity projection rendering algorithm - short string for encoder</Comments>
+      <String Context="TS_TButton">MEDIP</String>
+    </Concept>
+    <Concept Id="STRING_INV" Ignore="false">
+      <Comments>Inverted rendering algorithm - short string for encoder</Comments>
+      <String Context="TS_TButton">INV</String>
+    </Concept>
+    <Concept Id="ALGO_SEMIT" Ignore="false">
+      <Comments>Semitrasparent rendering algorithm - string for combo-box in preset menu</Comments>
+      <String Context="Generic_Medium">SEMI T</String>
+    </Concept>
+    <Concept Id="ALGO_MAXIP" Ignore="false">
+      <Comments>Maximum Intensity projection rendering algorithm - string for combo-box in preset menu</Comments>
+      <String Context="Generic_Medium">MAX IP</String>
+    </Concept>
+    <Concept Id="ALGO_MINIP" Ignore="false">
+      <Comments>Maximum Intensity projection rendering algorithm - string for combo-box in preset menu</Comments>
+      <String Context="Generic_Medium">MIN IP</String>
+    </Concept>
+    <Concept Id="ALGO_MEDIP" Ignore="false">
+      <Comments>Medium Intensity projection rendering algorithm - string for combo-box in preset menu</Comments>
+      <String Context="Generic_Medium">MED IP</String>
+    </Concept>
+    <Concept Id="ALGO_SEMITINVERSE" Ignore="false">
+      <Comments>Inverted rendering algorithm - string for combo-box in preset menu</Comments>
+      <String Context="Generic_Medium">INVERSE</String>
+    </Concept>
+    <Concept Id="ALGO_XLIGHT" Ignore="false">
+      <Comments>X-Light rendering algorithm - string for combo-box in preset menu</Comments>
+      <String Context="Generic_Medium">X-LIGHT</String>
+    </Concept>
+    <Concept Id="3D/4D" Ignore="false">
+      <Comments>TS TAB label for 3D/4D acquisition selection</Comments>
+      <String Context="TS_TabName">3D/4D</String>
+   </Concept>
+   <Concept Id="3D" Ignore="false">
+      <Comments>Command used to select 3D acquisition</Comments>
+      <String Context="TS_AButton">3D</String>
+    </Concept>
+    <Concept Id="4D" Ignore="false">
+      <Comments>Command used to select 4D acquisition</Comments>
+      <String Context="TS_AButton">4D</String>
+    </Concept>
+    <Concept Id="4DStic" Ignore="false">
+      <Comments>Command used to select 4D Stic acquisition</Comments>
+      <String Context="TS_AButton">4D Stic</String>
+    </Concept>
+    <Concept Id="3D RAW SAVING" Ignore="false">
+      <Comments>Command used to save a 3D file</Comments>
+      <String Context="TS_AButton">SAVE RAW</String>
+    </Concept>
+    <Concept Id="PRESET MANAGER" Ignore="false">
+      <Comments>Command used to open a preset dialog in 3d/4d ambient - same string used by RT to perform the same operation</Comments>
+      <String Context="TS_SButton">PRESET MANAGER</String>
+    </Concept>
+    <!--"RESET", LocalizationStringType.Abbreviation-->
+  <!--"SMOOTH", LocalizationStringType.Abbreviation-->
+    <Concept Id="VRA" Ignore="false">
+      <Comments>VRA Tool: label for TS button (to open vra tool) and tab</Comments>
+      <String Context="TS_TabName">VRA</String>
+      <String Context="TS_AButton">VRA</String>
+    </Concept>
+    <Concept Id="VRA SINGLE" Ignore="false">
+      <Comments>VRA Tool: SINGLE measure type</Comments>
+      <String Context="Generic_Short">SINGLE</String>
+      <String Context="TS_AButton">SINGLE</String>
+    </Concept>
+    <Concept Id="VRA RATIO" Ignore="false">
+      <Comments>VRA Tool: RATIO measure type</Comments>
+      <String Context="Generic_Short">RATIO</String>
+      <String Context="TS_AButton">RATIO</String>
+    </Concept>
+    <Concept Id="VRA AXIS" Ignore="false">
+      <Comments>VRA Tool: AXIS measure type</Comments>
+      <String Context="Generic_Short">AXIS</String>
+      <String Context="TS_AButton">AXIS</String>
+    </Concept>
+    <Concept Id="VRA PLANES" Ignore="false">
+      <Comments>VRA Tool: PLANES measure type</Comments>
+      <String Context="Generic_Short">PLANES</String>
+      <String Context="TS_AButton">PLANES</String>
+    </Concept>
+    <Concept Id="VRA VOXEL" Ignore="false">
+      <Comments>VRA Tool: VOXEL measure type</Comments>
+      <String Context="Generic_Short">VOXEL</String>
+      <String Context="TS_AButton">VOXEL</String>
+    </Concept>
+    <Concept Id="VRA MULTIPLE" Ignore="false">
+      <Comments>VRA Tool: MULTIPLE measure type</Comments>
+      <String Context="Generic_Short">COUNTING</String>
+      <String Context="TS_AButton">COUNTING</String>
+    </Concept>
+    <Concept Id="VRA SHAPE" Ignore="false">
+      <Comments>VRA Tool: SHAPE (sphere or ellipse) measure type</Comments>
+      <String Context="Generic_Short">SHAPE</String>
+      <String Context="TS_AButton">SHAPE</String>
+    </Concept>
+    <Concept Id="VRA CHANGE SHAPE" Ignore="false">
+      <Comments>To change shape type from sphere to ellipse</Comments>
+      <String Context="TS_TButton">CHANGE SHAPE</String>
+    </Concept>
+    <Concept Id="VRA CALCULATE" Ignore="false">
+      <Comments>Command used to calculate the VRA volume</Comments>
+      <String Context="TS_AButton">CALCULATE</String>
+    </Concept>
+    <Concept Id="VRA START" Ignore="false">
+      <Comments>Command used to start the VRA measure</Comments>
+      <String Context="TS_AButton">START</String>
+    </Concept>
+    <Concept Id="VRA REMOVE" Ignore="false">
+      <Comments>Command used to remove a curve from VRA measure</Comments>
+      <String Context="TS_AButton">REMOVE CURVE</String>
+    </Concept>
+    <Concept Id="VRA RESET" Ignore="false">
+      <Comments>Command used to reset the current VRA Measurement</Comments>
+      <String Context="TS_AButton">RESET MEASURE</String>
+    </Concept>
+    <Concept Id="VRA MODIFY" Ignore="false">
+      <Comments>Command used to modify current curve from VRA measure</Comments>
+      <String Context="TS_AButton">MODIFY</String>
+    </Concept>
+    <Concept Id="VRA ADJUST PAGE" Ignore="false">
+      <Comments>Page link to change encoders and adjust slices settings inside VRA Tool</Comments>
+      <String Context="TS_AButton">ADJUST PARAMS</String>
+    </Concept>
+    <Concept Id="VRA PARAMS PAGE" Ignore="false">
+      <Comments>Page link to change encoders and set the correct parameters for the current measure in VRA Tool</Comments>
+      <String Context="TS_AButton">MEASURE PARAMS</String>
+    </Concept>
+    <Concept Id="VRA VOLUME MIX" Ignore="false">
+      <Comments>VRA Process Page - Command used to choose the mix between Volume,Vra and Volume+Vra</Comments>
+      <String Context="TS_TButton">VOL MIX</String>
+    </Concept>
+    <Concept Id="VRA VOLUME TRANSPARENCY" Ignore="false">
+      <Comments>VRA Process Page - Command used to change original volume transparency</Comments>
+      <String Context="TS_TButton">VOL TRSP</String>
+    </Concept>
+    <Concept Id="VRA SKIN TRANSPARENCY" Ignore="false">
+      <Comments>VRA Process Page - Command used to change vra volume transparency</Comments>
+      <String Context="TS_TButton">SKIN TRSP</String>
+    </Concept>
+    <Concept Id="VRA CONTOUR FINDING MODE" Ignore="false">
+      <Comments>VRA Command used to choose the contour finding mode (manual/semiautomatic)</Comments>
+      <String Context="TS_TButton">MEAS TYPE</String>
+    </Concept>
+    <Concept Id="VRA GRAY MAP" Ignore="false">
+      <Comments>Allow to change the current Gray Map[0-9] inside VRA TOOL</Comments>
+      <String Context="TS_TButton">GMAP SLICES</String>
+    </Concept>
+    <Concept Id="VRA EXPANSIVITY" Ignore="false">
+      <Comments>VRA Command used to choose the VRA expansivity (a kind of threshold)</Comments>
+      <String Context="TS_TButton">EXPANSIVITY</String>
+    </Concept>
+    <Concept Id="VRA MERGE CURVE" Ignore="false">
+      <Comments>VRA Command used to choose the merged curve (when a manual modification is made and there are two possibilities)</Comments>
+      <String Context="TS_TButton">MERGE</String>
+    </Concept>
+    <Concept Id="VRA NEXT SLICE" Ignore="false">
+      <Comments>Command used to navigate the slices in VRA measure</Comments>
+      <String Context="TS_TButton">SLICE</String>
+    </Concept>
+    <Concept Id="VRA SWAP CURVE" Ignore="false">
+      <Comments>Command used to swap between two curves in VRA measure</Comments>
+      <String Context="TS_TButton">SWAP CURVE</String>
+    </Concept>
+    <Concept Id="VRA ANGLE STEP" Ignore="false">
+      <Comments>Command used to choose to choose angular step in  VRA AXIS measure type</Comments>
+      <String Context="TS_TButton">STEP (°)</String>
+    </Concept>
+    <Concept Id="VRA AXIS DIRECTION" Ignore="false">
+      <Comments>Command used to choose axis orientation (vertical/horizontal) for VRA tool - Axis measure type</Comments>
+      <String Context="TS_TButton">ORIENTATION</String>
+    </Concept>
+    <Concept Id="MODIFY VRA" Ignore="false">
+      <Comments>Command used to modify a calculated VRA volume</Comments>
+      <String Context="TS_AButton">MODIFY</String>
+    </Concept>
+    <Concept Id="BWCFM MIX" Ignore="false">
+      <Comments>Command used to modify the rendering mix type between BW and CFM volumes</Comments>
+      <String Context="TS_TButton">COLOR MIX</String>
+      <String Context="Generic_Medium">COLOR MIX STATE</String>
+    </Concept>
+    <Concept Id="COLOR MIX VALUE" Ignore="false">
+      <Comments>Command used to modify the percentage value for rendering mix between BW and CFM volumes</Comments>
+      <String Context="TS_TButton">COLOR LEVEL</String>
+      <String Context="Generic_Medium">COLOR MIX LEVEL</String>
+    </Concept>
+    <Concept Id="VRA_ADDTOREPORT" Ignore="false">
+      <Comments>Command used to add a VRA measure to report</Comments>
+      <String Context="TS_AButton">ADD TO REPORT</String>
+    </Concept>
+    <Concept Id="VRA_MEASURE_HEADER" Ignore="false">
+      <Comments>Box-Header for VRA Volume Measure Unit in 3D Preset Menu - General tab</Comments>
+      <String Context="Generic_Long">VRA VOLUME Measure Unit</String>
+    </Concept>
+    <Concept Id="X-LIGHT" Ignore="false">
+      <Comments>X-LIGHT: label for TS button to enable x-light algorithm</Comments>
+      <String Context="TS_AButton">X-LIGHT</String>
+    </Concept>
+    <Concept Id="FREE HAND BUTTON" Ignore="false">
+      <Comments>TS command button to open FREE HAND tool </Comments>
+      <String Context="TS_AButton">FREE HAND</String>
+    </Concept>
+    <Concept Id="FREE HAND TAB" Ignore="false">
+      <Comments>TS Tab name for FREE HAND tool </Comments>
+      <String Context="TS_TabName">FREE HAND</String>
+    </Concept>
+    <Concept Id="FH_RESET" Ignore="false">
+      <Comments>TS command to reset only current FREE HAND params</Comments>
+      <String Context="TS_AButton">FH RESET</String>
+    </Concept>
+    <Concept Id="FH_RESET_ALL" Ignore="false">
+      <Comments>TS command to reset all FREE HAND params</Comments>
+      <String Context="TS_AButton">FH RESET ALL</String>
+    </Concept>
+    <Concept Id="FH_ACQ_TIME" Ignore="false">
+      <Comments>Free hand acquisition time </Comments>
+      <String Context="TS_TButton">ACQ TIME</String>
+      <String Context="Generic_Medium">ACQ TIME</String>
+    </Concept>
+    <Concept Id="FH_ACQ_SPEED" Ignore="false">
+      <Comments>Free hand acquisition speed </Comments>
+      <String Context="TS_TButton">ACQ SPEED</String>
+      <String Context="Generic_Medium">ACQ SPEED</String>
+    </Concept>
+    <Concept Id="FH_ACQ_ANGLE" Ignore="false">
+      <Comments>Free hand acquisition angle </Comments>
+      <String Context="TS_TButton">ACQ ANGLE</String>
+      <String Context="Generic_Medium">ACQ ANGLE</String>
+    </Concept>
+    <Concept Id="COLORIZE_XLIGHT_MENU" Ignore="false">
+      <Comments>Label in 3d Preset Menu - tab VOLUME PROCESS</Comments>
+      <String Context="Generic_Medium">COLORIZE XLIGHT</String>
+    </Concept>
+    <Concept Id="XLIGHTPALETTE0" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">PALETTE0</String>
+    </Concept>
+    <Concept Id="XLIGHTPALETTE1" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">PALETTE1</String>
+    </Concept>
+    <Concept Id="XLIGHTPALETTE2" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">PALETTE2</String>
+    </Concept>
+    <Concept Id="XLIGHTPALETTE3" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">PALETTE3</String>
+    </Concept>
+    <Concept Id="XLIGHTPALETTE4" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">PALETTE4</String>
+    </Concept>
+    <Concept Id="XLIGHTPALETTE5" Ignore="false">
+      <Comments>Palette value</Comments>
+      <String Context="TS_AButton">PALETTE5</String>
+    </Concept>
+  </LocalizationSection>
+  <!--TS COMMANDS - END-->
+
+  <!--TS COMMAND VALUES - START-->
+  <LocalizationSection InternalNamespace="CommandValues">
+    <Concept Id="OFF" Ignore="false">
+      <Comments>Volume filter value</Comments>
+      <String Context="TS_TButton">OFF</String>
+    </Concept>
+    <Concept Id="ON" Ignore="false">
+      <Comments>generic value for enabled</Comments>
+      <String Context="TS_TButton">ON</String>
+    </Concept>
+    <Concept Id="C1" Ignore="false">
+      <Comments>Volume filter value</Comments>
+      <String Context="TS_TButton">C1</String>
+    </Concept>
+    <Concept Id="C2" Ignore="false">
+      <Comments>Volume filter value</Comments>
+      <String Context="TS_TButton">C2</String>
+    </Concept>
+    <Concept Id="C3" Ignore="false">
+      <Comments>Volume filter value</Comments>
+      <String Context="TS_TButton">C3</String>
+    </Concept>
+    <Concept Id="MIX_OFF" Ignore="false">
+      <Comments>String to indicate that MIXING between rendering algorithm is disabled</Comments>
+      <String Context="TS_TButton">OFF</String>
+    </Concept>
+    <Concept Id="MIX_ON" Ignore="false">
+      <Comments>String to indicate that MIXING between rendering algorithm is enabled</Comments>
+      <String Context="TS_TButton">ON</String>
+    </Concept>
+    <Concept Id="3x3" Ignore="false">
+      <Comments>TMI display format value</Comments>
+      <String Context="TS_TButton">3x3</String>
+    </Concept>
+    <Concept Id="2x2" Ignore="false">
+      <Comments>TMI display format value</Comments>
+      <String Context="TS_TButton">2x2</String>
+    </Concept>
+    <Concept Id="1x2" Ignore="false">
+      <Comments>TMI display format value</Comments>
+      <String Context="TS_TButton">1x2</String>
+    </Concept>
+    <Concept Id="SE/SE" Ignore="false">
+      <Comments>The motion loop is always from the start to the end position(VIDEO TOOL)</Comments>
+      <String Context="TS_TButton">SE/SE</String>
+    </Concept>
+    <Concept Id="SE/ES" Ignore="false">
+      <Comments>The motion loop alternates start-end and end-start movements(VIDEO TOOL)</Comments>
+      <String Context="TS_TButton">SE/ES</String>
+    </Concept>
+    <Concept Id="2D SAGITTAL" Ignore="false">
+      <Comments>The selected slice is the one with sagittal orientation(VIDEO TOOL)</Comments>
+      <String Context="TS_TButton">2D SAGITTAL</String>
+    </Concept>
+    <Concept Id="2D TRANSVERSAL" Ignore="false">
+      <Comments>The selected slice is the one with transversal orientation(VIDEO TOOL)</Comments>
+      <String Context="TS_TButton">2D TRANSVERSAL</String>
+    </Concept>
+    <Concept Id="2D CORONAL" Ignore="false">
+      <Comments>The selected slice is the one with coronal orientation(VIDEO TOOL)</Comments>
+      <String Context="TS_TButton">2D CORONAL</String>
+    </Concept>
+    <Concept Id="MANUAL" Ignore="false">
+      <Comments>The VRA curve contour is manually drawned by the user</Comments>
+      <String Context="TS_TButton">MANUAL</String>
+    </Concept>
+    <Concept Id="SEMIAUTOMATIC" Ignore="false">
+      <Comments>The VRA curve contour is automatically drawned after a user left click on section image</Comments>
+      <String Context="TS_TButton">SEMIAUTO</String>
+    </Concept>
+    <Concept Id="AUTOMATIC" Ignore="false">
+      <Comments>The VRA curve contour is automatically drawned after a user left click on section image and this procedure is automatically repeated on all the sections</Comments>
+      <String Context="TS_TButton">AUTO</String>
+    </Concept>
+    <Concept Id="DEPTH_BLACK" Ignore="false">
+      <Comments>Black palette for depth color</Comments>
+      <String Context="TS_TButton">BLACK</String>
+    </Concept>
+    <Concept Id="DEPTH_BLUE" Ignore="false">
+      <Comments>Blue palette for depth color</Comments>
+      <String Context="TS_TButton">BLUE</String>
+    </Concept>
+    <Concept Id="VERTICAL" Ignore="false">
+      <Comments>VRA tool, Axis measure type: the axis orientation is vertical</Comments>
+      <String Context="TS_TButton">VERTICAL</String>
+    </Concept>
+    <Concept Id="HORIZONTAL" Ignore="false">
+      <Comments>VRA tool, Axis measure type: the axis orientation is vertical</Comments>
+      <String Context="TS_TButton">HORIZONTAL</String>
+    </Concept>
+    <Concept Id="VOLUME" Ignore="false">
+      <Comments>VRA Process Page, Mixing type: Only original Volume</Comments>
+      <String Context="TS_TButton">VOLUME</String>
+    </Concept>
+    <Concept Id="VOL+VRA" Ignore="false">
+      <Comments>VRA Process Page, Mixing type: Original volume mixed with VRA volume</Comments>
+      <String Context="TS_TButton">VOL+VRA</String>
+    </Concept>
+    <Concept Id="VRA" Ignore="false">
+      <Comments>VRA Process Page, Mixing type: Only VRA Volume</Comments>
+      <String Context="TS_TButton">VRA</String>
+    </Concept>
+    <Concept Id="SKIN ONLY VOL" Ignore="false">
+      <Comments>VRA Process Page, Skin Transparency value: Only VRA Volume</Comments>
+      <String Context="TS_TButton">ONLY VOLUME</String>
+    </Concept>
+    <Concept Id="SKIN LOW" Ignore="false">
+      <Comments>VRA Process Page, Skin Transparency value: low</Comments>
+      <String Context="TS_TButton">LOW</String>
+    </Concept>
+    <Concept Id="SKIN MEDIUM" Ignore="false">
+      <Comments>VRA Process Page, Skin Transparency value: medium</Comments>
+      <String Context="TS_TButton">MEDIUM</String>
+    </Concept>
+    <Concept Id="SKIN HIGH" Ignore="false">
+      <Comments>VRA Process Page, Skin Transparency value: high</Comments>
+      <String Context="TS_TButton">HIGH</String>
+    </Concept>
+    <Concept Id="SKIN ONLY VRA" Ignore="false">
+      <Comments>VRA Process Page, Skin Transparency value: Only VRA skin</Comments>
+      <String Context="TS_TButton">ONLY VRA</String>
+    </Concept>
+    <Concept Id="VRA SHAPE SPHERE" Ignore="false">
+      <Comments>Command value to set sphere type in VRA SHAPE measure</Comments>
+      <String Context="TS_TButton">SPHERE</String>
+    </Concept>
+    <Concept Id="VRA SHAPE ELLIPSE" Ignore="false">
+      <Comments>Command value to set ellipse type in VRA SHAPE measure</Comments>
+      <String Context="TS_TButton">ELLIPSE</String>
+    </Concept>
+    <Concept Id="BW" Ignore="false">
+      <Comments>Command value to set the BW/CFM volume mix to BW (only BW volume is shown)</Comments>
+      <String Context="TS_TButton">BW</String>
+      <String Context="Generic_Medium">BW</String>
+    </Concept>
+    <Concept Id="COLOR" Ignore="false">
+      <Comments>Command value to set the BW/CFM volume mix to CFM (only CFM volume is shown)</Comments>
+      <String Context="TS_TButton">COLOR</String>
+      <String Context="Generic_Medium">COLOR</String>
+    </Concept>
+    <Concept Id="BW+COLOR" Ignore="false">
+      <Comments>Command value to set the BW/CFM volume mix to BW + CFM (both BW anf CFM volumes are shown)</Comments>
+      <String Context="TS_TButton">BW+COLOR</String>
+      <String Context="Generic_Medium">BW+COLOR</String>
+    </Concept>
+  </LocalizationSection>
+  <!--TS COMMAND VALUES - END-->
+
+  <!--MEASURE UNITS-->
+  <LocalizationSection InternalNamespace="MeasureUnits">
+    <Concept Id="mm" Ignore="false">
+      <Comments>distance measure unit - use the same string used in RT environment</Comments>
+      <String Context="Generic_Short">mm</String>
+      <String Context="MD_RT11UnitMeas">mm</String>
+    </Concept>
+    <Concept Id="Hz" Ignore="false">
+      <Comments>frequency measure unit - use the same string used in RT environment</Comments>
+      <String Context="Generic_Short">Hz</String>
+      <String Context="MD_RT11UnitMeas">Hz</String>
+    </Concept>
+    <Concept Id="degree" Ignore="false">
+      <Comments>angle measure unit - use the same string used in RT environment</Comments>
+      <String Context="Generic_Short">°</String>
+    </Concept>
+    <Concept Id="ml" Ignore="false">
+	 <Comments>volume measure unit - use the same string used in RT environment</Comments>
+     <String Context="MD_RT11UnitMeas">ml</String>
+    </Concept>
+    <Concept Id="cm3" Ignore="false">
+     <Comments>volume measure unit - use the same string used in RT environment</Comments>
+     <String Context="MD_RT11UnitMeas">cm3</String>
+    </Concept>
+    <Concept Id="percent" Ignore="false">
+      <Comments>percentage measure unit - use the same string used in RT environment</Comments>
+      <String Context="Generic_Short">%</String>
+      <String Context="MD_RT11UnitMeas">%</String>
+    </Concept>
+  </LocalizationSection>
+  <!--MEASURE UNITS-->
+
+  <!--MEASURE INDEX-->
+  <LocalizationSection InternalNamespace="MeasureIndex">
+    <Concept Id="VOLUME" Ignore="false">
+      <Comments>Volume value in VRA Tool</Comments>
+      <String Context="Generic_Short">V</String>
+    </Concept>
+    <Concept Id="RATIO" Ignore="false">
+      <Comments>Ratio between two volume values in VRA Tool</Comments>
+      <String Context="Generic_Short">R</String>
+    </Concept>
+    <Concept Id="VASCULAR" Ignore="false">
+      <Comments>Vascularization Index in VRA TOOL with color measures</Comments>
+      <String Context="Generic_Short">VI</String>
+      <String Context="Generic_Medium">VASC IDX</String>
+    </Concept>
+    <Concept Id="FLOW" Ignore="false">
+      <Comments>Volume Flow Index in VRA TOOL with color measures</Comments>
+      <String Context="Generic_Short">FI</String>
+      <String Context="Generic_Medium">FLOW IDX</String>
+    </Concept>
+    <Concept Id="VASCULAR FLOW" Ignore="false">
+      <Comments>Volume Vascularization Flow Index in VRA TOOL with color measures</Comments>
+      <String Context="Generic_Short">VFI</String>
+      <String Context="Generic_Medium">VASC FLOW IDX</String>
+   </Concept>
+   <Concept Id="VRA_AXIS_DX" Ignore="false">
+      <Comments>crop box x dimension (i.e. width) for VRA voxel measurement. The string is shown on video (measure area) and report</Comments>
+      <String Context="Generic_Short">Dx</String>
+   </Concept>
+   <Concept Id="VRA_AXIS_DY" Ignore="false">
+      <Comments>crop box y dimension (i.e. height) for VRA voxel measurement. The string is shown on video (measure area) and report</Comments>
+      <String Context="Generic_Short">Dy</String>
+   </Concept>
+   <Concept Id="VRA_AXIS_DZ" Ignore="false">
+      <Comments>crop box z dimension (i.e. depth) for VRA voxel measurement. The string is shown on video (measure area) and report</Comments>
+      <String Context="Generic_Short">Dz</String>
+   </Concept>
+   <Concept Id="VRA_SPHERE_DIAMETER" Ignore="false">
+      <Comments>diameter for VRA sphere shape measurement. The string is shown on video (measure area) and report</Comments>
+      <String Context="Generic_Short">D</String>
+   </Concept>
+  </LocalizationSection>
+  <!--MEASURE INDEX-->
+
+  <!--TRACKBALL FUNCTIONALITIES-->
+  <LocalizationSection InternalNamespace="Trackball">
+    <Concept Id="IDLE" Ignore="false">
+      <Comments>Idle trackball state - same string used by RT for idle state</Comments>
+      <String Context="MD_RT14aTrackballStrings">IDLE</String>
+    </Concept>
+    <Concept Id="REVERSE" Ignore="false">
+      <Comments>'Reverse' is the current trackball functionality</Comments>
+      <String Context="MD_RT14aTrackballStrings">Reverse</String>
+    </Concept>
+	<Concept Id="ROTATE" Ignore="false">
+      <Comments>'Reverse' is the current trackball functionality</Comments>
+      <String Context="MD_RT14aTrackballStrings">Rotate</String>
+    </Concept>
+	 <Concept Id="FULLSCREEN" Ignore="false">
+      <Comments>3D Volume Fullscreen</Comments>
+      <String Context="MD_RT14aTrackballStrings">Fullscreen</String>
+    </Concept>
+    <Concept Id="PAN" Ignore="false">
+      <Comments>'Pan' is the current trackball functionality</Comments>
+      <String Context="MD_RT14aTrackballStrings">PAN</String>
+    </Concept>
+    <Concept Id="RESIZE" Ignore="false">
+      <Comments>Box Resize is the current trackball functionality - same string used by RT to resize the ROI</Comments>
+      <String Context="MD_RT14aTrackballStrings">RESIZE</String>
+    </Concept>
+    <Concept Id="NAVIGATE" Ignore="false">
+      <Comments>Cross cursor navigation is the current trackball functionality</Comments>
+      <String Context="MD_RT14aTrackballStrings">NAVIGATE</String>
+    </Concept>
+    <Concept Id="LIGHT" Ignore="false">
+      <Comments>Light bulb cursor navigation is the current trackball functionality</Comments>
+      <String Context="MD_RT14aTrackballStrings">LIGHTING</String>
+    </Concept>
+    <Concept Id="CUT" Ignore="false">
+      <Comments>Cutter cursor navigation is the current trackball functionality</Comments>
+      <String Context="MD_RT14aTrackballStrings">CUT</String>
+    </Concept>
+    <Concept Id="CURVE U/D" Ignore="false">
+      <Comments>Crop box upper line modification is the current trackball functionality</Comments>
+      <String Context="MD_RT14aTrackballStrings">Curve U/D</String>
+    </Concept>
+	 <Concept Id="MODIFY SPLINE" Ignore="false">
+      <Comments>Crop box upper line modification is the current trackball functionality</Comments>
+      <String Context="MD_RT14aTrackballStrings">Modify Spline</String>
+    </Concept>
+	   <Concept Id="CURVE L/R" Ignore="false">
+      <Comments>Crop box upper line modification is the current trackball functionality</Comments>
+      <String Context="MD_RT14aTrackballStrings">Curve L/R</String>
+    </Concept>
+    <Concept Id="SCROLL" Ignore="false">
+      <Comments>Volume scroll trackball functionality in 4D freeze status</Comments>
+      <String Context="MD_RT14aTrackballStrings">SCROLL</String>
+    </Concept>
+    <Concept Id="VRA DRAWING" Ignore="false">
+      <Comments>VRA caliper cursor is the current trackball functionality to draw manual contour</Comments>
+      <String Context="MD_RT14aTrackballStrings">DRAW</String>
+    </Concept>
+  </LocalizationSection>
+  <!--TRACKBALL FUNCTIONALITIES-->
+
+  <!--AREA8 - START-->
+  <LocalizationSection InternalNamespace="Area8">
+    <Concept Id="SCAN ANGLE" Ignore="false">
+      <Comments>String representing 3D/4D scan angle used in video info area number 8</Comments>
+      <String Context="MD_RT8Info">SA</String>
+    </Concept>
+    <Concept Id="FOV" Ignore="false">
+      <Comments>String representing 3D/4D scan field of view used in video info area number 8</Comments>
+      <String Context="MD_RT8Info">FOV</String>
+    </Concept>
+    <Concept Id="QUALITY" Ignore="false">
+      <Comments>String representing 3D/4D quality used in video info area number 8</Comments>
+      <String Context="MD_RT8Info">QLT</String>
+    </Concept>
+    <Concept Id="FILTER 3D" Ignore="false">
+      <Comments>String representing 3D/4D filter used in video info area number 8</Comments>
+      <String Context="MD_RT8Info">FLT</String>
+    </Concept>
+    <Concept Id="PROCESS 3D" Ignore="false">
+      <Comments>String representing 3D/4D process (low threshold/transparency/shading/graymap) used in video info area number 8</Comments>
+      <String Context="MD_RT8Info">PRC3D</String>
+    </Concept>
+    <Concept Id="4DSTIC HR" Ignore="false">
+      <Comments>String representing estimated heart rate retrieved from STIC Algo used in video info area number 8</Comments>
+      <String Context="MD_RT8Info">4DSTIC HR</String>
+    </Concept>
+  </LocalizationSection>
+  <!--AREA8 - END-->
+
+
+  <LocalizationSection InternalNamespace="INTERFACE">
+    <Concept Id="SELECT_CONFIGURATION">
+      <Comments>Ask the user to select one of the the configurations displayed.</Comments>
+      <String Context="Generic_Long">Please, select one of the following configurations:</String>
+    </Concept>
+	<Concept Id="NotPossibleToSaveImage">
+		<Comments>Warning message when a generic error occurs pressing the IMAGE button</Comments>
+		<String Context="Generic_Warning">An error was detected while saving data.</String>
+	</Concept >
+  </LocalizationSection>
+
+  <!--ADDTOREPORT - START-->
+  <LocalizationSection InternalNamespace="VRAReport">
+    <Concept Id="VRAReport_EMPTY_STRING_MESSAGE">
+      <Comments>Message to user of Add To Report dialog when input string is empty (used also in measure component)</Comments>
+      <String Context="Generic_Long" >Input string cannot be empty!</String>
+    </Concept >
+    <Concept Id="VRAReport_LABEL">
+      <Comments>Add to report dialog label (used also in measure component)</Comments>
+      <String Context="Generic_Long">Rename</String>
+    </Concept >
+    <Concept Id="VRAReport_SINGLE">
+      <Comments>Suggested text for vra single measure in Add to report dialog; 
+	  the generic long string becomes the title of a section in report, 
+	  the medium one is used as label in report for the measure value</Comments>
+      <String Context="Generic_Long">VOLUME (SINGLE)</String>
+      <String Context="Generic_Medium">V-SINGLE</String>
+    </Concept >
+    <Concept Id="VRAReport_RATIO">
+      <Comments>Suggested text for vra ratio measure in Add to report dialog
+	  the generic long string becomes the title of a section in report, 
+	  the medium one is used as label in report for the measure value</Comments>
+      <String Context="Generic_Long">VOLUME (RATIO)</String>
+      <String Context="Generic_Medium">V-RATIO</String>
+    </Concept >
+    <Concept Id="VRAReport_AXIS">
+      <Comments>Suggested text for vra axis measure in Add to report dialog;
+	  the generic long string becomes the title of a section in report, 
+	  the medium one is used as label in report for the measure value</Comments>
+      <String Context="Generic_Long">VOLUME (AXIS)</String>
+      <String Context="Generic_Medium">V-AXIS</String>
+    </Concept >
+    <Concept Id="VRAReport_PLANES">
+      <Comments>Suggested text for vra planes measure in Add to report dialog;
+	  the generic long string becomes the title of a section in report, 
+	  the medium one is used as label in report for the measure value</Comments>
+      <String Context="Generic_Long">VOLUME (PLANES)</String>
+      <String Context="Generic_Medium">V-PLANES</String>
+    </Concept >
+    <Concept Id="VRAReport_VOXEL">
+      <Comments>Suggested text for vra voxel measure in Add to report dialog;
+	  the generic long string becomes the title of a section in report, 
+	  the medium one is used as label in report for the measure value</Comments>
+      <String Context="Generic_Long">VOLUME (VOXEL)</String>
+      <String Context="Generic_Medium">V-VOXEL</String>
+    </Concept >
+    <Concept Id="VRAReport_MULTIPLE">
+      <Comments>Suggested text for vra counting measure in Add to report dialog;
+	  the generic long string becomes the title of a section in report, 
+	  the medium one is used as label in report for the measure value</Comments>
+      <String Context="Generic_Long">VOLUME (COUNTING)</String>
+    </Concept >
+    <Concept Id="VRAReport_SHAPE">
+      <Comments>Suggested text for vra shape measure in Add to report dialog;
+	  the generic long string becomes the title of a section in report, 
+	  the medium one is used as label in report for the measure value</Comments>
+      <String Context="Generic_Long">VOLUME (SHAPE)</String>
+      <String Context="Generic_Medium">V-SHAPE</String>
+    </Concept >
+    <Concept Id="VRAReport_ReportSectionTitle">
+      <Comments>Section title in Report for the VRA measures added by user to Report</Comments>
+      <String Context="Generic_Long" >3D VRA MEASURES</String>
+    </Concept >
+  </LocalizationSection>
+  <!--ADDTOREPORT - END-->
+
+  <!--VRAHELP - START-->
+  <LocalizationSection InternalNamespace="VRAHelp">
+
+    <Concept Id="VRAHelp_MEASURE_BEGIN">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Pan image to adjust ROI Center position over the structure to be measured. Press ACTION or START to begin a new measure.</String>
+    </Concept >
+    <Concept Id="VRAHelp_MEASURE_BEGIN_ROI">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Adjust ROI size and press ACTION or CALCULATE to begin a new measure.</String>
+    </Concept >
+
+    <Concept Id="VRAHelp_START_AUTO">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Press ACTION or CALCULATE to start automatic measure procedure.</String>
+    </Concept >
+    <Concept Id="VRAHelp_START_MANUAL">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Draw at least two valid contours and press ACTION or CALCULATE.</String>
+    </Concept >
+    <Concept Id="VRAHelp_START_SINGLE_SEMIAUTO">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Click to add at least two valid contours, then press ACTION or CALCULATE.</String>
+    </Concept >
+    <Concept Id="VRAHelp_START_AXIS_SEMIAUTO">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Add at least two valid contours, then press ACTION or CALCULATE.</String>
+    </Concept >
+    <Concept Id="VRAHelp_START_PLANES_MANUAL">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Draw three valid contours and press ACTION or CALCULATE.</String>
+    </Concept >
+    <Concept Id="VRAHelp_START_PLANES_SEMIAUTO">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Add three valid contours, then press ACTION or CALCULATE.</String>
+    </Concept >
+
+    <Concept Id="VRAHelp_MODIFY">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Change current contour and press ACTION or CALCULATE to close measure procedure.</String>
+    </Concept >
+    <Concept Id="VRAHelp_MODIFY_ROI">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Change ROI size and press ACTION or CALCULATE to close measure procedure.</String>
+    </Concept >
+
+    <Concept Id="VRAHelp_CALCULATE">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Press MODIFY to change current contour or begin new measure.</String>
+    </Concept >
+    <Concept Id="VRAHelp_CALCULATE_ROI">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Press MODIFY to change current ROI size or begin new measure.</String>
+    </Concept >
+    <Concept Id="VRAHelp_CALCULATE_NEXT">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Press MODIFY to change current contour or START to begin next measure.</String>
+    </Concept >
+
+    <Concept Id="VRAHelp_ERROR_NO_VOLUME">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Volume cannot be calculated. Draw a valid contour and retry.</String>
+    </Concept >
+    <Concept Id="VRAHelp_ERROR_NO_VOLUME_MANUAL">
+      <Comments>Message on AREA 13 to help the user to use VRA TOOL</Comments>
+      <String Context="MD_RT13HelpLine" >Volume cannot be calculated. Draw at least two valid contours and retry.</String>
+    </Concept >
+        
+  </LocalizationSection>
+  <!--VRAHELP - END-->
+
+</LocalizationResource>
+

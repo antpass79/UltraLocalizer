@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ArchiveBrowser" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="ExamList">
+    <Concept Id="PATIENTNAME">
+      <Comments>Patient Name Header in ExamList</Comments>
+      <String Context="Generic_Long">PATIENT NAME</String>
+    </Concept>
+    <Concept Id="PATIENTID">
+      <Comments>Patient ID Header in ExamList</Comments>
+    <String Context="Generic_Long">PATIENT ID</String>
+    </Concept>
+    <Concept Id="EXAMTYPE">
+      <Comments>Application Type Header in ExamList</Comments>
+      <String Context="Generic_Long">EXAM TYPE</String>
+    </Concept>
+    <Concept Id="EXAMDATE">
+      <Comments>Exam Date Header in ExamList</Comments>
+      <String Context="Generic_Long">EXAM DATE</String>
+    </Concept>
+    <Concept Id="EXAMTIME">
+      <Comments>Exam Time Label in ExamList</Comments>
+      <String Context="Generic_Long">TIME</String>
+    </Concept>
+    <Concept Id="EXAMMODALITY">
+      <Comments>Exam Modality Header in ExamList</Comments>
+      <String Context="MD_RT8Info">EXAM MODALITY</String>
+    </Concept>
+    <Concept Id="EXAMATTACHMENT">
+      <Comments>Exam Attachment Label in ExamList</Comments>
+      <String Context="MD_RT8Info">ATTACHMENT</String>
+    </Concept>
+    <Concept Id="SELECTEDSTUDIES">
+      <Comments>Label of Number of selected studies in helparea</Comments>
+      <String Context="Generic_Long">NUMBER OF SELECTED STUDIES</String>
+    </Concept>
+    <Concept Id="TOTALIMAGES">
+      <Comments>Label of Number of total images in selected Studies</Comments>
+      <String Context="Generic_Long">TOTAL IMAGES</String>
+    </Concept>
+    <Concept Id="PAGE">
+      <Comments>Label of current page in exam list</Comments>
+      <String Context="Generic_Long">PAGE</String>
+    </Concept>
+    <Concept Id="SELECTINTERVAL">
+      <Comments>Show in help area that selectinterval command was pressed</Comments>
+      <String Context="Generic_Long">SELECT INTERVAL</String>
+    </Concept>
+    <Concept Id="FIRSTEXAM">
+      <Comments>Show in help area to select First exam</Comments>
+      <String Context="Generic_Long">SELECT FIRST EXAM</String>
+    </Concept>
+    <Concept Id="SECONDEXAM">
+      <Comments>Show in help area to select First exam</Comments>
+      <String Context="Generic_Long">SELECT SECOND EXAM</String>
+    </Concept>
+    <Concept Id="LOCALARCHIVE">
+      <Comments>Show in help area tha current archive is local archive</Comments>
+      <String Context="Generic_Long">LOCAL ARCHIVE</String>
+    </Concept>
+    <Concept Id="USBARCHIVE">
+      <Comments>Show in help area tha current archive is aUSB archive</Comments>
+      <String Context="Generic_Long">USB ARCHIVE</String>
+    </Concept>
+    <Concept Id="HDARCHIVE">
+      <Comments>Show in help area tha current archive is a HD archive</Comments>
+      <String Context="Generic_Long">HD ARCHIVE</String>
+    </Concept>
+    <Concept Id="CDARCHIVE">
+      <Comments>Show in help area tha current archive is a CD archive</Comments>
+      <String Context="Generic_Long">CD ARCHIVE</String>
+    </Concept>
+    <Concept Id="NETARCHIVE">
+      <Comments>Show in help area tha current archive is a Network archive</Comments>
+      <String Context="Generic_Long">NET ARCHIVE</String>
+    </Concept>
+    <Concept Id="NUMBEROFIMAGES">
+      <Comments>Number of Images Label in exam tooltip</Comments>
+      <String Context="Generic_Long">NUMBER OF IMAGES</String>
+    </Concept>
+    <Concept Id="Native">
+      <Comments>Native Exam Label in tooltip</Comments>
+      <String Context="Generic_Long">NATIVE</String>
+    </Concept>
+    <Concept Id="Dicom">
+      <Comments>Dicom Imported exam label in tooltip</Comments>
+      <String Context="Generic_Long">DICOM</String>
+    </Concept>
+    <Concept Id="NONEARCHIVE">
+      <Comments>Error message of wrong selected location</Comments>
+      <String Context="Generic_Warning">NO ARCHIVE IN SELECTED LOCATION</String>
+    </Concept>
+    <Concept Id="NOMOREARCHIVE">
+      <Comments>Error message of wrong previously selected location</Comments>
+      <String Context="Generic_Warning">SELECTED ARCHIVE NO MORE AVAILABLE. LOCAL ARCHIVE IS CURRENT ARCHIVE.</String>
+    </Concept>
+    <Concept Id="READONLY_ARCHIVE">
+      <Comments>Warning message</Comments>
+      <String Context="Generic_Warning">THE SELECTED ARCHIVE IS READ-ONLY; ANY MODIFICATION WILL NOT BE STORED</String>
+    </Concept>
+    <Concept Id="ARCHIVE_READONLY_NO_RECOVER">
+      <Comments>Warning message</Comments>
+      <String Context="Generic_Warning">THE SELECTED ARCHIVE IS READ-ONLY; IT'S NOT POSSIBLE TO REBUILD THE ARCHIVE INDEX</String>
+    </Concept>    
+    <Concept Id="PROBLEM_CONNECTING_NETWORK_DIR">
+      <Comments>it is visualized if the connection is not established</Comments>
+      <String Context="Generic_Warning" >IT ISN'T POSSIBLE TO ESTABLISH THE CONNECTION: VERIFY THAT REMOTE MACHINE IS TURNED ON AND THAT DIRECTORY EXISTS</String>
+    </Concept>
+    <Concept Id="MUltiselecion">
+      <Comments>Message for the user "Use Action for multiple exams selection"</Comments>
+      <String Context="Generic_Long">USE ACTION FOR MULTIPLE EXAMS SELECTION</String>
+    </Concept >
+    <Concept Id="Retrieveselecion">
+      <Comments>Message for the user "Select one exam to retrieve patient data"</Comments>
+      <String Context="Generic_Long">SELECT ONE EXAM TO RETRIEVE PATIENT DATA</String>
+    </Concept >
+    <Concept Id="ARCHIVE_CORRUPTED_REBUILD?">
+      <Comments>Warning message</Comments>
+      <String Context="Generic_Warning">ERROR ACCESSING THE SELECTED ARCHIVE. DO YOU WANT TO REBUILD THE ARCHIVE INDEX (THIS OPERATION MAY TAKE A LONG TIME)?</String>
+    </Concept>
+    <Concept Id="NOAVAILABLEARCHIVE">
+      <Comments>Error message of wrong previously selected location</Comments>
+      <String Context="Generic_Warning">SELECTED ARCHIVE IS NOT AVAILABLE. LOCAL ARCHIVE IS CURRENT ARCHIVE.</String>
+    </Concept>
+    <Concept Id="DESCRIPTION">
+      <Comments>Study description Header in ExamList</Comments>
+      <String Context="Generic_Long">DESCRIPTION</String>
+    </Concept>
+    <Concept Id="DEVICENOTREADY">
+      <Comments>Warning message of not ready selected device</Comments>
+      <String Context="Generic_Warning">DEVICE NOT READY</String>
+    </Concept>
+    <Concept Id="NONEARCHIVETRYPARENT">
+      <Comments>Error message of wrong selected location</Comments>
+      <String Context="Generic_Warning">NO ARCHIVE IN SELECTED LOCATION.(Please try to select the parent directory).</String>
+    </Concept>
+    <Concept Id="WAIT_TO_BURN" >
+      <Comments>used when the user interaction is stopped by a burning operation</Comments>
+      <String Context="Generic_Warning" >A BURNING OPERATION IS IN PROGRESS. YOU CAN CANCEL SUCH OPERATION BUT THE CD/DVD MAY BE CORRUPTED OR INCOMPLETE.</String>
+    </Concept>
+    <Concept Id="WarningArchiveDisconnected" >
+      <Comments>A message box to notify the user that the system will have to exit the current environment because the current device is no longer
+        available.
+      </Comments>
+      <String Context="Generic_Warning" >THE CURRENT DEVICE IS NO LONGER AVAILABLE. THE SYSTEM WILL EXIT FROM THE CURRENT ENVIRONMENT.</String>
+    </Concept>
+    <Concept Id="OWNERNAME">
+      <Comments>Owner Name Header in ExamList in vet model</Comments>
+      <String Context="Generic_Long">OWNER NAME</String>
+    </Concept>
+    <Concept Id="ANIMALNAME">
+      <Comments>Animal Name Header in ExamList in vet model</Comments>
+      <String Context="Generic_Long">ANIMAL NAME</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

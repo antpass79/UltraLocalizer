@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="WorksheetComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Main">
+    <Concept Id="Standard Deviation">
+      <String Context="MD_RT11MeasName">SD</String>
+    </Concept>
+	<Concept Id="GRAPHNOTAVAILABLE">
+      <Comments></Comments>
+      <String Context="Generic_Medium">Graph Not Available</String>
+    </Concept>
+    <Concept Id="MEASURE_SECTION_UNAVAILABLE">
+      <Comments>Info string saying asb velocity had been used</Comments>
+      <String Context="Generic_Warning">It was not possible to retrieve measures. It possibly depends on file corruption. Try previous report button to retrieve measure values.</String>
+    </Concept>
+    <Concept Id="WARNING_ABS_VELOCITY">
+      <Comments>Info string saying asb velocity had been used</Comments>
+      <String Context="Generic_Long">[Absolute velocity used]</String>
+    </Concept>
+    <Concept Id="ADDITIONAL_MEASURE">
+      <Comments>Header page custom measures in worksheet</Comments>
+      <String Context="Generic_Long">Additional measures</String>
+    </Concept>
+    <Concept Id="PARAMETER">
+      <Comments>Header of column measure name in worksheet</Comments>
+      <String Context="Generic_Medium">Parameter</String>
+    </Concept>
+    <Concept Id="PARAMETERS">
+      <Comments>Header of column measure name in worksheet</Comments>
+      <String Context="Generic_Medium">Parameters</String>
+    </Concept>
+    <Concept Id="VALUE">
+      <Comments>Header of column measure value in worksheet</Comments>
+      <String Context="Generic_Medium">Value</String>
+    </Concept>
+    <Concept Id="UNIT">
+      <Comments>Header of column measure unit in worksheet</Comments>
+      <String Context="Generic_Medium">Unit</String>
+    </Concept>
+    <Concept Id="MEASURE_1">
+      <Comments>Header of column measure value for averaging in worksheet</Comments>
+      <String Context="Generic_Medium">Measure 1</String>
+    </Concept>
+    <Concept Id="MEASURE_2">
+      <Comments>Header of column measure value for averaging in worksheet</Comments>
+      <String Context="Generic_Medium">Measure 2</String>
+    </Concept>
+    <Concept Id="MEASURE_3">
+      <Comments>Header of column measure value for averaging in worksheet</Comments>
+      <String Context="Generic_Medium">Measure 3</String>
+    </Concept>
+    <Concept Id="MEASURE_4">
+      <Comments>Header of column measure value for averaging in worksheet</Comments>
+      <String Context="Generic_Medium">Measure 4</String>
+    </Concept>
+    <Concept Id="MEASURE_5">
+      <Comments>Header of column measure value for averaging in worksheet</Comments>
+      <String Context="Generic_Medium">Measure 5</String>
+    </Concept>
+    <Concept Id="EFW FORMULA">
+      <Comments>Header of column EFW Formula in worksheet</Comments>
+      <String Context="Generic_Medium">EFW FORMULA</String>
+    </Concept>
+    <Concept Id="AUA">
+      <Comments>Header of column Average ultrasound age (12W0D) in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">AUA</String>
+    </Concept>
+    <Concept Id="GA">
+      <Comments>Header of column measure value gestational age (12W0D) in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">GA</String>
+    </Concept>
+    <Concept Id="DETAILS">
+      <Comments>Header of groupbox DETAILS in graphics worksheet</Comments>
+      <String Context="Generic_Medium">Details</String>
+    </Concept>
+    <Concept Id="GA Graphs">
+      <Comments>Header of tab Gestational Age Graphics in graphics worksheet</Comments>
+      <String Context="Generic_Medium">GA Graphs</String>
+    </Concept>
+    <Concept Id="Patient Name">
+      <Comments>Header of column Patient Name value for exams trend list in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">PATIENT NAME</String>
+    </Concept>
+    <Concept Id="Exam Date">
+      <Comments>Header of column ExamDate value for exams trend list in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">EXAM DATE</String>
+    </Concept>
+    <Concept Id="Exam LMP/DOC">
+      <Comments>Header of column LMP/DOC value for exams trend list in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">EXAM LMP/DOC</String>
+    </Concept>
+    <Concept Id="Exam GA">
+      <Comments>Header of column GA value for exams trend list in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">EXAM GA</String>
+    </Concept>
+	 <Concept Id="Exams">
+      <Comments>Exams</Comments>
+      <String Context="Generic_Medium">Exams</String>
+    </Concept>
+    <Concept Id="No previous exam">
+      <Comments>Help string diplayed when the list of trend exams is empty</Comments>
+      <String Context="Generic_Long">NO PREVIOUS EXAM AVAILABLE!</String>
+    </Concept>
+    <Concept Id="FG Graphs">
+      <Comments>Header of tab Fetal Growth Graphics in graphics worksheet</Comments>
+      <String Context="Generic_Medium">FG Graphs</String>
+    </Concept>
+    <Concept Id="GA(Range)">
+      <Comments>Header of column measure value gestational age range(12W0D-18W2D) in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">GA(Range)</String>
+    </Concept>
+    <Concept Id="Author">
+      <Comments>Header of column measure value for biometric study's author in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">Author</String>
+    </Concept>
+    <Concept Id="Author GA">
+      <Comments>Header of column Author Gestational Age measure table for biometric study's author in graphic worksheet; keep short</Comments>
+      <String Context="Generic_Medium">Author GA</String>
+    </Concept>
+    <Concept Id="Author FG">
+      <Comments>Header of column Author Fetal Growth measure table for biometric study's author in graphic worksheet; keep short</Comments>
+      <String Context="Generic_Medium">Author FG</String>
+    </Concept>
+    <Concept Id="Rank">
+      <Comments>Header of column ranking in percentile (54%) in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">Rank</String>
+    </Concept>
+    <Concept Id="ESTIMATED FETAL WEIGHT">
+      <Comments>Header of column EFW in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">Estimated fetal weight</String>
+      <String Context="Generic_Short">EFW</String>
+    </Concept>
+    <Concept Id="GRAPHS">
+      <Comments>Header of section graphics in printed report</Comments>
+      <String Context="Generic_Long">GRAPHS</String>
+    </Concept>
+    <Concept Id="SCROLL">
+      <Comments>Scroll for column</Comments>
+      <String Context="TS_TButton">↓ SCROLL WORD ↑</String>
+    </Concept>
+    <Concept Id="ICA">
+      <Comments>Label used both for configuration of type(PROX,MID,DISTAL)in editor and in printreport as header</Comments>
+      <String Context="MD_RT11MeasHeader">ICA</String>
+    </Concept>
+    <Concept Id="CCA">
+      <Comments>Label used both for configuration of type(PROX,MID,DISTAL)in editor and in printreport as header</Comments>
+      <String Context="MD_RT11MeasHeader">CCA</String>
+    </Concept>
+    <Concept Id="SMA">
+      <Comments>Label used both for configuration of type(PROX,MID,DISTAL)in editor and in printreport as header</Comments>
+      <String Context="MD_RT11MeasHeader">SMA</String>
+    </Concept>
+    <Concept Id="AO">
+      <Comments>Label used in printreport as header</Comments>
+      <String Context="MD_RT11MeasHeader">AO</String>
+    </Concept>
+    <Concept Id="AUTOMAX">
+      <Comments>Label used both for configuration of type(On/OFF)in editor and in printreport as header</Comments>
+      <String Context="MD_RT11MeasHeader">AUTOMAX</String>
+    </Concept>
+    <Concept Id="MEASURED QIMT">
+      <Comments>Label used as header of QIMT current value in QIMT Calculation box</Comments>
+      <String Context="MD_RT11MeasHeader">MEASURED QIMT</String>
+    </Concept>
+	<Concept Id="Category">
+      <Comments>Category - Header in the Legend Table </Comments>
+      <String Context="Generic_Long">Category</String>
+    </Concept>
+  <Concept Id="Assessment_Categories">
+      <Comments>Assessment Categories - Header in the Legend Table </Comments>
+      <String Context="Generic_Long">ASSESSMENT CATEGORIES (select one)</String>
+    </Concept>
+  <Concept Id="Final_Assessment">
+      <Comments>Final Assessment - Subheader in the Legend Table </Comments>
+      <String Context="Generic_Long">Final Assessment</String>
+    </Concept>
+  <Concept Id="Incomplete_Assessment">
+      <Comments>Incomplete Assessment - Subheader in the Legend Table </Comments>
+      <String Context="Generic_Long">Incomplete Assessment</String>
+    </Concept>
+    <Concept Id="Management">
+      <Comments>Management - Subheader in the Legend Table </Comments>
+      <String Context="Generic_Long">Management</String>
+    </Concept>
+	<Concept Id="Likehood">
+      <Comments>Likelihood of cancer - Subheader in the Legend Table </Comments>
+      <String Context="Generic_Long">Likelihood of cancer</String>
+    </Concept>
+	<Concept Id="Tirads">
+      <Comments>thyroid imaging rads - Header in the Legend Table </Comments>
+      <String Context="Generic_Long">Tirads</String>
+    </Concept>
+	<Concept Id="Birads">
+      <Comments>Breast imaging rads - Header in the Legend Table </Comments>
+      <String Context="Generic_Long">Birads</String>
+    </Concept>
+	<Concept Id="Score">
+      <Comments>Score - Header in the Legend Table </Comments>
+      <String Context="Generic_Long">Score</String>
+    </Concept>
+	<Concept Id="Dimension">
+      <Comments>Dimension - Header in the Legend Table </Comments>
+      <String Context="Generic_Long">Dimension</String>
+    </Concept>
+	<Concept Id="Recommendation">
+      <Comments>Recommendation - Header in the Legend Table </Comments>
+      <String Context="Generic_Long">Recommendation</String>
+    </Concept>
+	<Concept Id="Recall_for_additional_imaging_and_or_prior_examination">
+      <Comments>Management - in the Legend Table</Comments>
+      <String Context="Generic_Long">Recall for additional imaging</String>
+    </Concept>
+	<Concept Id="Routine_screening_for_age">
+      <Comments>Management - in the Legend Table</Comments>
+      <String Context="Generic_Long">Routine screening</String>
+    </Concept>
+	<Concept Id="Short_interval_follow_up">
+      <Comments>Management - in the Legend Table</Comments>
+      <String Context="Generic_Long">Short-interval (6-month) follow-up or continued surveillance</String>
+    </Concept>
+	<Concept Id="Tissue_diagnosis">
+      <Comments>Management - in the Legend Table</Comments>
+      <String Context="Generic_Long">Tissue diagnosis</String>
+    </Concept>
+	<Concept Id="Surgical_excision">
+      <Comments>Management - in the Legend Table</Comments>
+      <String Context="Generic_Long">Surgical excision when clinically appropriate</String>
+    </Concept>
+	<Concept Id="Essentially_0">
+      <Comments>Likelihood - in the Legend Table</Comments>
+      <String Context="Generic_Long">Essentially 0% likelihood of malignancy</String>
+    </Concept>
+	<Concept Id="n_a">
+      <Comments>Likelihood - in the Legend Table</Comments>
+      <String Context="Generic_Long">n/a (not applicable)</String>
+    </Concept>
+	<Concept Id="BRAD_3">
+      <Comments>Likelihood - in the Legend Table</Comments>
+      <String Context="Generic_Long">&gt; 0% but &lt;=2% likelihood of malignancy</String>
+    </Concept>
+  <Concept Id="BRAD_4">
+      <Comments>Likelihood - in the Legend Table</Comments>
+      <String Context="Generic_Long">&gt; 2% but &lt; 95% likelihood of malignancy</String>
+    </Concept>
+    <Concept Id="BRAD_4a">
+      <Comments>Likelihood - in the Legend Table</Comments>
+      <String Context="Generic_Long">&gt; 2% to &lt;=10% likelihood of malignancy</String>
+    </Concept>
+	<Concept Id="BRAD_4b">
+      <Comments>Likelihood - in the Legend Table</Comments>
+      <String Context="Generic_Long">&gt; 10% to &lt;=50% likelihood of malignancy</String>
+    </Concept>
+	<Concept Id="BRAD_4c">
+      <Comments>Likelihood - in the Legend Table</Comments>
+      <String Context="Generic_Long">&gt; 50% to &lt;95% likelihood of malignancy</String>
+    </Concept>
+  <Concept Id="BRAD_5">
+      <Comments>Likelihood - in the Legend Table</Comments>
+      <String Context="Generic_Long">&gt;=95% likelihood of malignancy</String>
+    </Concept>
+    <Concept Id="No_FNA">
+      <Comments>Recommendation - in the Legend Table</Comments>
+      <String Context="Generic_Long">No FNA (Fine Needle Aspiration) required</String>
+    </Concept>
+	<Concept Id="follow_up_1_3_5_years">
+      <Comments>Recommendation - in the Legend Table</Comments>
+      <String Context="Generic_Long">follow up 1, 3 and 5 years</String>
+    </Concept>
+	<Concept Id="FNA">
+      <Comments>Recommendation - in the Legend Table</Comments>
+      <String Context="Generic_Long">FNA (Fine Needle Aspiration)</String>
+    </Concept>
+	<Concept Id="follow_up_1_2_3_5_year">
+      <Comments>Recommendation - in the Legend Table</Comments>
+      <String Context="Generic_Long">follow up 1,2, 3 and 5 years</String>
+    </Concept>
+	<Concept Id="follow_up_for_up_to_5_years">
+      <Comments>Recommendation - in the Legend Table</Comments>
+      <String Context="Generic_Long">annual follow up for up to 5 years</String>
+    </Concept>
+	<Concept Id="ECHOGENICFOCI">
+      <Comments>Tab Header - Echogenic foci</Comments>
+      <String Context="Generic_Long">ECHOGENIC FOCI</String>
+	  <String Context="TS_SButton">ECHOGENIC FOCI</String>
+	  <String Context="TS_TButton">Echogenic Foci</String>
+    </Concept>
+	<Concept Id="LOCATION">
+      <Comments>Tab Header - Location</Comments>
+      <String Context="Generic_Long">LOCATION</String>
+	  <String Context="TS_SButton">LOCATION</String>
+	  <String Context="TS_TButton">Location</String>
+    </Concept>
+	<Concept Id="MASSES">
+      <Comments>Tab Header - Masses</Comments>
+      <String Context="Generic_Long">MASSES</String>
+	   <String Context="TS_SButton">MASSES</String>
+	    <String Context="TS_TButton">Masses</String>
+    </Concept>
+	<Concept Id="ASSOCIATEDFEATURES">
+      <Comments>Tab Header - Associated features</Comments>
+      <String Context="Generic_Long">ASSOCIATED FEATURES</String>
+	   <String Context="TS_SButton">ASSOCIATED FEATURES</String>
+	    <String Context="TS_TButton">Associated Features</String>
+    </Concept>
+	<Concept Id="TISSUECOMPOSITION">
+      <Comments>Tab Header - TISSUE COMPOSITION</Comments>
+	    <String Context="TS_TButton">Tissue Composition</String>
+    </Concept>
+	<Concept Id="CALCIFICATIONS">
+      <Comments>Tab Header - CALCIFICATIONS</Comments>
+	    <String Context="TS_TButton">Calcifications</String>
+      <String Context="TS_SButton">Calcifications</String>
+      <String Context="Generic_Long">Calcifications</String>
+  </Concept>
+	<Concept Id="ELASTICITY">
+      <Comments>Tab Header - ELASTICITY</Comments>
+	    <String Context="TS_TButton">Elasticity</String>
+    </Concept>
+	<Concept Id="SPECIALCASES">
+      <Comments>Tab Header - SPECIALCASES</Comments>
+	    <String Context="TS_TButton">Special Cases</String>
+      <String Context="TS_SButton">Special Cases</String>
+      <String Context="Generic_Long">Special Cases</String>
+  </Concept>
+  <Concept Id="SPECIALCASES2">
+    <Comments>Tab Header - SPECIALCASES2</Comments>
+    <String Context="TS_TButton">Special Cases 2</String>
+    <String Context="TS_SButton">Special Cases 2</String>
+    <String Context="Generic_Long">Special Cases 2</String>
+  </Concept>
+    <Concept Id="SPECIALCASES3">
+      <Comments>Tab Header - SPECIALCASES3</Comments>
+      <String Context="TS_TButton">Special Cases 3</String>
+      <String Context="TS_SButton">Special Cases 3</String>
+      <String Context="Generic_Long">Special Cases 3</String>
+    </Concept>
+    <Concept Id="SCORING">
+      <Comments>Tab Header - SCORING</Comments>
+	    <String Context="TS_TButton">Scoring</String>
+    </Concept>
+	<Concept Id="COMPOSITION">
+      <Comments>Tab Header - COMPOSITION</Comments>
+	    <String Context="TS_TButton">Composition</String>
+    </Concept>
+	<Concept Id="ECHOGENITY">
+      <Comments>Tab Header - ECHOGENITY</Comments>
+	    <String Context="TS_TButton">Echogenity</String>
+    </Concept>
+	<Concept Id="SHAPE">
+      <Comments>Tab Header - SHAPE</Comments>
+	    <String Context="TS_TButton">Shape</String>
+    </Concept>
+	<Concept Id="MARGINS">
+      <Comments>Tab Header - MARGINS</Comments>
+	    <String Context="TS_TButton">Margins</String>
+      <String Context="TS_SButton">Margins</String>
+      <String Context="Generic_Long">Margins</String>
+  </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

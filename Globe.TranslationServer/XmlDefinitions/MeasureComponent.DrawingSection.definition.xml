@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="MeasureComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="DrawingSection">
+    <Concept Id="MeasureFunctions">
+      <Comments> Access measure functions like swap caliper, swap axis and so on </Comments>
+      <String Context="Generic_Long" >Measure Functions</String>
+    </Concept >
+    <Concept Id="MEASUREMENU">
+      <Comments>Access measure menu through action button</Comments>
+      <String Context="Generic_Long" >Measure Menu</String>
+    </Concept >
+    <Concept Id="PANAREA">
+      <Comments>Pan area on us image through action button</Comments>
+      <String Context="Generic_Long" >Measure Panel</String>
+    </Concept >
+    <Concept Id="CINELOOP">
+      <Comments>Access Cineloop menu through action button</Comments>
+      <String Context="Generic_Long" >Cineloop</String>
+    </Concept >
+    <Concept Id="ERROR IN RESTORE REPORT">
+      <Comments>Message to user when XML measure file is missing, corrupted or invalid</Comments>
+      <String Context="Generic_Warning" >Missing or corrupted measure file.</String>
+    </Concept >
+    <Concept Id="ERROR IN SAVE REPORT">
+      <Comments>Message to user when the saving of XML measure file fails</Comments>
+      <String Context="Generic_Warning" >Cannot save measure file.</String>
+    </Concept >
+    <Concept Id="SWAP" >
+      <Comments>Distance: swap calipers</Comments>
+      <String Context="TS_TButton" >SWAP</String>
+    </Concept >
+    <Concept Id="SKIPM" >
+      <Comments>SKIPM</Comments>
+      <String Context="TS_TButton" >SKIP</String>
+    </Concept >
+    <Concept Id="ROTATE" >
+      <Comments>Ellipse: rotate</Comments>
+      <String Context="TS_TButton" >ROTATE</String>
+    </Concept >
+    <Concept Id="RESIZE" >
+      <Comments>Ellipse: resize</Comments>
+      <String Context="TS_TButton" >RESIZE</String>
+    </Concept >
+    <Concept Id="OFF">
+      <String Context="TS_SButton">OFF</String>
+    </Concept>
+    <Concept Id="ON">
+      <String Context="TS_SButton">ON</String>
+    </Concept>
+    <Concept Id="PAN" >
+      <Comments>Ellipse: pan</Comments>
+      <String Context="TS_TButton" >PAN</String>
+    </Concept >
+    <Concept Id="SWAPAXIS" >
+      <Comments>Ellipse: swap axis</Comments>
+      <String Context="TS_TButton" >SWAP AXIS</String>
+    </Concept >
+    <Concept Id="BACKSTEP" >
+      <Comments>Drawing traces or profiles: one step back</Comments>
+      <String Context="TS_TButton" >BACKSTEP</String>
+    </Concept >
+    <Concept Id="FVI" >
+      <Comments>FVI's working mode selection</Comments>
+      <String Context="TS_TButton" >FVI</String>
+    </Concept >
+    <Concept Id="AUTO" >
+      <Comments>FlowIntegral: auto</Comments>
+      <String Context="TS_TButton" >AUTO</String>
+    </Concept >
+    <Concept Id="MANUAL" >
+      <Comments>FlowIntegral: manual</Comments>
+      <String Context="TS_TButton" >MANUAL</String>
+    </Concept >
+    <Concept Id="LATERALITY" >
+      <Comments>Laterality selection</Comments>
+      <String Context="TS_TButton" >LATERALITY</String>
+    </Concept >
+    <Concept Id="LEFT" >
+      <Comments>Laterality: left</Comments>
+      <String Context="TS_TButton" >LEFT</String>
+    </Concept >
+    <Concept Id="RIGHT" >
+      <Comments>Laterality: right</Comments>
+      <String Context="TS_TButton" >RIGHT</String>
+    </Concept >
+    <Concept Id="FETUS" >
+      <Comments>Fetus selection</Comments>
+      <String Context="TS_TButton" >FETUS</String>
+    </Concept >
+    <Concept Id="CLEAR" >
+      <Comments>Graphics on screen: clear</Comments>
+      <String Context="TS_SButton" >CLEAR</String>
+    </Concept >
+    <Concept Id="SCROLL" >
+      <Comments>Scroll result area content</Comments>
+      <String Context="TS_SButton" >SCROLL</String>
+    </Concept >
+    <Concept Id="ADD2REPORT" >
+      <Comments>Generic measure: add to report</Comments>
+      <String Context="TS_SButton" >ADD2REPORT</String>
+    </Concept >
+    <Concept Id="SHOWHISTO" >
+      <Comments>Generic measure: show histogram</Comments>
+      <String Context="TS_SButton" >HISTOGRAM</String>
+    </Concept >
+    <Concept Id="STEPPERCENTHD" >
+      <Comments>Generic measure: change HD percent</Comments>
+      <String Context="TS_SButton" >STEP HD</String>
+    </Concept >
+    <Concept Id="STEPPERCENTSF" >
+      <Comments>Generic measure: change SF percent</Comments>
+      <String Context="TS_SButton" >STEP SF</String>
+    </Concept >
+    <Concept Id="STEPSENSITIVITY" >
+      <Comments>[StoryID: 11291] Button for AUTONT binarization</Comments>
+      <Comments>Generic measure: change sensitivity</Comments>
+      <String Context="TS_SButton" >SENSIT</String>
+    </Concept >
+    <Concept Id="AUTOMODE" >
+      <Comments>[StoryID: 12755] Button for AUTONT automatic mode</Comments>
+      <Comments>Generic measure: change from manual to auto mode</Comments>
+      <String Context="TS_SButton" >AUTO</String>
+    </Concept >
+    <Concept Id="MANUALMODE" >
+      <Comments>[StoryID: 12755] Button for AUTONT manual mode</Comments>
+      <Comments>Generic measure: change from auto to manual mode</Comments>
+      <String Context="TS_SButton" >MANUAL</String>
+    </Concept >
+    <Concept Id="EXPAND" >
+      <Comments>Macro measure: expanding</Comments>
+      <String Context="TS_SButton" >EXPAND</String>
+    </Concept >
+	 <Concept Id="SetHome" >
+      <Comments>Button to set home position of measure panel according to image format</Comments>
+      <String Context="TS_SButton" >Set Home</String>
+    </Concept >
+	 <Concept Id="MovePanel" >
+      <Comments>Button to allow user to move measure panel </Comments>
+      <String Context="TS_SButton" >Move Panel</String>
+    </Concept >
+    <Concept Id="EVALUATE" >
+      <Comments>Macro measure: evaluating</Comments>
+      <String Context="TS_SButton" >EVALUATE</String>
+    </Concept >
+    <Concept Id="PISA_LABEL" >
+      <Comments>Executing PISA measure: istructions to the user</Comments>
+      <String Context="Generic_Long" >Please, enter the aliasing velocity</String>
+    </Concept >
+    <Concept Id="PISA_MAIN_SELECT_LABEL" >
+      <Comments>Executing PISA measure: instructions to the user Story 35898</Comments>
+      <String Context="Generic_Long" >Select a Color aliasing velocity</String>
+    </Concept >
+    <Concept Id="PISA_OPTION_TOP" >
+      <Comments>Executing PISA measure: instructions to the user Story 35898</Comments>
+      <String Context="Generic_Long" >Top aliasing velocity</String>
+    </Concept >
+    <Concept Id="PISA_OPTION_BOTTOM" >
+      <Comments>Executing PISA measure: instructions to the user Story 35898</Comments>
+      <String Context="Generic_Long" >Bottom aliasing velocity</String>
+    </Concept >
+    <Concept Id="UOM_ms" >
+      <Comments>Unit of measure: meters per second</Comments>
+      <String Context="Generic_Short" >m/s</String>
+    </Concept >
+    <Concept Id="A2R_LABEL" >
+      <Comments>Add2Report: istructions to the user</Comments>
+      <String Context="Generic_Long" >Rename</String>
+    </Concept >
+    <Concept Id="A2R_RESETCACHE" >
+      <Comments>Add2Report: menu item to reset combobox content</Comments>
+      <String Context="Generic_Long" >Reset cache</String>
+    </Concept >
+    <Concept Id="PAP_DIALOG_HEADER" >
+      <Comments>Header of PAP Dialog(collect PAP value)</Comments>
+      <String Context="Generic_Long" >PAP - Pulmunary artery pressure</String>
+    </Concept >
+    <Concept Id="RIGHT ATRIUM PRESSURE HEADER">
+      <Comments>modified measures label for cardiac [RTC:7786]</Comments>
+      <String Context="Generic_Long">RIGHT ATRIUM PRESSURE (RAP)</String>
+    </Concept>
+    <Concept Id="RAP_LABEL" >
+      <Comments>Instruction to user of RAP Dialog(collect PAP value)[RTC:7786]</Comments>
+      <String Context="Generic_Long" >Please, enter the pressure value</String>
+    </Concept >
+    <Concept Id="PAP_LABEL" >
+      <Comments>Instruction to user of PAP Dialog(collect PAP value)</Comments>
+      <String Context="Generic_Long" >Please enter the pressure gradient</String>
+    </Concept >
+    <Concept Id="NIPPLE_DIALOG_HEADER" >
+      <Comments>Header of Nipple Dialog(collect Nipple distance value)</Comments>
+      <String Context="Generic_Long" >Nipple - Mass Distance</String>
+    </Concept >
+    <Concept Id="NIPPLE_LABEL" >
+      <Comments>Executing NippleLesion measure: istructions to the user</Comments>
+      <String Context="Generic_Long" >Please, enter the distance to the nipple (mm)</String>
+    </Concept >
+    <Concept Id="EMPTY STRING MESSAGE" >
+      <Comments>Message to user of Add2report dialog when input string is empty</Comments>
+      <String Context="Generic_Long" >Input string cannot be empty!</String>
+    </Concept >
+    <Concept Id="MEASURES" >
+      <Comments>Label for the application measures button</Comments>
+      <String Context="TS_AButton" >Measures</String>
+    </Concept >
+    <Concept Id="RULER" >
+      <Comments>Label for the generic measures button</Comments>
+      <String Context="TS_AButton" >Ruler</String>
+    </Concept >
+    <Concept Id="OK_MEAS" >
+      <Comments>Label for the button to confirm current measure</Comments>
+      <String Context="TS_SButton" >OK</String>
+    </Concept >
+    <Concept Id="OK_EVAL" >
+      <Comments>Label for the button to confirm current evaluation</Comments>
+      <String Context="TS_SButton" >OK</String>
+    </Concept >
+    <Concept Id="CLIPPING" >
+      <Comments>Label for the encoder that selects the active profile between full/positive/negative</Comments>
+      <String Context="TS_TButton" >CLIPPING</String>
+    </Concept >
+    <Concept Id="PROFILE" >
+      <Comments>Label for the encoder that selects the active profile between peak/mean/mode</Comments>
+      <String Context="TS_TButton" >PROFILE</String>
+    </Concept >
+    <Concept Id="PEAK" >
+      <Comments>Label for the state of encoder that selects the active profile between peak/mean/mode</Comments>
+      <String Context="TS_TButton" >PEAK</String>
+    </Concept >
+    <Concept Id="MODE" >
+      <Comments>Label for the state of encoder that selects the active profile between peak/mean/mode</Comments>
+      <String Context="TS_TButton" >MODE</String>
+    </Concept >
+    <Concept Id="MEAN" >
+      <Comments>Label for the state of encoder that selects the active profile between peak/mean/mode</Comments>
+      <String Context="TS_TButton" >MEAN</String>
+    </Concept >
+    <Concept Id="FULL" >
+      <Comments>Label for the state of encoder that selects the active profile between full/positive/negative</Comments>
+      <String Context="TS_TButton" >FULL</String>
+    </Concept >
+    <Concept Id="POSITIVE" >
+      <Comments>Label for the state of the encoder that selects the active profile between full/positive/negative</Comments>
+      <String Context="TS_TButton" >POSITIVE</String>
+    </Concept >
+    <Concept Id="NEGATIVE" >
+      <Comments>Label for the state of the encoder that selects the active profile between full/positive/negative</Comments>
+      <String Context="TS_TButton" >NEGATIVE</String>
+    </Concept >
+    <Concept Id="ASK THE USER IF CONTINUE R1">
+      <Comments>In case of error, message to the user to know how to continue. Row 1</Comments>
+      <String Context="Generic_Warning">An error was found while loading measures.</String>
+    </Concept>
+    <Concept Id="ASK THE USER IF CONTINUE R2">
+      <Comments>In case of error, message to the user to know how to continue. Row 2</Comments>
+      <String Context="Generic_Warning">It can depend on file corruption.</String>
+    </Concept>
+    <Concept Id="ASK THE USER IF CONTINUE R3">
+      <Comments>In case of error, message to the user to know how to continue. Row 3</Comments>
+      <String Context="Generic_Warning">It is possible to reset measures in order to have them available.</String>
+    </Concept>
+    <Concept Id="ASK THE USER IF CONTINUE R4">
+      <Comments>In case of error, message to the user to know how to continue. Row 4</Comments>
+      <String Context="Generic_Warning">WARNING: BY PRESSING YES ALL PREVIOUSLY PERFORMED MEASURES ARE LOST.</String>
+    </Concept>
+    <Concept Id="ASK THE USER IF CONTINUE R5">
+      <Comments>In case of error, message to the user to know how to continue. Row 5</Comments>
+      <String Context="Generic_Warning">Do you want to reset measures?</String>
+    </Concept>
+    <Concept Id="APPROVE">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow</Comments>
+      <String Context="TS_SButton">APPROVE</String>
+    </Concept>
+    <Concept Id="APPROVED">
+      <Comments>[StoryID: 930] Label for AUTOEF flow</Comments>
+      <String Context="Generic_Medium">APPROVED</String>
+    </Concept>
+    <Concept Id="NOT APPROVED">
+      <Comments>[DEFECT: 38202] Label for AUTOEF flow</Comments>
+      <String Context="Generic_Medium">Not approved</String>
+    </Concept>
+    <Concept Id="END DIASTOLE">
+      <Comments>[StoryID: 930] Short Label for AUTOEF End diastolic frame</Comments>
+      <String Context="Generic_Short">ED</String>
+    </Concept>
+    <Concept Id="END SYSTOLE">
+      <Comments>[StoryID: 930] Short Label for AUTOEF End systolic frame</Comments>
+      <String Context="Generic_Short">ES</String>
+    </Concept>
+    <Concept Id="PROCESSING">
+      <Comments>[StoryID: 922] Label for AUTOEF flow</Comments>
+      <String Context="Generic_Long">Processing....</String>
+    </Concept>
+    <Concept Id="DISCARD">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow</Comments>
+      <String Context="TS_SButton">DISCARD</String>
+    </Concept>
+    <Concept Id="4_CHAMBER">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow</Comments>
+      <String Context="TS_SButton">4C</String>
+    </Concept>
+    <Concept Id="2_CHAMBER">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow</Comments>
+      <String Context="TS_SButton">2C</String>
+    </Concept>
+    <Concept Id="MANUAL EF">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow</Comments>
+      <String Context="TS_SButton">MANUAL</String>
+    </Concept>
+    <Concept Id="MODIFY">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow</Comments>
+      <String Context="TS_SButton">MODIFY</String>
+    </Concept>
+    <Concept Id="RECALC">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow</Comments>
+      <String Context="TS_SButton">RECALC</String>
+    </Concept>
+    <Concept Id="AUTOEF">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow</Comments>
+      <String Context="TS_TabName">AUTOEF</String>
+    </Concept>
+    <Concept Id="GOTO_ED">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow: goto ED frame</Comments>
+      <String Context="TS_SButton">ED</String>
+    </Concept>
+    <Concept Id="GOTO_ES">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow: goto ES frame</Comments>
+      <String Context="TS_SButton">ES</String>
+    </Concept>
+    <Concept Id="GOTO_DUAL">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow: goto B-DUAL</Comments>
+      <String Context="TS_SButton">DUAL</String>
+    </Concept>
+	<Concept Id="Insertion Method">
+      <Comments>Encoder for OB Measures to choose the insertion method</Comments>
+      <String Context="TS_SButton">Meas Insertion</String>
+    </Concept >
+    <Concept Id="PLAY">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow: PLAY cine loop</Comments>
+      <String Context="TS_SButton">PLAY</String>
+    </Concept>
+    <Concept Id="STOP">
+      <Comments>[StoryID: 3056] Buttons for AUTOEF flow:STOP playing cine loop</Comments>
+      <String Context="TS_SButton">STOP</String>
+    </Concept>
+    <Concept Id="AUTOEF contours detection failed">
+      <Comments>[StoryID: 8597] Message when Tomtec AutoEF fails</Comments>
+      <String Context="Generic_Warning" >AUTOEF: contours detection failed.</String>
+    </Concept >
+  </LocalizationSection>
+</LocalizationResource>

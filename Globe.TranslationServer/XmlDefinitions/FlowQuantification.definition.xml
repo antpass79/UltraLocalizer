@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizationResource ComponentNamespace="FlowQuantificationComponent" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="COMMANDS">
+	<Concept Id="FlowQuantification">
+      <String Context="TS_BButton">QPack</String>
+    </Concept>
+  </LocalizationSection>
+   <LocalizationSection InternalNamespace="DrawingSection">
+	<Concept Id="QUANTIFICATION">
+      <String Context="TS_TabName">QPack</String>
+    </Concept>
+	<Concept Id="ELLIPSE">
+      <String Context="TS_SButton">ELLIPSE</String>
+    </Concept>
+	<Concept Id="TRACE">
+      <String Context="TS_SButton">TRACE</String>
+    </Concept>
+	<Concept Id="VERTEX">
+      <String Context="TS_SButton">VERTEX</String>
+    </Concept>
+	<Concept Id="CURSOR">
+      <String Context="TS_SButton">CURSOR</String>
+    </Concept>
+	<Concept Id="ADD2REPORT">
+      <String Context="TS_SButton">ADD2REPORT</String>
+    </Concept>
+	<Concept Id="MOTIONCORRECTION">
+      <String Context="TS_SButton">MOTION CORRECTION</String>
+    </Concept>
+	<Concept Id="EXPORTCSV">
+      <String Context="TS_SButton">EXPORT</String>
+    </Concept>
+		<Concept Id="PROCESS">
+      <String Context="TS_SButton">PROCESS</String>
+    </Concept>
+  <Concept Id="CHANGEATTACH">
+      <String Context="TS_AButton">Contrast Arrival</String>
+    </Concept>
+  <Concept Id="CHANGE SESSION">
+      <String Context="TS_AButton">Session</String>
+    </Concept>
+  <Concept Id="SHOW CURSOR">
+      <String Context="TS_AButton">Show Cursor</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="General">
+  <Concept Id="CINE MOVE">
+      <Comments>Cine Move</Comments>
+      <String Context="MD_RT14aTrackballStrings">CINE LOOP</String>
+    </Concept>
+	<Concept Id="ROIs">
+      <Comments>ROIs</Comments>
+      <String Context="MD_RT14aTrackballStrings">ROIs</String>
+    </Concept>
+	<Concept Id="ROIsMod">
+      <Comments>ROIs Edit</Comments>
+      <String Context="MD_RT14aTrackballStrings">ROIs EDIT</String>
+    </Concept>
+	<Concept Id="MOVE BOX">
+      <Comments>MOVE BOX</Comments>
+      <String Context="MD_RT14aTrackballStrings">MOVE BOX</String>
+    </Concept>
+		<Concept Id="RESIZE BOX">
+      <Comments>RESIZE BOX</Comments>
+      <String Context="MD_RT14aTrackballStrings">RESIZE BOX</String>
+    </Concept>
+	  <Concept Id="MOTION_ESTIMATION_FAILED">
+      <String Context="Generic_Warning">Motion Correction failed. Please try to reposition the Region of Interest</String>
+    </Concept>
+	<Concept Id="OPERATION_OK">
+      <String Context="Generic_Warning">Operation successfully completed.</String>
+    </Concept>
+    <Concept Id="OPERATION_ERROR">
+      <String Context="Generic_Warning">An error occured during this operation.</String>
+    </Concept>
+	 <Concept Id="Export1">
+      <String Context="Generic_Medium">Select the destination </String>
+    </Concept>
+    <Concept Id="ExportTitle">
+      <String Context="TS_TabName">EXPORT</String>
+    </Concept>	
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="HelpAreaMessages"> 
+    <Concept Id="EllipsePositionId">
+      <String Context="MD_RT13HelpLine">ROI (Ellipse): Place Caliper on First point</String>
+    </Concept>
+    <Concept Id="CNTI_CLIP_TOO_SHORT">
+      <String Context="MD_RT13HelpLine">Invalid CNTI clip!</String>
+    </Concept>
+    <Concept Id="EllipseFirstAxisId">
+      <String Context="MD_RT13HelpLine">ROI (Ellipse): Place Caliper on Second point. ENTER to start second axis size</String>
+    </Concept>
+    <Concept Id="EllipseSecondAxisId">
+      <String Context="MD_RT13HelpLine">ROI (Ellipse): Use Trackball to size the Ellipse. ENTER to confirm</String>
+    </Concept>
+    <Concept Id="TracePositionId">
+      <String Context="MD_RT13HelpLine">ROI (Trace): Place Caliper on First point</String>
+    </Concept>
+    <Concept Id="TraceNextPointId">
+      <String Context="MD_RT13HelpLine">ROI (Trace): Place Next Trace point. Double click to end</String>
+    </Concept>
+    <Concept Id="VertexPositionId">
+      <String Context="MD_RT13HelpLine">ROI(Vertex): Place Caliper on First point</String>
+    </Concept>
+    <Concept Id="VertexNextPointId">
+      <String Context="MD_RT13HelpLine">ROI(Vertex): Place Next Vertex point. Double Click to end</String>
+    </Concept>
+    <Concept Id="CursorPositionId">
+      <String Context="MD_RT13HelpLine">ROI(Cursor): Use trackball to pan the ROI.</String>
+    </Concept>
+    <Concept Id="ROISelectionId">
+      <String Context="MD_RT13HelpLine">Insert a new ROI.</String>
+    </Concept>
+    <Concept Id="ROIEditingId">
+      <String Context="MD_RT13HelpLine">ROI editing: LEFT click on anchor point to modify. RIGHT click to delete.</String>
+    </Concept>
+  </LocalizationSection>
+   <LocalizationSection InternalNamespace="ProgressBar">
+    <Concept Id="START_PROCESSING">
+      <String Context="Generic_Long">Processing...</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Area11">
+    <Concept Id="RATIO">
+      <String Context="Generic_Long">Ratio:</String>
+    </Concept>
+	 <Concept Id="ROI">
+	  <Comments>Region Of Interest</Comments>
+      <String Context="Generic_Long">ROI</String>
+    </Concept>
+	<Concept Id="AREA">
+	<Comments>Area</Comments>
+      <String Context="Generic_Long">Area: </String>
+    </Concept>
+	<Concept Id="MAX">
+	 <Comments>Peak Value</Comments>
+      <String Context="Generic_Long">Peak: </String>
+    </Concept>
+	<Concept Id="AXIS_A">
+	<Comments>Axis of an ellipse</Comments>
+      <String Context="Generic_Long">Axis A: </String>
+    </Concept>
+	<Concept Id="AXIS_B">
+	<Comments>Axis of an ellipse</Comments>
+      <String Context="Generic_Long">Axis B: </String>
+    </Concept>
+   <Concept Id="AUC">
+      <Comments>Area under curve</Comments>
+      <String Context="Generic_Long">AUC: </String>
+    </Concept>
+    <Concept Id="TTP">
+      <Comments>Time to peak</Comments>
+      <String Context="Generic_Long">TTP: </String>
+    </Concept>
+    <Concept Id="WOT">
+      <Comments>[RTC 37177] Washout Time</Comments>
+      <String Context="Generic_Long">WOT:</String>
+    </Concept>
+  </LocalizationSection>
+  </LocalizationResource>
+   

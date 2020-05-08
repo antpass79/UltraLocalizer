@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="BodyMarksComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="GENERIC">
+    <Concept Id="ONE_APP_AT_LEAST">
+      <Comments>Before saving a new preset the user has to select the appropriate application</Comments>
+      <String Context="Generic_Warning">Please, select the application before saving.</String>
+    </Concept>
+    <Concept Id="ONE_BMP_AT_LEAST">
+      <Comments>Before saving a new preset the user has to create a group with at least 1 icon.</Comments>
+      <String Context="Generic_Warning">Please, add one or more icons before saving.</String>
+    </Concept>
+    <Concept Id="APPLICATION_LBL">
+      <Comments>Application title </Comments>
+      <String Context="Generic_Medium">Application</String>
+    </Concept>
+    <Concept Id="AREA14A_ACTION">
+      <Comments>Action available to trackball when arrow is selected</Comments>
+      <String Context="MD_RT14aTrackballStrings">BODYMARK ARROW</String>
+    </Concept>
+	 <Concept Id="AREA14MOVE_ACTION">
+      <Comments>Action available to trackball when move is selected</Comments>
+      <String Context="MD_RT14aTrackballStrings">MOVE BODYMARK</String>
+    </Concept>
+    <Concept Id="AREA13_NOT_SAVE_CHANGE">
+      <Comments>Message displayed when the user enters in Exam review or Archive Review to inform that the modification on Body mark won't be saved</Comments>
+      <String Context="MD_RT13HelpLine">Modification on Body mark won't be saved</String>
+    </Concept>
+    <Concept Id="PAGE_1">
+      <Comments>Label of a collection of 4 radiobutton for selecting page in Bodymarks editor</Comments>
+      <String Context="Generic_Medium">Page 1</String>
+    </Concept >
+    <Concept Id="PAGE_2">
+      <Comments>Label of a collection of 4 radiobutton for selecting page in Bodymarks editor</Comments>
+      <String Context="Generic_Medium">Page 2</String>
+    </Concept >
+    <Concept Id="PAGE_3">
+      <Comments>Label of a collection of 4 radiobutton for selecting page in Bodymarks editor</Comments>
+      <String Context="Generic_Medium">Page 3</String>
+    </Concept >
+    <Concept Id="PAGE_4">
+      <Comments>Label of a collection of 4 radiobutton for selecting page in Bodymarks editor</Comments>
+      <String Context="Generic_Medium">Page 4</String>
+    </Concept >
+  </LocalizationSection>
+</LocalizationResource>

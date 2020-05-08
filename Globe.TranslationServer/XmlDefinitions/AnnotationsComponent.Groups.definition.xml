@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by STEFANO MUGNAI (ESAOTE SpA) -->
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="AnnotationsComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Groups">
+    <Concept Id="UPPER EXTREMITY">
+      <Comments>UPPER EXTREMITY ANNOTATION GROUP FOR VASCULAR APPLICATION</Comments>
+      <String Context="TS_SButton">UPPER EXTREMITY</String>
+    </Concept>
+    <Concept Id="RENAL">
+      <Comments>RENAL ANNOTATION GROUP FOR VASCULAR APPLICATION</Comments>
+      <String Context="TS_SButton">RENAL</String>
+    </Concept>
+    <Concept Id="ABDOMEN">
+      <Comments>ABDOMEN ANNOTATION GROUP FOR VASCULAR APPLICATION</Comments>
+      <String Context="TS_SButton">ABDOMEN</String>
+    </Concept>
+    <Concept Id="GRAFT">
+      <Comments>GRAFT ANNOTATION GROUP FOR VASCULAR APPLICATION (used in arterial and dialysis)</Comments>
+      <String Context="TS_SButton">GRAFT</String>
+    </Concept>
+    <Concept Id="CAROTID">
+      <Comments>CAROTID ANNOTATION GROUP FOR VASCULAR APPLICATION</Comments>
+      <String Context="TS_SButton">CAROTID</String>
+    </Concept>
+    <Concept Id="LOWER EXTREMITY">
+      <Comments>LOWER EXTREMITY ANNOTATION GROUP FOR VASCULAR APPLICATION</Comments>
+      <String Context="TS_SButton">LOWER EXTREMITY</String>
+    </Concept>
+    <Concept Id="AORTA">
+      <Comments>AORTA ANNOTATION GROUP FOR VASCULAR APPLICATION</Comments>
+      <String Context="TS_SButton">AORTA</String>
+    </Concept>
+    <Concept Id="LEFT VENTRICLE">
+      <Comments>LEFT VENTRICLE ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">LEFT VENTRICLE</String>
+    </Concept>
+    <Concept Id="CORONARY FLOW">
+      <Comments>CORONARY FLOW ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">CORONARY FLOW</String>
+    </Concept>
+    <Concept Id="RIGHT VENTRICLE">
+      <Comments>RIGHT VENTRICLE FLOW ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">RIGHT VENTRICLE</String>
+    </Concept>
+    <Concept Id="ASCENDING AORTA">
+      <Comments>ASCENDING AORTA FLOW ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">ASCENDING AORTA</String>
+    </Concept>
+    <Concept Id="TRICUSPID VALVE">
+      <Comments>TRICUSPID VALVE FLOW ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">TRICUSPID VALVE</String>
+    </Concept>
+    <Concept Id="RIGHT ATRIUM">
+      <Comments>RIGHT ATRIUM FLOW ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">RIGHT ATRIUM</String>
+    </Concept>
+    <Concept Id="AORTIC VALVE">
+      <Comments>AORTIC VALVE FLOW ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">AORTIC VALVE</String>
+    </Concept>
+    <Concept Id="MITRAL VALVE">
+      <Comments>MITRAL VALVE FLOW ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">MITRAL VALVE</String>
+    </Concept>
+    <Concept Id="INF. VENA CAVA">
+      <Comments>INF VENA CAVA FLOW ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">INF. VENA CAVA</String>
+    </Concept>
+    <Concept Id="PULMONARY VALVE">
+      <Comments>PULMONARY VALVE FLOW ANNOTATION GROUP FOR CARDIAC APPLICATION</Comments>
+      <String Context="TS_SButton">PULMONARY VALVE</String>
+    </Concept>
+    <Concept Id="GENERIC">
+      <Comments>GENERIC ANNOTATION GROUP </Comments>
+      <String Context="TS_SButton">GENERIC</String>
+    </Concept>
+	<Concept Id="Routine">
+      <Comments>GENERIC ANNOTATION GROUP </Comments>
+      <String Context="TS_SButton">ROUTINE</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

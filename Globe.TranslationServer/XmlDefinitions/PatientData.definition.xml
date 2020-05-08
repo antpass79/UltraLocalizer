@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="PatientData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="LASTNAME" >
+      <Comments>Patient data  last name</Comments>
+      <String Context="Generic_Medium" >LAST NAME</String>
+    </Concept >
+    <Concept Id="FIRSTNAME" >
+      <String Context="Generic_Medium" >FIRST NAME</String>
+    </Concept >
+    <Concept Id="MIDDLENAME" >
+      <String Context="Generic_Medium" >MIDDLE NAME</String>
+    </Concept >
+    <Concept Id="ANIMALNAME" >
+      <String Context="Generic_Medium" >ANIMAL NAME</String>
+    </Concept >
+    <Concept Id="OWNERNAME" >
+      <String Context="Generic_Medium" >OWNER NAME</String>
+    </Concept >
+    <Concept Id="BREED" >
+      <String Context="Generic_Medium" >BREED</String>
+    </Concept >
+    <Concept Id="NEUTERED" >
+      <String Context="Generic_Medium" >NEUTERED</String>
+    </Concept >
+    <Concept Id="PERFORMINGPHYSICIAN" >
+      <Comments>context Generic_Medium is used in PatientId dialog, context Generic_Long is used in start exam</Comments>
+      <String Context="Generic_Medium" >PERFORMING PHYS.</String>
+      <String Context="Generic_Long" >PERFORMING PHYSICIAN</String>
+    </Concept >
+    <Concept Id="PerformingPhysician_First" >
+      <Comments>used if there is an error in field "First" of PerformingPhysician dialog</Comments>
+      <String Context="Generic_Long" >PERFORMING PHYSICIAN FIRST NAME</String>
+    </Concept >
+    <Concept Id="PerformingPhysician_Last" >
+      <Comments>used if there is an error in field "Last" of PerformingPhysician dialog</Comments>
+      <String Context="Generic_Long" >PERFORMING PHYSICIAN LAST NAME</String>
+    </Concept >
+    <Concept Id="PerformingPhysician_Middle" >
+      <Comments>used if there is an error in field "Middle" of PerformingPhysician dialog</Comments>
+      <String Context="Generic_Long" >PERFORMING PHYSICIAN MIDDLE NAME</String>
+    </Concept >
+    <Concept Id="PerformingPhysician_Prefix" >
+      <Comments>used if there is an error in field "Prefix" of PerformingPhysician dialog</Comments>
+      <String Context="Generic_Long" >PERFORMING PHYSICIAN PREFIX</String>
+    </Concept >
+    <Concept Id="PerformingPhysician_Suffix" >
+      <Comments>used if there is an error in field "Suffix" of PerformingPhysician dialog</Comments>
+      <String Context="Generic_Long" >PERFORMING PHYSICIAN SUFFIX</String>
+    </Concept >
+    <Concept Id="REFERRINGPHYSICIAN" >
+      <Comments>context Generic_Medium is used in PatientId dialog, context Generic_Long is used in start exam</Comments>
+      <String Context="Generic_Medium" >REFERRING PHYS.</String>
+      <String Context="Generic_Long" >REFERRING PHYSICIAN</String>
+    </Concept >
+    <Concept Id="ReferringPhysician_First" >
+      <Comments>used if there is an error in field "First" of REFERRINGPHYSICIAN dialog</Comments>
+      <String Context="Generic_Long" >REFERRING PHYSICIAN FIRST NAME</String>
+    </Concept >
+    <Concept Id="ReferringPhysician_Last" >
+      <Comments>used if there is an error in field "Last" of REFERRINGPHYSICIAN dialog</Comments>
+      <String Context="Generic_Long" >REFERRING PHYSICIAN LAST NAME</String>
+    </Concept >
+    <Concept Id="ReferringPhysician_Middle" >
+      <Comments>used if there is an error in field "Middle" of REFERRINGPHYSICIAN dialog</Comments>
+      <String Context="Generic_Long" >REFERRING PHYSICIAN MIDDLE NAME</String>
+    </Concept >
+    <Concept Id="ReferringPhysician_Prefix" >
+      <Comments>used if there is an error in field "Prefix" of REFERRINGPHYSICIAN dialog</Comments>
+      <String Context="Generic_Long" >REFERRING PHYSICIAN PREFIX</String>
+    </Concept >
+    <Concept Id="ReferringPhysician_Suffix" >
+      <Comments>used if there is an error in field "Suffix" of REFERRINGPHYSICIAN dialog</Comments>
+      <String Context="Generic_Long" >REFERRING PHYSICIAN SUFFIX</String>
+    </Concept >
+    
+    <Concept Id="OPERATOR" >
+      <String Context="Generic_Medium" >OPERATOR</String>
+    </Concept >
+    <Concept Id="Operator_First" >
+      <Comments>used if there is an error in field "First" of Operator dialog</Comments>
+      <String Context="Generic_Long" >OPERATOR FIRST NAME</String>
+    </Concept >
+    <Concept Id="Operator_Last" >
+      <Comments>used if there is an error in field "Last" of Operator dialog</Comments>
+      <String Context="Generic_Long" >OPERATOR LAST NAME</String>
+    </Concept >
+    <Concept Id="Operator_Middle" >
+      <Comments>used if there is an error in field "Middle" of Operator dialog</Comments>
+      <String Context="Generic_Long" >OPERATOR MIDDLE NAME</String>
+    </Concept >
+    <Concept Id="Operator_Prefix" >
+      <Comments>used if there is an error in field "Prefix" of Operator dialog</Comments>
+      <String Context="Generic_Long" >OPERATOR PREFIX</String>
+    </Concept >
+    <Concept Id="Operator_Suffix" >
+      <Comments>used if there is an error in field "Suffix" of Operator dialog</Comments>
+      <String Context="Generic_Long" >OPERATOR SUFFIX</String>
+    </Concept >
+    <Concept Id="DIAGNOSIS" >
+	    <Comments>admitting diagnosis field of the patient data</Comments>
+      <String Context="Generic_Medium" >ADM DIAG</String>
+      <String Context="Generic_Long" >ADM DIAGNOSIS</String>
+    </Concept >
+		<Concept Id="STUDYDESCRIPTION" >
+			<Comments>Study description field of the patient data</Comments>
+			<String Context="Generic_Medium" >DESCRIPTION</String>
+			<String Context="Generic_Long" >DESCRIPTION</String>
+		</Concept >
+		<Concept Id="ID" >
+      <String Context="Generic_Short" >ID</String>
+      <String Context="Generic_Medium" >ID</String>
+    </Concept >
+    <Concept Id="APPLICATION" >
+      <String Context="Generic_Long" >APPLICATION</String>
+    </Concept >
+    <Concept Id="BIRTHDATE" >
+      <String Context="Generic_Medium" >BIRTHDATE</String>
+    </Concept >
+    <Concept Id="DD_MM_YYYY" >
+      <Comments>Patient data, string about birthdate format</Comments>
+      <String Context="Generic_Medium" >DD/MM/YYYY</String>
+    </Concept >
+    <Concept Id="MM_DD_YYYY" >
+      <Comments>Patient data, string about birthdate format</Comments>
+      <String Context="Generic_Medium" >MM/DD/YYYY</String>
+    </Concept >
+    <Concept Id="GENDER" >
+      <Comments>context Generic_Short is used in PatientId dialog, context Generic_Medium is used in start exam</Comments>
+      <String Context="Generic_Short" >GEN.</String>
+      <String Context="Generic_Medium" >GENDER</String>
+    </Concept >
+    <Concept Id="AGE" >
+      <String Context="Generic_Medium" >AGE</String>
+    </Concept >
+    <Concept Id="MALE" >
+      <String Context="Generic_Short" >M</String>
+    </Concept >
+    <Concept Id="FEMALE" >
+      <String Context="Generic_Short" >F</String>
+    </Concept >
+    <Concept Id="OTHER" >
+      <String Context="Generic_Long" >O</String>
+    </Concept >
+    <Concept Id="YEARS" >
+      <String Context="Generic_Medium" >YEARS</String>
+      <String Context="Generic_Short" >y</String>
+    </Concept >
+    <Concept Id="MONTHS" >
+      <String Context="Generic_Medium" >MONTHS</String>
+      <String Context="Generic_Short" >m</String>
+    </Concept >
+    <Concept Id="WEEKS" >
+      <String Context="Generic_Medium" >WEEKS</String>
+      <String Context="Generic_Short" >w</String>
+    </Concept >
+    <Concept Id="DAYS" >
+      <String Context="Generic_Medium" >DAYS</String>
+      <String Context="Generic_Short" >d</String>
+    </Concept >
+    <Concept Id="HOURS" >
+      <String Context="Generic_Medium" >HOURS</String>
+      <String Context="Generic_Short" >h</String>
+    </Concept >
+    <Concept Id="ACCESSION" >
+      <Comments>context Generic_Medium is used in PatientId dialog, context Generic_Long is used in start exam</Comments>
+      <String Context="Generic_Medium" >ACCESSION N.</String>
+      <String Context="Generic_Long" >ACCESSION NUMBER</String>
+    </Concept >
+    <Concept Id="PATIENT_DATA_CHANGED_MSG" >
+      <Comments>Patient data, message occurring when some patient field are changed</Comments>
+      <String Context="Generic_Warning" >PATIENT DATA ARE CHANGED. DO YOU WANT TO SAVE THIS CHANGES?</String>
+    </Concept >
+    <Concept Id="CARDIAC" >
+      <Comments>Patient data, cardiac application tab title</Comments>
+      <String Context="Generic_Long" >CARDIAC</String>
+    </Concept >
+    <Concept Id="HEIGHT" >
+      <String Context="Generic_Short" >HEIGHT</String>
+    </Concept >
+    <Concept Id="WEIGHT" >
+      <String Context="Generic_Short" >WEIGHT</String>
+    </Concept >
+    <Concept Id="BODY_SURFACE_AREA" >
+      <String Context="Generic_Long" >BODY SURFACE AREA</String>
+      <String Context="Generic_Short" >BSA</String>
+    </Concept >
+    <Concept Id="BSA_PED" >
+      <Comments>label used in report in the case of bsa calculated for pediatric</Comments>
+      <String Context="Generic_Medium" >BSA(PED)</String>
+    </Concept >
+    <Concept Id="BSA_CUSTOM" >
+      <Comments>label used in report in the case of bsa custom</Comments>
+      <String Context="Generic_Medium" >BSA(CUSTOM)</String>
+    </Concept >
+    <Concept Id="BSA_TYPE_STANDARD" >
+      <Comments>string of bsa type combo</Comments>
+      <String Context="Generic_Medium" >STANDARD</String>
+    </Concept >
+    <Concept Id="BSA_TYPE_CUSTOM" >
+      <Comments>string of bsa type combo</Comments>
+      <String Context="Generic_Medium" >CUSTOM</String>
+    </Concept >
+    <Concept Id="BSA_TYPE_PEDIATRIC" >
+      <Comments>string of bsa type combo</Comments>
+      <String Context="Generic_Medium" >PEDIATRIC</String>
+    </Concept >
+    <Concept Id="SYS_BLOOD_PRESS" >
+      <Comments>label of SYSTOLIC BLOOD PRESSURE; medium context is for report</Comments>
+      <String Context="Generic_Long" >SYSTOLIC BLOOD PRESSURE</String>
+      <String Context="Generic_Medium" >SYS. BLOOD PRESS.</String>
+    </Concept >
+    <Concept Id="DYAS_BLOOD_PRESS" >
+      <Comments>label of DYASTOLIC BLOOD PRESSURE; medium context is for report</Comments>
+      <String Context="Generic_Long" >DYASTOLIC BLOOD PRESSURE</String>
+      <String Context="Generic_Medium" >DYAS. BLOOD PRESS.</String>
+    </Concept >
+    <Concept Id="mmHg" >
+      <Comments>label of mmHg BLOOD PRESSURE unit of measure</Comments>
+      <String Context="Generic_Long" >mmHg</String>
+    </Concept >
+    <Concept Id="PED_CARDIAC" >
+      <Comments>Patient data, cardio ped application tab title</Comments>
+      <String Context="Generic_Medium" >CARDIO PED</String>
+    </Concept >
+    <Concept Id="FEET" >
+      <Comments>Patient data, cardiac application, height unit measure in feet/inches mode</Comments>
+      <String Context="Generic_Short" >ft</String>
+    </Concept >
+    <Concept Id="INCHES" >
+      <String Context="Generic_Short" >in</String>
+    </Concept >
+    <Concept Id="POUNDS" >
+      <String Context="Generic_Short" >lb</String>
+    </Concept >
+    <Concept Id="OUNCHES" >
+      <String Context="Generic_Short" >oz</String>
+    </Concept >
+    <Concept Id="KILOGRAMS" >
+      <String Context="Generic_Short" >kg</String>
+    </Concept >
+    <Concept Id="GRAMS" >
+      <String Context="Generic_Short" >gr</String>
+    </Concept >
+    <Concept Id="CENTIMETERS" >
+      <String Context="Generic_Short" >cm</String>
+    </Concept >
+    <Concept Id="UROLOGIC" >
+      <Comments>Patient data, urologic application tab title</Comments>
+      <String Context="Generic_Long" >UROLOGIC</String>
+    </Concept >
+    <Concept Id="PSA" >
+      <String Context="Generic_Short" >PSA</String>
+    </Concept >
+    <Concept Id="PSA_UNIT_LABEL" >
+      <String Context="Generic_Short" >ng</String>
+    </Concept >
+    <Concept Id="VASCULAR" >
+      <Comments>Patient data, vascular application tab title</Comments>
+      <String Context="Generic_Long" >VASCULAR</String>
+    </Concept >
+    <Concept Id="QIMT_TABLE" >
+      <String Context="Generic_Long" >QIMT TABLE</String>
+    </Concept >
+    <Concept Id="QIMT_ETHNIC_TABLE" >
+      <String Context="Generic_Long" >QIMT ETHNICITY</String>
+    </Concept >
+    <Concept Id="GYNECOLOGY" >
+      <Comments>Patient data, gyne application tab title</Comments>
+      <String Context="Generic_Long" >GYNECOLOGY</String>
+    </Concept >
+    <Concept Id="CYCLEDAY" >
+      <String Context="Generic_Medium" >CYCLE'S DAY</String>
+    </Concept >
+    <Concept Id="POST_MENO_PAUSE" >
+      <String Context="Generic_Medium" >POST MENO-PAUSE</String>
+    </Concept >
+    <Concept Id="OBSTETRIC" >
+      <Comments>Patient data, obstetric application tab title</Comments>
+      <String Context="Generic_Long" >OBSTETRIC</String>
+    </Concept >
+    <Concept Id="LAST_MENSTRUAL_PERIOD" >
+      <Comments>Patient data, obstetric application, last menstrual period</Comments>
+      <String Context="Generic_Long" >LAST MENSTRUAL PERIOD</String>
+      <String Context="Generic_Short" >LMP</String>
+    </Concept >
+    <Concept Id="DATE_OF_CONCEPTION" >
+      <Comments>Patient data, obstetric application, date of conception</Comments>
+      <String Context="Generic_Short" >DOC</String>
+    </Concept >
+    <Concept Id="EXAM_TYPE" >
+      <Comments>Patient data, obstetric application, label about combo box where values are "fetal_age" and "fetal_growth"</Comments>
+      <String Context="Generic_Medium" >EXAM TYPE</String>
+    </Concept >
+    <Concept Id="FETAL_AGE" >
+      <Comments>Patient data, obstetric application, one of values about examtype combobox</Comments>
+      <String Context="Generic_Medium" >FETAL AGE</String>
+    </Concept >
+    <Concept Id="FETAL_GROWTH" >
+      <Comments>Patient data, obstetric application, one of values about examtype combobox</Comments>
+      <String Context="Generic_Medium" >FETAL GROWTH</String>
+    </Concept >
+    <Concept Id="DIAGNOSTIC_GESTATIONAL_AGE_BY" >
+      <Comments>Patient data, obstetric application</Comments>
+      <String Context="Generic_Long" >DIAGNOSTIC GESTATIONAL AGE BY</String>
+      <String Context="Generic_Short" >DGA BY</String>
+    </Concept >
+    <Concept Id="EXPECTED_DELIVERY_DATE" >
+      <Comments>Patient data, obstetric application</Comments>
+      <String Context="Generic_Long" >EXPECTED DELIVERY DATE</String>
+      <String Context="Generic_Short" >EDD</String>
+    </Concept >
+    <Concept Id="FIRST_DGA" >
+      <Comments>Patient data, obstetric application</Comments>
+      <String Context="Generic_Medium" >FIRST DGA</String>
+    </Concept >
+    <Concept Id="FIRST_DGA_DATE" >
+      <Comments>Patient data, obstetric application</Comments>
+      <String Context="Generic_Medium" >FIRST DGA DATE</String>
+    </Concept >
+    <Concept Id="GRAVIDA" >
+      <Comments>Patient data, obstetric application</Comments>
+      <String Context="Generic_Medium" >GRAVIDA</String>
+    </Concept >
+    <Concept Id="PARA" >
+      <Comments>Patient data, obstetric application</Comments>
+      <String Context="Generic_Medium" >PARA</String>
+    </Concept >
+    <Concept Id="ABORTA" >
+      <Comments>Patient data, obstetric application</Comments>
+      <String Context="Generic_Medium" >ABORTA</String>
+    </Concept >
+    <Concept Id="ECTOPIC" >
+      <Comments>Patient data, obstetric application</Comments>
+      <String Context="Generic_Medium" >ECTOPIC</String>
+    </Concept >
+    <Concept Id="EXAM_DATE" >
+      <Comments>Patient data, report, exam date</Comments>
+      <String Context="Generic_Long" >EXAM DATE</String>
+    </Concept >
+    <Concept Id="REPORT_DATE" >
+      <String Context="Generic_Long" >REPORT DATE</String>
+    </Concept >
+    <Concept Id="EDD_BY_LMP" >
+      <Comments>It is used in report, obstetric section</Comments>
+      <String Context="Generic_Medium" >EDD(LMP)</String>
+    </Concept >
+    <Concept Id="EDD_BY_DOC" >
+      <Comments>It is used in report, obstetric section</Comments>
+      <String Context="Generic_Medium" >EDD(DOC)</String>
+    </Concept >
+    <Concept Id="EDD_BY_LMP_290days" >
+      <Comments>It is used in report, obstetric section</Comments>
+      <String Context="Generic_Medium" >EDD(LMP + 290 days)</String>
+    </Concept >
+    <Concept Id="EDD_BY_DOC_276days" >
+      <Comments>It is used in report, obstetric section</Comments>
+      <String Context="Generic_Medium" >EDD(DOC + 276 days)</String>
+    </Concept >
+    <Concept Id="EDD_BY_FDGA" >
+      <Comments>It is used in report, obstetric section</Comments>
+      <String Context="Generic_Medium" >EDD(FDGA)</String>
+    </Concept >
+    <Concept Id="DGA_BY_LMP" >
+      <Comments>It is used in report, obstetric section</Comments>
+      <String Context="Generic_Medium" >DGA(LMP)</String>
+    </Concept >
+    <Concept Id="DGA_BY_DOC" >
+      <Comments>It is used in report, obstetric section</Comments>
+      <String Context="Generic_Medium" >DGA(DOC)</String>
+    </Concept >
+    <Concept Id="DGA_BY_FDGA" >
+      <Comments>It is used in report, obstetric section</Comments>
+      <String Context="Generic_Medium" >DGA(FDGA)</String>
+    </Concept >
+    <Concept Id="GA_MANAGEMENT" >
+      <Comments>Ob tab, GA groupbox title</Comments>
+      <String Context="Generic_Long" >GESTATIONAL AGE BY</String>
+    </Concept >
+    <Concept Id="LMPDOC_GROUP" >
+      <Comments>Ob tab, LMP/DOC groupbox title</Comments>
+      <String Context="Generic_Long" >LMP/DOC</String>
+    </Concept >
+    <Concept Id="FDGA_GROUP" >
+      <Comments>Ob tab, FDGA groupbox title</Comments>
+      <String Context="Generic_Long" >FIRST DGA</String>
+    </Concept >
+    <Concept Id="DOC" >
+      <Comments>Ob tab, DOC radiobutton in groupbox LMP/DOC</Comments>
+      <String Context="Generic_Short" >DOC</String>
+    </Concept >
+    <Concept Id="YES" >
+      <String Context="Generic_Short" >YES</String>
+    </Concept >
+    <Concept Id="NO" >
+      <String Context="Generic_Short" >NO</String>
+    </Concept >
+    <Concept Id="InvalidField" >
+      <Comments>It is used in patientid dialog, when the input of a field is invalid</Comments>
+      <String Context="Generic_Long" >INVALID FIELD</String>
+    </Concept >
+    <Concept Id="InvalidFields" >
+      <Comments>It is used in patientid dialog, when some fields are invalid</Comments>
+      <String Context="Generic_Long" >INVALID FIELDS</String>
+    </Concept >
+    <Concept Id="Last_First_Middle_more_than_60_char" >
+      <Comments>present when sum of length of Lastname, firstname and middlename is more than 60 char</Comments>
+      <String Context="Generic_Warning" >LAST+FIRST+MIDDLE+PREFIX+SUFFIX > 60 char</String>
+    </Concept >
+    <Concept Id="Owner_AnimalName_more_than_62_char" >
+      <Comments>present when sum of length of Owner lastname and animal name is more than 62 char</Comments>
+      <String Context="Generic_Warning" >OWNER NAME+ANIMAL NAME > 62 char</String>
+    </Concept >
+    <Concept Id="ReferringPhysician_more_than_60_char" >
+      <Comments>present when, in Referring Physician,  sum of length of Lastname, firstname and middlename is more than 60 char</Comments>
+      <String Context="Generic_Warning" >REFERRING PHYSICIAN: LAST+FIRST+MIDDLE+PREFIX+SUFFIX > 60 char</String>
+    </Concept >
+    <Concept Id="PerformingPhysician_more_than_60_char" >
+      <Comments>present when, in Performing Physician,  sum of length of Lastname, firstname and middlename is more than 60 char</Comments>
+      <String Context="Generic_Warning" >PERFORMING PHYSICIAN: LAST+FIRST+MIDDLE+PREFIX+SUFFIX > 60 char</String>
+    </Concept >
+    <Concept Id="Operator_more_than_60_char" >
+      <Comments>present when, in Operator ,  sum of length of Lastname, firstname and middlename is more than 60 char</Comments>
+      <String Context="Generic_Warning" >OPERATOR: LAST+FIRST+MIDDLE+PREFIX+SUFFIX > 60 char</String>
+    </Concept >
+    <Concept Id="Age_more_than_3_char" >
+      <Comments>present when age value is more than 3 digits [Defect 10743]</Comments>
+      <String Context="Generic_Warning" >Number of digits for age field number is more than 3. This is not compatible with dicom standard.</String>
+    </Concept >
+    <Concept Id="DGA_byFDGA__More_than_44_weeks" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >DGA(FDGA) weeks > 44</String>
+    </Concept >
+    <Concept Id="DGA_byLmp__More_than_44_weeks" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >DGA(LMP) weeks > 44</String>
+    </Concept >
+    <Concept Id="Doc_Older_Than_44Weeks" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >DOC date is older than 44 weeks</String>
+    </Concept >
+    <Concept Id="LMP_OLDER" >
+      <Comments>this warning is displayed near LMP when it is older more than 44 weeks respect to exam date</Comments>
+      <String Context="Generic_Warning" >LMP is older more than 44 weeks respect to exam date</String>
+    </Concept >
+    <Concept Id="ANIMAL_NAME" >
+      <Comments>It is used in patientid dialog, when some fields are invalid</Comments>
+      <String Context="Generic_Medium" >ANIMAL NAME</String>
+    </Concept >
+    <Concept Id="OWNER_LAST_NAME" >
+      <Comments>It is used in patientid dialog, when some fields are invalid</Comments>
+      <String Context="Generic_Medium" >OWNER</String>
+    </Concept >
+    <Concept Id="Studydate_not_present" >
+      <Comments></Comments>
+      <String Context="Generic_Warning" >STUDY DATE NOT PRESENT IN THIS STUDY</String>
+    </Concept >
+    <Concept Id="AGE_UNIT" >
+      <Comments>if user writes a number in age but selects no age unit in combo</Comments>
+      <String Context="Generic_Warning" >AGE UNIT</String>
+    </Concept>
+    <Concept Id="FirstDGAWeeks" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >FIRST DGA WEEKS</String>
+    </Concept >
+    <Concept Id="FirstDGADays" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >FIRST DGA DAYS</String>
+    </Concept >
+    <Concept Id="DGAWeeks" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >DGA WEEKS</String>
+    </Concept >
+    <Concept Id="DGADays" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >DGA DAYS</String>
+    </Concept >  
+    <Concept Id="EXAM_IN_USE_NO_DELETE">
+      <Comments>Warning Message: the exam is in use</Comments>
+      <String Context="Generic_Warning">Warning: the selected exam are currently used by another process: cannot continue.</String>
+    </Concept>
+    <Concept Id="PATIENT_ID">
+      <Comments>Label of PatientId button on touch screen</Comments>
+      <String Context="TS_BButton">PATIENT ID</String>
+    </Concept>
+    <Concept Id="CURRENT">
+      <Comments>Label of Current button on touch screen</Comments>
+      <String Context="TS_BButton">CURRENT</String>
+    </Concept>
+    <Concept Id="NEW_PATIENT">
+      <Comments>Label of NEW PATIENT button on touch screen</Comments>
+      <String Context="TS_BButton">NEW PATIENT</String>
+    </Concept>
+    <Concept Id="RETREIVE_PATIENT_INFO">
+      <Comments>Label of RETREIVE PAT. INFO button on touch screen</Comments>
+      <String Context="TS_BButton">RETRIEVE PATIENT DATA</String>
+    </Concept>
+    <Concept Id="EXAM LIST">
+      <Comments>Label of EXAM LIST button on touch screen [Story 24238]</Comments>
+      <String Context="TS_BButton">EXAM LIST</String>
+    </Concept>
+    <Concept Id="PATIENT_DATA">
+      <Comments>Title of patient data section in report</Comments>
+      <String Context="Generic_Medium">PATIENT DATA</String>
+    </Concept>
+    <Concept Id="SUFFIX">
+      <Comments>label in dialog when inserting data for referring, performing e operator</Comments>
+      <String Context="Generic_Medium">SUFFIX</String>
+    </Concept>
+    <Concept Id="PREFIX">
+      <Comments>label in dialog when inserting data for referring, performing e operator</Comments>
+      <String Context="Generic_Medium">PREFIX</String>
+    </Concept>
+    <Concept Id="SomeFDGAFieldNotPresentOrNotValid" >
+      <Comments>present when, in Operator ,  sum of length of Lastname, firstname and middlename is more than 60 char</Comments>
+      <String Context="Generic_Warning" >SOME FDGA FIELDS ARE NOT INSERTED OR ARE INCORRECT</String>
+    </Concept >
+    <Concept Id="ResetCache">
+      <Comments>label in context menu of referring, performing e operator</Comments>
+      <String Context="Generic_Medium">RESET CACHE</String>
+    </Concept>
+    <Concept Id="WarningSomeImageNotSaved" >
+      <Comments>Occurs when user press OK on patientID dialog, when at least an image is corrupted</Comments>
+      <String Context="Generic_Warning" >AT LEAST ONE IMAGE OF THE STUDY WAS NOT SAVED; CHECK IF IT IS CORRUPTED</String>
+    </Concept >
+    <Concept Id="PAGE">
+      <Comments>this string is placed in the bottom left section of each page of report</Comments>
+      <String Context="Generic_Medium">PAGE</String>
+    </Concept>
+    <Concept Id="WAIT UPDATE FILES">
+      <Comments>Title for progress bar used to show modification progress [Story 36886]</Comments>
+      <String Context="Generic_Warning">Please wait, updating all files</String>
+    </Concept>
+    <Concept Id="ANONYMIZE">
+      <Comments>Label of ANONYMIZE button on touch screen and screen [Story 36886]</Comments>
+      <String Context="TS_BButton">ANONYMIZE</String>
+    </Concept>
+    <Concept Id="ANONYMIZE CONFIRM">
+      <Comments>Message shown to ask user to confirm [Story 36886]</Comments>
+      <String Context="Generic_Warning">All the information concerning the Patient will be removed: are you sure ?</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

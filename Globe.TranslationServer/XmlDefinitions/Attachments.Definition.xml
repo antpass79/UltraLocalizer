@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="Attachments" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Common">
+    <Concept Id="AttachCommand">
+      <Comments>Label on Attach Command</Comments>
+      <String Context="Generic_Short">Attach</String>
+    </Concept >
+  </LocalizationSection>
+</LocalizationResource>

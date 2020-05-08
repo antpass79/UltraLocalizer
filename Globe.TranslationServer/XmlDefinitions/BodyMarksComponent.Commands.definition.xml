@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="BodyMarksComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="REMOVE">
+      <Comments>Remove the Bodymark applied at the moment to the image</Comments>
+      <String Context="TS_SButton">REMOVE</String>
+    </Concept>
+    <Concept Id="CONFIRM">
+      <Comments>Confirm the Bodymark: fix the arrow and the icon and exits from BodyMark</Comments>
+      <String Context="TS_SButton">CONFIRM</String>
+    </Concept>
+    <Concept Id="ROTATE">
+      <Comments>Rotation of arrow inserted</Comments>
+      <String Context="TS_SButton">ROTATE ARROW</String>
+    </Concept>
+    <Concept Id="LEFT">
+      <Comments>Apply the Bodymark to the image on the left</Comments>
+      <String Context="TS_SButton">LEFT</String>
+    </Concept>
+    <Concept Id="RIGHT">
+      <Comments>Apply the Bodymark to the image on the right</Comments>
+      <String Context="TS_SButton">RIGHT</String>
+    </Concept>
+    <Concept Id="APPLICATIONS">
+      <Comments>Touchscreen's tab title for application choice</Comments>
+      <String Context="TS_TabName">APPLICATIONS</String>
+    </Concept>
+    <Concept Id="CONFIGURATOR NAME">
+      <Comments>BodyMarks' configurator definition</Comments>
+      <String Context="Generic_Medium">Body Marks</String>
+    </Concept>
+    <Concept Id="BODYMARKS">
+      <Comments>BodyMarks activation</Comments>
+      <String Context="TS_BButton">Body Marks</String>
+    </Concept>
+	<Concept Id="SIZE">
+      <Comments>Bodymark size</Comments>
+      <String Context="TS_SButton">Size</String>
+    </Concept>
+	<Concept Id="HOME">
+      <Comments>Bodymark Set Home Position on the ultrasound image</Comments>
+      <String Context="TS_SButton">Set Home</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

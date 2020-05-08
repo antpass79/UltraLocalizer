@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="MeasureComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="MeasGroupEditor">
+    <Concept Id="APPLICATION">
+      <Comments>Label of the Applications combobox in measure group editor</Comments>
+      <String Context="Generic_Long">Application</String>
+    </Concept >
+    <Concept Id="IMAGING">
+      <Comments>Label of the Imaging tab in measure group editor</Comments>
+      <String Context="Generic_Long">Imaging</String>
+    </Concept >
+    <Concept Id="DOPPLER">
+      <Comments>Label of the Doppler tab in measure group editor</Comments>
+      <String Context="Generic_Long">Doppler</String>
+    </Concept >
+    <Concept Id="M-MODE">
+      <Comments>Label of the M-Mode tab in measure group editor</Comments>
+      <String Context="Generic_Long">M-Mode</String>
+    </Concept >
+    <Concept Id="MEASURE GROUP EDITOR">
+      <Comments>Configuration manager menu item for measure group editor</Comments>
+      <String Context="Generic_Long">Measure</String>
+    </Concept >
+    <Concept Id="MEASURE GROUP EDITOR LOW">
+      <Comments>Configuration manager menu item for measure group editor low level</Comments>
+      <String Context="Generic_Long">Measure Low</String>
+    </Concept >
+    <Concept Id="PAGE 1">
+      <Comments>Label of a collection of 4 radiobutton for selecting page in measure group editor</Comments>
+      <String Context="Generic_Medium">Page 1</String>
+    </Concept >
+    <Concept Id="PAGE 2">
+      <Comments>Label of a collection of 4 radiobutton for selecting page in measure group editor</Comments>
+      <String Context="Generic_Medium">Page 2</String>
+    </Concept >
+    <Concept Id="PAGE 3">
+      <Comments>Label of a collection of 4 radiobutton for selecting page in measure group editor</Comments>
+      <String Context="Generic_Medium">Page 3</String>
+    </Concept >
+    <Concept Id="PAGE 4">
+      <Comments>Label of a collection of 4 radiobutton for selecting page in measure group editor</Comments>
+      <String Context="Generic_Medium">Page 4</String>
+    </Concept >
+    <Concept Id="UNSUPPORTED_CONFIGURATIONFILE_VERSION">
+      <Comments>Message to the user when try to load a configuration file with version greater than max supported</Comments>
+      <String Context="Generic_Warning">Unsupported configuration file</String>
+    </Concept>
+    <Concept Id="CANNOT_SAVE_CONFIGURATIONFILE">
+      <Comments>Message to the user when try to save a configuration file and error occurs</Comments>
+      <String Context="Generic_Warning">Cannot save configuration file!</String>
+    </Concept>
+    <Concept Id="TRY_TO_SAVE_EMPTY_GROUP">
+      <Comments>Message to the user when try to save an empty configuration file </Comments>
+      <String Context="Generic_Warning">Cannot save empty configuration!</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

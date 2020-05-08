@@ -1,10 +1,12 @@
-﻿using Globe.Client.Localizer.Models;
+﻿using Globe.Client.Localizer.Dialogs;
+using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Regions;
+using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,16 +18,19 @@ namespace Globe.Client.Localizer.ViewModels
     {
         const string ALL_ITEMS = "All";
 
+        private readonly IDialogService _dialogService;
         private readonly ILoggerService _loggerService;
         private readonly ICurrentJobFiltersService _currentJobFiltersService;
         private readonly ICurrentJobStringItemsService _currentJobStringItemsService;
         public CurrentJobWindowViewModel(
             IEventAggregator eventAggregator,
+            IDialogService dialogService,
             ILoggerService loggerService,
             ICurrentJobFiltersService currentJobFiltersService,
             ICurrentJobStringItemsService currentJobStringItemsService)
             : base(eventAggregator)
         {
+            _dialogService = dialogService;
             _loggerService = loggerService;
             _currentJobFiltersService = currentJobFiltersService;
             _currentJobStringItemsService = currentJobStringItemsService;
@@ -180,12 +185,13 @@ namespace Globe.Client.Localizer.ViewModels
                     else
                     {
                         this.StringViewItems = await _currentJobStringItemsService.GetStringViewItemsAsync(
-                            new StringItemViewSearch
+                            new StringViewItemSearch
                             {
                                 ComponentNamespace = this.SelectedComponentNamespace.Description,
                                 InternalNamespace = this.SelectedInternalNamespace.Description,
                                 ISOCoding = this.SelectedLanguage.ISOCoding,
-                                JobListId = this.SelectedJobItem.Id
+                                JobListId = this.SelectedJobItem.Id,
+                                WorkingMode = this.WorkingMode
                             });
                     }
                 }
@@ -197,6 +203,27 @@ namespace Globe.Client.Localizer.ViewModels
                 {
                     this.GridBusy = false;
                 }
+            }));
+        
+        private DelegateCommand<StringViewItem> _stringViewItemEditCommand = null;
+        public DelegateCommand<StringViewItem> StringViewItemEditCommand =>
+            _stringViewItemEditCommand ?? (_stringViewItemEditCommand = new DelegateCommand<StringViewItem>(stringViewItem =>
+            {
+                string result = string.Empty;
+                var @params = new DialogParameters();
+                @params.Add("stringViewItem", stringViewItem);
+                @params.Add("ISOCoding", this.SelectedLanguage.ISOCoding);
+                _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, r =>
+                {
+                    if (r.Result == ButtonResult.None)
+                        result = "Result is None";
+                    else if (r.Result == ButtonResult.OK)
+                        result = "Result is OK";
+                    else if (r.Result == ButtonResult.Cancel)
+                        result = "Result is Cancel";
+                    else
+                        result = "I Don't know what you did!?";
+                });
             }));
 
         private DelegateCommand _checkNewJobCommand = null;

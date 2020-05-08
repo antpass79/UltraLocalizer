@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by STEFANO MUGNAI (ESAOTE SpA) -->
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="AnnotationsComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<LocalizationSection InternalNamespace="VETERINARY">
+		<Concept Id="SDFT">
+			<Comments>Superficial Digital Flexor Tendon</Comments>
+			<String Context="TS_SButton">SDFT</String>
+		</Concept>
+		<Concept Id="DDFT">
+			<Comments>Deep Digital Flexor Tendon</Comments>
+			<String Context="TS_SButton">DDFT</String>
+		</Concept>
+		<Concept Id="ICL">
+			<Comments>Inferior Check Ligament</Comments>
+			<String Context="TS_SButton">ICL</String>
+		</Concept>
+		<Concept Id="SL">
+			<Comments>Suspensory Ligament</Comments>
+			<String Context="TS_SButton">SL</String>
+		</Concept>
+		<Concept Id="CARPAL SH.">
+			<Comments/>
+			<String Context="TS_SButton">CARPAL SH.</String>
+		</Concept>
+		<Concept Id="MC3">
+			<Comments>Third Metacarpal Bone</Comments>
+			<String Context="TS_SButton">MC3</String>
+		</Concept>
+		<Concept Id="MT3">
+			<Comments>Third Metatarsal Bone</Comments>
+			<String Context="TS_SButton">MT3</String>
+		</Concept>
+		<Concept Id="P1">
+			<Comments/>
+			<String Context="TS_SButton">P1</String>
+		</Concept>
+    		<Concept Id="OVARY L.">
+		      <Comments>Ovary Left</Comments>
+		      <String Context="TS_SButton">OVARY L.</String>
+		</Concept>
+    		<Concept Id="OVARY R.">
+		      <Comments>Ovary Right</Comments>
+		      <String Context="TS_SButton">OVARY R.</String>
+		</Concept>
+		<Concept Id="KIDNEY L.">
+		      <Comments>Kidney Left</Comments>
+		      <String Context="TS_SButton">KIDNEY L.</String>
+		</Concept>
+		<Concept Id="KIDNEY R.">
+		      <Comments>Kidney Right</Comments>
+		      <String Context="TS_SButton">KIDNEY R.</String>
+		</Concept>
+		<Concept Id="SMALL">
+		      <Comments/>
+		      <String Context="TS_SButton">SMALL</String>
+		</Concept>
+		<Concept Id="TESTES">
+		      <Comments/>
+		      <String Context="TS_SButton">TESTES</String>
+		</Concept>
+		<Concept Id="FLUID">
+		      <Comments/>
+		      <String Context="TS_SButton">FLUID</String>
+		</Concept>
+		<Concept Id="GESTATIONAL SAC">
+		      <Comments/>
+		      <String Context="TS_SButton">GESTATIONAL SAC</String>
+		</Concept>
+  </LocalizationSection>
+</LocalizationResource>

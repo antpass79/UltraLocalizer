@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource ComponentNamespace="AutoEF_Amid_Component" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="UI">
+    <Concept Id="VolumeTitle">
+      <String Context="Generic_Medium">VOLUME</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="COMMANDS">
+    <Concept Id="CONFIRM_AHS_POINTS">
+      <String Context="TS_AButton">CONFIRM</String>
+    </Concept>
+    <Concept Id="AUTOEF  amid">
+      <String Context="TS_AButton">AUTO EF</String>
+    </Concept>
+    <Concept Id="XSTRAIN2DVIEWER_GAMMA">
+      <String Context="TS_TButton">GAMMA</String>
+    </Concept>
+
+    <Concept Id="AUTOEFPREVIEW">
+      <Comments>Shown on the touch screen tab after procesessing the points. The border is shown on main screen</Comments>
+      <String Context="TS_TabName">CONTOUR</String>
+    </Concept>
+    <Concept Id="EXIT_AUTOEF_CMD">
+      <String Context="TS_AButton">EXIT</String>
+    </Concept>
+    <Concept Id="GRAPHS_PLAY">
+      <String Context="TS_AButton">PLAY</String>
+    </Concept>
+    <Concept Id="GRAPHS_STOP">
+      <String Context="TS_AButton">STOP</String>
+    </Concept>
+    <Concept Id="GRAPHS_SPEED">
+      <String Context="TS_TButton">SPEED</String>
+    </Concept>
+    <Concept Id="GRAPHS_FRAME">
+      <String Context="TS_TButton">FRAME</String>
+    </Concept>
+    <Concept Id="NEW_TRACE">
+      <String Context="TS_AButton">NEW TRACE</String>
+    </Concept>
+    <Concept Id="PROCESS">
+      <String Context="TS_AButton">PROCESS</String>
+    </Concept>
+    <Concept Id="ATTACH_EF">
+      <String Context="TS_AButton">ATTACH EF</String>
+    </Concept>
+    <Concept Id="LAX_2Ch">
+      <String Context="TS_AButton">LAX 2Ch</String>
+      <String Context="Generic_Short">LAX 2Ch</String>
+    </Concept>
+    <Concept Id="LAX_4Ch">
+      <String Context="TS_AButton">LAX 4Ch</String>
+      <String Context="Generic_Short">LAX 4Ch</String>
+    </Concept>
+    <Concept Id="Manual">
+      <String Context="TS_AButton">MANUAL</String>
+    </Concept>
+    <Concept Id="RulerDriven">
+      <String Context="TS_AButton">AHS</String>
+    </Concept>
+    <Concept Id="CHANGE_BORDER">
+      <String Context="TS_TButton">BORDER</String>
+    </Concept>
+    <Concept Id="CONFIRM">
+      <String Context="TS_AButton">CONFIRM</String>
+    </Concept>
+    <Concept Id="Endo">
+      <String Context="TS_TButton">ENDO</String>
+    </Concept>
+    <Concept Id="TRACER">
+      <String Context="TS_TButton">TRACER</String>
+    </Concept>
+    <Concept Id="MODIFY">
+      <String Context="TS_AButton">MODIFY</String>
+    </Concept>
+    <Concept Id="EXPORT">
+      <String Context="TS_AButton">EXPORT</String>
+    </Concept>
+    <Concept Id="CHANGE_VOLUMEPOSITION">
+      <String Context="TS_TButton">VOLUME POSITION</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="HelpAreaMessages">
+    <Concept Id="ClickToConfirmPreview">
+      <String Context="MD_RT13HelpLine">Insert all points and press &lt;PROCESS&gt; to continue.</String>
+    </Concept> 
+    <Concept Id="Draw4Ch_Points">
+      <Comments>Issue 25016. Information on point insertion for 4CH views in the info area. Solo questo tipo di vista in autoef</Comments>
+      <String Context="MD_RT13HelpLine">Information on point insertion 4CH???</String>
+    </Concept>
+	<Concept Id="Draw2Ch_Points">
+      <Comments>Issue 25016. Information on point insertion for 2CH views in the info area. Solo questo tipo di vista in autoef</Comments>
+      <String Context="MD_RT13HelpLine">Information on point insertion 2CH???</String>
+    </Concept>
+    <Concept Id="FinishPoints">
+      <String Context="MD_RT13HelpLine">Press &lt;UNDO&gt; to set the last point and to close session.</String>
+    </Concept>
+    <Concept Id="CheckProjection">
+      <String Context="MD_RT13HelpLine">Please, check that the image orientation corresponds to the icon shown on the left.</String>
+    </Concept>
+    <Concept Id="ERROR_WHILE_PROCESSING">
+      <String Context="MD_RT13HelpLine">An error occured while processing</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="ProgressBar">
+    <Concept Id="START_PROCESSING">
+      <String Context="Generic_Long">Processing...</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Error_Messages">
+    <Concept Id="ELIGIBILITY_MSG">
+      <String Context="Generic_Warning">The selected clip cannot be processed for the following reasons:</String>
+    </Concept>
+    <Concept Id="NON_MULTIFRAME">
+      <String Context="Generic_Warning">single frame image</String>
+    </Concept>
+    <Concept Id="NO_HEARTRATE">
+      <String Context="Generic_Warning">low heart rate</String>
+    </Concept>
+    <Concept Id="NO_TRIGGERECG">
+      <String Context="Generic_Warning">ecg triggers not present</String>
+    </Concept>
+    <Concept Id="NON_CARDIO">
+      <String Context="Generic_Warning">not cardiac image</String>
+    </Concept>
+    <Concept Id="NON_STANDARD">
+      <String Context="Generic_Warning">not standard image</String>
+    </Concept>
+    <Concept Id="NOT_HIGHFRAMERATE">
+      <String Context="Generic_Warning">low frame rate</String>
+    </Concept>
+    <Concept Id="NON_NATIVE">
+      <String Context="Generic_Warning">not native image</String>
+    </Concept>
+    <Concept Id="NON_CALIBRATIONREGIONSHOMOGENEOUS">
+      <String Context="Generic_Warning">calibration regions are not homogenous</String>
+    </Concept>
+    <Concept Id="GENERIC_ERROR">
+      <String Context="Generic_Warning">generic error</String>
+    </Concept>
+    <Concept Id="TOO_MANY_CYCLES">
+      <String Context="Generic_Warning">Too long clip. No more then 1 cycle is allowed.</String>
+    </Concept>
+    <Concept Id="NOCALIBRATIONREGIONS">
+      <String Context="Generic_Warning">calibration regions are not present</String>
+    </Concept>
+    <Concept Id="ISPROSPECTIVE">
+      <String Context="Generic_Warning">the clip has been acquired in prospective mode</String>
+    </Concept>
+    <Concept Id="OPERATION_OK">
+      <String Context="Generic_Warning">Operation successfully completed.</String>
+    </Concept>
+    <Concept Id="OPERATION_ERROR">
+      <String Context="Generic_Warning">An error occured during this operation.</String>
+    </Concept>   
+    <Concept Id="WRONG_VIEW_IN_ATTACHMENTS">
+      <String Context="Generic_Warning">Report contains a previous analysis performed setting a different Heart view for this image. Old data will be discarded, to preserve old data, exit AutoEF before pressing Confirm.</String>
+    </Concept>
+    <Concept Id="PROCESSING_IS_RUNNING_MSG">
+      <String Context="Generic_Warning">The AutoEF environment is busy due to an interrupted processing. Try again after a while.</String>
+    </Concept>
+    <Concept Id="CANNOT_ENTER_READONLY_STUDY">
+      <String Context="Generic_Warning">Cannot enter AutoEF environment because the study is readonly. To run AutoEF analysis, import the exam in the local archive and repeat the operation in the local copy.</String>
+    </Concept>
+    <Concept Id="IS73xx">
+      <String Context="Generic_Warning">Clip acquired with an unsupported ESAOTE US model</String>
+    </Concept>
+    <Concept Id="Is61xx_Bef1001">
+      <String Context="Generic_Warning">Clip exported with a version earlier than 10.02</String>
+    </Concept>
+    <Concept Id="Is61xxMissingSoftwareVersion">
+      <String Context="Generic_Warning">
+        Missing software version (please rebuild archive index) 
+      </String>
+    </Concept>
+    <Concept Id="ISZOOM">
+      <String Context="Generic_Warning">Clip acquired with zoom active</String>
+    </Concept>
+    <Concept Id="CANNOT_ATTACH">
+      <String Context="Generic_Warning">Attach to report failed: study is not writable</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="WarningDialog">
+    <Concept Id="ERROR_PROCESS">
+      <String Context="Generic_Warning">Unknown error while processing data: please try to change the points positioning. </String>
+    </Concept>
+    <Concept Id="CANNOT_PROCESS">
+      <String Context="Generic_Warning">The current image cannot be processed.</String>
+    </Concept>
+    <Concept Id="INTERNAL_CHECK_FAILED">
+      <String Context="Generic_Warning">Internal check failed. </String>
+    </Concept>
+    <Concept Id="MEASURE_ALREADYEXISTING">
+      <String Context="Generic_Warning">AutoEF measure already existing. The new result will overwrite the old one.</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="ReportLabels">
+    <Concept Id="AUTO_EF_TITLE">
+      <String Context="Generic_Long">AUTO EF</String>
+    </Concept>
+    <Concept Id="Vd">
+      <Comments>DiastolicVolume</Comments>
+      <String Context="Generic_Short">Vd</String>
+      <String Context="MD_RT11MeasName">Vd</String>
+    </Concept>
+    <Concept Id="Vs">
+      <Comments>SystolicVolume</Comments>
+      <String Context="Generic_Short">Vs</String>
+      <String Context="MD_RT11MeasName">Vs</String>
+    </Concept>
+    <Concept Id="EF">
+      <Comments>EjectionFraction</Comments>
+      <String Context="Generic_Short">EF</String>
+      <String Context="MD_RT11MeasName">EF</String>
+    </Concept>
+    <Concept Id="LAX_2Ch">
+      <String Context="Generic_Short">LAX 2Ch</String>
+    </Concept>
+    <Concept Id="LAX_4Ch">
+      <String Context="Generic_Short">LAX 4Ch</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ThumbnailsComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Common">
+    <Concept Id="Close">
+      <Comments>Close tab  command</Comments>
+      <String Context="TS_AButton">Close Exam</String>
+    </Concept >
+    <Concept Id="EXAM_IN_USE_NO_OPEN">
+      <Comments>Warning Message: Some Exams are in use</Comments>
+      <String Context="Generic_Warning">Warning: some of the selected exams are currently opened by another process: cannot open it.</String>
+    </Concept >
+    <Concept Id="IMAGE_NOT_COMPATIBLE">
+      <Comments>Warning Message: Some image are not compatible with the current device [StoryID: 3100]</Comments>
+      <String Context="Generic_Warning">Warning: the selected object cannot be displayed since it is not compatible with this device.</String>
+    </Concept >
+    <Concept Id="DELETETEIMAGES?">
+      <Comments>Asks Confirm before delete images</Comments>
+      <String Context="Generic_Warning">DELETE SELECTED IMAGES?</String>
+    </Concept >
+    <Concept Id="NOT_All_Images_are_deleted">
+      <Comments>Warning message after delete images if some image are stress</Comments>
+      <String Context="Generic_Warning">It's not possible delete the stress images selected</String>
+    </Concept >
+    <Concept Id="impossibledelete">
+      <Comments>Warning message in delete images procedure </Comments>
+      <String Context="Generic_Warning">It's not possible delete the following images: </String>
+    </Concept >
+    <Concept Id="StressImage">
+      <Comments>stress images could not be delete: this string is concatenated with Id impossibledelete </Comments>
+      <String Context="Generic_Warning">Stress Images</String>
+    </Concept >
+    <Concept Id="ReadOnlyImage">
+      <Comments>read only images could not be delete: this string is concatenated with Id impossibledelete </Comments>
+      <String Context="Generic_Warning">Read Only Images</String>
+    </Concept >
+    <Concept Id="InvalidImage">
+      <Comments>Invalid images could not be delete: this string is concatenated with Id impossibledelete </Comments>
+      <String Context="Generic_Warning">Invalid Images</String>
+    </Concept >
+    <Concept Id="DICOMImage">
+      <Comments>Invalid images could not be delete: this string is concatenated with Id impossibledelete </Comments>
+      <String Context="Generic_Warning">DICOM Images</String>
+    </Concept >
+    <Concept Id="DELETEIMAGES">
+      <Comments>Delete Images command</Comments>
+      <String Context="Generic_Long">DELETING IMAGES</String>
+    </Concept >
+    <Concept Id="IMAGE">
+      <Comments>"Image" string in event log to log the delete image</Comments>
+      <String Context="Generic_Medium">IMAGE</String>
+    </Concept >
+    <Concept Id="EXAMREADONLY">
+      <Comments>User is opening a read-only exam.</Comments>
+      <String Context="Generic_Warning">The selected exam is read-only: any modification will not be stored.</String>
+    </Concept >
+    <Concept Id="CURRENT">
+      <Comments>CurrentExam Label in thumbnails</Comments>
+      <String Context="Generic_Short">Current</String>
+    </Concept >
+    <Concept Id="NoCloseExam">
+      <Comments>Warnig Message for user is not possible close current exam tab in RT</Comments>
+      <String Context="Generic_Warning">Warning Message: It's not possible close Current Exam during acquisition!</String>
+    </Concept >
+    <Concept Id="ScrollPage">
+      <Comments>Scroll Page Command</Comments>
+      <String Context="TS_TButton">Scroll Page</String>
+    </Concept >
+    <Concept Id="ScrollItem">
+      <Comments>Scroll Item Command</Comments>
+      <String Context="TS_TButton">Scroll Item</String>
+    </Concept >
+    <Concept Id="ScrollRow">
+      <Comments>Scroll Row Command</Comments>
+      <String Context="TS_TButton">Scroll Row</String>
+    </Concept >
+    <Concept Id="ScrollExam">
+      <Comments>Scroll Exam Command</Comments>
+      <String Context="TS_TButton">Scroll Exam</String>
+    </Concept >
+    <Concept Id="DeleteImages">
+      <Comments>"Delete Images" Command</Comments>
+      <String Context="TS_AButton">"Delete Images"</String>
+    </Concept >
+    <Concept Id="OpenedExams">
+      <Comments>"Opened Exams" Command</Comments>
+      <String Context="TS_AButton">"Opened Exams"</String>
+      <String Context="TS_TabName">"Opened Exams"</String>
+    </Concept >
+	 <Concept Id="RETREIVE_PATIENT_INFO">
+      <Comments>[Defect 10955] Label of RETREIVE PAT. INFO button on touch screen</Comments>
+      <String Context="TS_AButton">RETRIEVE PATIENT DATA</String>
+    </Concept>
+	<Concept Id="SelectAll">
+      <Comments>[Defect 15818] Label of Select All button on touch screen</Comments>
+      <String Context="TS_AButton">Select All</String>
+    </Concept>
+	<Concept Id="First">
+      <Comments>select first thumbnail directly</Comments>
+      <String Context="TS_TButton">First</String>
+    </Concept>
+	<Concept Id="Last">
+      <Comments>select last thumbnail directly</Comments>
+      <String Context="TS_TButton">Last</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="UIFramework" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Applications">
+    <Concept Id="CARDIAC">
+      <Comments>Cardiac Application</Comments>
+      <String Context="Generic_Medium">CARDIAC</String>
+    </Concept >
+    <Concept Id="VASCULAR">
+      <Comments>Vascular Application</Comments>
+      <String Context="Generic_Medium">VASCULAR</String>
+    </Concept >
+    <Concept Id="ABDOMINAL">
+      <Comments>Abdominal Application</Comments>
+      <String Context="Generic_Medium">ABDOMINAL</String>
+    </Concept >
+    <Concept Id="OBSTETRIC">
+      <Comments>Obstetric Application</Comments>
+      <String Context="Generic_Medium">OBSTETRIC</String>
+    </Concept >
+    <Concept Id="TRANSCRANIC">
+      <Comments>Transcranic Application</Comments>
+      <String Context="Generic_Medium">TRANSCRANIC</String>
+    </Concept >
+    <Concept Id="NEONATAL">
+      <Comments>Neonatal Application</Comments>
+      <String Context="Generic_Medium">NEONATAL</String>
+    </Concept >
+    <Concept Id="CARDIACPEDIATRIC">
+      <Comments>CardiacPediatric Application</Comments>
+      <String Context="Generic_Medium">CARDIACPEDIATRIC</String>
+    </Concept >
+    <Concept Id="PEDIATRIC">
+      <Comments>Pediatric Application</Comments>
+      <String Context="Generic_Medium">PEDIATRIC</String>
+    </Concept>
+    <Concept Id="GYNECOLOGY">
+      <Comments>Gynecology Application</Comments>
+      <String Context="Generic_Medium">GYNECOLOGY</String>
+    </Concept >
+    <Concept Id="UROLOGIC">
+      <Comments>Urologic Application</Comments>
+      <String Context="Generic_Medium">UROLOGIC</String>
+    </Concept >
+    <Concept Id="MUSCULOSKELETAL">
+      <Comments>MusculoSkeletal Application</Comments>
+      <String Context="Generic_Medium">MUSCOLOSKELETAL</String>
+    </Concept>
+    <Concept Id="BREAST">
+      <Comments>Breast Application</Comments>
+      <String Context="Generic_Medium">BREAST</String>
+    </Concept >
+    <Concept Id="THYROID">
+      <Comments>Thyroid Application</Comments>
+      <String Context="Generic_Medium">THYROID</String>
+    </Concept >
+    <Concept Id="SMALLPARTS">
+      <Comments>SmallParts Application</Comments>
+      <String Context="Generic_Medium">SMALLPARTS</String>
+    </Concept>
+    <Concept Id="GENERIC">
+      <Comments>Generic Application</Comments>
+      <String Context="Generic_Medium">GENERIC</String>
+    </Concept >
+    <Concept Id="ABDOMINALCANINE">
+      <Comments>AbdominalCanine Application</Comments>
+      <String Context="Generic_Medium">ABDOMINALCANINE</String>
+    </Concept >
+    <Concept Id="ABDOMINALFELINE">
+      <Comments>AbdominalFeline Application</Comments>
+      <String Context="Generic_Medium">ABDOMINALFELINE</String>
+    </Concept>
+    <Concept Id="ABDOMINALEQUINE">
+      <Comments>AbdominalEquine Application</Comments>
+      <String Context="Generic_Medium">ABDOMINALEQUINE</String>
+    </Concept >
+    <Concept Id="ABDOMINALBOVINE">
+      <Comments>AbdominalBovine Application</Comments>
+      <String Context="Generic_Medium">ABDOMINALBOVINE</String>
+    </Concept >
+    <Concept Id="REPRODUCTIONCANINE">
+      <Comments>ReproductionCanine Application</Comments>
+      <String Context="Generic_Medium">REPRODUCTIONCANINE</String>
+    </Concept >
+    <Concept Id="REPRODUCTIONFELINE">
+      <Comments>ReproductionFeline Application</Comments>
+      <String Context="Generic_Medium">REPRODUCTIONFELINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONEQUINE">
+      <Comments>ReproductionEquine Application</Comments>
+      <String Context="Generic_Medium">REPRODUCTIONEQUINE</String>
+    </Concept >
+    <Concept Id="REPRODUCTIONBOVINE">
+      <Comments>ReproductionBovine Application</Comments>
+      <String Context="Generic_Medium">REPRODUCTIONBOVINE</String>
+    </Concept >
+    <Concept Id="REPRODUCTIONOVINE">
+      <Comments>ReproductionOvine Application</Comments>
+      <String Context="Generic_Medium">REPRODUCTIONOVINE</String>
+    </Concept >
+    <Concept Id="REPRODUCTIONPORCINE">
+      <Comments>ReproductionPorcine Application</Comments>
+      <String Context="Generic_Medium">REPRODUCTIONPORCINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONCAPRINE">
+      <Comments>ReproductionCaprine Application</Comments>
+      <String Context="Generic_Medium">REPRODUCTIONCAPRINE</String>
+    </Concept >
+    <Concept Id="TENDON">
+      <Comments>Tendon Application</Comments>
+      <String Context="Generic_Medium">TENDON</String>
+    </Concept >
+    <Concept Id="CARDIOCANINE">
+      <Comments>CardioCanine Application</Comments>
+      <String Context="Generic_Medium">CARDIOCANINE</String>
+    </Concept>
+    <Concept Id="CARDIOFELINE">
+      <Comments>CardioFeline Application</Comments>
+      <String Context="Generic_Medium">CARDIOFELINE</String>
+    </Concept >
+    <Concept Id="CARDIOEQUINE">
+      <Comments>CardioEquine Application</Comments>
+      <String Context="Generic_Medium">CARDIOEQUINE</String>
+    </Concept >
+    <Concept Id="CARDIOBOVINE">
+      <Comments>CardioBovine Application</Comments>
+      <String Context="Generic_Medium">CARDIOBOVINE</String>
+    </Concept >
+    <Concept Id="REGANEST">
+      <Comments>RegAnest Application</Comments>
+      <String Context="Generic_Medium">REGANEST</String>
+    </Concept >
+    <Concept Id="AESTHETIC">
+      <Comments>Aesthetic Application</Comments>
+      <String Context="Generic_Medium">AESTHETIC</String>
+    </Concept>
+    <Concept Id="OTHER_REPRO">
+      <Comments>OtherReproduction Application</Comments>
+      <String Context="Generic_Medium">OTHER REPRO</String>
+    </Concept>
+    <Concept Id="OTHER_CARDIO">
+      <Comments>OtherCardio Application</Comments>
+      <String Context="Generic_Medium">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHER_ABDOMINAL">
+      <Comments>OtherAbdominal Application</Comments>
+      <String Context="Generic_Medium">OTHER ABDOMINAL</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

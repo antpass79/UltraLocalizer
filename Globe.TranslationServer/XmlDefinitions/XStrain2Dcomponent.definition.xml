@@ -1,0 +1,1249 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizationResource ComponentNamespace="XStrain2DComponent" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="UI">
+    <Concept Id="Volume">
+      <String Context="Generic_Medium">VOLUME</String>
+    </Concept>
+    <Concept Id="EndoLongVel">
+      <String Context="Generic_Medium">ENDO LONG VEL</String>
+    </Concept>
+    <Concept Id="EndoTransvVel">
+      <String Context="Generic_Medium">ENDO TRANSV VEL</String>
+    </Concept>
+    <Concept Id="EndoLongStrain">
+      <String Context="Generic_Medium">ENDO LONG STRAIN</String>
+    </Concept>
+    <Concept Id="EndoLongStrainRate">
+      <String Context="Generic_Medium">ENDO LONG STRAIN RATE</String>
+    </Concept>
+    <Concept Id="EndoLongDispl">
+      <String Context="Generic_Medium">ENDO LONG DISPL</String>
+    </Concept>
+    <Concept Id="EndoTransvDispl">
+      <String Context="Generic_Medium">ENDO TRANSV DISPL</String>
+    </Concept>
+    <Concept Id="EpiLongVel">
+      <String Context="Generic_Medium">EPI LONG VEL</String>
+    </Concept>
+    <Concept Id="EpiTransvVel">
+      <String Context="Generic_Medium">EPI TRANSV VEL</String>
+    </Concept>
+    <Concept Id="EpiLongStrain">
+      <String Context="Generic_Medium">EPI LONG STRAIN</String>
+    </Concept>
+    <Concept Id="EpiLongStrainRate">
+      <String Context="Generic_Medium">EPI LONG STRAIN RATE</String>
+    </Concept>
+    <Concept Id="EpiLongDispl">
+      <String Context="Generic_Medium">EPI LONG DISPL</String>
+    </Concept>
+    <Concept Id="EpiTransvDispl">
+      <String Context="Generic_Medium">EPI TRANSV DISPL</String>
+    </Concept>
+    <Concept Id="TransversalStrain">
+      <String Context="Generic_Medium">TRANSV STRAIN</String>
+    </Concept>
+    <Concept Id="TransversalStrainRate">
+      <String Context="Generic_Medium">TRANSV STRAIN RATE</String>
+    </Concept>
+    <Concept Id="Shear">
+      <String Context="Generic_Medium">SHEAR</String>
+    </Concept>
+    <Concept Id="ShearRate">
+      <String Context="Generic_Medium">SHEAR RATE</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="COMMANDS">
+    <Concept Id="ShowValues">
+      <Comment>Enable/Disabled the hoovering/peak moving on RCA Graph</Comment>
+      <String Context="TS_AButton">SHOW VALUES</String>
+    </Concept>
+	<Concept Id="PaletteType">
+      <String Context="TS_AButton">Palette Type</String>
+    </Concept>
+    <Concept Id="BULLEYE">
+      <Comment>Enter BullEye form</Comment>
+      <String Context="TS_AButton">BULL'S EYE</String>
+    </Concept>
+    <Concept Id="CLEAR_POINTS">
+      <String Context="TS_AButton">CLEAR</String>
+    </Concept>
+    <Concept Id="CONFIRM_AHS_POINTS">
+      <String Context="TS_AButton">CONFIRM</String>
+    </Concept>
+    <Concept Id="XSTRAIN2D_TAB">
+      <String Context="TS_TabName">XSTRAIN 2D</String>
+    </Concept>
+    <Concept Id="XSTRAIN2D_REVIEW_TAB">
+      <String Context="TS_TabName">Review</String>
+    </Concept>
+    <Concept Id="OPEN_XSTRAIN2D_CMD">
+      <String Context="TS_BButton">XSTRAIN 2D</String>
+    </Concept>
+    <Concept Id="GRAPHS_TAB">
+      <String Context="TS_TabName">Graphs Review</String>
+    </Concept>
+    <Concept Id="MAPS_TAB">
+      <String Context="TS_TabName">CR-M Mode</String>
+    </Concept>
+    <Concept Id="RCA_TAB">
+      <String Context="TS_TabName">Regional Analysis</String>
+    </Concept>
+    <Concept Id="SUMMARY_TAB">
+      <Comment>this is a hidden tab, not used at the moment</Comment>
+      <String Context="TS_TabName">Summary</String>
+    </Concept>
+    <Concept Id="EXIT_XSTRAIN2D_CMD">
+      <String Context="TS_AButton">EXIT</String>
+    </Concept>
+    <Concept Id="GRAPHS_STOP">
+      <String Context="TS_AButton">STOP</String>
+    </Concept>
+    <Concept Id="GRAPHS_PLAY">
+      <String Context="TS_AButton">PLAY</String>
+    </Concept>
+    <Concept Id="GRAPHS_SPEED">
+      <String Context="TS_TButton">SPEED</String>
+    </Concept>
+    <Concept Id="GRAPHS_FRAME">
+      <String Context="TS_TButton">FRAME</String>
+    </Concept>
+    <Concept Id="XSTRAIN2DVIEWER_SPEED">
+      <String Context="TS_TButton">SPEED</String>
+    </Concept>
+    <Concept Id="XSTRAIN2DVIEWER_GAMMA">
+      <String Context="TS_TButton">GAMMA</String>
+    </Concept>
+    <Concept Id="NEW_TRACE">
+      <String Context="TS_AButton">NEW TRACE</String>
+    </Concept>
+    <Concept Id="PROCESS">
+      <String Context="TS_AButton">PROCESS</String>
+    </Concept>
+    <Concept Id="CONFIRM_RCA">
+      <String Context="TS_AButton">CONFIRM</String>
+    </Concept>
+    <Concept Id="CONFIRM">
+      <String Context="TS_AButton">CONFIRM</String>
+    </Concept>
+	 <Concept Id="Graph-CR">
+      <String Context="TS_AButton">Graph-CR</String>
+    </Concept>
+    <Concept Id="LAX_2Ch">
+      <String Context="TS_AButton">LAX 2Ch</String> 
+      <String Context="Generic_Short">LAX 2Ch</String>
+    </Concept>
+    <Concept Id="LAX_4Ch">
+      <String Context="TS_AButton">LAX 4Ch</String>
+      <String Context="Generic_Short">LAX 4Ch</String>
+    </Concept>
+    <Concept Id="LAX_AP">
+      <String Context="TS_AButton">LAX AP</String>
+      <String Context="Generic_Short">LAX AP</String>
+    </Concept>
+    <Concept Id="SAX_AP">
+      <String Context="TS_AButton">SAX AP</String>
+      <String Context="Generic_Short">SAX AP</String>
+    </Concept>
+    <Concept Id="SAX_MV">
+      <String Context="TS_AButton">SAX MV</String>
+      <String Context="Generic_Short">SAX MV</String>
+    </Concept>
+    <Concept Id="SAX_PM">
+      <String Context="TS_AButton">SAX PM</String>
+      <String Context="Generic_Short">SAX PM</String>
+    </Concept>
+    <Concept Id="Manual">
+      <String Context="TS_AButton">MANUAL</String>
+    </Concept>
+    <Concept Id="RulerDriven">
+      <String Context="TS_AButton">AHS</String>
+    </Concept>
+    <Concept Id="Auto">
+      <String Context="TS_AButton">AUTO</String>
+    </Concept>
+    <Concept Id="CHANGE_BORDER">
+      <String Context="TS_TButton">BORDER</String>
+    </Concept>
+    <Concept Id="CHANGE_VISUALIZATION">
+      <String Context="TS_TButton">LV-VISUALIZATION</String>
+    </Concept>
+    <Concept Id="CHANGE_GRAPH">
+      <String Context="TS_TButton">GRAPH</String>
+    </Concept>
+    <Concept Id="CHANGE_CR-MMode">
+      <String Context="TS_TButton">CR-MMode</String>
+    </Concept>
+    <Concept Id="GraphChange">
+      <String Context="TS_TButton">Graph</String>
+    </Concept>
+    <Concept Id="ZoomGraphSelection">
+      <String Context="TS_TButton">ZoomOut</String>
+    </Concept>
+    <Concept Id="CycleSelection">
+      <String Context="TS_TButton">Cycle</String>
+    </Concept>
+    <Concept Id="2/3">
+      <String Context="TS_TButton">2/3</String>
+    </Concept>
+    <Concept Id="1/2">
+      <String Context="TS_TButton">1/2</String>
+    </Concept>
+    <Concept Id="1/3">
+      <String Context="TS_TButton">1/3</String>
+    </Concept>
+    <Concept Id="EndoLongVel">
+      <String Context="TS_TButton">EndoLongVel</String>
+    </Concept>
+    <Concept Id="EndoTransvVel">
+      <String Context="TS_TButton">EndoTransvVel</String>
+    </Concept>
+    <Concept Id="EndoLongStrain">
+      <String Context="TS_TButton">EndoLongStrain</String>
+    </Concept>
+    <Concept Id="EndoLongStrainRate">
+      <String Context="TS_TButton">EndoLongStrainRate</String>
+    </Concept>
+    <Concept Id="EndoLongDispl">
+      <String Context="TS_TButton">EndoLongDispl</String>
+    </Concept>
+    <Concept Id="EndoTransvDispl">
+      <String Context="TS_TButton">EndoTransvDispl</String>
+    </Concept>
+    <Concept Id="EpiLongVel">
+      <String Context="TS_TButton">EpiLongVel</String>
+    </Concept>
+    <Concept Id="EpiTransvVel">
+      <String Context="TS_TButton">EpiTransvVel</String>
+    </Concept>
+    <Concept Id="EpiLongStrain">
+      <String Context="TS_TButton">EpiLongStrain</String>
+    </Concept>
+    <Concept Id="EpiLongStrainRate">
+      <String Context="TS_TButton">EpiLongStrainRate</String>
+    </Concept>
+    <Concept Id="EpiLongDispl">
+      <String Context="TS_TButton">EpiLongDispl</String>
+    </Concept>
+    <Concept Id="EpiTransvDispl">
+      <String Context="TS_TButton">EpiTransvDispl</String>
+    </Concept>
+    <Concept Id="TransversalStrain">
+      <String Context="TS_TButton">TransversalStrain</String>
+    </Concept>
+    <Concept Id="TransversalStrainRate">
+      <String Context="TS_TButton">TransversalStrainRate</String>
+    </Concept>
+    <Concept Id="Shear">
+      <String Context="TS_TButton">Shear</String>
+    </Concept>
+    <Concept Id="ShearRate">
+      <String Context="TS_TButton">ShearRate</String>
+    </Concept>
+    <Concept Id="Volume">
+      <String Context="TS_TButton">Volume</String>
+    </Concept>
+    <Concept Id="Endo">
+      <String Context="TS_TButton">ENDO</String>
+    </Concept>
+    <Concept Id="Epi">
+      <String Context="TS_TButton">EPI</String>
+    </Concept>
+    <Concept Id="Colored">
+      <String Context="TS_TButton">COLORED-SEGMENTS</String>
+    </Concept>
+    <Concept Id="Arrow">
+      <String Context="TS_TButton">ARROW-POINTS</String>
+    </Concept>
+    <Concept Id="TRACER">
+      <String Context="TS_TButton">TRACER</String>
+    </Concept>
+    <Concept Id="SCROLL_MAP">
+      <String Context="TS_TButton">SCROLL</String>
+    </Concept>
+    <Concept Id="MODIFY">
+      <String Context="TS_AButton">MODIFY</String>
+    </Concept>
+    <Concept Id="SaveTemporaryClip">
+      <String Context="TS_AButton">SAVE</String>
+    </Concept>
+    <Concept Id="GOBACK">
+      <String Context="TS_AButton">GOBACK</String>
+    </Concept>
+    <Concept Id="EXPORT">
+      <String Context="TS_AButton">EXPORT</String>
+    </Concept>
+    <Concept Id="CHANGE_VALUETIME">
+      <String Context="TS_TButton">VALUE/TIME</String>
+    </Concept>
+    <Concept Id="VALUE_VALUETIME">
+      <String Context="TS_TButton">VALUE</String>
+    </Concept>
+    <Concept Id="BASSEP(0)">
+      <String Context="TS_TButton">BAS SEP(0)</String>
+    </Concept>
+    <Concept Id="MIDSEP(1)">
+      <String Context="TS_TButton">MID SEP(1)</String>
+    </Concept>
+    <Concept Id="APICSEP(2)">
+      <String Context="TS_TButton">APIC SEP(2)</String>
+    </Concept>
+    <Concept Id="BASLAT(3)">
+      <String Context="TS_TButton">BAS LAT(3)</String>
+    </Concept>
+    <Concept Id="MIDLAT(4)">
+      <String Context="TS_TButton">MID LAT(4)</String>
+    </Concept>
+    <Concept Id="APICLAT(5)">
+      <String Context="TS_TButton">APIC LAT(5)</String>
+    </Concept>
+    <Concept Id="All">
+      <String Context="TS_TButton">ALL</String>
+    </Concept>
+    <Concept Id="EndoGraphs">
+      <String Context="TS_TButton">ENDOGRAPHS</String>
+    </Concept>
+    <Concept Id="EpiGraphs">
+      <String Context="TS_TButton">EPIGRAPHS</String>
+    </Concept>
+    <Concept Id="RadialGraphs">
+      <String Context="TS_TButton">RADIALGRAPHS</String>
+    </Concept>
+    <Concept Id="VolumeGraph">
+      <String Context="TS_TButton">VOLUMEGRAPH</String>
+    </Concept>
+    <Concept Id="TIME_VALUETIME">
+      <String Context="TS_TButton">TIME</String>
+    </Concept>
+    <Concept Id="CHANGE_PAE">
+      <Comment>toggle button to scroll among peak type : P = main Peak, A = A-wave, E = E-wave</Comment>
+      <String Context="TS_TButton">PAE</String>
+    </Concept>
+    <Concept Id="CHANGE_CYCLE">
+      <String Context="TS_TButton">CYCLE</String>
+    </Concept>
+    <Concept Id="PEAKS_MAINPEAK">
+      <Comment>peak type enum localization : P = main Peak, A = A-wave, E = E-wave</Comment>
+      <String Context="TS_TButton">MAIN</String>
+    </Concept>
+    <Concept Id="PEAKS_A">
+      <Comment>peak type enum localization : P = main Peak, A = A-wave, E = E-wave</Comment>
+      <String Context="TS_TButton">A WAVE</String>
+    </Concept>
+    <Concept Id="PEAKS_E">
+      <Comment>peak type enum localization : P = main Peak, A = A-wave, E = E-wave</Comment>
+      <String Context="TS_TButton">E WAVE</String>
+    </Concept>
+    <Concept Id="ATTACH">
+      <String Context="TS_AButton">ATTACH</String>
+    </Concept>
+    <Concept Id="ViewEndoGraphsOnly">
+      <String Context="TS_AButton">Endo Graphs</String>
+    </Concept>
+    <Concept Id="ViewEpiGraphsOnly">
+      <String Context="TS_AButton">Epi Graphs</String>
+    </Concept>
+    <Concept Id="ViewEndoEpiGraphs">
+      <String Context="TS_AButton">Radial Graphs</String>
+    </Concept>
+    <Concept Id="VECTORCOMMAND_LABEL">
+      <String Context="TS_TButton">VECTOR</String>
+    </Concept>
+    <Concept Id="VECTORCOMMAND_VP">
+      <String Context="TS_TButton">ViewPoint</String>
+    </Concept>
+    <Concept Id="VECTORCOMMAND_GLOBAL">
+      <String Context="TS_TButton">Global</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="HelpAreaMessages"> 
+    <Concept Id="ClickToConfirmPreview">
+      <String Context="MD_RT13HelpLine">Insert all points and press &lt;PROCESS&gt; to continue.</String>
+    </Concept>
+    <Concept Id="DrawApicalSpecialPoints">
+      <Comments>Issue 25016. Information on point insertion for Apical views in the info area.</Comments>
+      <String Context="MD_RT13HelpLine">Information on point insertion apical????</String>
+    </Concept>
+    <Concept Id="Draw2Ch_Points">
+      <Comments>Issue 25016. Information on point insertion for 2CH views in the info area.</Comments>
+      <String Context="MD_RT13HelpLine">Information on point insertion 2CH???</String>
+    </Concept>
+    <Concept Id="Draw4Ch_Points">
+      <Comments>Issue 25016. Information on point insertion for 4CH views in the info area.</Comments>
+      <String Context="MD_RT13HelpLine">Information on point insertion 4CH???</String>
+    </Concept>
+      <Concept Id="FinishPoints">
+      <String Context="MD_RT13HelpLine">Press &lt;UNDO&gt; to set the last point and to close session.</String>
+    </Concept>
+    <Concept Id="CheckProjection">
+      <String Context="MD_RT13HelpLine">Please, check that the image orientation corresponds to the icon shown on the left.</String>
+    </Concept>
+    <Concept Id="SaxRulerMessage1">
+      <String Context="MD_RT13HelpLine">Place caliper on the first point</String>
+    </Concept>
+    <Concept Id="SaxRulerMessage2">
+      <String Context="MD_RT13HelpLine">Place caliper on the second point</String>
+    </Concept>  
+    <Concept Id="ERROR_WHILE_PROCESSING">
+      <String Context="MD_RT13HelpLine">An error occured while processing</String>
+    </Concept> 
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="ProgressBar">
+    <Concept Id="START_PROCESSING">
+      <String Context="Generic_Long">Processing...</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Error_Messages">
+    <Concept Id="ELIGIBILITY_MSG">
+      <String Context="Generic_Warning">The selected clip cannot be processed for the following reasons:</String>
+    </Concept>
+    <Concept Id="NON_MULTIFRAME">
+      <String Context="Generic_Warning">single frame image</String>
+    </Concept>
+    <Concept Id="NO_HEARTRATE">
+      <String Context="Generic_Warning">low heart rate</String>
+    </Concept>
+    <Concept Id="NO_TRIGGERECG">
+      <String Context="Generic_Warning">ecg triggers not present</String>
+    </Concept>
+    <Concept Id="NON_CARDIO">
+      <String Context="Generic_Warning">not cardiac image</String>
+    </Concept>
+    <Concept Id="NON_STANDARD">
+      <String Context="Generic_Warning">not standard image</String>
+    </Concept>
+    <Concept Id="NOT_HIGHFRAMERATE">
+      <String Context="Generic_Warning">low frame rate</String>
+    </Concept>
+    <Concept Id="NON_NATIVE">
+      <String Context="Generic_Warning">not native image</String>
+    </Concept>
+    <Concept Id="ISPROSPECTIVE">
+      <String Context="Generic_Warning">the clip has been acquired in prospective mode</String>
+    </Concept>
+	 <Concept Id="DEP">
+      <String Context="Generic_Warning">XStrain2D: installation is not completed. You cannot proceed</String>
+    </Concept>
+    
+    <Concept Id="NON_CALIBRATIONREGIONSHOMOGENEOUS">
+      <String Context="Generic_Warning">calibration regions are not homogenous</String>
+    </Concept>
+    <Concept Id="GENERIC_ERROR">
+      <String Context="Generic_Warning">generic error</String>
+    </Concept>
+    <Concept Id="TOO_MANY_CYCLES">
+      <String Context="Generic_Warning">Too long clip. No more then 3 cycles are allowed.</String>
+    </Concept>
+    <Concept Id="NOCALIBRATIONREGIONS">
+      <String Context="Generic_Warning">calibration regions are not present</String>
+    </Concept>
+    <Concept Id="OPERATION_OK">
+      <String Context="Generic_Warning">Operation successfully completed.</String>
+    </Concept>
+    <Concept Id="OPERATION_ERROR">
+      <String Context="Generic_Warning">An error occured during this operation.</String>
+    </Concept>
+    <Concept Id="WRONG_VIEW_IN_ATTACHMENTS">
+      <String Context="Generic_Warning">Report contains a previous RCA analysis performed setting a different Heart view for this image. Old data will be discarded, to preserve old data, exit xstrain before pressing Confirm..</String>
+    </Concept>
+    <Concept Id="PROCESSING_IS_RUNNING_MSG">
+      <String Context="Generic_Warning">The XStrain environment is busy due to an interrupted processing. Try again after a while.</String>
+    </Concept>
+    <Concept Id="CANNOT_ENTER_READONLY_STUDY">
+      <String Context="Generic_Warning">Cannot enter XStrain2D environment because the study is readonly. To run XStrain2D analysis, import the exam in the local archive and repeat the operation in the local copy.</String>
+    </Concept>
+    <Concept Id="IS73xx">
+      <String Context="Generic_Warning">Clip acquired with an unsupported ESAOTE US model</String>
+    </Concept>
+    <Concept Id="Is61xx_Bef1001">
+      <String Context="Generic_Warning">Clip exported with a version earlier than 10.02</String>
+    </Concept>
+    <Concept Id="Is61xxMissingSoftwareVersion">
+      <String Context="Generic_Warning">Missing software version (please rebuild archive index)
+      </String>
+    </Concept>
+    <Concept Id="ISZOOM">
+      <String Context="Generic_Warning">Clip acquired with zoom active</String>
+    </Concept> 
+  </LocalizationSection>
+  
+
+  <LocalizationSection InternalNamespace="WarningDialog">
+    <Concept Id="ERROR_PROCESS">
+      <String Context="Generic_Warning">Unknown error while processing data: please try to change the points positioning.</String>
+    </Concept>
+    <Concept Id="CANNOT_PROCESS">
+      <String Context="Generic_Warning">The current image cannot be processed.</String>
+    </Concept>
+    <Concept Id="INTERNAL_CHECK_FAILED">
+      <String Context="Generic_Warning">Internal check failed.</String>
+    </Concept>
+    <Concept Id="ERROR_AUTODETECTION">
+      <String Context = "Generic_Warning">Unknown error during automatic border detection: Please try to select a different tracer</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Graphs">
+    <Concept Id="BorderAnalysis_EndoVelApicalTang">
+      <Comments>VELOCITY</Comments>
+      <String Context="Generic_Long">ENDO LONG VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoVelApicalRad">
+      <String Context="Generic_Long">ENDO TRANSV VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoVelSaxTang">
+      <String Context="Generic_Long">ENDO ROT VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoVelSaxRad">
+      <String Context="Generic_Long">ENDO RADIAL VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiVelApicalTang">
+      <String Context="Generic_Long">EPI LONG VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiVelApicalRad">
+      <String Context="Generic_Long">EPI TRANSV VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiVelSaxTang">
+      <String Context="Generic_Long">EPI ROT VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiVelSaxRad">
+      <String Context="Generic_Long">EPI RADIAL VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoNormalVPSax">
+      <String Context="Generic_Long">ENDO NORM VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoVPVelSax">
+      <String Context="Generic_Long">ENDO VP VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoNormalVPApical">
+      <String Context="Generic_Long">ENDO NORM VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoVPVelApical">
+      <String Context="Generic_Long">ENDO VP VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiNormalVelSax">
+      <String Context="Generic_Long">EPI NORM VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiVPVelSax">
+      <String Context="Generic_Long">EPI VP VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiNormalVelApical">
+      <String Context="Generic_Long">EPI NORM VEL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiVPVelApical">
+      <String Context="Generic_Long">EPI VP VEL</String>
+    </Concept>
+
+    <!-- STRAIN -->
+    <Concept Id="BorderAnalysis_EndoStrainApicalTang">
+      <String Context="Generic_Long">ENDO LONG STRAIN</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoStrainApicalRad">
+      <String Context="Generic_Long">ENDO TRANSV STRAIN</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoStrainSaxTang">
+      <String Context="Generic_Long">ENDO CIRC STRAIN</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoStrainSaxRad">
+      <String Context="Generic_Long">ENDO RADIAL STRAIN</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiStrainApicalTang">
+      <String Context="Generic_Long">EPI LONG STRAIN</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiStrainApicalRad">
+      <String Context="Generic_Long">EPI TRANSV STRAIN</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiStrainSaxTang">
+      <String Context="Generic_Long">EPI CIRC STRAIN</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiStrainSaxRad">
+      <String Context="Generic_Long">EPI RADIAL STRAIN</String>
+    </Concept>
+    <!-- StrainRate -->
+    <Concept Id="BorderAnalysis_EndoStrainRateApicalTang">
+      <String Context="Generic_Long">ENDO LONG STRAIN RATE</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoStrainRateApicalRad">
+      <String Context="Generic_Long">ENDO TRANSV STRAIN RATE</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoStrainRateSaxTang">
+      <String Context="Generic_Long">ENDO CIRC STRAIN RATE</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoStrainRateSaxRad">
+      <String Context="Generic_Long">ENDO RADIAL STRAIN RATE</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiStrainRateApicalTang">
+      <String Context="Generic_Long">EPI LONG STRAIN RATE</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiStrainRateApicalRad">
+      <String Context="Generic_Long">EPI TRANSV STRAIN RATE</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiStrainRateSaxTang">
+      <String Context="Generic_Long">EPI CIRC STRAIN RATE</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiStrainRateSaxRad">
+      <String Context="Generic_Long">EPI RADIAL STRAIN RATE</String>
+    </Concept>
+
+    <!-- Displacement -->
+    <Concept Id="BorderAnalysis_EndoDisplApicalTang">
+      <String Context="Generic_Long">ENDO LONG DISPL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoDisplApicalRad">
+      <String Context="Generic_Long">ENDO TRANSV DISPL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoDisplSaxTang">
+      <String Context="Generic_Long">ENDO ROT DISPL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EndoDisplSaxRad">
+      <String Context="Generic_Long">ENDO RADIAL DISPL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiDisplApicalTang">
+      <String Context="Generic_Long">EPI LONG DISPL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiDisplApicalRad">
+      <String Context="Generic_Long">EPI TRANSV DISPL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiDisplSaxTang">
+      <String Context="Generic_Long">EPI ROT DISPL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_EpiDisplSaxRad">
+      <String Context="Generic_Long">EPI RADIAL DISPL</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_RadialStrain">
+      <String Context="Generic_Long">RADIAL STRAIN</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_TransStrain">
+      <String Context="Generic_Long">TRANSVERSAL STRAIN</String>
+    </Concept>
+    
+
+    <Concept Id="BorderAnalysis_RadialStrainRt">
+      <String Context="Generic_Long">RADIAL STRAIN RATE</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_TransStrainRt">
+      <String Context="Generic_Long">TRANSVERSAL STRAIN RATE</String>
+    </Concept>
+
+    <Concept Id="BorderAnalysis_Shear">
+      <String Context="Generic_Long">SHEAR</String>
+    </Concept>
+    <Concept Id="BorderAnalysis_ShearRt">
+      <String Context="Generic_Long">SHEAR RATE</String>
+    </Concept>
+
+    <Concept Id="SegmentalAnalysis_EndoAreaVolumeSax">
+      <String Context="Generic_Long">AREA</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoAreaVolumeApical">
+      <String Context="Generic_Long">VOLUME</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoVelSaxTang">
+      <String Context="Generic_Long">ENDO ROT VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoVelApicalTang">
+      <String Context="Generic_Long">ENDO LONG VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoDisplSaxTang">
+      <String Context="Generic_Long">ENDO ROT DISPL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoDisplApicalTang">
+      <String Context="Generic_Long">ENDO LONG DISPL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoVelSaxRad">
+      <String Context="Generic_Long">ENDO RADIAL VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoVelApicalRad">
+      <String Context="Generic_Long">ENDO TRANSV VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoVPVelSax">
+      <String Context="Generic_Long">ENDO VP VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoVPVelApical">
+      <String Context="Generic_Long">ENDO VP VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoDisplSaxRad">
+      <String Context="Generic_Long">ENDO RADIAL DISPL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoDisplApicalRad">
+      <String Context="Generic_Long">ENDO TRANSV DISPL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_RadialStrain">
+      <String Context="Generic_Long">RADIAL STRAIN</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_TransStrain">
+      <String Context="Generic_Long">TRANSVERSAL STRAIN</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_RadialStrainRt">
+      <String Context="Generic_Long">RADIAL STRAIN RATE</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_TransStrainRt">
+      <String Context="Generic_Long">TRANSVERSAL STRAIN RATE</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_Shear">
+      <String Context="Generic_Long">SHEAR</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_ShearRt">
+      <String Context="Generic_Long">SHEAR RATE</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoStrainSaxTang">
+      <String Context="Generic_Long">ENDO CIRC STRAIN</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoStrainApicalTang">
+      <String Context="Generic_Long">ENDO LONG STRAIN</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoStrainRateSaxTang">
+      <String Context="Generic_Long">ENDO CIRC STRAIN RATE</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EndoStrainRateApicalTang">
+      <String Context="Generic_Long">ENDO LONG STRAIN RATE</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiStrainSaxTang">
+      <String Context="Generic_Long">EPI CIRC STRAIN</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiStrainApicalTang">
+      <String Context="Generic_Long">EPI LONG STRAIN</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiStrainRateSaxTang">
+      <String Context="Generic_Long">EPI CIRC STRAIN RATE</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiStrainRateApicalTang">
+      <String Context="Generic_Long">EPI LONG STRAIN RATE</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiAreaVolumeSax">
+      <String Context="Generic_Long">AREA</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiAreaVolumeApical">
+      <String Context="Generic_Long">VOLUME</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiVelSaxTang">
+      <String Context="Generic_Long">EPI ROT VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiVelApicalTang">
+      <String Context="Generic_Long">EPI LONG VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiNormalVelSax">
+      <String Context="Generic_Long">EPI NORM VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiNormalVelApical">
+      <String Context="Generic_Long">EPI NORM VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiDisplSaxTang">
+      <String Context="Generic_Long">EPI ROT DISPL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiDisplApicalTang">
+      <String Context="Generic_Long">EPI LONG DISPL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiVelSaxRad">
+      <String Context="Generic_Long">EPI RADIAL VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiVelApicalRad">
+      <String Context="Generic_Long">EPI TRANSV VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiVPVelSax">
+      <String Context="Generic_Long">EPI VP VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiVPVelApical">
+      <String Context="Generic_Long">EPI VP VEL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiDisplSaxRad">
+      <String Context="Generic_Long">EPI RADIAL DISPL</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysis_EpiDisplApicalRad">
+      <String Context="Generic_Long">EPI TRANSV DISPL</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="GraphsGroups">
+    <Concept Id="XStrain_SoftKeys_EndoVel">
+      <String Context="TS_TButton">ENDO VEL</String>
+    </Concept>
+    <Concept Id="XStrain_SoftKeys_EndoStrain">
+      <String Context="TS_TButton">ENDO STR</String>
+    </Concept>
+    <Concept Id="XStrain_SoftKeys_EndoDispl">
+      <String Context="TS_TButton">ENDO DISP</String>
+    </Concept>
+    <Concept Id="XStrain_SoftKeys_EpiVel">
+      <String Context="TS_TButton">EPI VEL</String>
+    </Concept>
+    <Concept Id="XStrain_SoftKeys_EpiStrain">
+      <String Context="TS_TButton">EPI STR</String>
+    </Concept>
+    <Concept Id="XStrain_SoftKeys_EpiDispl">
+      <String Context="TS_TButton">EPI DISP</String>
+    </Concept>
+    <Concept Id="XStrain_SoftKeys_EndoVPVelocity">
+      <String Context="TS_TButton">ENDO VP</String>
+    </Concept>
+    <Concept Id="XStrain_SoftKeys_EpiVPVelocity">
+      <String Context="TS_TButton">EPI VP</String>
+    </Concept>
+    <Concept Id="XStrain_SoftKeys_RadialStrain">
+      <String Context="TS_TButton">RAD STR</String>
+    </Concept>
+    <Concept Id="XStrain_SoftKeys_RadialShear">
+      <String Context="TS_TButton">SHEAR</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="UnitOfMeasure">
+    <Concept Id="pixel">
+      <String Context="Generic_Short">px</String>
+    </Concept>
+    <Concept Id="mm">
+      <String Context="Generic_Short">mm</String>
+    </Concept>
+    <Concept Id="cm">
+      <String Context="Generic_Short">cm</String>
+    </Concept>
+    <Concept Id="cm_s">
+      <String Context="Generic_Short">cm/s</String>
+    </Concept>
+    <Concept Id="degree">
+      <String Context="Generic_Short">°</String>
+    </Concept>
+    <Concept Id="degree_s">
+      <String Context="Generic_Short">°/s</String>
+    </Concept>
+    <Concept Id="percentage">
+      <String Context="Generic_Short">%</String>
+    </Concept>
+    <Concept Id="percentage_s">
+      <String Context="Generic_Short">%/s</String>
+    </Concept>
+    <Concept Id="Hz">
+      <String Context="Generic_Short">1/s</String>
+    </Concept>
+    <Concept Id="ms">
+      <String Context="Generic_Short">ms</String>
+    </Concept>
+    <Concept Id="ml">
+      <String Context="Generic_Short">ml</String>
+    </Concept>
+    <Concept Id="cm2">
+      <String Context="Generic_Short">cm²</String>
+    </Concept>
+    <Concept Id="ml_min">
+      <String Context="Generic_Short">ml/min</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="VolumeWindow">
+    <Concept Id="Vd">
+      <Comments>DiastolicVolume</Comments>
+      <String Context="Generic_Short">Vd</String>
+    </Concept>
+    <Concept Id="Vs">
+      <Comments>SystolicVolume</Comments>
+      <String Context="Generic_Short">Vs</String>
+    </Concept>
+    <Concept Id="EF">
+      <Comments>EjectionFraction</Comments>
+      <String Context="Generic_Short">EF</String>
+    </Concept>
+    <Concept Id="CO">
+      <Comments>SystolicVolume</Comments>
+      <String Context="Generic_Short">CO</String>
+    </Concept>
+    <Concept Id="LVSId">
+      <Comments>DiastolicSphericityIndex</Comments>
+      <String Context="Generic_Short">DSI</String>
+    </Concept>
+    <Concept Id="LVSIs">
+      <Comments>SystolicSphericityIndex</Comments>
+      <String Context="Generic_Short">SSI</String>
+    </Concept>
+    <Concept Id="Ad">
+      <Comments>DiastolicArea</Comments>
+      <String Context="Generic_Short">Ad</String>
+    </Concept>
+    <Concept Id="As">
+      <Comments>SystolicArea</Comments>
+      <String Context="Generic_Short">As</String>
+    </Concept>
+    <Concept Id="FAC">
+      <Comments>FractionalAreaChange</Comments>
+      <String Context="Generic_Short">FAC</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="RCAWindow">
+    <Concept Id="InsertPointsMessage">
+      <String Context="Generic_Long">Please, place markers manually.</String>
+    </Concept>
+    <Concept Id="SegmentsWarning">
+      <String Context="MD_RT13HelpLine">Warning: the provided values are averaged over segments.</String>
+    </Concept>
+    <Concept Id="HeartRate">
+      <String Context="Generic_Short">HR</String>
+    </Concept>
+    <Concept Id="All">
+      <Comments>Label on checkbox</Comments>
+      <String Context="Generic_Short">All</String>
+    </Concept>
+    <Concept Id="Mowd">
+      <String Context="Generic_Short">MOWD</String>
+    </Concept>
+    <Concept Id="AVERAGET2P">
+      <String Context="Generic_Short">AVERAGE</String>
+    </Concept>
+    <Concept Id="STDDEV">
+      <String Context="Generic_Short">STDDEV</String>
+    </Concept>
+    <Concept Id="GlobalStrain">
+      <String Context="Generic_Short">GLS</String>
+    </Concept>
+    <Concept Id="LongStrain">
+      <String Context="Generic_Short">Longitudinal Peak Strain</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Segments">
+    <Concept Id="ApicalAnt">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APIC ANT</String>
+    </Concept>
+    <Concept Id="ApicalAntSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">AP ANTSEP</String>
+    </Concept>
+    <Concept Id="ApicalInf">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APIC INF</String>
+    </Concept>
+    <Concept Id="ApicalLat">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APIC LAT</String>
+    </Concept>
+    <Concept Id="Apical">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APEX</String>
+    </Concept>
+    <Concept Id="ApicalSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">APIC SEP</String>
+    </Concept>
+    <Concept Id="BasalAnt">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS ANT</String>
+    </Concept>
+    <Concept Id="BasalAntSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BASANTSEP</String>
+    </Concept>
+    <Concept Id="BasalInf">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS INF</String>
+    </Concept>
+    <Concept Id="BasalLat">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS LAT</String>
+    </Concept>
+    <Concept Id="BasalPost">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS POST</String>
+    </Concept>
+    <Concept Id="BasalSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">BAS SEP</String>
+    </Concept>
+    <Concept Id="MidAnt">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID ANT</String>
+    </Concept>
+    <Concept Id="MidAntSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MIDANTSEP</String>
+    </Concept>
+    <Concept Id="MidInf">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID INF</String>
+    </Concept>
+    <Concept Id="MidLat">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID LAT</String>
+    </Concept>
+    <Concept Id="MidPost">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID POST</String>
+    </Concept>
+    <Concept Id="MidSept">
+      <Comments>short segment name</Comments>
+      <String Context="Generic_Short">MID SEP</String>
+    </Concept>
+    <Concept Id="GlobalStrain">
+      <String Context="Generic_Medium">GLOBAL STRAIN</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="ReportLabels">
+    <Concept Id="DeleteButton">
+      <String Context="Generic_Medium">DELETE</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysisSummaryTitle">
+      <String Context="Generic_Long">PEAK VALUES AND TIME TO PEAK</String>
+    </Concept>
+    <Concept Id="RCATitle">
+      <String Context="Generic_Long">REGIONAL CURVES ANALYSIS</String>
+    </Concept>
+    <Concept Id="BullEyeTitle">
+      <String Context="Generic_Long">BULL'S EYE ANALYSIS</String>
+    </Concept>
+    <Concept Id="SessionTitle">
+      <String Context="Generic_Long">SESSION</String>
+    </Concept>
+    <Concept Id="VolumeTitle">
+      <String Context="Generic_Medium">VOLUME</String>
+    </Concept>
+    <Concept Id="AreaTitle">
+      <String Context="Generic_Medium">AREA</String>
+    </Concept>
+    <Concept Id="AcquiredAt">
+      <Comments>label followed by acquisition date and time</Comments>
+      <String Context="Generic_Medium">Acquired on:</String>
+    </Concept>
+    <Concept Id="AttachedOn">
+      <Comments>label followed by attachment date and time</Comments>
+      <String Context="Generic_Medium">Attached on:</String>
+    </Concept>
+    <Concept Id="A_PEAK">
+      <String Context="Generic_Medium">A WAVE</String>
+    </Concept>
+    <Concept Id="E_PEAK">
+      <String Context="Generic_Medium">E WAVE</String>
+    </Concept>
+    <Concept Id="MAIN_PEAK">
+      <String Context="Generic_Medium">SYST</String>
+    </Concept>
+    <Concept Id="SEGMENTS">
+      <String Context="Generic_Short">SEGMENTS</String>
+    </Concept>
+    <Concept Id="VALUE">
+      <String Context="Generic_Short">VALUE</String>
+    </Concept>
+    <Concept Id="TIMETOPEAK">
+      <String Context="Generic_Short">TIME TO PEAK</String>
+    </Concept>
+    <Concept Id="SegmentalAnalysisAverageSummaryTitle">
+      <String Context="Generic_Long">STATISTICS</String>
+    </Concept>
+    <Concept Id="AVERAGE_VAL">
+      <String Context="Generic_Medium">AVERAGE VALUE</String>
+    </Concept>
+    <Concept Id="AVERAGE_TIME">
+      <String Context="Generic_Medium">AVERAGE TTP</String>
+    </Concept>
+  </LocalizationSection>
+
+
+
+  <LocalizationSection InternalNamespace="ValveEvents">
+    <Concept Id="EventsButtonOnTs">
+      <String Context="TS_AButton">Events</String>
+    </Concept>
+    <Concept Id="ValveEventsTitle">
+      <String Context="Generic_Medium">Valves Event Marker</String>
+    </Concept>
+    <Concept Id="Doppler">
+      <String Context="Generic_Medium">By Doppler trace</String>
+    </Concept>
+    <Concept Id="MMode">
+      <String Context="Generic_Medium">By M Mode trace</String>
+    </Concept>
+    <Concept Id="WarningMessage">
+      <String Context="Generic_Warning">The valve event markers are only valid if the heart rate is constant from the time MMode Doppler traces and Xstrain 2D clip have been acquired</String>
+    </Concept>
+    <Concept Id="WarningMessageOutOfRange">
+      <String Context="Generic_Warning">Warning: at least one event time marker is exceeding cycle duration and won't be displayed on the graph</String>
+    </Concept>
+    <Concept Id="Subtitle">
+      <String Context="Generic_Long">Markers derived from:</String>
+    </Concept>
+
+
+    <Concept Id="MVO">
+      <String Context="Generic_Medium">Mitral Valve Opening (MVO)</String>
+    </Concept>
+    <Concept Id="MVC">
+      <String Context="Generic_Medium">Mitral Valve Closing (MVC)</String>
+    </Concept>
+    <Concept Id="AVO">
+      <String Context="Generic_Medium">Aortic Valve Opening (AVO)</String>
+    </Concept>
+    <Concept Id="AVC">
+      <String Context="Generic_Medium">Aortic Valve Closing (AVC)</String>
+    </Concept>
+
+    <Concept Id="MVO_Short">
+      <String Context="Generic_Short">MVO</String>
+    </Concept>
+    <Concept Id="MVC_Short">
+      <String Context="Generic_Short">MVC</String>
+    </Concept>
+    <Concept Id="AVO_Short">
+      <String Context="Generic_Short">AVO</String>
+    </Concept>
+    <Concept Id="AVC_Short">
+      <String Context="Generic_Short">AVC</String>
+    </Concept>
+
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="CONFIGURATION">
+    <Concept Id="ConfigurationName">
+      <String Context="Generic_Medium">XSTRAIN 2D</String>
+    </Concept>
+    <Concept Id="FactoryName">
+      <String Context="Generic_Medium">Default</String>
+    </Concept>
+    <Concept Id="InvalidData">
+      <String Context="Generic_Warning">Invalid data. Each group must at least have an item selected. Please, check data.</String>
+    </Concept>    
+  <Concept Id="InvalidDataInReview">
+      <String Context="Generic_Warning">At least one review option must be selected.</String>
+    </Concept>  	
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="EDITOR">
+
+    <Concept Id="Manual">
+      <String Context="Generic_Medium">Manual</String>
+    </Concept>
+    <Concept Id="RulerDriven">
+      <String Context="Generic_Medium">AHS</String>
+    </Concept>
+    <Concept Id="Auto">
+      <String Context="Generic_Medium">Auto</String>
+    </Concept>
+    <Concept Id="GROUP_MEASURE_SELECTION">
+      <String Context="Generic_Medium">RCA</String>
+    </Concept>
+    <Concept Id="GROUP_TS_CONF">
+      <String Context="Generic_Medium">GRAPHS</String>
+    </Concept>
+    <Concept Id="GROUP_POINT_INSERTION">
+      <String Context="Generic_Medium">METHOD</String>
+    </Concept>
+    <Concept Id="GROUP_TRACE_SELECTION">
+      <String Context="Generic_Medium">TRACE SELECTION</String>
+    </Concept>
+    <Concept Id="GROUP_REVIEW">
+      <String Context="Generic_Medium">REVIEW</String>
+    </Concept>
+	<Concept Id="GROUP_MAPS">
+      <String Context="Generic_Medium">CR MODE</String>
+    </Concept>
+    <Concept Id="ShowCrTab">
+      <String Context="Generic_Medium">SHOW TAB</String>
+    </Concept>
+    <Concept Id="CrMode">
+      <Comments>Check box in the Configuration menu: If it is checked the CrMode review environment is shown</Comments>
+      <String Context="Generic_Medium">Show Cr Mode</String>
+    </Concept>
+    <Concept Id="RCA">
+      <Comments>Check box in the Configuration menu: If it is checked the RCA (Regional Curve Analysis)review environment is shown when it is available</Comments>
+      <String Context="Generic_Medium">Show RCA</String>
+    </Concept>
+    <Concept Id="GraphsReview">
+      <Comments>Check box in the Configuration menu: If it is checked the GraphsReview environment is shown</Comments>
+      <String Context="Generic_Medium">Show Graphs Review</String>
+    </Concept>
+    <Concept Id="AutoSave">
+      <Comments>Check box in the Configuration menu: If it is checked the Clip is automatically saved</Comments>
+      <String Context="Generic_Medium">Automatic Save</String>
+    </Concept>
+    <Concept Id="Velocity">
+      <String Context="Generic_Medium">Velocity</String>
+    </Concept>
+    <Concept Id="ViewPoint">
+      <String Context="Generic_Medium">ViewPoint</String>
+    </Concept>
+    <Concept Id="Strain_StrainRate">
+      <String Context="Generic_Medium">Strain StrainRate</String>
+    </Concept>
+    <Concept Id="Displacement">
+      <String Context="Generic_Medium">Displacement</String>
+    </Concept>
+
+    <Concept Id="Tangential_Long_Velocity">
+      <String Context="Generic_Medium">Tang Long Velocity</String>
+    </Concept>
+    <Concept Id="Radial_Transversal_Velocity">
+      <String Context="Generic_Medium">Radial Transv Velocity</String>
+    </Concept>
+    <Concept Id="ViewPointVelocity">
+      <String Context="Generic_Medium">View Point Velocity</String>
+    </Concept>
+    <Concept Id="Tangential_Long_Strain">
+      <String Context="Generic_Medium">Tang Long Strain</String>
+    </Concept>
+    <Concept Id="Tangential_Long_StrainRate">
+      <String Context="Generic_Medium">Tang Long Strain Rate</String>
+    </Concept>
+    <Concept Id="Radial_Transversal_Strain">
+      <String Context="Generic_Medium">Radial Transv Strain</String>
+    </Concept>
+    <Concept Id="Radial_Transversal_StrainRate">
+      <String Context="Generic_Medium">Radial Transv Strain rate</String>
+    </Concept>
+    <Concept Id="Tangential_Long_Displacement">
+      <String Context="Generic_Medium">Tang Long Displacement</String>
+    </Concept>
+    <Concept Id="Radial_Transversal_Displacement">
+      <String Context="Generic_Medium">Radial Transv Displacement</String>
+    </Concept>
+    <Concept Id="LV_Icon_Showing">
+	  <Comments>Check box in the Configuration menu: Showing or Hidden the Left Ventricule Icon</Comments>
+      <String Context="Generic_Medium">Display LV Icon</String>
+     </Concept>
+	<Concept Id="PaletteType">
+      <String Context="Generic_Medium">Palette Type</String>
+    </Concept>
+    <Concept Id="LAX_4Ch">
+      <String Context="Generic_Medium">APICAL 4Ch</String>
+    </Concept>
+    <Concept Id="LAX_2Ch">
+      <String Context="Generic_Medium">APICAL 2Ch</String>
+    </Concept>
+    <Concept Id="LAX_AP">
+      <String Context="Generic_Medium">ALAX</String>
+    </Concept>
+    <Concept Id="SAX_MV">
+      <String Context="Generic_Medium">SAX MV</String>
+    </Concept>
+    <Concept Id="SAX_PM">
+      <String Context="Generic_Medium">SAX PM</String>
+    </Concept>
+    <Concept Id="SAX_AP">
+      <String Context="Generic_Medium">SAX AP</String>
+    </Concept>
+	   <Concept Id="NONE">
+      <String Context="Generic_Medium">NONE</String>
+    </Concept>
+    <Concept Id="ClipSelectionLabel">
+      <String Context="Generic_Medium">Clip Selection</String>
+    </Concept>
+    <Concept Id="AnalysisEnvironmentLabel">
+      <String Context="Generic_Medium">Analysis Environment</String>
+    </Concept>
+
+  </LocalizationSection>
+
+
+  <LocalizationSection InternalNamespace="EXPORT">
+    <Concept Id="Export1">
+      <String Context="Generic_Medium">Select the destination </String>
+    </Concept>
+    <Concept Id="ExportTitle">
+      <String Context="TS_TabName">EXPORT</String>
+    </Concept>
+    
+  </LocalizationSection>
+  
+  <LocalizationSection InternalNamespace="General">
+	<Concept Id="Caliper">
+      <Comments>Caliper</Comments>
+      <String Context="MD_RT14aTrackballStrings">CALIPER</String>
+    </Concept>
+	<Concept Id="Edit">
+      <Comments>Edit</Comments>
+      <String Context="MD_RT14aTrackballStrings">EDIT</String>
+    </Concept>
+  </LocalizationSection>
+  
+  </LocalizationResource>
+
+   

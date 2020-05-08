@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="BodyMarksComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Factory">
+    <Concept Id="AORTA">
+      <Comments>Factory preset AORTA name</Comments>
+      <String Context="TS_SButton">AORTA</String>
+    </Concept>
+    <Concept Id="RENAL">
+      <Comments>Factory preset RENAL name</Comments>
+      <String Context="TS_SButton">RENAL</String>
+    </Concept>
+    <Concept Id="GENERAL">
+      <Comments>Factory preset default name</Comments>
+      <String Context="TS_SButton">GENERAL</String>
+    </Concept>
+    <Concept Id="CAROTID">
+      <Comments>Factory preset carotid name</Comments>
+      <String Context="TS_SButton">CAROTID</String>
+    </Concept>
+    <Concept Id="UPPER LIMBS">
+      <Comments>Factory preset upp. limbs name</Comments>
+      <String Context="TS_SButton">UPPER LIMBS</String>
+    </Concept>
+    <Concept Id="LOWER LIMBS">
+      <Comments>Factory preset inf. limbs name</Comments>
+      <String Context="TS_SButton">LOWER LIMBS</String>
+    </Concept>
+    <Concept Id="ABDOMEN">
+      <Comments>Factory preset ABDOMEN name</Comments>
+      <String Context="TS_SButton">ABDOMEN</String>
+    </Concept>
+    <Concept Id="THYROID">
+      <Comments>Factory preset THYROID name</Comments>
+      <String Context="TS_SButton">THYROID</String>
+    </Concept>
+    <Concept Id="GENERIC">
+      <Comments>Body mark group generic</Comments>
+      <String Context="TS_SButton">GENERIC</String>
+    </Concept>
+    <Concept Id="AORTIC VALVE">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">AORTIC VALVE</String>
+    </Concept>
+    <Concept Id="TWINS">
+      <Comments>Body mark group for OB Fetal (with two feti)</Comments>
+      <String Context="TS_SButton">TWINS</String>
+    </Concept>
+    <Concept Id="ONE FETUS">
+      <Comments>Body mark group for OB Fetal (with one fetus)</Comments>
+      <String Context="TS_SButton">ONE FETUS</String>
+    </Concept>
+    <Concept Id="LEFT ATRIUM">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">LEFT ATRIUM</String>
+    </Concept>
+    <Concept Id="ASCENDING AORTA">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">ASCENDING AORTA</String>
+    </Concept>
+    <Concept Id="PULMONARY VALVE">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">PULMONARY VALVE</String>
+    </Concept>
+    <Concept Id="TRICUSPID VALVE">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">TRICUSPID VALVE</String>
+    </Concept>
+    <Concept Id="MITRAL VALVE">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">MITRAL VALVE</String>
+    </Concept>
+    <Concept Id="RIGHT ATRIUM">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">RIGHT ATRIUM</String>
+    </Concept>
+    <Concept Id="LEFT VENTRICLE">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">LEFT VENTRICLE</String>
+    </Concept>
+    <Concept Id="RIGHT VENTRICLE">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">RIGHT VENTRICLE</String>
+    </Concept>
+    <Concept Id="CORONARY FLOW">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">CORONARY FLOW</String>
+    </Concept>
+	<Concept Id="Routine">
+      <Comments>Body mark group for cardio</Comments>
+      <String Context="TS_SButton">ROUTINE</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

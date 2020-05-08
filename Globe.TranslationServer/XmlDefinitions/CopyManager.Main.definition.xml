@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="CopyManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Main">
+    <Concept Id="COPYMANAGER">
+      <Comments></Comments>
+      <String Context="Generic_Long">NATIVE EXPORT</String>
+    </Concept>
+    <Concept Id="IMPORTDICOM">
+      <Comments></Comments>
+      <String Context="TS_AButton">IMPORT DICOM</String>
+      <String Context="Generic_Long">IMPORT DICOM</String>
+    </Concept>
+    <Concept Id="IMPORTXSTRAIN">
+      <Comments></Comments>
+      <String Context="TS_AButton">IMPORT XSTRAIN</String>
+      <String Context="Generic_Long">IMPORT XSTRAIN</String>
+    </Concept>
+    <Concept Id="NODICOMARCHIVE">
+      <Comments></Comments>
+      <String Context="Generic_Long">NO DICOM ARCHIVE</String>
+    </Concept>
+    <Concept Id="NORIGHTSXSTRAIN">
+      <Comments></Comments>
+      <String Context="Generic_Warning">The current user has no rights to perform this operation!</String>
+    </Concept>
+    <Concept Id="SUCCESS">
+      <Comments></Comments>
+      <String Context="Generic_Long">Operation successfully completed</String>
+    </Concept>
+    <Concept Id="NOUSBDRIVE">
+      <Comments></Comments>
+      <String Context="Generic_Long">NO USB DRIVE FOUND</String>
+    </Concept>
+    <Concept Id="NOCDDVD">
+      <Comments></Comments>
+      <String Context="Generic_Long">NO CD/DVD FOUND</String>
+    </Concept>
+    <Concept Id="CopyOperationsInProgress">
+      <Comments>Warning at shutdown that there are operations to be completed</Comments>
+      <String Context="Generic_Long">THE COPY OPERATIONS IN PROGRESS ARE</String>
+    </Concept>
+    <Concept Id="ERRORIMPORTDICOM">
+      <Comments>warning at the end of the import dicom operation that there were some errors</Comments>
+      <String Context="Generic_Warning">SOME DICOM IMAGES WERE NOT IMPORTED:</String>
+    </Concept>
+    <Concept Id="DICOMWRONGSIZE">
+      <Comments>A dicom image cannot be imported because has a wrong size</Comments>
+      <String Context="Generic_Warning">WRONG IMAGE SIZE</String>
+    </Concept>
+    <Concept Id="NONIMPORTABLE_GENERIC">
+      <Comments>A dicom image cannot be imported</Comments>
+      <String Context="Generic_Warning">NON IMPORTABLE</String>
+    </Concept>
+    <Concept Id="NONIMPORTABLE_ISNOTESAOTEIMAGE">
+      <Comments>A dicom image cannot be imported because is not an Esaote image</Comments>
+      <String Context="Generic_Warning">NON ESAOTE IMAGE</String>
+    </Concept>
+    <Concept Id="NONIMPORTABLE_PATHALREADYEXISTS">
+      <Comments>A dicom image cannot be imported because the same study is already in the archive</Comments>
+      <String Context="Generic_Warning">STUDY ALREADY IMPORTED</String>
+    </Concept>
+    <Concept Id="NONIMPORTABLE_ALREADYEXIST">
+      <Comments>A dicom image cannot be imported because the same image is already in the archive</Comments>
+      <String Context="Generic_Warning">IMAGE ALREADY IMPORTED</String>
+    </Concept>
+    <Concept Id="NOMIXEDSTUDY">
+      <Comments>A dicom image cannot be imported because the same study is already in the archive in the native format</Comments>
+      <String Context="Generic_Warning">NATIVE STUDY PRESENT</String>
+    </Concept>
+    <Concept Id="NONIMPORTABLE_ISSTRUCTUREDREPORT">
+      <Comments>A dicom image cannot be imported because it's a structured report</Comments>
+      <String Context="Generic_Warning">IS STRUCTURED REPORT</String>
+    </Concept>
+    <Concept Id="UNKNOWNIMPORTDICOMERROR">
+      <Comments></Comments>
+      <String Context="Generic_Warning">UNKNOWN ERROR</String>
+    </Concept>
+    <Concept Id="Warning_SelectSources" >
+      <Comments>warning in the upper part of import dicom dialog</Comments>
+      <String Context="Generic_Warning" >This feature is intended to import customer database from previous Esaote apparati exported in DICOM format</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

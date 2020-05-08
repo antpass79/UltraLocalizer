@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="StressEcho" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Presets">
+  
+  <Concept Id="NAME">
+      <Comments>Header in the Select Protocol Window</Comments>
+      <String Context="Generic_Medium">NAME</String>
+  </Concept>
+  <Concept Id="TYPE">
+      <Comments>Header in the Select Protocol Window</Comments>
+      <String Context="Generic_Medium">TYPE</String>
+  </Concept>
+  <Concept Id="PROTOCOL_TYPE">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Protocol</String>
+  </Concept>
+  <Concept Id="DICOM_PROTOCOL">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Dicom Protocol</String>
+  </Concept>
+  <Concept Id="DICOM_STAGE">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Dicom stage</String>
+  </Concept>
+  <Concept Id="QUAD_OBSERVE">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Quad obs.</String>
+  </Concept>
+  <Concept Id="PREVIEW">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Preview</String>
+  </Concept>
+  <Concept Id="STAGE">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Stage</String>
+  </Concept>
+   <Concept Id="VIEW">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">View</String>
+  </Concept>
+  <Concept Id="LOOP">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Loop</String>
+  </Concept>
+  <Concept Id="NUM_OF_STAGES">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Number of stages</String>
+  </Concept>
+  <Concept Id="CYCLE">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Cycle</String>
+  </Concept>
+  <Concept Id="MONITORING">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Monitoring</String>
+  </Concept>
+  <Concept Id="DELAY">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Acquisition delay</String>
+  </Concept>
+  <Concept Id="ECG_TRIGGER">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Ecg trigger</String>
+  </Concept>
+  <Concept Id="ECG_DISPLAY">
+      <Comments>Label used on preset dialog</Comments>
+      <String Context="Generic_Medium">Ecg display</String>
+  </Concept>
+  <Concept Id="NO">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">No</String>
+  </Concept>
+  <Concept Id="YES">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">Yes</String>
+  </Concept>
+  <Concept Id="INTERNAL">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">Internal</String>
+  </Concept>
+  <Concept Id="EXTERNAL">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">External</String>
+  </Concept>
+  <Concept Id="FULL">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">Full</String>
+  </Concept>
+  <Concept Id="SYSTOLIC">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">Systolic</String>
+  </Concept>
+  <Concept Id="PROSPECTIVE">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">Prospective</String>
+  </Concept>
+  <Concept Id="RETROSPECTIVE">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">Retrospective</String>
+  </Concept>
+  <Concept Id="CONTINUOUS_CAPTURE">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">Continuous Capture</String>
+  </Concept> 
+  <Concept Id="CONTINUOUSCAPTURE">
+      <Comments>Item used on preset dialog</Comments>
+      <String Context="Generic_Medium">Continuous Capture</String>
+  </Concept> 
+  <Concept Id="FACTORY_SETTINGS">
+    <Comments>Button to set factory data on the fields</Comments>
+      <String Context="Generic_Medium">FACTORY SETTINGS</String>
+  </Concept>
+  <Concept Id="REST">
+    <Comments>Item used to indicate the "cardiac baseline state" on DICOM protocol</Comments>
+      <String Context="Generic_Medium">REST</String>
+  </Concept>
+  <Concept Id="REVOVER">
+    <Comments>Item used to indicate the "cardiac stress recovery state" on DICOM Protocol</Comments>
+      <String Context="Generic_Medium">RECOVER</String>
+  </Concept>
+  <Concept Id="DOSE">
+    <Comments>Item used to indicate the "cardiac stress state" on DICOM Protocol</Comments>
+      <String Context="Generic_Medium">DOSE</String>
+  </Concept>
+  <Concept Id="PEAK">
+    <Comments>Item used to indicate the "cardiac stress state" on DICOM Protocol</Comments>
+      <String Context="Generic_Medium">PEAK</String>
+  </Concept>
+  <Concept Id="ATROPINE">
+    <Comments>Item used to indicate the "cardiac stress state" on DICOM Protocol</Comments>
+      <String Context="Generic_Medium">ATROP.</String>
+  </Concept>
+  <Concept Id="CLIP_LENGTH_CC">
+      <Comments>Lunghezza dell'acquisizione in continuous capture in secondi (non abbreviare)</Comments>
+      <String Context="Generic_Medium">CLIP LENGTH</String>
+  </Concept>
+    
+  </LocalizationSection> 
+  
+  <LocalizationSection InternalNamespace="LabelsWindow">
+    <Concept Id="PARASTERNAL_LONG_AXIS">
+      <String Context="Generic_Medium">PARASTERNAL LONG AXIS</String>
+    </Concept>
+    <Concept Id="SHORT_AXIS_PAPILLARY_MUSCLE">
+      <String Context="Generic_Medium">SHORT AXIS PAPILLARY MUSCLE</String>
+    </Concept>
+    <Concept Id="APICAL_FOUR_CHAMBERS">
+      <String Context="Generic_Medium">APICAL FOUR CHAMBERS</String>
+    </Concept>
+    <Concept Id="APICAL_TWO_CHAMBERS">
+      <String Context="Generic_Medium">APICAL TWO CHAMBERS</String>
+    </Concept>
+    <Concept Id="SHORT_AXIS_MITRAL_VALVE">
+      <String Context="Generic_Medium">SHORT AXIS MITRAL VALVE</String>
+    </Concept>
+    <Concept Id="SHORT_AXIS_APEX">
+      <String Context="Generic_Medium">SHORT AXIS APEX</String>
+    </Concept>
+    <Concept Id="APICAL_LAX">
+      <String Context="Generic_Medium">APICAL LAX</String>
+    </Concept>
+    <Concept Id="FACTORY">
+      <Comments>Button to set factory data on the fields</Comments>
+      <String Context="Generic_Short">FACTORY</String>
+    </Concept>
+      <Concept Id="OK">
+      <Comments>Button to save and to close the dialog</Comments>
+      <String Context="Generic_Short">OK</String>
+    </Concept>
+    <Concept Id="CANCEL">
+      <Comments>Button to close the dialog</Comments>
+      <String Context="Generic_Short">CANCEL</String>
+    </Concept>
+  </LocalizationSection>
+  
+  
+  <LocalizationSection InternalNamespace="ConfSetEvent">
+    <Concept Id="SPECIFICFILECORRUPTED">
+      <String Context="Generic_Warning">Invalid configuration data, the specific configuration file is corrupted!</String>
+    </Concept>
+  </LocalizationSection>
+  
+</LocalizationResource>

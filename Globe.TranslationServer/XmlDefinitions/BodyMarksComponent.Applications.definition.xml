@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="BodyMarksComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Applications">
+    <Concept Id="CARDIAC">
+      <Comments>Cardiac Application</Comments>
+      <String Context="Generic_Long">CARDIAC</String>
+      <String Context="TS_SButton">CARDIAC</String>
+    </Concept>
+    <Concept Id="VASCULAR">
+      <Comments>Vascular Application</Comments>
+      <String Context="Generic_Long">VASCULAR</String>
+      <String Context="TS_SButton">VASCULAR</String>
+    </Concept>
+    <Concept Id="ABDOMINAL">
+      <Comments>Abdominal Application</Comments>
+      <String Context="Generic_Long">ABDOMINAL</String>
+      <String Context="TS_SButton">ABDOMINAL</String>
+    </Concept>
+    <Concept Id="OBSTETRIC">
+      <Comments>Obstetric Application</Comments>
+      <String Context="Generic_Long">OBSTETRIC</String>
+      <String Context="TS_SButton">OBSTETRIC</String>
+    </Concept>
+    <Concept Id="TRANSCRANIC">
+      <Comments>Transcranic Application</Comments>
+      <String Context="Generic_Long">TRANSCRANIC</String>
+      <String Context="TS_SButton">TRANSCRANIC</String>
+    </Concept>
+    <Concept Id="NEONATAL">
+      <Comments>Neonatal Application</Comments>
+      <String Context="TS_SButton">NEONATAL</String>
+      <String Context="Generic_Long">NEONATAL</String>
+    </Concept>
+    <Concept Id="CARDIACPEDIATRIC">
+      <Comments>CardiacPediatric Application</Comments>
+      <String Context="Generic_Long">CARDIACPEDIATRIC</String>
+      <String Context="TS_SButton">CARDIACPEDIATRIC</String>
+    </Concept>
+    <Concept Id="PEDIATRIC">
+      <Comments>Pediatric Application</Comments>
+      <String Context="Generic_Long">PEDIATRIC</String>
+      <String Context="TS_SButton">PEDIATRIC</String>
+    </Concept>
+    <Concept Id="GYNECOLOGY">
+      <Comments>Gynecology Application</Comments>
+      <String Context="Generic_Long">GYNECOLOGY</String>
+      <String Context="TS_SButton">GYNECOLOGY</String>
+    </Concept>
+    <Concept Id="UROLOGIC">
+      <Comments>Urologic Application</Comments>
+      <String Context="Generic_Long">UROLOGIC</String>
+      <String Context="TS_SButton">UROLOGIC</String>
+    </Concept>
+    <Concept Id="MUSCULOSKELETAL">
+      <Comments>MusculoSkeletal Application</Comments>
+      <String Context="Generic_Long">MUSCOLOSKELETAL</String>
+      <String Context="TS_SButton">MUSCOLOSKELETAL</String>
+    </Concept>
+    <Concept Id="BREAST">
+      <Comments>Breast Application</Comments>
+      <String Context="Generic_Long">BREAST</String>
+      <String Context="TS_SButton">BREAST</String>
+    </Concept>
+    <Concept Id="THYROID">
+      <Comments>Thyroid Application</Comments>
+      <String Context="Generic_Long">THYROID</String>
+      <String Context="TS_SButton">THYROID</String>
+    </Concept>
+    <Concept Id="SMALLPARTS">
+      <Comments>SmallParts Application</Comments>
+      <String Context="Generic_Long">SMALLPARTS</String>
+      <String Context="TS_SButton">SMALLPARTS</String>
+    </Concept>
+    <Concept Id="GENERIC">
+      <Comments>Generic Application</Comments>
+      <String Context="Generic_Long">GENERIC</String>
+      <String Context="TS_SButton">GENERIC</String>
+    </Concept>
+    <Concept Id="ABDOMINALCANINE">
+      <Comments>AbdominalCanine Application</Comments>
+      <String Context="Generic_Long">ABDOMINALCANINE</String>
+      <String Context="TS_SButton">ABDOMINALCANINE</String>
+    </Concept>
+    <Concept Id="ABDOMINALFELINE">
+      <Comments>AbdominalFeline Application</Comments>
+      <String Context="Generic_Long">ABDOMINALFELINE</String>
+      <String Context="TS_SButton">ABDOMINALFELINE</String>
+    </Concept>
+    <Concept Id="ABDOMINALEQUINE">
+      <Comments>AbdominalEquine Application</Comments>
+      <String Context="Generic_Long">ABDOMINALEQUINE</String>
+      <String Context="TS_SButton">ABDOMINALEQUINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONCANINE">
+      <Comments>ReproductionCanine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONCANINE</String>
+      <String Context="TS_SButton">REPRODUCTIONCANINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONFELINE">
+      <Comments>ReproductionFeline Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONFELINE</String>
+      <String Context="TS_SButton">REPRODUCTIONFELINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONEQUINE">
+      <Comments>ReproductionEquine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONEQUINE</String>
+      <String Context="TS_SButton">REPRODUCTIONEQUINE</String>
+    </Concept>
+    <Concept Id="TENDON">
+      <Comments>Tendon Application</Comments>
+      <String Context="Generic_Long">TENDON</String>
+      <String Context="TS_SButton">TENDON</String>
+    </Concept>
+    <Concept Id="CARDIOCANINE">
+      <Comments>CardioCanine Application</Comments>
+      <String Context="Generic_Long">CARDIOCANINE</String>
+      <String Context="TS_SButton">CARDIOCANINE</String>
+    </Concept>
+    <Concept Id="CARDIOFELINE">
+      <Comments>CardioFeline Application</Comments>
+      <String Context="Generic_Long">CARDIOFELINE</String>
+      <String Context="TS_SButton">CARDIOFELINE</String>
+    </Concept>
+    <Concept Id="CARDIOEQUINE">
+      <Comments>CardioEquine Application</Comments>
+      <String Context="Generic_Long">CARDIOEQUINE</String>
+      <String Context="TS_SButton">CARDIOEQUINE</String>
+    </Concept>
+    <Concept Id="OVARYEQUINE">
+      <Comments>OvaryEquine Application</Comments>
+      <String Context="Generic_Long">OVARYEQUINE</String>
+      <String Context="TS_SButton">OVARYEQUINE</String>
+    </Concept>
+    <Concept Id="OVARYBOVINE">
+      <Comments>OvaryBovine Application</Comments>
+      <String Context="Generic_Long">OVARYBOVINE</String>
+      <String Context="TS_SButton">OVARYBOVINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONBOVINE">
+      <Comments>ReproductionBovine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONBOVINE</String>
+      <String Context="TS_SButton">REPRODUCTIONBOVINE</String>
+    </Concept>
+    <Concept Id="VASCULARVET">
+      <Comments>VascularVet Application</Comments>
+      <String Context="Generic_Long">VASCULARVET</String>
+      <String Context="TS_SButton">VASCULARVET</String>
+    </Concept>
+    <Concept Id="ANIMALSCIENCE">
+      <Comments>AnimalScience Application</Comments>
+      <String Context="Generic_Long">ANIMALSCIENCE</String>
+      <String Context="TS_SButton">ANIMALSCIENCE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONOVINE">
+      <Comments>ReproductionOvine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONOVINE</String>
+      <String Context="TS_SButton">REPRODUCTIONOVINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONPORCINE">
+      <Comments>ReproductionPorcine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONPORCINE</String>
+      <String Context="TS_SButton">REPRODUCTIONPORCINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONCAPRINE">
+      <Comments>ReproductionCaprine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONCAPRINE</String>
+      <String Context="TS_SButton">REPRODUCTIONCAPRINE</String>
+    </Concept>
+    <Concept Id="REGANEST">
+      <Comments>RegAnest Application</Comments>
+      <String Context="Generic_Long">REGANEST</String>
+      <String Context="TS_SButton">REGANEST</String>
+    </Concept>
+    <Concept Id="AESTHETIC">
+      <Comments>Aesthetic Application</Comments>
+      <String Context="Generic_Long">AESTHETIC</String>
+      <String Context="TS_SButton">AESTHETIC</String>
+    </Concept>
+    <Concept Id="ABDOMINALBOVINE">
+      <Comments>Abdominal Bovine Application</Comments>
+      <String Context="Generic_Long">ABDOMINAL BOVINE</String>
+      <String Context="TS_SButton">ABDOMINAL BOVINE</String>
+    </Concept>
+    <Concept Id="CARDIOBOVINE">
+      <Comments>Cardio Bovine Application</Comments>
+      <String Context="Generic_Long">CARDIO BOVINE</String>
+      <String Context="TS_SButton">CARDIO BOVINE</String>
+    </Concept>
+    <Concept Id="OTHERABDOMINAL">
+      <Comments>Other Abdominal Application</Comments>
+      <String Context="Generic_Long">OTHER ABDOMINAL</String>
+      <String Context="TS_SButton">OTHER ABDOMINAL</String>
+    </Concept>
+    <Concept Id="OTHERCARDIO">
+      <Comments>Other Cardio Application</Comments>
+      <String Context="Generic_Long">OTHER CARDIO</String>
+      <String Context="TS_SButton">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHERREPRODUCTION">
+      <Comments>Other Reproduction Application</Comments>
+      <String Context="Generic_Long">OTHER REPRODUCTION</String>
+      <String Context="TS_SButton">OTHER REPRODUCTION</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

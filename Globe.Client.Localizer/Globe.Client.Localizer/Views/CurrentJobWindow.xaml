@@ -16,6 +16,9 @@
             <Setter Property="FontSize" Value="18" />
             <Setter Property="FontWeight" Value="DemiBold" />
         </Style>
+        <Style TargetType="{x:Type RadioButton}">
+            <Setter Property="Margin" Value="5" />
+        </Style>
         <Style TargetType="{x:Type TextBlock}">
             <Setter Property="Margin" Value="5" />
         </Style>
@@ -68,7 +71,7 @@
     <DockPanel>
 
         <DockPanel DockPanel.Dock="Left" MinWidth="300">
-            <DockPanel DockPanel.Dock="Top" LastChildFill="False" Height="100">
+            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                 <Label DockPanel.Dock="Top">Working Mode</Label>
                 <RadioButton IsChecked="True" DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromXml}">From Xml</RadioButton>
                 <RadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromDatabase}">From Database</RadioButton>
@@ -116,7 +119,7 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Label>Grid</Label>
-                <DataGrid Grid.Row="1" ItemsSource="{Binding StringViewItems}" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid Name="grid" Grid.Row="1" ItemsSource="{Binding StringViewItems}" AutoGenerateColumns="False" CanUserAddRows="False">
                     <DataGrid.Resources>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="FontSize" Value="20"/>
@@ -124,10 +127,26 @@
                         </Style>
                     </DataGrid.Resources>
                     <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="Edit">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Command="{Binding ElementName=grid, Path=DataContext.StringViewItemEditCommand}" CommandParameter="{Binding}">Edit</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTextColumn IsReadOnly="True" Header="Component Namespace" Binding="{Binding ComponentNamespace}" />
                         <DataGridTextColumn IsReadOnly="True" Header="Internal Namespace" Binding="{Binding InternalNamespace}" />
                         <DataGridTextColumn IsReadOnly="True" Header="Concept"  Binding="{Binding Concept}"/>
                         <DataGridTemplateColumn IsReadOnly="True" Header="Contexts">
+                            <DataGridTemplateColumn.HeaderStyle>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="FontSize" Value="20"/>
+                                    <Setter Property="FontWeight" Value="DemiBold"/>
+                                    <Setter Property="MinWidth" Value="250"/>
+                                </Style>
+                            </DataGridTemplateColumn.HeaderStyle>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <DataGrid ItemsSource="{Binding ContextViewItems}" IsReadOnly="True" CanUserAddRows="False" BorderThickness="0">
@@ -154,6 +173,6 @@
                 <platform:Spinner Grid.Row="1" Busy="{Binding GridBusy}" />
             </Grid>
         </DockPanel>
-
+        
     </DockPanel>
 </UserControl>

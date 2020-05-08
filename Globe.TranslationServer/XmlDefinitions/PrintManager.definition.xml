@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="PrintManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="ForcePrint" >
+      <Comments>Used to force the print of a page </Comments>
+      <String Context="Generic_Medium" >PRINT NOW</String>
+    </Concept >
+    <Concept Id="RESET_QUEUE" >
+      <Comments>used to clean the page without printing</Comments>
+      <String Context="Generic_Medium" >RESET QUEUE</String>
+    </Concept >
+    <Concept Id="CONFIGURATION" >
+      <Comments>used to clean the page without printing</Comments>
+      <String Context="Generic_Medium" >CONFIGURATION</String>
+    </Concept >
+    
+    <Concept Id="PROFILE" >
+      <Comments>In print configuration: label about PROFILE in profike combo</Comments>
+      <String Context="Generic_Medium" >PROFILE</String>
+    </Concept>
+    <Concept Id="MODEL" >
+      <Comments>In print configuration: label about model in model combo</Comments>
+      <String Context="Generic_Medium" >MODEL</String>
+    </Concept>
+    <Concept Id="BUTTON1" >
+      <Comments>In print configuration: label about button 1 section </Comments>
+      <String Context="Generic_Medium" >BUTTON 1</String>
+    </Concept>
+    <Concept Id="BUTTON2" >
+      <Comments>In print configuration: label about button 2 section </Comments>
+      <String Context="Generic_Medium" >BUTTON 2</String>
+    </Concept>
+		<Concept Id="BUTTON3" >
+			<Comments>In print configuration: label about button 3 section </Comments>
+			<String Context="Generic_Medium" >BUTTON 3</String>
+		</Concept>
+		<Concept Id="BUTTON4" >
+			<Comments>In print configuration: label about button 4 section </Comments>
+			<String Context="Generic_Medium" >BUTTON 4</String>
+		</Concept>
+    <Concept Id="PROFILES" >
+      <Comments>In print configuration: label about profiles section </Comments>
+      <String Context="Generic_Medium" >PROFILES</String>
+    </Concept>
+    <Concept Id="DESCRIPTION" >
+      <Comments>In print configuration, profiles section, column header about description</Comments>
+      <String Context="Generic_Medium" >DESCRIPTION</String>
+      <String Context="Generic_Long" >DESCRIPTION</String>
+    </Concept>
+    <Concept Id="FORMAT" >
+      <Comments>In print configuration, profiles section, column header about format</Comments>
+      <String Context="Generic_Medium" >FORMAT</String>
+    </Concept>
+    <Concept Id="ORIENTATION" >
+      <Comments>In print configuration, profiles section, column header about ORIENTATION</Comments>
+      <String Context="Generic_Medium" >ORIENTATION</String>
+    </Concept>
+    <Concept Id="SMALL_HEADER_ON_THE_TOP" >
+      <Comments>In print configuration, profile dialog, Header position combo</Comments>
+      <String Context="Generic_Long" >SMALL HEADER ON THE TOP</String>
+    </Concept>
+    <Concept Id="SMALL_HEADER_ON_THE_LEFT" >
+      <Comments>In print configuration, profile dialog, Header position combo</Comments>
+      <String Context="Generic_Long" >SMALL HEADER ON THE LEFT</String>
+    </Concept>
+    <Concept Id="LARGE_HEADER_ON_THE_TOP" >
+      <Comments>In print configuration, profile dialog, Header position combo</Comments>
+      <String Context="Generic_Long" >LARGE HEADER ON THE TOP</String>
+    </Concept>
+    <Concept Id="LARGE_HEADER_ON_THE_LEFT" >
+      <Comments>In print configuration, profile dialog, Header position combo</Comments>
+      <String Context="Generic_Long" >LARGE HEADER ON THE LEFT</String>
+    </Concept>
+    <Concept Id="NO_HEADER" >
+      <Comments>Story 773 In print configuration, profile dialog, Header position combo</Comments>
+      <String Context="Generic_Long" >MAXIMIZE</String>
+    </Concept>
+    <Concept Id="LANDSCAPE" >
+      <Comments>In print configuration, profile dialog, Orientation position combo</Comments>
+      <String Context="Generic_Medium" >LANDSCAPE</String>
+    </Concept>
+    <Concept Id="PORTRAIT" >
+      <Comments>In print configuration, profile dialog, Orientation position combo</Comments>
+      <String Context="Generic_Medium" >PORTRAIT</String>
+    </Concept>
+
+    <Concept Id="PAGE_LAYOUT" >
+      <Comments>In print configuration, profile dialog, label of Header position combo</Comments>
+      <String Context="Generic_Medium" >PAGE LAYOUT</String>
+    </Concept>
+    <Concept Id="ROWS" >
+      <Comments>In print configuration, profile dialog, Rows item, for example: rows = 2, columns = 3 , then in the page there are 6 images</Comments>
+      <String Context="Generic_Medium" >ROWS</String>
+    </Concept>
+    <Concept Id="COLUMNS" >
+      <Comments>In print configuration, profile dialog, Columns item, for example: rows = 2, columns = 3 , then in the page there are 6 images</Comments>
+      <String Context="Generic_Medium" >COLUMNS</String>
+    </Concept>
+    <Concept Id="MARGINS" >
+      <Comments>In print configuration, profile dialog, MARGINS item and unit of measure</Comments>
+      <String Context="Generic_Medium" >MARGINS (mm)</String>
+    </Concept>
+    <Concept Id="INCLUDE_LOGO" >
+      <Comments>In print configuration, profile dialog</Comments>
+      <String Context="Generic_Medium" >INCLUDE LOGO</String>
+    </Concept>
+    <Concept Id="MAXIMIZE_MEASURE" >
+      <Comments>In print configuration, profile dialog</Comments>
+      <String Context="Generic_Medium" >Maximize measurement</String>
+    </Concept>
+    <Concept Id="BACKGROUNDCOLOR" >
+      <Comments> Task 2711 In print configuration, profile dialog</Comments>s
+      <String Context="Generic_Medium" >BACKGROUNDCOLOR</String>
+    </Concept>
+    <Concept Id="ADDPRINTER_BUTTON">
+      <Comments> Task 1510 In print configuration, profile list, addprinter button</Comments>
+      <String Context="Generic_Medium">ADDPRINTER</String>
+    </Concept>
+
+    <Concept Id="CONFIGURE_PRINTER_BUTTON">
+      <Comments> Print configuration, profile list, Configure printer button</Comments>
+      <String Context="Generic_Medium">CONFIGURE PRINTER</String>
+    </Concept>
+
+    <Concept Id="WINDOWS_PROPERTIES">
+      <Comments> Print configuration, profile list, PROPERITES button</Comments>
+      <String Context="Generic_Medium">PROPERTIES</String>
+    </Concept>
+
+    <Concept Id="WINDOWS_PREFERENCES">
+      <Comments> Print configuration, profile list, PREFERNCES button</Comments>
+      <String Context="Generic_Medium">PREFERENCES</String>
+    </Concept>
+
+    <Concept Id="WINDOWS_DELETE_PRINTER">
+      <Comments> Print configuration, profile list, DELETE PRINTER button</Comments>
+      <String Context="Generic_Medium">DELETE PRINTER</String>
+    </Concept>
+    <Concept Id="WINDOWS_RENAME_PRINTER">
+      <Comments> Print configuration, profile list, RENAME PRINTER button</Comments>
+      <String Context="Generic_Medium">RENAME PRINTER</String>
+    </Concept>
+
+    <Concept Id="WINDOWS_REFRESH_PRINTER">
+      <Comments> Print configuration, profile list, REFRESH PRINTER button</Comments>
+      <String Context="Generic_Medium">REFRESH PRINTER</String>
+    </Concept>
+    <Concept Id="WINDOWS_TEST_PRINT">
+      <Comments> Print configuration, profile list, REFRESH PRINTER button</Comments>
+      <String Context="Generic_Medium">PRINT TEST PAGE</String>
+    </Concept>
+    
+    <Concept Id="QUESTION_DELETE_PRINER" >
+      <Comments>question to delete printer </Comments>
+      <String Context="Generic_Warning" >ARE YOU SURE YOU WANT TO DELETE THE PRINTER :"</String>
+    </Concept>
+    <Concept Id="NOT_RENAME_PRINTER" >
+      <Comments>Print configuration, rename printer button  </Comments>
+      <String Context="Generic_Warning" >YOU CAN NOT RENAME THE FOLLOWING SHARED NETWORK PRINTER :"</String>
+    </Concept>
+    <Concept Id="QUESTION_NEW_PRINER_NAME_ISEMPTY" >
+      <Comments>question printer NAME IS NULL </Comments>
+      <String Context="Generic_Warning" >YOU NEED TO SPECIFY A PRINTER NAME."</String>
+    </Concept>
+      <Concept Id="WINDOWS_PRINT_MANAGEMENT" >
+      <Comments>Print configuration dialog</Comments>
+      <String Context="Generic_Medium" >PRINTER MANAGEMENT</String>
+    </Concept>
+
+    
+    <Concept Id="SELECTED_PRINTERNAME_LABEL" >
+      <Comments>Print configuration dialog</Comments>
+      <String Context="Generic_Medium" >SELECTED PRINTER NAME</String>
+    </Concept>
+
+    <Concept Id="NEW_PRINTERNAME_LABEL" >
+      <Comments>Print configuration dialog</Comments>
+      <String Context="Generic_Medium" >NEW PRINTER NAME</String>
+    </Concept>
+
+
+    <Concept Id="LOCAL">
+      <Comments> Task 10148, in print configuration click Add Printer Button, name to add printer (Local) </Comments>
+      <String Context="Generic_Medium">LOCAL</String>
+    </Concept>
+    <Concept Id="CHOOSE_PORT">
+      <Comments> Task 10148, in print configuration click Add Printer Button, label for choose port </Comments>
+      <String Context="Generic_Medium">SELECT THE PRINTER PORT</String>
+    </Concept>
+    <Concept Id="EXISTING_PORT">
+      <Comments> Task 10148, in print configuration click Add Printer Button, radio button to use an existing port </Comments>
+      <String Context="Generic_Medium">USE AN EXISTING PORT:</String>
+    </Concept>
+    <Concept Id="NEW_PORT">
+      <Comments> Task 10148, in print configuration click Add Printer Button, radio button to create a new port</Comments>
+      <String Context="Generic_Medium">CREATES NEW PORT:</String>
+    </Concept>
+    <Concept Id="TYPE_PRINTER">
+      <Comments> Task 10148, in print configuration click Add Printer Button, label description the type of port </Comments>
+      <String Context="Generic_Medium">TYPE A PRINTER HOSTNAME OR IP ADDRESS</String>
+    </Concept>
+    <Concept Id="DEVICE_TYPE">
+      <Comments> Task 10148, in print configuration click Add Printer Button, label that indicates the Device type   </Comments>
+      <String Context="Generic_Medium">DEVICE TYPE:</String>
+    </Concept>
+    <Concept Id="HOST_NAME">
+      <Comments> Task 10148, in print configuration click Add Printer Button, label that indicates the Hostname or IP address</Comments>
+      <String Context="Generic_Medium">HOSTNAME OR IP ADDRESS:</String>
+    </Concept>
+    <Concept Id="PORT_NAME">
+      <Comments> Task 10148, in print configuration click Add Printer Button, label that indicates the port name</Comments>
+      <String Context="Generic_Medium">PORT NAME:</String>
+    </Concept>
+    <Concept Id="INSTALL_PRINTER">
+      <Comments> Task 10148, in print configuration click Add Printer Button, label that indicates the title to install driver </Comments>
+      <String Context="Generic_Long">INSTALL THE PRINTER DRIVER</String>
+    </Concept>
+    <Concept Id="PRINTER_DESCRIPTION">
+      <Comments> Task 10148, in print configuration click Add Printer Button, label that indicates to selecting the printer from tree view </Comments>
+      <String Context="Generic_Medium">CHOOSE YOUR PRINTER</String>
+    </Concept>
+    <Concept Id="INSTALL">
+      <Comments> Task 10148, in print configuration click Add Printer Button, button to install</Comments>
+      <String Context="Generic_Medium">INSTALL</String>
+    </Concept>
+    <Concept Id="HAVE_DISK">
+      <Comments> Task 10148, in print configuration click Add Printer Button, button to search disk inf files </Comments>
+      <String Context="Generic_Medium">HAVE DISK...</String>
+    </Concept>
+    <Concept Id="SELECTED_PRINTER_IS_EMPTY" >
+      <Comments>warning on Installing model printers </Comments>
+      <String Context="Generic_Warning" >WARNING: CHOOSE A MODEL PRINTER AND REPLY </String>
+    </Concept>
+    <Concept Id="SELECTED_HOST_PORT_IS_EMPTY" >
+      <Comments>warning on Installing model printers </Comments>
+      <String Context="Generic_Warning" >WARNING: HOSTNAME OR PORTNAME IS EMPTY </String>
+    </Concept>
+    <Concept Id="TCPIP_PORT_ALREADY_EXIST" >
+      <Comments>warning on Installing model printers </Comments>
+      <String Context="Generic_Warning" >WARNING:PORT ALREADY EXIST</String>
+    </Concept>
+    
+    <Concept Id="ADD_PRINTER_NETWORK" >
+      <Comments>Install network printer</Comments>
+      <String Context="Generic_Medium" >INSTALL</String>
+    </Concept>
+    <Concept Id="SEARCH_PRINTER_NETWORK" >
+      <Comments>Install network printer</Comments>
+      <String Context="Generic_Medium" >SEARCH PRINTER</String>
+    </Concept>
+    <Concept Id="AVAILABLE_PRINTERS_NETWORK" >
+      <Comments>Install network printer</Comments>
+      <String Context="Generic_Medium" >AVAILABLE PRINTERS</String>
+    </Concept>
+    
+    <Concept Id="COLUMN_ADDRESS_NAME" >
+      <Comments>Install network printer, column list available printers</Comments>
+      <String Context="Generic_Medium" >ADDRESS</String>
+    </Concept>
+    
+    <Concept Id="COLUMN_PRINTER_NAME" >
+      <Comments>Install network printer, column list available printers</Comments>
+      <String Context="Generic_Medium" >PRINTER NAME</String>
+    </Concept>
+    <Concept Id="PRINTER_IS_ALREADY_INSTALLED" >
+      <Comments>message to allert operator</Comments>
+      <String Context="Generic_Warning" >PRINTER IS ALREADY INSTALLED</String>
+    </Concept>
+    
+    <Concept Id="WAITING_INSTALL_PRINER" >
+      <Comments>waiting on install model printers </Comments>
+      <String Context="Generic_Warning" >WAIT FOR INSTALLATION PRINTER</String>
+    </Concept>
+    
+    <Concept Id="PRINT_DRIVE_INSTALLED" >
+      <Comments>message of installation driver print success</Comments>
+      <String Context="Generic_Warning" >INSTALLATION OF THE PRINTER DRIVER WAS SUCCESSFUL</String>
+    </Concept>
+    <Concept Id="PRINT_DRIVE_NOT_INSTALLED" >
+      <Comments>message of installation driver print is not success</Comments>
+      <String Context="Generic_Warning" >INSTALLATION OF THE PRINTER DRIVER IS NOT SUCCESSFUL</String>
+    </Concept>
+    <Concept Id="FILE_INF_NOT_SELECTED" >
+      <Comments>message warning file inf not selecting </Comments>
+      <String Context="Generic_Warning" >WARNING : PLEASE LET CHOOSE A INF FILE</String>
+    </Concept>
+    
+    <Concept Id="NETWORK">
+      <Comments> Task 10148, in print configuration click Add Printer Button, name to add printer (Local or Network) </Comments>
+      <String Context="Generic_Medium">NETWORK</String>
+    </Concept>
+
+    <Concept Id="WAITING_SEARCH_AVAILABLE_PRINTER">
+      <Comments> Task 10991, in print configuration click Add Printer Button and tab Network, click button "search" and show this waiting message  </Comments>
+      <String Context="Generic_Warning">SEARCHING FOR AVAILABLE PRINTERS...</String>
+    </Concept>
+    
+    
+    <Concept Id="PRINTER_NOT_LISTED">
+      <Comments> Task 10991, in print configuration click Add Printer Button and tab Network, title  printer that I want isn't listed </Comments>
+      <String Context="Generic_Long">PRINTER THAT I WANT ISN'T LISTED </String>
+    </Concept>
+    
+    <Concept Id="SELECT_SHARED_PRINTER">
+      <Comments> Task 10991, in print configuration click Add Printer Button and tab Network, check to select the printer  </Comments>
+      <String Context="Generic_Medium">SELECT A SHARED PRINTER BY NAME</String>
+    </Concept>
+    
+    <Concept Id="EXAMPLE_INSTALL_PRINTER">
+      <Comments> Task 10991, in print configuration click Add Printer Button and tab Network, label static  show example</Comments>
+      <String Context="Generic_Long">EXAMPLES : \\COMPUTERNAME\PRINTNAME</String>
+    </Concept>
+    
+    <Concept Id="CHECK_ADD_TCP">
+      <Comments> Task 10991, in print configuration click Add Printer Button and tab Network, check box to add tcp printer</Comments>
+      <String Context="Generic_Long">ADD A PRINTER USING A TCP/IP ADDRESS OR HOSTNAME</String>
+    </Concept>
+    <Concept Id="ADD_BUTTON" >
+      <Comments>In print configuration, profile list, add button</Comments>
+      <String Context="Generic_Medium" >ADD</String>
+    </Concept>
+    <Concept Id="EDIT_BUTTON" >
+      <Comments>In print configuration, profile list, edit button</Comments>
+      <String Context="Generic_Medium" >EDIT</String>
+    </Concept>
+    <Concept Id="REMOVE_BUTTON" >
+      <Comments>In print configuration, profile list, remove button</Comments>
+      <String Context="Generic_Medium" >REMOVE</String>
+    </Concept>
+    <Concept Id="FACTORY" >
+      <Comments>In print configuration, profile list, FACTORY button</Comments>
+      <String Context="Generic_Medium" >FACTORY</String>
+    </Concept>
+    <Concept Id="WINDOWS_PRINT_CONFIGURATION" >
+      <Comments>item in Menu dialog</Comments>
+      <String Context="Generic_Medium" >Printer Management</String>
+    </Concept>
+    
+    <Concept Id="AUTOMATICPRINTER" >
+      <Comments>In print configuration: checkBox title </Comments>
+      <String Context="Generic_Long" >AUTOMATIC PRINTING OF ACQUIRED IMAGES</String>
+    </Concept>
+    <Concept Id="STOREIMAGE" >
+      <Comments>In print configuration: checkBox title</Comments>
+      <String Context="Generic_Long" >STORE IMAGE PRINTING</String>
+    </Concept>
+    <Concept Id="AUTOMATICLAYOUT" >
+      <Comments>In print configuration: checkBox title </Comments>
+      <String Context="Generic_Long" >AUTO ADJUST PRINT LAYOUT OF ACQUIRED IMAGES</String>
+    </Concept>
+    <Concept Id="NO_MODEL_OR_PROFILE_SELECTED_IN_BUTTON" >
+      <Comments>warning on savig printers presets</Comments>
+      <String Context="Generic_Warning" >WARNING: NO PROFILE OR PRINTER MODEL SELECTED IN BUTTON</String>
+    </Concept>
+    <Concept Id="PROFILE_NOT_DELETED" >
+      <Comments>warning on deleting profile in list while that profile is selected in button profiles combo</Comments>
+      <String Context="Generic_Warning" >PROFILE ALREADY SELECTED IN BUTTON; IT IS NOT POSSIBLE TO REMOVE IT</String>
+    </Concept>
+    <Concept Id="WRONG_ROWS" >
+      <Comments>warning on adding or editing profile, if user insert 0 or a number greater than 4 in rows</Comments>
+      <String Context="Generic_Warning" >ROWS NUMBER CAN BE 1,2,3,4</String>
+    </Concept>
+    <Concept Id="WRONG_COLUMNS" >
+      <Comments>warning on adding or editing profile, if user insert 0 or a number greater than 3 in columns</Comments>
+      <String Context="Generic_Warning" >COLUMNS NUMBER CAN BE 1,2,3</String>
+    </Concept>
+    <Concept Id="WRONG_MARGINS" >
+      <Comments>warning on adding or editing profile, if user insert 0 or a namber greater than 5 in margins</Comments>
+      <String Context="Generic_Warning" >MARGINS NUMBER CAN BE FROM 1 to 5</String>
+    </Concept>
+    <Concept Id="DESCRIPTION_EMPTY" >
+      <Comments>In network dir configuration, network info dialog, it is visualized if description is empty</Comments>
+      <String Context="Generic_Warning" >DESCRIPTION IS EMPTY</String>
+    </Concept>
+    <Concept Id="DESCRIPTION_ALREADY_PRESENT" >
+      <Comments>In network dir configuration, network info dialog, it is visualized if description is already used</Comments>
+      <String Context="Generic_Warning" >DESCRIPTION ALREADY PRESENT IN LIST</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

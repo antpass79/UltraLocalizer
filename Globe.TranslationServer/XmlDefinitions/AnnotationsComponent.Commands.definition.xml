@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="AnnotationsComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="ANNOTATIONS">
+      <Comments>Start annotations</Comments>
+      <String Context="TS_BButton">ANNOTATIONS</String>
+    </Concept>
+    <Concept Id="EXIT">
+      <Comments>Close annotations</Comments>
+      <String Context="TS_SButton">EXIT</String>
+    </Concept>
+    <Concept Id="BY WORD">
+      <Comments>By word mode</Comments>
+      <String Context="TS_SButton">BY WORD</String>
+    </Concept>
+    <Concept Id="BY SENTENCE">
+      <Comments>By sentence mode</Comments>
+      <String Context="TS_SButton">BY SENTENCE</String>
+    </Concept>
+    <Concept Id="ARROW">
+      <Comments>Add of an arrow</Comments>
+      <String Context="TS_SButton">ARROW</String>
+    </Concept>
+    <Concept Id="DELETE ALL">
+      <Comments>Delete all words inserted</Comments>
+      <String Context="TS_SButton">DELETE ALL</String>
+    </Concept>
+    <Concept Id="DELETE LINE">
+      <Comments>Delete all words inserted on the line Story 8829</Comments>
+      <String Context="TS_SButton">DELETE LINE</String>
+    </Concept>
+    <Concept Id="DELETE LAST">
+      <Comments>Delete last word inserted</Comments>
+      <String Context="TS_SButton">DELETE LAST</String>
+    </Concept>
+    <Concept Id="ROTATE">
+      <Comments>Rotation of arrow inserted</Comments>
+      <String Context="TS_SButton">ROTATE ARROW</String>
+    </Concept>
+    <Concept Id="APPLICATIONS">
+      <Comments>Touchscreen's tab title for application choice</Comments>
+      <String Context="TS_TabName">APPLICATIONS</String>
+    </Concept>
+    <Concept Id="CONFIGURATOR NAME">
+      <Comments>Annotations' configurator definition</Comments>
+      <String Context="Generic_Medium">Annotation</String>
+    </Concept>
+    <Concept Id="LOW LEVEL CONFIGURATOR NAME">
+      <Comments>Annotations' configurator definition low level</Comments>
+      <String Context="Generic_Medium">Low Level Annotations</String>
+    </Concept>
+    <Concept Id="SCROLL">
+      <Comments>Scroll for column</Comments>
+      <String Context="TS_TButton">↓ SCROLL WORD ↑</String>
+    </Concept>
+    <Concept Id="SET HOME">
+      <Comments>Set home position</Comments>
+      <String Context="TS_SButton">SET HOME</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

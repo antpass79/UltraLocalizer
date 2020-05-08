@@ -20,9 +20,9 @@ namespace Globe.Client.Localizer.Services
             _secureHttpClient.BaseAddress(ConfigurationManager.AppSettings["LocalizableStringBaseAddress"]);
         }
 
-        async public Task<IEnumerable<StringViewItem>> GetStringViewItemsAsync(StringItemViewSearch search)
+        async public Task<IEnumerable<StringViewItem>> GetStringViewItemsAsync(StringViewItemSearch search)
         {
-            var result = await _secureHttpClient.SendAsync<StringItemViewSearch>(HttpMethod.Get, ENDPOINT_StringViewItem, search);
+            var result = await _secureHttpClient.SendAsync<StringViewItemSearch>(HttpMethod.Get, ENDPOINT_StringViewItem, search);
             return await result.GetValue<IEnumerable<StringViewItem>>();
         }
     }

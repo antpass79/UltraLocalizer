@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using Globe.Identity.Options;
 using Globe.Identity.Security;
 using Globe.TranslationServer.Entities;
+using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
 using Globe.TranslationServer.Repositories;
@@ -56,9 +57,13 @@ namespace Globe.TranslationServer
             // Adapters
             services
                 .AddScoped<UltraDBEditConcept, UltraDBEditConcept>()
+                .AddScoped<UltraDBConcept, UltraDBConcept>()
                 .AddScoped<UltraDBJobList, UltraDBJobList>()
                 .AddScoped<UltraDBStrings, UltraDBStrings>();
             services
+                .AddScoped<IAsyncConceptViewItemProxyService, ConceptViewItemProxyService>()
+                .AddScoped<IAsyncStringViewItemProxyService, StringViewItemProxyService>()
+                .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()
                 .AddScoped<IAsyncGroupedStringEntityService, GroupedStringEntityAdapterService>()
                 .AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncJobListService, JobListAdapterService>()

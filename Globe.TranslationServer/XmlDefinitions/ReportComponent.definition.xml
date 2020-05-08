@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizationResource ComponentNamespace="ReportComponent" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="COMMANDS">
+    <Concept Id="REPORT_TAB">
+      <String Context="TS_TabName">REPORT</String>
+    </Concept>
+    <Concept Id="REPORT_CMD">
+      <String Context="TS_BButton">REPORT</String>
+    </Concept>
+    <Concept Id="PRINT_CMD">
+      <String Context="TS_AButton">PRINT</String>
+    </Concept>
+    <Concept Id="CLOSE_CMD">
+      <String Context="TS_AButton">CLOSE</String>
+    </Concept>
+	 <Concept Id="EXIT">
+      <String Context="TS_AButton">EXIT</String>
+    </Concept>
+    <Concept Id="VIEW_PREVIOUS_CMD">
+      <String Context="TS_AButton">PREVIOUS</String>
+    </Concept>
+    <Concept Id="SCROLL_PREV_CMD">
+      <String Context="TS_TButton">SCROLL PREV</String>
+    </Concept>
+    <Concept Id="SCROLLPAGE_CMD">
+      <String Context="TS_TButton">SCROLL PAGE</String>
+    </Concept>
+    <Concept Id="ZOOM_CMD">
+      <String Context="TS_TButton">ZOOM</String>
+    </Concept>
+    <!--<Concept Id="ZOOMIN_CMD">
+      <String Context="TS_AButton">ZOOM IN</String>
+    </Concept>
+    <Concept Id="ZOOMOUT_CMD">
+      <String Context="TS_AButton">ZOOM OUT</String>
+    </Concept>-->
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="UI">
+    <Concept Id="PREVIOUS_REPORTS_TITLE">
+      <String Context="Generic_Long">Select the desired previous report</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="MESSAGES">
+    <Concept Id="EXAM_IN_USE">
+      <String Context="Generic_Warning">Exam already in use</String>
+    </Concept>
+    <Concept Id="EXAM_IS_READONLY">
+      <String Context="Generic_Warning">Exam is read-only. Changes will not be saved.</String>
+    </Concept>
+    <Concept Id="REPORT_NOT_AVAILABLE">
+      <String Context="Generic_Warning">Report not available, select an exam on archive or press freeze to go to current exam</String>
+    </Concept>
+    <Concept Id="EXAM_NOT_AVAILABLE">
+      <String Context="Generic_Warning">Exam not available, operation not performed</String>
+    </Concept>
+    <Concept Id="EMPTYFONTSIZE_WARNING">
+      <Comment>tooltip message on editor if user sets an empty value for font size</Comment>
+      <String Context="Generic_Warning">Empty Fontsize not admitted</String>
+    </Concept>
+    <Concept Id="NOTNUMERICFONTSIZE_WARNING">
+      <Comment>tooltip message on editor if user sets a non-numeric value for font size (use "." for decimal separator)</Comment>
+      <String Context="Generic_Warning">Fontsize must be a number</String>
+    </Concept>
+    <Concept Id="TOOLARGEFONTSIZE_WARNING">
+      <Comment>tooltip message on editor if user sets a font size too large</Comment>
+      <String Context="Generic_Warning">Fontsize must be less than 100</String>
+    </Concept>
+    <Concept Id="TOOSMALLFONTSIZE_WARNING">
+      <Comment>tooltip message on editor if user sets a font size too small</Comment>
+      <String Context="Generic_Warning">Fontsize must be greater than 5</String>
+    </Concept>
+	<Concept Id="SAVEISSUE_WARNING">
+      <Comment>An error occurred during saving a report section.</Comment>
+      <String Context="Generic_Warning">Some Data might not be saved correctly. Please contact the service department.</String>
+    </Concept>
+	<Concept Id="SAVEISSUE_ERROR">
+      <Comment>An error occurred during saving a report section. A shutdown is required.</Comment>
+      <String Context="Generic_Warning">Some Data might not be saved correctly. Exam will be recovered at next startup.</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="CONFSETNAMES">
+    <Concept Id="Default">
+      <String Context="Generic_Long">Default</String>
+    </Concept>
+    <Concept Id="ReportConfiguration">
+      <String Context="Generic_Long">Report</String>
+    </Concept>
+    <Concept Id="GrayTheme">
+      <Comment>Gray theme for report [Defect 34386]</Comment>
+      <String Context="Generic_Long">Gray Theme</String>
+    </Concept>
+    <Concept Id="BlueTheme">
+      <Comment>Blue theme for report [Defect 34386]</Comment>
+      <String Context="Generic_Long">Blue Theme</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="EditorUI">
+    <Concept Id="REPORT_STYLE_TITLE">
+      <String Context="Generic_Long">Report styles</String>
+    </Concept>
+    <Concept Id="EDIT_BUTTON">
+      <String Context="Generic_Short">Edit</String>
+    </Concept>
+    <Concept Id="REBOOT_AFTERSAVE_MESSAGE">
+      <String Context="Generic_Warning">Modified styles will be applied at next reboot</String>
+    </Concept>
+    <Concept Id="CANNOT_REMOVE_CONFSET_MESSAGE">
+      <String Context="Generic_Warning">Cannot remove configuration: at least one must be present</String>
+    </Concept>
+    <Concept Id="FACTORY_FALLBACK_LOADED">
+      <String Context="Generic_Warning">Invalid specific configuration data, factory will be applied!</String>
+    </Concept>
+    <Concept Id="FACTORY_FALLBACK_CORRUPTED">
+      <String Context="Generic_Warning">Could not load factory style settings for fallback. Repair the installation to use this configuration</String>
+    </Concept>
+    <Concept Id="FACTORY_CONFSET_CORRUPTED">
+      <String Context="Generic_Warning">Could not load factory style settings. Repair the installation to use this configuration</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Editor_StylesLocalization">
+    <Concept Id="MainHeader1">
+      <String Context="Generic_Long">HOSPITAL HEADER 1</String>
+    </Concept>
+    <Concept Id="MainHeader2">
+      <String Context="Generic_Long">HOSPITAL HEADER 2</String>
+    </Concept>
+    <Concept Id="MainHeader3">
+      <String Context="Generic_Long">HOSPITAL HEADER 3</String>
+    </Concept>
+    <Concept Id="MainHeader4">
+      <String Context="Generic_Long">HOSPITAL HEADER 4</String>
+    </Concept>
+    <Concept Id="MainHeader5">
+      <String Context="Generic_Long">HOSPITAL HEADER 5</String>
+    </Concept>
+    <Concept Id="TableHeader1">
+      <String Context="Generic_Long">FIRST LEVEL TITLE</String>
+    </Concept>
+    <Concept Id="TableHeader2">
+      <String Context="Generic_Long">SECOND LEVEL TITLE</String>
+    </Concept>
+    <Concept Id="TableHeader3">
+      <String Context="Generic_Long">THIRD LEVEL TITLE</String>
+    </Concept>
+    <Concept Id="BorderedRow1">
+      <String Context="Generic_Long">BORDERED TABLE ROW</String>
+    </Concept>
+    <Concept Id="ReportLabel1">
+      <String Context="Generic_Long">LABEL</String>
+    </Concept>
+    <Concept Id="ReportText1">
+      <String Context="Generic_Long">TEXT</String>
+    </Concept>
+    <Concept Id="ReportNumericText1">
+      <String Context="Generic_Long">NUMERIC DATA</String>
+    </Concept>
+    <Concept Id="DataTableHeader1">
+      <String Context="Generic_Long">DATA HEADER</String>
+    </Concept>
+    <Concept Id="Background">
+      <String Context="Generic_Long">Background</String>
+    </Concept>
+    <Concept Id="Foreground">
+      <String Context="Generic_Long">Foreground</String>
+    </Concept>
+    <Concept Id="FontFamily">
+      <String Context="Generic_Long">Font Family</String>
+    </Concept>
+    <Concept Id="FontWeight">
+      <String Context="Generic_Long">Font Weight</String>
+    </Concept>
+    <Concept Id="FontSize">
+      <String Context="Generic_Long">Font Size</String>
+    </Concept>
+    <Concept Id="TextAlignment">
+      <String Context="Generic_Long">Text Alignment</String>
+    </Concept>
+    <Concept Id="BorderBrush">
+      <String Context="Generic_Long">Border Color</String>
+    </Concept>
+    <Concept Id="BorderThickness">
+      <String Context="Generic_Long">Border Thickness (Left, Top, Right, Bottom)</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="ReportHeaderFooter">
+    <Concept Id="STATUS">
+      <String Context="Generic_Long">STATUS</String>
+    </Concept>
+    <Concept Id="OPEN">
+      <Comment>OPEN stays for report status as an "opened report"</Comment>
+      <String Context="Generic_Long">OPEN</String>
+    </Concept>
+    <Concept Id="CLOSED">
+      <String Context="Generic_Long">CLOSED</String>
+    </Concept>
+    <Concept Id="PrintedOn">
+      <String Context="Generic_Long">PRINTED ON</String>
+    </Concept>
+    <Concept Id="ClosedOn">
+      <String Context="Generic_Long">CLOSED ON</String>
+    </Concept>
+    <Concept Id="ExportedOn">
+      <String Context="Generic_Long">EXPORTED ON</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

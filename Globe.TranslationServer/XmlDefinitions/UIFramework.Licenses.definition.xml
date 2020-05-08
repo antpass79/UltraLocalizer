@@ -1,0 +1,851 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="UIFramework" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Licenses">
+    <Concept Id="E_BREAST_LICENSE">
+      <Comments>License for Breast application</Comments>
+      <String Context="Generic_Medium">BREAST</String>
+    </Concept >
+    <Concept Id="E_CARDIO_LICENSE">
+      <Comments>License for cardiac applications</Comments>
+      <String Context="Generic_Medium">CARDIAC</String>
+    </Concept >
+    <Concept Id="E_GENERAL_IMAGING_LICENSE">
+      <Comments>License for general imaging applications</Comments>
+      <String Context="Generic_Medium">GENERAL IMAGING</String>
+    </Concept >
+    <Concept Id="E_MSK_LICENSE">
+      <Comments>License for Muskulo Skeletal application</Comments>
+      <String Context="Generic_Medium">MUSKULO-SKELETAL</String>
+    </Concept >
+    <Concept Id="E_OBGYN_LICENSE">
+      <Comments>License for Obstetric and Gynecology applications</Comments>
+      <String Context="Generic_Medium">OB-GYN</String>
+    </Concept >
+    <Concept Id="E_SMALL_PARTS_LICENSE">
+      <Comments>License for Small Parts application</Comments>
+      <String Context="Generic_Medium">SMALL PARTS</String>
+    </Concept >
+    <Concept Id="E_THYROID_LICENSE">
+      <Comments>License for Thyroid application</Comments>
+      <String Context="Generic_Medium">THYROID</String>
+    </Concept >
+    <Concept Id="E_UROLOGIC_LICENSE">
+      <Comments>License for Urology application</Comments>
+      <String Context="Generic_Medium">UROLOGY</String>
+    </Concept>
+    <Concept Id="E_VASCULAR_LICENSE">
+      <Comments>License for Vascular application</Comments>
+      <String Context="Generic_Medium">VASCULAR</String>
+    </Concept >
+    <Concept Id="E_CARDIO_LICENSE_VET">
+      <Comments>License for veterinary cardiac applications</Comments>
+      <String Context="Generic_Medium">CARDIAC</String>
+    </Concept >
+    <Concept Id="E_GENERAL_IMAGING_LICENSE_VET">
+      <Comments>License for veterinary general imaging applications</Comments>
+      <String Context="Generic_Medium">GENERAL IMAGING</String>
+    </Concept>
+    <Concept Id="E_MSK_LICENSE_VET">
+      <Comments>License for veterinary Muskulo Skeletal application</Comments>
+      <String Context="Generic_Medium">MUSKULO-SKELETAL</String>
+    </Concept >
+    <Concept Id="E_OBGYN_LICENSE_VET">
+      <Comments>License for veterinary Obstetric and Gynecology applications</Comments>
+      <String Context="Generic_Medium">REPRODUCTION</String>
+    </Concept >
+    <Concept Id="E_ANIMAL_SCIENCE_LICENSE">
+      <Comments>License for Animal Science Application</Comments>
+      <String Context="Generic_Medium">ANIMAL SCIENCE</String>
+    </Concept>
+    <Concept Id="E_VASCULAR_LICENSE_VET">
+      <Comments>License for Vascular Vet Application</Comments>
+      <String Context="Generic_Medium">VASCULAR</String>
+    </Concept>
+    <Concept Id="E_XVIEW_OPTION">
+      <Comments>License for XVIEW option</Comments>
+      <String Context="Generic_Medium">XVIEW</String>
+    </Concept >
+    <Concept Id="E_TPVIEW_OPTION">
+      <Comments>License for Trapezoid option</Comments>
+      <String Context="Generic_Medium">TPVIEW</String>
+    </Concept >
+    <Concept Id="E_AUTOGAIN_OPTION">
+      <Comments>License for Automatic Gain option</Comments>
+      <String Context="Generic_Medium">AUTOGAIN</String>
+    </Concept>
+    <Concept Id="E_CFM_OPTION">
+      <Comments>License for Color Flow Mode option</Comments>
+      <String Context="Generic_Medium">CFM</String>
+    </Concept >
+    <Concept Id="E_DOPPLER_OPTION">
+      <Comments>License for Scroll modes</Comments>
+      <String Context="Generic_Medium">DOPPLER</String>
+    </Concept >
+    <Concept Id="E_MVIEW_OPTION">
+      <Comments>License for MVIEW option</Comments>
+      <String Context="Generic_Medium">MVIEW</String>
+    </Concept>
+    <Concept Id="E_CMM_OPTION">
+      <Comments>License for CMM option</Comments>
+      <String Context="Generic_Medium">CMM</String>
+    </Concept >
+    <Concept Id="E_STRESS_OPTION">
+      <Comments>License for Stress option</Comments>
+      <String Context="Generic_Medium">STRESS</String>
+    </Concept >
+    <Concept Id="E_XSTRAIN_OPTION">
+      <Comments>License for XSTRAIN option</Comments>
+      <String Context="Generic_Medium">XSTRAIN</String>
+    </Concept>
+    <Concept Id="E_QIMT_OPTION">
+      <Comments>License for QIMT option</Comments>
+      <String Context="Generic_Medium">QIMT</String>
+    </Concept >
+    <Concept Id="E_4D_3D_OPTION">
+      <Comments>License for 3D/4D advanced option</Comments>
+      <String Context="Generic_Medium">3D-4D ADVANCED</String>
+    </Concept >
+    <Concept Id="E_4D_3D_BASIC_OPTION">
+      <Comments>License for 3D/4D basic option</Comments>
+      <String Context="Generic_Medium">3D-4D</String>
+    </Concept >
+    <Concept Id="E_DICOM_OPTION">
+      <Comments>License for DICOM option</Comments>
+      <String Context="Generic_Medium">DICOM</String>
+    </Concept>
+    <Concept Id="E_CNTI_OPTION">
+      <Comments>License for Contrast option</Comments>
+      <String Context="Generic_Medium">CNTI</String>
+    </Concept >
+    <Concept Id="E_TVM_OPTION">
+      <Comments>License for TVM-TV option</Comments>
+      <String Context="Generic_Medium">TVM-TV</String>
+    </Concept >
+    <Concept Id="E_VPAN_OPTION">
+      <Comments>License for VPAN option</Comments>
+      <String Context="Generic_Medium">VPAN</String>
+    </Concept >
+    <Concept Id="E_XSTRAIN_4D_OPTION">
+      <Comments>License for XSTRAIN 4D option</Comments>
+      <String Context="Generic_Medium">XSTRAIN 4D</String>
+    </Concept>
+    <Concept Id="E_EXTENDED_OPTION">
+      <Comments>License for EXTENDED option</Comments>
+      <String Context="Generic_Medium">EXTENDED</String>
+    </Concept>
+    <Concept Id="E_ELAXTO_OPTION">
+      <Comments>License for ELAXTO option</Comments>
+      <String Context="Generic_Medium">ELAXTO</String>
+    </Concept>
+    <Concept Id="E_AUTOEF_OPTION">
+      <Comments>License for Auto EF option</Comments>
+      <String Context="Generic_Medium">AUTO EF</String>
+    </Concept>
+    <Concept Id="E_XVIEW_CV_OPTION">
+      <Comments>License for XVIEW+ option</Comments>
+      <String Context="Generic_Medium">XVIEW+</String>
+    </Concept>
+    <Concept Id="E_XVIEW_CV_GPU_OPTION">
+      <Comments>License for XVIEW+ option on GPU</Comments>
+      <String Context="Generic_Medium">XVIEW+ GPU</String>
+    </Concept>	
+    <Concept Id="E_LIBRARY_VIEWER_OPTION">
+      <Comments>License for Library Viewer option</Comments>
+      <String Context="Generic_Medium">LIBRARY VIEWER</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_LIVE_PREV_OPTION">
+      <Comments>License for Library Live Preview option ( it enables probe live preview's window in library tool )</Comments>
+      <String Context="Generic_Medium">LIVE PREVIEW</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_ABDOMINAL_OPTION">
+      <Comments>License for Abdominal Library option</Comments>
+      <String Context="Generic_Medium">ABDOMINAL LIBRARY</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_VASCULAR_OPTION">
+      <Comments>License for Vascular Library option</Comments>
+      <String Context="Generic_Medium">VASCULAR LIBRARY</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_CAROTID_OPTION">
+      <Comments>License for Carotid Library option</Comments>
+      <String Context="Generic_Medium">CAROTID LIBRARY</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_USPATH_OPTION">
+      <Comments>License for US Pathologies Library option</Comments>
+      <String Context="Generic_Medium">US PATHOLOGIES LIBRARY</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_REG_ANAEST_OPTION">
+      <Comments>License for Regional Anaesthesia library option</Comments>
+      <String Context="Generic_Medium">REGIONAL ANAESTHESIA LIBRARY</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_PHYSIO_OPTION">
+      <Comments>License for Physiotherapy Library option</Comments>
+      <String Context="Generic_Medium">PHYSIOTHERAPY LIBRARY</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_RHEUMA_OPTION">
+      <Comments>License for Rheumatology Library option</Comments>
+      <String Context="Generic_Medium">RHEUMATOLOGY LIBRARY</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_EQU_TENDON_OPTION">
+      <Comments>License for Equine Tendon Library option</Comments>
+      <String Context="Generic_Medium">EQUINE TENDON LIBRARY</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_EQU_REPRO_OPTION">
+      <Comments>License for Equine Repro Library option</Comments>
+      <String Context="Generic_Medium">EQUINE REPRO LIBRARY</String>
+    </Concept>
+    <Concept Id="E_ACQUIRE_PROTOCOL_OPTION">
+      <Comments>License for Protocols option</Comments>
+      <String Context="Generic_Medium">PROTOCOLS</String>
+    </Concept>
+    <Concept Id="E_EHD_OPTION">
+      <Comments>License for eHD option</Comments>
+      <String Context="Generic_Medium">eHD</String>
+    </Concept>
+    <Concept Id="E_POST_PROC_OPTION">
+      <Comments>License for raw data from archive option</Comments>
+      <String Context="Generic_Medium">RAW DATA FROM ARCHIVE</String>
+    </Concept>
+    <Concept Id="E_SMART_TOUCH_OPTION">
+      <Comments>License for Smart Touch option</Comments>
+      <String Context="Generic_Medium">SMART TOUCH</String>
+    </Concept>
+    <Concept Id="E_SPECIAL_PROBE_OPTION">
+      <Comments>License for Special Probes option</Comments>
+      <String Context="Generic_Medium">SPECIAL PROBES</String>
+    </Concept>
+    <Concept Id="E_WIRELESS_OPTION">
+      <Comments>License for Wireless option</Comments>
+      <String Context="Generic_Medium">WIRELESS</String>
+    </Concept>
+    <Concept Id="E_BREATHING_CURVE_OPTION">
+      <Comments>License for Breathing Curve option</Comments>
+      <String Context="Generic_Medium">BREATHING CURVE</String>
+    </Concept>
+    <Concept Id="EXTENDED LICENSE">
+      <Comments>License for Special Probes option in veterinary</Comments>
+      <String Context="Generic_Medium">eXtended License</String>
+    </Concept>
+    <Concept Id="E_LVO_OPTION">
+      <Comments>License for Left Ventricle Opacification option</Comments>
+      <String Context="Generic_Medium">LEFT VENTRICLE OPACIFICATION</String>
+    </Concept>
+    <Concept Id="E_QAS_OPTION">
+      <Comments>License for Quality Arterial Stiffness option</Comments>
+      <String Context="Generic_Medium">QUALITY ARTERIAL STIFFNESS</String>
+    </Concept>
+    <Concept Id="E_NEI_OPTION">
+      <Comments>License for Needle Enhance Imaging option</Comments>
+      <String Context="Generic_Medium">NEEDLE ENHANCE IMAGING</String>
+    </Concept>
+    <Concept Id="E_XLIGHT_OPTION">
+      <Comments>License for XLight option</Comments>
+      <String Context="Generic_Medium">XLight</String>
+    </Concept>
+    <Concept Id="E_SECOND_CONNECTOR_OPTION">
+      <Comments>License for Second Connector option</Comments>
+      <String Context="Generic_Medium">2nd CONNECTOR</String>
+    </Concept>
+    <Concept Id="E_ELASTO_ADVANCED_OPTION">
+      <Comments>License for Elasto Advanced option</Comments>
+      <String Context="Generic_Medium">ADV ELAXTO</String>
+    </Concept>
+    <Concept Id="E_QELAXTO_OPTION">
+      <Comments>License for QElaXto option [StoryID: 8405]</Comments>
+      <String Context="Generic_Medium">QelaXto - (pSWE)</String>
+    </Concept>
+    <Concept Id="E_QELAXTO_2D_OPTION">
+      <Comments>License for QElaXto 2D option [StoryID: 22703]</Comments>
+      <String Context="Generic_Medium">QelaXto 2D - (pSWE)</String>
+    </Concept>	
+    <Concept Id="E_QELAXTO_KPA_OPTION">
+      <Comments>License for QElaXto KPA option [StoryID: 8405]</Comments>
+      <String Context="Generic_Medium">QElaXto kpascal</String>
+    </Concept>
+    <Concept Id="E_AUTOEF_FA_OPTION">
+      <Comments>License for Auto EF Full Automation option [StoryID: 8405]</Comments>
+      <String Context="Generic_Medium">AUTO EF</String>
+    </Concept>
+    <Concept Id="E_AUTONT_OPTION">
+      <Comments>License for Auto Nuchal Translucency option [StoryID: 8405]</Comments>
+      <String Context="Generic_Medium">AUTO NT</String>
+    </Concept>
+    <Concept Id="E_NAV_BASIC_OPTION">
+      <Comments>License for Navigator Basic option [StoryID: 1437]</Comments>
+      <String Context="Generic_Medium">Navisuite Basic</String>
+    </Concept>
+    <Concept Id="E_NAV_ADV_OPTION">
+      <Comments>License for Navigator Advanced option [StoryID: 9930]</Comments>
+      <String Context="Generic_Medium">Navisuite Basic To Advanced</String>
+    </Concept>
+    <Concept Id="E_NAV_INTERV_OPTION">
+      <Comments>License for Navigator Extended option [StoryID: 9930]</Comments>
+      <String Context="Generic_Medium">Navisuite Advanced To Extended</String>
+    </Concept>
+    <Concept Id="E_3D_PAN_OPTION">
+      <Comments>License for 3D Panoramic option [StoryID: 9930]</Comments>
+      <String Context="Generic_Medium">3D PANORAMIC</String>
+    </Concept>
+    <Concept Id="E_VIRT_BIOPSY_OPTION">
+      <Comments>License for Intelligent Positioning and Virtual Biopsy option [StoryID: 9930]</Comments>
+      <String Context="Generic_Medium">IP and Virtual Biopsy</String>
+    </Concept>
+    <Concept Id="E_BODYMAP_OPTION">
+      <Comments>License for BodyMap option [StoryID: 9930]</Comments>
+      <String Context="Generic_Medium">Body Map- Real-time 2D Navigation</String>
+    </Concept>
+    <Concept Id="E_NEEDLE_TRACKING_OPTION">
+      <Comments>License for Needle Tracking option [StoryID: 9930]</Comments>
+      <String Context="Generic_Medium">Needle TRCK</String>
+    </Concept>
+	<Concept Id="E_ADA_OPTION">
+      <Comments>easy Trace [StoryID: 10962]</Comments>
+      <String Context="Generic_Medium">EASY TRACE</String>
+    </Concept>
+    <Concept Id="DB_IMPORT">
+      <Comments>Add Tool to import Feature Database [RTC Task 9571]</Comments>
+      <String Context="Generic_Long">IMPORT DATABASE</String>
+    </Concept>
+    <Concept Id="DB_IMPORT_OK">
+      <Comments>Add Tool to import Feature Database [RTC Task 9571]</Comments>
+      <String Context="Generic_Long">Import was successful</String>
+    </Concept>
+    <Concept Id="DB_IMPORT_WRONG">
+      <Comments>Add Tool to import Feature Database [RTC Task 9571]</Comments>
+      <String Context="Generic_Long">Import was NOT successful</String>
+    </Concept>	
+    <Concept Id="DB_IMPORT_INVALID_COMPAT">
+      <Comments>Add Tool to import Feature Database [RTC Task 9571]</Comments>
+      <String Context="Generic_Long">Database is not compatible with current software release</String>
+    </Concept> 
+    <Concept Id="DB_IMPORT_INVALID_VERSION">
+      <Comments>Add Tool to import Feature Database [RTC Task 9571]</Comments>
+      <String Context="Generic_Long">Database version is outdated</String>
+    </Concept>
+    <Concept Id="DB_IMPORT_INVALID_FILES">
+      <Comments>Add Tool to import Feature Database [RTC Task 9571]</Comments>
+      <String Context="Generic_Long">Database files can not be loaded correctly</String>
+    </Concept>
+    <Concept Id="DB_IMPORT_INVALID_FORMAT">
+      <Comments>Add Tool to import Feature Database [RTC Task 9571]</Comments>
+      <String Context="Generic_Long">Incorrect file format. Please select a .esadb file</String>
+    </Concept>
+    <Concept Id="DB_IMPORT_INVALID_ZIP">
+      <Comments>Add Tool to import Feature Database [RTC Task 9571]</Comments>
+      <String Context="Generic_Long">Database file could not be opened</String>
+    </Concept>
+    <Concept Id="DB_IMPORTING">
+      <Comments>Add Tool to import Feature Database [RTC Task 9571]</Comments>
+      <String Context="Generic_Long">Importing Database</String>
+    </Concept>	
+    <Concept Id="E_COLOR_DOPPLER_QT_OPTION">
+      <Comments>License for Color Doppler quantification option [RTC Task 10616]</Comments>
+      <String Context="Generic_Medium">COLOR DOPPLER QUANTIFICATION</String>
+    </Concept>
+	<Concept Id="E_CNTI_QT_OPTION">
+      <Comments>License for CnTi Quantification option [RTC Task 10616]</Comments>
+      <String Context="Generic_Medium">CNTI QUANTIFICATION</String>
+    </Concept>
+	<Concept Id="E_DICOM_MULTI_MOD_OPTION">
+      <Comments>License for Dicom Multy Modality [RTC Task 12159]</Comments>
+      <String Context="Generic_Medium">Multi-modality Archive and Query Retrieve</String>
+    </Concept>	
+	<Concept Id="E_MYLAB_TABLET_OPTION">
+      <Comments>Mylab Tablet license [RTC Task 25140]</Comments>
+      <String Context="Generic_Medium">Mylab Tablet</String>
+    </Concept>		
+    <Concept Id="E_MICROV_OPTION">
+      <Comments>License for MicroV option [RTC Task 19282]</Comments>
+      <String Context="Generic_Medium">MicroV</String>
+    </Concept>	
+    <Concept Id="E_CEUS_OPTION">
+      <Comments>CEUS option including Cnti and LVO [RTC Task 19280]</Comments>
+      <String Context="Generic_Medium">CEUS Imaging (CnTI /LVO)</String>
+    </Concept>	
+    <Concept Id="E_QPACK_OPTION">
+      <Comments>Quantification package option [RTC Task 19280]</Comments>
+      <String Context="Generic_Medium">QPack - Quantificacion tool</String>
+    </Concept>
+    <Concept Id="E_GEN_IMG_SHARE_VW_OPTION">
+      <Comments>Shared Service GI bundle including general imaging, vasculare and women health[RTC Story 19279]</Comments>
+      <String Context="Generic_Medium">SHARED SERVICE GI licence</String>
+    </Concept>
+    <Concept Id="E_GEN_IMG_SHARE_CV_OPTION">
+      <Comments>Shared Service CV bundle including general imaging, vasculare and Cardio [RTC Story 19279]</Comments>
+      <String Context="Generic_Medium">SHARED SERVICE CV licence</String>
+    </Concept>	
+    <Concept Id="E_3D_IMAG_OPTION">
+      <Comments>3D imaging including 3D-4D, 3D-4D Advanced, XLight [RTC 19762]</Comments>
+      <String Context="Generic_Medium">3D/4D Imaging</String>
+    </Concept>
+    <Concept Id="E_LIBRARY_EFAST_OPTION">
+      <Comments>EFAST library [RTC 19398]</Comments>
+      <String Context="Generic_Medium">EFAST</String>
+    </Concept>
+    <Concept Id="E_NEUROSURGERY_LICENSE">
+      <Comments>Neurosurgery license [RTC 22816]</Comments>
+      <String Context="Generic_Medium">Neurosurgery</String>
+    </Concept>	
+    <Concept Id="E_CNTI_OPTION_ZH">
+      <Comments>CnTi bundle license for chinese model [RTC 25548]</Comments>
+      <String Context="Generic_Medium">CnTi</String>
+    </Concept>
+    <Concept Id="E_ELAXTO_OPTION_ZH">
+      <Comments>Elaxto bundle license for chinese model [RTC 25548]</Comments>
+      <String Context="Generic_Medium">ElaXto</String>
+    </Concept>
+    <Concept Id="E_QELAXTO_OPTION_ZH">
+      <Comments>QelaXto for chinese model [RTC 25548]</Comments>
+      <String Context="Generic_Medium">QelaXto</String>
+    </Concept>
+    <Concept Id="E_3D_4D_OPTION_ZH">
+      <Comments>3D/4D bundle license for chinese model [RTC 25548]</Comments>
+      <String Context="Generic_Medium">3D/4D</String>
+    </Concept>
+    <Concept Id="E_DICOM_OPTION_ZH">
+      <Comments>Dicom bundle license for chinese model [RTC 25548]</Comments>
+      <String Context="Generic_Medium">Dicom</String>
+    </Concept>
+    <Concept Id="E_FUSION_IMAGING">
+      <Comments>Fusion Imaging license [RTC 25548]</Comments>
+      <String Context="Generic_Medium">Fusion Imaging</String>
+    </Concept>
+    <Concept Id="E_VIRTUAL_NAVIGATOR">
+      <Comments>Virtual navigator bundle license [RTC 25548]</Comments>
+      <String Context="Generic_Medium">Virtual Navigator </String>
+    </Concept>
+    <Concept Id="E_IMAGE_STREAMING">
+      <Comments>US Image Streaming license[RTC 25379]</Comments>
+      <String Context="Generic_Medium">US Image Streaming</String>
+    </Concept>	
+    <Concept Id="E_PROVISION_OPTION">
+      <Comments>Provision option license [RTC 27406]</Comments>
+      <String Context="Generic_Medium">Provision</String>
+    </Concept>		
+    <Concept Id="E_2DSWELINEAR_OPTION">
+      <Comments>2D share wave linear option license</Comments>
+      <String Context="Generic_Medium">2DSWELINEAR</String>
+    </Concept>			
+    <Concept Id="E_STIC_OPTION">
+      <Comments>Stic option license [RTC 27692]</Comments>
+      <String Context="Generic_Medium">4D Stic</String>
+    </Concept>		
+    <Concept Id="E_AUTOCFM_OPTION">
+      <Comments>AutoCFM option</Comments>
+      <String Context="Generic_Medium">AutoCFM</String>
+    </Concept>
+    <Concept Id="E_CEUS_PACK_OPTION">
+      <Comments>CEUS package including CEUS and Quantification package[Story 29642]</Comments>
+      <String Context="Generic_Medium">CEUS PACK</String>
+    </Concept>
+    <Concept Id="E_QELAXTO_PACK_OPTION">
+      <Comments>QElaXto package including ElaXto, QElaXto and QElaXto 2D[Story 29642]</Comments>
+      <String Context="Generic_Medium">QELAXTO PACK</String>
+    </Concept>
+    <Concept Id="E_XSTRAIN_PACK_OPTION">
+      <Comments>XStrain package including StressEcho, XStrain and XStrain 4D[Story 29642]</Comments>
+      <String Context="Generic_Medium">XSTRAIN PACK</String>
+    </Concept>
+    <Concept Id="E_BREAST_SUITE_NAVIGATOR">
+      <Comments>Navigator license for Breast application[Story 29910]</Comments>
+      <String Context="Generic_Medium">BREAST SUITE</String>
+    </Concept>
+    <Concept Id="E_BREAST_BIOPSY_NAVIGATOR">
+      <Comments>Navigator license for Breast Biopsy[Story 29910]</Comments>
+      <String Context="Generic_Medium">BREAST BIOPSY</String>
+    </Concept>
+    <Concept Id="E_AUTO_OB_OPTION">
+      <Comments>Navigator license for Auto OB[Defect 34323]</Comments>
+      <String Context="Generic_Medium">Auto OB</String>
+    </Concept>
+    <Concept Id="E_MYKEYBOARD_OPTION">
+      <Comments>Navigator license for MyLab Remote[Defect 34323]</Comments>
+      <String Context="Generic_Medium">MyLab Remote</String>
+    </Concept>
+    <Concept Id="E_VORTEX_OPTION">
+      <Comments>Vortex license</Comments>
+      <String Context="Generic_Medium">VORTEX</String>
+    </Concept>
+    <Concept Id="E_MR_BREAST_NAVIGATOR">
+      <Comments>Navigator license for MR Breast [Story 36740]</Comments>
+      <String Context="Generic_Medium">MR BREAST</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Models">
+    <Concept Id="E_UNKNOWN_MODEL">
+      <Comments>Equipment's model unknown</Comments>
+      <String Context="Generic_Long">Unrecognized model</String>
+    </Concept >
+    <Concept Id="E_MYLAB_SEVEN_EHD_CRYSTALINE">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB SEVEN eHD CRYSTALINE</String>
+    </Concept >
+    <Concept Id="E_MYLAB_SEVEN_EHD">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB SEVEN eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_SEVEN_VET">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB SEVEN VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_SIX_PLUS">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB SIX PLUS</String>
+    </Concept >
+    <Concept Id="E_MYLAB_ALPHA_EHD_CRYSTALINE">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB ALPHA eHD CRYSTALINE</String>
+    </Concept >
+    <Concept Id="E_MYLAB_ALPHA_EHD">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB ALPHA eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_ALPHA_EHD_CHINA">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB ALPHA eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_ALPHA_VET">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB ALPHA VET</String>
+    </Concept >
+    <Concept Id="E_DESKTOP">
+      <Comments>Desktop model</Comments>
+      <String Context="Generic_Long">DESKTOP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_SIX">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB SIX</String>
+    </Concept >
+    <Concept Id="E_MYLAB_SIX_VET">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB SIX VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_GAMMA">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB GAMMA</String>
+    </Concept >
+    <Concept Id="E_MYLAB_GAMMA_VET">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB GAMMA VET</String>
+    </Concept >
+	<Concept Id="E_MYLAB_GAMMA_EHD">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB GAMMA EHD</String>
+    </Concept >
+	<Concept Id="E_MYLAB_GAMMA_EXP">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB GAMMA EXP</String>
+    </Concept >	
+    <Concept Id="E_MYLAB_SHARK">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB SHARK</String>
+    </Concept >
+    <Concept Id="E_MYLAB_SHARK_VET">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB SHARK VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_SIX_CRYSTALINE">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB SIX CRYSTALINE</String>
+    </Concept >
+    <Concept Id="E_MYLAB_7_EXP">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB 7 eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_7_EHD">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB 7 eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_6_EXP">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB 6 eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_6_EHD">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB 6 eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_KANGDA_III">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">APSARAS</String>
+    </Concept >
+    <Concept Id="E_MYLAB_NINE">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB NINE</String>
+    </Concept >
+    <Concept Id="E_MF190">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB MF190</String>
+    </Concept >
+    <Concept Id="E_MF190_VET">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB MF190 VET</String>
+    </Concept >
+    <Concept Id="E_PP190">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB PP190</String>
+    </Concept >
+    <Concept Id="E_PP190_VET">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB PP190 VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_ECOMEB">
+      <Comments>Equipment's model</Comments>
+      <String Context="Generic_Long">MYLAB ECOMEB</String>
+    </Concept >
+    <Concept Id="SETTINGS WARNING MSG">
+      <Comments>Warning message on model's change with probe settings change</Comments>
+      <String Context="Generic_Long">Switching to this model could remove some existing user presets</String>
+    </Concept >
+    <Concept Id="E_MYLAB_NINE_EXP">
+      <Comments>Equipment's model [StoryID: 8405]</Comments>
+      <String Context="Generic_Long">MyLab Nine eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_NINE_VET">
+      <Comments>Equipment's model [StoryID: 8405]</Comments>
+      <String Context="Generic_Long">MyLab Nine VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X8">
+      <Comments>Equipment's model [StoryID: 8405]</Comments>
+      <String Context="Generic_Long">MyLab X8</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X8_EXP">
+      <Comments>Equipment's model [StoryID: 8405]</Comments>
+      <String Context="Generic_Long">MyLab X8 eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X8_VET">
+      <Comments>Equipment's model [StoryID: 33160]</Comments>
+      <String Context="Generic_Long">MyLab X8 VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X8_EXP_ZH">
+      <Comments>Equipment's model [StoryID: 33160]</Comments>
+      <String Context="Generic_Long">MyLab X8 eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X8_EHD_ZH">
+      <Comments>Equipment's model [StoryID: 33160]</Comments>
+      <String Context="Generic_Long">MyLab X8 eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_NINE_ZH">
+      <Comments>Equipment's model [Task: 25548 ]</Comments>
+      <String Context="Generic_Long">MyLab Nine</String>
+    </Concept >		
+	<Concept Id="E_MYLAB_X7">
+      <Comments>Equipment's model [Task: 25367 ]</Comments>
+      <String Context="Generic_Long">MyLab X7</String>
+    </Concept >		
+    <Concept Id="E_MYLAB_X6">
+      <Comments>Equipment's model [Task: 25367 ]</Comments>
+      <String Context="Generic_Long">MyLab X6</String>
+    </Concept >		
+    <Concept Id="E_MYLAB_X7_VET">
+      <Comments>Equipment's model [Task: 25367 ]</Comments>
+      <String Context="Generic_Long">MyLab X7 VET</String>
+    </Concept >		
+    <Concept Id="E_MYLAB_OMEGA">
+      <Comments>Equipment's model [Task: 25367 ]</Comments>
+      <String Context="Generic_Long">MyLab Omega</String>
+    </Concept >		
+    <Concept Id="E_MYLAB_OMEGA_VET">
+      <Comments>Equipment's model [Task: 25367 ]</Comments>
+      <String Context="Generic_Long">MyLab Omega VET</String>
+    </Concept >		
+    <Concept Id="E_MYLAB_X5">
+      <Comments>Equipment's model [Task: 25367 ]</Comments>
+      <String Context="Generic_Long">MyLab X5</String>
+    </Concept >		
+    <Concept Id="E_MYLAB_X5_VET">
+      <Comments>Equipment's model [Task: 25367 ]</Comments>
+      <String Context="Generic_Long">MyLab X5 VET</String>
+    </Concept >		
+	    <Concept Id="E_MYLAB_SIGMA">
+      <Comments>Equipment's model [Task: 25367 ]</Comments>
+      <String Context="Generic_Long">MyLab Sigma</String>
+    </Concept >		
+    <Concept Id="E_MYLAB_SIGMA_VET">
+      <Comments>Equipment's model [Task: 25367 ]</Comments>
+      <String Context="Generic_Long">MyLab Sigma VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_DELTA">
+      <Comments>Equipment's model [Task: 25835 ]</Comments>
+      <String Context="Generic_Long">MyLab Delta</String>
+    </Concept >
+    <Concept Id="E_MYLAB_DELTA_VET">
+      <Comments>Equipment's model [Task: 25835 ]</Comments>
+      <String Context="Generic_Long">MyLab Delta VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_ANGEL_1">
+      <Comments>Equipment's model [Story 29523 ]</Comments>
+      <String Context="Generic_Long">JUMPER ANGEL 1</String>
+    </Concept >
+    <Concept Id="E_MYLAB_ANGEL_3">
+      <Comments>Equipment's model [Story 29523 ]</Comments>
+      <String Context="Generic_Long">JUMPER ANGEL 3</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X7_EXP_ZH">
+      <Comments>Equipment's model [Story 31721 ]</Comments>
+      <String Context="Generic_Long">MyLab X7 eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X7_EHD_ZH">
+      <Comments>Equipment's model [Story 31721]</Comments>
+      <String Context="Generic_Long">MyLab X7 eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X6_EXP_ZH">
+      <Comments>Equipment's model [Story 31721]</Comments>
+      <String Context="Generic_Long">MyLab X6 eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X6_EHD_ZH">
+      <Comments>Equipment's model [Story 31721]</Comments>
+      <String Context="Generic_Long">MyLab X6 eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X5_ZH">
+      <Comments>Equipment's model [Story 31721]</Comments>
+      <String Context="Generic_Long">MyLab X5</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X5_EXP">
+      <Comments>Equipment's model [Story 31721]</Comments>
+      <String Context="Generic_Long">MyLab X5 eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X5_EHD">
+      <Comments>Equipment's model [Story 31721]</Comments>
+      <String Context="Generic_Long">MyLab X5 eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X6_ZH">
+      <Comments>Equipment's model [Story 31721]</Comments>
+      <String Context="Generic_Long">MyLab X6</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X7_ZH">
+      <Comments>Equipment's model [Story 31721]</Comments>
+      <String Context="Generic_Long">MyLab X7</String>
+    </Concept >
+    <Concept Id="E_I70P_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜i70P</String>
+    </Concept >
+    <Concept Id="E_I70D_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜i70D</String>
+    </Concept >
+    <Concept Id="E_I70_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜i70</String>
+    </Concept >
+    <Concept Id="E_X7P_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X7P</String>
+    </Concept >
+    <Concept Id="E_X7D_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X7D</String>
+    </Concept >
+    <Concept Id="E_X7_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X7</String>
+    </Concept >
+    <Concept Id="E_X7P_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜X7P</String>
+    </Concept >
+    <Concept Id="E_X7D_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜X7D</String>
+    </Concept >
+    <Concept Id="E_X7I_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X7i</String>
+    </Concept >
+    <Concept Id="E_APSARAS7PLUS_OEM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">iUS Apsaras 7+</String>
+    </Concept >
+    <Concept Id="E_APSARAS7_OEM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">iUS Apsaras 7</String>
+    </Concept >
+    <Concept Id="E_I60P_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜i60P</String>
+    </Concept >
+    <Concept Id="E_I60D_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜i60D</String>
+    </Concept >
+    <Concept Id="E_I60_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜i60</String>
+    </Concept >
+    <Concept Id="E_X6P_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X6P</String>
+    </Concept >
+    <Concept Id="E_X6D_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X6D</String>
+    </Concept >
+    <Concept Id="E_X6_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X6</String>
+    </Concept >
+    <Concept Id="E_X6P_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜W60P</String>
+    </Concept >
+    <Concept Id="E_X6D_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜W60D</String>
+    </Concept >
+    <Concept Id="E_I50P_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜i50P</String>
+    </Concept >
+    <Concept Id="E_I50D_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜i50D</String>
+    </Concept >
+    <Concept Id="E_I50_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜i50</String>
+    </Concept >
+    <Concept Id="E_X5P_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X5P</String>
+    </Concept >
+    <Concept Id="E_X5D_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X5D</String>
+    </Concept >
+    <Concept Id="E_X5_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜X5</String>
+    </Concept >
+    <Concept Id="E_X5P_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜W50P</String>
+    </Concept >
+    <Concept Id="E_X5D_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜W50D</String>
+    </Concept >
+    <Concept Id="E_SIGMAD_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜 Sigma D</String>
+    </Concept >
+    <Concept Id="E_SIGMA_LM">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">百胜 Sigma</String>
+    </Concept >
+    <Concept Id="E_IP30D_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜 iP30D</String>
+    </Concept >
+    <Concept Id="E_IP30_LB">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">万东百胜 iP30</String>
+    </Concept >
+    <Concept Id="E_XPRO30">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">ML Xpro30</String>
+    </Concept >
+    <Concept Id="E_XPRO80">
+      <Comments>Equipment's model [Story 36638]</Comments>
+      <String Context="Generic_Long">ML Xpro80</String>
+    </Concept >
+  </LocalizationSection>
+</LocalizationResource>

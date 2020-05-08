@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="Input_Ts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<LocalizationSection InternalNamespace="Common">
+		<Concept Id="SCROLL">
+			<Comments>Scroll item in multicolumn layout</Comments>
+			<String Context="TS_TButton">SCROLL</String>
+		</Concept>
+		<Concept Id="QUIT">
+			<Comments>Quit button</Comments>
+			<String Context="TS_AButton">QUIT</String>
+			<String Context="Generic_Short">QUIT</String>
+		</Concept>
+		<Concept Id="TOOLS">
+			<Comments>it appears on the b8 button on the touch screen device. If pressed, it opens the tools mode</Comments>
+			<String Context="TS_BButton">TOOLS</String>
+		</Concept>
+		<Concept Id="JumpToBasic">
+			<Comments>This string appears on the orage button on the touchscreen to jump to basic configuration page</Comments>
+			<String Context="TS_AButton">BASIC &#171;</String>
+			<String Context="TS_BButton">BASIC &#171;</String>
+		</Concept>
+		<Concept Id="JumpToAdvanced">
+			<Comments>This string appears on the orage button on the touchscreen to jump to advanced configuration page</Comments>
+			<String Context="TS_AButton">ADVANCED &#187;</String>
+			<String Context="TS_BButton">ADVANCED &#187;</String>
+		</Concept>
+		<Concept Id="MorePages">
+			<Comments>This string appears on the orage button on the touchscreen to scroll the tab pages</Comments>
+			<String Context="TS_BButton">MORE</String>
+			<String Context="TS_AButton">MORE</String>
+		</Concept>
+		<Concept Id="WrenchTabCommand">
+			<Comments>This string appears on the tab label of the main monitor settings panel</Comments>
+			<String Context="TS_TabName">Main Monitor Settings</String>
+		</Concept>
+	</LocalizationSection>
+	<LocalizationSection InternalNamespace="VirtualQwerty">
+
+    <Concept Id="LeftFootswitchUsb">
+      <Comments>used only in simulated mode</Comments>
+      <String Context="TS_TabName">LEFTFS</String>
+    </Concept>
+
+    <Concept Id="MiddleFootswitchUsb">
+      <Comments>used only in simulated mode</Comments>
+      <String Context="TS_TabName">MIDDLEFS</String>
+    </Concept>
+
+    <Concept Id="RightFootswitchUsb">
+      <Comments>used only in simulated mode</Comments>
+      <String Context="TS_TabName">RIGHTFS</String>
+    </Concept>
+    
+    
+    
+		<Concept Id="SCROLL">
+			<Comments>Scroll item in multicolumn layout</Comments>
+			<String Context="TS_TButton">SCROLL</String>
+		</Concept>
+		<Concept Id="QUIT">
+			<Comments>Quit button</Comments>
+			<String Context="TS_AButton">QUIT</String>
+			<String Context="Generic_Short">QUIT</String>
+		</Concept>
+		<Concept Id="TOOLS">
+			<Comments>it appears on the b8 button on the touch screen device. If pressed, it opens the tools mode</Comments>
+			<String Context="TS_BButton">TOOLS</String>
+		</Concept>
+		<Concept Id="JumpToBasic">
+			<Comments>This string appears on the orage button on the touchscreen to jump to basic configuration page</Comments>
+			<String Context="TS_AButton">BASIC &#171;</String>
+			<String Context="TS_BButton">BASIC &#171;</String>
+		</Concept>
+		<Concept Id="JumpToAdvanced">
+			<Comments>This string appears on the orage button on the touchscreen to jump to advanced configuration page</Comments>
+			<String Context="TS_AButton">ADVANCED &#187;</String>
+			<String Context="TS_BButton">ADVANCED &#187;</String>
+		</Concept>
+		<Concept Id="MorePages">
+			<Comments>This string appears on the orage button on the touchscreen to scroll the tab pages</Comments>
+			<String Context="TS_BButton">MORE</String>
+			<String Context="TS_AButton">MORE</String>
+		</Concept>
+		<Concept Id="CW">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">CW</String>
+		</Concept>
+		<Concept Id="CFM">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">CFM</String>
+		</Concept>
+		<Concept Id="PW">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">PW</String>
+		</Concept>
+		<Concept Id="Freeze">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Freeze</String>
+		</Concept>
+		<Concept Id="Pointer">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Pointer</String>
+		</Concept>
+		<Concept Id="BMODE">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">BMODE</String>
+		</Concept>
+		<Concept Id="MMODE">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">MMODE</String>
+		</Concept>
+		<Concept Id="LineUpdated">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">LineUpdated</String>
+		</Concept>
+		<Concept Id="Acquire">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Acquire</String>
+		</Concept>
+		<Concept Id="Rev">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Rev</String>
+		</Concept>
+		<Concept Id="Menu">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Menu</String>
+		</Concept>
+		<Concept Id="Print">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Print</String>
+		</Concept>
+		<Concept Id="Print2">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Print2</String>
+		</Concept>
+		<Concept Id="Print3">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Print3</String>
+		</Concept>
+		<Concept Id="Print4">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Print4</String>
+		</Concept>
+		<Concept Id="GenericMeas">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">GenericMeas</String>
+		</Concept>
+		<Concept Id="Measures">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Measures</String>
+		</Concept>
+		<Concept Id="ThreeD">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">ThreeD</String>
+		</Concept>
+		<Concept Id="ETouch">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">ETouch</String>
+		</Concept>
+		<Concept Id="StartEnd">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">StartEnd</String>
+		</Concept>
+		<Concept Id="LeftScreen">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">LeftScreen</String>
+		</Concept>
+		<Concept Id="RightScreen">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">RightScreen</String>
+		</Concept>
+    <Concept Id="CentScreen">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">CenterScreen</String>
+    </Concept>
+		<Concept Id="AutoAdj">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">AutoAdj</String>
+		</Concept>
+    <Concept Id="BodyMark">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">BodyMark</String>
+    </Concept>
+    <Concept Id="Annotation">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">Annotation</String>
+    </Concept>
+    <Concept Id="Clearannotation">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">Clearannotation</String>
+    </Concept>
+		<Concept Id="Clip">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Clip</String>
+		</Concept>
+		<Concept Id="Image">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Image</String>
+		</Concept>
+		<Concept Id="PWD">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">PWD</String>
+		</Concept>
+		<Concept Id="Image_Clip">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">Image_Clip</String>
+		</Concept>
+		<Concept Id="LeftEncSw">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">LeftEncSw</String>
+		</Concept>
+    <Concept Id="RightEncSw">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">RightEncSw</String>
+    </Concept>
+		<Concept Id="EKnob">
+			<Comments>This label appears on the virtual keyboard</Comments>
+			<String Context="TS_TabName">EKnob</String>
+		</Concept>
+    <Concept Id="Custom0">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">Custom0</String>
+    </Concept>
+    <Concept Id="Custom1">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">Custom1</String>
+    </Concept>
+    <Concept Id="Custom2">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">Custom2</String>
+    </Concept>
+    <Concept Id="Custom3">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">Custom3</String>
+    </Concept>
+    <Concept Id="Joy0sw">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">Joy0Sw</String>
+    </Concept>
+    <Concept Id="Joy1sw">
+      <Comments>This label appears on the virtual keyboard</Comments>
+      <String Context="TS_TabName">Joy1Sw</String>
+    </Concept>
+		<Concept Id="French">
+			<Comments>tab on the touchscreen for the qwerty</Comments>
+			<String Context="TS_TabName">French</String>
+		</Concept>
+		<Concept Id="German">
+			<Comments>tab on the touchscreen for the qwerty</Comments>
+			<String Context="TS_TabName">German</String>
+		</Concept>
+		<Concept Id="Italian">
+			<Comments>tab on the touchscreen for the qwerty</Comments>
+			<String Context="TS_TabName">Italian</String>
+		</Concept>
+		<Concept Id="Russian">
+			<Comments>tab on the touchscreen for the qwerty</Comments>
+			<String Context="TS_TabName">Russian</String>
+		</Concept>
+		<Concept Id="US_International">
+			<Comments>tab on the touchscreen for the qwerty</Comments>
+			<String Context="TS_TabName">US_International</String>
+		</Concept>
+		<Concept Id="Danish">
+			<Comments>tab on the touchscreen for the qwerty</Comments>
+			<String Context="TS_TabName">Danish</String>
+		</Concept>
+		<Concept Id="Norwegian">
+			<Comments>tab on the touchscreen for the qwerty</Comments>
+			<String Context="TS_TabName">NORWEGIAN</String>
+		</Concept>
+		<Concept Id="Swedish">
+			<Comments>tab on the touchscreen for the qwerty</Comments>
+			<String Context="TS_TabName">SWEDISH</String>
+		</Concept>
+		<Concept Id="Spanish">
+			<Comments>tab on the touchscreen for the qwerty dedicated to spanish</Comments>
+			<String Context="TS_TabName">SPANISH</String>
+		</Concept>
+		<Concept Id="LatinAmerica">
+			<Comments>tab on the touchscreen for the qwerty dedicated to latinamerica</Comments>
+			<String Context="TS_TabName">LATINAMERICAN</String>
+		</Concept>
+		<Concept Id="Hungarian">
+			<Comments>tab on the touchscreen for the qwerty dedicated to Hungary</Comments>
+			<String Context="TS_TabName">HUNGARIAN</String>
+		</Concept>
+	</LocalizationSection>
+</LocalizationResource>

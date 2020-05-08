@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizationResource ComponentNamespace="TorsionComponent" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="ClipSelection">
+    <Concept Id="SAX_AP_DESCR">
+      <String Context="Generic_Medium">SAX AP</String>
+    </Concept>
+    <Concept Id="SAX_MV_DESCR">
+      <String Context="Generic_Medium">SAX MV</String>
+    </Concept>
+    <Concept Id="HR">
+      <Comments>heart rate</Comments>
+      <String Context="Generic_Short">HR</String>
+    </Concept>
+    <Concept Id="FR">
+      <Comments>frame rate</Comments>
+      <String Context="Generic_Short">FR</String>
+    </Concept>
+    <Concept Id="Warning1">
+      <String Context="Generic_Warning">Only one cycle elaboration is provided</String>
+    </Concept>
+    <Concept Id="Warning2">
+      <String Context="Generic_Warning">The two clips selected for analysis must have comparable cardiac frequency and acquisition frame rate</String>
+    </Concept>
+    <Concept Id="Warning3">
+      <String Context="Generic_Warning">An improper or suboptimal acquisition of the Sax AP projection might lead to significative differences in rotational and torsional results</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="TorsionResults">
+    <Concept Id="RESULTS_TORSION_TITLE">
+      <String Context="Generic_Warning">GLOBAL TORSION ANALYSIS</String>
+    </Concept>
+    <Concept Id="RESULTS_TORSION_RATE_TITLE">
+      <String Context="Generic_Warning">GLOBAL TORSION RATE ANALYSIS</String>
+    </Concept>
+    <Concept Id="RESULTS_WARNING">
+      <Comments>Warning label at the bottom of results page</Comments>
+      <String Context="MD_RT13HelpLine">Warning: the provided values are averaged over each view</String>
+    </Concept>
+    <Concept Id="AP_DATA">
+      <Comments>label for apical curve on graph</Comments>
+      <String Context="Generic_Warning">GLOBAL TORSION ANALYSIS</String>
+    </Concept>
+    <Concept Id="MV_DATA">
+      <Comments>label for apical curve on graph</Comments>
+      <String Context="Generic_Warning">GLOBAL TORSION ANALYSIS</String>
+    </Concept>
+    <Concept Id="APRot_BTN">
+      <Comments>Apical rotation peak selection button</Comments>
+      <String Context="Generic_Medium">Mean Apical Rot</String>
+    </Concept>
+    <Concept Id="BasRot_BTN">
+      <Comments>Basal rotation peak selection button</Comments>
+      <String Context="Generic_Medium">Mean Basal Rot</String>
+    </Concept>
+    <Concept Id="Torsion_BTN">
+      <Comments>Torsion peak selection button</Comments>
+      <String Context="Generic_Medium">Torsion</String>
+    </Concept>
+    <Concept Id="Reset_BTN">
+      <Comments>clear peaks button</Comments>
+      <String Context="Generic_Medium">Clear Points</String>
+    </Concept>
+    <Concept Id="TorsionRate_BTN">
+      <Comments>Torsion peak selection button when torsion rate is displayed</Comments>
+      <String Context="Generic_Medium">Torsion Rate</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Graphs">
+    <Concept Id="Endo_Rotation">
+      <String Context="Generic_Long">ENDO ROTATION [°]</String>
+    </Concept>
+    <Concept Id="Endo_Rotation_Rate">
+      <String Context="Generic_Long">ENDO ROTATION RATE [°/s]</String>
+    </Concept>
+    <Concept Id="Epi_Rotation">
+      <String Context="Generic_Long">EPI ROTATION [°]</String>
+    </Concept>
+    <Concept Id="Epi_Rotation_Rate">
+      <String Context="Generic_Long">EPI ROTATION RATE [°/s]</String>
+    </Concept>
+    
+    <Concept Id="PANEL_TWIST">
+      <String Context="Generic_Medium">TWIST</String>
+    </Concept>
+    <Concept Id="PANEL_UNTWIST">
+      <String Context="Generic_Medium">UNTWIST</String>
+    </Concept>
+
+    <Concept Id="PANEL_TWIST_RATE">
+      <String Context="Generic_Medium">TWIST RATE</String>
+    </Concept>
+    <Concept Id="PANEL_UNTWIST_RATE">
+      <String Context="Generic_Medium">UNTWIST RATE</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="COMMANDS">
+    <Concept Id="ENDO">
+      <String Context="TS_AButton">ENDO</String>
+    </Concept>
+    <Concept Id="EPI">
+      <String Context="TS_AButton">EPI</String>
+    </Concept>
+    <Concept Id="CHANGE_GRAPH">
+      <String Context="TS_TButton">GRAPHS</String>
+    </Concept>
+    <Concept Id="GRAPH_TORSION">
+      <String Context="TS_TButton">TORSION</String>
+    </Concept>
+    <Concept Id="GRAPH_TORSIONRATE">
+      <String Context="TS_TButton">TORS RATE</String>
+    </Concept>
+    <Concept Id="CHANGE_DISPLAY">
+      <String Context="TS_TButton">DISPLAY</String>
+    </Concept>
+    <Concept Id="DISPLAY_TWIST">
+      <String Context="TS_TButton">TWIST</String>
+    </Concept>
+    <Concept Id="DISPLAY_UNTWIST">
+      <String Context="TS_TButton">UNTWIST</String>
+    </Concept>
+
+    <Concept Id="DISPLAY_TWIST_RATE">
+      <String Context="TS_TButton">TWIST RATE</String>
+    </Concept>
+    <Concept Id="DISPLAY_UNTWIST_RATE">
+      <String Context="TS_TButton">UNTWIST RATE</String>
+    </Concept>
+    <Concept Id="CHANGE_VALUE">
+      <String Context="TS_TButton">VALUE/TIME</String>
+    </Concept>
+    <Concept Id="VALUE_VALUE">
+      <String Context="TS_TButton">VALUE</String>
+    </Concept>
+    <Concept Id="VALUE_TTP">
+      <String Context="TS_TButton">TIME TO PEAK</String>
+    </Concept>
+    <Concept Id="ATTACH">
+      <String Context="TS_AButton">ATTACH</String>
+    </Concept>
+    <Concept Id="CONFIRM">
+      <String Context="TS_AButton">CONFIRM</String>
+    </Concept>
+    <Concept Id="REVIEW">
+      <String Context="TS_TabName">REVIEW</String>
+    </Concept>
+    <Concept Id="CLIPSELECTION">
+      <String Context="TS_TabName">CLIP SELECTION</String>
+    </Concept> 
+    <Concept Id="MODIFY">
+      <String Context="TS_AButton">MODIFY</String>
+    </Concept>
+    <Concept Id="GO_TO_TORSION">
+      <String Context="TS_AButton">TORSION</String>
+    </Concept>
+    <Concept Id="SEL_AP">
+      <String Context="TS_TButton">SAX AP</String>
+    </Concept>
+    <Concept Id="SEL_MV">
+      <String Context="TS_TButton">SAX MV</String>
+    </Concept>
+
+    <Concept Id="EXIT">
+      <String Context="TS_AButton">EXIT</String>
+    </Concept>
+    <Concept Id="VALVE_EVENTS">
+      <String Context="TS_AButton">EVENTS</String>
+    </Concept>
+    
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="UnitOfMeasure">
+    <Concept Id="pixel">
+      <String Context="Generic_Short">px</String>
+    </Concept>
+    <Concept Id="mm">
+      <String Context="Generic_Short">mm</String>
+    </Concept>
+    <Concept Id="cm">
+      <String Context="Generic_Short">cm</String>
+    </Concept>
+    <Concept Id="cm_s">
+      <String Context="Generic_Short">cm/s</String>
+    </Concept>
+    <Concept Id="degree">
+      <String Context="Generic_Short">°</String>
+    </Concept>
+    <Concept Id="degree_s">
+      <String Context="Generic_Short">°/s</String>
+    </Concept>
+    <Concept Id="percentage">
+      <String Context="Generic_Short">%</String>
+    </Concept>
+    <Concept Id="percentage_s">
+      <String Context="Generic_Short">%/s</String>
+    </Concept>
+    <Concept Id="dimless">
+      <String Context="Generic_Short"></String>
+    </Concept>
+    <Concept Id="Hz">
+      <String Context="Generic_Short">1/s</String>
+    </Concept>
+    <Concept Id="ms">
+      <String Context="Generic_Short">ms</String>
+    </Concept>
+    <Concept Id="ml">
+      <String Context="Generic_Short">ml</String>
+    </Concept>
+    <Concept Id="cm2">
+      <String Context="Generic_Short">cm²</String>
+    </Concept>
+    <Concept Id="ml_min">
+      <String Context="Generic_Short">ml/min</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="MESSAGES">
+    <Concept Id="EXAM_IN_USE">
+      <String Context="Generic_Warning">Exam already in use</String>
+    </Concept>
+    <Concept Id="EXAM_NOT_AVAILABLE">
+      <String Context="Generic_Warning">Exam not available, operation not performed</String>
+    </Concept>
+    <Concept Id="EXAM_IS_READONLY">
+      <String Context="Generic_Warning">Exam is readonly, please import it in local database and open Torsion environment from there</String>
+    </Concept>
+    <Concept Id="MISSING_PREREQUISITES">
+      <String Context="Generic_Warning">The exam cannot be processed for the following reasons:</String>
+    </Concept>
+    <Concept Id="MISSING_AP_SCORING">
+      <String Context="Generic_Warning">No Sax Ap clip has been processed in XStrain 2D environment</String>
+    </Concept>
+    <Concept Id="MISSING_MV_SCORING">
+      <String Context="Generic_Warning">No Sax Mv clip has been processed in XStrain 2D environment</String>
+    </Concept>
+	<Concept Id="NO_SELECTION_AP">
+      <String Context="Generic_Warning">No Sax Ap clip has been selected</String>
+    </Concept>
+    <Concept Id="NO_SELECTION_MV">
+      <String Context="Generic_Warning">No Sax Mv clip has been selected</String>
+    </Concept>
+    <Concept Id="AP_DATA_CORRUPTED">
+      <String Context="Generic_Warning">Selected Sax AP clip data are corrupted, try to repeat XStrain 2D processing</String>
+    </Concept>
+    <Concept Id="MV_DATA_CORRUPTED">
+      <String Context="Generic_Warning">Selected Sax MV clip data are corrupted, try to repeat XStrain 2D processing</String>
+    </Concept>
+    <Concept Id="DATA_CORRUPTED">
+      <String Context="Generic_Warning">Selected clips data are corrupted, try to change clip selection or repeat XStrain 2D processing</String>
+    </Concept>
+    <Concept Id="HR_NOT_COMPATIBLE">
+      <String Context="Generic_Warning">Selected clips Heart Rate differs more than 10%</String>
+    </Concept>
+    <Concept Id="FR_NOT_COMPATIBLE">
+      <String Context="Generic_Warning">Selected clips Frame Rate differs more than 10%</String>
+    </Concept>
+    <Concept Id="ATTACH_FAILED_FILE_CORRUPTED">
+      <String Context="Generic_Warning">Error on saving data. Data saved in a previous session are corrupted.</String>
+    </Concept>
+  </LocalizationSection> 
+  <LocalizationSection InternalNamespace="ReportLabels">  
+
+    <Concept Id="SectionTitle">
+      <Comments>main report title</Comments>
+      <String Context="Generic_Long">TORSION ANALYSIS</String>
+    </Concept>
+    <Concept Id="Endo">
+      <Comments>main title</Comments>
+      <String Context="Generic_Medium">ENDO</String>
+    </Concept>
+    <Concept Id="Epi">
+      <Comments>main title</Comments>
+      <String Context="Generic_Medium">EPI</String>
+    </Concept>
+
+    <Concept Id="Graph_TwistTypeTorsionTwist">
+      <Comments></Comments>
+      <String Context="Generic_Medium">TWIST</String>
+    </Concept>    
+    <Concept Id="Graph_TwistTypeTorsionUntwist">
+      <Comments></Comments>
+      <String Context="Generic_Medium">UNTWIST</String>
+    </Concept>    
+    <Concept Id="Graph_TwistTypeTorsionRateTwist">
+      <Comments></Comments>
+      <String Context="Generic_Medium">TWIST RATE</String>
+    </Concept>    
+    <Concept Id="Graph_TwistTypeTorsionRateUntwist">
+      <Comments></Comments>
+      <String Context="Generic_Medium">UNTWIST RATE</String>
+    </Concept>
+
+    <Concept Id="GraphTypeTorsion">
+      <Comments></Comments>
+      <String Context="Generic_Medium">TORSION</String>
+    </Concept>
+    <Concept Id="GraphTypeTorsionRate">
+      <Comments></Comments>
+      <String Context="Generic_Medium">TORSION RATE</String>
+    </Concept>
+
+
+    <Concept Id="REPORT_TWIST">
+      <String Context="Generic_Medium">TWIST</String>
+    </Concept>
+    <Concept Id="REPORT_UNTWIST">
+      <String Context="Generic_Medium">UNTWIST</String>
+    </Concept>
+
+    <Concept Id="REPORT_TWIST_RATE">
+      <String Context="Generic_Medium">TWIST RATE</String>
+    </Concept>
+    <Concept Id="REPORT_UNTWIST_RATE">
+      <String Context="Generic_Medium">UNTWIST RATE</String>
+    </Concept>
+
+
+    <!--<Concept Id="Torsion">
+      <Comments>main title</Comments>
+      <String Context="Generic_Medium">ROTATION</String>
+    </Concept>
+    <Concept Id="TorsionRate">
+      <Comments>rotation velocity (main title)</Comments>
+      <String Context="Generic_Medium">ROTATION VEL</String>
+    </Concept>
+    <Concept Id="Twist">
+      <Comments>main title</Comments>
+      <String Context="Generic_Medium">TORSION</String>
+    </Concept>
+    <Concept Id="Untwist">
+      <Comments>main title</Comments>
+      <String Context="Generic_Medium">UNTWIST</String>
+    </Concept>-->
+    <Concept Id="SaxApAcquiredAt">
+      <String Context="Generic_Long">Apical clip acquired at:</String>
+    </Concept>
+    <Concept Id="SaxMvAcquiredAt">
+      <String Context="Generic_Long">Basal clip acquired at:</String>
+    </Concept>
+    <Concept Id="AttachDate">
+      <String Context="Generic_Long">Attached on:</String>
+    </Concept>
+    <Concept Id="Value">
+      <Comments>column header</Comments>
+      <String Context="Generic_Medium">VALUE</String>
+    </Concept>
+    <Concept Id="TimeToPeak">
+      <Comments>column header</Comments>
+      <String Context="Generic_Medium">TIME TO PEAK</String>
+    </Concept>
+    <Concept Id="ApRotLabel">
+      <String Context="Generic_Medium">Apical Rot</String>
+    </Concept>
+    <Concept Id="ApRotRateLabel">
+      <String Context="Generic_Medium">Apical Rot Rate</String>
+    </Concept>
+    <Concept Id="MvRotLabel">
+      <String Context="Generic_Medium">Basal Rot</String>
+    </Concept>
+    <Concept Id="MvRotRateLabel">
+      <String Context="Generic_Medium">Basal Rot Rate</String>
+    </Concept>
+    <Concept Id="TorsionLabel">
+      <String Context="Generic_Medium">Torsion</String>
+    </Concept>
+    <Concept Id="TorsionRateLabel">
+      <String Context="Generic_Medium">Torsion Rate</String>
+    </Concept>
+    <Concept Id="PeakLabel">
+      <String Context="Generic_Medium">Peak</String>
+    </Concept>
+    <Concept Id="TimeToPeakLabel">
+      <String Context="Generic_Medium">Time to Peak</String>
+    </Concept>
+    <Concept Id="RECOIL">
+      <Comments>recoil value label on UI and report attachment</Comments>
+      <String Context="Generic_Medium">Recoil</String>
+    </Concept>
+    <Concept Id="DeleteButton">
+      <String Context="Generic_Medium">DELETE</String>
+    </Concept>
+    <Concept Id="ErrorSection">
+      <Comments>warning on report when data are corrupted</Comments>
+      <String Context="Generic_Warning">WARNING: some data have been skipped because file is corrupted.</String>
+    </Concept>
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="ValveEvents">
+    <Concept Id="EventsButtonOnTs">
+      <String Context="TS_AButton">Events</String>
+    </Concept>
+    <Concept Id="ValveEventsTitle">
+      <String Context="Generic_Medium">Valves Event Marker</String>
+    </Concept>
+    <Concept Id="Doppler">
+      <String Context="Generic_Medium">By Doppler trace</String>
+    </Concept>
+    <Concept Id="MMode">
+      <String Context="Generic_Medium">By M Mode trace</String>
+    </Concept>
+    <Concept Id="WarningMessage">
+      <String Context="Generic_Warning">The valve event markers are only valid if the heart rate is constant from the time MMode Doppler traces and Xstrain 2D clip have been acquired</String>
+    </Concept>
+    <Concept Id="WarningMessageOutOfRange">
+      <String Context="Generic_Warning">Warning: at least one event time marker is exceeding cycle duration and won't be displayed on the graph</String>
+    </Concept>
+    <Concept Id="Subtitle">
+      <String Context="Generic_Long">Markers derived from:</String>
+    </Concept>
+
+
+    <Concept Id="MVO">
+      <String Context="Generic_Medium">Mitral Valve Opening (MVO)</String>
+    </Concept>
+    <Concept Id="MVC">
+      <String Context="Generic_Medium">Mitral Valve Closing (MVC)</String>
+    </Concept>
+    <Concept Id="AVO">
+      <String Context="Generic_Medium">Aortic Valve Opening (AVO)</String>
+    </Concept>
+    <Concept Id="AVC">
+      <String Context="Generic_Medium">Aortic Valve Closing (AVC)</String>
+    </Concept>
+
+    <Concept Id="MVO_Short">
+      <String Context="Generic_Short">MVO</String>
+    </Concept>
+    <Concept Id="MVC_Short">
+      <String Context="Generic_Short">MVC</String>
+    </Concept>
+    <Concept Id="AVO_Short">
+      <String Context="Generic_Short">AVO</String>
+    </Concept>
+    <Concept Id="AVC_Short">
+      <String Context="Generic_Short">AVC</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>
+

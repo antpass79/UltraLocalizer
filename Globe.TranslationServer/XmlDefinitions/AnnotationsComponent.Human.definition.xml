@@ -1,0 +1,881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="AnnotationsComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="HUMAN">
+    <Concept Id="SVC">
+      <Comments>Superior Vena Cava</Comments>
+      <String Context="TS_SButton">SVC</String>
+    </Concept>
+    <Concept Id="THORACIC">
+      <Comments></Comments>
+      <String Context="TS_SButton">THORACIC</String>
+    </Concept>
+    <Concept Id="VEIN">
+      <Comments></Comments>
+      <String Context="TS_SButton">VEIN</String>
+    </Concept>
+    <Concept Id="AREOLA">
+      <Comments></Comments>
+      <String Context="TS_SButton">AREOLA</String>
+    </Concept>
+    <Concept Id="AXILLA">
+      <Comments></Comments>
+      <String Context="TS_SButton">AXILLA</String>
+    </Concept>
+    <Concept Id="COOPER LIGAMENT">
+      <Comments></Comments>
+      <String Context="TS_SButton">COOPER's LIGAMENT</String>
+    </Concept>
+    <Concept Id="DUCT">
+      <Comments></Comments>
+      <String Context="TS_SButton">DUCT</String>
+    </Concept>
+    <Concept Id="NIPPLE">
+      <Comments></Comments>
+      <String Context="TS_SButton">NIPPLE</String>
+    </Concept>
+    <Concept Id="Q1">
+      <Comments></Comments>
+      <String Context="TS_SButton">Q1</String>
+    </Concept>
+    <Concept Id="Q2">
+      <Comments></Comments>
+      <String Context="TS_SButton">Q2</String>
+    </Concept>
+    <Concept Id="Q3">
+      <Comments></Comments>
+      <String Context="TS_SButton">Q3</String>
+    </Concept>
+    <Concept Id="Q4">
+      <Comments></Comments>
+      <String Context="TS_SButton">Q4</String>
+    </Concept>
+    <Concept Id="ASV">
+      <Comments></Comments>
+      <String Context="TS_SButton">ASV</String>
+    </Concept>
+    <Concept Id="AV NODE">
+      <Comments>AtrioVentricular Node</Comments>
+      <String Context="TS_SButton">AV NODE</String>
+    </Concept>
+    <Concept Id="LCA">
+      <Comments>Left Coronary Artery</Comments>
+      <String Context="TS_SButton">LCA</String>
+    </Concept>
+    <Concept Id="LCV">
+      <Comments>Left Coronary Vein</Comments>
+      <String Context="TS_SButton">LCV</String>
+    </Concept>
+    <Concept Id="LPA">
+      <Comments>Left Pulmonary Artery</Comments>
+      <String Context="TS_SButton">LPA</String>
+    </Concept>
+    <Concept Id="LPV">
+      <Comments>Left Pulmonary Vein</Comments>
+      <String Context="TS_SButton">LPV</String>
+    </Concept>
+    <Concept Id="MV">
+      <Comments>Mitral Valve</Comments>
+      <String Context="TS_SButton">MV</String>
+    </Concept>
+    <Concept Id="PSV">
+      <Comments>Pulmonary Semilunar Valve</Comments>
+      <String Context="TS_SButton">PSV</String>
+    </Concept>
+    <Concept Id="RCA">
+      <Comments>Right Coronary Artery</Comments>
+      <String Context="TS_SButton">RCA</String>
+    </Concept>
+    <Concept Id="RCV">
+      <Comments>Right Coronary Vein</Comments>
+      <String Context="TS_SButton">RCV</String>
+    </Concept>
+    <Concept Id="RPA">
+      <Comments>Right Pulmonary Artery</Comments>
+      <String Context="TS_SButton">RPA</String>
+    </Concept>
+    <Concept Id="RPV">
+      <Comments>Right Pulmonary Vein</Comments>
+      <String Context="TS_SButton">RPV</String>
+    </Concept>
+    <Concept Id="SA NODE">
+      <Comments>SinoAtrial Node</Comments>
+      <String Context="TS_SButton">SA NODE</String>
+    </Concept>
+    <Concept Id="TV">
+      <Comments>Tricuspid Valve</Comments>
+      <String Context="TS_SButton">TV</String>
+    </Concept>
+    <Concept Id="3V CORD">
+      <Comments></Comments>
+      <String Context="TS_SButton">3V CORD</String>
+    </Concept>
+    <Concept Id="CERVIX">
+      <Comments></Comments>
+      <String Context="TS_SButton">CERVIX</String>
+    </Concept>
+    <Concept Id="FOLLICLE">
+      <Comments></Comments>
+      <String Context="TS_SButton">FOLLICLE</String>
+    </Concept>
+    <Concept Id="FUNDUS">
+      <Comments></Comments>
+      <String Context="TS_SButton">FUNDUS</String>
+    </Concept>
+    <Concept Id="HUMERUS">
+      <Comments></Comments>
+      <String Context="TS_SButton">HUMERUS</String>
+    </Concept>
+    <Concept Id="LATERAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">LATERAL</String>
+    </Concept>
+    <Concept Id="PLACENTA">
+      <Comments></Comments>
+      <String Context="TS_SButton">PLACENTA</String>
+    </Concept>
+    <Concept Id="ANKLE">
+      <Comments></Comments>
+      <String Context="TS_SButton">ANKLE</String>
+    </Concept>
+    <Concept Id="ARM">
+      <Comments></Comments>
+      <String Context="TS_SButton">ARM</String>
+    </Concept>
+    <Concept Id="CALF">
+      <Comments></Comments>
+      <String Context="TS_SButton">CALF</String>
+    </Concept>
+    <Concept Id="ELBOW">
+      <Comments></Comments>
+      <String Context="TS_SButton">ELBOW</String>
+    </Concept>
+    <Concept Id="FINGER">
+      <Comments></Comments>
+      <String Context="TS_SButton">FINGER</String>
+    </Concept>
+    <Concept Id="FOOT">
+      <Comments></Comments>
+      <String Context="TS_SButton">FOOT</String>
+    </Concept>
+    <Concept Id="FOREARM">
+      <Comments></Comments>
+      <String Context="TS_SButton">FOREARM</String>
+    </Concept>
+    <Concept Id="HIP">
+      <Comments></Comments>
+      <String Context="TS_SButton">HIP</String>
+    </Concept>
+    <Concept Id="KNEE">
+      <Comments></Comments>
+      <String Context="TS_SButton">KNEE</String>
+    </Concept>
+    <Concept Id="SHOULDER">
+      <Comments></Comments>
+      <String Context="TS_SButton">SHOULDER</String>
+    </Concept>
+    <Concept Id="SUPERIOR">
+      <Comments></Comments>
+      <String Context="TS_SButton">SUPERIOR</String>
+    </Concept>
+    <Concept Id="THIGH">
+      <Comments></Comments>
+      <String Context="TS_SButton">THIGH</String>
+    </Concept>
+    <Concept Id="TOE">
+      <Comments></Comments>
+      <String Context="TS_SButton">TOE</String>
+    </Concept>
+    <Concept Id="WRIST">
+      <Comments></Comments>
+      <String Context="TS_SButton">WRIST</String>
+    </Concept>
+    <Concept Id="CEREBELLUM">
+      <Comments></Comments>
+      <String Context="TS_SButton">CEREBELLUM</String>
+    </Concept>
+    <Concept Id="FEMUR">
+      <Comments></Comments>
+      <String Context="TS_SButton">FEMUR</String>
+    </Concept>
+    <Concept Id="3rd VENTRICLE">
+      <Comments></Comments>
+      <String Context="TS_SButton">3rd VENTRICLE</String>
+    </Concept>
+    <Concept Id="4th VENTRICLE">
+      <Comments></Comments>
+      <String Context="TS_SButton">4th VENTRICLE</String>
+    </Concept>
+    <Concept Id="ABDUCT">
+      <Comments></Comments>
+      <String Context="TS_SButton">ABDUCT</String>
+    </Concept>
+    <Concept Id="ACETABULUM">
+      <Comments></Comments>
+      <String Context="TS_SButton">ACETABULUM</String>
+    </Concept>
+    <Concept Id="APPENDIX">
+      <Comments></Comments>
+      <String Context="TS_SButton">APPENDIX</String>
+    </Concept>
+    <Concept Id="CELIAC AXIS">
+      <Comments></Comments>
+      <String Context="TS_SButton">CELIAC AXIS</String>
+    </Concept>
+    <Concept Id="CEREBRAL CORTEX">
+      <Comments></Comments>
+      <String Context="TS_SButton">CEREBRAL CORTEX</String>
+    </Concept>
+    <Concept Id="FEMORAL HEAD">
+      <Comments></Comments>
+      <String Context="TS_SButton">FEMORAL HEAD</String>
+    </Concept>
+    <Concept Id="FOSSA">
+      <Comments></Comments>
+      <String Context="TS_SButton">FOSSA</String>
+    </Concept>
+    <Concept Id="HEMISPHERE">
+      <Comments></Comments>
+      <String Context="TS_SButton">HEMISPHERE</String>
+    </Concept>
+    <Concept Id="LOBE">
+      <Comments></Comments>
+      <String Context="TS_SButton">LOBE</String>
+    </Concept>
+    <Concept Id="OCCIPITAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">OCCIPITAL</String>
+    </Concept>
+    <Concept Id="PARIETAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">PARIETAL</String>
+    </Concept>
+    <Concept Id="THALAMUS">
+      <Comments></Comments>
+      <String Context="TS_SButton">THALAMUS</String>
+    </Concept>
+    <Concept Id="AREOLAR">
+      <Comments></Comments>
+      <String Context="TS_SButton">AREOLAR</String>
+    </Concept>
+    <Concept Id="EPIDIDYMUS">
+      <Comments></Comments>
+      <String Context="TS_SButton">EPIDIDYMUS</String>
+    </Concept>
+    <Concept Id="FATTY">
+      <Comments></Comments>
+      <String Context="TS_SButton">FATTY</String>
+    </Concept>
+    <Concept Id="FIBROUS">
+      <Comments></Comments>
+      <String Context="TS_SButton">FIBROUS</String>
+    </Concept>
+    <Concept Id="LACTIFER">
+      <Comments></Comments>
+      <String Context="TS_SButton">LACTIFER</String>
+    </Concept>
+    <Concept Id="LOBULE">
+      <Comments></Comments>
+      <String Context="TS_SButton">LOBULE</String>
+    </Concept>
+    <Concept Id="PARATHYR">
+      <Comments></Comments>
+      <String Context="TS_SButton">PARATHYR</String>
+    </Concept>
+    <Concept Id="TISSUE">
+      <Comments></Comments>
+      <String Context="TS_SButton">TISSUE</String>
+    </Concept>
+    <Concept Id="TRACHEA">
+      <Comments></Comments>
+      <String Context="TS_SButton">TRACHEA</String>
+    </Concept>
+    <Concept Id="VARICOCELE">
+      <Comments></Comments>
+      <String Context="TS_SButton">VARICOCELE</String>
+    </Concept>
+    <Concept Id="ACA">
+      <Comments>Anterior Cerebral Artery</Comments>
+      <String Context="TS_SButton">ACA</String>
+    </Concept>
+    <Concept Id="ACoA">
+      <Comments>Anterior Communicating Artery</Comments>
+      <String Context="TS_SButton">ACoA</String>
+    </Concept>
+    <Concept Id="BASILAR ARTERY">
+      <Comments></Comments>
+      <String Context="TS_SButton">BASILAR ARTERY</String>
+    </Concept>
+    <Concept Id="BIFURCATION">
+      <Comments></Comments>
+      <String Context="TS_SButton">BIFURCATION</String>
+    </Concept>
+    <Concept Id="C5">
+      <Comments></Comments>
+      <String Context="TS_SButton">C5</String>
+    </Concept>
+    <Concept Id="C6">
+      <Comments></Comments>
+      <String Context="TS_SButton">C6</String>
+    </Concept>
+    <Concept Id="DISTAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">DISTAL</String>
+    </Concept>
+    <Concept Id="DISTAL ICA">
+      <Comments>Distal Internal Carotid Artery</Comments>
+      <String Context="TS_SButton">DISTAL ICA</String>
+    </Concept>
+    <Concept Id="FLOW INVERSION">
+      <Comments></Comments>
+      <String Context="TS_SButton">FLOW INVERSION</String>
+    </Concept>
+    <Concept Id="LONG">
+      <Comments></Comments>
+      <String Context="TS_SButton">LONG</String>
+    </Concept>
+    <Concept Id="MANDIBULAR">
+      <Comments></Comments>
+      <String Context="TS_SButton">MANDIBULAR</String>
+    </Concept>
+    <Concept Id="MCA 1">
+      <Comments>Middle Cerebral Artery segment M1</Comments>
+      <String Context="TS_SButton">MCA 1</String>
+    </Concept>
+    <Concept Id="MCA 2">
+      <Comments>Middle Cerebral Artery segment M2</Comments>
+      <String Context="TS_SButton">MCA 2</String>
+    </Concept>
+    <Concept Id="MID">
+      <Comments></Comments>
+      <String Context="TS_SButton">MID</String>
+    </Concept>
+    <Concept Id="OPHTALMIC A">
+      <Comments>Ophtalmic Artery</Comments>
+      <String Context="TS_SButton">OPHTALMIC A</String>
+    </Concept>
+    <Concept Id="PCA 1">
+      <Comments>Posterior Cerebral Artery segment 1</Comments>
+      <String Context="TS_SButton">PCA 1</String>
+    </Concept>
+    <Concept Id="PCA 2">
+      <Comments>Posterior Cerebral Artery segment 2</Comments>
+      <String Context="TS_SButton">PCA 2</String>
+    </Concept>
+    <Concept Id="PCoA">
+      <Comments>Posterior Communicating Artery</Comments>
+      <String Context="TS_SButton">PCoA</String>
+    </Concept>
+    <Concept Id="PROX">
+      <Comments></Comments>
+      <String Context="TS_SButton">PROX</String>
+    </Concept>
+    <Concept Id="SYPHON">
+      <Comments></Comments>
+      <String Context="TS_SButton">SYPHON</String>
+    </Concept>
+    <Concept Id="TERMINAL ICA">
+      <Comments>Terminal Internal Carotid Artery</Comments>
+      <String Context="TS_SButton">TERMINAL ICA</String>
+    </Concept>
+    <Concept Id="TR.ORBITAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">TR.ORBITAL</String>
+    </Concept>
+    <Concept Id="TR.TEMPORAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">TR.TEMPORAL</String>
+    </Concept>
+    <Concept Id="VERTEBRAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">VERTEBRAL</String>
+    </Concept>
+    <Concept Id="BASE">
+      <Comments></Comments>
+      <String Context="TS_SButton">BASE</String>
+    </Concept>
+    <Concept Id="CAPSULE">
+      <Comments></Comments>
+      <String Context="TS_SButton">CAPSULE</String>
+    </Concept>
+    <Concept Id="CENTR ZONE">
+      <Comments></Comments>
+      <String Context="TS_SButton">CENTR ZONE</String>
+    </Concept>
+    <Concept Id="PERI ZONE">
+      <Comments></Comments>
+      <String Context="TS_SButton">PERI ZONE</String>
+    </Concept>
+    <Concept Id="RECTUM">
+      <Comments></Comments>
+      <String Context="TS_SButton">RECTUM</String>
+    </Concept>
+    <Concept Id="SEMI VES">
+      <Comments></Comments>
+      <String Context="TS_SButton">SEMI VES</String>
+    </Concept>
+    <Concept Id="TRANS ZONE">
+      <Comments></Comments>
+      <String Context="TS_SButton">TRANS ZONE</String>
+    </Concept>
+    <Concept Id="CFA">
+      <Comments>Common Femoral Artery</Comments>
+      <String Context="TS_SButton">CFA</String>
+    </Concept>
+    <Concept Id="CFV">
+      <Comments>Common Femoral Vein</Comments>
+      <String Context="TS_SButton">CFV</String>
+    </Concept>
+    <Concept Id="LCCA">
+      <Comments>Left Common Carotid Artery</Comments>
+      <String Context="TS_SButton">LCCA</String>
+    </Concept>
+    <Concept Id="LECA">
+      <Comments>Left External Carotid Artery</Comments>
+      <String Context="TS_SButton">LECA</String>
+    </Concept>
+    <Concept Id="LICA">
+      <Comments>Left Internal Carotid Artery</Comments>
+      <String Context="TS_SButton">LICA</String>
+    </Concept>
+    <Concept Id="LSV">
+      <Comments>Lesser Saphenous Vein</Comments>
+      <String Context="TS_SButton">LSV</String>
+    </Concept>
+    <Concept Id="PERONEAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">PERONEAL</String>
+    </Concept>
+    <Concept Id="PLAQUE">
+      <Comments></Comments>
+      <String Context="TS_SButton">PLAQUE</String>
+    </Concept>
+    <Concept Id="POPLITEAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">POPLITEAL</String>
+    </Concept>
+    <Concept Id="RECA">
+      <Comments>Right External Carotid Artery</Comments>
+      <String Context="TS_SButton">RECA</String>
+    </Concept>
+    <Concept Id="RCCA">
+      <Comments>Right Common Carotid Artery</Comments>
+      <String Context="TS_SButton">RCCA</String>
+    </Concept>
+    <Concept Id="RICA">
+      <Comments>Right Internal Carotid Artery</Comments>
+      <String Context="TS_SButton">RICA</String>
+    </Concept>
+    <Concept Id="SFA">
+      <Comments>Superficial Femoral Artery</Comments>
+      <String Context="TS_SButton">SFA</String>
+    </Concept>
+    <Concept Id="SFV">
+      <Comments>Superficial Femoral Vein</Comments>
+      <String Context="TS_SButton">SFV</String>
+    </Concept>
+    <Concept Id="TIBIAL">
+      <Comments></Comments>
+      <String Context="TS_SButton">TIBIAL</String>
+    </Concept>
+    <Concept Id="ULNAR">
+      <Comments></Comments>
+      <String Context="TS_SButton">ULNAR</String>
+    </Concept>
+    <Concept Id="RT-TRV-SUP">
+      <Comments>Right Transverse Superior</Comments>
+      <String Context="TS_SButton">RT-TRV-SUP</String>
+    </Concept>
+    <Concept Id="RT-TRV-MID">
+      <Comments>Right Transverse Middle</Comments>
+      <String Context="TS_SButton">RT-TRV-MID</String>
+    </Concept>
+    <Concept Id="RT-TRV-INF">
+      <Comments>Right Transverse Inferior</Comments>
+      <String Context="TS_SButton">RT-TRV-INF</String>
+    </Concept>
+    <Concept Id="RT-SAG-LAT">
+      <Comments>Right Sagittal Lateral</Comments>
+      <String Context="TS_SButton">RT-SAG-LAT</String>
+    </Concept>
+    <Concept Id="RT-SAG-MID">
+      <Comments>Right Sagittal Middle</Comments>
+      <String Context="TS_SButton">RT-SAG-MID</String>
+    </Concept>
+    <Concept Id="LT-TRV-SUP">
+      <Comments>Left Transverse Superior</Comments>
+      <String Context="TS_SButton">LT-TRV-SUP</String>
+    </Concept>
+    <Concept Id="LT-TRV-MID">
+      <Comments>Left Transverse Middle</Comments>
+      <String Context="TS_SButton">LT-TRV-MID</String>
+    </Concept>
+    <Concept Id="LT-TRV-INF">
+      <Comments>Left Transverse Inferior</Comments>
+      <String Context="TS_SButton">LT-TRV-INF</String>
+    </Concept>
+    <Concept Id="LT-SAG-LAT">
+      <Comments>Left Sagittal Lateral</Comments>
+      <String Context="TS_SButton">LT-SAG-LAT</String>
+    </Concept>
+    <Concept Id="LT-SAG-MID">
+      <Comments>Left Sagittal Middle</Comments>
+      <String Context="TS_SButton">LT-SAG-MID</String>
+    </Concept>
+    <Concept Id="ISTHMUS AP">
+      <Comments>Isthmus Apical</Comments>
+      <String Context="TS_SButton">ISTHMUS AP</String>
+    </Concept>
+    <Concept Id="ISTHMUS SAG">
+      <Comments>Isthmus Sagittal</Comments>
+      <String Context="TS_SButton">ISTHMUS SAG</String>
+    </Concept>
+    <Concept Id="LYMPH NODE">
+      <Comments></Comments>
+      <String Context="TS_SButton">LYMPH NODE</String>
+    </Concept>
+    <Concept Id="PARATHYROID">
+      <Comments></Comments>
+      <String Context="TS_SButton">PARATHYROID</String>
+    </Concept>
+    <Concept Id="RT NECK TRV">
+      <Comments>Right Neck Transverse</Comments>
+      <String Context="TS_SButton">RT NECK TRV</String>
+    </Concept>
+    <Concept Id="RT NECK SAG">
+      <Comments>Right Neck Sagittal</Comments>
+      <String Context="TS_SButton">RT NECK SAG</String>
+    </Concept>
+    <Concept Id="LT NECK TRV">
+      <Comments>Right Neck Transverse</Comments>
+      <String Context="TS_SButton">RT NECK TRV</String>
+    </Concept>
+    <Concept Id="LT NECK SAG">
+      <Comments>Left Neck Sagittal</Comments>
+      <String Context="TS_SButton">LT NECK SAG</String>
+    </Concept>
+    <Concept Id="LEVEL I">
+      <Comments></Comments>
+      <String Context="TS_SButton">LEVEL I</String>
+    </Concept>
+    <Concept Id="LEVEL II">
+      <Comments></Comments>
+      <String Context="TS_SButton">LEVEL II</String>
+    </Concept>
+    <Concept Id="LEVEL III">
+      <Comments></Comments>
+      <String Context="TS_SButton">LEVEL III</String>
+    </Concept>
+    <Concept Id="LEVEL IV">
+      <Comments></Comments>
+      <String Context="TS_SButton">LEVEL IV</String>
+    </Concept>
+    <Concept Id="LEVEL V">
+      <Comments></Comments>
+      <String Context="TS_SButton">LEVEL V</String>
+    </Concept>
+    <Concept Id="LEVEL VI">
+      <Comments></Comments>
+      <String Context="TS_SButton">LEVEL VI</String>
+    </Concept>
+    <Concept Id="FNAB-UG">
+      <Comments>Fine-Needle Aspiration Biopsy Ultrasound Guided</Comments>
+      <String Context="TS_SButton">FNAB-UG</String>
+    </Concept>
+    <Concept Id="NEEDLE">
+      <Comments></Comments>
+      <String Context="TS_SButton">NEEDLE</String>
+    </Concept>
+    <Concept Id="GB">
+      <Comments>Gallbladder abbreviation</Comments>
+      <String Context="TS_SButton">GB</String>
+    </Concept>
+    <Concept Id="CD">
+      <Comments></Comments>
+      <String Context="TS_SButton">CD</String>
+    </Concept>
+    <Concept Id="PANC">
+      <Comments>Pancreas abbreviation</Comments>
+      <String Context="TS_SButton">PANC</String>
+    </Concept>
+    <Concept Id="HEPATIC VEINS">
+      <Comments></Comments>
+      <String Context="TS_SButton">HEPATIC VEINS</String>
+    </Concept>
+    <Concept Id="PORTAL VEINS">
+      <Comments></Comments>
+      <String Context="TS_SButton">PORTAL VEINS</String>
+    </Concept>
+    <Concept Id="ILIAC">
+      <Comments></Comments>
+      <String Context="TS_SButton">ILIAC</String>
+    </Concept>
+    <Concept Id="CELIAC">
+      <Comments></Comments>
+      <String Context="TS_SButton">CELIAC</String>
+    </Concept>
+    <Concept Id="SA">
+      <Comments>SinoAtrial</Comments>
+      <String Context="TS_SButton">SA</String>
+    </Concept>
+    <Concept Id="LA">
+      <Comments></Comments>
+      <String Context="TS_SButton">LA</String>
+    </Concept>
+    <Concept Id="2 CH">
+      <Comments></Comments>
+      <String Context="TS_SButton">2 CH</String>
+    </Concept>
+    <Concept Id="4 CH">
+      <Comments></Comments>
+      <String Context="TS_SButton">4 CH</String>
+    </Concept>
+    <Concept Id="5 CH">
+      <Comments></Comments>
+      <String Context="TS_SButton">5 CH</String>
+    </Concept>
+    <Concept Id="LV">
+      <Comments>Left Ventricular</Comments>
+      <String Context="TS_SButton">LV</String>
+    </Concept>
+    <Concept Id="PW">
+      <Comments></Comments>
+      <String Context="TS_SButton">PW</String>
+    </Concept>
+    <Concept Id="RA">
+      <Comments></Comments>
+      <String Context="TS_SButton">RA</String>
+    </Concept>
+    <Concept Id="RV">
+      <Comments>Right Ventricular</Comments>
+      <String Context="TS_SButton">RV</String>
+    </Concept>
+    <Concept Id="AV">
+      <Comments></Comments>
+      <String Context="TS_SButton">AV</String>
+    </Concept>
+    <Concept Id="Ao">
+      <Comments></Comments>
+      <String Context="TS_SButton">Ao</String>
+    </Concept>
+    <Concept Id="ARCH">
+      <Comments></Comments>
+      <String Context="TS_SButton">ARCH</String>
+    </Concept>
+    <Concept Id="PA">
+      <Comments></Comments>
+      <String Context="TS_SButton">PA</String>
+    </Concept>
+    <Concept Id="PV">
+      <Comments></Comments>
+      <String Context="TS_SButton">PV</String>
+    </Concept>
+    <Concept Id="MIDLINE">
+      <Comments></Comments>
+      <String Context="TS_SButton">MIDLINE</String>
+    </Concept>
+    <Concept Id="CVX">
+      <Comments>Cervix abbreviation</Comments>
+      <String Context="TS_SButton">CVX</String>
+    </Concept>
+    <Concept Id="FIBROID">
+      <Comments></Comments>
+      <String Context="TS_SButton">FIBROID</String>
+    </Concept>
+    <Concept Id="ADNEXA">
+      <Comments></Comments>
+      <String Context="TS_SButton">ADNEXA</String>
+    </Concept>
+    <Concept Id="RIGHT TRAN">
+      <Comments>Right Transverse</Comments>
+      <String Context="TS_SButton">RIGHT TRAN</String>
+    </Concept>
+    <Concept Id="RIGHT LONG">
+      <Comments></Comments>
+      <String Context="TS_SButton">RIGHT LONG</String>
+    </Concept>
+    <Concept Id="RIGHT OBL">
+      <Comments></Comments>
+      <String Context="TS_SButton">RIGHT OBL</String>
+    </Concept>
+    <Concept Id="LEFT TRAN">
+      <Comments>Left Transverse</Comments>
+      <String Context="TS_SButton">LEFT TRAN</String>
+    </Concept>
+    <Concept Id="LEFT LONG">
+      <Comments></Comments>
+      <String Context="TS_SButton">LEFT LONG</String>
+    </Concept>
+    <Concept Id="LEFT OBL">
+      <Comments></Comments>
+      <String Context="TS_SButton">LEFT OBL</String>
+    </Concept>
+    <Concept Id="HAND">
+      <Comments></Comments>
+      <String Context="TS_SButton">HAND</String>
+    </Concept>
+    <Concept Id="HEAD">
+      <Comments></Comments>
+      <String Context="TS_SButton">HEAD</String>
+    </Concept>
+    <Concept Id="ABD">
+      <Comments></Comments>
+      <String Context="TS_SButton">ABD</String>
+    </Concept>
+    <Concept Id="CORD INS">
+      <Comments></Comments>
+      <String Context="TS_SButton">CORD INS</String>
+    </Concept>
+    <Concept Id="ULNA">
+      <Comments></Comments>
+      <String Context="TS_SButton">ULNA</String>
+    </Concept>
+    <Concept Id="RADIUS">
+      <Comments></Comments>
+      <String Context="TS_SButton">RADIUS</String>
+    </Concept>
+    <Concept Id="CHOROID PLEXUS">
+      <Comments></Comments>
+      <String Context="TS_SButton">CHOROID PLEXUS</String>
+    </Concept>
+    <Concept Id="CISTERNA MAGNA">
+      <Comments></Comments>
+      <String Context="TS_SButton">CISTERNA MAGNA</String>
+    </Concept>
+    <Concept Id="4 CH HEART">
+      <Comments></Comments>
+      <String Context="TS_SButton">4 CH HEART</String>
+    </Concept>
+    <Concept Id="LVIT">
+      <Comments></Comments>
+      <String Context="TS_SButton">LVIT</String>
+    </Concept>
+    <Concept Id="IAS">
+      <Comments></Comments>
+      <String Context="TS_SButton">IAS</String>
+    </Concept>
+    <Concept Id="VSD">
+      <Comments></Comments>
+      <String Context="TS_SButton">VSD</String>
+    </Concept>
+    <Concept Id="ASD">
+      <Comments></Comments>
+      <String Context="TS_SButton">ASD</String>
+    </Concept>
+    <Concept Id="RLQ">
+      <Comments></Comments>
+      <String Context="TS_SButton">RLQ</String>
+    </Concept>
+    <Concept Id="ISTHMUS">
+      <Comments></Comments>
+      <String Context="TS_SButton">ISTHMUS</String>
+    </Concept>
+    <Concept Id="HYDROCELE">
+      <Comments></Comments>
+      <String Context="TS_SButton">HYDROCELE</String>
+    </Concept>
+    <Concept Id="C5 DITTO">
+      <Comments></Comments>
+      <String Context="TS_SButton">C5 DITTO</String>
+    </Concept>
+    <Concept Id="RT to LT">
+      <Comments></Comments>
+      <String Context="TS_SButton">RT to LT</String>
+    </Concept>
+    <Concept Id="BASE TO APEX">
+      <Comments></Comments>
+      <String Context="TS_SButton">BASE TO APEX</String>
+    </Concept>
+    <Concept Id="SEM VES">
+      <Comments></Comments>
+      <String Context="TS_SButton">SEM VES</String>
+    </Concept>
+    <Concept Id="CCA">
+      <Comments></Comments>
+      <String Context="TS_SButton">CCA</String>
+    </Concept>
+    <Concept Id="BULB">
+      <Comments></Comments>
+      <String Context="TS_SButton">BULB</String>
+    </Concept>
+    <Concept Id="ECA">
+      <Comments></Comments>
+      <String Context="TS_SButton">ECA</String>
+    </Concept>
+    <Concept Id="ICA">
+      <Comments></Comments>
+      <String Context="TS_SButton">ICA</String>
+    </Concept>
+    <Concept Id="VERT">
+      <Comments></Comments>
+      <String Context="TS_SButton">VERT</String>
+    </Concept>
+    <Concept Id="SUBC">
+      <Comments></Comments>
+      <String Context="TS_SButton">SUBC</String>
+    </Concept>
+    <Concept Id="FONTANEL">
+      <Comments></Comments>
+      <String Context="TS_SButton">FONTANEL</String>
+    </Concept>
+    <Concept Id="CAROTID">
+      <Comments></Comments>
+      <String Context="TS_SButton">CAROTID</String>
+    </Concept>
+    <Concept Id="LYMPHATIC NODE">
+      <Comments></Comments>
+      <String Context="TS_SButton">LYMPHATIC NODE</String>
+    </Concept>
+    <Concept Id="AC">
+      <Comments></Comments>
+      <String Context="TS_SButton">AC</String>
+    </Concept>
+    <Concept Id="12:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">12:00</String>
+    </Concept>
+    <Concept Id="1:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">1:00</String>
+    </Concept>
+    <Concept Id="2:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">2:00</String>
+    </Concept>
+    <Concept Id="3:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">3:00</String>
+    </Concept>
+    <Concept Id="4:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">4:00</String>
+    </Concept>
+    <Concept Id="5:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">5:00</String>
+    </Concept>
+    <Concept Id="6:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">6:00</String>
+    </Concept>
+    <Concept Id="7:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">7:00</String>
+    </Concept>
+    <Concept Id="8:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">8:00</String>
+    </Concept>
+    <Concept Id="9:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">9:00</String>
+    </Concept>
+    <Concept Id="10:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">10:00</String>
+    </Concept>
+    <Concept Id="11:00">
+      <Comments>No translation is necessary for this item</Comments>
+      <String Context="TS_SButton">11:00</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

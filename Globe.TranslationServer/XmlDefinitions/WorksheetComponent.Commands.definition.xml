@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="WorksheetComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="WORKSHEET_CMD">
+      <Comments>Open worksheet environment</Comments>
+      <String Context="TS_BButton">Worksheet</String>
+    </Concept>
+    <Concept Id="TREND_CMD">
+      <Comments>Toggle trend mode in worksheet graph page</Comments>
+      <String Context="TS_BButton">TREND</String>
+    </Concept>
+    <Concept Id="NEXT_CMD">
+      <Comments>Toggle between worksheets in multi-applications</Comments>
+      <String Context="TS_TButton">Next</String>
+    </Concept>
+    <Concept Id="GRAPH_TAB">
+      <Comments>TS/MD tab title for viewing graphs in OB report</Comments>
+      <String Context="TS_TabName">GRAPHS</String>
+      <String Context="Generic_Medium">GRAPHS</String>
+    </Concept>
+    <Concept Id="BIO_TAB">
+      <Comments>TS/MD tab title for opening Biophysical profile in OB report</Comments>
+      <String Context="TS_TabName">BIOPHYSICAL</String>
+      <String Context="Generic_Medium">BIOPHYSICAL</String>
+    </Concept>
+    <Concept Id="ObObs_TAB">
+      <Comments>TS/MD tab title for opening observations in OB report</Comments>
+      <String Context="TS_TabName">Survey</String>
+      <String Context="Generic_Medium">Survey</String>
+    </Concept>
+    <Concept Id="MEASURE_TAB">
+      <Comments>TS/MD tab title for viewing application measures</Comments>
+      <String Context="TS_TabName">MEASURE</String>
+      <String Context="Generic_Medium">MEASURE</String>
+    </Concept>
+    <Concept Id="CUSTOM_TAB">
+      <Comments>TS/MD tab title for viewing generic measure added to report</Comments>
+      <String Context="TS_TabName">CUSTOM</String>
+      <String Context="Generic_Medium">CUSTOM</String>
+    </Concept>
+    <Concept Id="SCROLL">
+      <Comments>Scroll for column</Comments>
+      <String Context="TS_TButton">↓ SCROLL WORD ↑</String>
+    </Concept>
+	 <Concept Id="TSOBGraph">
+      <Comments>Obfetal Graph on Touchscreen</Comments>
+      <String Context="TS_TButton">ObGraph</String>
+    </Concept>
+	 <Concept Id="ExitFromOBGraph">
+      <Comments>Exit from Obfetal Graph on Touchscreen</Comments>
+      <String Context="TS_TButton">Exit</String>
+    </Concept>
+	 <Concept Id="ChangeMeasure">
+      <Comments>Change Measure in Obfetal Graph on Touchscreen</Comments>
+      <String Context="TS_TButton">Scroll</String>
+    </Concept>
+    <Concept Id="LATERALITY">
+      <Comments>Toggle button for laterality change</Comments>
+      <String Context="TS_TButton">Side</String>
+    </Concept>
+    <Concept Id="COMPARE">
+      <Comments>Toggle button for compare fetus change</Comments>
+      <String Context="TS_TButton">Compare</String>
+    </Concept>
+    <Concept Id="FETUS">
+      <Comments>Toggle button for fetus change</Comments>
+      <String Context="TS_TButton">FETUS</String>
+    </Concept>
+    <Concept Id="FETUS1">
+      <String Context="TS_TButton">FETUS A</String>
+    </Concept>
+    <Concept Id="FETUS2">
+      <String Context="TS_TButton">FETUS B</String>
+    </Concept>
+    <Concept Id="FETUS3">
+      <String Context="TS_TButton">FETUS C</String>
+    </Concept>
+    <Concept Id="FETUS4">
+      <String Context="TS_TButton">FETUS D</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="EventsBrowser" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="QUERY">
+      <Comments>Generic Query</Comments>
+      <String Context="TS_AButton">QUERY</String>
+    </Concept>
+    <Concept Id="RESET">
+      <Comments>Reset Query fields</Comments>
+      <String Context="TS_AButton">RESET</String>
+    </Concept>
+    <Concept Id="YESTERDAY" >
+    <Comments>Yesterday Query</Comments>
+    <String Context="TS_AButton">YESTERDAY</String>    
+    </Concept>
+    <Concept Id="TODAY">
+      <Comments>Today Query</Comments>
+      <String Context="TS_AButton">TODAY</String>      
+    </Concept>
+    <Concept Id="SELECTALL">
+      <Comments>Select all the items in events list</Comments>
+      <String Context="TS_AButton">SELECT ALL</String>
+    </Concept>
+    <Concept Id="SELECTNONE">
+      <Comments>Unselect all the items in events list</Comments>
+      <String Context="TS_AButton">SELECT NONE</String>
+    </Concept>
+    <Concept Id="TABEVENTS">
+      <Comments>FIRST TAB ON TOUCHSCREEN IN EVENTS BROWSER</Comments>
+      <String Context="TS_AButton">CLINICAL EVENTS</String>
+    </Concept>
+    <Concept Id="GENERATE TEST SET">
+      <Comments></Comments>
+      <String Context="TS_AButton">GENERATE TEST SET</String>
+    </Concept>
+    <Concept Id="EXPORT">
+      <Comments>Export selected exams</Comments>
+      <String Context="TS_AButton">EXPORT</String>
+    </Concept>
+    <Concept Id="EXPORTALLEVENTS">
+      <Comments>Export all events to text file</Comments>
+      <String Context="TS_AButton">EXPORT ALL EVENTS</String>
+    </Concept>
+    <Concept Id="EXPORTSELECTEDEVENTS">
+      <Comments>Export selected events to text file</Comments>
+      <String Context="TS_AButton">EXPORT SELECTED EVENTS</String>
+    </Concept>
+    <Concept Id="EXITCMD">
+      <Comments>Return to exam list</Comments>
+      <String Context="TS_AButton">BACK TO EXAM LIST</String>
+    </Concept>
+    <Concept Id="EVENTS">
+      <Comments>Switch from exam list to Clinical events archive</Comments>
+      <String Context="TS_AButton">HISTORY BROWSER</String>
+    </Concept>
+    <Concept Id="BACKUPREMINDER">
+      <Comments>Switch from exam list to Backup Reminder environment</Comments>
+      <String Context="TS_AButton">BACKUP REMINDER</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

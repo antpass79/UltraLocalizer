@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="StressEcho" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Commands">
+  
+    <Concept Id="CONFIGURATOR NAME">
+      <Comments>Stress echo configurator definition</Comments>
+      <String Context="Generic_Medium">Stress Echo</String>
+    </Concept> 
+    <Concept Id="STRESSECHO_TAB">
+      <String Context="TS_TabName">STRESS ECHO</String>
+    </Concept>
+    <Concept Id="START_STRESS_CMD">
+      <String Context="TS_BButton">STRESS ECHO</String>
+    </Concept>
+    <Concept Id="BY_STAGE">
+      <Comments>Command to organize projections by stage</Comments>
+      <String Context="TS_AButton">BY STAGE</String>
+    </Concept> 
+    <Concept Id="BY_VIEW">
+      <Comments>Command to organize projections by view</Comments>
+      <String Context="TS_AButton">BY VIEW</String>
+    </Concept>     
+    <Concept Id="BY_FREE">
+      <Comments>Command to organize projections freely</Comments>
+      <String Context="TS_AButton">FREE</String>
+    </Concept>
+    <Concept Id="BLANK">
+      <Comments>Command to remove a view from the screen</Comments>
+      <String Context="TS_AButton">BLANK</String>
+    </Concept>
+    <Concept Id="PROT_END">
+      <Comments>Command to terminate a protocol</Comments>
+      <String Context="TS_AButton">PROT. END</String>
+    </Concept>
+    <Concept Id="UNDO">
+      <Comments>Command to erase the last operation</Comments>
+      <String Context="TS_AButton">Undo</String>
+    </Concept>
+    <Concept Id="REDO">
+      <Comments>Command to reverse the undo</Comments>
+      <String Context="TS_AButton">Redo</String>
+    </Concept>
+    <Concept Id="DELETE">
+      <Comments>Command to delete a loop when the user is in Continuous Capture Edit</Comments>
+      <String Context="TS_AButton">DELETE</String>
+    </Concept>
+    <Concept Id="CLEAR">
+      <Comments>Command on touchscreen to place a loop as not assigned</Comments>
+      <String Context="TS_AButton">CLEAR</String>
+    </Concept>
+    <Concept Id="PLAY">
+      <Comments>Command on touchscreen to start the reproduction of clip</Comments>
+      <String Context="TS_AButton">PLAY</String>
+    </Concept>
+    <Concept Id="STOP">
+      <Comments>Command on touchscreen to stop the reproduction of clip</Comments>
+      <String Context="TS_AButton">STOP</String>
+    </Concept>
+    <Concept Id="EXIT">
+      <Comments>Command to terminate and exit</Comments>
+      <String Context="TS_AButton">Exit</String>
+    </Concept>
+    <Concept Id="SCORING">
+      <Comments>Command on touchscreen to enable stress echo scoring</Comments>
+      <String Context="TS_AButton">SCORING</String>
+    </Concept>
+    <Concept Id="SCORE">
+      <Comments>Toggle button to change the segment score</Comments>
+      <String Context="TS_TButton">SCORE</String>
+    </Concept>
+    <Concept Id="SEGMENT">
+      <Comments>Toggle button to scroll the segment in the cardiac projection bitmap</Comments>
+      <String Context="TS_TButton">SEGMENT</String>
+    </Concept>
+    <Concept Id="EDIT">
+      <Comments>Command on touchscreen to enter in the loops assignment in Continuous Capture</Comments>
+      <String Context="TS_AButton">EDIT</String>
+    </Concept>
+    <Concept Id="TIMER">
+      <Comments>Command on touchscreen to reset the timers</Comments>
+      <String Context="TS_AButton">TIMER</String>
+    </Concept>
+    <Concept Id="SETUP_LABELS">
+      <Comments>Command on touchscreen to enter in the labels editor</Comments>
+      <String Context="TS_AButton">SETUP LABELS</String>
+    </Concept>
+    <Concept Id="SCROLL">
+      <Comments>Toggle button to scroll the cycles in the selected view</Comments>
+      <String Context="TS_TButton">SCROLL</String>
+    </Concept>
+    <Concept Id="MODIFY">
+      <Comments>Toggle button to change the label</Comments>
+      <String Context="TS_TButton">MODIFY</String>
+    </Concept>
+    <Concept Id="SELECT">
+      <Comments>Toggle button to select a loop on the screen</Comments>
+      <String Context="TS_TButton">SELECT</String>
+    </Concept>
+    <Concept Id="PAGE">
+      <Comments>Toggle button to change the page in Continuous Capture Editor</Comments>
+      <String Context="TS_TButton">PAGE</String>
+    </Concept>
+    <Concept Id="ZOOM">
+      <Comments>Toggle button to change the zoom option (zoom/fit screen)</Comments>
+      <String Context="TS_TButton">ZOOM</String>
+    </Concept>
+    <Concept Id="SCREEN_FIT">
+      <Comments>Toggle button to cange the zoon option (zoom/fit screen)</Comments>
+      <String Context="TS_TButton">SCREEN FIT</String>
+    </Concept>
+    <Concept Id="STAGE">
+      <Comments>Toggle button to change the stage on the screen</Comments>
+      <String Context="TS_TButton">STAGE</String>
+    </Concept>
+    <Concept Id="VIEW">
+      <Comments>Toggle button to change the cardiac projection on the screen</Comments>
+      <String Context="TS_TButton">VIEW</String>
+    </Concept>
+    <Concept Id="LOOP">
+      <Comments>Toggle button to change the numbers of loops (cardiac cycles) to be acquired</Comments>
+      <String Context="TS_TButton">LOOP</String>
+    </Concept>
+    <Concept Id="CHANGE_PROTOCOL">
+      <Comments>Command on touchscreen to select a different protocol for the stress echo analysis</Comments>
+      <String Context="TS_AButton">Change protocol</String>
+    </Concept>
+    <Concept Id="OFF">
+      <Comments>Label to indicate that a function is disabled</Comments>
+      <String Context="TS_AButton">OFF</String>
+    </Concept>
+    <Concept Id="ECG_ON">
+      <Comments>Label to indicate that ECG is displayed</Comments>
+      <String Context="TS_AButton">ECG ON</String>
+    </Concept>
+    <Concept Id="ECG_OFF">
+      <Comments>Label to indicate that ECG is hidden</Comments>
+      <String Context="TS_AButton">ECG OFF</String>
+    </Concept>
+    <Concept Id="DELAY">
+      <Comments>Label to indicate the delay (in ms) of the acquisition from the trigger ecg</Comments>
+      <String Context="TS_AButton">DELAY</String>
+    </Concept>
+    <Concept Id="DELAY_OFF">
+      <Comments>Label to indicate that the acquistion delay is off</Comments>
+      <String Context="TS_AButton">DELAY OFF</String>
+    </Concept>
+    <Concept Id="FASI">
+      <Comments>IL TERMINE DEVE ESSERE AL PLURALE</Comments>
+      <String Context="TS_TButton">STAGES</String>
+    </Concept>
+    <Concept Id="PROIEZIONI">
+      <Comments>IL TERMINE DEVE ESSERE AL PLURALE</Comments>
+      <String Context="TS_TButton">VIEWS</String>
+    </Concept>
+    <Concept Id="SPEED">
+      <Comments>Toggle button to change the cine speed</Comments>
+      <String Context="TS_TButton">SPEED</String>
+    </Concept>
+    <Concept Id="ERASE">
+      <Comments>Command on touchscreen to erase a sequence of loops in Continuous Capture Editing</Comments>
+      <String Context="TS_AButton">ERASE</String>
+    </Concept>
+    <Concept Id="ERASE_ALL">
+      <Comments>Command on touchscreen to erase all the sequences in Continuous Capture Editing</Comments>
+      <String Context="TS_AButton">ERASE ALL</String>
+    </Concept>
+    <Concept Id="ACQUISITION TIME">
+      <Comments>Command on touchscreen to encrease the recording time in Continuous Capture acquisition</Comments>
+      <String Context="TS_AButton">ACQUISITION TIME</String>
+    </Concept>
+    <Concept Id="END EDIT">
+      <Comments>Command on touchscreen to terminate the edit after a Continuous Capture acquisition</Comments>
+      <String Context="TS_AButton">END EDIT</String>
+    </Concept>
+    <Concept Id="QUAD">
+      <Comments>Command on touchscreen to fill the screen</Comments>
+      <String Context="TS_AButton">QUAD</String>
+    </Concept>
+    <Concept Id="RENAME STAGE">
+      <Comments>Command on touchscreen to change current stage's name</Comments>
+      <String Context="TS_AButton">RENAME STAGE</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

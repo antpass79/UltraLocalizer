@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="RT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Unit">
+    <Concept Id="Meter">
+      <Comments>Measure unit m</Comments>
+      <String Context="MD_RT11UnitMeas">m</String>
+    </Concept>
+    <Concept Id="Centimeter">
+      <Comments>Measure unit cm</Comments>
+      <String Context="MD_RT11UnitMeas">cm</String>
+    </Concept>
+	<Concept Id="Square_Centimeter">
+      <Comments>Measure unit cm2</Comments>
+      <String Context="MD_RT11UnitMeas">cm²</String>
+    </Concept>
+    <Concept Id="Meter_per_sec">
+      <Comments>Measure unit m/s</Comments>
+      <String Context="MD_RT11UnitMeas">m/s</String>
+    </Concept>
+    <Concept Id="Centimeter_per_sec">
+      <Comments>Measure unit cm/s</Comments>
+      <String Context="MD_RT11UnitMeas">cm/s</String>
+    </Concept>
+    <Concept Id="Millimeter">
+      <Comments>Measure unit mm</Comments>
+      <String Context="MD_RT11UnitMeas">mm</String>
+    </Concept>
+    <Concept Id="Millimeter_per_sec">
+      <Comments>Measure unit mm/s</Comments>
+      <String Context="MD_RT11UnitMeas">mm/s</String>
+    </Concept>
+    <Concept Id="Micrometers">
+      <Comments>Measure unit um</Comments>
+      <String Context="MD_RT11UnitMeas">um</String>
+    </Concept>
+    <Concept Id="Percentual">
+      <Comments>Measure unit Percentual</Comments>
+      <String Context="MD_RT11UnitMeas">%</String>
+    </Concept>
+    <Concept Id="MHz">
+      <Comments>Measure unit Mega Herz</Comments>
+      <String Context="MD_RT11UnitMeas">MHz</String>
+    </Concept>
+    <Concept Id="kHz">
+      <Comments>Measure unit KHerz</Comments>
+      <String Context="MD_RT11UnitMeas">kHz</String>
+    </Concept>
+    <Concept Id="Hz">
+      <Comments>Measure unit Herz</Comments>
+      <String Context="MD_RT11UnitMeas">Hz</String>
+    </Concept>
+    <Concept Id="Bmp">
+      <Comments>Measure unit Bpm</Comments>
+      <String Context="MD_RT11UnitMeas">bpm</String>
+    </Concept>
+    <Concept Id="MillimeterHg">
+      <Comments>Millimeter Hg</Comments>
+      <String Context="MD_RT11UnitMeas">mmHg</String>
+    </Concept>
+    <Concept Id="Meter_per_SquareSec">
+      <Comments>Meter per Square Sec</Comments>
+      <String Context="MD_RT11UnitMeas">m/s²</String>
+    </Concept>
+    <Concept Id="Millisecond">
+      <Comments>Milli Sec.</Comments>
+      <String Context="MD_RT11UnitMeas">ms</String>
+    </Concept>
+    <Concept Id="Second">
+      <Comments>meas unit Second</Comments>
+      <String Context="MD_RT11UnitMeas">s</String>
+    </Concept>
+    <Concept Id="kPa">
+      <Comments>Measure unit KPa</Comments>
+      <String Context="MD_RT11UnitMeas">kPa</String>
+    </Concept>
+    <Concept Id="ABS">
+      <Comments>Absolute value</Comments>
+      <String Context="MD_RT11UnitMeas">ABS</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

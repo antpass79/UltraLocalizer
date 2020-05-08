@@ -1,0 +1,749 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ConfigurationManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <LocalizationSection InternalNamespace="GENERIC">
+    <Concept Id="OPERATION_NOT_AVAILABLE">
+      <Comments>The configuration of the selected component is not avilable (not completed)</Comments>
+      <String Context="Generic_Warning">This operation is not yet available!</String>
+    </Concept>
+    <Concept Id="NAME_NOT_EMPTY">
+      <Comments>Configuration name cannot be empty during saving</Comments>
+      <String Context="Generic_Warning">Please, set the configuration name before pressing the Save button!</String>
+    </Concept>
+    <Concept Id="NAME_NOT_AVAILABLE">
+      <Comments>Configuration name not available, already used by another configuration</Comments>
+      <String Context="Generic_Warning">This configuration name is not available (is used by another configuration)!</String>
+    </Concept>
+    <Concept Id="APPLY_CHANGES_TO_FACTORY">
+      <Comments>When change a Configuration Factory the user could choose if modify the factory or to create a user configuration</Comments>
+      <String Context="Generic_Warning">Do you want to apply changes to factory configuration?</String>
+    </Concept>
+    <Concept Id="CONFIRM_DEL_CONFIG">
+      <Comments>Ask the user if he's sure to remove the configuration</Comments>
+      <String Context="Generic_Warning">Are you sure you want to remove the configuration:</String>
+    </Concept>
+    <Concept Id="CONFIRM_DEL_FACTORY">
+      <Comments>Ask the user if he wants to remove the Factory configuration</Comments>
+      <String Context="Generic_Warning">Do you want to remove the Factory configuration also?</String>
+    </Concept>
+    <Concept Id="FACTORY_NOT_REMOVABLE">
+      <Comments>Factory configuration can't be removed because it's used by another configuration</Comments>
+      <String Context="Generic_Warning">It's impossible to remove the factory configuration because it's linked by another configuration.</String>
+    </Concept>
+    <Concept Id="MAX_CONF_NAME_LENGTH">
+      <Comments>The configuration name is too long.</Comments>
+      <String Context="Generic_Warning">The configuration name can't be so long.</String>
+    </Concept>
+    <Concept Id="CANT_DELET_PRESET_OF_A_COLLECTION">
+      <Comments>Can't remove the configuration because it is part of a collection..</Comments>
+      <String Context="Generic_Warning">The selected configuration can't be removed because it is part of the following collection:</String>
+    </Concept>
+    <Concept Id="CANT_DELET_BECAUSE_THE_LAST">
+      <Comments>Can't remove the configuration because it is the last of the component</Comments>
+      <String Context="Generic_Warning">The selected configuration can't be removed because it is the last for this component</String>
+    </Concept>
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="INTERFACE">
+    <Concept Id="LABEL_PROFILEINUSE">
+      <Comments>It indicates the profile/preset currently in use.</Comments>
+      <String Context="Generic_Long">PROFILE IN USE: </String>
+    </Concept>
+    <Concept Id="CLINICAL_BUTTONS">
+      <Comments>It indicates the subset of clinical configurable components (buttons on main video). It's a Tab title.</Comments>
+      <String Context="Generic_Long">CLINICAL CONFIGURATION</String>
+    </Concept>
+    <Concept Id="RD_BUTTONS">
+      <Comments>It indicates the subset of configurable components (buttons on main video) that the user can use only with RD hardware key. It's a Tab title.</Comments>
+      <String Context="Generic_Long">RD CONFIGURATION</String>
+    </Concept>
+    <Concept Id="SERVICE_BUTTONS">
+      <Comments>It indicates the subset of configurable components (buttons) that the user can use only with Service hardware key</Comments>
+      <String Context="Generic_Long">SERVICE CONFIGURATION</String>
+    </Concept>
+    <Concept Id="SYSTEM_BUTTONS">
+      <Comments>It indicates the subset of system configurable components (buttons on main video). It's a Tab title.</Comments>
+      <String Context="Generic_Long">SYSTEM CONFIGURATION</String>
+    </Concept>
+
+    <Concept Id="IMPORT_MORETHANONETIME">
+      <Comments>It indicates that it's not possible to import more than one item of the same kind with the same name.</Comments>
+      <String Context="Generic_Warning">It's not possible to import more than one item of the same kind with the same name. Only one will be imported. Please check imported data.</String>
+    </Concept>
+
+    <Concept Id="NEW_GROUP">
+      <Comments>The header that indicates the user interface portion dedicated to the creation of a new configuration</Comments>
+      <String Context="Generic_Medium">NEW</String>
+    </Concept>
+    <Concept Id="MODIFY_GROUP">
+      <Comments>The header that indicates the user interface portion dedicated to the modification of an existing configuration</Comments>
+      <String Context="Generic_Medium">MODIFY</String>
+    </Concept>
+
+    <Concept Id="NEW_BUTTON">
+      <Comments>The button used to create a new configuration</Comments>
+      <String Context="Generic_Short">New</String>
+      <String Context="Generic_Medium">NEW</String>
+    </Concept>
+    <Concept Id="DUPLICATE_BUTTON">
+      <Comments>The button (on main video) used to create a new, duplicated, configuration</Comments>
+      <String Context="Generic_Short">Duplicate</String>
+    </Concept>
+    <Concept Id="EDIT_BUTTON">
+      <Comments>The button used to enable modification to the configuration</Comments>
+      <String Context="Generic_Short">Edit</String>
+    </Concept>
+    <Concept Id="DELETE_BUTTON">
+      <Comments>The button used to remove a configuration</Comments>
+      <String Context="Generic_Short">Remove</String>
+      <String Context="Generic_Medium">REMOVE</String>
+    </Concept>
+    <Concept Id="RENAME_BUTTON">
+      <Comments>The button used to rename a configuration</Comments>
+      <String Context="Generic_Medium">Rename</String>
+    </Concept>
+    <Concept Id="SAVE_BUTTON">
+      <Comments>The button used to save changes</Comments>
+      <String Context="Generic_Short">Save</String>
+    </Concept>
+    <Concept Id="CANCEL_BUTTON">
+      <Comments>The button used to discard changes</Comments>
+      <String Context="Generic_Short">Cancel</String>
+    </Concept>
+    <Concept Id="ASK_CONTINUE_BUTTON">
+      <Comments>The button used to continue import operations.</Comments>
+      <String Context="Generic_Short">Continue</String>
+    </Concept>
+    <Concept Id="ASK_OK_BUTTON">
+      <Comments>The button used to confirm import operations. Ask to Elena/MDP for the meaning.</Comments>
+      <String Context="Generic_Short">Import</String>
+    </Concept>
+    <Concept Id="ASK_OKEXPORT_BUTTON">
+      <Comments>The button used to confirm export operations. Ask to Elena/MDP for the meaning.</Comments>
+      <String Context="Generic_Short">Export</String>
+    </Concept>
+    <Concept Id="ASK_CANCEL_BUTTON">
+      <Comments>The button used to discard import/export operations.</Comments>
+      <String Context="Generic_Short">Cancel</String>
+    </Concept>
+    <Concept Id="ASK_ISSELECTED_HEADER">
+      <Comments>The header of grid column that indicates the selection of a row.</Comments>
+      <String Context="Generic_Short">Selected</String>
+    </Concept>
+    <Concept Id="ASK_PRESETNAME_HEADER">
+      <Comments>The header of grid column that indicates the name of the preset.</Comments>
+      <String Context="Generic_Short">Preset name</String>
+    </Concept>
+    <Concept Id="ASK_SELECTALL">
+      <Comments>The checkbox to select all the rows.</Comments>
+      <String Context="Generic_Long">Select all</String>
+    </Concept>
+    <Concept Id="ASK_OVERWRITEONEXPORT1">
+      <Comments>The title of the window where the user can choose which preset has to be overwritten.</Comments>
+      <String Context="Generic_Warning">Presets with the the same name has been found on the key.</String>
+    </Concept>
+    <Concept Id="ASK_OVERWRITEONEXPORT2">
+      <Comments>The title of the window where the user can choose which preset has to be overwritten.2nd row.</Comments>
+      <String Context="Generic_Warning">Choose which presets have to be overwritten.</String>
+    </Concept>
+    <Concept Id="ASK_CHOOSE_ONLY_ONE1">
+      <Comments>It indicates that it is impossible to import two or more preset with the same name.</Comments>
+      <String Context="Generic_Warning">It's impossible to import more than one item of the same kind with the same name.</String>
+    </Concept>
+    <Concept Id="ASK_CHOOSE_ONLY_ONE2">
+      <Comments>It indicates to choose only one preset with the same name to import.</Comments>
+      <String Context="Generic_Warning">Please, select the one you want to import.</String>
+    </Concept>
+    <Concept Id="ASK_EXPORTEDON">
+      <Comments>It indicates the exported data (ie exported on 13-05-2013).</Comments>
+      <String Context="Generic_Short">exported on</String>
+    </Concept>
+    <Concept Id="ASK_OVERWRITEONIMPORT1">
+      <Comments>It indicates that the preset are present in the device.</Comments>
+      <String Context="Generic_Long">The following preset are already present in the device.</String>
+    </Concept>
+    <Concept Id="ASK_OVERWRITEONIMPORT2">
+      <Comments>It indicates to choose the preset to overwrite during the import operation.</Comments>
+      <String Context="Generic_Long">Select the preset you want to overwrite.</String>
+    </Concept>
+    <Concept Id="ASK_IMPORTPRESET_TITLE">
+      <Comments>The title of the window that performs the import preset operation.</Comments>
+      <String Context="Generic_Warning">IMPORT PRESET</String>
+    </Concept>
+    <Concept Id="ASK_EXPORTPRESET_TITLE">
+      <Comments>The title of the window that performs the export preset operation.</Comments>
+      <String Context="Generic_Long">EXPORT PRESET</String>
+    </Concept>
+    <Concept Id="BACKTOMENU_BUTTON">
+      <Comments>The button to go back to main configuration window</Comments>
+      <String Context="Generic_Medium">Back To menu</String>
+    </Concept>
+    <Concept Id="EXIT_BUTTON">
+      <Comments>The button to exit from Menu</Comments>
+      <String Context="Generic_Medium">Exit</String>
+    </Concept>
+    <Concept Id="NOTE_LABEL">
+      <Comments>It indicates the TextBox where the user can put the configuration note</Comments>
+      <String Context="Generic_Medium">Note:</String>
+    </Concept>
+    <Concept Id="NAME_LABEL">
+      <Comments>It indicates the TextBox where the user can put the configuration name</Comments>
+      <String Context="Generic_Medium">Name:</String>
+    </Concept>
+    <Concept Id="ISFACTORY_LABEL">
+      <Comments>Factory configuration</Comments>
+      <String Context="Generic_Short">Factory:</String>
+    </Concept>
+    <Concept Id="OVERWRITE_BUTTON">
+      <Comments>The button used to overwrite an existing configuration</Comments>
+      <String Context="Generic_Medium">Overwrite</String>
+    </Concept>
+    <Concept Id="USER_TAB">
+      <Comments>The header of the tab dedicated to User functionalities</Comments>
+      <String Context="Generic_Medium">USER</String>
+    </Concept>
+    <Concept Id="RD_TAB">
+      <Comments>The header of the tab dedicated to RD functionalities</Comments>
+      <String Context="Generic_Medium">R D</String>
+    </Concept>
+    <Concept Id="SERVICE_TAB">
+      <Comments>The header of the tab dedicated to Service functionalities</Comments>
+      <String Context="Generic_Medium">SERVICE</String>
+    </Concept>
+    <Concept Id="START_EXPORT_BUTTON">
+      <Comments>The button used to start the export operation</Comments>
+      <String Context="Generic_Short">Export</String>
+    </Concept>
+    <Concept Id="START_IMPORT_BUTTON">
+      <Comments>The button used to start the import operation</Comments>
+      <String Context="Generic_Short">Import</String>
+    </Concept>
+    <Concept Id="EXPORT_TAB">
+      <Comments>The title of the export tab</Comments>
+      <String Context="Generic_Medium">Export Operation</String>
+    </Concept>
+    <Concept Id="IMPORT_TAB">
+      <Comments>The title of the import tab</Comments>
+      <String Context="Generic_Medium">Import Operation</String>
+    </Concept>
+    <Concept Id="EXPORT_COMPLETED">
+      <Comments>The message displayed after the export preset operation is completed.</Comments>
+      <String Context="Generic_Warning">Operation completed succesfully.</String>
+    </Concept>
+    <Concept Id="EXPORT_COMPLETED_WITH_ERRORS">
+      <Comments>The message displayed after the export preset operation is completed but a few errors has been verified.</Comments>
+      <String Context="Generic_Warning">Operation completed succesfully; the following error has been verified:</String>
+    </Concept>
+
+    <Concept Id="USB_LABEL">
+      <Comments>The caption that indicate the USB option for the export presets operation</Comments>
+      <String Context="Generic_Short">USB</String>
+    </Concept>
+    <Concept Id="BROWSE_BUTTON">
+      <Comments>The button used to choose the folder where export the presets.</Comments>
+      <String Context="Generic_Short">BROWSE</String>
+    </Concept>
+    <Concept Id="SearchingInProgress" >
+      <Comments>used in browse network dir dialog when the user click a tree view node and the system search for network dirs</Comments>
+      <String Context="Generic_Long" >Searching in progress..</String>
+    </Concept>
+    <Concept Id="NUM_PRESETS" >
+      <Comments>Number of presets that will be exported</Comments>
+      <String Context="Generic_Long">Number of presets: </String>
+    </Concept>
+    <Concept Id="IMPORT_BUTTON">
+      <Comments>The button used to show the window that permit the import presets</Comments>
+      <String Context="Generic_Short">Import</String>
+    </Concept>
+    <Concept Id="FACTORY_BUTTON">
+      <Comments>The button used to reload all factory preset losing all personal customization</Comments>
+      <String Context="Generic_Short">Factory</String>
+      <String Context="Generic_Medium">FACTORY</String>
+    </Concept>
+    <Concept Id="CONFIRM_RESET_TO_FACTORY">
+      <Comments>The message displayed before start the operation that reload all factory preset losing all personal customization.</Comments>
+      <String Context="Generic_Warning">Are you sure to reload all factory preset of the selected application, losing all your personal customization?</String>
+    </Concept>
+
+    <Concept Id="CONFIRM_OVERWRITE_PRESET">
+      <Comments>Ask the user if the selected preset has to be overwritten.</Comments>
+      <String Context="Generic_Warning">Are you sure to overwrite the selected configuration?</String>
+    </Concept>
+
+    <Concept Id="USB_NOTFOUND_WARNING">
+      <Comments>Displayed if none USB is present in the device</Comments>
+      <String Context="Generic_Warning">USB not found!</String>
+    </Concept>
+
+    <Concept Id="ALL_CLINICAL_CONFS">
+      <Comments>Check to select all clinical components to export presets</Comments>
+      <String Context="Generic_Long">All clinical configurations components</String>
+    </Concept>
+    <Concept Id="ALL_SYSTEM_CONFS">
+      <Comments>Check to select all system components to export presets</Comments>
+      <String Context="Generic_Long">All system configurations components</String>
+    </Concept>
+
+    <Concept Id="SELECT_DESIRED">
+      <Comments>Indicates to select the desired configurations components</Comments>
+      <String Context="Generic_Long">Select the desired items to export ...</String>
+    </Concept>
+    <Concept Id="ONLY_CUSTOMS">
+      <Comments>Indicates that only customized presets will be exported.</Comments>
+      <String Context="Generic_Warning">Only customized configurations are exported to USB device.</String>
+    </Concept>
+    <Concept Id="ONLY_CUSTOMS_IMPORT">
+      <Comments>Indicates that only customized presets will be imported.</Comments>
+      <String Context="Generic_Warning">Only customized configurations are importable.</String>
+    </Concept>
+    <Concept Id="SOME_INCOMPATIBLE">
+      <Comments>Indicates that some of the presets in the USB are not compatible with the device (newer version than the device one).</Comments>
+      <String Context="Generic_Warning">Some of the presets are of a newer version respect to the device.</String>
+    </Concept>
+
+    <Concept Id="SELECT_COMPONENT">
+      <Comments>Ask the user to select the components to export the presets</Comments>
+      <String Context="Generic_Warning">Please, select the component before press the Export button.</String>
+    </Concept>
+    <Concept Id="NO_PRESETS_EXPORTABLE">
+      <Comments>There are no customized configurations for the selected components.</Comments>
+      <String Context="Generic_Warning">The selected components haven't any customized configurations to export.</String>
+    </Concept>
+
+    <Concept Id="OVERWRITE_IMPORT_PRESET">
+      <Comments>Ask if the user would like to overwrite the preset when they are already present in the device.</Comments>
+      <String Context="Generic_Warning">Would you like to overwrite the following configurations:</String>
+    </Concept>
+    <Concept Id="OVERWRITE_IMPORT_MEASURELL">
+      <Comments>Ask if the user would like to overwrite the configuration of the measure for all the applications.</Comments>
+      <String Context="Generic_Warning">Would you like to overwrite the measure configuration of all the applications?</String>
+    </Concept>
+
+    <Concept Id="ERROR_DURING_IMPORT_PRESET">
+      <Comments>An error has been verified during the import preset operation</Comments>
+      <String Context="Generic_Long">An error has been verified during the import of the following configurations:</String>
+    </Concept>
+    <Concept Id="IMPORT_COMPLETED">
+      <Comments>The message displayed after the import preset operation is completed.</Comments>
+      <String Context="Generic_Warning">Operation completed succesfully.</String>
+    </Concept>
+    <Concept Id="ERROR_IMPORTING_PRESET">
+      <Comments>An error has been verified during a import preset operation</Comments>
+      <String Context="Generic_Warning">An error has been verified during the import of a configuration.</String>
+    </Concept>
+    <Concept Id="PRESET_IMPORT_CANT_UPDATE_TO_USER">
+      <Comments>Indicate that the importing configuration is factory</Comments>
+      <String Context="Generic_Warning">Can't convert from factory to user configuration</String>
+    </Concept>
+    <Concept Id="PRESET_NOT_VALID">
+      <Comments>Indicate that the importing configuration is not valid</Comments>
+      <String Context="Generic_Warning">Not a valid configuration</String>
+    </Concept>
+
+    <Concept Id="UPDATING_PRESET">
+      <Comments>The Presets are to be updated</Comments>
+      <String Context="Generic_Long">Updating presets...</String>
+    </Concept>
+
+    <Concept Id="WAIT_FOR_SCANNING_USB">
+      <Comments>It is displayed during the scan of the usb key during the import preset operation</Comments>
+      <String Context="Generic_Long">Scanning USB key, please wait ...</String>
+    </Concept>
+
+    <Concept Id="MAJORVERSION_NOTCOMPATIBLE">
+      <Comments>The preset major version is greater than the one of the device.</Comments>
+      <String Context="Generic_Long">(Major version not compatible)</String>
+    </Concept>
+    <Concept Id="EXAM_PAUSED_FOUND">
+      <Comments>Preset configuration not available because of the presence of paused exams in the system.</Comments>
+      <String Context="Generic_Warning">Preset configuration not available because of the presence of paused exams in the system.</String>
+    </Concept>
+    <Concept Id="MSG_PAUSED_EXAMS">
+      <Comments>Some preset configurations area are not available because of the presence of paused exams in the system.</Comments>
+      <String Context="Generic_Warning">Some system configurations are not accessible because there are some paused exams.</String>
+    </Concept>
+    <Concept Id="MSG_HELP_ARROWS">
+      <Comments>Message to inform the user that he can use arrows up and down to change selected preset order position [Story 13966]</Comments>
+      <String Context="Generic_Warning">Use arrows up and down to change preset position.</String>
+    </Concept>
+
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="MENUDESCRIPTOR">
+    <Concept Id="PRESETMANAGER">
+      <Comments>Display a window where the user can manage factory and user preset.</Comments>
+      <String Context="Generic_Medium">Preset Manager</String>
+    </Concept>
+    <Concept Id="LICENSEMANAGER">
+      <Comments>Display a window where the user can manage licenses.</Comments>
+      <String Context="Generic_Medium">License Manager</String>
+    </Concept>
+    <Concept Id="IMPORTEXPORT">
+      <Comments>The button used to show the window that permit the import and/or export of the presets</Comments>
+      <String Context="Generic_Medium">Import Export</String>
+    </Concept>
+    <Concept Id="SYSTEMINFO">
+      <Comments>The button used to show the window that permit the display of system info</Comments>
+      <String Context="Generic_Medium">SYSTEM INFO</String>
+    </Concept>
+    <Concept Id="REMOTESERVICE">
+      <Comments>The button used to show the window that permit to activate the remote assistance</Comments>
+      <String Context="Generic_Medium">REMOTE SAT</String>
+    </Concept>
+  </LocalizationSection>
+
+
+  <LocalizationSection InternalNamespace="ERRORS">
+    <Concept Id="WRITEERROR">
+      <Comments>Input / output error during copy operation</Comments>
+      <String Context="Generic_Warning">ERROR WRITING ON THE DEVICE</String>
+    </Concept>
+    <Concept Id="DISKFULL">
+      <Comments>There is not enough space on the destination device</Comments>
+      <String Context="Generic_Warning">LOW DEVICE SPACE</String>
+    </Concept>
+    <Concept Id="UNKNOWNERROR">
+      <Comments></Comments>
+      <String Context="Generic_Warning">UNKNOWN ERROR</String>
+    </Concept>
+  </LocalizationSection> 
+  
+  <LocalizationSection InternalNamespace="SYSTEM_INFO">
+  <Concept Id="TITLE_SYSTEM_INFO">
+      <Comments>Title of System Info dialog</Comments>
+      <String Context="Generic_Medium">SYSTEM INFO</String>
+    </Concept>
+    <Concept Id="MODEL">
+      <Comments>Name of field "model" in System Info dialog</Comments>
+      <String Context="Generic_Long">MODEL</String>
+    </Concept>
+	<Concept Id="RELEASE">
+      <Comments>Name of field "RELEASE" in System Info dialog</Comments>
+      <String Context="Generic_Long">RELEASE NAME</String>
+    </Concept>
+	<Concept Id="BUILD">
+      <Comments>Name of field "BUILD" in System Info dialog</Comments>
+      <String Context="Generic_Long">BUILD</String>
+    </Concept>
+    <Concept Id="EXPORT_LOGS">
+      <Comments>Name of button "EXPORT LOGS TO USB" in System Info dialog</Comments>
+      <String Context="Generic_Long">EXPORT LOGS TO USB</String>
+    </Concept>
+    <Concept Id="EULA">
+      <Comments>Name of button "EULA" in System Info dialog</Comments>
+      <String Context="Generic_Medium">EULA</String>
+    </Concept>
+	<Concept Id="PREREQUISITES">
+      <Comments>Name of button "PREREQUISITES" in System Info dialog</Comments>
+      <String Context="Generic_Long">PREREQUISITES</String>
+    </Concept>
+    <Concept Id="LOGEXPORTED">
+      <Comments>The Logs were exported on the USB drive</Comments>
+      <String Context="Generic_Warning">LOGS EXPORTED</String>
+    </Concept>
+    <Concept Id="NODISKSPACE">
+      <Comments>The Logs were exported on the USB drive</Comments>
+      <String Context="Generic_Warning">THERE IS NOT ENOUGH SPACE ON THE DEVICE</String>
+    </Concept>
+    <Concept Id="NOUSBDRIVE">
+      <Comments>The Logs were exported on the USB drive</Comments>
+      <String Context="Generic_Warning">NO USB DRIVE FOUND</String>
+    </Concept>
+    <Concept Id="NOWRITABLE">
+      <Comments>The Logs were exported on the USB drive</Comments>
+      <String Context="Generic_Warning">USB NOT WRITABLE</String>
+    </Concept>
+    <Concept Id="EXPORTING">
+      <Comments>title of waiting dialog while exporting</Comments>
+      <String Context="Generic_Long">EXPORTING ON USB</String>
+    </Concept>
+    <Concept Id="RESET TO FACTORY">
+      <Comments>Title of waiting dialog while resetting to factory values</Comments>
+      <String Context="Generic_Long">RESETTING TO FACTORY</String>
+    </Concept>
+    <Concept Id="GENERIC_ERROR">
+      <Comments>title of waiting dialog while exporting logs</Comments>
+      <String Context="Generic_Warning">PROBLEM WHILE EXPORTING ON USB: LOGS NOT EXPORTED</String>
+    </Concept>
+	<Concept Id="BackEnd_Compat_Rev">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">BACKEND C.I.</String>
+    </Concept>
+    <Concept Id="FrontEnd_1_Compat_Rev">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">FRONTEND 1 C.I.</String>
+    </Concept>
+    <Concept Id="FrontEnd_2_Compat_Rev">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">FRONTEND 2 C.I.</String>
+    </Concept>
+    <Concept Id="KeyBoard_Compat_Rev">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">KEYBOARD C.I.</String>
+    </Concept>
+    <Concept Id="ProbeAdapter">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">PROBE ADAPTER C.I.</String>
+    </Concept>
+    <Concept Id="ConnectionBridge">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">CONNECTION BRIDGE C.I.</String>
+    </Concept>
+    <Concept Id="ECG">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">ECG</String>
+    </Concept>
+    <Concept Id="Power_Supplier">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">POWER SUPPLIER</String>
+    </Concept>
+    <Concept Id="Host_Processor_Module">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">HOST PROCESSOR MODULE</String>
+    </Concept>
+    <Concept Id="ModelCode">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">MODEL CODE</String>
+    </Concept>
+    <Concept Id="ModelType">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">MODEL TYPE</String>
+    </Concept>
+    <Concept Id="PcModuleType">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">PC MODULE TYPE</String>
+    </Concept>
+    <Concept Id="PcModuleRev">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">PC MODULE REV.</String>
+    </Concept>
+    <Concept Id="BiosRev">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">BIOS</String>
+    </Concept>
+    <Concept Id="ElectronicRackHwCode">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">ELE. RACK HW CODE</String>
+    </Concept>
+    <Concept Id="SerialNumber">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">S/N</String>
+    </Concept>
+    <Concept Id="HardwareId">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">Hardware ID</String>
+    </Concept>
+    <Concept Id="BOARDS">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">BOARDS</String>
+    </Concept>
+    <Concept Id="CompatIndex">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Medium">C.I.</String>
+    </Concept>
+    <Concept Id="IncludeConfSet">
+      <Comments>Logs exports interface</Comments>
+      <String Context="Generic_Long">Include System Configuration in logs export</String>
+    </Concept>
+    <Concept Id="IncludeOnlyErrors">
+      <Comments>Logs exports interface</Comments>
+      <String Context="Generic_Long">Include only errored sessions in logs export</String>
+    </Concept>
+    <Concept Id="IncludeCrashDump">
+      <Comments>Logs exports interface</Comments>
+      <String Context="Generic_Long">Include crash dumps in logs export</String>
+    </Concept>
+    <Concept Id="LAST_DAY">
+      <Comments>If selected specifies to include in logs export only sessions generated during the last day</Comments>
+      <String Context="Generic_Long">Last Day</String>
+    </Concept>
+    <Concept Id="LAST_WEEK">
+      <Comments>If selected specifies to include in logs export only sessions generated in the last week</Comments>
+      <String Context="Generic_Long">Last Week</String>
+    </Concept>
+    <Concept Id="LAST_MONTH">
+      <Comments>If selected specifies to include in logs export only sessions generated in the last month</Comments>
+      <String Context="Generic_Long">Last Month</String>
+    </Concept>
+    <Concept Id="LAST_THREE_MONTHS">
+      <Comments>If selected specifies to include in logs export only sessions generated in the last three months</Comments>
+      <String Context="Generic_Long">Last Three Months</String>
+    </Concept>
+    <Concept Id="LAST_SIX_MONTHS">
+      <Comments>If selected specifies to include in logs export only sessions generated in the last six months</Comments>
+      <String Context="Generic_Long">Last Six Months</String>
+    </Concept>
+    <Concept Id="LAST_YEAR">
+      <Comments>If selected specifies to include in logs export only sessions generated in the last year</Comments>
+      <String Context="Generic_Long">Last Year</String>
+    </Concept>
+    <Concept Id="ALL">
+      <Comments>If selected specifies to include in logs export all log sessions</Comments>
+      <String Context="Generic_Long">All</String>
+    </Concept>
+	<Concept Id="BITLOCKER_STATUS">
+      <Comments>Encryption Mode</Comments>
+      <String Context="Generic_Long">Encryption Mode</String>
+    </Concept>
+	<Concept Id="BITLOCKER_STATUS_UNKNOWN">
+      <Comments>Unknown</Comments>
+      <String Context="Generic_Long">Unknown</String>
+    </Concept>
+	<Concept Id="BITLOCKER_STATUS_LOCKED">
+      <Comments>Locked</Comments>
+      <String Context="Generic_Long">Locked</String>
+    </Concept>
+	<Concept Id="BITLOCKER_STATUS_UNLOCKED">
+      <Comments>Unlocked</Comments>
+      <String Context="Generic_Long">Unlocked</String>
+    </Concept>
+	<Concept Id="BITLOCKER_STATUS_NOTPROTECTEDBYBITLOCKER">
+      <Comments>Not protected by BitLocker</Comments>
+      <String Context="Generic_Long">Not protected by Encryption</String>
+    </Concept>
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="REMOTE_ASSISTANCE">
+    <Concept Id="MODULE_NOT_INSTALLED">
+      <Comments>The remote assistance program has not been correctly installed.</Comments>
+      <String Context="Generic_Warning">The remote assistance module has not been correctlly installed!</String>
+    </Concept>
+
+    <Concept Id="DISCLAIMER1">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">To enable a Remote Service session the User should directly contact the Esaote Service, to get a PIN that has a limited temporal validity.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER2">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">After inserting the PIN and pressing CONNECT, the Remote Service session will be established.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER3">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">By inserting the PIN and pressing CONNECT the contacted qualified Esaote personnel will get full access to the device and all the healthcare information present in it, for service purposes.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER4">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">A chat window will allow the User to get in touch with the Esaote personnel who is accessing the device;</String>
+    </Concept>
+    <Concept Id="DISCLAIMER4b">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">we suggest to remain close to the device during all the Remote Service session to be able to cooperate if necessary with the Esaote personnel.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER5">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">The User can always abort the Remote Service session by closing the chat window, or can disable the remote access by pressing the red X on the toolbar or the Pause/Break key of the keyboard.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER6">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">NOTE: Remote Service could not be available for all countries and for all network configurations.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER7">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">WARNING: until the end of the Remote Service session the device MUST NOT BE USED for making diagnoses or for live scanning except for testing purposes when requested by the Esaote personnel.</String>
+    </Concept>
+
+
+
+    <Concept Id="CONFIGURE_BTN">
+      <Comments>Button used to configure the network connection (proxy, ...).</Comments>
+      <String Context="Generic_Short">Configure</String>
+    </Concept>
+    <Concept Id="CHECKCONNECTION_BTN">
+      <Comments>Button used to check the connection to the network</Comments>
+      <String Context="Generic_Medium">Check Connection</String>
+    </Concept>
+
+
+    <Concept Id="CONNECT_BTN">
+      <Comments>Button used to start the connection with the remote technician.</Comments>
+      <String Context="Generic_Medium">Connect</String>
+    </Concept>
+
+    <Concept Id="DISCONNECT_BTN">
+      <Comments>Button used to interrupt the connection with the remote technician.</Comments>
+      <String Context="Generic_Medium">Disconnect</String>
+    </Concept>
+
+    <Concept Id="PATHNOTFOUND">
+      <Comments>The remote assistance program has not been correctly installed.</Comments>
+      <String Context="Generic_Warning">The remote assistance module has not been correctlly installed: path not found.</String>
+    </Concept>
+
+    <Concept Id="FILENOTFOUND">
+      <Comments>The remote assistance program has not been correctly installed.</Comments>
+      <String Context="Generic_Warning">The remote assistance module has not been correctlly installed: exe file not found.</String>
+    </Concept>
+
+    <Concept Id="PIN2_NOT_VALID">
+      <Comments>The PIN inserted by the user is not valid, not well done.</Comments>
+      <String Context="Generic_Warning">PIN not valid.</String>
+    </Concept>
+
+    <Concept Id="STATUS_CONNECTING">
+      <Comments>It is displayed to inform the user that the connection is starting.</Comments>
+      <String Context="Generic_Long">Connection in progress . . .</String>
+    </Concept>
+    <Concept Id="STATUS_CECKING">
+      <Comments>It is displayed to inform the user that the system is checking the connection to the network.</Comments>
+      <String Context="Generic_Long">Checking in progress . . .</String>
+    </Concept>
+    <Concept Id="STATUS_SYSTEMCONNECTED">
+      <Comments>It is displayed to inform the user that the connection to the network is available.</Comments>
+      <String Context="Generic_Warning">Connection available.</String>
+    </Concept>
+    <Concept Id="STATUS_SYSTEMDISCONNECTED">
+      <Comments>It is displayed to inform the user that the connection to the network is not available.</Comments>
+      <String Context="Generic_Warning">Connection not available.</String>
+    </Concept>
+
+
+
+    <Concept Id="STATUS_CONNECTION_CLOSED">
+      <Comments>The remote assistance connection has been closed.</Comments>
+      <String Context="Generic_Warning">The connection has been closed.</String>
+    </Concept>
+
+    <Concept Id="STATUS_ERR_UNEXPECTED">
+      <Comments>The remote assistance program has been terminated with an unexpected error.</Comments>
+      <String Context="Generic_Warning">Unknown error: a bad PIN or another unknown error has been verifed.</String>
+    </Concept>
+
+    <Concept Id="STATUS_ERR_INCORRECTPIN">
+      <Comments>The remote assistance program has been terminated because a wrong PIN.</Comments>
+      <String Context="Generic_Warning">Error: a wrong PIN has been entered.</String>
+    </Concept>
+
+    <Concept Id="STATUS_ERR_PINALREADYUSED">
+      <Comments>The remote assistance program has been terminated because the PIN entered has been already used.</Comments>
+      <String Context="Generic_Warning">The user has entered an already used PIN. Please retry.</String>
+    </Concept>
+
+    <Concept Id="STATUS_CONNECTION_CLOSED_BYTHEUSER">
+      <Comments>The remote assistance program has been terminated because the user interrupted it.</Comments>
+      <String Context="Generic_Warning">The remote session has been terminated by the user.</String>
+    </Concept>
+
+    <Concept Id="STATUS_CONNECTION_CLOSED_BYTHETECHNICIAN">
+      <Comments>The remote assistance program has been terminated because the technician interrupted it.</Comments>
+      <String Context="Generic_Warning">The remote session has been terminated by the technician.</String>
+    </Concept>
+
+    <Concept Id="STATUS_ERR_UNKNOWN">
+      <Comments>The remote assistance program has been terminated with an unknown error.</Comments>
+      <String Context="Generic_Long">An unknown error has been verified.</String>
+    </Concept>
+
+    <Concept Id="STATUS_CONNECTION_TERMINATED">
+      <Comments>The remote assistance program has been terminated.</Comments>
+      <String Context="Generic_Warning">The remote session has been terminated.</String>
+    </Concept>
+    <Concept Id="STATUS_CONNECTION_NETNOTAVAILABLE">
+      <Comments>The remote assistance program has been terminated because the connection to the network is not available.</Comments>
+      <String Context="Generic_Warning">Connection not available.</String>
+    </Concept>
+
+  </LocalizationSection>
+
+
+
+</LocalizationResource>

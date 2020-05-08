@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by STEFANO MUGNAI (ESAOTE SpA) -->
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="AnnotationsComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="GENERIC">
+    <Concept Id="ABDOMINAL">
+      <Comments/>
+      <String Context="TS_SButton">ABDOMINAL</String>
+    </Concept>
+    <Concept Id="AORTA">
+      <Comments>Aorta artery</Comments>
+      <String Context="TS_SButton">AORTA</String>
+    </Concept>
+    <Concept Id="ARTERY">
+      <Comments/>
+      <String Context="TS_SButton">ARTERY</String>
+    </Concept>
+    <Concept Id="BLADDER">
+      <Comments/>
+      <String Context="TS_SButton">BLADDER</String>
+    </Concept>
+    <Concept Id="ENDOMETRIUM">
+      <Comments/>
+      <String Context="TS_SButton">ENDOMETRIUM</String>
+    </Concept>
+    <Concept Id="FETUS">
+      <Comments/>
+      <String Context="TS_SButton">FETUS</String>
+    </Concept>
+    <Concept Id="GALLBLADDER">
+      <Comments/>
+      <String Context="TS_SButton">GALLBLADDER</String>
+    </Concept>
+    <Concept Id="IVC">
+      <Comments>Inferior Vena Cava</Comments>
+      <String Context="TS_SButton">IVC</String>
+    </Concept>
+    <Concept Id="KIDNEY">
+      <Comments/>
+      <String Context="TS_SButton">KIDNEY</String>
+    </Concept>
+    <Concept Id="LIVER">
+      <Comments/>
+      <String Context="TS_SButton">LIVER</String>
+    </Concept>
+    <Concept Id="OVARY">
+      <Comments/>
+      <String Context="TS_SButton">OVARY</String>
+    </Concept>
+    <Concept Id="PANCREAS">
+      <Comments/>
+      <String Context="TS_SButton">PANCREAS</String>
+    </Concept>
+    <Concept Id="SPLEEN">
+      <Comments/>
+      <String Context="TS_SButton">SPLEEN</String>
+    </Concept>
+    <Concept Id="LEFT">
+      <Comments/>
+      <String Context="TS_SButton">LEFT</String>
+    </Concept>
+    <Concept Id="RIGHT">
+      <Comments/>
+      <String Context="TS_SButton">RIGHT</String>
+    </Concept>
+    <Concept Id="SAG">
+      <Comments>Sagittal abbreviation</Comments>
+      <String Context="TS_SButton">SAG</String>
+    </Concept>
+    <Concept Id="TRNS">
+      <Comments>Transverse abbreviation</Comments>
+      <String Context="TS_SButton">TRNS</String>
+    </Concept>
+    <Concept Id="ATRIUM">
+      <Comments/>
+      <String Context="TS_SButton">ATRIUM</String>
+    </Concept>
+    <Concept Id="VENA CAVA">
+      <Comments/>
+      <String Context="TS_SButton">VENA CAVA</String>
+    </Concept>
+    <Concept Id="VENTRICLE">
+      <Comments/>
+      <String Context="TS_SButton">VENTRICLE</String>
+    </Concept>
+    <Concept Id="HEART">
+      <Comments/>
+      <String Context="TS_SButton">HEART</String>
+    </Concept>
+    <Concept Id="SAGITTAL">
+      <Comments>Imaginary plane from the top to the bottom of the body</Comments>
+      <String Context="TS_SButton">SAGITTAL</String>
+    </Concept>
+    <Concept Id="TRANSVERSE">
+      <Comments>Imaginary plane that divides the body into superior and inferior parts</Comments>
+      <String Context="TS_SButton">TRANSVERSE</String>
+    </Concept>
+    <Concept Id="UTERUS">
+      <Comments/>
+      <String Context="TS_SButton">UTERUS</String>
+    </Concept>
+    <Concept Id="YOLK SAC">
+      <Comments/>
+      <String Context="TS_SButton">YOLK SAC</String>
+    </Concept>
+    <Concept Id="ANTERIOR">
+      <Comments/>
+      <String Context="TS_SButton">ANTERIOR</String>
+    </Concept>
+    <Concept Id="INFERIOR">
+      <Comments/>
+      <String Context="TS_SButton">INFERIOR</String>
+    </Concept>
+    <Concept Id="MEDIAL">
+      <Comments/>
+      <String Context="TS_SButton">MEDIAL</String>
+    </Concept>
+    <Concept Id="OBLIQUE">
+      <Comments/>
+      <String Context="TS_SButton">OBLIQUE</String>
+    </Concept>
+    <Concept Id="POSTERIOR">
+      <Comments/>
+      <String Context="TS_SButton">POSTERIOR</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL">
+      <Comments/>
+      <String Context="TS_SButton">TRANSVERSAL</String>
+    </Concept>
+    <Concept Id="FLUID">
+      <Comments/>
+      <String Context="TS_SButton">TRANSVERSAL</String>
+    </Concept>
+    <Concept Id="GLAND">
+      <Comments/>
+      <String Context="TS_SButton">GLAND</String>
+    </Concept>
+    <Concept Id="TESTIS">
+      <Comments/>
+      <String Context="TS_SButton">TESTIS</String>
+    </Concept>
+    <Concept Id="TESTICLE">
+      <Comments/>
+      <String Context="TS_SButton">TESTICLE</String>
+    </Concept>
+    <Concept Id="THYROID">
+      <Comments/>
+      <String Context="TS_SButton">THYROID</String>
+    </Concept>
+    <Concept Id="VESSEL">
+      <Comments/>
+      <String Context="TS_SButton">VESSEL</String>
+    </Concept>
+    <Concept Id="APEX">
+      <Comments/>
+      <String Context="TS_SButton">APEX</String>
+    </Concept>
+    <Concept Id="COLON">
+      <Comments/>
+      <String Context="TS_SButton">COLON</String>
+    </Concept>
+    <Concept Id="PROSTATE">
+      <Comments/>
+      <String Context="TS_SButton">PROSTATE</String>
+    </Concept>
+    <Concept Id="URETHRA">
+      <Comments/>
+      <String Context="TS_SButton">URETHRA</String>
+    </Concept>
+    <Concept Id="MEDIAN">
+      <Comments/>
+      <String Context="TS_SButton">MEDIAN</String>
+    </Concept>
+    <Concept Id="RADIAL">
+      <Comments/>
+      <String Context="TS_SButton">RADIAL</String>
+    </Concept>
+    <Concept Id="NODULE">
+      <Comments/>
+      <String Context="TS_SButton">NODULE</String>
+    </Concept>
+    <Concept Id="CYST">
+      <Comments/>
+      <String Context="TS_SButton">CYST</String>
+    </Concept>
+    <Concept Id="IVS">
+      <Comments/>
+      <String Context="TS_SButton">IVS</String>
+    </Concept>
+    <Concept Id="LVOT">
+      <Comments>Left Ventricular Outflow Tract</Comments>
+      <String Context="TS_SButton">LVOT</String>
+    </Concept>
+    <Concept Id="RVOT">
+      <Comments>Right Ventricular Outflow Tract</Comments>
+      <String Context="TS_SButton">RVOT</String>
+    </Concept>
+    <Concept Id="DIASTOLE">
+      <Comments/>
+      <String Context="TS_SButton">DIASTOLE</String>
+    </Concept>
+    <Concept Id="SISTOLE">
+      <Comments/>
+      <String Context="TS_SButton">SISTOLE</String>
+    </Concept>
+    <Concept Id="SPINE">
+      <Comments/>
+      <String Context="TS_SButton">SPINE</String>
+    </Concept>
+    <Concept Id="STOMACH">
+      <Comments/>
+      <String Context="TS_SButton">STOMACH</String>
+    </Concept>
+    <Concept Id="GEST SAC">
+      <Comments/>
+      <String Context="TS_SButton">GEST SAC</String>
+    </Concept>
+    <Concept Id="NORMAL">
+      <Comments/>
+      <String Context="TS_SButton">NORMAL</String>
+    </Concept>
+    <Concept Id="ENLARGED">
+      <Comments/>
+      <String Context="TS_SButton">ENLARGED</String>
+    </Concept>
+    <Concept Id="HYPOECHOIC">
+      <Comments/>
+      <String Context="TS_SButton">HYPOECHOIC</String>
+    </Concept>
+    <Concept Id="HYPERECHOIC">
+      <Comments/>
+      <String Context="TS_SButton">HYPERECHOIC</String>
+    </Concept>
+    <Concept Id="HETEROGENEOUS">
+      <Comments/>
+      <String Context="TS_SButton">HETEROGENEOUS</String>
+    </Concept>
+    <Concept Id="TUMOR">
+      <Comments/>
+      <String Context="TS_SButton">TUMOR</String>
+    </Concept>
+    <Concept Id="METASTASIS">
+      <Comments/>
+      <String Context="TS_SButton">METASTASIS</String>
+    </Concept>
+    <Concept Id="HEMATOMA">
+      <Comments/>
+      <String Context="TS_SButton">HEMATOMA</String>
+    </Concept>
+    <Concept Id="ABSCESS">
+      <Comments/>
+      <String Context="TS_SButton">ABSCESS</String>
+    </Concept>
+    <Concept Id="OBSTRUCTION">
+      <Comments/>
+      <String Context="TS_SButton">OBSTRUCTION</String>
+    </Concept>
+    <Concept Id="CALCULI">
+      <Comments/>
+      <String Context="TS_SButton">CALCULI</String>
+    </Concept>
+    <Concept Id="ENDOMETRITIS">
+      <Comments/>
+      <String Context="TS_SButton">ENDOMETRITIS</String>
+    </Concept>
+    <Concept Id="UMB CORD">
+      <Comments/>
+      <String Context="TS_SButton">UMB CORD</String>
+    </Concept>
+    <Concept Id="LIMBS">
+      <Comments/>
+      <String Context="TS_SButton">LIMBS</String>
+    </Concept>
+    <Concept Id="IU DEATH">
+      <Comments/>
+      <String Context="TS_SButton">IU DEATH</String>
+    </Concept>
+    <Concept Id="EMPTY SAC">
+      <Comments/>
+      <String Context="TS_SButton">EMPTY SAC</String>
+    </Concept>
+    <Concept Id="ANECHOIC">
+      <Comments/>
+      <String Context="TS_SButton">ANECHOIC</String>
+    </Concept>
+    <Concept Id="EDEMA">
+      <Comments/>
+      <String Context="TS_SButton">EDEMA</String>
+    </Concept>
+    <Concept Id="SWELLING">
+      <Comments/>
+      <String Context="TS_SButton">SWELLING</String>
+    </Concept>
+    <Concept Id="LAME">
+      <Comments/>
+      <String Context="TS_SButton">LAME</String>
+    </Concept>
+    <Concept Id="MITRAL">
+      <Comments/>
+      <String Context="TS_SButton">MITRAL</String>
+    </Concept>
+    <Concept Id="TRICUSPID">
+      <Comments/>
+      <String Context="TS_SButton">TRICUSPID</String>
+    </Concept>
+    <Concept Id="VALVE">
+      <Comments/>
+      <String Context="TS_SButton">VALVE</String>
+    </Concept>
+    <Concept Id="POST. WALL">
+      <Comments/>
+      <String Context="TS_SButton">POST. WALL</String>
+    </Concept>
+    <Concept Id="PAP. MUSCLE">
+      <Comments/>
+      <String Context="TS_SButton">PAP. MUSCLE</String>
+    </Concept>
+    <Concept Id="STENOSIS">
+      <Comments/>
+      <String Context="TS_SButton">STENOSIS</String>
+    </Concept>
+    <Concept Id="VS DEFECT">
+      <Comments/>
+      <String Context="TS_SButton">VS DEFECT</String>
+    </Concept>
+    <Concept Id="AS DEFECT">
+      <Comments/>
+      <String Context="TS_SButton">AS DEFECT</String>
+    </Concept>
+    <Concept Id="DTA">
+      <Comments>Descending Thoracic Aorta</Comments>
+      <String Context="TS_SButton">DTA</String>
+    </Concept>
+    <Concept Id="PDA">
+      <Comments>Patent Ductus Arteriosus</Comments>
+      <String Context="TS_SButton">PDA</String>
+    </Concept>
+    <Concept Id="LAD">
+      <Comments>Left Anterior Descending</Comments>
+      <String Context="TS_SButton">LAD</String>
+    </Concept>
+    <Concept Id="RCorA">
+      <Comments>Right Coronary Artery</Comments>
+      <String Context="TS_SButton">RCorA</String>
+    </Concept>
+    <Concept Id="LCX">
+      <Comments>Left Circumflex coronary artery</Comments>
+      <String Context="TS_SButton">LCX</String>
+    </Concept>
+    <Concept Id="INTER">
+      <Comments>Aid to describe position (mainly used in by sentence mode)</Comments>
+      <String Context="TS_SButton">INTER</String>
+    </Concept>
+    <Concept Id="SEPTAL">
+      <Comments>Aid to describe position (mainly used in by sentence mode)</Comments>
+      <String Context="TS_SButton">SEPTAL</String>
+    </Concept>
+    <Concept Id="MAIN">
+      <Comments>Aid to describe position (mainly used in by sentence mode)</Comments>
+      <String Context="TS_SButton">MAIN</String>
+    </Concept>
+    <Concept Id="ASCENDING">
+      <Comments>Aid to describe position (mainly used in by sentence mode)</Comments>
+      <String Context="TS_SButton">ASCENDING</String>
+    </Concept>
+    <Concept Id="DESCENDING">
+      <Comments>Aid to describe position (mainly used in by sentence mode)</Comments>
+      <String Context="TS_SButton">DESCENDING</String>
+    </Concept>
+    <Concept Id="PULMONARY">
+      <Comments>annotation mainly used in cardiac application</Comments>
+      <String Context="TS_SButton">PULMONARY</String>
+    </Concept>
+    <Concept Id="WALL">
+      <Comments>annotation mainly used in cardiac application</Comments>
+      <String Context="TS_SButton">WALL</String>
+    </Concept>
+    <Concept Id="ATRIAL">
+      <Comments>annotation mainly used in cardiac application</Comments>
+      <String Context="TS_SButton">ATRIAL</String>
+    </Concept>
+    <Concept Id="VENTRICULAR">
+      <Comments>annotation mainly used in cardiac application</Comments>
+      <String Context="TS_SButton">VENTRICULAR</String>
+    </Concept>
+    <Concept Id="SEPTUM">
+      <Comments>annotation mainly used in cardiac application</Comments>
+      <String Context="TS_SButton">SEPTUM</String>
+    </Concept>
+    <Concept Id="VALVE LEAFLET">
+      <Comments>annotation mainly used in cardiac application</Comments>
+      <String Context="TS_SButton">VALVE LEAFLET</String>
+    </Concept>
+    <Concept Id="AORTIC VALVE">
+      <Comments>annotation mainly used in cardiac application</Comments>
+      <String Context="TS_SButton">AORTIC VALVE</String>
+    </Concept>
+    <Concept Id="PULMONARY VALVE">
+      <Comments>annotation mainly used in cardiac application</Comments>
+      <String Context="TS_SButton">PULMONARY VALVE</String>
+    </Concept>
+    <Concept Id="SINUS VAL">
+      <Comments>Sinuses of Valsalva </Comments>
+      <String Context="TS_SButton">SINUS VAL</String>
+    </Concept>
+    <Concept Id="AV ANN">
+      <Comments>aortic  valve annulus</Comments>
+      <String Context="TS_SButton">AV ANN</String>
+    </Concept>
+    <Concept Id="ASC AO">
+      <Comments>Ascending Aorta</Comments>
+      <String Context="TS_SButton">ASC AO</String>
+    </Concept>
+    <Concept Id="AO ARCH">
+      <Comments>aortic arch</Comments>
+      <String Context="TS_SButton">AO ARCH</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

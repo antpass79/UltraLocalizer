@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="LibraryViewerComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+
+  <!--TS COMMANDS - START-->
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="TABCOMMAND" Ignore="false">
+      <Comments>The Components Tab name</Comments>
+      <String Context="TS_TabName">MYLIBRARY</String>
+    </Concept>
+    <Concept Id="CREDITS" Ignore="false">
+      <Comments>TS command for selecting the Credits about screen</Comments>
+      <String Context="TS_TButton">CREDIT SCREEN</String>
+    </Concept>
+    <Concept Id="VIEWTYPE" Ignore="false">
+      <Comments>TS command for selecting the view type ( value = left/right )</Comments>
+      <String Context="TS_TButton">VIEW TYPE</String>
+    </Concept>
+    <Concept Id="PAGE" Ignore="false">
+      <Comments>TS command for selecting the page ( value = 1, 2, 3 .. )</Comments>
+      <String Context="TS_TButton">PAGE</String>
+    </Concept>
+    <Concept Id="OVERLAY" Ignore="false">
+      <Comments>TS command for selecting the overlay view</Comments>
+      <String Context="TS_TButton">OVERLAY</String>
+    </Concept>
+    <Concept Id="_ON" Ignore="false">
+      <Comments>TS value ON for overlay view</Comments>
+      <String Context="TS_TButton">ON</String>
+    </Concept>
+    <Concept Id="_OFF" Ignore="false">
+      <Comments>TS value OFF for overlay view</Comments>
+      <String Context="TS_TButton">OFF</String>
+    </Concept>
+    <Concept Id="LIVEPREVIEW" Ignore="false">
+      <Comments>TS command for selecting Live Preview</Comments>
+      <String Context="TS_TButton">LIVE PREVIEW</String>
+    </Concept>
+    <Concept Id="FULLSCREEN" Ignore="false">
+      <Comments>TS command for selecting Full Screen</Comments>
+      <String Context="TS_TButton">FULL SCREEN</String>
+    </Concept>
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="Information">
+    <Concept Id="ACCEPTANCETEXT1-A" Ignore="false">
+      <Comments>Library risk accpetance text part 1</Comments>
+      <String Context="Generic_Warning">MYLIBRARY IS A SOFTWARE ENVIROMENT WITH A LIMITED NUMBERS OF IMAGE EXAMPLES THAT MAY HELP THE USER TO PERFORM THE EXAMINATION BECAUSE,IF USED PROPERLY, </String>
+    </Concept>
+    <Concept Id="ACCEPTANCETEXT1-B" Ignore="false">
+      <Comments>Library risk accpetance text part 1</Comments>
+      <String Context="Generic_Warning">IT MAY HELP THE USER TO RECALL THE CORRECT INTERPRETATION OF THE IMAGES AND RECOGNIZE THE MAIN ANATOMICAL STRUCTURES.</String>
+    </Concept>
+    <Concept Id="ACCEPTANCETEXT1-C" Ignore="false">
+      <Comments>Library risk accpetance text part 1</Comments>
+      <String Context="Generic_Warning">MYLIBRARY MUST BE USED IN ACCORDANCE WITH THE FOLLOWING WARNINGS IN ORDER TO AVOID POSSIBLE HARM TO THE PATIENT DUE TO THE WRONG INTERPRETATION OF THE IMAGES </String>
+    </Concept>
+    <Concept Id="ACCEPTANCETEXT1-D" Ignore="false">
+      <Comments>Library risk accpetance text part 1</Comments>
+      <String Context="Generic_Warning">OR INAPPROPRIATE USE OF THE ULTRASOUND EQUIPMENT OR INAPPROPRIATE PERFORMANCE OF THE PROCEDURE.</String>
+    </Concept>
+
+    <Concept Id="ACCEPTANCETEXT2-A" Ignore="false">
+      <Comments>Library risk accpetance text part 2</Comments>
+      <String Context="Generic_Warning">• ONLY A LIMITED NUMBERS OF CASES/IMAGES ARE REPRESENTED AS EXAMPLES WITHOUT CONSIDERING </String>
+	  </Concept>
+    <Concept Id="ACCEPTANCETEXT2-B" Ignore="false">
+      <Comments>Library risk accpetance text part 2</Comments>
+      <String Context="Generic_Warning">ALL POSSIBLE ANATOMICAL VARIANCE OR PATHOLOGICAL FINDINGS BETWEEN DIFFERENT INDIVIDUALS.</String>
+    </Concept>
+
+    <Concept Id="ACCEPTANCETEXT3-A" Ignore="false">
+      <Comments>Library risk accpetance text part 3</Comments>
+      <String Context="Generic_Warning">• ESAOTE UNDERLINE THE IMPORTANCE FOR THE USER TO REACH THROUGH ADEQUATE TRAINING COURSES </String>
+    </Concept>
+    <Concept Id="ACCEPTANCETEXT3-B" Ignore="false">
+      <Comments>Library risk accpetance text part 3</Comments>
+      <String Context="Generic_Warning">PROPER SKILLS IN THE USE OF ULTRASOUND EQUIPMENTS, ULTRASOUND IMAGE INTERPRETATION AND PROCEDURES.</String>
+    </Concept>
+
+    <Concept Id="ACCEPTANCETEXT4-A" Ignore="false">
+      <Comments>Library risk accpetance text part 4</Comments>
+      <String Context="Generic_Warning">• MYLIBRARY CANNOT SUBSTITUTE THE PROPER TRAINING OF THE USER IN THE MANAGEMENT OF THE ULTRASOUND EQUIPMENT, </String>
+    </Concept>
+    <Concept Id="ACCEPTANCETEXT4-B" Ignore="false">
+      <Comments>Library risk accpetance text part 4</Comments>
+      <String Context="Generic_Warning">IN THE INTERPRETATION OF THE ULTRASOUND IMAGES AND IN THE PERFORMANCE OF PROCEDURES.</String>
+    </Concept>
+
+    <Concept Id="ACCEPTANCETEXT5-A" Ignore="false">
+      <Comments>Library risk accpetance text part 5</Comments>
+      <String Context="Generic_Warning">IN ADDITION TO THESE WARNINGS, THE USER SHOULD READ AND FOLLOW THE INSTRUCTIONS AND WARNINGS IN THE USER MANUAL IN </String>
+    </Concept>
+    <Concept Id="ACCEPTANCETEXT5-B" Ignore="false">
+      <Comments>Library risk accpetance text part 5</Comments>
+      <String Context="Generic_Warning">ORDER TO SAFELY USE MYLIBRARY AND IT IS UP TO THE USER TO CORRECTLY INTERPRET THE ULTRASOUND IMAGES AND PERFORM THE </String>
+    </Concept>
+    <Concept Id="ACCEPTANCETEXT5-C" Ignore="false">
+      <Comments>Library risk accpetance text part 5</Comments>
+      <String Context="Generic_Warning">EXAMINATION AND THE PROCEDURES CONSIDERING THE SPECIFIC CONDITIONS OF THE SINGLE PATIENT UNDER EXAMINATION.</String>
+    </Concept>
+
+    <Concept Id="RTWARNINGTEXT" Ignore="false">
+      <Comments>RT Warning text</Comments>
+      <String Context="Generic_Long">THE LIVE PREVIEW IS NOT SUITED TO PERFORM ANY INTERPRETATION OF ULTRASOUND IMAGES</String>
+    </Concept>
+
+    <Concept Id="NOLAYOUTINFOERROR" Ignore="false">
+      <Comments>Library error missing layout information</Comments>
+      <String Context="Generic_Warning">Missing important Library layout information</String>
+    </Concept>
+
+    <Concept Id="NOLICENSEDLIBRARY" Ignore="false">
+      <Comments>Library error when no libraries found</Comments>
+      <String Context="Generic_Warning">No Lincensed Library Found</String>
+    </Concept>
+
+    <Concept Id="LOADING LIBRARY" Ignore="false">
+      <Comments>Wait dialog message while loading library</Comments>
+      <String Context="Generic_Warning">Loading Library, Please wait..</String>
+    </Concept>
+
+  </LocalizationSection>
+
+</LocalizationResource>

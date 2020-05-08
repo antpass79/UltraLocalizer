@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ExamFlowComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="ExamRev" >
+      <Comments>Tab title of touch screen in Real time layout</Comments>
+      <String Context="Generic_Medium" >EXAM REV</String>
+    </Concept >
+    <Concept Id="WarningEndExam" >
+      <Comments>Warning of not closed exam at startup</Comments>
+      <String Context="Generic_Long" >The unit has been turned off without closing the last exam!</String>
+    </Concept >
+    <Concept Id="OK" >
+      <Comments></Comments>
+      <String Context="TS_AButton">OK</String>
+      <String Context="Generic_Medium" >OK</String>
+    </Concept >
+    <Concept Id="CANCEL" >
+      <Comments></Comments>
+      <String Context="TS_AButton">CANCEL</String>
+      <String Context="Generic_Medium" >CANCEL</String>
+    </Concept >
+    <Concept Id="PAUSE" >
+      <Comments>Command to pause an exam.</Comments>
+      <String Context="TS_AButton">PAUSE</String>
+      <String Context="Generic_Medium" >PAUSE</String>
+    </Concept >
+    <Concept Id="ENDEXAM" >
+      <Comments>Command to close an exam.</Comments>
+      <String Context="TS_AButton">END EXAM</String>
+      <String Context="Generic_Medium" >END EXAM</String>
+    </Concept >
+    <Concept Id="SELECTENDPAUSE" >
+      <Comments>The message is shown before closing an exam when autosave and pause are both enabled</Comments>
+      <String Context="Generic_Warning">Select "END EXAM" or "PAUSE" to continue</String>      
+    </Concept >
+    <Concept Id="StartExam" >
+      <Comments></Comments>
+      <String Context="TS_AButton">START EXAM</String>
+      <String Context="Generic_Medium" >START EXAM</String>
+    </Concept >
+    <Concept Id="PausedExams" >
+      <Comments>Command to show paused exams</Comments>
+      <String Context="TS_AButton">PAUSED EXAM</String>
+      <String Context="Generic_Medium" >PAUSED EXAM</String>
+    </Concept >
+    <Concept Id="ARCHIVE" >
+      <Comments>Tab title of touch screen in end exam layout. The tab contains the local archive destination.</Comments>
+      <String Context="TS_AButton" >ARCHIVE</String>
+    </Concept >
+    <Concept Id="STARTEND" >
+      <Comments>Tab title of touch screen in end exam layout. The tab contains the OK/CANCEL buttons.</Comments>
+      <String Context="TS_AButton" >END EXAM</String>
+    </Concept >
+    <Concept Id="WarningStressEndExam" >
+      <Comments>Warning when trying to end an exam with an incomplete stress acquisition.</Comments>
+      <String Context="Generic_Warning" >CURRENT EXAM HAS AN INCOMPLETE STRESS ECHO ANALYSIS. CONTINUE ANYWAY?</String>
+    </Concept >
+    <Concept Id="WarningPauseORClose" >
+      <Comments>Warning when trying to end an exam with an autosave and pause both enabled. Yes will close the exam and NO will pause the exam.</Comments>
+      <String Context="Generic_Warning" >DEFINITELY CLOSE THE EXAM? (SELECTING NO THE EXAMINATION WILL BE PAUSED)</String>
+    </Concept >
+    <Concept Id="CheckingSelDest" >
+      <Comments>title of waiting progress while Checking Selected Destinations in end exam, after pressing OK</Comments>
+      <String Context="Generic_Warning" >CHECKING SELECTED DESTINATIONS</String>
+    </Concept>
+    <Concept Id="Warning_DVD_Selection_Confirmation" >
+      <Comments>end exam layout: used to ask a confirmation to user when he selects one CD\DVD destination</Comments>
+      <String Context="Generic_Warning" >WARNING: ONE OF SELECTED DESTINATIONS IS CD/DVD; DURING CD/DVD OPERATIONS, THE USER INTERACTION WILL BE STOPPED. CONTINUE?</String>
+    </Concept>
+    <Concept Id="TIME_ESTIMATION" >
+      <Comments>end exam layout: used to ask a confirmation to user when he selects one CD\DVD destination</Comments>
+      <String Context="Generic_Long" >TIME ESTIMATION</String>
+    </Concept>
+    <Concept Id="WAIT_TO_BURN" >
+      <Comments>end exam layout: used when the user interaction is stopped by a burning operation</Comments>
+      <String Context="Generic_Warning" >A BURNING OPERATION IS IN PROGRESS. YOU CAN CANCEL SUCH OPERATION BUT THE CD/DVD MAY BE CORRUPTED OR INCOMPLETE.</String>
+    </Concept>
+	<Concept Id="WarningArchiveReportFailed">
+		<Comments> A message box to notify the user that the system has exited because the Study has not been created on this exam. Defect 6727
+      </Comments>
+      <String Context="Generic_Warning">The Study has not been created on this exam.</String>
+    </Concept>
+    <Concept Id="WarningArchiveDisconnected" >
+      <Comments> A message box to notify the user that the system has exited from the last environment because the current device is no longer
+        available.
+      </Comments>
+      <String Context="Generic_Warning" >THE CURRENT DEVICE IS NO LONGER AVAILABLE. THE SYSTEM HAS EXITED FROM THE LAST ENVIRONMENT.</String>
+    </Concept>
+    <Concept Id="WarningFullShutDown" >
+      <Comments> A message box to notify the user that the system may need a full shutdown to increase system performance.
+      </Comments>
+      <String Context="Generic_Warning" >PLEASE REBOOT THE SYSTEM TO INCREASE SYSTEM PERFORMANCE.</String>
+    </Concept>
+    <Concept Id="PAUSEDEXAMS" >
+      <Comments>Title of Paused Exams windows.</Comments>
+      <String Context="Generic_Long" >Paused Exams</String>
+      <String Context="TS_AButton" >Paused Exams</String>
+    </Concept >
+    <Concept Id="RESUMEXAM" >
+      <Comments>Command to Resume the selected paused exam.</Comments>
+      <String Context="TS_AButton" >RESUME</String>
+    </Concept >
+    <Concept Id="CLOSEEXAM" >
+      <Comments>Command to Close the selected paused exam.</Comments>
+      <String Context="TS_AButton" >CLOSE</String>
+    </Concept >
+    <Concept Id="DELETEEXAM" >
+      <Comments>Command to Delete the selected paused exam.</Comments>
+      <String Context="TS_AButton" >DELETE</String>
+    </Concept >
+    <Concept Id="PATIENTNAME">
+      <Comments>Patient Name Header in Paused Exams list</Comments>
+      <String Context="Generic_Long">PATIENT NAME</String>
+    </Concept>
+    <Concept Id="PATIENTID">
+      <Comments>Patient ID Header in Paused Exams list</Comments>
+      <String Context="Generic_Long">PATIENT ID</String>
+    </Concept>
+    <Concept Id="EXAMTYPE">
+      <Comments>Application Type Header in Paused Exams list</Comments>
+      <String Context="Generic_Long">EXAM TYPE</String>
+    </Concept>
+    <Concept Id="EXAMDATE">
+      <Comments>Exam Date Header in Paused Exams list</Comments>
+      <String Context="Generic_Long">EXAM DATE</String>
+    </Concept>
+    <Concept Id="EXAMTIME">
+      <Comments>Exam Time Label in Paused Exams list</Comments>
+      <String Context="Generic_Long">TIME</String>
+    </Concept>
+    <Concept Id="Paused_Exams" >
+      <Comments></Comments>
+      <String Context="TS_AButton">PAUSED EXAMS</String>
+      <String Context="Generic_Medium" >PAUSED EXAMS</String>
+    </Concept >
+    <Concept Id="Cardiac">
+      <Comments>Cardiac Application</Comments>
+      <String Context="Generic_Long">CARDIAC</String>
+    </Concept >
+    <Concept Id="Vascular">
+      <Comments>Vascular Application</Comments>
+      <String Context="Generic_Long">VASCULAR</String>
+    </Concept >
+    <Concept Id="Abdominal">
+      <Comments>Abdominal Application</Comments>
+      <String Context="Generic_Long">ABDOMINAL</String>
+    </Concept >
+    <Concept Id="Obstetric">
+      <Comments>Obstetric Application</Comments>
+      <String Context="Generic_Long">OBSTETRIC</String>
+    </Concept >
+    <Concept Id="Transcranic">
+      <Comments>Transcranic Application</Comments>
+      <String Context="Generic_Long">TRANSCRANIC</String>
+    </Concept >
+    <Concept Id="Neonatal">
+      <Comments>Neonatal Application</Comments>
+      <String Context="Generic_Long">NEONATAL</String>
+    </Concept >
+    <Concept Id="CardiacPediatric">
+      <Comments>CardiacPediatric Application</Comments>
+      <String Context="Generic_Long">CARDIACPEDIATRIC</String>
+    </Concept >
+    <Concept Id="Pediatric">
+      <Comments>Pediatric Application</Comments>
+      <String Context="Generic_Long">PEDIATRIC</String>
+    </Concept>
+    <Concept Id="Gynecology">
+      <Comments>Gynecology Application</Comments>
+      <String Context="Generic_Long">GYNECOLOGY</String>
+    </Concept >
+    <Concept Id="Urologic">
+      <Comments>Urologic Application</Comments>
+      <String Context="Generic_Long">UROLOGIC</String>
+    </Concept >
+    <Concept Id="MusculoSkeletal">
+      <Comments>MusculoSkeletal Application</Comments>
+      <String Context="Generic_Long">MUSCOLOSKELETAL</String>
+    </Concept>
+    <Concept Id="Breast">
+      <Comments>Breast Application</Comments>
+      <String Context="Generic_Long">BREAST</String>
+    </Concept >
+    <Concept Id="Thyroid">
+      <Comments>Thyroid Application</Comments>
+      <String Context="Generic_Long">THYROID</String>
+    </Concept >
+    <Concept Id="SmallParts">
+      <Comments>SmallParts Application</Comments>
+      <String Context="Generic_Long">SMALLPARTS</String>
+    </Concept>
+    <Concept Id="Generic">
+      <Comments>Generic Application</Comments>
+      <String Context="Generic_Long">GENERIC</String>
+    </Concept >
+    <Concept Id="AbdominalBovine">
+      <Comments>AbdominalBovine Application</Comments>
+      <String Context="Generic_Long">ABDOMINALBOVINE</String>
+    </Concept >
+    <Concept Id="AbdominalCanine">
+      <Comments>AbdominalCanine Application</Comments>
+      <String Context="Generic_Long">ABDOMINALCANINE</String>
+    </Concept >
+    <Concept Id="AbdominalFeline">
+      <Comments>AbdominalFeline Application</Comments>
+      <String Context="Generic_Long">ABDOMINALFELINE</String>
+    </Concept>
+    <Concept Id="AbdominalEquine">
+      <Comments>AbdominalEquine Application</Comments>
+      <String Context="Generic_Long">ABDOMINALEQUINE</String>
+    </Concept >
+    <Concept Id="ReproductionCanine">
+      <Comments>ReproductionCanine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONCANINE</String>
+    </Concept >
+    <Concept Id="ReproductionFeline">
+      <Comments>ReproductionFeline Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONFELINE</String>
+    </Concept>
+    <Concept Id="ReproductionEquine">
+      <Comments>ReproductionEquine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONEQUINE</String>
+    </Concept >
+    <Concept Id="Tendon">
+      <Comments>Tendon Application</Comments>
+      <String Context="Generic_Long">TENDON</String>
+    </Concept >
+    <Concept Id="CardioBovine">
+      <Comments>CardioBovine Application</Comments>
+      <String Context="Generic_Long">CARDIOBOVINE</String>
+    </Concept>
+    <Concept Id="CardioCanine">
+      <Comments>CardioCanine Application</Comments>
+      <String Context="Generic_Long">CARDIOCANINE</String>
+    </Concept>
+    <Concept Id="CardioFeline">
+      <Comments>CardioFeline Application</Comments>
+      <String Context="Generic_Long">CARDIOFELINE</String>
+    </Concept >
+    <Concept Id="CardioEquine">
+      <Comments>CardioEquine Application</Comments>
+      <String Context="Generic_Long">CARDIOEQUINE</String>
+    </Concept >
+    <Concept Id="OvaryEquine">
+      <Comments>OvaryEquine Application</Comments>
+      <String Context="Generic_Long">OVARYEQUINE</String>
+    </Concept>
+    <Concept Id="OvaryBovine">
+      <Comments>OvaryBovine Application</Comments>
+      <String Context="Generic_Long">OVARYBOVINE</String>
+    </Concept >
+    <Concept Id="ReproductionBovine">
+      <Comments>ReproductionBovine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONBOVINE</String>
+    </Concept >
+    <Concept Id="VascularVet">
+      <Comments>VascularVet Application</Comments>
+      <String Context="Generic_Long">VASCULARVET</String>
+    </Concept>
+    <Concept Id="AnimalScience">
+      <Comments>AnimalScience Application</Comments>
+      <String Context="Generic_Long">ANIMALSCIENCE</String>
+    </Concept >
+    <Concept Id="ReproductionOvine">
+      <Comments>ReproductionOvine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONOVINE</String>
+    </Concept >
+    <Concept Id="ReproductionPorcine">
+      <Comments>ReproductionPorcine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONPORCINE</String>
+    </Concept>
+    <Concept Id="ReproductionCaprine">
+      <Comments>ReproductionCaprine Application</Comments>
+      <String Context="Generic_Long">REPRODUCTIONCAPRINE</String>
+    </Concept >
+    <Concept Id="RegAnest">
+      <Comments>RegAnest Application</Comments>
+      <String Context="Generic_Long">REGANEST</String>
+    </Concept >
+    <Concept Id="Aesthetic">
+      <Comments>Aesthetic Application</Comments>
+      <String Context="Generic_Long">AESTHETIC</String>
+    </Concept>
+    <Concept Id="OtherAbdominal">
+      <Comments>OtherAbdominal Application in vet model</Comments>
+      <String Context="Generic_Long">OTHERABDOMINAL</String>
+    </Concept >
+    <Concept Id="OtherCardio">
+      <Comments>OtherCardio Application in vet model</Comments>
+      <String Context="Generic_Long">OTHERCARDIO</String>
+    </Concept>
+    <Concept Id="OtherVascular">
+      <Comments>OtherVascular Application in vet model</Comments>
+      <String Context="Generic_Long">OTHERVASCULAR</String>
+    </Concept >
+    <Concept Id="OtherReproduction">
+      <Comments>OtherReproduction Application in vet model</Comments>
+      <String Context="Generic_Long">OTHERREPRODUCTION</String>
+    </Concept>
+     <Concept Id="ISACQUISITION">
+      <Comments>RealTime environment is active [Story 23653]</Comments>
+      <String Context="TS_AButton">ACQUISITION</String>
+    </Concept>
+     <Concept Id="ISREVIEW">
+      <Comments>Review environment is active [Story 23653]</Comments>
+      <String Context="TS_AButton">REVIEW</String>
+    </Concept>
+    <Concept Id="ISNAVIGATION">
+      <Comments>VirtualNavigator is active [Story 23653]</Comments>
+      <String Context="TS_AButton">NAVIGATION</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ChooseDestinationComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Factory">
+    <Concept Id="FACTORY" >
+      <Comments>Name of default factory for End exam configuration</Comments>
+      <String Context="Generic_Medium" >Default</String>
+    </Concept >
+  </LocalizationSection>
+</LocalizationResource>

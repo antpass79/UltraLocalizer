@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="RT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Species">
+    <Concept Id="CANINE">
+      <Comments>Canine Specie</Comments>
+      <String Context="TS_AButton">CANINE</String>
+      <String Context="MD_RT7Application">CANINE</String>
+      <String Context="Generic_Medium">CANINE</String>
+    </Concept>
+    <Concept Id="FELINE">
+      <Comments>Feline Specie</Comments>
+      <String Context="TS_AButton">FELINE</String>
+      <String Context="MD_RT7Application">FELINE</String>
+      <String Context="Generic_Medium">FELINE</String>
+    </Concept>
+    <Concept Id="EQUINE">
+      <Comments>Equine Specie</Comments>
+      <String Context="TS_AButton">EQUINE</String>
+      <String Context="MD_RT7Application">EQUINE</String>
+      <String Context="Generic_Medium">EQUINE</String>
+    </Concept>
+    <Concept Id="OTHER">
+      <Comments>Other Specie</Comments>
+      <String Context="TS_AButton">OTHER</String>
+      <String Context="MD_RT7Application">OTHER</String>
+      <String Context="Generic_Medium">OTHER</String>
+    </Concept>
+    <Concept Id="BOVINE">
+      <Comments>Bovine Specie</Comments>
+      <String Context="TS_AButton">BOVINE</String>
+      <String Context="MD_RT7Application">BOVINE</String>
+      <String Context="Generic_Medium">BOVINE</String>
+    </Concept>
+    <Concept Id="PORCINE">
+      <Comments>Porcine Specie</Comments>
+      <String Context="TS_AButton">PORCINE</String>
+      <String Context="MD_RT7Application">PORCINE</String>
+      <String Context="Generic_Medium">PORCINE</String>
+    </Concept>
+    <Concept Id="OVINE">
+      <Comments>Ovine Specie</Comments>
+      <String Context="TS_AButton">OVINE</String>
+      <String Context="MD_RT7Application">OVINE</String>
+      <String Context="Generic_Medium">OVINE</String>
+    </Concept>
+    <Concept Id="CAPRINE">
+      <Comments>Caprine Specie</Comments>
+      <String Context="TS_AButton">CAPRINE</String>
+      <String Context="MD_RT7Application">CAPRINE</String>
+      <String Context="Generic_Medium">CAPRINE</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

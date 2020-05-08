@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizationResource ComponentNamespace="ExtendedRTComponent" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="General">
+	<Concept Id="QElaxtoConfig">
+      <Comments>Elasto Configuration</Comments>
+      <String Context="Generic_Medium">QElaxto</String>
+    </Concept>
+	<Concept Id="m/s">
+      <Comments>meters per second</Comments>
+      <String Context="Generic_Medium">m/s</String>
+    </Concept>
+	<Concept Id="KPA">
+      <Comments>KiloPascal</Comments>
+      <String Context="Generic_Medium">kPa</String>
+    </Concept>
+	<Concept Id="%">
+      <Comments>percentage unit of measure</Comments>
+      <String Context="Generic_Medium">%</String>
+    </Concept>
+	<Concept Id="ABS">
+      <Comments>Absolute unit of measure</Comments>
+      <String Context="Generic_Medium">ABS</String>
+    </Concept>	
+    <Concept Id="MODIFICATION_AVAILABLE_NEXT_EXAM">
+      <Comments>Message to the user when closes the low level measure editor</Comments>
+      <String Context="Generic_Warning">Modifications shall be available starting from next exam.</String>
+    </Concept>
+    <Concept Id="DOPPLERQUANTIFICATION">
+      <Comments>doppler quantification configuration section [RTC 14350]</Comments>
+      <String Context="Generic_Medium">DOPPLER QUANTIFICATION</String>
+    </Concept>
+    <Concept Id="CNTIQUANTIFICATION">
+      <Comments>cnti quantification configuration section [RTC 14350]</Comments>
+      <String Context="Generic_Medium">CNTI QUANTIFICATION</String>
+    </Concept>	
+	<Concept Id="QFlowConfig">
+      <Comments>quantification flow configuration [RTC 14350]</Comments>
+      <String Context="Generic_Medium">QPack</String>
+    </Concept>	
+	<Concept Id="SingleFrame">
+      <Comments>Single Frame Acquisition in doppler quantification</Comments>
+      <String Context="Generic_Medium">Single Frame Acquisition</String>
+    </Concept>	
+	<Concept Id="Invalid_StiffnessData">
+      <String Context="Generic_Warning">Stiffness values are not properly filled. Please put valid entries or disable the stiffness index checkbox.</String>
+    </Concept> 
+  </LocalizationSection>
+    <LocalizationSection InternalNamespace="QElaxtoLabels">	
+	<Concept Id="SaveAcqDataLabel">
+      <Comments>Save Data Acquisition [RTC 13425]</Comments>
+      <String Context="Generic_Long">Save Data Acquisition</String>
+    </Concept>
+	<Concept Id="DefUnfreezeAfterCoolingLabel">
+      <Comments>Auto Unfreeze after cooling</Comments>
+      <String Context="Generic_Long">Auto Unfreeze after cooling</String>
+    </Concept>
+	<Concept Id="ShowGraphAtEchMeasureLabel">
+      <Comments>Show Graph at each measure</Comments>
+      <String Context="Generic_Long">Show Graph at each measure</String>
+    </Concept>
+	<Concept Id="AutoSaveImageAtEachMeasureLabel">
+      <Comments>Auto save image at each measure</Comments>
+      <String Context="Generic_Long">Auto save image at each measure</String>
+    </Concept>
+	<Concept Id="BeepAfterCoolingLabel">
+      <Comments>Beep after cooling time</Comments>
+      <String Context="Generic_Long">Beep after cooling time</String>
+    </Concept>
+	<Concept Id="PrintReportOnEndExamLabel">
+      <Comments>Print report on End Exam</Comments>
+      <String Context="Generic_Long">Print report on End Exam</String>
+    </Concept>
+	<Concept Id="AddToReportInfoLabel">
+      <Comments>Add to report info</Comments>
+      <String Context="Generic_Long">Add to report info</String>
+    </Concept>
+	<Concept Id="ShowEndSequenceInfoLabel">
+      <Comments>Show End Sequence info</Comments>
+      <String Context="Generic_Long">Show End Sequence info</String>
+    </Concept>
+	<Concept Id="ShowIQRMEDMeasureLabel">
+      <Comments>Show inter quantile range/ median measurement</Comments>
+      <String Context="Generic_Long">Show IQR/MED measurement</String>
+    </Concept>
+	<Concept Id="DefaultDepth">
+      <Comments>Default Depth</Comments>
+      <String Context="Generic_Long">Default Depth</String>
+    </Concept>	
+	<Concept Id="SDMeasureUnitLabel">
+      <Comments>Standard deviation measure unit</Comments>
+      <String Context="Generic_Long">SD measure unit</String>
+    </Concept>
+	<Concept Id="QElaxtoMeasureUnitLabel">
+      <Comments>QElaxto measure unit</Comments>
+      <String Context="Generic_Long">QElaxto measure unit</String>
+    </Concept>
+	<Concept Id="SESSION">
+      <Comments>Session</Comments>
+      <String Context="Generic_Medium">SESSION</String>
+    </Concept>	
+	<Concept Id="ENABLED">
+      <Comments>ENABLED</Comments>
+      <String Context="Generic_Medium">ENABLED</String>
+    </Concept>
+	<Concept Id="WORKSHEET LABEL">
+      <Comments>WORKSHEET LABEL</Comments>
+      <String Context="Generic_Medium">WORKSHEET LABEL</String>
+    </Concept>
+	<Concept Id="ENCODER LABEL">
+      <Comments>ENCODER LABEL</Comments>
+      <String Context="Generic_Medium">ENCODER LABEL</String>
+    </Concept>	
+	<Concept Id="SESSION MANAGEMENT">
+      <Comments>SESSION MANAGEMENT</Comments>
+      <String Context="Generic_Medium">SESSION MANAGEMENT</String>
+    </Concept>	
+	<Concept Id="F0F1">
+      <Comments>Stiffness Stage</Comments>
+      <String Context="Generic_Medium">A</String>
+    </Concept>		
+	<Concept Id="F1F2">
+      <Comments>Stiffness Stage</Comments>
+      <String Context="Generic_Medium">B</String>
+    </Concept>	
+	<Concept Id="F2F3">
+      <Comments>Stiffness Stage</Comments>
+      <String Context="Generic_Medium">C</String>
+    </Concept>	
+	<Concept Id="F4">
+      <Comments>Stiffness Stage</Comments>
+      <String Context="Generic_Medium">D</String>
+    </Concept>	
+	<Concept Id="StiffnessIndexLabel">
+      <Comments>Stiffness Index</Comments>
+      <String Context="Generic_Medium">Stiffness Index</String>
+    </Concept>	
+  </LocalizationSection>
+  </LocalizationResource>
+   

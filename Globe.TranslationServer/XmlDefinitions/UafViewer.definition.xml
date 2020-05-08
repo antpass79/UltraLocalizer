@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="UafViewer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection>
+    <Concept Id="BEGIN">
+      <Comments>Command on touchscreen to move to first frame of current clip</Comments>
+      <String Context="TS_AButton">BEGIN</String>
+      <String Context="Generic_Long">BEGIN</String>
+    </Concept>
+    <Concept Id="END">
+      <Comments>Command on touchscreen to move to last frame of current clip</Comments>
+      <String Context="TS_AButton">END</String>
+      <String Context="Generic_Long">END</String>
+    </Concept>
+    <Concept Id="PLAY">
+      <Comments>Command on touchscreen to start the reproduction of clip</Comments>
+      <String Context="TS_AButton">PLAY</String>
+      <String Context="Generic_Long">PLAY</String>
+    </Concept>
+    <Concept Id="STOP">
+      <Comments>Command on touchscreen to stop the reproduction of clip</Comments>
+      <String Context="TS_AButton">STOP</String>
+      <String Context="Generic_Long">STOP</String>
+    </Concept>
+    <Concept Id="FITTOSCREEN">
+      <Comments>Fit image to best screen dimension</Comments>
+      <String Context="TS_AButton">FIT TO SCREEN</String>
+      <String Context="Generic_Long">FIT TO SCREEN</String>
+    </Concept>
+    <Concept Id="CLIPTOOLONG">
+      <Comments>This message appears if the clip requires too much memory</Comments>
+      <String Context="TS_AButton">CLIP TOO LONG</String>
+      <String Context="Generic_Long">CLIP TOO LONG</String>
+    </Concept>
+    <Concept Id="REVIEW">
+      <Comments>This message appears on touch screen tab to activate exam review environment</Comments>
+      <String Context="TS_TabName">REVIEW</String>
+      <String Context="Generic_Long">REVIEW</String>
+    </Concept>
+    <Concept Id="POINTER">
+      <Comments>TCommand on touchscreen to show/hide the pointer</Comments>
+      <String Context="TS_AButton">POINTER</String>
+      <String Context="Generic_Long">POINTER</String>
+    </Concept>
+    <Concept Id="GENERICERRORLOADINGFILE">
+      <Comments>This message appears when it's impossible to load an archived image</Comments>
+      <String Context="Generic_Warning">Generic error loading selected image</String>
+    </Concept>  
+    <Concept Id="Cine Loop">
+      <Comments>This message appears when the trackball is linked to cine</Comments>
+      <String Context="Generic_Long">CINE LOOP</String>
+    </Concept>
+    <Concept Id="FRAME">
+      <Comments>TCommand on touchscreen to move to the next/previous frame of current clip</Comments>
+      <String Context="TS_AButton">FRAME</String>
+      <String Context="Generic_Long">FRAME</String>
+    </Concept>
+    <Concept Id="SPEED">
+      <Comments>TCommand on touchscreen to change the current clip speed reproduction</Comments>
+      <String Context="TS_AButton">SPEED</String>
+      <String Context="Generic_Long">SPEED</String>
+    </Concept>
+    <Concept Id="BACKTOACQUISITION">
+      <Comments>TCommand on touchscreen to go back to real time</Comments>
+      <String Context="TS_AButton">BACK TO ACQUISITION</String>
+      <String Context="Generic_Long">BACK TO ACQUISITION</String>
+    </Concept>
+	<Concept Id="VISUALCOMPARISON">
+      <Comments>TCommand on touchscreen to start visual comparison</Comments>
+      <String Context="TS_AButton">COMPARE</String>
+      <String Context="Generic_Long">VISUAL COMPARISON</String>
+    </Concept>
+    <Concept Id="VC_LEFT">
+      <Comments>TCommand on touchscreen to activate left image in visual comparison environment</Comments>
+      <String Context="TS_TabName">LEFT IMAGE</String>
+      <String Context="Generic_Long">LEFT IMAGE</String>
+    </Concept>
+    <Concept Id="VC_RIGHT">
+      <Comments>TCommand on touchscreen to activate right image in visual comparison environment</Comments>
+      <String Context="TS_TabName">RIGHT IMAGE</String>
+      <String Context="Generic_Long">RIGHT IMAGE</String>
+    </Concept>
+    <Concept Id="VISUALCOMPARISONMULTITAB">
+      <Comments>TCommand on touchscreen in visual comparison environment</Comments>
+      <String Context="TS_TabName">VISUAL COMPARISON</String>
+      <String Context="Generic_Long">VISUAL COMPARISON</String>
+    </Concept>
+    <Concept Id="VISUALCOMPARISONACTIVEITEM">
+      <Comments>String on used in visual comparison to highlight the image currently active</Comments>
+      <String Context="Generic_Long">ACTIVE</String>
+    </Concept>
+    <Concept Id="PLAYALL">
+      <Comments>Command on touchscreen to start the reproduction of all clips in visual comparison</Comments>
+      <String Context="TS_AButton">PLAY ALL</String>
+    </Concept>
+    <Concept Id="SYNCHRONIZE">
+      <Comments>Command on touchscreen to start synchronous reproduction of all clips in visual comparison</Comments>
+      <String Context="TS_AButton">SYNCHRONIZE</String>
+    </Concept>
+    <Concept Id="STOPALL">
+      <Comments>Command on touchscreen to start the reproduction of all clips in visual comparison</Comments>
+      <String Context="TS_AButton">STOP ALL</String>
+    </Concept>
+    <Concept Id="ZOOM">
+      <Comments>Command on touchscreen to zoom the images</Comments>
+      <String Context="TS_AButton">ZOOM</String>
+      <String Context="Generic_Short">ZOOM</String>
+    </Concept>
+    <Concept Id="SmartQueryCommand">
+      <Comments>Command on touchscreen to execute a query for current study</Comments>
+      <String Context="TS_AButton">QUERY</String>
+    </Concept>
+    <Concept Id="PAN">
+      <Comments>Command on touchscreen to zoom the images</Comments>
+      <String Context="TS_AButton">PAN</String>
+    </Concept>
+    <Concept Id="1X2">
+      <Comments>Command on touchscreen to change VC layout in 1x2</Comments>
+      <String Context="TS_AButton">1X2</String>
+    </Concept>
+    <Concept Id="2X2">
+      <Comments>Command on touchscreen to change VC layout in 2x2</Comments>
+      <String Context="TS_AButton">2X2</String>
+    </Concept>
+    <Concept Id="DefaultStatus">
+      <Comments>Command on touchscreen in VC to set the original position and zoom factor in  image</Comments>
+      <String Context="TS_AButton">Default Status</String>
+    </Concept>
+		<Concept Id="NotPossibleViewImage">
+			<Comments>Warning message in maylabdesk^3 Light wherw stress images and 3d images could not be opened </Comments>
+			<String Context="Generic_Warning">It's not possible open the selected image: Graphics card doesn't support advanced feature required to show the image </String>
+		</Concept >
+		<Concept Id="NotPossibleToAcquireImage">
+			<Comments>Warning message when a generic error occurs pressing the IMAGE button</Comments>
+			<String Context="Generic_Warning">An error was detected while saving data. </String>
+		</Concept >
+    <Concept Id="PPEDIT">
+      <Comments>Command on touchscreen to enable the post process environment</Comments>
+      <String Context="TS_AButton">EDIT</String>
+    </Concept>
+	  <Concept Id="ResetGeometricParams">
+      <Comments>Command on touchscreen to reset zoom</Comments>
+      <String Context="TS_AButton">Reset zoom</String>
+    </Concept>
+    <Concept Id="ArchiveExamList">
+      <Comments>Command on touchscreen to open archive, same action as keyboard button ARCHIVE [Defect 16281]</Comments>
+      <String Context="TS_AButton">Archive</String>
+    </Concept>
+    <Concept Id="SHOWGENERICINFO">
+      <Comments>Command on touchscreen to show acquisistion parameters of image in Visual Comparison</Comments>
+      <String Context="TS_AButton">Acquisition parameters</String>
+    </Concept>
+	<Concept Id="SHOWMEASUREINFO">
+		<Comments>Command on touchscreen to show measure parameters of image in Visual Comparison</Comments>
+		<String Context="TS_AButton">Measures result</String>
+	</Concept>
+	<Concept Id="VC_OFFLINE">
+		<Comments>TCommand on touchscreen to activate offline image in visual comparison environment</Comments>
+		<String Context="TS_TabName">OFFLINE IMAGE</String>
+		<String Context="Generic_Long">OFFLINE IMAGE</String>
+	</Concept>
+	<Concept Id="GOTOVCRT">
+		<Comments>TCommand on touchscreen to activate follow up from Archive</Comments>
+		<String Context="TS_AButton">FOLLOW UP</String>
+	</Concept>
+	<Concept Id="SERIESImageSel">
+		<Comments>TCommand on touchscreen to navigate the images of a Dicom series loaded from Archive</Comments>
+		<String Context="TS_TButton">Serie Image</String>
+	</Concept>
+	</LocalizationSection> 
+</LocalizationResource>

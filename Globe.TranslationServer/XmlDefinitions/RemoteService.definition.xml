@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="RemoteService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <LocalizationSection InternalNamespace="REMOTE_ASSISTANCE">
+    <Concept Id="MODULE_NOT_INSTALLED">
+      <Comments>The remote assistance program has not been correctly installed.</Comments>
+      <String Context="Generic_Warning">The remote assistance module has not been correctlly installed!</String>
+    </Concept>
+
+    <Concept Id="DISCLAIMER1">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">To enable a Remote Service session the User should directly contact the Esaote Service, to get a PIN that has a limited temporal validity.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER2">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">After inserting the PIN and pressing CONNECT, the Remote Service session will be established.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER3">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">By inserting the PIN and pressing CONNECT the contacted qualified Esaote personnel will get full access to the device and all the healthcare information present in it, for service purposes.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER4">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">A chat window will allow the User to get in touch with the Esaote personnel who is accessing the device;</String>
+    </Concept>
+    <Concept Id="DISCLAIMER4b">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">we suggest to remain close to the device during all the Remote Service session to be able to cooperate if necessary with the Esaote personnel.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER5">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">The User can always abort the Remote Service session by closing the chat window, or can disable the remote access by pressing the red X on the toolbar or the Pause/Break key of the keyboard.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER6">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">NOTE: Remote Service could not be available for all countries and for all network configurations.</String>
+    </Concept>
+    <Concept Id="DISCLAIMER7">
+      <Comments>It is a part of the disclaimer.</Comments>
+      <String Context="Generic_Warning">WARNING: until the end of the Remote Service session the device MUST NOT BE USED for making diagnoses or for live scanning except for testing purposes when requested by the Esaote personnel.</String>
+    </Concept>
+
+
+
+    <Concept Id="CONFIGURE_BTN">
+      <Comments>Button used to configure the network connection (proxy, ...).</Comments>
+      <String Context="Generic_Short">Configure</String>
+    </Concept>
+    <Concept Id="CHECKCONNECTION_BTN">
+      <Comments>Button used to check the connection to the network</Comments>
+      <String Context="Generic_Medium">Check Connection</String>
+    </Concept>
+
+
+    <Concept Id="CONNECT_BTN">
+      <Comments>Button used to start the connection with the remote technician.</Comments>
+      <String Context="Generic_Medium">Connect</String>
+    </Concept>
+
+    <Concept Id="DISCONNECT_BTN">
+      <Comments>Button used to interrupt the connection with the remote technician.</Comments>
+      <String Context="Generic_Medium">Disconnect</String>
+    </Concept>
+
+    <Concept Id="PATHNOTFOUND">
+      <Comments>The remote assistance program has not been correctly installed.</Comments>
+      <String Context="Generic_Warning">The remote assistance module has not been correctlly installed: path not found.</String>
+    </Concept>
+
+    <Concept Id="FILENOTFOUND">
+      <Comments>The remote assistance program has not been correctly installed.</Comments>
+      <String Context="Generic_Warning">The remote assistance module has not been correctlly installed: exe file not found.</String>
+    </Concept>
+
+    <Concept Id="PIN2_NOT_VALID">
+      <Comments>The PIN inserted by the user is not valid, not well done.</Comments>
+      <String Context="Generic_Warning">PIN not valid.</String>
+    </Concept>
+
+    <Concept Id="STATUS_CONNECTING">
+      <Comments>It is displayed to inform the user that the connection is starting.</Comments>
+      <String Context="Generic_Long">Connection in progress . . .</String>
+    </Concept>
+    <Concept Id="STATUS_CECKING">
+      <Comments>It is displayed to inform the user that the system is checking the connection to the network.</Comments>
+      <String Context="Generic_Long">Checking in progress . . .</String>
+    </Concept>
+    <Concept Id="STATUS_SYSTEMCONNECTED">
+      <Comments>It is displayed to inform the user that the connection to the network is available.</Comments>
+      <String Context="Generic_Warning">Connection available.</String>
+    </Concept>
+    <Concept Id="STATUS_SYSTEMDISCONNECTED">
+      <Comments>It is displayed to inform the user that the connection to the network is not available.</Comments>
+      <String Context="Generic_Warning">Connection not available.</String>
+    </Concept>
+
+
+
+    <Concept Id="STATUS_CONNECTION_CLOSED">
+      <Comments>The remote assistance connection has been closed.</Comments>
+      <String Context="Generic_Warning">The connection has been closed.</String>
+    </Concept>
+
+    <Concept Id="STATUS_ERR_UNEXPECTED">
+      <Comments>The remote assistance program has been terminated with an unexpected error.</Comments>
+      <String Context="Generic_Warning">Unknown error: a bad PIN or another unknown error has been verifed.</String>
+    </Concept>
+
+    <Concept Id="STATUS_ERR_INCORRECTPIN">
+      <Comments>The remote assistance program has been terminated because a wrong PIN.</Comments>
+      <String Context="Generic_Warning">Error: a wrong PIN has been entered.</String>
+    </Concept>
+
+    <Concept Id="STATUS_ERR_PINALREADYUSED">
+      <Comments>The remote assistance program has been terminated because the PIN entered has been already used.</Comments>
+      <String Context="Generic_Warning">The user has entered an already used PIN. Please retry.</String>
+    </Concept>
+
+    <Concept Id="STATUS_CONNECTION_CLOSED_BYTHEUSER">
+      <Comments>The remote assistance program has been terminated because the user interrupted it.</Comments>
+      <String Context="Generic_Warning">The remote session has been terminated by the user.</String>
+    </Concept>
+
+    <Concept Id="STATUS_CONNECTION_CLOSED_BYTHETECHNICIAN">
+      <Comments>The remote assistance program has been terminated because the technician interrupted it.</Comments>
+      <String Context="Generic_Warning">The remote session has been terminated by the technician.</String>
+    </Concept>
+
+    <Concept Id="STATUS_ERR_UNKNOWN">
+      <Comments>The remote assistance program has been terminated with an unknown error.</Comments>
+      <String Context="Generic_Long">An unknown error has been verified.</String>
+    </Concept>
+
+    <Concept Id="STATUS_CONNECTION_TERMINATED">
+      <Comments>The remote assistance program has been terminated.</Comments>
+      <String Context="Generic_Warning">The remote session has been terminated.</String>
+    </Concept>
+    <Concept Id="STATUS_CONNECTION_NETNOTAVAILABLE">
+      <Comments>The remote assistance program has been terminated because the connection to the network is not available.</Comments>
+      <String Context="Generic_Warning">Connection not available.</String>
+    </Concept>
+
+  </LocalizationSection>
+
+
+
+</LocalizationResource>

@@ -1,0 +1,783 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="XStrain.XStrain4D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+ 
+  <LocalizationSection InternalNamespace="ModuleStartUpMessages">
+    <Concept Id="NO DATASET SELECTED">
+      <Comments>warning message to the user</Comments>
+      <String Context="Generic_Warning">No dataset was selected</String>
+    </Concept>
+    <Concept Id="NOT ENOUGH CLIPS ANALYZED WITH XSTRAIN 2D">
+     <Comments>warning message to the user</Comments>
+      <String Context="Generic_Warning">Not enough clips analyzed with XStrain 2D. The following views are missing:</String>
+    </Concept>
+    <Concept Id="SELECTED XSTRAIN DATASET IS INCOMPLETE OR CORRUPTED">
+      <Comments>warning message to the user</Comments>
+      <String Context="Generic_Warning">Selected XStrain dataset is incomplete or corrupted: select another study</String>
+    </Concept>	
+    <Concept Id="PLEASE PRESS EXIT">
+      <Comments>warning message to the user</Comments>
+      <String Context="Generic_Warning">Please press exit!</String>
+    </Concept>
+	<Concept Id="APICAL 4 CH">
+      <Comments>Heart view: label below icon</Comments>
+      <String Context="Generic_Medium">APICAL 4 CH</String>
+    </Concept>
+    <Concept Id="APICAL 2 CH">
+      <Comments>Heart view: label below icon</Comments>
+      <String Context="Generic_Medium">APICAL 2 CH</String>
+    </Concept>
+    <Concept Id="APICAL LAX">
+      <Comments>Heart view: label below icon</Comments>
+      <String Context="Generic_Medium">APICAL LAX</String>
+    </Concept>
+    <Concept Id="READ ONLY EXAM">
+      <Comments>XStrain4D analysis cannot be performed on read only exams</Comments>
+      <String Context="Generic_Warning">The selected exam is read-only: cannot continue.</String>
+    </Concept>	
+    <Concept Id="EXAM ALREADY LOCKED">
+      <Comments>XStrain4D analysis cannot be performed on exams currently opened by another process</Comments>
+      <String Context="Generic_Warning">The selected exam is currently opened by another process: cannot continue.</String>
+    </Concept>	
+  </LocalizationSection> 
+
+  <LocalizationSection InternalNamespace="MainScreen">
+    <Concept Id="APICAL 4CH VIEW">
+      <Comments>Heart view: label below icon</Comments>
+      <String Context="Generic_Medium">APICAL 4 CH</String>
+    </Concept>
+    <Concept Id="APICAL 2CH VIEW">
+      <Comments>Heart view: label below icon</Comments>
+      <String Context="Generic_Medium">APICAL 2 CH</String>
+    </Concept>
+    <Concept Id="APICAL LAX VIEW">
+      <Comments>Heart view: label below icon</Comments>
+      <String Context="Generic_Medium">APICAL LAX</String>
+    </Concept>
+    <Concept Id="LINE N OF M">
+      <Comments>current line number: label below icon. %1 is placeholder for current line number and %2 for number of lines</Comments>
+      <String Context="Generic_Medium">LINE %1 OF %2</String>
+    </Concept>
+    <Concept Id="CLIP">
+      <Comments>Label displayed below each clip to identified how many clips of the same heart view are available for elaboration</Comments>
+      <String Context="Generic_Medium">Clip</String>
+    </Concept>
+    <Concept Id="HEARTRATE">
+      <Comments>Heart Rate label displayed below each clip on display</Comments>
+      <String Context="Generic_Short">HR</String>
+    </Concept>
+    <Concept Id="BPM">
+      <Comments>Unit of heart rate displayed below each clip on display</Comments>
+      <String Context="Generic_Short">BPM</String>
+      <String Context="Generic_Medium">BPM</String>
+    </Concept>
+    <Concept Id="LOADING CLIP">
+      <Comments>Label present in the empty clip space present in the Selection Window during clip loading</Comments>
+      <String Context="Generic_Medium">Loading clip</String>
+    </Concept>
+    <Concept Id="NO CLIP AVAILABLE">
+      <Comments>Label present in the empty clip space present in the Selection Window </Comments>
+      <String Context="Generic_Medium">No clip available</String>
+    </Concept>
+    <Concept Id="BEUTEL COMPUTING">
+      <Comments>Label showed in the progress bar while the system is computing the Beutel data rendering</Comments>
+      <String Context="Generic_Medium">Please wait: Computing Beutel...</String>
+    </Concept>
+    <Concept Id="CANCEL BEUTEL COMPUTING">
+      <Comments>Label related to the command that allow to exit from XStrain 4D</Comments>
+      <String Context="TS_AButton">Cancel</String>
+    </Concept>
+    <Concept Id="EXPORTING MOVIE">
+      <Comments>Label showed in the progress bar while the system is exporting the movie</Comments>
+      <String Context="Generic_Medium">Please wait: Exporting movie...</String>
+    </Concept>
+    <Concept Id="ANT">
+      <Comments>Label identifying Bull's Eye orientation in Q3  and Q2 Quadrants: ANT Stand for Anterior</Comments>
+      <String Context="Generic_Short">ANT</String>
+    </Concept>   
+    <Concept Id="INF">
+      <Comments>Label identifying Bull's Eye orientation in Q3 and Q2 Quadrants: INF Stand for Inferior</Comments>
+      <String Context="Generic_Short">INF</String>
+    </Concept>
+    <Concept Id="LAT">
+      <Comments>Label identifying Bull's Eye orientation in Q3 and Q2 Quadrants : LAT Stand for Lateral</Comments>
+      <String Context="Generic_Short">LAT</String>
+    </Concept>  
+    <Concept Id="SEP">
+      <Comments>Label identifying Bull's Eye orientation in Q3 and Q2 Quadrants: SEP Stand for Septal</Comments>
+      <String Context="Generic_Short">SEP</String>
+    </Concept>
+
+    <Concept Id="ALL SEGMENTS ENABLED">
+      <Comments>General label displayed in Q3 quadrant to identify a specific heart View</Comments>
+      <String Context="Generic_Medium">All segments</String>
+    </Concept>
+    <Concept Id="USER DEFINED SELECTION">
+      <Comments>General label displayed in Q3 quadrant to identify a user defined selection of heart segments</Comments>
+      <String Context="Generic_Medium">User defined selection</String>
+    </Concept>
+    <Concept Id="ALL SEGMENTS DISABLED">
+      <Comments>General label displayed in Q3 quadrant to identify a user defined selection of heart segments</Comments>
+      <String Context="Generic_Medium">User defined selection</String>
+    </Concept>
+    <Concept Id="ALL A2CH SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant to identify a specific heart view</Comments>
+      <String Context="Generic_Medium">All A2Ch segments</String>
+    </Concept>
+    <Concept Id="A2CH INFERIOR WALL SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant to identify a specific heart view</Comments>
+      <String Context="Generic_Medium">A2Ch inferior wall segments</String>
+    </Concept>
+    <Concept Id="A2CH ANTERIOR WALL SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant to identify a specific heart view</Comments>
+      <String Context="Generic_Medium">A2Ch anterior wall segments</String>
+    </Concept>
+    <Concept Id="ALL ALAX SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant to identify specific heart view</Comments>
+      <String Context="Generic_Medium">All ALAX segments</String>
+    </Concept>
+    <Concept Id="ALAX INFERIOR LATERAL WALL SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant to identify specific heart view</Comments>
+      <String Context="Generic_Medium">ALAX inferior lateral wall segments</String>
+    </Concept>
+    <Concept Id="ALAX ANTERIOR SEPTAL WALL SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant to identify specific heart view</Comments>
+      <String Context="Generic_Medium">ALAX anterior septal wall segments</String>
+    </Concept>
+    <Concept Id="ALL A4CH SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant used to identify a specific heart view</Comments>
+      <String Context="Generic_Medium">All 4ch segments</String>
+    </Concept>
+    <Concept Id="A4CH LATERAL WALL SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant used to identify a specific heart view</Comments>
+      <String Context="Generic_Medium">A4Ch lateral wall segments</String>
+    </Concept>
+    <Concept Id="A4CH SEPTAL WALL SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant used to identify a specific heart view</Comments>
+      <String Context="Generic_Medium">A4Ch septal wall segments</String>
+    </Concept>
+    <Concept Id="LAD SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant used to identify a specific Coronary Territory: LAD stands for Left Anterior Descending Coroanry Artery</Comments>
+      <String Context="Generic_Medium">LAD segments</String>
+    </Concept>
+    <Concept Id="LCX SEGMENTS">
+      <Comments> General label displayed in Q3 quadrant used to identify a specific Coronary Territory: LCX stands for Left Circumflex Coronary Artery</Comments>
+      <String Context="Generic_Medium">LCX segments</String>
+    </Concept>
+    <Concept Id="RCA SEGMENTS">
+      <Comments>General label displayed in Q3 quadrant used to identify a specific Coronary Territory: RCA stands for Right Coronary Artery</Comments>
+      <String Context="Generic_Medium">RCA segments</String>
+    </Concept>
+
+    <Concept Id="A4CH PLANE LABEL">
+      <Comments>Label of US plane in Beutel view</Comments>
+      <String Context="Generic_Short">A4CH</String>
+    </Concept>
+    <Concept Id="ALAX PLANE LABEL">
+      <Comments>Label of US plane in Beutel view</Comments>
+      <String Context="Generic_Short">ALAX</String>
+    </Concept>
+    <Concept Id="A2CH PLANE LABEL">
+      <Comments>Label of US plane in Beutel view</Comments>
+      <String Context="Generic_Short">A2CH</String>
+    </Concept>
+	
+    <Concept Id="SET E EVENT">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="Generic_Medium">Set E event</String>
+    </Concept>
+    <Concept Id="SET A EVENT">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="Generic_Medium">Set A event</String>
+    </Concept>
+
+    <Concept Id="VALUE">
+      <Comments>Label shown in Q4 Quadrant to identify the current value in the graphs and in Q2 as header of the Bull's Eye: Value</Comments>
+      <String Context="Generic_Medium">Value</String>
+    </Concept>
+    <Concept Id="PEAK">
+      <Comments>Label shown in Q4 Quadrant to identify the current value in the graphs and in Q2 as header of the Bull's Eye: Peak</Comments>
+      <String Context="Generic_Medium">Peak</String>
+    </Concept>
+    <Concept Id="TIME TO PEAK">
+      <Comments>Label shown in Q4 Quadrant to identify the current value in the graphs and in Q2 as header of the Bull's Eye: Time to peak</Comments>
+      <String Context="Generic_Medium">Time to peak</String>
+    </Concept>
+    <Concept Id="E EVENT">
+      <Comments>Label shown in Q4 Quadrant to identify the current value in the graphs and in Q2 as header of the Bull's Eye: E event</Comments>
+      <String Context="Generic_Medium">E event</String>
+    </Concept>
+    <Concept Id="TIME TO E EVENT">
+      <Comments>Label shown in Q4 Quadrant to identify the current value in the graphs and in Q2 as header of the Bull's Eye: Time to evenet</Comments>
+      <String Context="Generic_Medium">Time to E event</String>
+    </Concept>
+    <Concept Id="A EVENT">
+      <Comments>Label shown in Q4 Quadrant to identify the current value in the graphs and in Q2 as header of the Bull's Eye: A event</Comments>
+      <String Context="Generic_Medium">A event</String>
+    </Concept>
+    <Concept Id="TIME TO A EVENT">
+     <Comments>Label shown in Q4 Quadrant to identify the current value in the graphs and in Q2 as header of the Bull's Eye: Time to A event</Comments>
+      <String Context="Generic_Medium">Time to A event</String>
+    </Concept>
+ 
+    <Concept Id="LONGITUDINAL DISPLACEMENT ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Longitudinal displacement Endocardium</Comments>
+      <String Context="Generic_Medium">Longitudinal displacement Endocardium</String>
+    </Concept>
+    <Concept Id="LONGITUDINAL STRAIN ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Longitudinal strain Endocardium</Comments>
+      <String Context="Generic_Medium">Longitudinal strain Endocardium</String>
+    </Concept>
+    <Concept Id="LONGITUDINAL STRAIN RATE ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Longitudinal strain rate Endocardium</Comments>
+      <String Context="Generic_Medium">Longitudinal strain rate Endocardium</String>
+    </Concept>
+	<Concept Id="LONGITUDINAL VELOCITY ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Longitudinal velocity Endocardium</Comments>
+      <String Context="Generic_Medium">Longitudinal velocity Endocardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL DISPLACEMENT ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Transversal displacement Endocardium</Comments>
+      <String Context="Generic_Medium">Transversal displacement Endocardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Transversal strain Endocardium</Comments>
+      <String Context="Generic_Medium">Transversal strain Endocardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN RATE ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Transversal strain rate Endocardium</Comments>
+      <String Context="Generic_Medium">Transversal strain rate Endocardium</String>
+    </Concept>
+	<Concept Id="TRANSVERSAL VELOCITY ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Transversal velocity Endocardium</Comments>
+      <String Context="Generic_Medium">Transversal velocity Endocardium</String>
+    </Concept>
+	<Concept Id="VP VELOCITY ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: VP velocity Endocardium</Comments>
+      <String Context="Generic_Medium">VP velocity Endocardium</String>
+    </Concept>
+    <Concept Id="VOLUME ENDOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Volume Endocardium</Comments>
+      <String Context="Generic_Medium">Volume Endocardium</String>
+    </Concept>
+
+    <Concept Id="LONGITUDINAL DISPLACEMENT EPICARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Longitudinal displacement Epicardium</Comments>
+      <String Context="Generic_Medium">Longitudinal displacement Epicardium</String>
+    </Concept>
+    <Concept Id="LONGITUDINAL STRAIN EPICARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Longitudinal strain Epicardium</Comments>
+      <String Context="Generic_Medium">Longitudinal strain Epicardium</String>
+    </Concept>
+    <Concept Id="LONGITUDINAL STRAIN RATE EPICARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Longitudinal strain rate Epicardium</Comments>
+      <String Context="Generic_Medium">Longitudinal strain rate Epicardium</String>
+    </Concept>
+	<Concept Id="LONGITUDINAL VELOCITY EPICARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Longitudinal velocity Epicardium</Comments>
+      <String Context="Generic_Medium">Longitudinal velocity Epicardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL DISPLACEMENT EPICARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Transversal displacement Epicardium</Comments>
+      <String Context="Generic_Medium">Transversal displacement Epicardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN EPICARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Transversal strain Epicardium</Comments>
+      <String Context="Generic_Medium">Transversal strain Epicardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN RATE EPICARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Transversal strain rate Epicardium</Comments>
+      <String Context="Generic_Medium">Transversal strain rate Epicardium</String>
+    </Concept>
+	<Concept Id="TRANSVERSAL VELOCITY EPICARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Transversal velocity Epicardium</Comments>
+      <String Context="Generic_Medium">Transversal velocity Epicardium</String>
+    </Concept>
+	<Concept Id="VP VELOCITY EPICARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: VP velocity Epicardium</Comments>
+      <String Context="Generic_Medium">VP velocity Epicardium</String>
+    </Concept>
+    <Concept Id="VOLUME MYOCARDIUM">
+      <Comments>Label shown in Q4 Quadrant to identify the quantity plotted over the time in the graphs and in Q2 as header of the Bull's Eye: Volume Myocardium</Comments>
+      <String Context="Generic_Medium">Volume Myocardium</String>
+    </Concept>
+
+    <Concept Id="DIASTOLIC VOLUME">
+      <Comments>Clinical term present in Q3: Vd stands for Diastolic Volume</Comments>
+      <String Context="Generic_Short">Vd</String>
+    </Concept>
+    <Concept Id="SYSTOLIC VOLUME">
+      <Comments>Clinical term present in Q3: Vs stands for Systolic Volume</Comments>
+      <String Context="Generic_Short">Vs</String>
+    </Concept>
+    <Concept Id="EJECTION FRACTION">
+      <Comments>Clinical term present in Q3: EF stands for Ejection Fraction</Comments>
+      <String Context="Generic_Short">EF</String>
+    </Concept>
+    <Concept Id="CARDIAC OUTPUT">
+      <Comments>Clinical term present in Q3: CO stands for Cardiac Output</Comments>
+      <String Context="Generic_Short">CO</String>
+    </Concept>
+    <Concept Id="DIASTOLIC SPHERICITY INDEX">
+      <Comments>Clinical term present in Q3: DSI stands for Diastolic Sphericity Index</Comments>
+      <String Context="Generic_Short">DSI</String>
+    </Concept>
+    <Concept Id="SYSTOLIC SPHERICITY INDEX">
+      <Comments>Clinical term present in Q3: SSI stands for Systolic Sphericity Index</Comments>
+      <String Context="Generic_Short">SSI</String>
+    </Concept>
+
+    <Concept Id="MILLILITER">
+      <Comments>Stands for Milliliters (present in Q2 and Q4 (y axis of the Graphs))</Comments>
+      <String Context="Generic_Short">ml</String>
+    </Concept>
+    <Concept Id="TIME">
+      <Comments>(present in Q4 to indicate the x axis values of the graph representations)</Comments>
+      <String Context="Generic_Medium">TIME</String>
+    </Concept>
+    <Concept Id="MILLISECONDS">
+      <Comments>Stands for Milliseconds (present in Q2 and Q4 (x axis of the Graphs))</Comments>
+      <String Context="Generic_Short">ms</String>
+    </Concept>
+    <Concept Id="RR DURATION">
+      <Comments>Heart Cycle duration</Comments>
+      <String Context="Generic_Medium">RR DURATION</String>
+    </Concept>
+    <Concept Id="PERCENT">
+      <Comments>(the short context is used in Q2 for the EF measurement; the medium context is used Q4 (y axis of the Graphs) for Strain measurement)</Comments>
+      <String Context="Generic_Short">%</String>
+      <String Context="Generic_Medium">percentage</String>
+    </Concept>   
+    <Concept Id="MILLILITER PER MINUTE">
+      <Comments>(present in Q2 for the CO measurement)</Comments>
+      <String Context="Generic_Short">ml/min</String>
+    </Concept> 
+    <Concept Id="CENTIMETER PER SECOND">
+      <Comments>(present in Q4 (y axis of the Graphs) for Myocardial velocities measurement)</Comments>
+      <String Context="Generic_Short">cm/sec</String>
+    </Concept> 
+    <Concept Id="PER SECOND">
+      <Comments>(present in  Q4 (y axis of the Graphs) for Strain Rate measurement)</Comments>
+      <String Context="Generic_Short">1/s</String>
+    </Concept>     
+    <Concept Id="MILLIMETER">
+      <Comments>(present in  Q4 (y axis of the Graphs) for Displacement measurement)</Comments>
+      <String Context="Generic_Short">mm</String>
+    </Concept>
+  </LocalizationSection> 
+
+  <LocalizationSection InternalNamespace="TouchScreen">
+    <Concept Id="XSTRAIN4D SELECTION CONTROL TAB">
+      <Comments>Label related to the TAB on the touchscreen</Comments>
+      <String Context="TS_TabName">Control</String>
+    </Concept>
+    <Concept Id="XSTRAIN4D REVIEW CONTROL TAB">
+      <Comments>Label related to the TAB on the touchscreen</Comments>
+      <String Context="TS_TabName">Control</String>
+    </Concept>
+    <Concept Id="XSTRAIN4D EXPORT TAB">
+      <Comments>Label related to the TAB on the touchscreen</Comments>
+      <String Context="TS_TabName">Export</String>
+    </Concept>
+	
+	<Concept Id="Run4DXStrain">
+      <Comments>Start the XStrain4D component</Comments>
+      <String Context="TS_TButton">Run4DXStrain</String>
+    </Concept>
+	<Concept Id="EXIT">
+      <Comments>Exit the XStrain4D component</Comments>
+      <String Context="TS_TButton">Exit</String>
+    </Concept>
+
+	<Concept Id="PROCESS">
+      <Comments>Label related to the command that allow to go ahead in data elaboration after clips selection</Comments>
+      <String Context="TS_AButton">Process</String>
+    </Concept>
+
+    <Concept Id="CINE PLAY">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Play</String>
+    </Concept>
+    <Concept Id="CINE STOP">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Stop</String>
+    </Concept>
+    <Concept Id="DISABLE ALL SEGMENTS">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Disable all segments</String>
+    </Concept>
+    <Concept Id="ENABLE ALL SEGMENTS">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Enable all segments</String>
+    </Concept>
+    <Concept Id="SHOW 2CH SEGMENTS">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Show 2Ch segments</String>
+    </Concept>
+    <Concept Id="SHOW ALAX SEGMENTS">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Show ALAX segments</String>
+    </Concept>
+    <Concept Id="SHOW 4CH SEGMENTS">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Show 4Ch segments</String>
+    </Concept>
+    <Concept Id="SHOW CORONARY SEGMENTS">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Show Coronary Territories</String>
+    </Concept>
+    <Concept Id="SHOW ENDOCARDIUM">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Show Endocardial layer</String>
+    </Concept>
+    <Concept Id="SHOW EPICARDIUM">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Show Epicardial layer</String>
+    </Concept>
+    <Concept Id="SHOW SECOND LAYER">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Show second layer</String>
+    </Concept>
+    <Concept Id="HIDE SECOND LAYER">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Hide second layer</String>
+    </Concept>
+    <Concept Id="SHOW PLANES">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Show Planes</String>
+    </Concept>
+    <Concept Id="HIDE PLANES">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Hide Planes</String>
+    </Concept>
+    <Concept Id="ATTACH">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Attach</String>
+    </Concept>
+    <Concept Id="EXPORT CURRENT PARAMETER">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Export current parameter</String>
+    </Concept>
+    <Concept Id="EXPORT ALL PARAMETERS">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Export all parameters</String>
+    </Concept>
+    <Concept Id="EXPORT MOVIE">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Export Movie</String>
+    </Concept>
+    <Concept Id="SCREENSHOT">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Screenshot</String>
+    </Concept>
+    <Concept Id="EXPORT MAP">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">CSV Data Export</String>
+    </Concept>
+    <Concept Id="SET E EVENT">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Set E event</String>
+    </Concept>
+    <Concept Id="SET A EVENT">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Set A event</String>
+    </Concept>
+    <Concept Id="MODIFY">
+      <Comments>TouchScreen Command</Comments>
+      <String Context="TS_AButton">Modify</String>
+    </Concept>
+
+    <Concept Id="CINE FRAME">
+      <Comments>TouchScreen command to scroll frame by frame the data</Comments>
+      <String Context="TS_TButton">Cine Frame</String>
+    </Concept>
+    <Concept Id="PARAMETER">
+      <Comments>TouchScreen Command to change the current parameter</Comments>
+      <String Context="TS_TButton">Parameter</String>
+    </Concept>
+    <Concept Id="VALUE">
+      <Comments>TouchScreen command to change the current value</Comments>
+      <String Context="TS_TButton">Value</String>
+    </Concept>
+    <Concept Id="3D VIEW ZOOM">
+      <Comments>TouchScreen command to zoom in and out the 3D view</Comments>
+      <String Context="TS_TButton">3D view zoom</String>
+    </Concept>
+	
+    <Concept Id="SCROLL A2CH">
+      <Comments>TouchScreen command</Comments>
+      <String Context="TS_TButton">Scroll A2Ch</String>
+    </Concept>
+    <Concept Id="SCROLL A3CH">
+      <Comments>TouchScreen command</Comments>
+      <String Context="TS_TButton">Scroll A3Ch</String>   
+    </Concept>
+    <Concept Id="SCROLL A4CH">
+      <Comments>TouchScreen command</Comments>
+      <String Context="TS_TButton">Scroll A4Ch</String>   
+    </Concept>
+  </LocalizationSection>
+  
+  <LocalizationSection InternalNamespace="HelpArea">
+    <Concept Id="THE PROVIDED VALUES ARE AVERAGED OVER THE SEGMENTS">
+      <Comments>warning message to the user</Comments>
+      <String Context="Generic_Warning">Warning: the provided values are averaged over the segments.</String>
+    </Concept>
+  </LocalizationSection>
+  
+  <LocalizationSection InternalNamespace="Report">
+    <Concept Id="REGIONAL CURVES ANALYSIS XSTRAIN4D">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">REGIONAL CURVES ANALYSIS XStrain4D</String>
+    </Concept>
+
+    <Concept Id="A4CH  ACQUIRED AT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">A4Ch - Acquired at:</String>
+    </Concept>
+    <Concept Id="A2CH  ACQUIRED AT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">A2Ch - Acquired at:</String>
+    </Concept>
+    <Concept Id="ALAX  ACQUIRED AT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">ALAX - Acquired at:</String>
+    </Concept>
+	
+    <Concept Id="DELETE SECTION">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">X</String>
+    </Concept>
+    <Concept Id="ATTACHED ON">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Attached on</String>
+    </Concept>
+
+    <Concept Id="GLOBAL VALUE">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Global value</String>
+    </Concept>
+    <Concept Id="GLOBAL MAX DELAY">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Global MAX delay</String>
+    </Concept>
+    <Concept Id="SEGMENT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Segment</String>
+    </Concept>
+	<Concept Id="VALUE">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Value</String>
+    </Concept>
+    <Concept Id="TIME TO VALUE">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Time to value</String>
+    </Concept>
+    <Concept Id="DELAY">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Delay</String>
+    </Concept>
+
+    <Concept Id="1-BAS ANT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">1-BAS ANT</String>
+    </Concept>
+    <Concept Id="2-BAS ANT SEP">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">2-BAS ANT SEP</String>
+    </Concept>
+    <Concept Id="3-BAS SEP">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">3-BAS SEP</String>
+    </Concept>
+    <Concept Id="4-BAS INF">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">4-BAS INF</String>
+    </Concept>
+    <Concept Id="5-BAS POST">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">5-BAS POST</String>
+    </Concept>
+    <Concept Id="6-BAS LAT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">6-BAS LAT</String>
+    </Concept>
+    <Concept Id="7-MID ANT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">7-MID ANT</String>
+    </Concept>
+    <Concept Id="8-MID ANT SEP">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">8-MID ANT SEP</String>
+    </Concept>
+    <Concept Id="9-MID SEP">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">9-MID SEP</String>
+    </Concept>
+    <Concept Id="10-MID INF">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">10-MID INF</String>
+    </Concept>
+    <Concept Id="11-MID POST">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">11-MID POST</String>
+    </Concept>
+    <Concept Id="12-MID LAT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">12-MID LAT</String>
+    </Concept>
+    <Concept Id="13-APIC ANT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">13-APIC ANT</String>
+    </Concept>
+    <Concept Id="14-APIC SEP">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">14-APIC SEP</String>
+    </Concept>
+    <Concept Id="15-APIC INF">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">15-APIC INF</String>
+    </Concept>
+    <Concept Id="16-APIC LAT">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">16-APIC LAT</String>
+    </Concept>
+    <Concept Id="17-APEX">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">17-APEX</String>
+    </Concept>
+    <Concept Id="GLOBAL BASAL LEVEL">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Global basal level</String>
+    </Concept>
+    <Concept Id="MAX DELAY BASAL LEVEL">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">MAX delay basal level</String>
+    </Concept>
+    <Concept Id="GLOBAL MID LEVEL">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Global mid level</String>
+    </Concept>
+    <Concept Id="MAX DELAY MID LEVEL">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">MAX delay mid level</String>
+    </Concept>
+    <Concept Id="GLOBAL APICAL LEVEL">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">Global apical level</String>
+    </Concept>
+    <Concept Id="MAX DELAY APICAL LEVEL">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">MAX delay apical level</String>
+    </Concept>
+	<Concept Id="UNDEFINED">
+      <Comments>Label shown in reporting</Comments>
+      <String Context="Generic_Medium">-</String>
+    </Concept>
+
+    <Concept Id="PEAK">
+      <Comments>Label shown in the report: Peak</Comments>
+      <String Context="Generic_Medium">Peak</String>
+    </Concept>
+    <Concept Id="E EVENT">
+      <Comments>Label shown in the report: E event</Comments>
+      <String Context="Generic_Medium">E event</String>
+    </Concept>
+    <Concept Id="A EVENT">
+      <Comments>Label shown in the report: A event</Comments>
+      <String Context="Generic_Medium">A event</String>
+    </Concept>
+ 
+    <Concept Id="LONGITUDINAL DISPLACEMENT ENDOCARDIUM">
+      <Comments>Label shown in the report: Longitudinal displacement Endocardium</Comments>
+      <String Context="Generic_Medium">Longitudinal displacement Endocardium</String>
+    </Concept>
+    <Concept Id="LONGITUDINAL STRAIN ENDOCARDIUM">
+      <Comments>Label shown in the report: Longitudinal strain Endocardium</Comments>
+      <String Context="Generic_Medium">Longitudinal strain Endocardium</String>
+    </Concept>
+    <Concept Id="LONGITUDINAL STRAIN RATE ENDOCARDIUM">
+      <Comments>Label shown in the report: Longitudinal strain rate Endocardium</Comments>
+      <String Context="Generic_Medium">Longitudinal strain rate Endocardium</String>
+    </Concept>
+	<Concept Id="LONGITUDINAL VELOCITY ENDOCARDIUM">
+      <Comments>Label shown in the report: Longitudinal velocity Endocardium</Comments>
+      <String Context="Generic_Medium">Longitudinal velocity Endocardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL DISPLACEMENT ENDOCARDIUM">
+      <Comments>Label shown in the report: Transversal displacement Endocardium</Comments>
+      <String Context="Generic_Medium">Transversal displacement Endocardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN ENDOCARDIUM">
+      <Comments>Label shown in the report: Transversal strain Endocardium</Comments>
+      <String Context="Generic_Medium">Transversal strain Endocardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN RATE ENDOCARDIUM">
+      <Comments>Label shown in the report: Transversal strain rate Endocardium</Comments>
+      <String Context="Generic_Medium">Transversal strain rate Endocardium</String>
+    </Concept>
+	<Concept Id="TRANSVERSAL VELOCITY ENDOCARDIUM">
+      <Comments>Label shown in the report: Transversal velocity Endocardium</Comments>
+      <String Context="Generic_Medium">Transversal velocity Endocardium</String>
+    </Concept>
+	<Concept Id="VP VELOCITY ENDOCARDIUM">
+      <Comments>Label shown in the report: VP velocity Endocardium</Comments>
+      <String Context="Generic_Medium">VP velocity Endocardium</String>
+    </Concept>
+    <Concept Id="VOLUME ENDOCARDIUM">
+      <Comments>Label shown in the report: Volume Endocardium</Comments>
+      <String Context="Generic_Medium">Volume Endocardium</String>
+    </Concept>
+
+    <Concept Id="LONGITUDINAL DISPLACEMENT EPICARDIUM">
+      <Comments>Label shown in the report: Longitudinal displacement Epicardium</Comments>
+      <String Context="Generic_Medium">Longitudinal displacement Epicardium</String>
+    </Concept>
+    <Concept Id="LONGITUDINAL STRAIN EPICARDIUM">
+      <Comments>Label shown in the report: Longitudinal strain Epicardium</Comments>
+      <String Context="Generic_Medium">Longitudinal strain Epicardium</String>
+    </Concept>
+    <Concept Id="LONGITUDINAL STRAIN RATE EPICARDIUM">
+      <Comments>Label shown in the report: Longitudinal strain rate Epicardium</Comments>
+      <String Context="Generic_Medium">Longitudinal strain rate Epicardium</String>
+    </Concept>
+	<Concept Id="LONGITUDINAL VELOCITY EPICARDIUM">
+      <Comments>Label shown in the report: Longitudinal velocity Epicardium</Comments>
+      <String Context="Generic_Medium">Longitudinal velocity Epicardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL DISPLACEMENT EPICARDIUM">
+      <Comments>Label shown in the report: Transversal displacement Epicardium</Comments>
+      <String Context="Generic_Medium">Transversal displacement Epicardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN EPICARDIUM">
+      <Comments>Label shown in the report: Transversal strain Epicardium</Comments>
+      <String Context="Generic_Medium">Transversal strain Epicardium</String>
+    </Concept>
+    <Concept Id="TRANSVERSAL STRAIN RATE EPICARDIUM">
+      <Comments>Label shown in the report: Transversal strain rate Epicardium</Comments>
+      <String Context="Generic_Medium">Transversal strain rate Epicardium</String>
+    </Concept>
+	<Concept Id="TRANSVERSAL VELOCITY EPICARDIUM">
+      <Comments>Label shown in the report: Transversal velocity Epicardium</Comments>
+      <String Context="Generic_Medium">Transversal velocity Epicardium</String>
+    </Concept>
+	<Concept Id="VP VELOCITY EPICARDIUM">
+      <Comments>Label shown in the report: VP velocity Epicardium</Comments>
+      <String Context="Generic_Medium">VP velocity Epicardium</String>
+    </Concept>
+    <Concept Id="VOLUME MYOCARDIUM">
+      <Comments>Label shown in the report: Volume Myocardium</Comments>
+      <String Context="Generic_Medium">Volume Myocardium</String>
+    </Concept>
+
+	</LocalizationSection>
+	<LocalizationSection InternalNamespace="Error_Messages">
+	 <Concept Id="OPERATION_OK">
+      <String Context="Generic_Warning">Operation successfully completed.</String>
+    </Concept>
+    <Concept Id="OPERATION_ERROR">
+      <String Context="Generic_Warning">An error occured during this operation.</String>
+    </Concept>
+	</LocalizationSection>
+	
+	
+</LocalizationResource>

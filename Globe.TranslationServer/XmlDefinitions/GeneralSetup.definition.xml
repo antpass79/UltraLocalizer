@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="GeneralSetup" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection>
+    <Concept Id="GENERAL_SETUP_CONFIGURATION">
+      <Comments>Title of general setup icon in Menu dialog</Comments>
+      <String Context="Generic_Medium">General Setup</String>
+    </Concept>
+    <Concept Id="DATE_GROUP_TITLE">
+      <Comments>Title of date group box, in Date/Time tab, in general setup preset</Comments>
+      <String Context="Generic_Medium">DATE</String>
+    </Concept>
+    <Concept Id="TIME_GROUP_TITLE">
+      <Comments>Title of time group box, in Date/Time tab, in general setup preset</Comments>
+      <String Context="Generic_Medium">TIME</String>  
+    </Concept>
+    <Concept Id="DATE_TIME_TAB_LABEL">
+      <Comments>label in title of datetime tab</Comments>
+      <String Context="Generic_Medium">DATE/TIME</String>
+    </Concept>
+    <Concept Id="APPLICATIONS_TAB_LABEL">
+      <Comments>label in title of application settings tab</Comments>
+      <String Context="Generic_Long">APPLICATION SETTINGS</String>
+    </Concept>
+    <Concept Id="FootSwitchTab">
+      <String Context="Generic_Long">FOOTSWITCH</String>
+    </Concept>
+    <Concept Id="ProbeButtonsTab">
+      <String Context="Generic_Long">PROBE BUTTONS</String>
+    </Concept>
+    <Concept Id="SET_DATE">
+      <Comments>label about setting date control</Comments>
+      <String Context="Generic_Medium">SET DATE</String>
+    </Concept>
+    <Concept Id="SET_TIME">
+      <Comments>label about setting time control</Comments>
+      <String Context="Generic_Medium">SET TIME</String>
+    </Concept>
+    <Concept Id="DATE_FORMAT">
+      <Comments>label about date format combo</Comments>
+      <String Context="Generic_Medium">DATE FORMAT</String>
+    </Concept>
+    <Concept Id="TIME_FORMAT">
+      <Comments>label about time format combo</Comments>
+      <String Context="Generic_Medium">TIME FORMAT</String>
+    </Concept>
+    <Concept Id="PREVIEW">
+      <Comments>label about preview of date</Comments>
+      <String Context="Generic_Medium">PREVIEW</String>
+    </Concept>
+    <Concept Id="GG_MM_AAAA">
+      <Comments>ITEM combo of Date Format</Comments>
+      <String Context="Generic_Medium">GG/MM/AAAAA</String>
+    </Concept>
+    <Concept Id="GG_MMM_AAAA">
+      <Comments>ITEM combo of Date Format</Comments>
+      <String Context="Generic_Medium">GG/MMM/AAAAA</String>
+    </Concept>
+    <Concept Id="MM_GG_AAAA">
+      <Comments>ITEM combo of Date Format</Comments>
+      <String Context="Generic_Medium">MM/GG/AAAAA</String>
+    </Concept>
+    <Concept Id="MMM_GG_AAAA">
+      <Comments>ITEM combo of Date Format</Comments>
+      <String Context="Generic_Medium">MMM/GG/AAAAA</String>
+    </Concept>
+    <Concept Id="AAAA_MM_GG">
+      <Comments>ITEM combo of Date Format</Comments>
+      <String Context="Generic_Medium">AAAA/MM/GG</String>
+    </Concept>
+    <Concept Id="AAAA_MMM_GG">
+      <Comments>ITEM combo of Date Format</Comments>
+      <String Context="Generic_Medium">AAAA/MMM/GG</String>
+    </Concept>
+    <Concept Id="12Hours">
+      <Comments>ITEM combo of Time Format</Comments>
+      <String Context="Generic_Medium">12 HOURS</String>
+    </Concept>
+    <Concept Id="24Hours">
+      <Comments>ITEM combo of Time Format</Comments>
+      <String Context="Generic_Medium">24 HOURS</String>
+    </Concept>
+    <Concept Id="January">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">JAN</String>
+    </Concept>
+    <Concept Id="February">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">FEB</String>
+    </Concept>
+    <Concept Id="March">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">MAR</String>
+    </Concept>
+    <Concept Id="April">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">APR</String>
+    </Concept>
+    <Concept Id="May">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">MAY</String>
+    </Concept>
+    <Concept Id="June">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">JUN</String>
+    </Concept>
+    <Concept Id="July">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">JUL</String>
+    </Concept>
+    <Concept Id="August">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">AUG</String>
+    </Concept>
+    <Concept Id="September">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">SEP</String>
+    </Concept>
+    <Concept Id="October">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">OCT</String>
+    </Concept>
+    <Concept Id="November">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">NOV</String>
+    </Concept>
+    <Concept Id="December">
+      <Comments>month in formatted date</Comments>
+      <String Context="Generic_Short">DEC</String>
+    </Concept>
+    <Concept Id="MeasureUnits">
+      <Comments>Title of measure unit tab</Comments>
+      <String Context="Generic_Medium">MEASURE UNIT</String>
+    </Concept>
+    <Concept Id="BiopsyTab">
+      <Comments>Title of biopsy tab</Comments>
+      <String Context="Generic_Medium">BIOPSY</String>
+    </Concept>
+    <Concept Id="HeightWeightLabel">
+      <Comments>Label of height/weight combo</Comments>
+      <String Context="Generic_Medium">HEIGHT/WEIGHT</String>
+    </Concept>
+    <Concept Id="BiopsyViewTypeLabel">
+      <Comments>Label of biopsy view type combo</Comments>
+      <String Context="Generic_Medium">BIOPSY VIEW TYPE</String>
+    </Concept>
+    <Concept Id="Cm_Kg">
+      <Comments>item in height/weight combo, in measure unit tab</Comments>
+      <String Context="Generic_Short">cm/kg</String>
+    </Concept>
+    <Concept Id="Ft_Lb">
+      <Comments>item in height/weight combo, in measure unit tab</Comments>
+      <String Context="Generic_Short">ft/lb</String>
+    </Concept>
+    
+    <Concept Id="Human">
+      <Comments>item in system environment combo</Comments>
+      <String Context="Generic_Medium">HUMAN</String>
+    </Concept>
+    <Concept Id="Veterinary">
+      <Comments>item in system environment combo</Comments>
+      <String Context="Generic_Medium">VETERINARY</String>
+    </Concept>
+    <Concept Id="SysEnvirLabel">
+      <Comments>Label in measure unit tab</Comments>
+      <String Context="Generic_Long">SYSTEM ENVIRONMENT</String>
+    </Concept>
+    <Concept Id="TransesophagealTemp">
+      <Comments>Label of Transesophageal temperature combo, in measure unit tab</Comments>
+      <String Context="Generic_Long">TRANSESOPHAGEAL TEMPERATURE IN:</String>
+    </Concept>
+    <Concept Id="Celsius">
+      <Comments>item in Transesophageal temperature combo, in measure unit tab</Comments>
+      <String Context="Generic_Long">CELSIUS</String>
+    </Concept>
+    <Concept Id="FAHRENHEIT">
+      <Comments>item in Transesophageal temperature combo, in measure unit tab</Comments>
+      <String Context="Generic_Long">FAHRENHEIT</String>
+    </Concept>
+    <Concept Id="BiopsyOnlyChannelView">
+      <Comments>item to select the channel view in biopsy modality</Comments>
+      <String Context="Generic_Long">BIOPSY CHANNEL VIEW</String>
+    </Concept>
+    <Concept Id="BiopsyOnlyNeedleView">
+      <Comments>item to select the needle view in biopsy modality</Comments>
+      <String Context="Generic_Long">BIOPSY NEEDLE VIEW</String>
+    </Concept>
+    <Concept Id="BiopsyBothView">
+      <Comments>item to select the channel and needle view in biopsy modality</Comments>
+      <String Context="Generic_Long">BIOPSY CHANNEL/NEEDLE VIEW</String>
+    </Concept>
+    <Concept Id="ControlPanelTitle">
+      <Comments>Title of control panel unit tab</Comments>
+      <String Context="Generic_Medium">CONTROL PANEL</String>
+    </Concept>
+    <Concept Id="TrackballSpeedLabel">
+      <Comments>label in control panel tab, trackball speed</Comments>
+      <String Context="Generic_Medium">TRACKBALL SPEED</String>
+    </Concept>
+    <Concept Id="EnableTrackballAccelerationLabel">
+      <Comments>label in control panel tab related to a check box that specify if mouse acceleration detection is enabled or disabled</Comments>
+      <String Context="Generic_Medium">TRACKBALL ACCELERATION</String>
+    </Concept>
+    <Concept Id="BeepVolumeLabel">
+      <Comments>label in control panel tab, beep volume</Comments>
+      <String Context="Generic_Medium">BEEP VOLUME</String>
+     </Concept>
+    <Concept Id="LeftClickLabel">
+      <Comments>label in control panel tab, left click</Comments>
+      <String Context="Generic_Medium">LEFT CLICK</String>
+    </Concept>
+    <Concept Id="AcusticBeepLengthLabel">
+      <Comments>label in control panel tab, acustic beep length</Comments>
+      <String Context="Generic_Medium">ACUSTIC BEEP LENGTH</String>
+    </Concept>
+    <Concept Id="TouchScreenGroupBoxTitle">
+      <Comments>control panel tab, TouchScreen GroupBox title</Comments>
+      <String Context="Generic_Medium">TOUCH SCREEN</String>
+    </Concept>
+    <Concept Id="ControlPanelGroupBoxTitle">
+      <Comments>control panel tab, Control panel groupbox title</Comments>
+      <String Context="Generic_Medium">CONTROL PANEL</String>
+    </Concept>
+    <Concept Id="MainDisplayGroupBoxTitle">
+      <Comments>control panel tab, Main Display groupbox title</Comments>
+      <String Context="Generic_Medium">MAIN DISPLAY</String>
+    </Concept>
+    <Concept Id="Contrast">
+      <Comments>label in control panel tab, groupbox touch screen, main display and contro panel</Comments>
+      <String Context="Generic_Medium">CONTRAST</String>
+    </Concept>
+    <Concept Id="Brightness">
+      <Comments>label in control panel tab, groupbox touch screen, main display and contro panel</Comments>
+      <String Context="Generic_Medium">BRIGHTNESS</String>
+    </Concept>
+    <Concept Id="ENTER">
+      <Comments>in control panel tab, item of left click combo</Comments>
+      <String Context="Generic_Medium">ENTER</String>
+    </Concept>
+    <Concept Id="UNDO">
+      <Comments>in control panel tab, item of left click combo</Comments>
+      <String Context="Generic_Medium">UNDO</String>
+    </Concept>
+		<Concept Id="ETOUCHBUTTONBEHAVIOR">
+			<Comments>in control panel tab, title of Esaote button</Comments>
+			<String Context="Generic_Medium">ETOUCH BUTTON BEHAVIOUR</String>
+		</Concept>
+		<Concept Id="DEPTHINC">
+			<Comments>in control panel tab, title of Depth rotation option (clockwise, counterclockwise)</Comments>
+			<String Context="Generic_Medium">DEPTH INCREASE</String>
+		</Concept>
+		<Concept Id="DEPTHCLOCKWISE">
+			<Comments>set of Depth rotation: clockwise</Comments>
+			<String Context="Generic_Medium">CLOCKWISE</String>
+		</Concept>
+		<Concept Id="DEPTHCOUNTERCLOCKWISE">
+			<Comments>set of Depth rotation: counterclockwise</Comments>
+			<String Context="Generic_Medium">COUNTERCLOCKWISE</String>
+		</Concept>
+		<Concept Id="STANDBYATPOWERFAIL">
+			<Comments>This checkbox is to force a standby when the power cord is detach and the system runs on battery</Comments>
+			<String Context="Generic_Long">STAND BY AT POWER FAIL</String>
+		</Concept>
+		<Concept Id="SHUTDOWNTYPE">
+			<Comments>in control panel tab, item of Esaote button type combo</Comments>
+			<String Context="Generic_Medium">SHUTDOWN TYPE</String>
+		</Concept>
+    <Concept Id="CLEARMEMORY">
+      <Comments>label of a checkbox to force memory clear when resuming from standby</Comments>
+      <String Context="Generic_Medium">CLEAR MEMORY</String>
+    </Concept>
+    <Concept Id="ETOUCHBEHAVIOR">
+			<Comments>in control panel tab, item of Esaote button type combo</Comments>
+			<String Context="Generic_Medium">ETOUCH</String>
+		</Concept>
+    <Concept Id="PROTOCOLBUTTONBEHAVIOR">
+      <Comments>in control panel tab, title of shutdown type combo</Comments>
+      <String Context="Generic_Medium">PROTOCOLS	</String>
+    </Concept>
+	<Concept Id="EASYTUNINGBUTTONBEHAVIOR">
+      <Comments>[StoryID: 21884] in control panel tab, item of Esaote button type combo</Comments>
+      <String Context="Generic_Medium">EASYTUNING</String>
+    </Concept>
+	<Concept Id="TsNotifyGrid">
+      <Comments>in control panel tab, item of Esaote button type combo</Comments>
+      <String Context="Generic_Medium">US Touchscreen Panel</String>
+    </Concept>
+    <Concept Id="SHUTDOWN">
+      <Comments>in control panel tab, item of shutdown type combo</Comments>
+      <String Context="Generic_Medium">SHUTDOWN</String>
+    </Concept>
+    <Concept Id="STANDBY">
+      <Comments>in control panel tab, item of shutdown type combo</Comments>
+      <String Context="Generic_Medium">STAND BY</String>
+    </Concept>
+    <Concept Id="MIXED">
+      <Comments>in control panel tab, item of mixed shutdown type combo</Comments>
+      <String Context="Generic_Medium">MIXED</String>
+    </Concept>
+    <Concept Id="HIBERNATE">
+      <Comments>real hibernation, same translation as mixed (above). They can't be both active at the same time</Comments>
+      <String Context="Generic_Medium">HIBERNATE</String>
+    </Concept>
+    <Concept Id="REBOOT">
+      <Comments>in control panel tab, item of REBOOT shutdown type combo</Comments>
+      <String Context="Generic_Medium">REBOOT</String>
+    </Concept>
+    <Concept Id="SHUTDOWN_ONCE">
+      <Comments>in control panel tab, item of shutdown type combo</Comments>
+      <String Context="Generic_Medium">SHUTDOWN ONCE</String>
+    </Concept>
+    <Concept Id="SHUTDOWN_WITH_VIRUS_CHECK">
+      <Comments>this is a full shutdown that performs an antivirus scan before switching off the machine</Comments>
+      <String Context="Generic_Long">SHUTDOWN WITH VIRUS SCAN</String>
+    </Concept>
+    <Concept Id="SHUTDOWN_WITH_VIRUS_CHECK_ONCE">
+      <Comments>this is a full shutdown that performs an antivirus scan before switching off the machine but this is not a persistent setting, next reboot the system will ahve the previous shutdown setting (like SHUTDOWN_ONCE)</Comments>
+      <String Context="Generic_Long">SHUTDOWN WITH VIRUS SCAN ONCE</String>
+    </Concept>
+    <Concept Id="CINEMODE">
+      <Comments>in control panel tab, of cine mode tab</Comments>
+      <String Context="Generic_Medium">CINE MODE</String>
+    </Concept>
+    <Concept Id="AUTOMATIC_PLAY_LABEL">
+      <Comments>in control panel tab, of cine mode tab</Comments>
+      <String Context="Generic_Long">AUTOMATIC PLAY</String>
+    </Concept>
+    <Concept Id="AUTOMATIC_TRACE_MODE_PLAY_LABEL">
+      <Comments>in control panel tab, of cine mode tab</Comments>
+      <String Context="Generic_Long">TRACE AUTOMATIC PLAY</String>
+    </Concept>
+    <Concept Id="RAWDATA">
+      <Comments>in control panel tab, of raw data tab</Comments>
+      <String Context="Generic_Medium">RAW DATA</String>
+    </Concept>
+    <Concept Id="RAWDATA_SAVE_LABEL">
+      <Comments>in control panel tab, of raw data tab</Comments>
+      <String Context="Generic_Long">SAVE RAW DATA</String>
+    </Concept>
+    <Concept Id="APP_LIST_LABEL">
+      <Comments>label of application list in application settings tab</Comments>
+      <String Context="Generic_Long">SELECT APPLICATION</String>
+    </Concept>
+    <Concept Id="ABSOLUTE_ANGLE_LABEL">
+      <Comments>label of absolute angle in application settings tab</Comments>
+      <String Context="Generic_Long">ABSOLUTE ANGLE</String>
+    </Concept>
+    <Concept Id="STEER_PW_ON_GATE_LABEL">
+      <Comments>PW Steer on gate in application settings tab</Comments>
+      <String Context="Generic_Long">SAMPLE VOLUME SWIVELING STEERING</String>
+    </Concept>
+    <Concept Id="ZOOM_MARKER_LABEL">
+      <Comments>Zoom reference in application settings tab</Comments>
+      <String Context="Generic_Long">Show zoom reference window</String>
+    </Concept>    
+    <Concept Id="ADA_GROUPBOX_LABEL">
+      <Comments>label in title of "Automatic Doppler steering and Angle correction positioning (ADA)" settings groupbox. Please ask to @claudio.fertino for information about this feature</Comments>
+      <String Context="Generic_Long">ADA SETTINGS</String>
+    </Concept>
+    <Concept Id="ADA_LABEL">
+      <Comments>label of ADA enabler checkbox in application settings tab. Please ask to @claudio.fertino for information about this feature</Comments>
+      <String Context="Generic_Long">ADA ENABLED</String>
+    </Concept>
+    <Concept Id="UPPER_FLUX_LABEL">
+      <Comments>label of UPPER FLUX enabler checkbox in application settings tab. Please ask to @claudio.fertino for information about this feature</Comments>
+      <String Context="Generic_Long">UPPER FLUXBOX ENABLED</String>
+    </Concept>
+    <Concept Id="CARDIAC">
+      <Comments>Cardiac item in list of application settings tab</Comments>
+      <String Context="Generic_Long">CARDIAC</String>
+    </Concept>
+    <Concept Id="VASCULAR">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">VASCULAR</String>
+    </Concept>
+    <Concept Id="ABDOMINAL">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">ABDOMINAL</String>
+    </Concept>
+    <Concept Id="OBSTETRIC">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">OBSTETRIC</String>
+    </Concept>
+    <Concept Id="TRANSCRANIC">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">TRANSCRANIC</String>
+    </Concept>
+    <Concept Id="NEONATAL">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">NEONATAL</String>
+    </Concept>
+    <Concept Id="CARDIACPEDIATRIC">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">CARDIACPEDIATRIC</String>
+    </Concept>
+    <Concept Id="PEDIATRIC">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">PEDIATRIC</String>
+    </Concept>
+    <Concept Id="GYNECOLOGY">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">GYNECOLOGY</String>
+    </Concept>
+    <Concept Id="UROLOGIC">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">UROLOGIC</String>
+    </Concept>
+    <Concept Id="MUSCULOSKELETAL">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">MUSCULOSKELETAL</String>
+    </Concept>
+    <Concept Id="BREAST">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">BREAST</String>
+    </Concept>
+    <Concept Id="THYROID">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">THYROID</String>
+    </Concept>
+    <Concept Id="SMALLPARTS">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">SMALLPARTS</String>
+    </Concept>
+    <Concept Id="GENERIC">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">GENERIC</String>
+    </Concept>
+    <Concept Id="REGANEST">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">REGANEST</String>
+    </Concept>
+    <Concept Id="AESTHETIC">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">AESTHETIC</String>
+    </Concept>
+    <Concept Id="ABDOMINALCANINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">ABDOMINAL CANINE</String>
+    </Concept>
+    <Concept Id="ABDOMINALFELINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">ABDOMINAL FELINE</String>
+    </Concept>
+    <Concept Id="ABDOMINALEQUINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">ABDOMINAL EQUINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONCANINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">REPRODUCTION CANINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONFELINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">REPRODUCTION FELINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONEQUINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">REPRODUCTION EQUINE</String>
+    </Concept>
+    <Concept Id="TENDON">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">TENDON</String>
+    </Concept>
+    <Concept Id="CARDIOCANINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">CARDIO CANINE</String>
+    </Concept>
+    <Concept Id="CARDIOFELINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">CARDIO FELINE</String>
+    </Concept>
+    <Concept Id="CARDIOEQUINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">CARDIO EQUINE</String>
+    </Concept>
+    <Concept Id="OVARYEQUINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">OVARY EQUINE</String>
+    </Concept>
+    <Concept Id="OVARYBOVINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">OVARY BOVINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONBOVINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">REPRODUCTION BOVINE</String>
+    </Concept>
+    <Concept Id="VASCULARVET">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">VASCULAR VET</String>
+    </Concept>
+    <Concept Id="ANIMALSCIENCE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">ANIMAL SCIENCE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONOVINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">REPRODUCTION OVINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONPORCINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">REPRODUCTION PORCINE</String>
+    </Concept>
+    <Concept Id="REPRODUCTIONCAPRINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">REPRODUCTION CAPRINE</String>
+    </Concept>
+    <Concept Id="OTHERABDOMINAL">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">OTHER ABDOMINAL</String>
+    </Concept>
+    <Concept Id="OTHERCARDIO">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">OTHER CARDIO</String>
+    </Concept>
+    <Concept Id="OTHERVASCULAR">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">OTHER VASCULAR</String>
+    </Concept>
+    <Concept Id="OTHERREPRODUCTION">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">OTHER REPRODUCTION</String>
+    </Concept>
+    <Concept Id="ABDOMINALBOVINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">ABDOMINAL BOVINE</String>
+    </Concept>
+    <Concept Id="CARDIOBOVINE">
+      <Comments>item in list of application settings tab</Comments>
+      <String Context="Generic_Long">CARDIO BOVINE</String>
+    </Concept>
+    <Concept Id="FULL_SHUTDOWN">
+      <Comments>in control panel tab, name of shutdown button</Comments>
+      <String Context="Generic_Medium">FULL SHUTDOWN</String>
+    </Concept>
+    <Concept Id="QUERTY_TYPE">
+      <Comments>in control panel tab, name of querty combo</Comments>
+      <String Context="Generic_Long">QUERTY LOCALIZATION</String>
+    </Concept>
+    <Concept Id="FOCUS">
+      <Comments>in control panel tab, name of focus by trackball checkbox label</Comments>
+      <String Context="Generic_Long">FOCUS CONTROLLED BY TRACKBALL</String>
+    </Concept>
+    <Concept Id="AUTO_START_EXAM">
+      <Comments>in control panel tab, name of Auto Start Exam checkbox</Comments>
+      <String Context="Generic_Long">AUTOMATIC START EXAM</String>
+    </Concept>
+	  <Concept Id="VISIBILITY_AREA17">
+      <Comments>in control panel tab, name of Visibility Area 17 checkbox</Comments>
+      <String Context="Generic_Long">VISIBILITY AREA 17</String>
+    </Concept>
+	 <Concept Id="DIRECTPROBE">
+      <Comments>in control panel tab, name of Probe selection direct from exam management bar checkbox</Comments>
+      <String Context="Generic_Long">Direct Probe Selection</String>
+    </Concept>
+    <Concept Id="US">
+      <Comments>in control panel tab, name of querty combo</Comments>
+      <String Context="Generic_Medium">US INTERNATIONAL</String>
+    </Concept>
+    <Concept Id="DEFAULT_TOOL">
+      <Comments>in application tab, combo of 3d 4d tool</Comments>
+      <String Context="Generic_Long">DEFAULT TOOL</String>
+    </Concept>
+    <Concept Id="SMART_PRESET">
+      <Comments>in application tab, checkbox of  enable-disable smart preset</Comments>
+      <String Context="Generic_Long">ENABLE SMART PRESET</String>
+    </Concept>
+    <Concept Id="GERMAN">
+      <Comments>in control panel tab, name of querty combo</Comments>
+      <String Context="Generic_Medium">GERMAN</String>
+    </Concept>
+    <Concept Id="THREED">
+      <Comments>in control panel tab, name of querty combo</Comments>
+      <String Context="Generic_Medium">3D</String>
+    </Concept>
+    <Concept Id="FOURD">
+      <Comments>in control panel tab, name of querty combo</Comments>
+      <String Context="Generic_Medium">4D</String>
+    </Concept>
+    <Concept Id="en">
+      <Comments>English language</Comments>
+      <String Context="Generic_Long">ENGLISH</String>
+    </Concept>
+    <Concept Id="it">
+      <Comments>Italian language</Comments>
+      <String Context="Generic_Long">ITALIAN</String>
+    </Concept>
+    <Concept Id="de">
+      <Comments>German language</Comments>
+      <String Context="Generic_Long">GERMAN</String>
+    </Concept>
+    <Concept Id="es">
+      <Comments>Spanish language</Comments>
+      <String Context="Generic_Long">SPANISH</String>
+    </Concept>
+    <Concept Id="fr">
+      <Comments>French language</Comments>
+      <String Context="Generic_Long">FRENCH</String>
+    </Concept>
+    <Concept Id="pt">
+      <Comments>Portuguese language</Comments>
+      <String Context="Generic_Long">PORTUGUESE</String>
+    </Concept>
+    <Concept Id="ru">
+      <Comments>Russian language</Comments>
+      <String Context="Generic_Long">RUSSIAN</String>
+    </Concept>
+    <Concept Id="zh">
+      <Comments>Chinese language</Comments>
+      <String Context="Generic_Long">CHINESE</String>
+    </Concept>
+    <Concept Id="ACTIVE_ON_NEXT_SESSION">
+      <Comments>This message appears to advise the user that a restart is necessary</Comments>
+      <String Context="Generic_Warning">To activate your modifications, please restart the unit.</String>
+    </Concept>
+    <Concept Id="ACTIVE_ON_NEXT_EXAM">
+      <Comment>Message shown on saving a configuration</Comment>
+      <String Context="Generic_Warning">Modifications will be available after starting a new exam</String>
+    </Concept>
+    <Concept Id="SHUTDOWN_ON_SAVE">
+      <Comments>This message appears to advise the user that a shutdown will start automatically</Comments>
+      <String Context="Generic_Warning">To activate your modifications, a full shutdown will start on save.</String>
+    </Concept>
+    <Concept Id="SHUTDOWN_ON_SAVE_ASK">
+      <Comments>This message appears after pressing the save preset button, to advise the user that a shutdown will be performed. The user can accept or cancel the save operation.</Comments>
+      <String Context="Generic_Warning">To activate your modifications, a full shutdown will start. Would you like to continue saving the configuration?</String>
+    </Concept>
+    <Concept Id="SHUTDOWN_ON_SAVE_WRNG">
+      <Comments>This message appears to advise the user that a shutdown will start as soon as the button SAVE will be pressed</Comments>
+      <String Context="Generic_Long">Pressing save a full shutdown will start automatically.</String>
+    </Concept>
+    <Concept Id="SYSTEM_TAB">
+      <Comments>title of tab of combo system's language and system environment for desktop installation</Comments>
+      <String Context="Generic_Long">SYSTEM</String>
+    </Concept>
+    <Concept Id="SYS_LANGUAGE">
+      <Comments>Label for combo used to change system's language</Comments>
+      <String Context="Generic_Long">SYSTEM LANGUAGE</String>
+    </Concept>
+    <Concept Id="CHARSET">
+      <Comments>Char set combo label</Comments>
+      <String Context="Generic_Long">CHARACTER SET</String>
+    </Concept>
+    <Concept Id="Latin">
+      <Comments>value of char set combo</Comments>
+      <String Context="Generic_Long">US-INT + Latin (default)</String>
+    </Concept>
+    <Concept Id="Cyrillic">
+      <Comments>value of char set combo</Comments>
+      <String Context="Generic_Long">US-INT + Cyrillic</String>
+    </Concept>
+    <Concept Id="SimplifiedHanzi">
+      <Comments>value of char set combo</Comments>
+      <String Context="Generic_Long">US-INT + Simplified Chinese (GB18030 encoding)</String>
+    </Concept>
+    <Concept Id="UTF8">
+      <Comments>value of char set combo</Comments>
+      <String Context="Generic_Long">US-INT + Simplified Chinese (ISO IR 192 encoding)</String>
+    </Concept>
+    <Concept Id="Latin2">
+      <Comments>value of char set combo [Story 39882]</Comments>
+      <String Context="Generic_Long">US-INT + Slavic and Central European</String>
+    </Concept>
+    <Concept Id="Italian">
+      <Comments>value of querty combo</Comments>
+      <String Context="Generic_Long">ITALIAN</String>
+    </Concept>
+    <Concept Id="German">
+      <Comments>value of querty combo</Comments>
+      <String Context="Generic_Long">GERMAN</String>
+    </Concept>
+    <Concept Id="French">
+      <Comments>value of querty combo</Comments>
+      <String Context="Generic_Long">FRENCH</String>
+    </Concept>
+    <Concept Id="Russian">
+      <Comments>value of querty combo</Comments>
+      <String Context="Generic_Long">RUSSIAN</String>
+    </Concept>
+    <Concept Id="US_International">
+      <Comments>value of querty combo</Comments>
+      <String Context="Generic_Long">US_INTERNATIONAL</String>
+    </Concept>
+    <Concept Id="Danish">
+      <Comments>value of querty combo</Comments>
+      <String Context="Generic_Long">DANISH</String>
+    </Concept>
+    <Concept Id="Chinese">
+      <Comments>value of querty combo</Comments>
+      <String Context="Generic_Long">CHINESE</String>
+    </Concept>
+    <Concept Id="Hungarian">
+      <Comments>value of querty combo [Story 39882]</Comments>
+      <String Context="Generic_Long">HUNGARIAN</String>
+    </Concept>
+    <Concept Id="DEFAULT">
+      <Comments>control panel, querty and charset section, default label of default combo</Comments>
+      <String Context="Generic_Long">DEFAULT</String>
+    </Concept>
+    <Concept Id="IMAGE SIZE">
+      <Comments>General Setup, Image size</Comments>
+      <String Context="Generic_Long">IMAGE SIZE</String>
+    </Concept>
+    <Concept Id="ACTION ON FREEZE">
+      <Comments>General Setup, Action on freeze: What to do after freeze button is pressed</Comments>
+      <String Context="Generic_Long">ACTION ON FREEZE</String>
+    </Concept>
+    <Concept Id="NO ACTION">
+      <Comments>General Setup, Action on freeze</Comments>
+      <String Context="Generic_Medium">NO ACTION</String>
+    </Concept>
+    <Concept Id="GENERIC MEASUREMENTS">
+      <Comments>General Setup, Action on freeze</Comments>
+      <String Context="Generic_Medium">GENERIC MEASUREMENTS</String>
+    </Concept>
+    <Concept Id="APPLICATION MEASUREMENTS">
+      <Comments>General Setup, Action on freeze</Comments>
+      <String Context="Generic_Medium">APPLICATION MEASUREMENTS</String>
+    </Concept>
+    <Concept Id="ANNOTATIONS">
+      <Comments>General Setup, Action on freeze</Comments>
+      <String Context="Generic_Medium">ANNOTATIONS</String>
+    </Concept>
+    <Concept Id="AUTOGAINNORMAL">
+      <Comments>General Setup, option for autogain in realtime</Comments>
+      <String Context="Generic_Medium">NORMAL</String>
+    </Concept>
+    <Concept Id="AUTOGAINDOPPLER">
+      <Comments>General Setup, option for autogain in realtime</Comments>
+      <String Context="Generic_Medium">DOPPLER</String>
+    </Concept>
+    <Concept Id="AUTOGAINBOTH">
+      <Comments>General Setup, option for autogain in realtime</Comments>
+      <String Context="Generic_Medium">BOTH</String>
+    </Concept>
+    <Concept Id="LINEAR PROBES IMAGE AUTOFITTING">
+      <Comments>General Setup, Default Image Zoom Factor is modified to fit the panel width (Linear Probes only) (TaskId 15421)</Comments>
+      <String Context="Generic_Medium">LINEAR PROBES IMAGE AUTOFITTING</String>
+    </Concept>
+    <Concept Id="AUTOGAIN SETUP">
+      <Comments>Autogain options during real time acquisition</Comments>
+      <String Context="Generic_Medium">AUTOGAIN SETUP</String>
+    </Concept>
+    <Concept Id="SWEEP VELOCITY">
+      <Comments>General Setup, Show Sweep Velocity</Comments>
+      <String Context="Generic_Long">SHOW SWEEP VELOCITY</String>
+    </Concept>
+    <Concept Id="CFM PALETTE INVERSION">
+      <Comments>General Setup, Cfm Palette Inversion  [StoryID: 14082]  </Comments>
+      <String Context="Generic_Long">CFM PALETTE INVERSION</String>
+    </Concept>
+    <Concept Id="MINIMUM">
+      <Comments>Genera Setup, Image size</Comments>
+      <String Context="Generic_Medium">MINIMUM</String>
+    </Concept>
+    <Concept Id="MEDIUM">
+      <Comments>Genera Setup, Image size</Comments>
+      <String Context="Generic_Medium">MEDIUM</String>
+    </Concept>
+    <Concept Id="MAXIMUM">
+      <Comments>Genera Setup, Image size</Comments>
+      <String Context="Generic_Medium">MAXIMUM</String>
+    </Concept>
+    <Concept Id="AVAILABLE_QUERTIES">
+      <Comments>control panel, querty and charset section, TITLE of querty list box</Comments>
+      <String Context="Generic_Medium">AVAILABLE QUERTIES</String>
+    </Concept>
+    <Concept Id="SCREEN RESOLUTION">
+      <Comments>in control panel tab, name of screen resolution combo</Comments>
+      <String Context="Generic_Long">SCREEN RESOLUTION</String>
+    </Concept>
+    <Concept Id="FIT_TO_SCREEN">
+      <Comments>control panel, combo box relative to user interface fit mode</Comments>
+      <String Context="Generic_Medium">FIT TO SCREEN</String>
+    </Concept>
+    <Concept Id="OUTER_MARGIN">
+      <Comments>control panel, combo box relative to user interface fit mode</Comments>
+      <String Context="Generic_Medium">OUTER MARGIN</String>
+    </Concept>
+    <Concept Id="INNER_MARGIN">
+      <Comments>control panel, combo box relative to user interface fit mode</Comments>
+      <String Context="Generic_Medium">INNER MARGIN</String>
+    </Concept>
+    <Concept Id="BAD_MACHINE_RESOLUTION">
+      <Comments>Occurs when machine resolution is different from preset resolution, for example when user connect a monitor with low resolution to the 7400 machine</Comments>
+.      <String Context="Generic_Warning">The system has detected a graphic low resolution. The system will be automatically switched off. Check if a low resolution device is connected to the HDMI connector</String>
+    </Concept>
+    <Concept Id="RESOLUTIOS_ARE_DIFFERENT_ECOUSER">
+      <Comments>without hardware key, this message occurs when machine resolution is different from preset resolution, for example when user connect a monitor with low resolution to the machine</Comments>
+      <String Context="Generic_Warning">The system has detected a current genearal setup preset resolution different from machine resolution. The preset resolution will be set on the machine and the system will be automatically switched off. Check if a low resolution device is connected to the HDMI connector</String>
+    </Concept>
+    <Concept Id="RESOLUTIOS_ARE_DIFFERENT_OTHER_USERS">
+      <Comments>with a hardware key connected, this message occurs when machine resolution is different from preset resolution, for example when user connect a monitor with low resolution to the machine</Comments>
+      <String Context="Generic_Warning">The system has detected a current genearal setup preset resolution different from machine resolution. Check if a low resolution device is connected to the HDMI connector</String>
+    </Concept>
+    <Concept Id="NETWORK_NOT_FOUND_ECOUSER">
+      <Comments>without hardware key, this message occurs when a wired network interface is not detected on MyLab X8 or MyLab 9</Comments>
+      <String Context="Generic_Warning">The wired network interface is missing so the system will be automatically switched off</String>
+    </Concept>
+    <Concept Id="NETWORK_NOT_FOUND_OTHER_USERS">
+      <Comments>with a hardware key connected, this message occurs when when a wired network interface is not detected on MyLab X8 or MyLab 9</Comments>
+      <String Context="Generic_Warning">The wired network interface is missing</String>
+    </Concept>
+    <Concept Id="WINDOW_APPEARANCE_MODE">
+      <Comments>control panel, the label of the combo box relative to user interface fit mode (or window appearance mode)</Comments>
+      <String Context="Generic_Medium">WINDOW APPEARANCE MODE</String>
+    </Concept>
+    <Concept Id="BAD_DATE">
+      <Comments>Occurs when the inserted Date is not valid </Comments>
+      <String Context="Generic_Warning">INSERTED DATE IS NOT ADMITTED</String>
+    </Concept>
+	  <Concept Id="CURRENT_EXAM_IS_OPEN">
+      <Comments>Occurs when user change date-time and current exam is open</Comments>
+      <String Context="Generic_Warning">CURRENT EXAM IS OPEN:IT IS NOT POSSIBLE TO CHANGE THE DATE-TIME</String>
+    </Concept>
+    <Concept Id="KEYBOARD_BUTTON1">
+      <Comments>in control panel tab, keyboard association of button1 of Shark/Lion [@andrea.anzalone@esaote.com]</Comments>
+      <String Context="Generic_Long">KEYBOARD BUTTON 1</String>
+    </Concept>
+    <Concept Id="KEYBOARD_BUTTON2">
+      <Comments>in control panel tab, keyboard association of button2 of Shark/Lion [@andrea.anzalone@esaote.com]</Comments>
+      <String Context="Generic_Long">KEYBOARD BUTTON 2</String>
+    </Concept>
+    <Concept Id="KEYBOARD_BUTTON3">
+      <Comments>in control panel tab, keyboard association of button3 of Shark (left) [@andrea.anzalone@esaote.com]</Comments>
+      <String Context="Generic_Long">LEFT</String>
+    </Concept>
+    <Concept Id="KEYBOARD_BUTTON4">
+      <Comments>in control panel tab, keyboard association of button4 of Shark (right) [@andrea.anzalone@esaote.com]</Comments>
+      <String Context="Generic_Long">RIGHT</String>
+    </Concept>
+    <Concept Id="KEYBOARD_BUTTON5">
+      <Comments>in control panel tab, keyboard association of button5 of Shark (clip/image) [@andrea.anzalone@esaote.com]</Comments>
+      <String Context="Generic_Long">CLIP/IMAGE</String>
+    </Concept>
+    <Concept Id="KEYBOARD_BUTTON6">
+      <Comments>in control panel tab, keyboard association of button3 of Lion [@andrea.anzalone@esaote.com]</Comments>
+      <String Context="Generic_Long">KEYBOARD BUTTON 3</String>
+    </Concept>
+    <Concept Id="KEYBOARD_BUTTON7">
+      <Comments>in control panel tab, keyboard association of button4 of Lion [@andrea.anzalone@esaote.com]</Comments>
+      <String Context="Generic_Long">KEYBOARD BUTTON 4</String>
+    </Concept>
+    <Concept Id="KEYBOARD_BUTTON8">
+      <Comments>in control panel tab, keyboard association of button5 of Lion (acquire) [@andrea.anzalone@esaote.com]</Comments>
+      <String Context="Generic_Long">ACQUIRE</String>
+    </Concept>
+    <Concept Id="KEYBOARD_BUTTONS_TAB_TITLE">
+      <Comments>Title of KEYBOARD BUTTONS TAB unit tab</Comments>
+      <String Context="Generic_Medium">KEYBOARD BUTTONS</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

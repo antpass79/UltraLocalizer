@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ArchiveBrowser" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="QueryFields">    
+    <Concept Id="LASTNAME">
+      <Comments>Patient Lastname label in query mask</Comments>
+      <String Context="Generic_Medium">LAST NAME</String>
+    </Concept>
+    <Concept Id="FIRSTNAME">
+      <Comments>Patient Firstname label in query mask</Comments>
+      <String Context="Generic_Medium">FIRST NAME</String>
+    </Concept>
+    <Concept Id="MIDDLENAME">
+      <Comments>Patient Middlename label in query mask</Comments>
+      <String Context="Generic_Medium">MIDDLE NAME</String>
+    </Concept>
+    <Concept Id="PERFORMINGPHYSICIAN">
+      <Comments>Performing physician label in query mask</Comments>
+      <String Context="Generic_Medium">PERFORM. PHYS.</String>
+      <String Context="Generic_Long">PERFORMING PHYSICIAN</String>
+    </Concept>
+    <Concept Id="REFERRINGPHYSICIAN">
+      <Comments>Referring physician label in query mask</Comments>
+      <String Context="Generic_Medium">REFERRING PHYS.</String>
+      <String Context="Generic_Long">REFERRING PHYSICIAN</String>
+    </Concept>
+    <Concept Id="DIAGNOSIS">
+      <Comments>Admitting diagnosis label in query mask</Comments>
+	  <String Context="Generic_Medium" >ADM DIAGNOSIS</String>
+    </Concept>
+    <Concept Id="ID">
+      <Comments>Patient Id label in query mask</Comments>
+      <String Context="Generic_Medium">ID</String>
+    </Concept>
+    <Concept Id="OPERATOR">
+      <Comments>Operator label in query mask</Comments>
+      <String Context="Generic_Medium">OPERATOR</String>
+      <String Context="Generic_Long">OPERATOR</String>
+    </Concept>
+    <Concept Id="APPLICATION">
+      <Comments>Application label in query mask</Comments>
+      <String Context="Generic_Medium">APPLICATION</String>
+    </Concept>
+    <Concept Id="BIRTHDATE">
+      <Comments>Patient Birthdate label in query mask</Comments>
+      <String Context="Generic_Medium">BIRTHDATE</String>
+    </Concept>
+    <Concept Id="EXAMDATE">
+      <Comments>Exam date label in query mask</Comments>
+      <String Context="Generic_Medium">EXAM DATE</String>
+    </Concept>
+    <Concept Id="GENDER">
+      <Comments>Gender label in query mask</Comments>
+      <String Context="Generic_Short">GENDER</String>
+    </Concept>
+    <Concept Id="AGE">
+      <Comments>Age label in query mask</Comments>
+      <String Context="Generic_Short">AGE</String>
+    </Concept>
+    <Concept Id="MALE">
+      <Comments>Male label in query mask</Comments>
+      <String Context="Generic_Medium">MALE</String>
+      <String Context="Generic_Short">M</String>
+    </Concept>
+    <Concept Id="FEMALE">
+      <Comments>Female label in query mask</Comments>
+      <String Context="Generic_Medium">FEMALE</String>
+      <String Context="Generic_Short">F</String>
+    </Concept>
+    <Concept Id="OTHER">
+      <Comments>Other sex label in query mask</Comments>
+      <String Context="Generic_Medium">OTHER</String>
+      <String Context="Generic_Short">O</String>
+    </Concept>
+    <Concept Id="Years">
+      <Comments>Years label in query mask</Comments>
+      <String Context="Generic_Medium">YEARS</String>
+      <String Context="Generic_Short">Y</String>
+    </Concept>
+    <Concept Id="Months">
+      <Comments>Months label in query mask</Comments>
+      <String Context="Generic_Medium">MONTHS</String>
+      <String Context="Generic_Short">M</String>
+    </Concept>
+    <Concept Id="Weeks">
+      <Comments>Weeks label in query mask</Comments>
+      <String Context="Generic_Medium">WEEKS</String>
+      <String Context="Generic_Short">W</String>
+    </Concept>
+    <Concept Id="Days">
+      <Comments>Days label in query mask</Comments>
+      <String Context="Generic_Medium">DAYS</String>
+      <String Context="Generic_Short">D</String>
+    </Concept>
+    <Concept Id="FROM">
+      <Comments>Label before the start date in query mask</Comments>
+      <String Context="Generic_Short">FROM</String>
+    </Concept>
+    <Concept Id="TO">
+      <Comments>Label between start date and end date in query mask</Comments>
+      <String Context="Generic_Short">TO</String>
+    </Concept>
+    <Concept Id="DESCRIPTION">
+      <Comments>Study description label in query mask</Comments>
+      <String Context="Generic_Medium" >STUDY DESCRIPTION</String>
+    </Concept>
+    <Concept Id="ANIMALNAME">
+      <Comments>Animal name label in query mask in vet model</Comments>
+      <String Context="Generic_Medium">ANIMAL NAME</String>
+    </Concept>
+    <Concept Id="OWNERNAME">
+      <Comments>Owner name label in query mask in vet model</Comments>
+      <String Context="Generic_Medium">OWNER NAME</String>
+    </Concept>
+    <Concept Id="BREED">
+      <Comments>Breed label in query mask in vet model</Comments>
+      <String Context="Generic_Medium">BREED</String>
+    </Concept>
+    <Concept Id="MODALITY">
+      <Comments>Label for modality ( US, CT, MR, .. ) selection</Comments>
+      <String Context="Generic_Medium">MODALITY</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

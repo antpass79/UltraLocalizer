@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="InformationAreaComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="InformationArea">
+    <Concept Id="RETRY">
+      <Comments>Retry Selected Operations Command</Comments>
+      <String Context="TS_AButton">RETRY</String>
+      <String Context="Generic_Long">RETRY</String>
+    </Concept>
+    <Concept Id="ABORT">
+      <Comments>Abort Selected Operations Command</Comments>
+      <String Context="TS_AButton">ABORT</String>
+      <String Context="Generic_Long">ABORT</String>
+    </Concept>
+    <Concept Id="DELETE">
+      <Comments>Delete Selected Operations Command</Comments>
+      <String Context="TS_AButton">DELETE</String>
+      <String Context="Generic_Long">DELETE</String>
+    </Concept>
+    <Concept Id="DETAILS">
+      <Comments>Operation Details Command</Comments>
+      <String Context="TS_AButton">DETAILS</String>
+      <String Context="Generic_Long">DETAILS</String>
+    </Concept>
+    <Concept Id="Gamma">
+      <Comments>Label of gamma slider when page preview is open</Comments>
+      <String Context="Generic_Medium">GAMMA</String>
+    </Concept>
+    <Concept Id="Contrast">
+      <Comments>Label of contrast slider when page preview is open</Comments>
+      <String Context="Generic_Medium">CONTRAST</String>
+    </Concept>
+    <Concept Id="Brightness">
+      <Comments>Label of Brightness slider when page preview is open</Comments>
+      <String Context="Generic_Medium">BRIGHTNESS</String>
+    </Concept>
+    <Concept Id="MoveUpImage">
+      <Comments>Command when page preview is open</Comments>
+      <String Context="TS_AButton">UP</String>
+      <String Context="Generic_Medium">UP</String>
+    </Concept>
+    <Concept Id="MoveDownImage">
+      <Comments>Command when page preview is open</Comments>
+      <String Context="TS_AButton">DOWN</String>
+      <String Context="Generic_Medium">DOWN</String>
+    </Concept>
+    <Concept Id="RemoveImage">
+      <Comments>Command when page preview is open</Comments>
+      <String Context="TS_AButton">REMOVE</String>
+      <String Context="Generic_Medium">REMOVE</String>
+    </Concept>
+    <Concept Id="ResetSliders">
+      <Comments>Command when page preview is open</Comments>
+      <String Context="TS_AButton">RESET</String>
+      <String Context="Generic_Medium">RESET</String>
+    </Concept>
+    <Concept Id="OK_PagePreview_Str" >
+      <Comments>OK button on page preview dialog</Comments>
+      <String Context="TS_AButton" >OK</String>
+    </Concept >
+    <Concept Id="CANCEL_PagePreview_Str" >
+      <Comments>CANCEL button on page preview dialog</Comments>
+      <String Context="TS_AButton" >CANCEL</String>
+    </Concept >
+    <Concept Id="PRINT_PagePreview_Str" >
+      <Comments>$$RC task PRINT button on page preview dialog</Comments>
+      <String Context="TS_AButton" >PRINT NOW</String>
+    </Concept >
+    <Concept Id="ALL">
+      <Comments>View All Operations</Comments>
+      <String Context="TS_AButton">ALL</String>
+      <String Context="Generic_Long">ALL</String>
+    </Concept>
+    <Concept Id="FAILED">
+      <Comments>View Failed Operations</Comments>
+      <String Context="TS_AButton">FAILED</String>
+      <String Context="Generic_Long">FAILED</String>
+    </Concept>
+    <Concept Id="TOBECOMPLETED">
+      <Comments>View To Be Completed Operations</Comments>
+      <String Context="TS_AButton">TO BE COMPLETED</String>
+      <String Context="Generic_Long">TO BE COMPLETED</String>
+    </Concept>
+    <Concept Id="NODONE">
+      <Comments>View All Except Done Operations</Comments>
+      <String Context="TS_AButton">EXCLUDE DONE</String>
+      <String Context="Generic_Long">EXCLUDE DONE</String>
+    </Concept>
+    <Concept Id="DESCRIPTION">
+      <Comments>Operation Description</Comments>
+      <String Context="Generic_Long">DESCRIPTION</String>
+    </Concept>
+    <Concept Id="STATUS">
+      <Comments>Operation Status</Comments>
+      <String Context="Generic_Long">STATUS</String>
+    </Concept>
+    <Concept Id="DEVICE">
+      <Comments></Comments>
+      <String Context="Generic_Long">DEVICE</String>
+      <String Context="TS_TabName">DEVICE</String>
+    </Concept>
+    <Concept Id="TYPE">
+      <Comments>Operation Type</Comments>
+      <String Context="Generic_Long">TYPE</String>
+    </Concept>
+    <Concept Id="DESTINATION">
+      <Comments>Operation Destination</Comments>
+      <String Context="Generic_Long">DESTINATION</String>
+    </Concept>
+    <Concept Id="DATE">
+      <Comments>Operation Date</Comments>
+      <String Context="Generic_Long">DATE</String>
+    </Concept>
+    <Concept Id="TIME">
+      <Comments>Operation Time</Comments>
+      <String Context="Generic_Long">TIME</String>
+    </Concept>
+    <Concept Id="REMAININGTIME">
+      <Comments>Expected Remaining Time</Comments>
+      <String Context="Generic_Long">REMAINING TIME</String>
+      <String Context="Generic_Short">TIME</String>
+    </Concept>
+    <Concept Id="DONE">
+      <Comments>Operations Done Percentage</Comments>
+      <String Context="Generic_Long">DONE</String>
+    </Concept>
+    <Concept Id="ErasingUSBDevice">
+      <Comments></Comments>
+      <String Context="Generic_Warning">ERASING USB DEVICE</String>
+    </Concept>
+    <Concept Id="FREEDISKSPACE">
+      <Comments></Comments>
+      <String Context="Generic_Long">FREE DISK SPACE</String>
+    </Concept>
+    <Concept Id="TOTALDISKSPACE">
+      <Comments></Comments>
+      <String Context="Generic_Long">TOTAL DISK SPACE</String>
+    </Concept>
+    <Concept Id="USEDDISKSPACE">
+      <Comments></Comments>
+      <String Context="Generic_Long">USED DISK SPACE</String>
+    </Concept>
+    <Concept Id="NODISC">
+      <Comments></Comments>
+      <String Context="Generic_Warning">NO DISC FOUND</String>
+    </Concept>
+    <Concept Id="NOERASABLEMEDIA">
+      <Comments></Comments>
+      <String Context="Generic_Warning">NO ERASABLE DISC FOUND</String>
+    </Concept>
+    <Concept Id="NOUSBDRIVE">
+      <Comments></Comments>
+      <String Context="Generic_Warning">NO USB DRIVE FOUND</String>
+    </Concept>
+    <Concept Id="NOWRITABLE">
+      <Comments>The Logs were exported on the USB drive</Comments>
+      <String Context="Generic_Long">USB NOT WRITABLE</String>
+    </Concept>
+    <Concept Id="CDNOWRITABLE">
+      <Comments>this warning occurs when the CD is not writable</Comments>
+      <String Context="Generic_Long">CD/DVD NOT WRITABLE</String>
+    </Concept>
+    <Concept Id="GENERIC_ERROR">
+      <Comments>title of waiting dialog while exporting logs</Comments>
+      <String Context="Generic_Warning">PROBLEM WHILE EXPORTING ON USB: LOGS NOT EXPORTED</String>
+    </Concept>
+    <Concept Id="CANTERASEUSB">
+      <Comments></Comments>
+      <String Context="Generic_Warning">IT'S NOT POSSIBLE TO ERASE USB DRIVE</String>
+    </Concept>
+    <Concept Id="ASKERASEUSB">
+      <Comments></Comments>
+      <String Context="Generic_Warning">ERASE USB DRIVE?</String>
+    </Concept>
+    <Concept Id="ASKERASECD">
+      <Comments></Comments>
+      <String Context="Generic_Warning">ERASE CD/DVD DISC?</String>
+    </Concept>
+    <Concept Id="DISCREADY">
+      <Comments></Comments>
+      <String Context="Generic_Warning">DISC READY TO BURN</String>
+    </Concept>
+    <Concept Id="BurnCopy">
+      <Comments></Comments>
+      <String Context="Generic_Long">COPY</String>
+    </Concept>
+    <Concept Id="BurnExport">
+      <Comments></Comments>
+      <String Context="Generic_Long">EXPORT</String>
+    </Concept>
+    <Concept Id="USB1">
+      <Comments></Comments>
+      <String Context="TS_AButton">USB</String>
+      <String Context="Generic_Long">USB</String>
+    </Concept>
+    <Concept Id="USB2">
+      <Comments></Comments>
+      <String Context="TS_AButton">USB</String>
+      <String Context="Generic_Long">USB</String>
+    </Concept>
+    <Concept Id="USB">
+      <Comments></Comments>
+      <String Context="TS_AButton">USB</String>
+      <String Context="Generic_Long">USB</String>
+    </Concept>
+    <Concept Id="HD">
+      <Comments></Comments>
+      <String Context="TS_AButton">HD</String>
+      <String Context="Generic_Long">HD</String>
+    </Concept>
+    <Concept Id="CD">
+      <Comments></Comments>
+      <String Context="Generic_Long">CD/DVD</String>
+    </Concept>
+    <Concept Id="NetworkDir">
+      <Comments></Comments>
+      <String Context="Generic_Long">NETWORKDIR</String>
+    </Concept>
+    <Concept Id="Dicomserver">
+      <Comments></Comments>
+      <String Context="Generic_Long">DICOMSERVER</String>
+    </Concept>
+    <Concept Id="LocalArchive">
+      <Comments></Comments>
+      <String Context="Generic_Long">LOCALARCHIVE</String>
+    </Concept>
+    <Concept Id="Unspecified">
+      <Comments></Comments>
+      <String Context="Generic_Long">UNSPECIFIED</String>
+    </Concept>
+    <Concept Id="Printer">
+      <Comments></Comments>
+      <String Context="Generic_Long">PRINTER</String>
+    </Concept>
+    <Concept Id="Copy">
+      <Comments></Comments>
+      <String Context="Generic_Long">COPY</String>
+    </Concept>
+    <Concept Id="CRYPTO">
+      <Comments></Comments>
+      <String Context="Generic_Long">Encrypt Data</String>
+    </Concept>
+    <Concept Id="DICOM PREPARE ISO">
+      <Comments></Comments>
+      <String Context="Generic_Long">Prepare file system</String>
+    </Concept>
+    <Concept Id="PrintSCU">
+      <Comments></Comments>
+      <String Context="Generic_Long">DICOM PRINT</String>
+    </Concept>
+    <Concept Id="DeskSetupCopy">
+      <Comments></Comments>
+      <String Context="Generic_Long">DESK SETUP COPY</String>
+    </Concept>
+    <Concept Id="DICOM MediaExchange Operation">
+      <Comments></Comments>
+      <String Context="Generic_Long">DICOM EXPORT</String>
+    </Concept>
+    <Concept Id="Export">
+      <Comments></Comments>
+      <String Context="Generic_Long">EXPORT</String>
+    </Concept>
+    <Concept Id="Init">
+      <Comments>Operation Status Init</Comments>
+      <String Context="Generic_Long">INIT</String>
+    </Concept>
+    <Concept Id="Done">
+      <Comments>Operation Status Done</Comments>
+      <String Context="Generic_Long">DONE</String>
+    </Concept>
+    <Concept Id="InProgress">
+      <Comments>Operation Status in Progress</Comments>
+      <String Context="Generic_Long">IN PROGRESS</String>
+    </Concept>
+    <Concept Id="Failed">
+      <Comments>Operation Status Failed</Comments>
+      <String Context="Generic_Long">FAILED</String>
+    </Concept>
+    <Concept Id="OperationsItemHD">
+      <Comments>ContextMenu Label of the HD icon. The Command shows the export operation list on the HD device</Comments>
+      <String Context="Generic_Long">OPERATIONS</String>
+    </Concept>
+    <Concept Id="RetryItemHD">
+      <Comments>ContextMenu Label of the HD icon.The command restarts the failed operations on the HD device</Comments>
+      <String Context="Generic_Long">RETRY FAILED</String>
+    </Concept>
+    <Concept Id="PropertiesItemHD">
+      <Comments>ContextMenu Label of the HD icon.The command shows information about the HD device</Comments>
+      <String Context="Generic_Long">PROPERTIES</String>
+    </Concept>
+    <Concept Id="ShowIpAddressHD">
+      <Comments>ContextMenu Label of the HD icon.The command shows information about IP address</Comments>
+      <String Context="Generic_Long">SHOW IP ADDRESS INFO</String>
+    </Concept>
+    <Concept Id="OperationsItemUSB">
+      <Comments>ContextMenu Label of the USB icon. The Command shows the export operation list on the USB device</Comments>
+      <String Context="Generic_Long">OPERATIONS</String>
+    </Concept>
+    <Concept Id="RetryItemUSB">
+      <Comments>ContextMenu Label of the USB icon.The command restarts the failed operations on the USB device</Comments>
+      <String Context="Generic_Long">RETRY FAILED</String>
+    </Concept>
+    <Concept Id="PropertiesItemUSB">
+      <Comments>ContextMenu Label of the USB icon.The command shows information about the USB device</Comments>
+      <String Context="Generic_Long">PROPERTIES</String>
+    </Concept>
+    <Concept Id="CleanTempDirItem">
+      <Comments>ContextMenu Label of the HD icon. The command deletes temporay directories.</Comments>
+      <String Context="Generic_Long">DELETE TEMPORARY DIRECTORIES</String>
+    </Concept>
+    <Concept Id="EraseItemUSB">
+      <Comments>ContextMenu Label of the USB icon. The command erases the USB device.</Comments>
+      <String Context="Generic_Long">ERASE DEVICE</String>
+    </Concept>
+    <Concept Id="ExportLogItemUSB">
+      <Comments>ContextMenu Label of the USB icon. The command exports the logs in the USB device.</Comments>
+      <String Context="Generic_Long">EXPORT LOG FILE TO USB</String>
+    </Concept>
+    <Concept Id="OperationsItemDVD">
+      <Comments>ContextMenu Label of the DVD icon. The Command shows the export operation list on the DVD device</Comments>
+      <String Context="Generic_Long">OPERATIONS</String>
+    </Concept>
+    <Concept Id="BurnerDeviceNotConnected" >
+      <Comments>ContextMenu Label of the DVD icon. This warning occurs when no burner is present inside the machine or no usb burner is connected</Comments>
+      <String Context="Generic_Warning" >BURNER DEVICE NOT CONNECTED</String>
+    </Concept>
+    
+    <Concept Id="PrintingMultipleImages" >
+      <Comments>This warning occurs when press the print button on selection more immages</Comments>
+      <String Context="Generic_Warning" >WAITING TO PRINT COMPLETION</String>
+    </Concept>
+      
+    <Concept Id="PropertiesItemDVD">
+      <Comments>ContextMenu Label of the DVD icon.The command shows information about the DVD device</Comments>
+      <String Context="Generic_Long">PROPERTIES</String>
+    </Concept>
+    <Concept Id="OperationsItemLAN">
+      <Comments>ContextMenu Label of the Network icon. The Command shows the export operation list on the Network device</Comments>
+      <String Context="Generic_Long">OPERATIONS</String>
+    </Concept>
+    <Concept Id="PropertiesItemLAN">
+      <Comments>ContextMenu Label of the Network icon.The command shows information about the Network device</Comments>
+      <String Context="Generic_Long">PROPERTIES</String>
+    </Concept>
+    <Concept Id="RetryItemLAN">
+      <Comments>ContextMenu Label of the Network icon.The command restarts the failed operations on the Network device</Comments>
+      <String Context="Generic_Long">RETRY FAILED</String>
+    </Concept>
+    <Concept Id="EraseItemDVD">
+      <Comments>ContextMenu Label of the DVD icon. The command erases the DVD device</Comments>
+      <String Context="Generic_Long">ERASE DISC</String>
+    </Concept>
+    <Concept Id="OperationsItemDICOM">
+      <Comments>ContextMenu Label of the Dicom Server icon. The Command shows the export operation list on the Dicom Server device</Comments>
+      <String Context="Generic_Long">OPERATIONS</String>
+    </Concept>
+    <Concept Id="RetryItemDICOM">
+      <Comments>ContextMenu Label of the Dicom Server icon.The command restarts the failed operations on the Dicom Server device</Comments>
+      <String Context="Generic_Long">RETRY FAILED</String>
+    </Concept>
+    <Concept Id="DISCTYPE">
+      <Comments>Disk type label</Comments>
+      <String Context="Generic_Long">DISC TYPE</String>
+    </Concept>
+    <Concept Id="DISCSPACE">
+      <Comments>Disk capacity label</Comments>
+      <String Context="Generic_Long">DISC CAPACITY</String>
+    </Concept>
+    <Concept Id="REWRITABLE">
+      <Comments>Rewritable Disk label</Comments>
+      <String Context="Generic_Long">REWRITABLE</String>
+    </Concept>
+    <Concept Id="WRITABLE">
+      <Comments>Writable Disk Label</Comments>
+      <String Context="Generic_Long">WRITABLE</String>
+    </Concept>
+    <Concept Id="?CLEAN_TEMP_DIR">
+      <Comments>Confirm Clean Temp Dir Operation</Comments>
+      <String Context="Generic_Warning">This operation will delete the temporary directories. Please check that no operation is in progress. Do you want to continue?</String>
+    </Concept>
+    <Concept Id="?OPERATION_INPROGRESS_ONCLEANTEMPDIR">
+      <Comments>Services are some operation in progress Confirm Clean Temp Dir Operation</Comments>
+      <String Context="Generic_Warning">Some Operations are not completed. Do you want to continue?</String>
+    </Concept>
+    <Concept Id="CLEANTEMPDIR">
+      <Comments>String on ProgreassBar during Clean Temporary Directory</Comments>
+      <String Context="Generic_Warning">DELETING TEMPORARY DIRECTORIES</String>
+    </Concept>
+    <Concept Id="EjectDisc">
+      <Comments>Context menu command label</Comments>
+      <String Context="Generic_Long">EJECT DISC</String>
+    </Concept>
+    <Concept Id="CDPROBLEM">
+      <Comments>Error message accessing cd device</Comments>
+      <String Context="Generic_Long">CD/DVD DEVICE ERROR</String>
+    </Concept>
+    <Concept Id="LOGEXPORTED">
+      <Comments>The Logs were exported on the USB drive</Comments>
+      <String Context="Generic_Long">LOGS EXPORTED</String>
+    </Concept>
+    <Concept Id="NODISKSPACE">
+      <Comments></Comments>
+      <String Context="Generic_Long">THERE IS NOT ENOUGH SPACE ON THE DEVICE</String>
+    </Concept>
+    <Concept Id="MPPSSCU">
+      <Comments></Comments>
+      <String Context="Generic_Long">MPPSSCU</String>
+    </Concept>
+    <Concept Id="WorklistSCU">
+      <Comments></Comments>
+      <String Context="Generic_Long">WORKLISTSCU</String>
+    </Concept>
+    <Concept Id="StorageSCU">
+      <Comments></Comments>
+      <String Context="Generic_Long">STORAGESCU</String>
+    </Concept>
+    <Concept Id="VerificationSCU">
+      <Comments></Comments>
+      <String Context="Generic_Long">VERIFICATIONSCU</String>
+    </Concept>
+    <Concept Id="QuerySCUStudyRoot">
+      <Comments></Comments>
+      <String Context="Generic_Long">QUERYSCU</String>
+    </Concept>
+    <Concept Id="RetrieveSCUStudyRoot">
+      <Comments></Comments>
+      <String Context="Generic_Long">RETRIEVESCU</String>
+    </Concept>
+    <Concept Id="DeviceQueryOperation">
+    <Comments></Comments>
+    <String Context="Generic_Long">QUERY ON DEVICE</String>
+  </Concept>
+    <Concept Id="MediaExchange">
+      <Comments></Comments>
+      <String Context="Generic_Long">MEDIAEXCHANGE</String>
+    </Concept>
+    <Concept Id="Media exchange from report">
+      <Comments></Comments>
+      <String Context="Generic_Long">MEDIAEXCHANGE</String>
+    </Concept>
+    <Concept Id="StC">
+      <Comments>Abbreviation for StorageCommitment</Comments>
+      <String Context="Generic_Long">STC</String>
+    </Concept>    
+    <Concept Id="DICOM CD/DVD burn">      
+      <Comments></Comments>
+      <String Context="Generic_Long">DICOM</String>
+    </Concept>
+    <Concept Id="WindowsPrintPage">
+      <Comments></Comments>
+      <String Context="Generic_Long">WINDOWS PRINT</String>
+    </Concept>
+    <Concept Id="OPERATIONSNUMBERWARNING">
+      <Comments>A label on the operations list about the number of the operations displayed</Comments>
+      <String Context="Generic_Warning">ONLY THE LATEST OPERATIONS ARE DISPLAYED</String>
+    </Concept>
+    <Concept Id="ERASINGDISC">
+      <Comments>Label on the progress bar while erasing a cd/dvd disc</Comments>
+      <String Context="Generic_Warning">ERASING CD/DVD DISC</String>
+    </Concept>
+    <Concept Id="EXPORTINGLOGS">
+      <Comments>Label on the progress bar while exporting logs to usb device</Comments>
+      <String Context="Generic_Warning">EXPORTING LOGS TO USB</String>
+    </Concept>
+    <Concept Id="WIRED_LAN">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), title of wired lan section</Comments>
+      <String Context="Generic_Long">WIRED LAN</String>
+    </Concept>
+    <Concept Id="WIRELESS_LAN">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), title of wireless lan section</Comments>
+      <String Context="Generic_Long">WIRELESS LAN</String>
+    </Concept>
+    <Concept Id="YES">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), dhcp enabled status</Comments>
+      <String Context="Generic_Long">YES</String>
+    </Concept>
+    <Concept Id="NO">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), dhcp enabled status</Comments>
+      <String Context="Generic_Long">NO</String>
+    </Concept>
+    <Concept Id="DHCP_ENABLED">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), dhcp enabled status</Comments>
+      <String Context="Generic_Long">DHCP ENABLED</String>
+    </Concept>
+    <Concept Id="IP">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), IP address</Comments>
+      <String Context="Generic_Long">IP</String>
+    </Concept>
+    <Concept Id="SUBNET_MASK">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), SUBNET_MASK address</Comments>
+      <String Context="Generic_Long">SUBNET MASK</String>
+    </Concept>
+    <Concept Id="DEF_GATEWAY">
+      <Comments>"Ip address dialog (it can be opened from hd context menu),DEFAULT GATEWAY address</Comments>
+      <String Context="Generic_Long">DEFAULT GATEWAY</String>
+    </Concept>
+    <Concept Id="PRINTOPERATIONS">
+      <Comments>ContextMenu Label of a printer icon. The Command shows the prints operation list on the device</Comments>
+      <String Context="Generic_Long">PRINT OPERATIONS</String>
+    </Concept>
+    <Concept Id="PagePreview" >
+      <Comments>Used to display the preview of a page </Comments>
+      <String Context="Generic_Long" >PAGE PREVIEW</String>
+      <String Context="TS_TabName" >PAGE PREVIEW</String>
+    </Concept>
+    <Concept Id="ForcePrint" >
+      <Comments>Used to force the print of a page </Comments>
+      <String Context="Generic_Long" >PRINT NOW</String>
+    </Concept>
+    <Concept Id="RESET_QUEUE" >
+      <Comments>used to clean the page without printing</Comments>
+      <String Context="Generic_Long" >RESET QUEUE</String>
+    </Concept>
+    <Concept Id="CONFIGURATION" >
+      <Comments>used to clean the page without printing</Comments>
+      <String Context="Generic_Long" >CONFIGURATION</String>
+    </Concept>
+    <Concept Id="Warning_DVD_Selection_Confirmation" >
+      <Comments>used to ask a confirmation to user when retrying one CD\DVD operation</Comments>
+      <String Context="Generic_Warning" >WARNING: ONE OF SELECTED DESTINATIONS IS CD/DVD; DURING CD/DVD OPERATIONS, THE USER INTERACTION WILL BE STOPPED. CONTINUE?</String>
+    </Concept>
+    <Concept Id="TIME_ESTIMATION" >
+      <Comments>used to ask a confirmation to user when he selects one CD\DVD destination</Comments>
+      <String Context="Generic_Long" >TIME ESTIMATION</String>
+    </Concept>
+    <Concept Id="WAIT_TO_BURN" >
+      <Comments>used when the user interaction is stopped by a burning operation</Comments>
+      <String Context="Generic_Warning" >A BURNING OPERATION IS IN PROGRESS. YOU CAN CANCEL SUCH OPERATION BUT THE CD/DVD MAY BE CORRUPTED OR INCOMPLETE.</String>
+    </Concept>
+    <Concept Id="WAIT_INITIALIZING_OPERATIONS" >
+      <Comments>used if the export operations are not already initialized after boot</Comments>
+      <String Context="Generic_Warning" >SOME OPERATIONS ARE NOT ALREADY INITIALIZED. RETRY LATER.</String>
+    </Concept>
+    <Concept Id="ERROR_DURING_PRINT_W8" >
+      <Comments>used when an problem occurs during print</Comments>
+      <String Context="Generic_Warning" >ERROR DURING PRINTING</String>
+    </Concept>
+    <Concept Id="PRINT2_ON_TS">
+      <Comments>Command to print on the second printer</Comments>
+      <String Context="TS_BButton">Print2 On TS</String>      
+    </Concept>
+    <Concept Id="RETRYING">
+      <Comments>Used to display that the storage SCU is in autoretry mode [StoryID: 2057]</Comments>
+      <String Context="Generic_Medium">RETRYING</String>
+    </Concept>
+      <Concept Id="FURTHERRETRIES">
+      <Comments>Used to display the remaining number of autoretry [StoryID: 2057]</Comments>
+      <String Context="Generic_Medium">FURTHER RETRIES</String>
+    </Concept>
+  <Concept Id="RetrieveSCUStudyLevel">
+      <Comments>[Defect: 6895]</Comments>
+      <String Context="Generic_Long">RETRIEVE - STUDY LEVEL</String>
+    </Concept>
+  <Concept Id="RetrieveSCUSeriesLevel">
+      <Comments>[Defect: 6895]</Comments>
+      <String Context="Generic_Long">RETRIEVE - SERIES LEVEL</String>
+    </Concept>
+      <Concept Id="RetrieveSCUInstanceLevel">
+      <Comments></Comments>
+      <String Context="Generic_Long">RETRIEVE - INSTANCE LEVEL</String>
+    </Concept>
+    <Concept Id="SeriesQuerySCU">
+      <Comments>[Defect: 6895]</Comments>
+      <String Context="Generic_Long">QUERY - SERIES LEVEL</String>
+    </Concept>
+    <Concept Id="InstanceQuerySCU">
+        <Comments>[Defect: 6895]</Comments>
+      <String Context="Generic_Long">QUERY - INSTANCE LEVEL</String>
+    </Concept>
+    <Concept Id="PHYSICALDISKSIZE">
+      <Comments>Physical disk size on disk\usb icon properties context menu</Comments>
+      <String Context="Generic_Long">PHYSICAL DISK SIZE</String>
+    </Concept>
+    <Concept Id="MYLABDESKPOINTER">
+      <Comments>String on the MyLabDesk screen to toggle the trackball between Windows Pointer and Ecographic objects</Comments>
+      <String Context="Generic_Warning">F10 => Mouse Pointer On/Off</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>
+
+

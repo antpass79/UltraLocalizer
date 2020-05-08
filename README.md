@@ -86,7 +86,10 @@ Id values: 299 674 675 1233 1526 1539 1627 1653
 
 ## Questions
 
-- 
+- In the grid of Job tab, I have Concept and Contexts columns. In xml files I have Concept tag that has tags with Context attributes.
+Is Context that contains Concept or the contrary?
+- If I read from xml, the filters must work? What are the job name and language?
+- The Ultra Localizator makes a logout after a short period. Is there a configurable or fixed policy to handle this behaviour?
 
 ## References
 

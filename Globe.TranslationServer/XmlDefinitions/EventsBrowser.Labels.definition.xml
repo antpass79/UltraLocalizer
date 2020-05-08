@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="EventsBrowser" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Labels">
+    <Concept Id="PATIENTNAME">
+      <Comments>Patient Name Header in EvenstList</Comments>
+      <String Context="Generic_Long">PATIENT NAME</String>
+    </Concept>
+    <Concept Id="PATIENTID">
+      <Comments>Patient ID Header in EvenstList</Comments>
+    <String Context="Generic_Long">PATIENT ID</String>
+    </Concept>
+    <Concept Id="OWNERNAME">
+      <Comments>Owner Name Header in EvenstList</Comments>
+      <String Context="Generic_Long">OWNER NAME</String>
+    </Concept>
+    <Concept Id="ANIMALNAME">
+      <Comments>Animal name Header in EvenstList</Comments>
+      <String Context="Generic_Long">ANIMAL NAME</String>
+    </Concept>
+    <Concept Id="EXAMTYPE">
+      <Comments>Application Type Header in EvenstList</Comments>
+      <String Context="Generic_Long">EXAM TYPE</String>
+    </Concept>
+    <Concept Id="EXAMDATE">
+      <Comments>Exam Date Header in EvenstList</Comments>
+      <String Context="Generic_Long">EXAM DATE</String>
+    </Concept>
+    <Concept Id="EXAMTIME">
+      <Comments>Exam Time Label in EvenstList</Comments>
+      <String Context="Generic_Long">TIME</String>
+    </Concept>
+    <Concept Id="EVENTDATE">
+      <Comments>Event Date Header in EvenstList</Comments>
+      <String Context="Generic_Long">DATE</String>
+    </Concept>
+    <Concept Id="EVENTTIME">
+      <Comments>Event Time Label in EvenstList</Comments>
+      <String Context="Generic_Long">TIME</String>
+    </Concept>
+    <Concept Id="EVENTSTATUS">
+      <Comments>Event Status Label in EvenstList</Comments>
+      <String Context="Generic_Long">STATUS</String>
+    </Concept>
+    <Concept Id="EVENTTYPE">
+      <Comments>Event Type Label in EvenstList</Comments>
+      <String Context="Generic_Long">TYPE</String>
+    </Concept>
+    <Concept Id="EVENTDESTINATION">
+      <Comments>Event Destination Label in EvenstList</Comments>
+      <String Context="Generic_Long">DESTINATION</String>
+    </Concept>
+    <Concept Id="EVENTDESCRIPTION">
+      <Comments>Event Description Label in EvenstList</Comments>
+      <String Context="Generic_Long">DESCRIPTION</String>
+    </Concept>
+    <Concept Id="CLINICALEVENTS">
+      <Comments>Title Label in EvenstList</Comments>
+      <String Context="Generic_Long">CLINICAL EVENTS ARCHIVE</String>
+    </Concept>
+    <Concept Id="NotPerformed">
+      <Comments>Not performed operation status</Comments>
+      <String Context="Generic_Medium">NOT PERFORMED</String>
+    </Concept>
+    <Concept Id="InProgress">
+      <Comments>In progress operation status</Comments>
+      <String Context="Generic_Medium">IN PROGRESS</String>
+    </Concept>
+    <Concept Id="SuccessfullyCompleted">
+      <Comments>completed operation status</Comments>
+      <String Context="Generic_Medium">OK</String>
+    </Concept>
+    <Concept Id="Failed">
+      <Comments>Failed operation status</Comments>
+      <String Context="Generic_Medium">FAILED</String>
+    </Concept>
+    <Concept Id="PartiallyFailed">
+      <Comments>Partially failed operation status</Comments>
+      <String Context="Generic_Medium">PART. FAILED</String>
+    </Concept>
+    <Concept Id="Pending">
+      <Comments>Pending operation status</Comments>
+      <String Context="Generic_Medium">PENDING</String>
+    </Concept>    
+    <Concept Id="EXAMS">
+      <Comments>Title header of the exam list</Comments>
+      <String Context="Generic_Long">EXAMS TO BE BACKUPPED</String>
+    </Concept>
+    <Concept Id="BACKUPTAB">
+      <Comments>Header of the backup reminder tab</Comments>
+      <String Context="Generic_Long">BACKUP REMINDER</String>
+      <String Context="TS_AButton">BACKUP REMINDER</String>
+    </Concept>
+    <Concept Id="ALLHISTORYTAB">
+      <Comments>Header of the all events tab</Comments>
+      <String Context="Generic_Long">ALL EVENTS</String>
+      <String Context="TS_AButton">ALL EVENTS</String>
+    </Concept>
+    <Concept Id="SELECTEDHISTORYTAB">
+      <Comments>Header of the selected exams history tab</Comments>
+      <String Context="Generic_Long">SELECTED EXAMS HISTORY</String>
+      <String Context="TS_AButton">SEL. EXAMS HISTORY</String>
+    </Concept>
+    <Concept Id="EXPORTINGLOGS">
+      <Comments>Header of the exporting log progress bar</Comments>
+      <String Context="Generic_Long">EXPORTING LOGS</String>
+    </Concept>
+    <Concept Id="NOVALIDSTUDY">
+      <Comments>Warning message when the user tries to export a study that is not present in the database.</Comments>
+      <String Context="Generic_Warning">NO VALID STUDY IS ASSOCIATED TO THE SELECTED EVENTS</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

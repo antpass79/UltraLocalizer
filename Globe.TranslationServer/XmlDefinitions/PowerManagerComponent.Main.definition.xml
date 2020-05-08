@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="PowerManagerComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Main">
+    <Concept Id="BATTERYINFO">
+      <Comments>LAbel of the Battery info message box</Comments>
+      <String Context="Generic_Long">BATTERY STATUS</String>
+    </Concept>
+    <Concept Id="BATTERYCHARGE">
+      <Comments>Label of the battery percentage charge</Comments>
+      <String Context="Generic_Long">CHARGE</String>
+    </Concept>
+    <Concept Id="BATTERYTIME">
+      <Comments>Label of the battery remaining lifetime</Comments>
+      <String Context="Generic_Long">LIFETIME</String>
+    </Concept>
+    <Concept Id="BATTERYERROR">
+      <Comments>Label of the battery error details</Comments>
+      <String Context="Generic_Long">ERROR INFO</String>
+    </Concept>
+    <Concept Id="ACLINEERROR">
+      <Comments>Label of the ac line error details</Comments>
+      <String Context="Generic_Long">ERROR INFO</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

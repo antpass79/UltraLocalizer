@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="SmartPresetConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="CONFIGURATOR NAME">
+      <Comments>SmartPreset configurator definition</Comments>
+      <String Context="Generic_Medium">Smart Preset Management</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Factory">
+    <Concept Id="ALLPROBES">
+      <Comments>All probes available in the system</Comments>
+      <String Context="Generic_Medium">ALLPROBES</String>
+      <String Context="TS_AButton">ALLPROBES</String>
+    </Concept>
+    <Concept Id="ABDOMEN">
+      <Comments>Name of one of RT preset group</Comments>
+      <String Context="Generic_Medium">ABDOMEN</String>
+      <String Context="TS_AButton">ABDOMEN</String>
+    </Concept>
+    <Concept Id="UPPER LIMBS">
+      <Comments>Name of one of RT preset group</Comments>
+      <String Context="Generic_Medium">UPPER LIMBS</String>
+      <String Context="TS_AButton">UPPER LIMBS</String>
+    </Concept>
+    <Concept Id="LOWER LIMBS">
+      <Comments>Name of one of RT preset group</Comments>
+      <String Context="Generic_Medium">LOWER LIMBS</String>
+      <String Context="TS_AButton">LOWER LIMBS</String>
+    </Concept>
+    <Concept Id="BREAST">
+      <Comments>Name of one of RT preset group</Comments>
+      <String Context="Generic_Medium">BREAST</String>
+      <String Context="TS_AButton">BREAST</String>
+    </Concept>
+    <Concept Id="CARDIAC">
+      <Comments>Name of one of RT preset group</Comments>
+      <String Context="Generic_Medium">CARDIAC</String>
+      <String Context="TS_AButton">CARDIAC</String>
+    </Concept>
+    <Concept Id="VASCULAR">
+      <Comments>Name of one of RT preset group</Comments>
+      <String Context="Generic_Medium">VASCULAR</String>
+      <String Context="TS_AButton">VASCULAR</String>
+    </Concept>
+    <Concept Id="ANAESTHESIA">
+      <Comments>Name of one of RT preset group. Please note that ANAESTHESIA strin is ugly since last A is on the second line</Comments>
+      <String Context="Generic_Medium">ANAESTHESIA</String>
+      <String Context="TS_AButton">ANAESTHESIA</String>
+    </Concept>
+    <Concept Id="GENERIC">
+      <Comments>Name of one of RT preset group. Please use the general choice about generic/general</Comments>
+      <String Context="Generic_Medium">GENERIC</String>
+      <String Context="TS_AButton">GENERIC</String>
+    </Concept>
+    <Concept Id="1ST TRIMESTER">
+      <Comments>Name of one of RT preset group. Presets devoted to be used within the first trimester of pregnancy</Comments>
+      <String Context="Generic_Medium">1ST TRIMESTER</String>
+      <String Context="TS_AButton">1ST TRIMESTER</String>
+    </Concept>
+    <Concept Id="2NDTRIMESTER">
+      <Comments>Name of one of RT preset group. Presets devoted to be used within the second trimester of pregnancy</Comments>
+      <String Context="Generic_Medium">2ND TRIMESTER</String>
+      <String Context="TS_AButton">2ND TRIMESTER</String>
+    </Concept>
+    <Concept Id="3RD TRIMESTER">
+      <Comments>Name of one of RT preset group. Presets devoted to be used within the third trimester of pregnancy</Comments>
+      <String Context="Generic_Medium">3RD TRIMESTER</String>
+      <String Context="TS_AButton">3RD TRIMESTER</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Applications">
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="INTERFACE">
+    <Concept Id="DEFAULT_LABEL">
+      <Comments>It indicates the default preset</Comments>
+      <String Context="Generic_Medium">Select default:</String>
+    </Concept>
+    <Concept Id="SELECT_DEFAULT">
+      <Comments>Indicate to choose the default preset before pressing the save button</Comments>
+      <String Context="Generic_Warning">Select the default avlue before save the configuration.</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

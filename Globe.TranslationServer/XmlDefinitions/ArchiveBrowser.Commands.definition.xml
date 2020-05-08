@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ArchiveBrowser" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Commands">
+    <Concept Id="QUERY">
+      <Comments>Generic Query</Comments>
+      <String Context="TS_AButton">QUERY</String>
+    </Concept>
+    <Concept Id="YESTERDAY" >
+    <Comments>Yesterday Query</Comments>
+    <String Context="TS_AButton">YESTERDAY</String>    
+    </Concept>
+    <Concept Id="TODAY">
+      <Comments>Today Query</Comments>
+      <String Context="TS_AButton">TODAY</String>      
+    </Concept>
+    <Concept Id="DELETEEXAMS">
+      <Comments>Delete exams command</Comments>
+      <String Context="TS_AButton">DELETE EXAMS</String>
+      <String Context="Generic_Long">DELETING EXAMS</String>
+    </Concept>
+    <Concept Id="SELECTALL">
+      <Comments>Select All Exams</Comments>
+      <String Context="TS_AButton">SELECT ALL</String>      
+    </Concept>    
+    <Concept Id="SELECTNONE">
+      <Comments>Select None Exams</Comments>
+      <String Context="TS_AButton">SELECT NONE</String>
+      </Concept>
+    <Concept Id="RETRIEVE">
+      <Comments>Retrieve Patient Info</Comments>
+      <String Context="TS_AButton">RETRIEVE</String>
+    </Concept>
+    <Concept Id="RETRIEVE_CANCEL">
+      <Comments>Exit from Retrieve Patient info environment</Comments>
+      <String Context="TS_AButton">CANCEL</String>
+    </Concept>
+    <Concept Id="OPEN">
+      <Comments>Open selected exams</Comments>
+      <String Context="TS_AButton">OPEN</String>
+    </Concept>
+    <Concept Id="EXPORT">
+      <Comments>Export selected exams</Comments>
+      <String Context="TS_AButton">EXPORT</String>
+    </Concept>
+    <Concept Id="SELECTPAGE">
+      <Comments>Select exams in current page</Comments>
+      <String Context="TS_AButton">SELECT PAGE</String>      
+    </Concept>
+    <Concept Id="SELECTINTERVAL">
+      <Comments>Select exams in an interval</Comments>
+      <String Context="TS_AButton">SELECT INTERVAL</String>
+    </Concept>
+    <Concept Id="SELECTARCHIVE">
+      <Comments>Select local or external archive</Comments>
+      <String Context="TS_AButton">SELECT ARCHIVE</String>
+    </Concept>
+    <Concept Id="LOCALARCHIVE">
+      <Comments>TS local archive button</Comments>
+      <String Context="TS_AButton">LOCAL ARCHIVE</String>
+    </Concept>
+    <Concept Id="DVD">
+      <Comments>TS DVD archive button</Comments>
+      <String Context="TS_AButton">DVD</String>
+    </Concept>
+    <Concept Id="USB">
+      <Comments>TS USB archive button</Comments>
+      <String Context="TS_AButton">USB</String>
+    </Concept>
+    <Concept Id="BROWSE">
+      <Comments>BROWSE button to open dialog to choose a folder</Comments>
+      <String Context="TS_AButton">BROWSE...</String>
+    </Concept>
+    <Concept Id="RESET">
+      <Comments>Reset query fields</Comments>
+      <String Context="TS_AButton">RESET</String>
+    </Concept>
+    <Concept Id="SCROLLITEM">
+      <Comments>Scroll exam in exam list</Comments>
+      <String Context="TS_TButton">SCROLL ITEM</String>      
+    </Concept>
+    <Concept Id="SCROLLPAGE">
+      <Comments>Scroll page in exam list</Comments>
+      <String Context="TS_TButton">SCROLL PAGE</String>      
+    </Concept>
+    <Concept Id="SCROLLROW">
+      <Comments>Scroll row in exam list</Comments>
+      <String Context="TS_TButton">SCROLL ROW</String>
+    </Concept>
+    <Concept Id="CopyManager">
+      <Comments>Title in export panel</Comments>
+      <String Context="Generic_Long">NATIVE EXPORT</String>
+      <String Context="TS_TabName">NATIVE EXPORT</String>
+    </Concept>
+    <Concept Id="MediaExportManager">
+      <Comments>Title in export panel</Comments>
+      <String Context="Generic_Long">MULTIMEDIA EXPORT</String>
+      <String Context="TS_TabName">MULTIMEDIA EXPORT</String>
+    </Concept>
+    <Concept Id="SetDestinationDevice">
+      <Comments>Title in progress bar when you choose a device (es USB DVD...) for review an archive  </Comments>
+      <String Context="Generic_Warning">Please wait....searching for valid archive</String>
+    </Concept>
+    <Concept Id="DELEXAMS?">
+      <Comments>Asks Confirm before delete exams</Comments>
+      <String Context="Generic_Warning">DELETE SELECTED EXAMS?</String>
+    </Concept>
+    <Concept Id="IMAGE_NOT_COMPATIBLE">
+      <Comments>Warning Message: Some image are not compatible with the current device [StoryID: 3100]</Comments>
+      <String Context="Generic_Warning">Warning: the selected object cannot be displayed since it is not compatible with this device.</String>
+    </Concept >
+    <Concept Id="EXAM_IN_USE_NO_DELETE">
+      <Comments>Warning Message: Some Exams Choosed to delete are in use</Comments>
+      <String Context="Generic_Warning">Warning: some of the selected exams are currently opened by another process: cannot continue.</String>
+    </Concept>
+    <Concept Id="EXAM_NOTPRESENT_NO_DELETE">
+      <Comments>Warning Message: Some Exams Choosed to delete are not available any more</Comments>
+      <String Context="Generic_Warning">Warning: some of the selected exams are not available any more: cannot continue.</String>
+    </Concept>
+    <Concept Id="EXAM_READONLY_NO_DELETE">
+      <Comments>Warning Message: Some Exams Choosed to delete are readonly</Comments>
+      <String Context="Generic_Warning">Warning: some of the selected exams are readonly: cannot continue.</String>
+    </Concept>   
+    <Concept Id="TABARCHIVE1">
+      <Comments>FIRST TAB ON TOUCHSCREEN IN ARCHIVE REVIEW</Comments>
+      <String Context="TS_TabName">ARCHIVE MANAGEMENT</String>
+    </Concept>
+    <Concept Id="RECOVERARCHIVE?">
+      <Comments>Asks Confirm before rebuilding archive index</Comments>
+      <String Context="Generic_Warning">REBUILD ARCHIVE INDEX?</String>
+    </Concept>
+    <Concept Id="RECOVERINGARCHIVE">
+      <Comments>Information string while rebuilding archive index</Comments>
+      <String Context="Generic_Long">ARCHIVE INDEX REBUILDING</String>
+    </Concept>
+    <Concept Id="RECOVERARCHIVE">
+      <Comments>Rebuild archive index command</Comments>
+      <String Context="TS_AButton">REBUILD ARCHIVE INDEX</String>
+    </Concept>
+    <Concept Id="ERROR_IN_REBUILD_ARCHIVE_INDEX">
+      <Comments>Error while rebuilding archive index</Comments>
+      <String Context="Generic_Warning">ERROR WHILE REBUILDING ARCHIVE INDEX</String>
+    </Concept>
+    <Concept Id="EXAMSNOTARCHIVED">
+      <Comments>Recover non archived exams</Comments>
+      <String Context="TS_AButton">EXAMS NOT ARCHIVED</String>
+      <String Context="Generic_Long">EXAMS NOT ARCHIVED</String>
+    </Concept>
+    <Concept Id="NONARCHIVEDEXAMS">
+      <Comments>Non archived exams management label</Comments>
+      <String Context="Generic_Long">NON ARCHIVED EXAMS</String>
+    </Concept>
+    <Concept Id="RESTOREEXAM">
+      <Comments>Restore selected non archived exam command</Comments>
+      <String Context="TS_AButton">RESTORE</String>
+    </Concept>
+    <Concept Id="DELETENONARCHIVED">
+      <Comments>Delete selected non archived exam command</Comments>
+      <String Context="TS_AButton">DELETE</String>
+    </Concept>
+    <Concept Id="DELETEALLNONARCHIVED">
+      <Comments>Delete all non archived exam command</Comments>
+      <String Context="TS_AButton">DELETE ALL</String>
+    </Concept>
+    <Concept Id="DOUBLECLICKRETRIEVE">
+      <Comments>Help string to retrieve patient data.</Comments>
+      <String Context="Generic_Warning">DOUBLE CLICK ON THE EXAM TO RETRIEVE PATIENT DATA</String>
+    </Concept>
+    <Concept Id="REOPEN EXAM">
+      <Comments>Label of button on TS for reopening selected exam [Story 24238]</Comments>
+      <String Context="TS_AButton">REOPEN EXAM</String>
+    </Concept>
+    <Concept Id="RETRIEVE EXAM">
+      <Comments>Label of button on TS for retrieving selected exam [Defect 27313]</Comments>
+      <String Context="TS_AButton">RETRIEVE PATIENT EXAM</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

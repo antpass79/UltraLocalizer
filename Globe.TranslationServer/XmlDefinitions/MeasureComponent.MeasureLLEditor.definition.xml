@@ -1,0 +1,1157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="MeasureComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="MeasureLLEditor">
+    <Concept Id="FACTORY">
+      <Comments>Tab Factory in custom measure selection in low level editor</Comments>
+      <String Context="Generic_Medium">Factory</String>
+    </Concept >
+    <Concept Id="CUSTOM">
+      <Comments>Tab Custom in custom measure selection in low level editor</Comments>
+      <String Context="Generic_Medium">Custom</String>
+    </Concept >
+	 <Concept Id="ShowFormula">
+      <Comments>Show Formula</Comments>
+      <String Context="Generic_Long">Show Formula</String>
+    </Concept >
+	 <Concept Id="AutoFill">
+      <Comments>AutoFill the selection</Comments>
+      <String Context="Generic_Long">AutoFill</String>
+    </Concept >
+	 <Concept Id="Delete">
+      <Comments>Delete</Comments>
+      <String Context="Generic_Long">Delete</String>
+    </Concept >
+	 <Concept Id="sq_AUTO">
+      <Comments>Type of execution</Comments>
+      <String Context="Generic_Medium">AUTO</String>
+    </Concept >
+	 <Concept Id="sq_DERIVED">
+      <Comments>Type of execution</Comments>
+      <String Context="Generic_Medium">CONTINGENT</String>
+    </Concept >
+	 <Concept Id="sq_OFF">
+      <Comments>Type of execution</Comments>
+      <String Context="Generic_Medium">OFF</String>
+    </Concept >
+	 <Concept Id="sq_ON">
+      <Comments>Type of execution</Comments>
+      <String Context="Generic_Medium">ON</String>
+    </Concept >
+	<Concept Id="CALCULATIONS">
+      <Comments>Calculations tab in custom measure selection in low level editor</Comments>
+      <String Context="Generic_Medium">Calculations</String>
+    </Concept >
+    <Concept Id="PISA Method">
+      <Comments>Label of combobox for PISA mode in low level editor Story 35898</Comments>
+      <String Context="Generic_Medium">PISA Method</String>
+    </Concept >
+    <Concept Id="Auto NT Method">
+      <Comments>Label of combobox for auto nt mode in low level editor</Comments>
+      <String Context="Generic_Medium">Auto NT Method</String>
+    </Concept >
+    <Concept Id="Auto IT Method">
+      <Comments>Label of combobox for auto IT mode in low level editor</Comments>
+      <String Context="Generic_Medium">Auto IT Method</String>
+    </Concept >
+    <Concept Id="SUSPEND_NONE">
+      <Comments>Case NONE of the custom measure editor combobox SUSPEND in low level editor</Comments>
+      <String Context="Generic_Medium">NONE</String>
+    </Concept >
+    <Concept Id="SUSPEND_MODE">
+      <Comments>Case MODE of the custom measure editor combobox SUSPEND in low level editor</Comments>
+      <String Context="Generic_Medium">MODE</String>
+    </Concept >
+    <Concept Id="SUSPEND_FRAME">
+      <Comments>Case FRAME of the custom measure editor combobox SUSPEND in low level editor</Comments>
+      <String Context="Generic_Medium">FRAME</String>
+    </Concept >
+    <Concept Id="SUSPEND_RESUME">
+      <Comments>Case RESUME of the custom measure editor combobox SUSPEND in low level editor</Comments>
+      <String Context="Generic_Medium">RESUME</String>
+    </Concept >
+    <Concept Id="SUSPEND MODE">
+      <Comments>Label of the custom measure editor combobox SUSPEND in low level editor</Comments>
+      <String Context="Generic_Medium">SUSPEND MODE</String>
+    </Concept >
+    <Concept Id="Report Print Option">
+      <Comments>Label of the Report print option combobox in low level editor</Comments>
+      <String Context="Generic_Medium">Report Print Option</String>
+    </Concept >
+    <Concept Id="Cannot mix velocity in hz and other doppler measure">
+      <Comments>Message to the user when a measure use a hz velocity and other doppler measures</Comments>
+      <String Context="Generic_Warning">Cannot mix velocity in hz and other doppler measure.</String>
+    </Concept >
+    <Concept Id="Biometric parameter exists">
+      <Comments>Message to the user when trying to add existing custom biometric parameter </Comments>
+      <String Context="Generic_Warning">Biometric parameter exists.</String>
+    </Concept >
+    <Concept Id="Empty label not allowed">
+      <Comments>Message to the user when a measure has an empty label</Comments>
+      <String Context="Generic_Warning">Empty label not allowed!</String>
+    </Concept >
+    <Concept Id="Measure in use in formula">
+      <Comments>Message to the user when a measure is deleted in editor but is in use</Comments>
+      <String Context="Generic_Warning">Measure in use in formula</String>
+    </Concept >
+    <Concept Id="Maximum number of rows exceeded">
+      <Comments>Message to the user when the editor has more rows than allowed</Comments>
+      <String Context="Generic_Warning">Maximum number of rows exceeded!</String>
+    </Concept >
+    <Concept Id="Custom Measure">
+      <Comments>Label used in the tree of import/export manager</Comments>
+      <String Context="Generic_Long">Custom Measure</String>
+    </Concept >
+    <Concept Id="Error in formula">
+      <Comments>Message to the user when a formula contains errors</Comments>
+      <String Context="Generic_Warning">Error in formula</String>
+    </Concept >
+    <Concept Id="MEASURE ID">
+      <Comments>Label of the measure id column in low level editor</Comments>
+      <String Context="Generic_Long">MEASURE ID</String>
+    </Concept >
+    <Concept Id="Name">
+      <Comments>Label of the measure name column in low level editor</Comments>
+      <String Context="Generic_Medium">NAME</String>
+    </Concept >
+    <Concept Id="USED ROWS">
+      <Comments>Label of the used rows counter</Comments>
+      <String Context="Generic_Medium">USED ROWS</String>
+    </Concept >
+    <Concept Id="Abbrev.">
+      <Comments>Label of the measure abbrev column in low level editor</Comments>
+      <String Context="Generic_Medium">ABBREV</String>
+    </Concept >
+    <Concept Id="Label">
+      <Comments>Label of the measure label column in low level editor</Comments>
+      <String Context="Generic_Medium">LABEL</String>
+    </Concept >
+    <Concept Id="PER FETUS">
+      <Comments>Label of the PER FETUS checkbox in low level editor</Comments>
+      <String Context="Generic_Medium">PER FETUS</String>
+    </Concept >
+    <Concept Id="BIOMETRIC">
+      <Comments>Label of the BIOMETRIC checkbox in low level editor</Comments>
+      <String Context="Generic_Medium">BIOMETRIC</String>
+    </Concept >
+    <Concept Id="Mode">
+      <Comments>Label of the Mode combobox in low level editor</Comments>
+      <String Context="Generic_Medium">MODE</String>
+    </Concept >
+    <Concept Id="ADD MEASURE">
+      <Comments>Label of the ADD MEASURE button in low level editor</Comments>
+      <String Context="Generic_Medium">ADD MEASURE</String>
+    </Concept >
+    <Concept Id="ADD FORMULA">
+      <Comments>Label of the ADD FORMULA button in low level editor</Comments>
+      <String Context="Generic_Medium">ADD FORMULA</String>
+    </Concept >
+    <Concept Id="EDIT FORMULA">
+      <Comments>Label of the EDIT FORMULA button in low level editor</Comments>
+      <String Context="Generic_Medium">EDIT FORMULA</String>
+    </Concept >
+    <Concept Id="BASIC">
+      <Comments>Label of the TAB BASIC in low level editor</Comments>
+      <String Context="Generic_Medium">BASIC</String>
+    </Concept >
+    <Concept Id="Show_author_name">
+      <Comments>Label of the checkbox Show author's name in low level editor</Comments>
+      <String Context="Generic_Long">Show author's name on Measure Button</String>
+    </Concept >
+    <Concept Id="ADVANCED">
+      <Comments>Label of the TAB ADVANCED in low level editor</Comments>
+      <String Context="Generic_Medium">ADVANCED</String>
+    </Concept >
+    <Concept Id="Distance">
+      <Comments>Label of the Distance menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Distance</String>
+    </Concept >
+    <Concept Id="Ratio Distance">
+      <Comments>Label of the Ratio Distance menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Ratio Distance</String>
+    </Concept >
+    <Concept Id="RatioVelocity">
+      <Comments>Label of the Ratio Velocity menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Ratio Velocity</String>
+    </Concept >
+    <Concept Id="RatioTime">
+      <Comments>Label of the Ratio TIME menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Ratio Time</String>
+    </Concept >
+    <Concept Id="HeartRate">
+      <Comments>Label of the Heart rate menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Heart rate</String>
+    </Concept >
+    <Concept Id="Slope">
+      <Comments>Label of the Slope menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Slope</String>
+    </Concept >
+    <Concept Id="Area (trace)">
+      <Comments>Label of the Area trace menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Area (trace)</String>
+    </Concept >
+    <Concept Id="Ratio Area (trace)">
+      <Comments>Label of the RatioArea trace menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Ratio Area (trace)</String>
+    </Concept >
+    <Concept Id="Length (trace)">
+      <Comments>Label of the length trace menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Length (trace)</String>
+    </Concept >
+    <Concept Id="Length (vertex)">
+      <Comments>Label of the length vertex menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Length (vertex)</String>
+    </Concept >
+    <Concept Id="Area (ellipse)">
+      <Comments>Label of the Area ellipse menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Area (ellipse)</String>
+    </Concept >
+    <Concept Id="Volume (ellipse)">
+      <Comments>Label of the Volume ellipse menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Volume (ellipse)</String>
+    </Concept >
+    <Concept Id="Volume (Biplane)">
+      <Comments>Label of the Volume biplane menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Volume (Biplane)</String>
+    </Concept >
+    <Concept Id="Volume (Area-Length)">
+      <Comments>Label of the Volume Area length menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Volume (Area-Length)</String>
+    </Concept >
+    <Concept Id="Ratio Area (ellipse)">
+      <Comments>Label of the Ratio Area ellipse menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Ratio Area (ellipse)</String>
+    </Concept >
+    <Concept Id="Perimeter (trace)">
+      <Comments>Label of the Perimeter trace menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Perimeter (trace)</String>
+    </Concept >
+    <Concept Id="Perimeter (ellipse)">
+      <Comments>Label of the Perimeter ellipse menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Perimeter (ellipse)</String>
+    </Concept >
+    <Concept Id="Flow(trace)">
+      <Comments>Label of the Flow trace menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Flow (trace)</String>
+    </Concept >
+    <Concept Id="Flow(ellipse)">
+      <Comments>Label of the Flow ellipse menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Flow (ellipse)</String>
+    </Concept >
+    <Concept Id="Flow(distance)">
+      <Comments>Label of the Flow distance menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Flow (distance)</String>
+    </Concept >
+    <Concept Id="Distance Reduction">
+      <Comments>Label of the Distance reduction menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Distance %Reduction</String>
+    </Concept >
+    <Concept Id="Area Reduction">
+      <Comments>Label of the Area reduction menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Area %Reduction</String>
+    </Concept >
+    <Concept Id="Velocity">
+      <Comments>Label of the Velocity menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Velocity</String>
+    </Concept >
+    <Concept Id="Velocity(Hz)">
+      <Comments>Label of the Velocity Hz menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Velocity(Hz)</String>
+    </Concept >
+    <Concept Id="SV Depth">
+      <Comments>Label of the SV Depth menu item in low level editor</Comments>
+      <String Context="Generic_Medium">SV Depth</String>
+    </Concept >
+    <Concept Id="Angle by 2 lines">
+      <Comments>[StoryID: 19806]Label of the Angle by 2 lines menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Angle 2 lines</String>
+    </Concept >
+    <Concept Id="Angle by 3 points">
+      <Comments>[StoryID: 19806]Label of the Angle by 3 points menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Angle 3 points</String>
+    </Concept >
+    <Concept Id="Ratio Velocity">
+      <Comments>Label of the Ratio Velocity menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Ratio Velocity</String>
+    </Concept >
+    <Concept Id="RIGHT">
+      <Comments>Label of the right editing box in custom measure</Comments>
+      <String Context="Generic_Short">RIGHT</String>
+    </Concept >
+    <Concept Id="LEFT">
+      <Comments>Label of the left editing box in custom measure</Comments>
+      <String Context="Generic_Short">LEFT</String>
+    </Concept >
+    <Concept Id="FVI">
+      <Comments>Label of the FVI menu item in low level editor</Comments>
+      <String Context="Generic_Medium">FVI</String>
+    </Concept >
+    <Concept Id="Cardiac FVI">
+      <Comments>Label of the Cardiac FVI menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Cardiac FVI</String>
+    </Concept >
+    <Concept Id="Time">
+      <Comments>Label of the Time menu item in low level editor</Comments>
+      <String Context="Generic_Medium">Time</String>
+    </Concept >
+    <Concept Id="Enable large font for generic measures">
+      <Comments>Label of the checkbox for large font enabling in low level editor, ALL APPLICATIONS</Comments>
+      <String Context="Generic_Long">Enable large font for generic measures</String>
+    </Concept >
+    <Concept Id="APPLICATION MEASURE">
+      <Comments>Label of the Applications measure tab in low level editor</Comments>
+      <String Context="Generic_Long">Application measure</String>
+    </Concept >
+    <Concept Id="GENERIC MEASURE">
+      <Comments>Label of the Generic measure tab in low level editor</Comments>
+      <String Context="Generic_Long">Generic measure</String>
+    </Concept >
+    <Concept Id="MEASURE UNITS">
+      <Comments>Label of the Measure units tab in low level editor</Comments>
+      <String Context="Generic_Long">Measure units</String>
+    </Concept >
+    <Concept Id="ENABLE APPLICATION AVERAGE">
+      <Comments>Label of the Applications average checkbox in low level editor</Comments>
+      <String Context="Generic_Long">Enable application average</String>
+    </Concept >
+    <Concept Id="ENABLE APPLICATION ABSOLUTE VELOCITIES">
+      <Comments>Label of the Applications Absolute vel checkbox in low level editor</Comments>
+      <String Context="Generic_Long">Enable application absolute velocities</String>
+    </Concept >
+    <Concept Id="SEARCH">
+      <Comments>Label of the search textbox in low level editor</Comments>
+      <String Context="Generic_Medium">SEARCH:</String>
+    </Concept >
+    <Concept Id="NEW MEASURE">
+      <Comments>Label of the NEW MEASURE button in low level editor</Comments>
+      <String Context="Generic_Medium">NEW MEASURE</String>
+    </Concept >
+    <Concept Id="NEW CALCULATION">
+      <Comments>Label of the NEW MEASURE button in low level editor</Comments>
+      <String Context="Generic_Medium">NEW CALCULATION</String>
+    </Concept >	
+    <Concept Id="DELETE MEASURE">
+      <Comments>Label of the DELETE MEASURE button in low level editor</Comments>
+      <String Context="Generic_Short">DELETE</String>
+    </Concept >
+    <Concept Id="EDIT MEASURE">
+      <Comments>Label of the EDIT MEASURE button in low level editor</Comments>
+      <String Context="Generic_Short">EDIT</String>
+    </Concept >
+    <Concept Id="DEFAULT MEASURE">
+      <Comments>Label of the Default measure combobox in low level editor</Comments>
+      <String Context="Generic_Long">Default measure</String>
+    </Concept >
+    <Concept Id="DISTANCE">
+      <Comments>Label of the groupbox Distance in low level units editor</Comments>
+      <String Context="Generic_Long">DISTANCE</String>
+    </Concept >
+    <Concept Id="OTHERS">
+      <Comments>Label of the groupbox Other parameters in low level units editor</Comments>
+      <String Context="Generic_Long">OTHER PARAMETERS</String>
+    </Concept >
+    <Concept Id="AREA">
+      <Comments>Label of the groupbox Area in low level units editor</Comments>
+      <String Context="Generic_Long">AREA</String>
+    </Concept >
+    <Concept Id="PERIMETER">
+      <Comments>Label of the groupbox Perimeter in low level units editor</Comments>
+      <String Context="Generic_Long">PERIMETER</String>
+    </Concept >
+    <Concept Id="VOLUME">
+      <Comments>Label of the groupbox Volume in low level units editor</Comments>
+      <String Context="Generic_Long">VOLUME</String>
+    </Concept >
+    <Concept Id="CURSOR">
+      <Comments>Label of the groupbox Cursor in low level units editor</Comments>
+      <String Context="Generic_Long">CURSOR</String>
+    </Concept >
+    <Concept Id="DOPPLER CURSOR SHAPE">
+      <Comments>Label of the groupbox Cursor for doppler in low level units editor</Comments>
+      <String Context="Generic_Long">DOPPLER CURSOR SHAPE</String>
+    </Concept >
+    <Concept Id="M-MODE CURSOR SHAPE">
+      <Comments>Label of the groupbox Cursor for M-Mode in low level units editor</Comments>
+      <String Context="Generic_Long">M-MODE CURSOR SHAPE</String>
+    </Concept >
+    <Concept Id="Standard">
+      <Comments>Label of the radiobutton Standard Cursor in low level units editor</Comments>
+      <String Context="Generic_Long">Standard</String>
+    </Concept >
+    <Concept Id="Cross screen">
+      <Comments>Label of the radiobutton Cross Screen cursor in low level units editor</Comments>
+      <String Context="Generic_Long">Cross screen</String>
+    </Concept >
+    <Concept Id="VELOCITY">
+      <Comments>Label of the groupbox Velocity in low level units editor</Comments>
+      <String Context="Generic_Long">VELOCITY</String>
+    </Concept >
+    <Concept Id="ENABLE AUTOREPEAT">
+      <Comments>Label of the Enable autorepeat checkbox in low level editor</Comments>
+      <String Context="Generic_Long">Enable autorepeat:</String>
+    </Concept >
+    <Concept Id="ADM FIELDS">
+      <Comments>Label of the tab of the generic measure editor </Comments>
+      <String Context="Generic_Long">ADM fields</String>
+    </Concept >
+    <Concept Id="VTI FIELDS">
+      <Comments>Label of the tab of the generic measure editor </Comments>
+      <String Context="Generic_Long">VTI fields</String>
+    </Concept >
+    <Concept Id="Enable measure mirroring">
+      <Comments>Label of the Enable measure mirroring checkbox in low level editor</Comments>
+      <String Context="Generic_Long">Enable measure mirroring</String>
+    </Concept >
+    <Concept Id="UNSUPPORTED_CONFIGURATIONFILE_VERSION">
+      <Comments>Message to the user when try to load a configuration file with version greater than max supported</Comments>
+      <String Context="Generic_Warning">Unsupported configuration file</String>
+    </Concept>
+    <Concept Id="CANNOT_SAVE_CONFIGURATIONFILE">
+      <Comments>Message to the user when try to save a configuration file and error occurs</Comments>
+      <String Context="Generic_Warning">Cannot save configuration file!</String>
+    </Concept>
+    <Concept Id="MODIFICATION_AVAILABLE_NEXT_EXAM">
+      <Comments>Message to the user when closes the low level measure editor</Comments>
+      <String Context="Generic_Warning">Modifications shall be available starting from next exam.</String>
+    </Concept>
+	 <Concept Id="MODIFICATION_AVAILABLE_END_EXAM">
+      <Comments>Message to the user when closes the low level measure editor</Comments>
+      <String Context="Generic_Warning">Modifications shall be available after closing next exam.</String>
+    </Concept>
+    <Concept Id="FG Table">
+      <Comments>Label of the combo for FG table in low level editor</Comments>
+      <String Context="Generic_Medium">FG Table</String>
+    </Concept >
+    <Concept Id="FA Table">
+      <Comments>Label of the combo for FA table in low level editor</Comments>
+      <String Context="Generic_Medium">FA Table</String>
+    </Concept >
+    <Concept Id="Method">
+      <Comments>Label of the combo for measure performing method in low level editor</Comments>
+      <String Context="Generic_Medium">Method</String>
+    </Concept >
+    <Concept Id="Enable Graph">
+      <Comments>Label of the checkbox for report graph enabling in low level editor</Comments>
+      <String Context="Generic_Medium">Enable Graph</String>
+    </Concept >
+	<Concept Id="Insertion Method">
+      <Comments>Label of the combobox for choosing the insertion method for OB measures</Comments>
+      <String Context="Generic_Medium">Meas Insertion</String>
+    </Concept >
+    <Concept Id="EFW Formula">
+      <Comments>Label of the combo for EFW selection in low level editor</Comments>
+      <String Context="Generic_Medium">EFW Formula</String>
+    </Concept >
+    <Concept Id="Edit">
+      <Comments>Label of the button to open table editor in low level editor</Comments>
+      <String Context="Generic_Medium">Edit</String>
+    </Concept >
+    <Concept Id="ADD/EDIT REFERENCE">
+      <Comments>Label of the button to open table manager in low level editor</Comments>
+      <String Context="Generic_Medium">ADD/EDIT REFERENCE</String>
+    </Concept >
+    <Concept Id="EDIT TABLE">
+      <Comments>Label of the button to open custom table numeric editor in low level editor</Comments>
+      <String Context="Generic_Medium">EDIT TABLE</String>
+    </Concept >
+    <Concept Id="New Table">
+      <Comments>Label of the button to open new table editor in low level editor</Comments>
+      <String Context="Generic_Medium">New Table</String>
+    </Concept >
+    <Concept Id="New Formula">
+      <Comments>Label of the button to open new table editor in formula mode in low level editor</Comments>
+      <String Context="Generic_Medium">New Formula</String>
+    </Concept >
+    <Concept Id="Delete Table">
+      <Comments>Label of the button to delete table editor in low level editor</Comments>
+      <String Context="Generic_Medium">Delete Table</String>
+    </Concept >
+    <Concept Id="Set as default">
+      <Comments>Label of the button to set the current table as default in low level editor</Comments>
+      <String Context="Generic_Medium">Set as default</String>
+    </Concept >
+    <Concept Id="Fetal HR cycles selection">
+      <Comments>Label of the combo in advanced tab low level editor where select Fetal HR cycles</Comments>
+      <String Context="Generic_Medium">Fetal HR cycles's average</String>
+    </Concept >
+    <Concept Id="Advanced">
+      <Comments>Label of the Advanced tab low level editor</Comments>
+      <String Context="Generic_Medium">Advanced</String>
+    </Concept >
+    <Concept Id="None">
+      <Comments>Label of null measure selection in combobox for DEFAULT GENERIC MEASURE</Comments>
+      <String Context="Generic_Medium">None</String>
+    </Concept >
+    <Concept Id="REFERENCE STUDY">
+      <Comments>Label of the group box of QIMT table editor in low level editor (ref. 9807400000_SI48_002_A.doc)</Comments>
+      <String Context="Generic_Long">REFERENCE STUDY</String>
+    </Concept >
+    <Concept Id="ENABLED">
+      <Comments>Label of a column in grid of QIMT table editor in low level editor (ref. 9807400000_SI48_002_A.doc)</Comments>
+      <String Context="Generic_Medium">ENABLED</String>
+    </Concept >
+    <Concept Id="AUTHOR">
+      <Comments>Label of a column in grid of QIMT table editor in low level editor (ref. 9807400000_SI48_002_A.doc)</Comments>
+      <String Context="Generic_Medium">AUTHOR</String>
+    </Concept >
+    <Concept Id="ETHNIC">
+      <Comments>Label of a column in grid of QIMT table editor in low level editor (ref. 9807400000_SI48_002_A.doc)</Comments>
+      <String Context="Generic_Medium">ETHNIC</String>
+    </Concept >
+    <Concept Id="LATERALITY">
+      <Comments>Label of a column in grid of QIMT table editor in low level editor (ref. 9807400000_SI48_002_A.doc)</Comments>
+      <String Context="Generic_Medium">LATERALITY</String>
+    </Concept >
+    <Concept Id="GENDER">
+      <Comments>Label of a column in grid of QIMT table editor in low level editor (ref. 9807400000_SI48_002_A.doc)</Comments>
+      <String Context="Generic_Medium">GENDER</String>
+    </Concept >
+    <Concept Id="BSA">
+      <Comments>Body surface area in low level editor</Comments>
+      <String Context="Generic_Medium">BSA</String>
+    </Concept >
+    <Concept Id="HEIGHT">
+      <Comments>Patient Height in low level editor</Comments>
+      <String Context="Generic_Medium">Height</String>
+    </Concept >
+    <Concept Id="WEIGHT">
+      <Comments>Patient Weight in low level editor</Comments>
+      <String Context="Generic_Medium">Weight</String>
+    </Concept >
+    <Concept Id="AGE">
+      <Comments>Patient Age in low level editor</Comments>
+      <String Context="Generic_Medium">Age</String>
+    </Concept >
+    <Concept Id="SYS_PRESSURE">
+      <Comments>Patient sys pressure in low level editor</Comments>
+      <String Context="Generic_Medium">SysPressure</String>
+    </Concept >
+    <Concept Id="DIA_PRESSURE">
+      <Comments>Patient dia pressure in low level editor</Comments>
+      <String Context="Generic_Medium">DiaPressure</String>
+    </Concept >
+    <Concept Id="PSA">
+      <Comments>Prostate-Specific Antigen in low level editor</Comments>
+      <String Context="Generic_Medium">PSA</String>
+    </Concept >
+    <Concept Id="Dimensionless">
+      <Comments>Label of adimensional measure unit in low level editor used instead of empty string</Comments>
+      <String Context="Generic_Medium">Dimensionless</String>
+    </Concept >
+    <Concept Id=".Vpeak">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Vpeak</String>
+    </Concept >
+    <Concept Id=".LV4CMonoVol">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.4CSimpMonoVol</String>
+    </Concept >
+    <Concept Id=".LV2CMonoVol">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.2CSimpMonoVol</String>
+    </Concept >
+    <Concept Id=".Ax4Ch">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.4CLongAxis</String>
+    </Concept >
+    <Concept Id=".Ax2Ch">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.2CLongAxis</String>
+    </Concept >
+    <Concept Id=".LVVol">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.SimpBipVol</String>
+    </Concept >
+    <Concept Id=".SimpLV">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.SimpMonoVol</String>
+    </Concept >
+    <Concept Id=".AxD">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.LongAxis</String>
+    </Concept >
+    <Concept Id=".LV4CMonoVolD">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.4CSimpMonoVolD</String>
+    </Concept >
+    <Concept Id=".LV4CMonoVolS">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.4CSimpMonoVolS</String>
+    </Concept >
+    <Concept Id=".Ax4Chs">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.4CLongAxisS</String>
+    </Concept >
+    <Concept Id=".Ax4Chd">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.4CLongAxisD</String>
+    </Concept >
+    <Concept Id=".LV2CMonoVolD">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.2CSimpMonoVolD</String>
+    </Concept >
+    <Concept Id=".LV2CMonoVolS">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.2CSimpMonoVolS</String>
+    </Concept >
+    <Concept Id=".Ax2Chs">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.2CLongAxisS</String>
+    </Concept >
+    <Concept Id=".Ax2Chd">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.2CLongAxisD</String>
+    </Concept >
+    <Concept Id=".LVVolD">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.SimpBipVolD</String>
+    </Concept >
+    <Concept Id=".GLS4Ch">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.GLS4Ch</String>
+    </Concept >
+    <Concept Id=".GLS2Ch">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.GLS2Ch</String>
+    </Concept >
+    <Concept Id=".GLS">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.GLS</String>
+    </Concept >
+    <Concept Id=".LVVolS">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.SimpBipVolS</String>
+    </Concept >
+    <Concept Id=".AreaD">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.AreaD</String>
+    </Concept >
+    <Concept Id=".AreaS">
+      <Comments>Subfield of Simpson in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.AreaS</String>
+    </Concept >
+    <Concept Id=".PI">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.PI</String>
+    </Concept >
+    <Concept Id=".RI">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.RI</String>
+    </Concept >
+	   <Concept Id=".Distance">
+      <Comments>Subfield of Distance in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Distance</String>
+    </Concept >
+    <Concept Id=".Perimeter">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Perimeter</String>
+    </Concept >
+    <Concept Id=".Area">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Area</String>
+    </Concept >
+    <Concept Id=".AxisMajor">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.AxisMajor</String>
+    </Concept >
+    <Concept Id=".AxisMinor">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.AxisMinor</String>
+    </Concept >
+    <Concept Id=".Speed">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Speed</String>
+    </Concept >
+    <Concept Id=".Time">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Time</String>
+    </Concept >
+    <Concept Id=".Fvi">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Fvi</String>
+    </Concept >
+    <Concept Id=".dPdT">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.dPdt</String>
+    </Concept >
+    <Concept Id=".Vrev">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Vrev</String>
+    </Concept >
+    <Concept Id=".Ved">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Ved</String>
+    </Concept >
+    <Concept Id=".Vmean">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Vmean</String>
+    </Concept >
+    <Concept Id=".ET">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.ET</String>
+    </Concept >
+    <Concept Id=".EAT">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.EAT</String>
+    </Concept >
+    <Concept Id=".MeanVel">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.MeanVel</String>
+    </Concept >
+    <Concept Id=".Vini">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Vini</String>
+    </Concept >
+    <Concept Id=".Vpp">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Vpp</String>
+    </Concept >
+    <Concept Id=".PHT">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.PHT</String>
+    </Concept >
+    <Concept Id=".EDT">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.EDT</String>
+    </Concept >
+    <Concept Id=".PEV">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.PEV</String>
+    </Concept >
+    <Concept Id=".PAV">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.PAV</String>
+    </Concept >
+    <Concept Id=".PEG">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.PEG</String>
+    </Concept >
+    <Concept Id=".PAG">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.PAG</String>
+    </Concept >
+    <Concept Id=".Gp">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Gp</String>
+    </Concept >
+    <Concept Id=".Gmn">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Gmn</String>
+    </Concept >
+    <Concept Id=".Acc">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.Acc</String>
+    </Concept >
+    <Concept Id=".HeartRate">
+      <Comments>Subfield of HR in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.HeartRate</String>
+    </Concept >
+    <Concept Id=".AT">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.AT</String>
+    </Concept >
+    <Concept Id=".S_D">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.S_D</String>
+    </Concept >
+    <Concept Id=".D_S">
+      <Comments>Subfield of FVI in low level editor. The starting dot is to be kept in localizations</Comments>
+      <String Context="Generic_Medium">.D_S</String>
+    </Concept >
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="FormulaEditor">
+    <Concept Id="MissingOutputUOMMessage">
+      <Comments>Error message on closing editor</Comments>
+      <String Context="Generic_Warning">Please select output unit of measure</String>
+    </Concept>
+    <Concept Id="InvalidFormulaMessage">
+      <Comments>Error message on closing editor</Comments>
+      <String Context="Generic_Warning">Invalid formula, check errors on highlighted items tooltip</String>
+    </Concept>
+    <Concept Id="OutputUOMLabel">
+      <Comments>Label for output unit of measure on Formula editor UI</Comments>
+      <String Context="Generic_Medium">Output UOM</String>
+    </Concept>
+    <Concept Id="MeasureTabLabel">
+      <Comments>Label for Measures tab on Formula editor UI</Comments>
+      <String Context="Generic_Medium">Measures</String>
+    </Concept>
+    <Concept Id="PatientDataTabLabel">
+      <Comments>Label for Patient data tab on Formula editor UI</Comments>
+      <String Context="Generic_Medium">Patient data</String>
+    </Concept>
+    <Concept Id="AddMeasureLabel">
+      <Comments>Label for Add measure button on Formula editor UI</Comments>
+      <String Context="Generic_Medium">Add measure</String>
+    </Concept>
+    <Concept Id="AddPatientDataLabel">
+      <Comments>Label for Add Patient Data button on Formula editor UI</Comments>
+      <String Context="Generic_Medium">Add Patient Data</String>
+    </Concept>
+    <Concept Id="InternalValidateCommand">
+      <Comments>Label for Validate button on Formula editor UI</Comments>
+      <String Context="Generic_Medium">Validate</String>
+    </Concept>
+    <Concept Id="BackCommand">
+      <Comments>Label for Back button on Formula editor functions pad</Comments>
+      <String Context="Generic_Short">Back</String>
+    </Concept>
+    <Concept Id="CancCommand">
+      <Comments>Label for Canc button on Formula editor functions pad</Comments>
+      <String Context="Generic_Short">Canc</String>
+    </Concept>
+    <Concept Id="ConsistencyWarning">
+      <Comments>Error message on closing editor</Comments>
+      <String Context="Generic_Warning">Rememeber to check unit of measure consistency among formula elements and result</String>
+    </Concept>
+    <Concept Id="UDMLabel">
+      <Comments>Generic short label for unit of measure on Formula editor UI</Comments>
+      <String Context="Generic_Short">UOM</String>
+    </Concept>
+	<Concept Id="CALCULATIONNAME">
+      <Comments>[StoryID 1038]: Label for calculation name textbox</Comments>
+      <String Context="Generic_Medium">Name</String>
+    </Concept >	
+	<Concept Id="ABBREVIATIONLABEL">
+      <Comments>[StoryID 1038]: Label for calculation abbreviation textbox</Comments>
+      <String Context="Generic_Medium">Abbreviation</String>
+    </Concept >    
+	<Concept Id="DESCRIPTIONLABEL">
+      <Comments>[StoryID 1038]: Label for calculation description textbox</Comments>
+      <String Context="Generic_Medium">Description</String>
+    </Concept >
+	<Concept Id="InvalidCalculationName">
+      <Comments>[StoryID 1038]: Message to the user for invalid calculation name</Comments>
+      <String Context="Generic_Warning">Invalid Calculation Name</String>
+    </Concept >
+	<Concept Id="InvalidCalculationDescription">
+      <Comments>[StoryID 1038]: Message to the user for invalid calculation description</Comments>
+      <String Context="Generic_Warning">Invalid Calculation Description</String>
+    </Concept >
+	<Concept Id="InvalidCalculationAbbreviation">
+      <Comments>[StoryID 1038]: Message to the user for invalid calculation abbeviation</Comments>
+      <String Context="Generic_Warning">Invalid Calculation Abbreviation</String>
+    </Concept >	
+	<Concept Id="Title">
+      <Comments>[StoryID 1038]: Title for Custom Calculation editor window</Comments>
+      <String Context="Generic_Medium">Custom Calculation</String>
+    </Concept >	
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="FormulaEditorErrorStrings">
+    <Concept Id="InvalidFirstToken">
+      <String Context="Generic_Warning">Invalid first token type:</String>
+    </Concept>
+    <Concept Id="EmptyExpression">
+      <String Context="Generic_Warning">expression cannot be empty</String>
+    </Concept>
+    <Concept Id="TokenCannotBeEndOfExpression">
+      <String Context="Generic_Warning">: this token cannot be followed by )</String>
+    </Concept>
+    <Concept Id="TokenCannotStartExpression">
+      <String Context="Generic_Warning">: this token cannot follow (</String>
+    </Concept>
+    <Concept Id="InvalidTokenSequence">
+      <String Context="Generic_Warning">Invalid token sequence:</String>
+    </Concept>
+    <Concept Id="InvalidSyntaxFirstToken">
+      <String Context="Generic_Warning">Invalid syntax in custom formula: invalid first token type:</String>
+    </Concept>
+    <Concept Id="InvalidSyntaxOnFormula">
+      <String Context="Generic_Warning">Invalid syntax in custom formula</String>
+    </Concept>
+    <Concept Id="InvalidEmptyFormula">
+      <String Context="Generic_Warning">Formula cannot be empty</String>
+    </Concept>
+    <Concept Id="InvalidFormulaRoot">
+      <String Context="Generic_Warning">Invalid formula root</String>
+    </Concept>
+    <Concept Id="MeasureNotAvailable">
+      <String Context="Generic_Warning">measure not available</String>
+    </Concept>
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="CUSTOM_EFW">
+    <Concept Id="EFW_MANAGER">
+      <Comments>Title in the editor configurator</Comments>
+      <String Context="Generic_Long">EFW MANAGER</String>
+    </Concept>
+    <Concept Id="EDIT_EFW">
+      <Comments>Label of the button to open custom EFW editor in low level editor</Comments>
+      <String Context="Generic_Medium">EDIT EFW</String>
+    </Concept >
+    <Concept Id="DELETE_EFW">
+      <Comments>Label of the button to delete custom EFW formula in low level editor</Comments>
+      <String Context="Generic_Medium">DELETE EFW</String>
+    </Concept >
+    <Concept Id="NEW_EFW">
+      <Comments>Label of the button to create a new custom EFW formula in low level editor</Comments>
+      <String Context="Generic_Medium">NEW EFW</String>
+    </Concept >
+    <Concept Id="LOWER_LIMIT">
+      <Comments>Label of the lower limit in the EFW formula in low level editor</Comments>
+      <String Context="Generic_Long">LOWER LIMIT</String>
+    </Concept >
+    <Concept Id="UPPER_LIMIT">
+      <Comments>Label of the upper limit in the EFW formula in low level editor</Comments>
+      <String Context="Generic_Long">UPPER LIMIT</String>
+    </Concept >
+    <Concept Id="SET_EFW">
+      <Comments>Label of the button to set the lower/upper limits in the EFW formula in low level editor</Comments>
+      <String Context="Generic_Medium">SET</String>
+    </Concept >
+    <Concept Id="INPUT_LIMITS">
+      <Comments>Label of the input limits area in the EFW editor in low level editor</Comments>
+      <String Context="Generic_Medium">INPUT LIMITS: </String>
+    </Concept >
+    <Concept Id="OUTPUT">
+      <Comments>Label of the output groupbox in the formula editor in low level editor</Comments>
+      <String Context="Generic_Medium">OUTPUT</String>
+    </Concept >
+    <Concept Id="STDDEV">
+      <Comments>Label of the textbox for Standard Deviation in the formula editor in low level editor</Comments>
+      <String Context="Generic_Medium">Std Dev</String>
+    </Concept >
+    <Concept Id="LABEL_MEASUREUNIT">
+      <Comments>Caption for the choose of the Measure Unit of the parameter</Comments>
+      <String Context="Generic_Medium">MEASURE UNIT:</String>
+    </Concept>
+    <Concept Id="FETAL GROWTH FORMULA">
+      <Comments>Caption for the groupbox formula in formula editor</Comments>
+      <String Context="Generic_Long">FETAL GROWTH FORMULA</String>
+    </Concept>
+    <Concept Id="FETAL AGE FORMULA">
+      <Comments>Caption for the groupbox formula in formula editor</Comments>
+      <String Context="Generic_Long">FETAL AGE FORMULA</String>
+    </Concept>
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="CUSTOM_TABLE">
+    <Concept Id="FOLDER_NOT_FOUND">
+      <Comments>Can't found the folder where to save the customn table</Comments>
+      <String Context="Generic_Warning">The system can't found the folder need to save the data!</String>
+    </Concept>
+    <Concept Id="AUTHORNAME_NOT_VALID">
+      <Comments>The table author field can't be empty.</Comments>
+      <String Context="Generic_Warning">The author field can't be empty!</String>
+    </Concept>
+    <Concept Id="RANGE_NOT_VALID">
+      <Comments>The standard deviation range and value can't be NONE and 0.</Comments>
+      <String Context="Generic_Warning">The SD must be a valid one!</String>
+    </Concept>
+    <Concept Id="LIMITS_NOT_VALID">
+      <Comments>The limits of a formula must be set.</Comments>
+      <String Context="Generic_Warning">The limits of the formula must be set!</String>
+    </Concept>
+   <Concept Id="INVALID_DATA_TABLE">
+      <Comments>The table data is invalid.[StoryID:2726]</Comments>
+      <String Context="Generic_Warning">Table has less than 2 valid rows or day field exceeds 50 weeks.</String>
+    </Concept>
+    <Concept Id="LABEL_FORMAT">
+      <Comments>Caption for the choose of the Format of the table (LowMeanHigh / MeanSD / Mean)</Comments>
+      <String Context="Generic_Long">FORMAT:</String>
+    </Concept>
+    <Concept Id="LABEL_RANGE">
+      <Comments>Caption for the choose of the Range of the table (SD1/SD2/SD3/10-50-90/...)</Comments>
+      <String Context="Generic_Long">RANGE:</String>
+    </Concept>
+    <Concept Id="LABEL_MEASUREUNIT">
+      <Comments>Caption for the choose of the Measure Unit of the table (mm/cm/mm^2/gr/...)</Comments>
+      <String Context="Generic_Long">MEASURE UNIT:</String>
+    </Concept>
+    <Concept Id="LABEL_DAYSFORMAT">
+      <Comments>Caption for the choose of the Days Format (GA) of the table (Day / Week / ...)</Comments>
+      <String Context="Generic_Long">GA:</String>
+    </Concept>
+
+    <Concept Id="LABEL_MEASURENAME">
+      <Comments>Caption for the Name of the Measure</Comments>
+      <String Context="Generic_Long">MEASURE NAME:</String>
+    </Concept>
+    <Concept Id="LABEL_TYPE">
+      <Comments>Caption for the Type of the table (FA / FG / ...)</Comments>
+      <String Context="Generic_Long">TYPE:</String>
+    </Concept>
+    <Concept Id="LABEL_AUTHOR">
+      <Comments>Caption for the choose of the Author of the table (the table name)</Comments>
+      <String Context="Generic_Long">AUTHOR:</String>
+    </Concept>
+    <Concept Id="LABEL_PUBLICATION">
+      <Comments>Caption for the choose of the Publication of the table (a sort of comment)</Comments>
+      <String Context="Generic_Long">PUBLICATION:</String>
+    </Concept>
+
+    <Concept Id="TABLETYPE_FA">
+      <Comments>Table type FA</Comments>
+      <String Context="Generic_Long">FETAL AGE</String>
+    </Concept>
+    <Concept Id="TABLETYPE_FG">
+      <Comments>Table type FG</Comments>
+      <String Context="Generic_Long">FETAL GROWTH</String>
+    </Concept>
+    <Concept Id="TABLETYPE_QIMT">
+      <Comments>Table type QIMT</Comments>
+      <String Context="Generic_Long">QIMT</String>
+    </Concept>
+
+    <Concept Id="TABLEFORMAT_LOWMIDHIGH">
+      <Comments>Table format Low-Mean_High</Comments>
+      <String Context="Generic_Medium">LOW - MEAN - HIGH</String>
+    </Concept>
+    <Concept Id="TABLEFORMAT_MIDDEV">
+      <Comments>Table format Mean - Dev</Comments>
+      <String Context="Generic_Medium">MEAN - DEV</String>
+    </Concept>
+    <Concept Id="TABLEFORMAT_MID">
+      <Comments>Table format Mean</Comments>
+      <String Context="Generic_Medium">MEAN</String>
+    </Concept>
+
+    <Concept Id="TABLERANGE_SD">
+      <Comments>Table range SD (standard deviation)</Comments>
+      <String Context="Generic_Short">SD</String>
+    </Concept>
+
+    <Concept Id="TABLEMEASUREUNIT_MM">
+      <Comments>Table measure unit mm</Comments>
+      <String Context="Generic_Short">mm</String>
+    </Concept>
+    <Concept Id="TABLEMEASUREUNIT_MM2">
+      <Comments>Table measure unit mm^2</Comments>
+      <String Context="Generic_Short">mm^2</String>
+    </Concept>
+    <Concept Id="TABLEMEASUREUNIT_CM">
+      <Comments>Table measure unit cm</Comments>
+      <String Context="Generic_Short">cm</String>
+    </Concept>
+    <Concept Id="TABLEMEASUREUNIT_CM2">
+      <Comments>Table measure unit cm^2</Comments>
+      <String Context="Generic_Short">cm^2</String>
+    </Concept>
+    <Concept Id="TABLEMEASUREUNIT_GR">
+      <Comments>Table measure unit gr</Comments>
+      <String Context="Generic_Short">gr</String>
+    </Concept>
+
+    <Concept Id="TABLEDAYSFORMAT_D">
+      <Comments>Table unit of measure for the time = D (day)</Comments>
+      <String Context="Generic_Short">Day</String>
+    </Concept>
+    <Concept Id="TABLEDAYSFORMAT_W">
+      <Comments>Table unit of measure for the time = W (week)</Comments>
+      <String Context="Generic_Short">Week</String>
+    </Concept>
+    <Concept Id="TABLEDAYSFORMAT_WD">
+      <Comments>Table unit of measure for the time = WD (week+day)</Comments>
+      <String Context="Generic_Short">Week+Day</String>
+    </Concept>
+
+    <Concept Id="GRIDHEADER_MID">
+      <Comments>Column header mean</Comments>
+      <String Context="Generic_Short">MEAN</String>
+    </Concept>
+    <Concept Id="GRIDHEADER_SD">
+      <Comments>Column header SD</Comments>
+      <String Context="Generic_Short">SD</String>
+    </Concept>
+    <Concept Id="GRIDHEADER_XAGE">
+      <Comments>Column header age</Comments>
+      <String Context="Generic_Short">GA</String>
+    </Concept>
+    <Concept Id="GRIDHEADER_XMEAS">
+      <Comments>Column header measure</Comments>
+      <String Context="Generic_Short">MEAS</String>
+    </Concept>
+    <Concept Id="SOURCE">
+      <Comments>Header Table provider ( Esaote-Custom)</Comments>
+      <String Context="Generic_Medium">SOURCE</String>
+    </Concept>
+    <Concept Id="ESAOTE">
+      <Comments>Table provider ( Esaote-Custom)</Comments>
+      <String Context="Generic_Medium">ESAOTE</String>
+    </Concept>
+    <Concept Id="CUSTOM">
+      <Comments>Table provider ( Esaote-Custom)</Comments>
+      <String Context="Generic_Medium">CUSTOM</String>
+    </Concept>
+    <Concept Id="TABLE MANAGER">
+      <Comments>Header of table manager form</Comments>
+      <String Context="Generic_Long">TABLE MANAGER</String>
+    </Concept>
+
+    <Concept Id="ERROR_LOADING_FILE">
+      <Comments>An error has occured loading custom table data file.</Comments>
+      <String Context="Generic_Long">Error loading custom table data file.</String>
+    </Concept>
+
+    <Concept Id="BUTTON_INSERT_ROW">
+      <Comments>Button used to insert a new row</Comments>
+      <String Context="Generic_Short">Insert</String>
+    </Concept>
+    <Concept Id="BUTTON_REMOVE_ROW">
+      <Comments>Button used to remove a new row</Comments>
+      <String Context="Generic_Short">Remove</String>
+    </Concept>
+
+    <Concept Id="ROW_NUMBER">
+      <Comments>Row number</Comments>
+      <String Context="Generic_Long">Row number</String>
+    </Concept>
+
+    <Concept Id="REMOVE_ROW_ASK">
+      <Comments>Ask if the user want to remove the selected row.</Comments>
+      <String Context="Generic_Long">Do you want to remove the selected row?</String>
+    </Concept>
+    <Concept Id="RESET_GRID_ASK">
+      <Comments>Ask if the user want to loss all the inserted data in the grid.</Comments>
+      <String Context="Generic_Warning">Do you want to lose all the data inserted in the grid?</String>
+    </Concept>
+
+  </LocalizationSection>
+
+  <LocalizationSection InternalNamespace="CUSTOMS">
+    <Concept Id="CUSTOM MEASURE">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">CUSTOM MEASURE</String>
+    </Concept>
+
+    <Concept Id="B-MODE">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">B-MODE</String>
+    </Concept>
+    <Concept Id="M-MODE">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">M-MODE</String>
+    </Concept>
+    <Concept Id="DOPPLER">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">DOPPLER</String>
+    </Concept>
+
+    <Concept Id="EFWs">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">EFW</String>
+    </Concept>
+    <Concept Id="TABLES">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">TABLES</String>
+    </Concept>
+
+    <Concept Id="FA">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">FA</String>
+    </Concept>
+    <Concept Id="FG">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">FG</String>
+    </Concept>
+    <Concept Id="QIMT">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">QIMT</String>
+    </Concept>
+    <Concept Id="OTHER">
+      <Comments>In the Menu - Import dialog, the description of a tree item</Comments>
+      <String Context="Generic_Long">OTHER</String>
+    </Concept>
+	
+  </LocalizationSection>
+
+</LocalizationResource>

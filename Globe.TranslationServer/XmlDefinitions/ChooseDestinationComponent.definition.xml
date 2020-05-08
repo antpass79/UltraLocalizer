@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ChooseDestinationComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="MainSection">
+    <Concept Id="EXPORT_PROCEDURE" >
+      <Comments>Choose destination:  title</Comments>
+      <String Context="Generic_Long" >EXPORT PROCEDURE</String>
+    </Concept >
+    <Concept Id="DESK_APPLICATION_SETUP" >
+      <Comments>DESK APPLICATION SETUP check box</Comments>
+      <String Context="Generic_Long" >DESK APPLICATION SETUP</String>
+    </Concept >
+    <Concept Id="ANONYMIZE" >
+      <Comments>ANONYMIZE check box</Comments>
+      <String Context="Generic_Long" >ANONYMIZE</String>
+    </Concept >
+    <Concept Id="ONLY_REPORT_MULTIMEDIA" >
+      <Comments>ONLY REPORT MULTIMEDIA check box</Comments>
+      <String Context="Generic_Long" >ONLY REPORT FOR MULTIMEDIA </String>
+    </Concept >
+    <Concept Id="PATIENT" >
+      <Comments>Patient text box</Comments>
+      <String Context="Generic_Long" >PATIENT</String>
+    </Concept >
+    <Concept Id="APPLICATION" >
+      <Comments>APPLICATION text box</Comments>
+      <String Context="Generic_Long" >APPLICATION</String>
+    </Concept >
+    <Concept Id="SELECTED_EXAMS" >
+      <Comments>Number of selected exams</Comments>
+      <String Context="Generic_Long" >SELECTED EXAMS</String>
+    </Concept >
+    <Concept Id="SIZE" >
+      <Comments>column title of each export sector</Comments>
+      <String Context="Generic_Short" >SIZE</String>
+    </Concept >
+    <Concept Id="TIME" >
+      <Comments>column title of each export sector</Comments>
+      <String Context="Generic_Short" >TIME</String>
+    </Concept >
+    <Concept Id="PASSWORD_PROTECTED" >
+      <Comments>column title of each export sector</Comments>
+      <String Context="Generic_Short" >PASSWORD PROTECTED</String>
+    </Concept >
+    <Concept Id="CONFIRM_PASSWORD" >
+      <Comments>Label for confirm password text box</Comments>
+      <String Context="Generic_Medium" >CONFIRM PASSWORD</String>
+    </Concept >
+    <Concept Id="TIME_ESTIMATION" >
+      <Comments>export dialog: used to ask a confirmation to user when he selects one CD\DVD destination</Comments>
+      <String Context="Generic_Long" >TIME ESTIMATION</String>
+    </Concept >
+    <Concept Id="LOCAL_ARCHIVE" >
+      <Comments>it is a destination; it can be inside a single export sector, or it can be out of sectors (End exam layout)</Comments>
+      <String Context="Generic_Long" >LOCAL ARCHIVE</String>
+      <String Context="TS_AButton" >LOCAL ARCHIVE</String>
+    </Concept >
+    <Concept Id="ENABLE_PAUSE_EXAM" >
+      <Comments>it is a flag in saving options menu</Comments>
+      <String Context="Generic_Medium" >ENABLE PAUSE EXAM</String>
+    </Concept >
+    <Concept Id="CD_DVD" >
+      <Comments>destination CD/DVD</Comments>
+      <String Context="Generic_Long" >CD/DVD</String>
+      <String Context="TS_AButton" >CD/DVD</String>
+    </Concept >
+    <Concept Id="BROWSE" >
+      <Comments>destination HD</Comments>
+      <String Context="Generic_Long" >BROWSE</String>
+      <String Context="TS_AButton" >BROWSE</String>
+      <String Context="Generic_Medium" >BROWSE</String>
+    </Concept >
+    <Concept Id="REFRESH" >
+      <Comments>BUTTON in tree browse dialog to refresh tree nodes</Comments>
+      <String Context="Generic_Medium" >REFRESH</String>
+    </Concept >
+    <Concept Id="USB" >
+      <Comments>destinatom USB</Comments>
+      <String Context="Generic_Short" >USB</String>
+      <String Context="TS_AButton" >USB</String>
+    </Concept >
+    <Concept Id="MyLabTablet" >
+      <Comments>destination MyLabTablet [Defect 27840] translation is not required</Comments>
+      <String Context="Generic_Short" >MyLabTablet</String>
+      <String Context="TS_AButton" >MyLabTablet</String>
+    </Concept >
+    <Concept Id="TEMPORARY STORAGE" >
+      <Comments>Possible import option when DICOM is available [Story 23580] </Comments>
+      <String Context="TS_AButton" >TEMPORARY STORAGE</String>
+    </Concept >
+
+    <Concept Id="DevicesProblems" >
+    <Comments>displayed when at least on destination has problem, i.e. it is not present; this is the first part of message, second part is the specific problem</Comments>
+    <String Context="Generic_Warning" >DEVICES PROBLEMS</String>
+    </Concept>
+    <Concept Id="BurnerDeviceNotConnected" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >BURNER DEVICE NOT CONNECTED</String>
+    </Concept>
+    <Concept Id="USBNotPresent" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >USB NOT PRESENT</String>
+    </Concept>
+    <Concept Id="USBNotWritable" >
+      <Comments></Comments>
+      <String Context="Generic_Warning" >USB NOT WRITABLE</String>
+    </Concept>
+    <Concept Id="USBFull" >
+      <Comments>used when usb is full</Comments>
+      <String Context="Generic_Long" >USB IS FULL</String>
+    </Concept>
+    <Concept Id="USBNotReady" >
+      <Comments>used when there is a generic problem with usb</Comments>
+      <String Context="Generic_Long" >USB NOT READY</String>
+    </Concept>
+    
+    <Concept Id="CDNotPresent" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >CD NOT PRESENT</String>
+    </Concept>
+    <Concept Id="CDNotWritable" >
+      <Comments></Comments>
+      <String Context="Generic_Warning" >CD NOT WRITABLE</String>
+    </Concept>
+    <Concept Id="CDNotReady" >
+      <Comments>used when there is a generic problem with cd</Comments>
+      <String Context="Generic_Long" >CD NOT READY</String>
+    </Concept>
+    <Concept Id="HDNotPresent" >
+      <Comments></Comments>
+      <String Context="Generic_Long" >HD NOT PRESENT</String>
+    </Concept>
+    <Concept Id="HDNotWritable" >
+      <Comments></Comments>
+      <String Context="Generic_Warning" >HD NOT WRITABLE</String>
+    </Concept>
+    <Concept Id="HDFull" >
+      <Comments>used when hd of browse directory is full</Comments>
+      <String Context="Generic_Long" >HD IS FULL</String>
+    </Concept>
+    <Concept Id="HDNotReady" >
+      <Comments>used when there is a generic problem with hd</Comments>
+      <String Context="Generic_Long" >HD NOT READY</String>
+    </Concept>
+
+    <Concept Id="NetDirNotConnected" >
+      <Comments>used when system cannot connect to Net Dir </Comments>
+      <String Context="Generic_Long" >NETWORK DIR NOT CONNECTED</String>
+    </Concept>
+    <Concept Id="NetDirNotReady" >
+      <Comments>used when there is a generic problem with Net Dir</Comments>
+      <String Context="Generic_Long" >NETWORK DIR NOT READY</String>
+    </Concept>
+    <Concept Id="NetDirNotWritable" >
+      <Comments>used when system cannot write on network dir </Comments>
+      <String Context="Generic_Long" >NETWORK DIR NOT WRITABLE</String>
+    </Concept>
+    <Concept Id="NetDirFull" >
+      <Comments>used when network dir is full</Comments>
+      <String Context="Generic_Long" >NETWORK DIR IS FULL</String>
+    </Concept>
+    <Concept Id="PATH" >
+      <Comments>In browse dialog</Comments>
+      <String Context="Generic_Medium" >PATH</String>
+    </Concept>
+    <Concept Id="USER" >
+      <Comments>In browse dialog</Comments>
+      <String Context="Generic_Medium" >USER</String>
+    </Concept>
+    <Concept Id="PASSWORD" >
+      <Comments>In browse dialog</Comments>
+      <String Context="Generic_Medium" >PASSWORD</String>
+    </Concept>
+    <Concept Id="NoDicomDirSearch" >
+      <Comments>In browse dialog for Import Dicom [Story 13816]</Comments>
+      <String Context="Generic_Long" >RECURSE FOLDERS FOR GETTING ANY DICOM FILE</String>
+    </Concept>
+    
+    <Concept Id="INVALIDPATH" >
+      <Comments>warning message the path edited In browse dialog is not valid</Comments>
+      <String Context="Generic_Medium" >INVALID PATH</String>
+    </Concept>
+    <Concept Id="WarningSpaceProblem" >
+      <Comments>this is the first part of message regarding problem with device free space, second part is the concept "NotEnoughSpaceOnDevice"; third part is the devices that have the problem; fourth part is the concept "WarningSpaceProblem_Continue"</Comments>
+      <String Context="Generic_Medium" >WARNING</String>
+    </Concept>
+    <Concept Id="NotEnoughSpaceOnDevice" >
+      <Comments>this is the second part of message regarding problem with device free space</Comments>
+      <String Context="Generic_Warning">THERE IS NOT ENOUGH FREE SPACE ON THE FOLLOWING DEVICES:</String>
+    </Concept>
+    <Concept Id="BurningCDRunningOnBattery" >
+      <Comments>this is the second part of message regarding problem with burning a CD when running on battery</Comments>
+      <String Context="Generic_Warning">The system is running on batteries, it is suggested to only burn a CD/DVD when running on mains:</String>
+    </Concept>
+    <Concept Id="WarningSpaceProblem_Continue" >
+      <Comments>this is the first part of message regarding problem with device free space, second part is the device that has the problem</Comments>
+      <String Context="Generic_Warning" >DO YOU WANT TO CONTINUE ?</String>
+    </Concept>
+    <Concept Id="Warning_DVD_Selection" >
+      <Comments>used when two or more CD\DVD destination are selected simultaneously</Comments>
+      <String Context="Generic_Warning" >WARNING: IT IS POSSIBLE TO SELECT ONLY ONE CD/DVD DESTINATION AT A TIME</String>
+    </Concept>
+    <Concept Id="Warning_DVD_Selection_Confirmation" >
+      <Comments>used to ask a confirmation to user when he selects one CD\DVD destination</Comments>
+      <String Context="Generic_Warning" >WARNING: ONE OF SELECTED DESTINATIONS IS CD/DVD; DURING CD/DVD OPERATIONS, THE USER INTERACTION WILL BE STOPPED. CONTINUE?</String>
+    </Concept>
+    <Concept Id="Warning_SomeBurnOperationIsRunning" >
+      <Comments>used when some burn operation is init or inprogress</Comments>
+      <String Context="Generic_Warning" >WARNING: THERE ARE SOME BURNING OPERATIONS EXECUTING</String>
+    </Concept>
+    
+    <Concept Id="SearchingInProgress" >
+      <Comments>used in browse network dir dialog when the user click a tree view node and the system search for network dirs</Comments>
+      <String Context="Generic_Long" >Searching in progress..</String>
+    </Concept>
+    <Concept Id="CHOOSE_DEST_CONFIGURATION" >
+      <Comments>ITEM IN MENU DIALOG</Comments>
+      <String Context="Generic_Medium" >SAVING OPTIONS</String>
+    </Concept>
+    <Concept Id="AUTOSAVE" >
+      <Comments>ITEM in end exam editor DIALOG</Comments>
+      <String Context="Generic_Medium" >AUTOSAVE</String>
+    </Concept>
+    <Concept Id="VERIFY" >
+      <Comments>ITEM in end exam editor DIALOG</Comments>
+      <String Context="Generic_Medium" >VERIFY BURN CD/DVD</String>
+    </Concept>
+    <Concept Id="Refreshing" >
+      <Comments>title of waiting progress while refreshing the list of network items in browse dialog</Comments>
+      <String Context="Generic_Medium" >REFRESHING</String>
+    </Concept>
+    <Concept Id="CheckingSelDest" >
+      <Comments>title of waiting progress while Checking Selected Destinations</Comments>
+      <String Context="Generic_Warning" >CHECKING SELECTED DESTINATIONS</String>
+    </Concept>
+    <Concept Id="Warning_SelectSources" >
+      <Comments>warning in the upper part of import dicom dialog</Comments>
+      <String Context="Generic_Warning" >This feature is intended to import customer database from previous Esaote apparati exported in DICOM format</String>
+    </Concept>
+    <Concept Id="ABDOMINAL" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >ABDOMINAL</String>
+    </Concept >
+    <Concept Id="BREAST" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >BREAST</String>
+    </Concept >
+    <Concept Id="CARDIAC" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >CARDIAC</String>
+    </Concept >
+    <Concept Id="PED_CARDIAC" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >CARDIO PED</String>
+    </Concept >
+    <Concept Id="GYNECOLOGY" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >GYNECOLOGY</String>
+    </Concept >
+    <Concept Id="MusculoSkeletal" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >MUSCULOSKELETAL</String>
+    </Concept >
+    <Concept Id="Neonatal" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >NEONATAL</String>
+    </Concept >
+    <Concept Id="Obstetric" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >OBSTETRIC</String>
+    </Concept >
+    <Concept Id="Pediatric" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >PEDIATRIC</String>
+    </Concept >
+    <Concept Id="SmallParts" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >SMALLPARTS</String>
+    </Concept >
+    <Concept Id="Thyroid" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >THYROID</String>
+    </Concept >
+    <Concept Id="Transcranic" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >TRANSCRANIC</String>
+    </Concept >
+    <Concept Id="Urologic" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >UROLOGIC</String>
+    </Concept >
+    <Concept Id="Vascular" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >VASCULAR</String>
+    </Concept >
+    <Concept Id="AbdominalCanine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Abdominal Canine</String>
+    </Concept >
+    <Concept Id="AbdominalFeline" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Abdominal Feline</String>
+    </Concept >
+    <Concept Id="AbdominalEquine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Abdominal Equine</String>
+    </Concept >
+    <Concept Id="ReproductionCanine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Reproduction Canine</String>
+    </Concept >
+    <Concept Id="ReproductionFeline" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Reproduction Feline</String>
+    </Concept >
+    <Concept Id="ReproductionEquine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Reproduction Equine</String>
+    </Concept >
+    <Concept Id="Tendon" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Tendon</String>
+    </Concept >
+    <Concept Id="CardioCanine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Cardio Canine</String>
+    </Concept >
+    <Concept Id="CardioFeline" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Cardio Feline</String>
+    </Concept >
+    <Concept Id="CardioEquine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Cardio Equine</String>
+    </Concept >
+    <Concept Id="OvaryEquine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Ovary Equine</String>
+    </Concept >
+    <Concept Id="OvaryBovine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Ovary Bovine</String>
+    </Concept >
+    <Concept Id="ReproductionBovine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Reproduction Bovine</String>
+    </Concept >
+    <Concept Id="VascularVet" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Vascular Vet</String>
+    </Concept >
+    <Concept Id="ReproductionOvine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Reproduction Ovine</String>
+    </Concept >
+    <Concept Id="ReproductionPorcine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Reproduction Porcine</String>
+    </Concept >
+    <Concept Id="ReproductionCaprine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Reproduction Caprine</String>
+    </Concept >
+    <Concept Id="RegAnest" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Reg Anest</String>
+    </Concept >
+    <Concept Id="Aesthetic" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Aesthetic</String>
+    </Concept >
+    <Concept Id="OtherAbdominal" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Other Abdominal</String>
+    </Concept >
+    <Concept Id="OtherCardio" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Other Cardio</String>
+    </Concept >
+    <Concept Id="OtherVascular" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Other Vascular</String>
+    </Concept >
+    <Concept Id="AbdominalBovine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Abdominal Bovine</String>
+    </Concept >
+    <Concept Id="CardioBovine" >
+      <Comments>in end exam, the application type</Comments>
+      <String Context="Generic_Medium" >Cardio Bovine</String>
+    </Concept >
+  </LocalizationSection>
+</LocalizationResource>

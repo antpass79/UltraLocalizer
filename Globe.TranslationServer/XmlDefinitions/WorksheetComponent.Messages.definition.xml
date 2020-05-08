@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="WorksheetComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" >
+  <LocalizationSection InternalNamespace="Messages">
+    <Concept Id="EXAM_IN_USE">
+      <Comments>Message to user when the exam is opened in another workstation</Comments>
+      <String Context="Generic_Warning">Exam already in use</String>
+    </Concept>
+    <Concept Id="EXAM_IS_READONLY">
+      <Comments>Message to user when the exam opened is a readonly one (i.e. on not-writable media)</Comments>
+      <String Context="Generic_Warning">Exam opened in readonly: any modification will be discarded</String>
+    </Concept>
+    <Concept Id="MEASURE_DELETE_CONFIRMATION">
+      <Comments>Message to the user when press the delete button inside measure</Comments>
+      <String Context="Generic_Warning">Confirm measure deletion? Operation cannot be undone</String>
+    </Concept>
+    <Concept Id="NO_MEASURE_PERFORMED">
+      <Comments>Message to the user when enter empty wks</Comments>
+      <String Context="Generic_Warning">No measure performed</String>
+    </Concept>
+    <Concept Id="ERROR IN RESTORE REPORT">
+      <Comments>Message to the user when the xml file restored has errors</Comments>
+      <String Context="Generic_Warning">Error while restoring report</String>
+    </Concept>
+  </LocalizationSection> 
+</LocalizationResource>

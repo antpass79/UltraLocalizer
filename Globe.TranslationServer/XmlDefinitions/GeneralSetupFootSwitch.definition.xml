@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="GeneralSetup" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<LocalizationSection InternalNamespace="FootSwitchCommands">
+		<Concept Id="EnterCmdId^AcquisitionProtocolsManager">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Next Step from Acquisition Protocols Manager</String>
+		<String Context="MD_RT17Label">ATPStep+</String>
+		</Concept>
+		<Concept Id="UndoCmdId^AcquisitionProtocolsManager">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Next Session from Acquisition Protocols Manager</String>
+        <String Context="MD_RT17Label">ATPSess+</String>
+		</Concept>
+		<Concept Id="Null">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">None</String>
+			<String Context="MD_RT17Label">None</String>
+		</Concept>
+		<Concept Id="ReverseB^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ReverseB from RT</String>
+			<String Context="MD_RT17Label">Flip B</String>
+		</Concept>
+		<Concept Id="OrientationB^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">OrientationB from RT</String>
+			<String Context="MD_RT17Label">Mirror B</String>
+		</Concept>
+		<Concept Id="TP-ViewB^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">TP-ViewB from RT</String>
+			<String Context="MD_RT17Label">TP-ViewB</String>
+		</Concept>
+		<Concept Id="Elasto^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Elasto from RT</String>
+			<String Context="MD_RT17Label">Elasto</String>
+		</Concept>
+		<Concept Id="FrontLat^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">FrontLat from RT</String>
+			<String Context="MD_RT17Label">FrontLat</String>
+		</Concept>
+		<Concept Id="CinePlay^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">CinePlay from RT</String>
+			<String Context="MD_RT17Label">Play</String>
+		</Concept>
+		<Concept Id="ReverseM^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ReverseM from RT</String>
+			<String Context="MD_RT17Label">Flip M</String>
+		</Concept>
+		<Concept Id="BRefScroll^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">BRefScroll from RT</String>
+			<String Context="MD_RT17Label">BRef</String>
+		</Concept>
+		<Concept Id="PlexM^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">PlexM from RT</String>
+			<String Context="MD_RT17Label">PlexM</String>
+		</Concept>
+		<Concept Id="CMMActive^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">CMMActive from RT</String>
+			<String Context="MD_RT17Label">CMM</String>
+		</Concept>
+		<Concept Id="ReverseDoppler^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ReverseDoppler from RT</String>
+			<String Context="MD_RT17Label">Flip D</String>
+		</Concept>
+		<Concept Id="ADM_ON^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ADM_ON from RT</String>
+			<String Context="MD_RT17Label">ADM</String>
+		</Concept>
+		<Concept Id="ADMAddToReport^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ADMAddToReport from RT</String>
+			<String Context="MD_RT17Label">ADM2Rep</String>
+		</Concept>
+		<Concept Id="OrientationPW^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">OrientationPW from RT</String>
+			<String Context="MD_RT17Label">MirrorPW</String>
+		</Concept>
+		<Concept Id="PlexPW^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">PlexPW from RT</String>
+			<String Context="MD_RT17Label">Plex PW</String>
+		</Concept>
+		<Concept Id="HPRF^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">HPRF from RT</String>
+			<String Context="MD_RT17Label">HPRF</String>
+		</Concept>
+		<Concept Id="TV^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">TV from RT</String>
+			<String Context="MD_RT17Label">TV</String>
+		</Concept>
+		<Concept Id="ReverseCW^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ReverseCW from RT</String>
+			<String Context="MD_RT17Label">Flip CW</String>
+		</Concept>
+		<Concept Id="HideCFM^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">HideCFM from RT</String>
+			<String Context="MD_RT17Label">Hide CFM</String>
+		</Concept>
+		<Concept Id="ReverseCFM^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ReverseCFM from RT</String>
+			<String Context="MD_RT17Label">Flip CFM</String>
+		</Concept>
+		<Concept Id="PWRD^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">PWRD from RT</String>
+			<String Context="MD_RT17Label">PWRD</String>
+		</Concept>
+		<Concept Id="OrientationCFM^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">OrientationCFM from RT</String>
+			<String Context="MD_RT17Label">Mirr CFM</String>
+		</Concept>
+		<Concept Id="TP-ViewCFM^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">TP-ViewCFM from RT</String>
+			<String Context="MD_RT17Label">TPV CFM</String>
+		</Concept>
+		<Concept Id="XFW^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">XFW from RT</String>
+			<String Context="MD_RT17Label">XFW</String>
+		</Concept>
+		<Concept Id="MICROV^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">MICROV from RT</String>
+			<String Context="MD_RT17Label">MICROV</String>
+		</Concept>
+		<Concept Id="SmartCFM^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">SmartCFM from RT</String>
+			<String Context="MD_RT17Label">SmartCFM</String>
+		</Concept>
+		<Concept Id="TVM^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">TVM from RT</String>
+			<String Context="MD_RT17Label">TVM</String>
+		</Concept>
+		<Concept Id="ElstDual^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ElstDual from RT</String>
+			<String Context="MD_RT17Label">ElstDual</String>
+		</Concept>
+		<Concept Id="SendLeftQIMT^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">SendLeftQIMT from RT</String>
+			<String Context="MD_RT17Label">QIMTLeft</String>
+		</Concept>
+		<Concept Id="SendRightQIMT^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">SendRightQIMT from RT</String>
+			<String Context="MD_RT17Label">QIMTRght</String>
+		</Concept>
+		<Concept Id="ExitQIMT^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ExitQIMT from RT</String>
+			<String Context="MD_RT17Label">QIMTExit</String>
+		</Concept>
+		<Concept Id="RefLineQIMT^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">RefLineQIMT from RT</String>
+			<String Context="MD_RT17Label">QIMTLine</String>
+		</Concept>
+		<Concept Id="AcquireOnFreeze^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Clip</String>
+			<String Context="MD_RT17Label">Clip</String>
+		</Concept>	
+	    <Concept Id="Needle^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Needle from RT</String>
+			<String Context="MD_RT17Label">Needle</String>
+		</Concept>
+        <Concept Id="Measures">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Measures</String>
+			<String Context="MD_RT17Label">Meas</String>
+		</Concept>
+		<Concept Id="Freeze">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Freeze</String>
+			<String Context="MD_RT17Label">Freeze</String>
+		</Concept>
+		<Concept Id="BMODE">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">BMODE</String>
+			<String Context="MD_RT17Label">BMODE</String>
+		</Concept>
+		<Concept Id="MMODE">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">MMODE</String>
+			<String Context="MD_RT17Label">MMODE</String>
+		</Concept>
+		<Concept Id="CFM">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">CFM</String>
+			<String Context="MD_RT17Label">CFM</String>
+		</Concept>
+		<Concept Id="PW">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">PW</String>
+			<String Context="MD_RT17Label">PW</String>
+		</Concept>
+		<Concept Id="CW">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">CW</String>
+			<String Context="MD_RT17Label">CW</String>
+		</Concept>
+		<Concept Id="LeftEncSw">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">LeftEncSw</String>
+			<String Context="MD_RT17Label">LeftEnc</String>
+		</Concept>
+		<Concept Id="RightEncSw">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">RightEncSw</String>
+			<String Context="MD_RT17Label">RightEnc</String>
+		</Concept>
+		<Concept Id="PWD">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">PWD</String>
+			<String Context="MD_RT17Label">PWD</String>
+		</Concept>
+		<Concept Id="GenericMeas">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">GenericMeas</String>
+			<String Context="MD_RT17Label">Ruler</String>
+		</Concept>
+		<Concept Id="Rev">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Rev</String>
+			<String Context="MD_RT17Label">Rev</String>
+		</Concept>
+		<Concept Id="ETouch">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ETouch</String>
+			<String Context="MD_RT17Label">ETouch</String>
+		</Concept>
+		<Concept Id="ThreeD">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">ThreeD</String>
+			<String Context="MD_RT17Label">ThreeD</String>
+		</Concept>
+		<Concept Id="AutoAdj">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">AutoAdj</String>
+			<String Context="MD_RT17Label">AutoAdj</String>
+		</Concept>
+		<Concept Id="LineUpdated">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">LineUpdated</String>
+			<String Context="MD_RT17Label">LineUpdt</String>
+		</Concept>
+		<Concept Id="Acquire">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Acquire</String>
+			<String Context="MD_RT17Label">RetrClip</String>
+		</Concept>
+		<Concept Id="Print">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Print</String>
+			<String Context="MD_RT17Label">Print</String>
+		</Concept>
+		<Concept Id="StartEnd">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">StartEnd</String>
+			<String Context="MD_RT17Label">StartEnd</String>
+		</Concept>
+		<Concept Id="Clip">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Clip</String>
+			<String Context="MD_RT17Label">Clip</String>
+		</Concept>
+		<Concept Id="Image">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Image</String>
+			<String Context="MD_RT17Label">Image</String>
+		</Concept>
+	    <Concept Id="LeftScreen">
+	        <String Context="Generic_Medium" >Left Screen</String>
+	        <String Context="MD_RT17Label">Left</String>
+	    </Concept>
+	    <Concept Id="RightScreen">
+	    	<String Context="Generic_Medium" >Right Screen</String>
+	    	<String Context="MD_RT17Label">Right</String>
+	    </Concept>   
+	    <Concept Id="Print2">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Print2</String>
+			<String Context="MD_RT17Label">Print2</String>
+		</Concept>
+		<Concept Id="Print3">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Print3</String>
+			<String Context="MD_RT17Label">Print3</String>
+		</Concept>
+		<Concept Id="Print4">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Print4</String>
+			<String Context="MD_RT17Label">Print4</String>
+		</Concept>
+		<Concept Id="EKnob">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">EKnob</String>
+			<String Context="MD_RT17Label">EKnob</String>
+		</Concept>
+		<Concept Id="Image_Clip">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">Image_Clip</String>
+			<String Context="MD_RT17Label">ProsClip</String>
+		</Concept>
+		<Concept Id="AcquireOnFreeze">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">AcquireOnFreeze</String>
+			<String Context="MD_RT17Label">RetrFre</String>
+		</Concept>
+	    <Concept Id="RTGain_Inc">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium" >RT Gain increase</String>
+	        <String Context="MD_RT17Label">Gain +</String>
+	    </Concept>
+	    <Concept Id="RTGain_Dec">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium" >RT Gain decrease</String>
+	        <String Context="MD_RT17Label">Gain -</String>
+	    </Concept>
+	    <Concept Id="RTDepth_Inc">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium" >RT Depth increase</String>
+	        <String Context="MD_RT17Label">Depth +</String>
+	    </Concept>
+	    <Concept Id="RTDepth_Dec">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium" >RT Depth decrease</String>
+	        <String Context="MD_RT17Label">Depth -</String>
+	    </Concept>
+	    <Concept Id="RTSteer_Inc">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium" >RT Steer increase</String>
+	        <String Context="MD_RT17Label">Steer +</String>
+	    </Concept>
+	    <Concept Id="RTSteer_Dec">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium" >RT Steer decrease</String>
+	        <String Context="MD_RT17Label">Steer -</String>
+	    </Concept>
+	    <Concept Id="RTSteerNeedle_Inc">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium" >RT Steer Needle increase</String>
+	        <String Context="MD_RT17Label">Needle +</String>
+	    </Concept>
+	    <Concept Id="RTSteerNeedle_Dec">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium" >RT Steer Needle decrease</String>
+	        <String Context="MD_RT17Label">Needle -</String>
+	    </Concept>
+		<Concept Id="NavigatorClip^VirtualNavigator">
+		    <Comments>[StoryID: 1430] Starts/Stops a clip from Virtual Navigator</Comments>
+			<String Context="Generic_Medium" >Navigator Clip</String>
+	        <String Context="MD_RT17Label">NavClip</String>
+	    </Concept>
+	  </LocalizationSection>
+	  <LocalizationSection InternalNamespace="FootSwitchLabels">
+		<Concept Id="TAB">
+			<String Context="Generic_Medium">FOOTSWITCH</String>
+		</Concept>
+		<Concept Id="LeftFootSwitchLabel">
+			<String Context="Generic_Medium">Left Footswitch</String>
+		</Concept>
+		<Concept Id="MiddleFootSwitchLabel">
+			<String Context="Generic_Medium">Middle Footswitch</String>
+		</Concept>
+		<Concept Id="RightFootSwitchLabel">
+			<String Context="Generic_Medium">Right Footswitch</String>
+		</Concept>
+		<Concept Id="TABProbe">
+		  <String Context="Generic_Medium" >PROBE BUTTONS</String>
+		</Concept>
+		<Concept Id="FirstProbeButtonLabel">
+		  <String Context="Generic_Medium" >FIRST BUTTON</String>
+		</Concept>
+		<Concept Id="SecondProbeButtonLabel">
+		  <String Context="Generic_Medium" >SECOND BUTTON</String>
+		</Concept>
+		<Concept Id="ThirdProbeButtonLabel">
+		  <String Context="Generic_Medium" >THIRD BUTTON</String>
+		</Concept>
+	</LocalizationSection>
+</LocalizationResource>

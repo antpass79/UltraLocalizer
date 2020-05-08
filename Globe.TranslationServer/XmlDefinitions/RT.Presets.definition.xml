@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="RT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="Presets">
+    <Concept Id="INVALID">
+      <Comments>Invalid preset</Comments>
+      <String Context="TS_AButton">INVALID</String>
+    </Concept>
+    <Concept Id="SETTINGSFAMILY_NOTCOMPATIBLE">
+      <Comments>The preset is part of a not compatible family of preset respect to the ones of this device</Comments>
+      <String Context="Generic_Long">(Incompatible settings family)</String>
+    </Concept>
+    <Concept Id="GENERIC">
+      <Comments>Generic preset</Comments>
+      <String Context="TS_AButton">GENERIC</String>
+      <String Context="MD_RT910">GENERIC</String>
+      <String Context="Generic_Medium">GENERIC</String>
+    </Concept>
+    <Concept Id="ALLPROBES">
+      <Comments>All probes available in the system</Comments>
+      <String Context="TS_AButton">ALLPROBES</String>
+    </Concept>
+    <Concept Id="AORTA">
+      <Comments></Comments>
+      <String Context="TS_AButton">AORTA</String>
+      <String Context="MD_RT910">AORTA</String>
+      <String Context="Generic_Medium">AORTA</String>
+    </Concept>
+    <Concept Id="RENAL ARTERY">
+      <Comments></Comments>
+      <String Context="TS_AButton">RENAL ARTERY</String>
+      <String Context="MD_RT910">REN ART</String>
+      <String Context="Generic_Medium">RENAL ARTERY</String>
+    </Concept>
+    <Concept Id="TRANSTHORACIC">
+      <Comments></Comments>
+      <String Context="TS_AButton">TRANSTHORACIC</String>
+      <String Context="MD_RT910">TRANSTH</String>
+      <String Context="Generic_Medium">TRANSTHORACIC</String>
+    </Concept>
+    <Concept Id="TRANSESOPHAGEAL">
+      <Comments></Comments>
+      <String Context="TS_AButton">TRANSESOPHAGEAL</String>
+      <String Context="MD_RT910">TRANSES</String>
+      <String Context="Generic_Medium">TRANSESOPHAGEAL</String>
+    </Concept>
+    <Concept Id="ENDOVAGINAL">
+      <Comments></Comments>
+      <String Context="TS_AButton">ENDOVAGINAL</String>
+      <String Context="MD_RT910">ENDOVAG</String>
+      <String Context="Generic_Medium">ENDOVAGINAL</String>
+    </Concept>
+    <Concept Id="ANKLE">
+      <Comments></Comments>
+      <String Context="TS_AButton">ANKLE</String>
+      <String Context="MD_RT910">ANKLE</String>
+      <String Context="Generic_Medium">ANKLE</String>
+    </Concept>
+    <Concept Id="KNEE">
+      <Comments></Comments>
+      <String Context="TS_AButton">KNEE</String>
+      <String Context="MD_RT910">KNEE</String>
+      <String Context="Generic_Medium">KNEE</String>
+    </Concept>
+    <Concept Id="SHOULDER">
+      <Comments></Comments>
+      <String Context="TS_AButton">SHOULDER</String>
+      <String Context="MD_RT910">SHOULDER</String>
+      <String Context="Generic_Medium">SHOULDER</String>
+    </Concept>
+    <Concept Id="WRIST">
+      <Comments></Comments>
+      <String Context="TS_AButton">WRIST</String>
+      <String Context="MD_RT910">WRIST</String>
+      <String Context="Generic_Medium">WRIST</String>
+    </Concept>
+    <Concept Id="FONTANEL">
+      <Comments></Comments>
+      <String Context="TS_AButton">FONTANEL</String>
+      <String Context="MD_RT910">FONTANEL</String>
+      <String Context="Generic_Medium">FONTANEL</String>
+    </Concept>
+    <Concept Id="HIP">
+      <Comments></Comments>
+      <String Context="TS_AButton">HIP</String>
+      <String Context="MD_RT910">HIP</String>
+      <String Context="Generic_Medium">HIP</String>
+    </Concept>
+    <Concept Id="PREGN FIRST TRIM">
+      <Comments></Comments>
+      <String Context="TS_AButton">PREGN FIRST TRIM</String>
+      <String Context="MD_RT910">PREG 1TR</String>
+      <String Context="Generic_Medium">PREGN FIRST TRIM</String>
+    </Concept>
+    <Concept Id="PREGN SECOND TRIM">
+      <Comments></Comments>
+      <String Context="TS_AButton">PREGN SECOND TRIM</String>
+      <String Context="MD_RT910">PREG 2TR</String>
+      <String Context="Generic_Medium">PREGN SECOND TRIM</String>
+    </Concept>
+    <Concept Id="PREGN THIRD TRIM">
+      <Comments></Comments>
+      <String Context="TS_AButton">PREGN THIRD TRIM</String>
+      <String Context="MD_RT910">PREG 3TR</String>
+      <String Context="Generic_Medium">PREGN THIRD TRIM</String>
+    </Concept>
+    <Concept Id="FETAL HEART">
+      <Comments></Comments>
+      <String Context="TS_AButton">FETAL HEART</String>
+      <String Context="MD_RT910">FETHEART</String>
+      <String Context="Generic_Medium">FETAL HEART</String>
+    </Concept>
+    <Concept Id="TESTIS">
+      <Comments></Comments>
+      <String Context="TS_AButton">TESTIS</String>
+      <String Context="MD_RT910">TESTIS</String>
+      <String Context="Generic_Medium">TESTIS</String>
+    </Concept>
+    <Concept Id="ENDORECTAL">
+      <Comments></Comments>
+      <String Context="TS_AButton">ENDORECTAL</String>
+      <String Context="MD_RT910">ENDORECT</String>
+      <String Context="Generic_Medium">ENDORECTAL</String>
+    </Concept>
+    <Concept Id="CAROTID">
+      <Comments></Comments>
+      <String Context="TS_AButton">CAROTID</String>
+      <String Context="MD_RT910">CAROTID</String>
+      <String Context="Generic_Medium">CAROTID</String>
+    </Concept>
+    <Concept Id="PERIPHERAL ARTERIES">
+      <Comments></Comments>
+      <String Context="TS_AButton">PERIPHERAL ARTERIES</String>
+      <String Context="MD_RT910">PER ART</String>
+      <String Context="Generic_Medium">PERIPHERAL ARTERIES</String>
+    </Concept>
+    <Concept Id="PERIPHERAL VEINS">
+      <Comments></Comments>
+      <String Context="TS_AButton">PERIPHERAL VEINS</String>
+      <String Context="MD_RT910">PER VEI</String>
+      <String Context="Generic_Medium">PERIPHERAL VEINS</String>
+    </Concept>
+    <Concept Id="GENERIC 2">
+      <Comments></Comments>
+      <String Context="TS_AButton">GENERIC 2</String>
+      <String Context="MD_RT910">GENER 2</String>
+      <String Context="Generic_Medium">GENERIC 2</String>
+    </Concept>
+    <Concept Id="KIDNEY">
+      <Comments></Comments>
+      <String Context="TS_AButton">KIDNEY</String>
+      <String Context="MD_RT910">KIDNEY</String>
+      <String Context="Generic_Medium">KIDNEY</String>
+    </Concept>
+    <Concept Id="LIVER">
+      <Comments></Comments>
+      <String Context="TS_AButton">LIVER</String>
+      <String Context="MD_RT910">LIVER</String>
+      <String Context="Generic_Medium">LIVER</String>
+    </Concept>
+    <Concept Id="ELBOW">
+      <Comments></Comments>
+      <String Context="TS_AButton">ELBOW</String>
+      <String Context="MD_RT910">ELBOW</String>
+      <String Context="Generic_Medium">ELBOW</String>
+    </Concept>
+    <Concept Id="FINGER">
+      <Comments></Comments>
+      <String Context="TS_AButton">FINGER</String>
+      <String Context="MD_RT910">FINGER</String>
+      <String Context="Generic_Medium">FINGER</String>
+    </Concept>
+    <Concept Id="BLADDER">
+      <Comments></Comments>
+      <String Context="TS_AButton">BLADDER</String>
+      <String Context="MD_RT910">BLADDER</String>
+      <String Context="Generic_Medium">BLADDER</String>
+    </Concept>
+    <Concept Id="CAROTID IMT">
+      <Comments>Carotid preset for Intima Media Thickness's measure</Comments>
+      <String Context="TS_AButton">CAROTID IMT</String>
+      <String Context="MD_RT910">CAROT IMT</String>
+      <String Context="Generic_Medium">CAROTID IMT</String>
+    </Concept>
+    <Concept Id="HIFU HIGH DEPTH">
+      <Comments></Comments>
+      <String Context="TS_AButton">HIFU HIGH DEPTH</String>
+      <String Context="MD_RT910">HIGH</String>
+      <String Context="Generic_Medium">HIFU HIGH DEPTH</String>
+    </Concept>
+    <Concept Id="HIFU MEDIUM DEPTH">
+      <Comments></Comments>
+      <String Context="TS_AButton">HIFU MEDIUM DEPTH</String>
+      <String Context="MD_RT910">MEDIUM</String>
+      <String Context="Generic_Medium">HIFU MEDIUM DEPTH</String>
+    </Concept>
+    <Concept Id="HIFU LOW DEPTH">
+      <Comments></Comments>
+      <String Context="TS_AButton">HIFU LOW DEPTH</String>
+      <String Context="MD_RT910">LOW</String>
+      <String Context="Generic_Medium">HIFU LOW DEPTH</String>
+    </Concept>
+    <Concept Id="HIFU SUPERFICIAL">
+      <Comments></Comments>
+      <String Context="TS_AButton">HIFU SUPERFICIAL</String>
+      <String Context="MD_RT910">SUPERFICIAL</String>
+      <String Context="Generic_Medium">HIFU SUPERFICIAL</String>
+    </Concept>
+    <Concept Id="DETAIL">
+      <Comments></Comments>
+      <String Context="TS_AButton">DETAIL</String>
+      <String Context="MD_RT910">DETAIL</String>
+      <String Context="Generic_Medium">DETAIL</String>
+    </Concept>
+    <Concept Id="SUPERFICIAL">
+      <Comments></Comments>
+      <String Context="TS_AButton">SUPERFICIAL</String>
+      <String Context="MD_RT910">SUPERFICIAL</String>
+      <String Context="Generic_Medium">SUPERFICIAL</String>
+    </Concept>
+    <Concept Id="MEDIUM">
+      <Comments></Comments>
+      <String Context="TS_AButton">MEDIUM</String>
+      <String Context="MD_RT910">MEDIUM</String>
+      <String Context="Generic_Medium">MEDIUM</String>
+    </Concept>
+    <Concept Id="DEEP">
+      <Comments></Comments>
+      <String Context="TS_AButton">DEEP</String>
+      <String Context="MD_RT910">DEEP</String>
+      <String Context="Generic_Medium">DEEP</String>
+    </Concept>
+    <Concept Id="CARDIAC">
+      <Comments></Comments>
+      <String Context="TS_AButton">CARDIAC</String>
+      <String Context="MD_RT910">CARDIAC</String>
+      <String Context="Generic_Medium">CARDIAC</String>
+    </Concept>
+    <Concept Id="PULMONARY VEINS">
+      <Comments></Comments>
+      <String Context="TS_AButton">PULMONARY VEINS</String>
+      <String Context="MD_RT910">PULM VEINS</String>
+      <String Context="Generic_Medium">PULMONARY VEINS</String>
+    </Concept>
+    <Concept Id="CORONARY ARTERIES">
+      <Comments></Comments>
+      <String Context="TS_AButton">CORONARY ARTERIES</String>
+      <String Context="MD_RT910">CORON ART</String>
+      <String Context="Generic_Medium">CORONARY ARTERIES</String>
+    </Concept>
+    <Concept Id="ARTERIES">
+      <Comments></Comments>
+      <String Context="TS_AButton">ARTERIES</String>
+      <String Context="MD_RT910">ARTERIES</String>
+      <String Context="Generic_Medium">ARTERIES</String>
+    </Concept>
+    <Concept Id="VEINS">
+      <Comments></Comments>
+      <String Context="TS_AButton">VEINS</String>
+      <String Context="MD_RT910">VEINS</String>
+      <String Context="Generic_Medium">VEINS</String>
+    </Concept>
+    <Concept Id="SUPERFICIAL NERVE">
+      <Comments></Comments>
+      <String Context="TS_AButton">SUPERFICIAL NERVE</String>
+      <String Context="MD_RT910">SUP NERVE</String>
+      <String Context="Generic_Medium">SUPERFICIAL NERVE</String>
+    </Concept>
+    <Concept Id="DEEP NERVE">
+      <Comments></Comments>
+      <String Context="TS_AButton">DEEP NERVE</String>
+      <String Context="MD_RT910">DEEP NERVE</String>
+      <String Context="Generic_Medium">DEEP NERVE</String>
+    </Concept>
+    <Concept Id="NUCHAL TRANSLUCENCY">
+      <Comments></Comments>
+      <String Context="TS_AButton">NUCHAL TRANSLUCENCY</String>
+      <String Context="MD_RT910">NUCHAL TRANSLUC</String>
+      <String Context="Generic_Medium">NUCHAL TRANSLUCENCY</String>
+    </Concept>
+    <Concept Id="FETAL HEART 2">
+      <Comments></Comments>
+      <String Context="TS_AButton">FETAL HEART 2</String>
+      <String Context="MD_RT910">FETAL HRT 2</String>
+      <String Context="Generic_Medium">FETAL HEART 2</String>
+    </Concept>
+    <Concept Id="FETAL HEART 3">
+      <Comments></Comments>
+      <String Context="TS_AButton">FETAL HEART 3</String>
+      <String Context="MD_RT910">FETAL HRT 3</String>
+      <String Context="Generic_Medium">FETAL HEART 3</String>
+    </Concept>
+    <Concept Id="CFR">
+      <Comments></Comments>
+      <String Context="TS_AButton">CFR</String>
+      <String Context="MD_RT910">CFR</String>
+      <String Context="Generic_Medium">CFR</String>
+    </Concept>
+    <Concept Id="LUNG">
+      <Comments></Comments>
+      <String Context="TS_AButton">LUNG</String>
+      <String Context="MD_RT910">LUNG</String>
+      <String Context="Generic_Medium">LUNG</String>
+    </Concept>
+    <Concept Id="RHEUMA">
+      <Comments></Comments>
+      <String Context="TS_AButton">RHEUMA</String>
+      <String Context="MD_RT910">RHEUMA</String>
+      <String Context="Generic_Medium">RHEUMA</String>
+    </Concept>
+    <Concept Id="REGIONAL">
+      <Comments></Comments>
+      <String Context="TS_AButton">REGIONAL</String>
+      <String Context="MD_RT910">REGIONAL</String>
+      <String Context="Generic_Medium">REGIONAL</String>
+    </Concept>
+    <Concept Id="SPINE">
+      <Comments></Comments>
+      <String Context="TS_AButton">SPINE</String>
+      <String Context="MD_RT910">SPINE</String>
+      <String Context="Generic_Medium">SPINE</String>
+    </Concept>
+    <Concept Id="ANAESTHESIA">
+      <Comments></Comments>
+      <String Context="TS_AButton">ANAESTHESIA</String>
+      <String Context="MD_RT910">ANAESTHESIA</String>
+      <String Context="Generic_Medium">ANAESTHESIA</String>
+    </Concept>
+    <Concept Id="NERVE BLOCK">
+      <Comments></Comments>
+      <String Context="TS_AButton">NERVE BLOCK</String>
+      <String Context="MD_RT910">NERVE BLOCK</String>
+      <String Context="Generic_Medium">NERVE BLOCK</String>
+    </Concept>
+    <Concept Id="NEEDLE">
+      <Comments></Comments>
+      <String Context="TS_AButton">NEEDLE</String>
+      <String Context="MD_RT910">NEEDLE</String>
+      <String Context="Generic_Medium">NEEDLE</String>
+    </Concept>
+    <Concept Id="MSK">
+      <Comments></Comments>
+      <String Context="TS_AButton">MSK</String>
+      <String Context="MD_RT910">MSK</String>
+      <String Context="Generic_Medium">MSK</String>
+    </Concept>
+    <Concept Id="SMALL">
+      <Comments></Comments>
+      <String Context="TS_AButton">SMALL</String>
+      <String Context="MD_RT910">SMALL</String>
+      <String Context="Generic_Medium">SMALL</String>
+    </Concept>
+    <Concept Id="LARGE">
+      <Comments></Comments>
+      <String Context="TS_AButton">LARGE</String>
+      <String Context="MD_RT910">LARGE</String>
+      <String Context="Generic_Medium">LARGE</String>
+    </Concept>
+    <Concept Id="PEN">
+      <Comments>PENETRATION preset [StoryID: 3236]</Comments>
+      <String Context="TS_AButton">PEN</String>
+      <String Context="MD_RT910">PEN</String>
+      <String Context="Generic_Medium">PEN</String>
+    </Concept>
+    <Concept Id="PENETRATION">
+      <Comments>PENETRATION preset for 6440 [StoryID: 1690]</Comments>
+      <String Context="TS_AButton">PENETRATION</String>
+      <String Context="MD_RT910">PENETRATION</String>
+      <String Context="Generic_Medium">PENETRATION</String>
+    </Concept>
+    <Concept Id="FIRST TRIM">
+      <Comments>OB 1 TRIM preset for 6440 [StoryID: 1690]</Comments>
+      <String Context="TS_AButton">1 TRIM</String>
+      <String Context="MD_RT910">1 TRIM</String>
+      <String Context="Generic_Medium">1 TRIM</String>
+    </Concept>
+    <Concept Id="SECOND TRIM">
+      <Comments>OB 2 TRIM preset for 6440 [StoryID: 1690]</Comments>
+      <String Context="TS_AButton">2 TRIM</String>
+      <String Context="MD_RT910">2 TRIM</String>
+      <String Context="Generic_Medium">2 TRIM</String>
+    </Concept>
+    <Concept Id="THIRD TRIM">
+      <Comments>OB 3 TRIM preset for 6440 [StoryID: 1690]</Comments>
+      <String Context="TS_AButton">3 TRIM</String>
+      <String Context="MD_RT910">3 TRIM</String>
+      <String Context="Generic_Medium">3 TRIM</String>
+    </Concept>
+    <Concept Id="FETAL HEART 1">
+      <Comments>FETAL HEART preset for 6440 [StoryID: 1690]</Comments>
+      <String Context="TS_AButton">FETAL HEART</String>
+      <String Context="MD_RT910">FETAL HEART</String>
+      <String Context="Generic_Medium">FETAL HEART</String>
+    </Concept>
+    <Concept Id="NEUROSURGERY">
+      <Comments></Comments>
+      <String Context="TS_AButton">NEUROSURGERY</String>
+      <String Context="MD_RT910">NEUROSURGERY</String>
+      <String Context="Generic_Medium">NEUROSURGERY</String>
+    </Concept>
+    <Concept Id="SEC-THIRD TRIM">
+      <Comments>OB TRIM preset for 6440 [StoryID: 1690]</Comments>
+      <String Context="TS_AButton">2-3 TRIM</String>
+      <String Context="MD_RT910">2-3 TRIM</String>
+      <String Context="Generic_Medium">2-3 TRIM</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>
