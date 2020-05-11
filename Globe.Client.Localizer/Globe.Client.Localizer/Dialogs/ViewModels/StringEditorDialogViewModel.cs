@@ -6,6 +6,7 @@ using Prism.Services.Dialogs;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Globe.Client.Localizer.Dialogs.ViewModels
 {
@@ -39,14 +40,21 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _ISOCoding, value); }
         }
 
-        private StringViewItem _stringViewItem;
-        public StringViewItem StringViewItem
+        private EditableStringItem _referenceEditableStringItem;
+        public EditableStringItem ReferenceEditableStringItem
         {
-            get { return _stringViewItem; }
-            set { SetProperty(ref _stringViewItem, value); }
+            get { return _referenceEditableStringItem; }
+            private set { SetProperty(ref _referenceEditableStringItem, value); }
         }
 
-        private ConceptSearchBy _searchBy = ConceptSearchBy.String;
+        private IEnumerable<EditableStringItem> _editableStringItems;
+        public IEnumerable<EditableStringItem> EditableStringItems
+        {
+            get { return _editableStringItems; }
+            set { SetProperty(ref _editableStringItems, value); }
+        }
+
+        private ConceptSearchBy _searchBy = ConceptSearchBy.Concept;
         public ConceptSearchBy SearchBy
         {
             get { return _searchBy; }
@@ -60,18 +68,31 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _filterBy, value); }
         }
 
-        private StringType _selectedStringType = StringType.String;
-        public StringType SelectedStringType
-        {
-            get { return _selectedStringType; }
-            set { SetProperty(ref _selectedStringType, value); }
-        }        
-
         private IEnumerable<ConceptViewItem> _concepts;
         public IEnumerable<ConceptViewItem> Concepts
         {
             get { return _concepts; }
             set { SetProperty(ref _concepts, value); }
+        }
+
+        IEnumerable<StringType> _stringTypes = Enum.GetValues(typeof(StringType)).Cast<StringType>();
+        public IEnumerable<StringType> StringTypes
+        {
+            get => _stringTypes;
+            private set
+            {
+                SetProperty<IEnumerable<StringType>>(ref _stringTypes, value);
+            }
+        }
+
+        StringType _selectedStringType = StringType.String;
+        public StringType SelectedStringType
+        {
+            get => _selectedStringType;
+            set
+            {
+                SetProperty<StringType>(ref _selectedStringType, value);
+            }
         }
 
         private DelegateCommand<string> _closeDialogCommand;
@@ -135,7 +156,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         public virtual void OnDialogOpened(IDialogParameters parameters)
         {
-            StringViewItem = parameters.GetValue<StringViewItem>("stringViewItem");
+            EditableStringItems = parameters.GetValue<IEnumerable<EditableStringItem>>("editableStringItems");
+            ReferenceEditableStringItem = EditableStringItems.ElementAt(0);
             ISOCoding = parameters.GetValue<string>("ISOCoding");
         }
     }

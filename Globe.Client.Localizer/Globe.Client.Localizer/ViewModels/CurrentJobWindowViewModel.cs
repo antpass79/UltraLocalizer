@@ -66,6 +66,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
+
         IEnumerable<JobItem> _jobItems;
         public IEnumerable<JobItem> JobItems
         {
@@ -211,7 +212,17 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 string result = string.Empty;
                 var @params = new DialogParameters();
-                @params.Add("stringViewItem", stringViewItem);
+                @params.Add("editableStringItems", stringViewItem.
+                    ContextViewItems
+                    .Select(item => new EditableStringItem
+                    {
+                        ComponentNamespace = stringViewItem.ComponentNamespace,
+                        InternalNamespace = stringViewItem.InternalNamespace,
+                        Concept = stringViewItem.Concept,
+                        ContextName = item.Name,
+                        ContextType = item.Type,
+                        ContextValue = item.Value
+                    }).ToList());
                 @params.Add("ISOCoding", this.SelectedLanguage.ISOCoding);
                 _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, r =>
                 {

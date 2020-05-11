@@ -3,7 +3,7 @@
     class ContextViewItem
     {
         public string Name { get; set; }
-        public string Type { get; set; }
+        public StringType Type { get; set; }
         public string Value { get; set; }
     }
 }

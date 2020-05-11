@@ -26,7 +26,7 @@ namespace Globe.TranslationServer.Services
                 {
                     ConceptFilterBy.None => _ultraDBConcept.GetSearchConceptbyISO(search.ISOCoding, search.StringValue, true),
                     ConceptFilterBy.Context => _ultraDBConcept.GetSearchConceptbyISObyContext(search.ISOCoding, search.StringValue, search.Context, true),
-                    ConceptFilterBy.StringType => _ultraDBConcept.GetSearchConceptbyISObyStringType(search.ISOCoding, search.StringValue, search.StringValue, true),
+                    ConceptFilterBy.StringType => _ultraDBConcept.GetSearchConceptbyISObyStringType(search.ISOCoding, search.StringValue, search.StringType.ToString(), true),
                     _ => new List<DBConceptSearch>()
                 };
             }
@@ -36,7 +36,7 @@ namespace Globe.TranslationServer.Services
                 {
                     ConceptFilterBy.None => _ultraDBConcept.GetSearchStringbyISO(search.ISOCoding, search.StringValue, true),
                     ConceptFilterBy.Context => _ultraDBConcept.GetSearchStringtbyISObyContext(search.ISOCoding, search.StringValue, search.Context, true),
-                    ConceptFilterBy.StringType => _ultraDBConcept.GetSearchStringtbyISObyStringType(search.ISOCoding, search.StringValue, search.StringValue, true),
+                    ConceptFilterBy.StringType => _ultraDBConcept.GetSearchStringtbyISObyStringType(search.ISOCoding, search.StringValue, search.StringType.ToString(), true),
                     _ => new List<DBConceptSearch>()
                 };
             }
