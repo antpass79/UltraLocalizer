@@ -16,73 +16,23 @@
             <Setter Property="FontSize" Value="18" />
             <Setter Property="FontWeight" Value="DemiBold" />
         </Style>
-        <Style TargetType="{x:Type RadioButton}">
+        <Style TargetType="Panel" x:Key="SectionPanel">
+            <Setter Property="Background" Value="WhiteSmoke" />
             <Setter Property="Margin" Value="5" />
-        </Style>
-        <Style TargetType="{x:Type TextBlock}">
-            <Setter Property="Margin" Value="5" />
-        </Style>
-        <Style TargetType="{x:Type ComboBox}">
-            <Setter Property="Margin" Value="5" />
-        </Style>
-
-        <Style TargetType="{x:Type DataGrid}">
-            <Setter Property="AlternationCount" Value="2" />
-            <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
-            <Setter Property="HorizontalGridLinesBrush" Value="LightGray" />
-            <Setter Property="SelectionMode" Value="Single" />
-            <Setter Property="SelectionUnit" Value="FullRow" />
-        </Style>
-        <Style TargetType="{x:Type DataGridRow}">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Height" Value="auto"/>
-        </Style>
-        <Style TargetType="{x:Type DataGridCell}">
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type DataGridCell}">
-                        <Grid Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center" />
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="true">
-                    <Setter Property="Foreground" Value="Black"/>
-                    <Setter Property="Background" Value="LightBlue"/>
-                </Trigger>
-                <Trigger Property="IsEditing" Value="true">
-                    <Setter Property="Background" Value="Transparent"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="{x:Type DataGridColumnHeader}">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="FontWeight" Value="DemiBold"/>
-            <Setter Property="MinWidth" Value="250"/>
         </Style>
     </UserControl.Resources>
 
     <DockPanel>
 
-        <DockPanel DockPanel.Dock="Left" MinWidth="300">
-            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+        <DockPanel DockPanel.Dock="Left">
+            <DockPanel DockPanel.Dock="Top" LastChildFill="False" Style="{StaticResource SectionPanel}">
                 <Label DockPanel.Dock="Top">Working Mode</Label>
                 <RadioButton IsChecked="True" DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromXml}">From Xml</RadioButton>
                 <RadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromDatabase}">From Database</RadioButton>
                 <RadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.EditUnsatisfiedConstrains}">Edit Unsatisfied Constrains</RadioButton>
             </DockPanel>
 
-            <DockPanel DockPanel.Dock="Top" LastChildFill="False">
-                <Label DockPanel.Dock="Top">Preferences</Label>
-            </DockPanel>
-
-            <Grid DockPanel.Dock="Top">
+            <Grid DockPanel.Dock="Top"  Style="{StaticResource SectionPanel}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
@@ -106,19 +56,18 @@
                 <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}"></ComboBox>
                 <TextBlock Grid.Row="4" Grid.Column="0">Internal Namespace</TextBlock>
                 <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description"></ComboBox>
-                <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource LoginPageButtonLogin}" Command="{Binding SearchCommand}">Search</Button>
+                <Button Grid.Row="5" Grid.Column="1" Command="{Binding SearchCommand}">Search</Button>
 
                 <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
             </Grid>
         </DockPanel>
 
-        <DockPanel>
+        <DockPanel Style="{StaticResource SectionPanel}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <Label>Grid</Label>
                 <DataGrid Name="grid" Grid.Row="1" ItemsSource="{Binding StringViewItems}" AutoGenerateColumns="False" CanUserAddRows="False">
                     <DataGrid.Resources>
                         <Style TargetType="{x:Type TextBlock}">
@@ -127,43 +76,70 @@
                         </Style>
                     </DataGrid.Resources>
                     <DataGrid.Columns>
-                        <DataGridTemplateColumn Header="Edit">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button Command="{Binding ElementName=grid, Path=DataContext.StringViewItemEditCommand}" CommandParameter="{Binding}">Edit</Button>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
                         <DataGridTextColumn IsReadOnly="True" Header="Component Namespace" Binding="{Binding ComponentNamespace}" />
                         <DataGridTextColumn IsReadOnly="True" Header="Internal Namespace" Binding="{Binding InternalNamespace}" />
-                        <DataGridTextColumn IsReadOnly="True" Header="Concept"  Binding="{Binding Concept}"/>
-                        <DataGridTemplateColumn IsReadOnly="True" Header="Contexts">
+                        <DataGridTextColumn IsReadOnly="True" Header="Concept" Binding="{Binding Concept}"/>
+                        <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="*">
                             <DataGridTemplateColumn.HeaderStyle>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="DataGridColumnHeader">
+                                                <DockPanel LastChildFill="False" Background="Transparent">
+                                                    <TextBlock FontSize="16" DockPanel.Dock="Top" HorizontalAlignment="Center">Contexts</TextBlock>
+                                                    <Grid DockPanel.Dock="Bottom">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition />
+                                                            <ColumnDefinition />
+                                                            <ColumnDefinition />
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Grid.Column="0">Name</TextBlock>
+                                                        <TextBlock Grid.Column="1">Type</TextBlock>
+                                                        <TextBlock Grid.Column="2">Value</TextBlock>
+                                                    </Grid>
+                                                </DockPanel>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
                                     <Setter Property="HorizontalContentAlignment" Value="Center" />
                                     <Setter Property="Foreground" Value="Black"/>
-                                    <Setter Property="FontSize" Value="20"/>
+                                    <Setter Property="FontSize" Value="14"/>
                                     <Setter Property="FontWeight" Value="DemiBold"/>
-                                    <Setter Property="MinWidth" Value="250"/>
+                                    <Setter Property="MinWidth" Value="150"/>
                                 </Style>
                             </DataGridTemplateColumn.HeaderStyle>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <DataGrid ItemsSource="{Binding ContextViewItems}" IsReadOnly="True" CanUserAddRows="False" BorderThickness="0">
-                                        <DataGrid.Resources>
-                                            <Style TargetType="{x:Type DataGridRow}">
-                                                <Setter Property="Foreground" Value="Black"/>
-                                                <Setter Property="FontSize" Value="15"/>
-                                                <Setter Property="Height" Value="auto"/>
-                                            </Style>
-                                            <Style TargetType="{x:Type DataGridColumnHeader}">
-                                                <Setter Property="Foreground" Value="Black"/>
-                                                <Setter Property="FontSize" Value="15"/>
-                                                <Setter Property="FontWeight" Value="DemiBold"/>
-                                                <Setter Property="MinWidth" Value="250"/>
-                                            </Style>
-                                        </DataGrid.Resources>
-                                    </DataGrid>
+                                    <ItemsControl ItemsSource="{Binding ContextViewItems}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <VirtualizingStackPanel />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid DockPanel.Dock="Bottom">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Grid.Column="0" Text="{Binding Name}" />
+                                                    <TextBlock Grid.Column="1" Text="{Binding Type}" />
+                                                    <TextBlock Grid.Column="2" Text="{Binding Value}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Width="50">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button MinWidth="0" Command="{Binding ElementName=grid, Path=DataContext.StringViewItemEditCommand}" CommandParameter="{Binding}">
+                                        <Image Width="28" Height="28" Source="/Globe.Client.Platform.Assets;component/Icons/edit.png" />
+                                    </Button>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

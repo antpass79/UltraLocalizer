@@ -6,16 +6,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              prism:ViewModelLocator.AutoWireViewModel="True"
+             BorderThickness="5" BorderBrush="#05163D"
              mc:Ignorable="d"
-             MinWidth="500" MinHeight="300"
              d:DesignHeight="450" d:DesignWidth="800">
     <prism:Dialog.WindowStyle>
         <Style TargetType="Window">
             <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+            <Setter Property="SizeToContent" Value="WidthAndHeight" />
+            <Setter Property="WindowStyle" Value="None" />
             <Setter Property="ResizeMode" Value="NoResize"/>
             <Setter Property="ShowInTaskbar" Value="False"/>
-            <Setter Property="Width" Value="1500" />
-            <Setter Property="Height" Value="600" />
         </Style>
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
@@ -24,23 +24,20 @@
                 <x:Type Type="models:StringType"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
-        
-        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource LoginPageButtonLogin}">
-            <Setter Property="Margin" Value="5" />
-            <Setter Property="HorizontalAlignment" Value="Right" />
-        </Style>
     </UserControl.Resources>
+
     <DockPanel>
 
-        <Grid DockPanel.Dock="Top">
+        <!-- Header -->
+        <Grid DockPanel.Dock="Top" Style="{StaticResource MenuPanel}">
             <Grid.Resources>
-                <Style TargetType="{x:Type Label}">
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="HorizontalAlignment" Value="Center" />
                     <Setter Property="FontSize" Value="15" />
                     <Setter Property="FontWeight" Value="DemiBold" />
                     <Setter Property="HorizontalAlignment" Value="Center" />
-                </Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Setter Property="HorizontalAlignment" Value="Center" />
+                    <Setter Property="Margin" Value="3" />
                 </Style>
             </Grid.Resources>
             <Grid.RowDefinitions>
@@ -53,19 +50,19 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0">Component Namespace</Label>
-            <Label Grid.Column="1">Internal Namespace</Label>
-            <Label Grid.Column="2">Concept</Label>
-            <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding ReferenceEditableStringItem.ComponentNamespace}"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding ReferenceEditableStringItem.InternalNamespace}"></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="2" Text="{Binding ReferenceEditableStringItem.Concept}"></TextBlock>
+            <TextBlock Grid.Column="0" Text="Component Namespace" />
+            <TextBlock Grid.Column="1" Text="Internal Namespace" />
+            <TextBlock Grid.Column="2" Text="Concept" />
+            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableStringItem.ComponentNamespace}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableStringItem.InternalNamespace}" />
+            <TextBlock Grid.Row="1" Grid.Column="2" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableStringItem.Concept}" />
         </Grid>
 
-        <Grid DockPanel.Dock="Top">
+        <!-- Comments -->
+        <Grid DockPanel.Dock="Top" Margin="10">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="57*" />
-                <ColumnDefinition Width="143*"/>
-                <ColumnDefinition Width="200*" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
@@ -73,14 +70,14 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,18" Grid.RowSpan="2">Software Comment</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="2" Margin="0,0,0,18" Grid.RowSpan="2"></TextBox>
-            <TextBlock Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,15" Grid.RowSpan="2">Master Translator Comment</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="2" Margin="0,0,0,15" Grid.RowSpan="2"></TextBox>
+            <TextBlock Grid.Row="0" Grid.Column="0">Software Comment</TextBlock>
+            <TextBox Grid.Row="0" Grid.Column="2"></TextBox>
+            <TextBlock Grid.Row="1" Grid.Column="0">Master Translator Comment</TextBlock>
+            <TextBox Grid.Row="1" Grid.Column="2"></TextBox>
             <CheckBox Grid.Row="2" Grid.ColumnSpan="2">Ignore</CheckBox>
         </Grid>
 
-        <DockPanel DockPanel.Dock="Top">
+        <DockPanel DockPanel.Dock="Top" Margin="10">
             <DockPanel.Resources>
                 <Style TargetType="{x:Type Label}">
                     <Setter Property="FontSize" Value="15" />
@@ -92,12 +89,14 @@
                 </Style>
             </DockPanel.Resources>
 
-            <DockPanel DockPanel.Dock="Bottom">
+            <!-- Buttons -->
+            <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
                 <Button DockPanel.Dock="Right" Command="{Binding CloseDialogCommand}" CommandParameter="true">Cancel</Button>
                 <Button DockPanel.Dock="Right">Update</Button>
                 <Button DockPanel.Dock="Right">OK</Button>
             </DockPanel>
 
+            <!-- String DataGrid -->
             <DataGrid ItemsSource="{Binding EditableStringItems}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Context" Binding="{Binding ContextName}" />
@@ -129,50 +128,53 @@
             </DataGrid>
         </DockPanel>
 
-        <Grid DockPanel.Dock="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-                <RowDefinition Height="auto" />
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0" Grid.Column="0">String Search</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding StringValue}" />
-            <Button Grid.Row="0" Grid.Column="2" Command="{Binding SearchConceptsCommand}">Search</Button>
-
-            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+        <!-- Searching Options -->
+        <Expander DockPanel.Dock="Top" Header="Searching Options" Margin="10">
+            <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
-                    <RowDefinition />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <RadioButton Grid.Row="0" Grid.ColumnSpan="2" GroupName="SearchBy" IsChecked="True" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.Concept}">By Concept (English language only)</RadioButton>
-                <RadioButton Grid.Row="1" Grid.ColumnSpan="2" GroupName="SearchBy" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.String}">By Value (Current language only)</RadioButton>
+                <TextBlock Grid.Row="0" Grid.Column="0">String Search</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding StringValue}" />
+                <Button Grid.Row="0" Grid.Column="2" Command="{Binding SearchConceptsCommand}">Search</Button>
 
-                <RadioButton Grid.Row="2" Grid.Column="0" GroupName="FilterBy"  IsChecked="True" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.None}">No Filters</RadioButton>
-                <RadioButton Grid.Row="3" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.Context}">Filter by Context</RadioButton>
-                <RadioButton Grid.Row="4" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.StringType}">Filter by String Type</RadioButton>
+                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
 
-                <ComboBox Grid.Row="3" Grid.Column="1"></ComboBox>
-                <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding StringTypes}" SelectedItem="{Binding SelectedStringType}"></ComboBox>
+                    <RadioButton Grid.Row="0" Grid.ColumnSpan="2" GroupName="SearchBy" IsChecked="True" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.Concept}">By Concept (English language only)</RadioButton>
+                    <RadioButton Grid.Row="1" Grid.ColumnSpan="2" GroupName="SearchBy" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.String}">By Value (Current language only)</RadioButton>
+
+                    <RadioButton Grid.Row="2" Grid.Column="0" GroupName="FilterBy"  IsChecked="True" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.None}">No Filters</RadioButton>
+                    <RadioButton Grid.Row="3" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.Context}">Filter by Context</RadioButton>
+                    <RadioButton Grid.Row="4" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.StringType}">Filter by String Type</RadioButton>
+
+                    <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Contexts}" SelectedItem="{Binding SelectedContext}" DisplayMemberPath="Name"></ComboBox>
+                    <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding StringTypes}" SelectedItem="{Binding SelectedStringType}"></ComboBox>
+                </Grid>
+
+                <DataGrid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Concepts}">
+                </DataGrid>
             </Grid>
-
-            <DataGrid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Concepts}">
-            </DataGrid>
-        </Grid>
+        </Expander>
 
     </DockPanel>
 </UserControl>

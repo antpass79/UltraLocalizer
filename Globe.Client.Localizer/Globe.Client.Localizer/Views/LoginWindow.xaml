@@ -12,22 +12,44 @@
             x:Key="BooleanToVisibilityConverter" 
             True="Collapsed" 
             False="Visible" />
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="Title">
+            <Setter Property="FontSize" Value="50"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="TitleDetails">
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}" x:Key="TextTitle">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Margin" Value="0,10,0,0" />
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="LoginError">
+            <Setter Property="TextWrapping" Value="Wrap" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+
     </UserControl.Resources>
 
     <DockPanel>
-        <TextBlock DockPanel.Dock="Top" Text="Login User" Style="{StaticResource LoginPageTitle}" />
+        <TextBlock DockPanel.Dock="Top" Text="Login User" Style="{StaticResource Title}" />
         <ContentControl DockPanel.Dock="Top" Margin="20">
             <StackPanel>
-                <TextBlock Text="Please enter your details" Style="{StaticResource LoginPageTitleDetails}" />
-                <TextBlock Text="User Name" Style="{StaticResource LoginPageTextTitle}" />
+                <TextBlock Text="Please enter your details" Style="{StaticResource TitleDetails}" />
+                <TextBlock Text="User Name" Style="{StaticResource TextTitle}" />
                 <TextBox Text="{Binding UserName}" Margin="0,10,0,0" FontSize="20" />
-                <TextBlock Text="Password" Style="{StaticResource LoginPageTextTitle}" />
+                <TextBlock Text="Password" Style="{StaticResource TextTitle}" />
                 <TextBox Text="{Binding Password}" Margin="0,10,0,0" FontSize="20" />
                 <StackPanel Orientation="Horizontal">
-                    <Button Margin="0,20,0,0" Style="{StaticResource LoginPageButtonLogin}" Command="{Binding LoginCommand}">Login</Button>
-                    <Button Margin="20,20,0,0" Style="{StaticResource LoginPageButtonCancel}" Command="{Binding CancelCommand}">Cancel</Button>
+                    <Button Margin="0,20,0,0" Command="{Binding LoginCommand}">Login</Button>
+                    <Button Margin="20,20,0,0" Style="{StaticResource GrayButton}" Command="{Binding CancelCommand}">Cancel</Button>
                 </StackPanel>
-                <TextBlock Style="{StaticResource LoginPageError}" Visibility="{Binding Path=LoginResult.Successful, Converter={StaticResource BooleanToVisibilityConverter}}" Text="{Binding LoginResult.Error}"></TextBlock>
+                <TextBlock Style="{StaticResource LoginError}" Visibility="{Binding Path=LoginResult.Successful, Converter={StaticResource BooleanToVisibilityConverter}}" Text="{Binding LoginResult.Error}"></TextBlock>
             </StackPanel>
         </ContentControl>
     </DockPanel>

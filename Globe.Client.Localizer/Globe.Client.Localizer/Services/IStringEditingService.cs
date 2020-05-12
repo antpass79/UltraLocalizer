@@ -7,5 +7,6 @@ namespace Globe.Client.Localizer.Services
     interface IStringEditingService
     {
         Task<IEnumerable<ConceptViewItem>> GetConceptViewItemsAsync(ConceptViewItemSearch search);
+        Task<IEnumerable<Context>> GetContextsAsync();
     }
 }

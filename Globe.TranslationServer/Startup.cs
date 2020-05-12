@@ -61,6 +61,7 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBJobList, UltraDBJobList>()
                 .AddScoped<UltraDBStrings, UltraDBStrings>();
             services
+                .AddScoped<IAsyncContextService, ContextService>()
                 .AddScoped<IAsyncConceptViewItemProxyService, ConceptViewItemProxyService>()
                 .AddScoped<IAsyncStringViewItemProxyService, StringViewItemProxyService>()
                 .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()

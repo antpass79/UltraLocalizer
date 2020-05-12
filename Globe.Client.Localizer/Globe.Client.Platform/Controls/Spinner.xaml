@@ -12,6 +12,11 @@
             x:Key="BooleanToVisibilityConverter" 
             True="Visible" 
             False="Collapsed" />
+
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="LightGray" />
+            <Setter Property="Opacity" Value="0.7" />
+        </Style>
     </UserControl.Resources>
     
     <Grid DataContext="{Binding RelativeSource={RelativeSource Self}}" Visibility="{Binding ElementName=control, Path=Busy, Converter={StaticResource BooleanToVisibilityConverter}}">

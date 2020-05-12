@@ -29,51 +29,6 @@
             <Setter Property="VerticalContentAlignment" Value="Center" />
             <Setter Property="FontSize" Value="15" />
         </Style>
-
-        <Style TargetType="{x:Type DataGrid}">
-            <Setter Property="AlternationCount" Value="2" />
-            <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
-            <Setter Property="HorizontalGridLinesBrush" Value="LightGray" />
-            <Setter Property="SelectionMode" Value="Single" />
-            <Setter Property="SelectionUnit" Value="FullRow" />
-        </Style>
-
-        <Style TargetType="{x:Type DataGridRow}">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="Height" Value="40"/>
-        </Style>
-
-        <Style TargetType="{x:Type DataGridCell}">
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type DataGridCell}">
-                        <Grid Background="{TemplateBinding Background}">
-                            <ContentPresenter VerticalAlignment="Center" />
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="true">
-                    <Setter Property="Foreground" Value="Black"/>
-                    <Setter Property="Background" Value="LightBlue"/>
-                </Trigger>
-                <Trigger Property="IsEditing" Value="true">
-                    <Setter Property="Background" Value="Transparent"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style TargetType="{x:Type DataGridColumnHeader}">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontSize" Value="20"/>
-            <Setter Property="FontWeight" Value="DemiBold"/>
-            <Setter Property="MinWidth" Value="250"/>
-        </Style>
-
     </UserControl.Resources>
 
     <DataGrid ItemsSource="{Binding Strings}" AutoGenerateColumns="False" CanUserAddRows="False">

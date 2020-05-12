@@ -7,8 +7,11 @@
         xmlns:platform="http://schemas.platform.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
+        Name="view"
         Title="Ultra Localizator" Height="450" Width="800" WindowState="Maximized">
     <Window.Resources>
+        <platform:ImageNameToSourceImageConverter
+            x:Key="ImageNameToSourceImageConverter" />
         <platform:BooleanToVisibilityConverter
             x:Key="BooleanToVisibilityConverter" 
             True="Visible" 
@@ -24,13 +27,31 @@
 
         <!--Side Menu-->
         <DockPanel Style="{StaticResource MenuPanel}">
-            <Label DockPanel.Dock="Top" Content="Options" Style="{StaticResource MenuHeader}"></Label>
+            <ToggleButton DockPanel.Dock="Top" Style="{StaticResource MenuToggle}" IsChecked="{Binding IsMenuOpen}">
+                <DockPanel Background="Transparent">
+                    <Image DockPanel.Dock="Left" Width="28" Height="28" Source="/Globe.Client.Platform.Assets;component/Icons/menu.png" />
+                    <TextBlock Text="Options" VerticalAlignment="Center" Margin="20,0,0,0" Visibility="{Binding IsMenuOpen, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                </DockPanel>
+            </ToggleButton>
             <ListBox Style="{StaticResource SideMenu}" ItemsSource="{Binding MenuOptions}" SelectedItem="{Binding SelectedMenuOption}" Name="menu">
+                <ListBox.Resources>
+                    <Style TargetType="ListBox">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsMenuOpen}" Value="False">
+                                <Setter Property="Width" Value="60" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListBox.Resources>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <platform:AuthorizeView UserRoles="{Binding ElementName=menu, Path=DataContext.UserRoles}" Roles="{Binding Roles}" VisibileWithoutRoles="{Binding AlwaysVisible}">
                             <platform:AuthorizeView.PlaceHolder>
-                                <Button Style="{StaticResource SideMenuItem}" Content="{Binding Title}" Command="{Binding ElementName=menu, Path=DataContext.MenuOptionCommand}" CommandParameter="{Binding}">
+                                <Button Style="{StaticResource SideMenuItem}" Foreground="White" Command="{Binding ElementName=menu, Path=DataContext.MenuOptionCommand}" CommandParameter="{Binding}">
+                                    <DockPanel Background="Transparent" VerticalAlignment="Center">
+                                        <Image DockPanel.Dock="Left" Source="{Binding IconName, Converter={StaticResource ImageNameToSourceImageConverter}}" />
+                                        <TextBlock Text="{Binding Title}" VerticalAlignment="Center" Margin="10,0,0,0" Visibility="{Binding ElementName=view, Path=DataContext.IsMenuOpen, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                    </DockPanel>
                                 </Button>
                             </platform:AuthorizeView.PlaceHolder>
                         </platform:AuthorizeView>

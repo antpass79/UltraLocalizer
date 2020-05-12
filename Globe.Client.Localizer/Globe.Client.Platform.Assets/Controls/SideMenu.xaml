@@ -5,16 +5,42 @@
         <GradientStop Color="#3A0647" Offset="1" />
         <GradientStop Color="#0B2363" Offset="0" />
     </LinearGradientBrush>
-    
-    <Style TargetType="{x:Type DockPanel}" x:Key="MenuPanel">
+
+    <Style TargetType="{x:Type Panel}" x:Key="MenuPanel">
         <Setter Property="Background" Value="#05163D" />
     </Style>
-
-    <Style TargetType="{x:Type Label}" x:Key="MenuHeader">
-        <Setter Property="MinHeight" Value="40" />
+    
+    <Style TargetType="{x:Type ContentControl}" x:Key="MenuHeader">
+        <Setter Property="MinHeight" Value="30" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Margin" Value="20" />
         <Setter Property="FontSize" Value="20" />
+    </Style>
+
+    <Style x:Key="MenuToggle" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource MenuHeader}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <DockPanel Background="Transparent">
+                        <ContentPresenter Content="{TemplateBinding Content}" />
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" Value="0.7" />
+                <Setter Property="Cursor" Value="Hand" />
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="False">
+                <Setter Property="Opacity" Value="0.5" />
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <Style TargetType="{x:Type ListBox}" x:Key="SideMenu">
@@ -23,12 +49,11 @@
     </Style>
 
     <Style TargetType="{x:Type Label}" x:Key="MenuItemContent">
-        <Setter Property="Margin" Value="10" />
-        <Setter Property="Padding" Value="10" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Padding" Value="0" />
         <Setter Property="HorizontalAlignment" Value="Center" />
         <Setter Property="Background" Value="Transparent" />
-        <Setter Property="MinWidth" Value="200" />
-        <Setter Property="MinHeight" Value="50" />
+        <Setter Property="MinHeight" Value="30" />
         <Setter Property="FontSize" Value="20" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="VerticalContentAlignment" Value="Center" />

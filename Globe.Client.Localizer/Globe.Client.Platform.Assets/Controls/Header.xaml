@@ -1,9 +1,14 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" x:Key="HeaderBackgroundBrush">
+        <GradientStop Color="White" Offset="1" />
+        <GradientStop Color="#05163D" Offset="0" />
+    </LinearGradientBrush>
+
     <Style TargetType="{x:Type Grid}" x:Key="Header">
-        <Setter Property="MinHeight" Value="80" />
-        <Setter Property="Background" Value="#F7F7F7" />
+        <Setter Property="MinHeight" Value="70" />
+        <Setter Property="Background" Value="{StaticResource HeaderBackgroundBrush}" />
     </Style>
 
     <Style TargetType="{x:Type TextBlock}" x:Key="HeaderTextBlock">

@@ -68,6 +68,20 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _filterBy, value); }
         }
 
+        private IEnumerable<Context> _contexts;
+        public IEnumerable<Context> Contexts
+        {
+            get { return _contexts; }
+            private set { SetProperty(ref _contexts, value); }
+        }
+
+        private Context _selectedContext;
+        public Context SelectedContext
+        {
+            get { return _selectedContext; }
+            set { SetProperty(ref _selectedContext, value); }
+        }
+
         private IEnumerable<ConceptViewItem> _concepts;
         public IEnumerable<ConceptViewItem> Concepts
         {
@@ -134,6 +148,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     SearchBy = this.SearchBy,
                     FilterBy = this.FilterBy,
                     StringType = this.SelectedStringType,
+                    Context = this.SelectedContext.Name
                 });
             }));
 
@@ -151,14 +166,15 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         public virtual void OnDialogClosed()
         {
-
         }
 
-        public virtual void OnDialogOpened(IDialogParameters parameters)
+        async public virtual void OnDialogOpened(IDialogParameters parameters)
         {
             EditableStringItems = parameters.GetValue<IEnumerable<EditableStringItem>>("editableStringItems");
             ReferenceEditableStringItem = EditableStringItems.ElementAt(0);
             ISOCoding = parameters.GetValue<string>("ISOCoding");
+            this.Contexts = await _stringEditingService.GetContextsAsync();
+            this.SelectedContext = this.Contexts.ElementAt(0);
         }
     }
 }

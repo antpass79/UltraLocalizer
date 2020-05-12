@@ -29,7 +29,7 @@ namespace Globe.Client.Platform.Controls
         }
 
         public static readonly DependencyProperty DiameterProperty =
-            DependencyProperty.Register("Diameter", typeof(int), typeof(Spinner), new PropertyMetadata(20, OnDiameterPropertyChanged));
+            DependencyProperty.Register("Diameter", typeof(int), typeof(Spinner), new PropertyMetadata(100, OnDiameterPropertyChanged));
         public int Diameter
         {
             get { return (int)GetValue(DiameterProperty); }

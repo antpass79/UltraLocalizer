@@ -2,15 +2,25 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 
     <ResourceDictionary.MergedDictionaries>
+        <!-- PANELS -->
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/DockPanel.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Grid.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/ContentControl.xaml" />
-        <!--<ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Button.xaml" />
+
+        <!-- CONTROLS -->
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/DataGrid.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Button.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/ToolBarButton.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/ComboBox.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Label.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/TextBox.xaml" />-->
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/TextBlock.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/TextBox.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/RadioButton.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/CheckBox.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Image.xaml" />
+
+        <!-- COMPONENTS -->
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Header.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/SideMenu.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Login.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

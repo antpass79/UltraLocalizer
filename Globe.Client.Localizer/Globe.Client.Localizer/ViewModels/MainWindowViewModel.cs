@@ -47,6 +47,7 @@ namespace Globe.Client.Localizer.ViewModels
                 new MenuOption
                 {
                     Title = "Home",
+                    IconName = "home",
                     IsSelected = true,
                     Roles = string.Empty,
                     AlwaysVisible = true,
@@ -55,6 +56,7 @@ namespace Globe.Client.Localizer.ViewModels
                 new MenuOption
                 {
                     Title = "Current Job",
+                    IconName = "current_job",
                     IsSelected = false,
                     Roles = string.Empty,
                     AlwaysVisible = true,
@@ -86,6 +88,16 @@ namespace Globe.Client.Localizer.ViewModels
             set
             {
                 SetProperty<IEnumerable<MenuOption>>(ref _menuOptions, value);
+            }
+        }
+
+        bool _isMenuOpen;
+        public bool IsMenuOpen
+        {
+            get => _isMenuOpen;
+            set
+            {
+                SetProperty<bool>(ref _isMenuOpen, value);
             }
         }
 
