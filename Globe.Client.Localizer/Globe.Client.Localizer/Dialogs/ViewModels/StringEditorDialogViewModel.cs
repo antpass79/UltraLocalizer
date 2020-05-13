@@ -1,11 +1,12 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform.Services;
 using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Globe.Client.Localizer.Dialogs.ViewModels
@@ -13,10 +14,19 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
     class StringEditorDialogViewModel : BindableBase, IDialogAware
     {
         private readonly IStringEditingService _stringEditingService;
+        private readonly ILoggerService _loggerService;
 
-        public StringEditorDialogViewModel(IStringEditingService stringEditingService)
+        public StringEditorDialogViewModel(IStringEditingService stringEditingService, ILoggerService loggerService)
         {
             _stringEditingService = stringEditingService;
+            _loggerService = loggerService;
+        }
+
+        private bool _searchingBusy = false;
+        public bool SearchingBusy
+        {
+            get { return _searchingBusy; }
+            set { SetProperty(ref _searchingBusy, value); }
         }
 
         private string _title = DialogNames.STRING_EDITOR;
@@ -54,6 +64,20 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _editableStringItems, value); }
         }
 
+        private EditableStringItem _selectedEditableStringItem;
+        public EditableStringItem SelectedEditableStringItem
+        {
+            get { return _selectedEditableStringItem; }
+            set { SetProperty(ref _selectedEditableStringItem, value); }
+        }
+
+        private LinkableItem _linkableItem;
+        public LinkableItem LinkableItem
+        {
+            get { return _linkableItem; }
+            set { SetProperty(ref _linkableItem, value); }
+        }
+
         private ConceptSearchBy _searchBy = ConceptSearchBy.Concept;
         public ConceptSearchBy SearchBy
         {
@@ -87,6 +111,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             get { return _concepts; }
             set { SetProperty(ref _concepts, value); }
+        }
+
+        private ConceptViewItem _selectedConcept;
+        public ConceptViewItem SelectedConcept
+        {
+            get { return _selectedConcept; }
+            set { SetProperty(ref _selectedConcept, value); }
         }
 
         IEnumerable<StringType> _stringTypes = Enum.GetValues(typeof(StringType)).Cast<StringType>();
@@ -123,6 +154,48 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 RaiseRequestClose(new DialogResult(result));
             }));
 
+        private DelegateCommand _linkCommand;
+        public DelegateCommand LinkCommand =>
+            _linkCommand ?? (_linkCommand = new DelegateCommand(() =>
+            {
+                var editableStringItem = this.EditableStringItems.Single(item => item.Concept2ContextId == this.SelectedEditableStringItem.Concept2ContextId);
+                editableStringItem.StringId = this.SelectedConcept.StringId;
+                editableStringItem.ContextValue = this.SelectedConcept.StringValue;
+                editableStringItem.ContextType = this.SelectedConcept.StringType;
+
+                this.LinkableItem = new LinkableItem(this.SelectedEditableStringItem, this.SelectedConcept);
+            },
+            () =>
+            {
+                return this.SelectedContext != null && this.SelectedConcept != null;
+            }));
+
+        private DelegateCommand _unlinkCommand;
+        public DelegateCommand UnlinkCommand =>
+            _unlinkCommand ?? (_unlinkCommand = new DelegateCommand(() =>
+            {
+                var editableStringItem = this.EditableStringItems.Single(item => item.Concept2ContextId == this.SelectedEditableStringItem.Concept2ContextId);
+                editableStringItem.StringId = 0;
+                editableStringItem.ContextValue = null;
+                editableStringItem.ContextType = StringType.String;
+
+                this.LinkableItem = new LinkableItem(this.SelectedEditableStringItem, this.SelectedConcept);
+            },
+            () =>
+            {
+                return this.SelectedContext != null && this.SelectedConcept != null;
+            }));
+
+        private DelegateCommand _duplicateCommand;
+        public DelegateCommand DuplicateCommand =>
+            _duplicateCommand ?? (_duplicateCommand = new DelegateCommand(() =>
+            {
+            },
+            () =>
+            {
+                return this.SelectedContext != null && this.SelectedConcept != null;
+            }));
+
         private DelegateCommand<ConceptSearchBy?> _searchByCommand;
         public DelegateCommand<ConceptSearchBy?> SearchByCommand =>
             _searchByCommand ?? (_searchByCommand = new DelegateCommand<ConceptSearchBy?>((searchBy) =>
@@ -141,15 +214,28 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public DelegateCommand SearchConceptsCommand =>
             _searchConceptsCommand ?? (_searchConceptsCommand = new DelegateCommand(async () =>
             {
-                this.Concepts = await _stringEditingService.GetConceptViewItemsAsync(new ConceptViewItemSearch
+                this.SearchingBusy = true;
+
+                try
                 {
-                    StringValue = this.StringValue,
-                    ISOCoding = this.ISOCoding,
-                    SearchBy = this.SearchBy,
-                    FilterBy = this.FilterBy,
-                    StringType = this.SelectedStringType,
-                    Context = this.SelectedContext.Name
-                });
+                    this.Concepts = await _stringEditingService.GetConceptViewItemsAsync(new ConceptViewItemSearch
+                    {
+                        StringValue = this.StringValue,
+                        ISOCoding = this.ISOCoding,
+                        SearchBy = this.SearchBy,
+                        FilterBy = this.FilterBy,
+                        StringType = this.SelectedStringType,
+                        Context = this.SelectedContext.Name
+                    });
+                }
+                catch (Exception e)
+                {
+                    _loggerService.Exception(e);
+                }
+                finally
+                {
+                    this.SearchingBusy = false;
+                }
             }));
 
         public event Action<IDialogResult> RequestClose;
@@ -175,6 +261,20 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             ISOCoding = parameters.GetValue<string>("ISOCoding");
             this.Contexts = await _stringEditingService.GetContextsAsync();
             this.SelectedContext = this.Contexts.ElementAt(0);
+        }
+
+        protected override void OnPropertyChanged(PropertyChangedEventArgs args)
+        {
+            base.OnPropertyChanged(args);
+
+            if (args.PropertyName == nameof(SelectedEditableStringItem) || args.PropertyName == nameof(SelectedConcept))
+            {
+                this.LinkableItem = new LinkableItem(this.SelectedEditableStringItem, this.SelectedConcept);
+
+                this.LinkCommand.RaiseCanExecuteChanged();
+                this.UnlinkCommand.RaiseCanExecuteChanged();
+                this.DuplicateCommand.RaiseCanExecuteChanged();
+            }
         }
     }
 }

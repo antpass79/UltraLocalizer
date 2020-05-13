@@ -221,7 +221,9 @@ namespace Globe.Client.Localizer.ViewModels
                         Concept = stringViewItem.Concept,
                         ContextName = item.Name,
                         ContextType = item.Type,
-                        ContextValue = item.Value
+                        ContextValue = item.StringValue,
+                        StringId = item.StringId,
+                        Concept2ContextId = item.Concept2ContextId
                     }).ToList());
                 @params.Add("ISOCoding", this.SelectedLanguage.ISOCoding);
                 _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, r =>

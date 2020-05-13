@@ -7,9 +7,13 @@
 
   <ItemGroup>
     <None Remove="Icons\current_job.png" />
+    <None Remove="Icons\duplicate.png" />
     <None Remove="Icons\edit.png" />
     <None Remove="Icons\home.png" />
+    <None Remove="Icons\link.png" />
     <None Remove="Icons\menu.png" />
+    <None Remove="Icons\search.png" />
+    <None Remove="Icons\unlink.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -56,9 +60,13 @@
 
   <ItemGroup>
     <Resource Include="Icons\current_job.png" />
+    <Resource Include="Icons\duplicate.png" />
     <Resource Include="Icons\edit.png" />
     <Resource Include="Icons\home.png" />
+    <Resource Include="Icons\link.png" />
     <Resource Include="Icons\menu.png" />
+    <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\unlink.png" />
   </ItemGroup>
 
 </Project>

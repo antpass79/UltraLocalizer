@@ -18,13 +18,13 @@
         </Style>
         <Style TargetType="Panel" x:Key="SectionPanel">
             <Setter Property="Background" Value="WhiteSmoke" />
-            <Setter Property="Margin" Value="5" />
+            <Setter Property="Margin" Value="3" />
         </Style>
     </UserControl.Resources>
 
     <DockPanel>
 
-        <DockPanel DockPanel.Dock="Left">
+        <DockPanel DockPanel.Dock="Left" Width="350">
             <DockPanel DockPanel.Dock="Top" LastChildFill="False" Style="{StaticResource SectionPanel}">
                 <Label DockPanel.Dock="Top">Working Mode</Label>
                 <RadioButton IsChecked="True" DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromXml}">From Xml</RadioButton>
@@ -49,13 +49,13 @@
 
                 <Label Grid.ColumnSpan="2">Filters</Label>
                 <TextBlock Grid.Row="1" Grid.Column="0">Language</TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="ISOCoding" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}"></ComboBox>
+                <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="ISOCoding" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}" ToolTip="{Binding SelectedLanguage.ISOCoding}" ToolTipService.InitialShowDelay="500"></ComboBox>
                 <TextBlock Grid.Row="2" Grid.Column="0">Job Name</TextBlock>
-                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding JobItems}" SelectedItem="{Binding SelectedJobItem}" DisplayMemberPath="JobName"></ComboBox>
+                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding JobItems}" SelectedItem="{Binding SelectedJobItem}" DisplayMemberPath="JobName" ToolTip="{Binding SelectedJobItem.JobName}"  ToolTipService.InitialShowDelay="500"></ComboBox>
                 <TextBlock Grid.Row="3" Grid.Column="0">Component Namespace</TextBlock>
-                <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}"></ComboBox>
+                <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}" ToolTip="{Binding SelectedComponentNamespace.Description}"  ToolTipService.InitialShowDelay="500"></ComboBox>
                 <TextBlock Grid.Row="4" Grid.Column="0">Internal Namespace</TextBlock>
-                <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description"></ComboBox>
+                <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description" ToolTip="{Binding SelectedInternalNamespace.Description}"  ToolTipService.InitialShowDelay="500"></ComboBox>
                 <Button Grid.Row="5" Grid.Column="1" Command="{Binding SearchCommand}">Search</Button>
 
                 <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
@@ -126,7 +126,7 @@
                                                     </Grid.ColumnDefinitions>
                                                     <TextBlock Grid.Column="0" Text="{Binding Name}" />
                                                     <TextBlock Grid.Column="1" Text="{Binding Type}" />
-                                                    <TextBlock Grid.Column="2" Text="{Binding Value}" />
+                                                    <TextBlock Grid.Column="2" Text="{Binding StringValue}" />
                                                 </Grid>
                                             </DataTemplate>
                                         </ItemsControl.ItemTemplate>
@@ -138,7 +138,7 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button MinWidth="0" Command="{Binding ElementName=grid, Path=DataContext.StringViewItemEditCommand}" CommandParameter="{Binding}">
-                                        <Image Width="28" Height="28" Source="/Globe.Client.Platform.Assets;component/Icons/edit.png" />
+                                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/edit.png" />
                                     </Button>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -146,7 +146,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <platform:Spinner Grid.Row="1" Busy="{Binding GridBusy}" />
+                <platform:Spinner Grid.Row="1" Diameter="60" Busy="{Binding GridBusy}" />
             </Grid>
         </DockPanel>
         

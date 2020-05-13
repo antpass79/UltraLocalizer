@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-
+    
     <Style TargetType="{x:Type DataGrid}">
         <Setter Property="AlternationCount" Value="2" />
         <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
@@ -11,6 +11,13 @@
         <Setter Property="ColumnWidth" Value="Auto" />
     </Style>
     <Style TargetType="{x:Type DataGridRow}">
+        <Style.Triggers>
+            <Trigger Property="IsSelected"
+                        Value="True">
+                <Setter Property="Background"
+                        Value="LightGray" />
+            </Trigger>
+        </Style.Triggers>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Height" Value="auto"/>
@@ -30,7 +37,9 @@
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="true">
                 <Setter Property="Foreground" Value="Black"/>
-                <Setter Property="Background" Value="LightBlue"/>
+                <Setter Property="Background" Value="LightGray"/>
+                <Setter Property="FontStyle" Value="Italic"/>
+                <Setter Property="FontWeight" Value="DemiBold"/>
             </Trigger>
             <Trigger Property="IsEditing" Value="true">
                 <Setter Property="Background" Value="Transparent"/>

@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:Globe.Client.Localizer.Converters"
+             xmlns:platform="http://schemas.platform.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              BorderThickness="5" BorderBrush="#05163D"
+             MaxWidth="1200"
+             MaxHeight="800"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <prism:Dialog.WindowStyle>
@@ -19,6 +23,20 @@
         </Style>
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
+        <converters:LinkableItemVisibilityConverter x:Key="LinkableItemVisibilityConverter" />
+        <converters:LinkableItemVisibilityConverter EnableLinkMode="False" x:Key="UnlinkableItemVisibilityConverter" />
+
+        <Style TargetType="{x:Type Label}" x:Key="SectionTitle">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+        </Style>
+        <Style TargetType="Panel" x:Key="SectionPanel">
+            <Setter Property="Background" Value="WhiteSmoke" />
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="DockPanel.Dock" Value="Top" />
+        </Style>
+
         <ObjectDataProvider x:Key="stringTypes" MethodName="GetValues" ObjectType="{x:Type models:StringType}">
             <ObjectDataProvider.MethodParameters>
                 <x:Type Type="models:StringType"/>
@@ -97,30 +115,16 @@
             </DockPanel>
 
             <!-- String DataGrid -->
-            <DataGrid ItemsSource="{Binding EditableStringItems}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid ItemsSource="{Binding EditableStringItems}" SelectedItem="{Binding SelectedEditableStringItem}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Context" Binding="{Binding ContextName}" />
                     <DataGridComboBoxColumn Header="String Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding ContextType}" />
                     <DataGridTextColumn Header="Developer String" Binding="{Binding ContextValue}" IsReadOnly="True" />
                     <DataGridTextColumn Header="Localized String" Binding="{Binding ContextValue}" />
-                    <DataGridTemplateColumn>
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button>Link/Unlink</Button>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    <DataGridTemplateColumn>
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button>Duplicate</Button>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
                     <DataGridTemplateColumn IsReadOnly="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBox Text="{Binding ContextValue}" IsReadOnly="True" />
+                                <TextBox FontStyle="Normal" FontWeight="Normal" Text="{Binding ContextValue}" IsReadOnly="True" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -129,51 +133,83 @@
         </DockPanel>
 
         <!-- Searching Options -->
-        <Expander DockPanel.Dock="Top" Header="Searching Options" Margin="10">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
+        <Expander DockPanel.Dock="Top" Margin="10">
+            <Expander.Header>
+                <Label>
+                    Searching Options for selected String
+                </Label>
+            </Expander.Header>
 
-                <TextBlock Grid.Row="0" Grid.Column="0">String Search</TextBlock>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding StringValue}" />
-                <Button Grid.Row="0" Grid.Column="2" Command="{Binding SearchConceptsCommand}">Search</Button>
+            <DockPanel>
+                <DockPanel Width="400">
+                    <Grid Style="{StaticResource SectionPanel}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
 
-                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                        <RowDefinition />
-                    </Grid.RowDefinitions>
+                        <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding StringValue}" VerticalAlignment="Center" />
+                        <Button Grid.Row="0" Grid.Column="1" Command="{Binding SearchConceptsCommand}" MinWidth="0">
+                            <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/search.png" />
+                        </Button>
 
-                    <RadioButton Grid.Row="0" Grid.ColumnSpan="2" GroupName="SearchBy" IsChecked="True" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.Concept}">By Concept (English language only)</RadioButton>
-                    <RadioButton Grid.Row="1" Grid.ColumnSpan="2" GroupName="SearchBy" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.String}">By Value (Current language only)</RadioButton>
+                    </Grid>
 
-                    <RadioButton Grid.Row="2" Grid.Column="0" GroupName="FilterBy"  IsChecked="True" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.None}">No Filters</RadioButton>
-                    <RadioButton Grid.Row="3" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.Context}">Filter by Context</RadioButton>
-                    <RadioButton Grid.Row="4" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.StringType}">Filter by String Type</RadioButton>
+                    <Grid  Style="{StaticResource SectionPanel}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
 
-                    <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Contexts}" SelectedItem="{Binding SelectedContext}" DisplayMemberPath="Name"></ComboBox>
-                    <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding StringTypes}" SelectedItem="{Binding SelectedStringType}"></ComboBox>
+                        <RadioButton Grid.Row="0" Grid.ColumnSpan="2" GroupName="SearchBy" IsChecked="True" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.Concept}">By Concept (English language only)</RadioButton>
+                        <RadioButton Grid.Row="1" Grid.ColumnSpan="2" GroupName="SearchBy" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.String}">By Value (Current language only)</RadioButton>
+                    </Grid>
+
+                    <Grid Style="{StaticResource SectionPanel}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <RadioButton Grid.Row="0" Grid.Column="0" GroupName="FilterBy" IsChecked="True" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.None}">No Filters</RadioButton>
+                        <RadioButton Grid.Row="1" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.Context}">Filter by Context</RadioButton>
+                        <RadioButton Grid.Row="2" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.StringType}">Filter by String Type</RadioButton>
+
+                        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Contexts}" SelectedItem="{Binding SelectedContext}" DisplayMemberPath="Name"></ComboBox>
+                        <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding StringTypes}" SelectedItem="{Binding SelectedStringType}"></ComboBox>
+                    </Grid>
+                </DockPanel>
+
+                <DockPanel DockPanel.Dock="Right" LastChildFill="False" Style="{StaticResource SectionPanel}">
+                    <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Link" Command="{Binding LinkCommand}" Visibility="{Binding LinkableItem, Converter={StaticResource LinkableItemVisibilityConverter}}">
+                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/link.png" />
+                    </Button>
+                    <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Unlink" Command="{Binding UnlinkCommand}" Visibility="{Binding LinkableItem, Converter={StaticResource UnlinkableItemVisibilityConverter}}">
+                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/unlink.png" />
+                    </Button>
+                    <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Duplicate" Command="{Binding DuplicateCommand}">
+                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/duplicate.png" />
+                    </Button>
+                </DockPanel>
+                
+                <Grid>
+                    <DataGrid ItemsSource="{Binding Concepts}" CanUserAddRows="False" IsReadOnly="True" SelectedItem="{Binding SelectedConcept}">
+                    </DataGrid>
+                    <platform:Spinner Busy="{Binding SearchingBusy}" />
                 </Grid>
-
-                <DataGrid Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" ItemsSource="{Binding Concepts}">
-                </DataGrid>
-            </Grid>
+            </DockPanel>
         </Expander>
 
     </DockPanel>

@@ -2,8 +2,8 @@
 {
     public enum StringType
     {
-        String = 0,
-        Label = 1,
+        Label = 0,
+        String = 1,
         Abbreviation = 2
     }
 }

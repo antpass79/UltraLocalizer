@@ -14,6 +14,8 @@ namespace Globe.Client.Platform.Controls
         public Spinner()
         {
             InitializeComponent();
+
+            this.Diameter = 60;
         }
 
         #endregion
@@ -29,7 +31,7 @@ namespace Globe.Client.Platform.Controls
         }
 
         public static readonly DependencyProperty DiameterProperty =
-            DependencyProperty.Register("Diameter", typeof(int), typeof(Spinner), new PropertyMetadata(100, OnDiameterPropertyChanged));
+            DependencyProperty.Register("Diameter", typeof(int), typeof(Spinner), new PropertyMetadata(20, OnDiameterPropertyChanged));
         public int Diameter
         {
             get { return (int)GetValue(DiameterProperty); }
