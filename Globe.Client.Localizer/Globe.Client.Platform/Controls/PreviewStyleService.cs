@@ -6,6 +6,8 @@ namespace Globe.Client.Platform.Controls
 {
     public class PreviewStyleService
     {
+        #region Data Members
+
         // FontSize
         const double ETouchScreenABtnFontSize1 = 20;
         const double ETouchScreenBBtnFontSize1 = 16;
@@ -33,10 +35,27 @@ namespace Globe.Client.Platform.Controls
 
         Dictionary<string, PreviewStyleInfo> _previewStyleMapping = new Dictionary<string, PreviewStyleInfo>();
 
+        #endregion
+
+        #region Constructors
+
         public PreviewStyleService()
         {
             InitializeMapping();
         }
+
+        #endregion
+
+        #region Properties
+
+        public PreviewStyleInfo this[string contextName]
+        {
+            get => _previewStyleMapping[contextName];
+        }
+
+        #endregion
+
+        #region Private Functions
 
         private void InitializeMapping()
         {
@@ -75,5 +94,7 @@ namespace Globe.Client.Platform.Controls
             _previewStyleMapping.Add("MC_GENERAL_150PX", new PreviewStyleInfo(ELabelStyle2FontSize, EStandardFontWeight, EditFontFamily1, false, new Size(150, 20)));
             _previewStyleMapping.Add("MC_GENERAL_200PX", new PreviewStyleInfo(ELabelStyle2FontSize, EStandardFontWeight, EditFontFamily1, false, new Size(200, 20)));
         }
+
+        #endregion
     }
 }

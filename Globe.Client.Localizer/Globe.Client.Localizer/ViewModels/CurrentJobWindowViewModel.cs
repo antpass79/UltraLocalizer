@@ -9,6 +9,7 @@ using Prism.Regions;
 using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -212,20 +213,25 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 string result = string.Empty;
                 var @params = new DialogParameters();
-                @params.Add("editableContexts", conceptView.
-                    ContextViews
-                    .Select(item => new EditableContext
-                    {
-                        ComponentNamespace = conceptView.ComponentNamespace,
-                        InternalNamespace = conceptView.InternalNamespace,
-                        Concept = conceptView.Name,
-                        ContextName = item.Name,
-                        ContextType = item.Type,
-                        ContextValue = item.StringValue,
-                        StringId = item.StringId,
-                        Concept2ContextId = item.Concept2ContextId
-                    }).ToList());
+
+
+                @params.Add("editableConcept", new EditableConcept(
+                    conceptView.ComponentNamespace,
+                    conceptView.InternalNamespace,
+                    conceptView.Name,
+                    "SoftwareDeveloperComment",
+                    new ObservableCollection<EditableContext>(conceptView.ContextViews.Select(contextView => new EditableContext(contextView.StringValue)
+                {
+                    ComponentNamespace = conceptView.ComponentNamespace,
+                    InternalNamespace = conceptView.InternalNamespace,
+                    Concept = conceptView.Name,
+                    ContextName = contextView.Name,
+                    Concept2ContextId = contextView.Concept2ContextId,
+                    ContextType = contextView.Type,
+                    StringId = contextView.StringId                    
+                }).ToList())));
                 @params.Add("ISOCoding", this.SelectedLanguage.ISOCoding);
+
                 _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, r =>
                 {
                     if (r.Result == ButtonResult.None)

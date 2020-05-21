@@ -23,8 +23,10 @@
         </Style>
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
-        <converters:LinkableItemVisibilityConverter x:Key="LinkableItemVisibilityConverter" />
-        <converters:LinkableItemVisibilityConverter EnableLinkMode="False" x:Key="UnlinkableItemVisibilityConverter" />
+        <platform:NullValueToBooleanConverter x:Key="NullValueToBooleanConverter" />
+        <converters:EditableContextToVisibilityConverter x:Key="LinkEditableContextToVisibilityConverter" />
+        <converters:EditableContextToVisibilityConverter EnableLinkMode="False" x:Key="UnlinkEditableContextToVisibilityConverter" />
+        <converters:ContextNameToPreviewStyleInfoConverter x:Key="ContextNameToPreviewStyleInfoConverter" />
 
         <Style TargetType="{x:Type Label}" x:Key="SectionTitle">
             <Setter Property="Margin" Value="5" />
@@ -70,10 +72,10 @@
 
             <TextBlock Grid.Column="0" Text="Component Namespace" />
             <TextBlock Grid.Column="1" Text="Internal Namespace" />
-            <TextBlock Grid.Column="2" Text="Concept" />
-            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableContext.ComponentNamespace}" />
-            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableContext.InternalNamespace}" />
-            <TextBlock Grid.Row="1" Grid.Column="2" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableContext.Concept}" />
+            <TextBlock Grid.Column="2" Text="Concept Name" />
+            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.ComponentNamespace}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.InternalNamespace}" />
+            <TextBlock Grid.Row="1" Grid.Column="2" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.Name}" />
         </Grid>
 
         <!-- Comments -->
@@ -88,11 +90,11 @@
                 <RowDefinition Height="auto" />
             </Grid.RowDefinitions>
 
-            <TextBlock Grid.Row="0" Grid.Column="0">Software Comment</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="2"></TextBox>
+            <TextBlock Grid.Row="0" Grid.Column="0">Software Developer Comment</TextBlock>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding EditableConcept.SoftwareDeveloperComment}"></TextBlock>
             <TextBlock Grid.Row="1" Grid.Column="0">Master Translator Comment</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="2"></TextBox>
-            <CheckBox Grid.Row="2" Grid.ColumnSpan="2">Ignore</CheckBox>
+            <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding EditableConcept.MasterTranslatorComment}"></TextBox>
+            <CheckBox Grid.Row="2" Grid.ColumnSpan="2">Ignore Translation</CheckBox>
         </Grid>
 
         <DockPanel DockPanel.Dock="Top" Margin="10">
@@ -114,17 +116,40 @@
                 <Button DockPanel.Dock="Right">OK</Button>
             </DockPanel>
 
-            <!-- String DataGrid -->
-            <DataGrid ItemsSource="{Binding EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <!-- EditableContext DataGrid -->
+            <DataGrid x:Name="contextGrid" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Context" Binding="{Binding ContextName}" />
                     <DataGridComboBoxColumn Header="String Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding ContextType}" />
-                    <DataGridTextColumn Header="Developer String" Binding="{Binding ContextValue}" IsReadOnly="True" />
-                    <DataGridTextColumn Header="Localized String" Binding="{Binding ContextValue}" />
-                    <DataGridTemplateColumn IsReadOnly="True">
+                    <DataGridTextColumn Header="Developer String" Binding="{Binding DefaultValue}" IsReadOnly="True" />
+                    <DataGridTextColumn Header="Localized String" Binding="{Binding EditableValue, UpdateSourceTrigger=PropertyChanged}" />
+                    <DataGridTemplateColumn Header="Preview" IsReadOnly="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <platform:PreviewString Text="{Binding ContextValue}" />
+                                <platform:PreviewString Text="{Binding EditableValue}" PreviewStyleInfo="{Binding ContextName, Converter={StaticResource ContextNameToPreviewStyleInfoConverter}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Link" Command="{Binding ElementName=contextGrid, Path=DataContext.LinkCommand}" CommandParameter="{Binding}" Visibility="{Binding ., Converter={StaticResource LinkEditableContextToVisibilityConverter}}">
+                                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/link.png" />
+                                    </Button>
+                                    <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Unlink" Command="{Binding ElementName=contextGrid, Path=DataContext.UnlinkCommand}" CommandParameter="{Binding}" Visibility="{Binding ., Converter={StaticResource UnlinkEditableContextToVisibilityConverter}}">
+                                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/unlink.png" />
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Duplicate" Command="{Binding ElementName=contextGrid, Path=DataContext.DuplicateCommand}" CommandParameter="{Binding}">
+                                    <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/duplicate.png" />
+                                </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -190,18 +215,6 @@
                         <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Contexts}" SelectedItem="{Binding SelectedContext}" DisplayMemberPath="Name"></ComboBox>
                         <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding StringTypes}" SelectedItem="{Binding SelectedStringType}"></ComboBox>
                     </Grid>
-                </DockPanel>
-
-                <DockPanel DockPanel.Dock="Right" LastChildFill="False" Style="{StaticResource SectionPanel}">
-                    <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Duplicate" Command="{Binding DuplicateCommand}">
-                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/duplicate.png" />
-                    </Button>
-                    <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Link" Command="{Binding LinkCommand}" Visibility="{Binding LinkableItem, Converter={StaticResource LinkableItemVisibilityConverter}}">
-                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/link.png" />
-                    </Button>
-                    <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Unlink" Command="{Binding UnlinkCommand}" Visibility="{Binding LinkableItem, Converter={StaticResource UnlinkableItemVisibilityConverter}}">
-                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/unlink.png" />
-                    </Button>
                 </DockPanel>
                 
                 <Grid>

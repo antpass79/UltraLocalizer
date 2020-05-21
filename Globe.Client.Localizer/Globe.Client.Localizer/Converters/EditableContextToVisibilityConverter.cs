@@ -6,20 +6,20 @@ using System.Windows.Data;
 
 namespace Globe.Client.Localizer.Converters
 {
-    public class LinkableItemVisibilityConverter : IValueConverter
+    public class EditableContextToVisibilityConverter : IValueConverter
     {
         public bool EnableLinkMode { get; set; } = true;
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var linkableItem = value as LinkableItem;
-            if (linkableItem == null || linkableItem.EditableStringItem == null || linkableItem.ConceptViewItem == null)
+            var editableContext = value as EditableContext;
+            if (editableContext == null)
                 return Visibility.Collapsed;
 
             var enableLink =
-                linkableItem.EditableStringItem.StringId == 0 &&
-                linkableItem.EditableStringItem.ContextValue == null &&
-                linkableItem.EditableStringItem.ContextType == StringType.String ? true : false;
+                editableContext.StringId == 0 &&
+                editableContext.EditableValue == null &&
+                editableContext.ContextType == StringType.String ? true : false;
 
             return !(enableLink ^ EnableLinkMode) ? Visibility.Visible : Visibility.Collapsed;
         }
