@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
-    public class ConceptViewItemProxyService : IAsyncConceptViewItemProxyService
+    public class StringViewProxyService : IAsyncStringViewProxyService
     {
         private readonly UltraDBConcept _ultraDBConcept;
 
-        public ConceptViewItemProxyService(UltraDBConcept ultraDBConcept)
+        public StringViewProxyService(UltraDBConcept ultraDBConcept)
         {
             _ultraDBConcept = ultraDBConcept;
         }
 
-        async public Task<IEnumerable<ConceptViewItemDTO>> GetAllAsync(ConceptViewItemSearchDTO search)
+        async public Task<IEnumerable<StringViewDTO>> GetAllAsync(StringViewSearchDTO search)
         {
             IEnumerable<DBConceptSearch> items;
 
@@ -59,7 +59,7 @@ namespace Globe.TranslationServer.Services
 
             var result = items.Select(item =>
             {
-                return new ConceptViewItemDTO
+                return new StringViewDTO
                 {
                     ComponentNamespace = item.ComponentNamespace,
                     Concept = item.LocalizationID,

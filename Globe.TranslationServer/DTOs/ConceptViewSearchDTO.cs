@@ -7,7 +7,7 @@
         EditUnsatisfiedConstrains = 2
     }
 
-    public class StringViewItemSearchDTO
+    public class ConceptViewSearchDTO
     {
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }

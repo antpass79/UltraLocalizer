@@ -1,6 +1,6 @@
 ﻿namespace Globe.Client.Localizer.Models
 {
-    class EditableStringItem
+    class EditableContext
     {
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }

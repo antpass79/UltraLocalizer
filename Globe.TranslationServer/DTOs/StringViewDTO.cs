@@ -1,6 +1,6 @@
 ﻿namespace Globe.TranslationServer.DTOs
 {
-    public class ConceptViewItemDTO
+    public class StringViewDTO
     {
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }

@@ -1,6 +1,6 @@
 ﻿namespace Globe.TranslationServer.DTOs
 {
-    public class ContextViewItemDTO
+    public class ContextViewDTO
     {
         public string Name { get; set; }
         public StringTypeDTO Type { get; set; }

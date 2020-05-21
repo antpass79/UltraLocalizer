@@ -5,9 +5,15 @@
     <Compile Update="Controls\Spinner.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Controls\PreviewString.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Controls\Spinner.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\PreviewString.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\AuthorizeView.xaml">

@@ -21,19 +21,19 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IDialogService _dialogService;
         private readonly ILoggerService _loggerService;
         private readonly ICurrentJobFiltersService _currentJobFiltersService;
-        private readonly ICurrentJobStringItemsService _currentJobStringItemsService;
+        private readonly ICurrentJobConceptViewsService _currentJobConceptViewsService;
         public CurrentJobWindowViewModel(
             IEventAggregator eventAggregator,
             IDialogService dialogService,
             ILoggerService loggerService,
             ICurrentJobFiltersService currentJobFiltersService,
-            ICurrentJobStringItemsService currentJobStringItemsService)
+            ICurrentJobConceptViewsService currentJobConceptViewsService)
             : base(eventAggregator)
         {
             _dialogService = dialogService;
             _loggerService = loggerService;
             _currentJobFiltersService = currentJobFiltersService;
-            _currentJobStringItemsService = currentJobStringItemsService;
+            _currentJobConceptViewsService = currentJobConceptViewsService;
         }
 
         WorkingMode _workingMode;
@@ -147,23 +147,23 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        IEnumerable<StringViewItem> _stringViewItems;
-        public IEnumerable<StringViewItem> StringViewItems
+        IEnumerable<ConceptView> _conceptViews;
+        public IEnumerable<ConceptView> ConceptViews
         {
-            get => _stringViewItems;
+            get => _conceptViews;
             set
             {
-                SetProperty<IEnumerable<StringViewItem>>(ref _stringViewItems, value);
+                SetProperty<IEnumerable<ConceptView>>(ref _conceptViews, value);
             }
         }
 
-        StringViewItem _selectedStringViewItem;
-        public StringViewItem SelectedStringViewItem
+        ConceptView _selectedConceptView;
+        public ConceptView SelectedConceptView
         {
-            get => _selectedStringViewItem;
+            get => _selectedConceptView;
             set
             {
-                SetProperty<StringViewItem>(ref _selectedStringViewItem, value);
+                SetProperty<ConceptView>(ref _selectedConceptView, value);
             }
         }
 
@@ -181,12 +181,12 @@ namespace Globe.Client.Localizer.ViewModels
                         this.SelectedInternalNamespace == null ||
                         this.SelectedLanguage == null)
                     {
-                        this.StringViewItems = null;
+                        this.ConceptViews = null;
                     }
                     else
                     {
-                        this.StringViewItems = await _currentJobStringItemsService.GetStringViewItemsAsync(
-                            new StringViewItemSearch
+                        this.ConceptViews = await _currentJobConceptViewsService.GetConceptViewsAsync(
+                            new ConceptViewSearch
                             {
                                 ComponentNamespace = this.SelectedComponentNamespace.Description,
                                 InternalNamespace = this.SelectedInternalNamespace.Description,
@@ -206,19 +206,19 @@ namespace Globe.Client.Localizer.ViewModels
                 }
             }));
         
-        private DelegateCommand<StringViewItem> _stringViewItemEditCommand = null;
-        public DelegateCommand<StringViewItem> StringViewItemEditCommand =>
-            _stringViewItemEditCommand ?? (_stringViewItemEditCommand = new DelegateCommand<StringViewItem>(stringViewItem =>
+        private DelegateCommand<ConceptView> _conceptViewEditCommand = null;
+        public DelegateCommand<ConceptView> ConceptViewEditCommand =>
+            _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<ConceptView>(conceptView =>
             {
                 string result = string.Empty;
                 var @params = new DialogParameters();
-                @params.Add("editableStringItems", stringViewItem.
-                    ContextViewItems
-                    .Select(item => new EditableStringItem
+                @params.Add("editableContexts", conceptView.
+                    ContextViews
+                    .Select(item => new EditableContext
                     {
-                        ComponentNamespace = stringViewItem.ComponentNamespace,
-                        InternalNamespace = stringViewItem.InternalNamespace,
-                        Concept = stringViewItem.Concept,
+                        ComponentNamespace = conceptView.ComponentNamespace,
+                        InternalNamespace = conceptView.InternalNamespace,
+                        Concept = conceptView.Name,
                         ContextName = item.Name,
                         ContextType = item.Type,
                         ContextValue = item.StringValue,

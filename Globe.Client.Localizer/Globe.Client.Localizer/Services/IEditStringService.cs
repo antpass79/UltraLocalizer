@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.Services
 {
-    interface IStringEditingService
+    interface IEditStringService
     {
-        Task<IEnumerable<ConceptViewItem>> GetConceptViewItemsAsync(ConceptViewItemSearch search);
+        Task<IEnumerable<StringView>> GetStringViewsAsync(StringViewSearch search);
         Task<IEnumerable<Context>> GetContextsAsync();
     }
 }

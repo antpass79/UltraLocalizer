@@ -1,6 +1,6 @@
 ﻿namespace Globe.Client.Localizer.Models
 {
-    class ConceptViewItem
+    class StringView
     {
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }

@@ -6,6 +6,6 @@ namespace Globe.TranslationServer.Services
 {
     public interface IAsyncXmlDefinitionReaderService
     {
-        Task<IEnumerable<StringViewItemDTO>> ReadAsync(string folder);
+        Task<IEnumerable<ConceptViewDTO>> ReadAsync(string folder);
     }
 }

@@ -11,11 +11,11 @@ namespace Globe.TranslationServer.Mapping
     {
         public StringViewItemProfile()
         {
-            CreateMap<GroupedStringEntity, StringViewItemDTO>()
+            CreateMap<GroupedStringEntity, ConceptViewDTO>()
                 .ForMember(dest => dest.ComponentNamespace, opt => opt.MapFrom(src => src.ComponentNamespace))
                 .ForMember(dest => dest.InternalNamespace, opt => opt.MapFrom(src => src.InternalNamespace))
-                .ForMember(dest => dest.Concept, opt => opt.MapFrom(src => src.LocalizationID))
-                .ForMember(dest => dest.ContextViewItems, opt => opt.MapFrom(src => src.Group));
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.LocalizationID))
+                .ForMember(dest => dest.ContextViews, opt => opt.MapFrom(src => src.Group));
         }
     }
 }

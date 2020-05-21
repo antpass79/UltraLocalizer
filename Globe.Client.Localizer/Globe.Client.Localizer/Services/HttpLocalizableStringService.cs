@@ -12,12 +12,12 @@ namespace Globe.Client.Localizer.Services
 
     public class HttpLocalizableStringService : IHttpLocalizableStringService
     {
-        IAsyncSecureHttpClient _secureHttpClient;
+        private readonly IAsyncSecureHttpClient _secureHttpClient;
 
-        public HttpLocalizableStringService(IAsyncSecureHttpClient secureHttpClient)
+        public HttpLocalizableStringService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
         {
             _secureHttpClient = secureHttpClient;
-            _secureHttpClient.BaseAddress(ConfigurationManager.AppSettings["LocalizableStringBaseAddress"]);
+            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddress());
         }
 
         async public Task<IEnumerable<LocalizableString>> GetAllAsync()

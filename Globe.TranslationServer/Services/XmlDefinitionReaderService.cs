@@ -16,9 +16,9 @@ namespace Globe.TranslationServer.Services
         const string TAG_LOCALIZATION_SECTION = "LocalizationSection";
         const string TAG_CONCEPT = "Concept";
 
-        async public Task<IEnumerable<StringViewItemDTO>> ReadAsync(string folder)
+        async public Task<IEnumerable<ConceptViewDTO>> ReadAsync(string folder)
         {
-            List<StringViewItemDTO> stringViewItems = new List<StringViewItemDTO>();
+            List<ConceptViewDTO> stringViewItems = new List<ConceptViewDTO>();
 
             IEnumerable<string> filePaths = Directory.EnumerateFiles(folder, "*.definition.xml").Select(fileName => Path.Combine(folder, fileName));
             foreach (var filePath in filePaths)
@@ -38,11 +38,11 @@ namespace Globe.TranslationServer.Services
                     {
                         var conceptId = concept.Attribute(ATTRIBUTE_CONCEPT_ID);
 
-                        stringViewItems.Add(new StringViewItemDTO
+                        stringViewItems.Add(new ConceptViewDTO
                         {
                             ComponentNamespace = componentNamespace != null ? componentNamespace.Value : string.Empty,
                             InternalNamespace = internalNamespace != null ? internalNamespace.Value : string.Empty,
-                            Concept = conceptId != null ? conceptId.Value: string.Empty
+                            Name = conceptId != null ? conceptId.Value: string.Empty
                         });
                     }
                 }

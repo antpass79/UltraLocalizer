@@ -38,8 +38,8 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IFileSystemLocalizableStringService, FileSystemLocalizableStringService>();
             containerRegistry.Register<IHttpLocalizableStringService, HttpLocalizableStringService>();
             containerRegistry.Register<ICurrentJobFiltersService, CurrentJobFiltersService>();
-            containerRegistry.Register<ICurrentJobStringItemsService, CurrentJobStringItemsService>();
-            containerRegistry.Register<IStringEditingService, StringEditingService>();
+            containerRegistry.Register<ICurrentJobConceptViewsService, CurrentJobConceptViewsService>();
+            containerRegistry.Register<IEditStringService, EditStringService>();
             containerRegistry.Register<IStringMergeService, StringsMergeService>();
 
             containerRegistry.RegisterDialog<StringEditorDialog, StringEditorDialogViewModel>();

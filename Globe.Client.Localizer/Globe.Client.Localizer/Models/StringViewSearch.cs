@@ -13,7 +13,7 @@
         StringType = 2
     }
 
-    public class ConceptViewItemSearch
+    public class StringViewSearch
     {
         public string StringValue { get; internal set; }
         public string Context { get; internal set; }

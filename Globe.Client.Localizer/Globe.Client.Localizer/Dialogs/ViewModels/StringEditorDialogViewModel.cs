@@ -13,12 +13,12 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 {
     class StringEditorDialogViewModel : BindableBase, IDialogAware
     {
-        private readonly IStringEditingService _stringEditingService;
+        private readonly IEditStringService _editStringService;
         private readonly ILoggerService _loggerService;
 
-        public StringEditorDialogViewModel(IStringEditingService stringEditingService, ILoggerService loggerService)
+        public StringEditorDialogViewModel(IEditStringService editStringService, ILoggerService loggerService)
         {
-            _stringEditingService = stringEditingService;
+            _editStringService = editStringService;
             _loggerService = loggerService;
         }
 
@@ -50,25 +50,25 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _ISOCoding, value); }
         }
 
-        private EditableStringItem _referenceEditableStringItem;
-        public EditableStringItem ReferenceEditableStringItem
+        private EditableContext _referenceEditableContext;
+        public EditableContext ReferenceEditableContext
         {
-            get { return _referenceEditableStringItem; }
-            private set { SetProperty(ref _referenceEditableStringItem, value); }
+            get { return _referenceEditableContext; }
+            private set { SetProperty(ref _referenceEditableContext, value); }
         }
 
-        private IEnumerable<EditableStringItem> _editableStringItems;
-        public IEnumerable<EditableStringItem> EditableStringItems
+        private IEnumerable<EditableContext> _editableContexts;
+        public IEnumerable<EditableContext> EditableContexts
         {
-            get { return _editableStringItems; }
-            set { SetProperty(ref _editableStringItems, value); }
+            get { return _editableContexts; }
+            set { SetProperty(ref _editableContexts, value); }
         }
 
-        private EditableStringItem _selectedEditableStringItem;
-        public EditableStringItem SelectedEditableStringItem
+        private EditableContext _selectedEditableContext;
+        public EditableContext SelectedEditableContext
         {
-            get { return _selectedEditableStringItem; }
-            set { SetProperty(ref _selectedEditableStringItem, value); }
+            get { return _selectedEditableContext; }
+            set { SetProperty(ref _selectedEditableContext, value); }
         }
 
         private LinkableItem _linkableItem;
@@ -106,18 +106,18 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _selectedContext, value); }
         }
 
-        private IEnumerable<ConceptViewItem> _concepts;
-        public IEnumerable<ConceptViewItem> Concepts
+        private IEnumerable<StringView> _stringViews;
+        public IEnumerable<StringView> StringViews
         {
-            get { return _concepts; }
-            set { SetProperty(ref _concepts, value); }
+            get { return _stringViews; }
+            set { SetProperty(ref _stringViews, value); }
         }
 
-        private ConceptViewItem _selectedConcept;
-        public ConceptViewItem SelectedConcept
+        private StringView _selectedStringView;
+        public StringView SelectedStringView
         {
-            get { return _selectedConcept; }
-            set { SetProperty(ref _selectedConcept, value); }
+            get { return _selectedStringView; }
+            set { SetProperty(ref _selectedStringView, value); }
         }
 
         IEnumerable<StringType> _stringTypes = Enum.GetValues(typeof(StringType)).Cast<StringType>();
@@ -158,32 +158,32 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public DelegateCommand LinkCommand =>
             _linkCommand ?? (_linkCommand = new DelegateCommand(() =>
             {
-                var editableStringItem = this.EditableStringItems.Single(item => item.Concept2ContextId == this.SelectedEditableStringItem.Concept2ContextId);
-                editableStringItem.StringId = this.SelectedConcept.StringId;
-                editableStringItem.ContextValue = this.SelectedConcept.StringValue;
-                editableStringItem.ContextType = this.SelectedConcept.StringType;
+                var editableContext = this.EditableContexts.Single(item => item.Concept2ContextId == this.SelectedEditableContext.Concept2ContextId);
+                editableContext.StringId = this.SelectedStringView.StringId;
+                editableContext.ContextValue = this.SelectedStringView.StringValue;
+                editableContext.ContextType = this.SelectedStringView.StringType;
 
-                this.LinkableItem = new LinkableItem(this.SelectedEditableStringItem, this.SelectedConcept);
+                this.LinkableItem = new LinkableItem(this.SelectedEditableContext, this.SelectedStringView);
             },
             () =>
             {
-                return this.SelectedContext != null && this.SelectedConcept != null;
+                return this.SelectedEditableContext != null && this.SelectedStringView != null;
             }));
 
         private DelegateCommand _unlinkCommand;
         public DelegateCommand UnlinkCommand =>
             _unlinkCommand ?? (_unlinkCommand = new DelegateCommand(() =>
             {
-                var editableStringItem = this.EditableStringItems.Single(item => item.Concept2ContextId == this.SelectedEditableStringItem.Concept2ContextId);
-                editableStringItem.StringId = 0;
-                editableStringItem.ContextValue = null;
-                editableStringItem.ContextType = StringType.String;
+                var editableContext = this.EditableContexts.Single(item => item.Concept2ContextId == this.SelectedEditableContext.Concept2ContextId);
+                editableContext.StringId = 0;
+                editableContext.ContextValue = null;
+                editableContext.ContextType = StringType.String;
 
-                this.LinkableItem = new LinkableItem(this.SelectedEditableStringItem, this.SelectedConcept);
+                this.LinkableItem = new LinkableItem(this.SelectedEditableContext, this.SelectedStringView);
             },
             () =>
             {
-                return this.SelectedContext != null && this.SelectedConcept != null;
+                return this.SelectedEditableContext != null && this.SelectedStringView != null;
             }));
 
         private DelegateCommand _duplicateCommand;
@@ -193,7 +193,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             },
             () =>
             {
-                return this.SelectedContext != null && this.SelectedConcept != null;
+                return this.SelectedEditableContext != null && this.SelectedStringView != null;
             }));
 
         private DelegateCommand<ConceptSearchBy?> _searchByCommand;
@@ -218,7 +218,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
                 try
                 {
-                    this.Concepts = await _stringEditingService.GetConceptViewItemsAsync(new ConceptViewItemSearch
+                    this.StringViews = await _editStringService.GetStringViewsAsync(new StringViewSearch
                     {
                         StringValue = this.StringValue,
                         ISOCoding = this.ISOCoding,
@@ -256,10 +256,10 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         async public virtual void OnDialogOpened(IDialogParameters parameters)
         {
-            EditableStringItems = parameters.GetValue<IEnumerable<EditableStringItem>>("editableStringItems");
-            ReferenceEditableStringItem = EditableStringItems.ElementAt(0);
+            EditableContexts = parameters.GetValue<IEnumerable<EditableContext>>("editableContexts");
+            ReferenceEditableContext = EditableContexts.ElementAt(0);
             ISOCoding = parameters.GetValue<string>("ISOCoding");
-            this.Contexts = await _stringEditingService.GetContextsAsync();
+            this.Contexts = await _editStringService.GetContextsAsync();
             this.SelectedContext = this.Contexts.ElementAt(0);
         }
 
@@ -267,9 +267,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             base.OnPropertyChanged(args);
 
-            if (args.PropertyName == nameof(SelectedEditableStringItem) || args.PropertyName == nameof(SelectedConcept))
+            if (args.PropertyName == nameof(SelectedEditableContext) || args.PropertyName == nameof(SelectedStringView))
             {
-                this.LinkableItem = new LinkableItem(this.SelectedEditableStringItem, this.SelectedConcept);
+                this.LinkableItem = new LinkableItem(this.SelectedEditableContext, this.SelectedStringView);
 
                 this.LinkCommand.RaiseCanExecuteChanged();
                 this.UnlinkCommand.RaiseCanExecuteChanged();

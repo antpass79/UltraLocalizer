@@ -2,11 +2,11 @@
 
 namespace Globe.Client.Localizer.Models
 {
-    class StringViewItem
+    class ConceptView
     {
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }
-        public string Concept { get; set; }
-        public IEnumerable<ContextViewItem> ContextViewItems { get; set; }
+        public string Name { get; set; }
+        public IEnumerable<ContextView> ContextViews { get; set; }
     }
 }

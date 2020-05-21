@@ -71,9 +71,9 @@
             <TextBlock Grid.Column="0" Text="Component Namespace" />
             <TextBlock Grid.Column="1" Text="Internal Namespace" />
             <TextBlock Grid.Column="2" Text="Concept" />
-            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableStringItem.ComponentNamespace}" />
-            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableStringItem.InternalNamespace}" />
-            <TextBlock Grid.Row="1" Grid.Column="2" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableStringItem.Concept}" />
+            <TextBlock Grid.Row="1" Grid.Column="0" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableContext.ComponentNamespace}" />
+            <TextBlock Grid.Row="1" Grid.Column="1" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableContext.InternalNamespace}" />
+            <TextBlock Grid.Row="1" Grid.Column="2" FontSize="12" FontStyle="Italic" Text="{Binding ReferenceEditableContext.Concept}" />
         </Grid>
 
         <!-- Comments -->
@@ -115,7 +115,7 @@
             </DockPanel>
 
             <!-- String DataGrid -->
-            <DataGrid ItemsSource="{Binding EditableStringItems}" SelectedItem="{Binding SelectedEditableStringItem}" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid ItemsSource="{Binding EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Context" Binding="{Binding ContextName}" />
                     <DataGridComboBoxColumn Header="String Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding ContextType}" />
@@ -124,7 +124,7 @@
                     <DataGridTemplateColumn IsReadOnly="True">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBox FontStyle="Normal" FontWeight="Normal" Text="{Binding ContextValue}" IsReadOnly="True" />
+                                <platform:PreviewString Text="{Binding ContextValue}" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -159,7 +159,7 @@
 
                     </Grid>
 
-                    <Grid  Style="{StaticResource SectionPanel}">
+                    <Grid Style="{StaticResource SectionPanel}">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
                         </Grid.ColumnDefinitions>
@@ -193,19 +193,19 @@
                 </DockPanel>
 
                 <DockPanel DockPanel.Dock="Right" LastChildFill="False" Style="{StaticResource SectionPanel}">
+                    <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Duplicate" Command="{Binding DuplicateCommand}">
+                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/duplicate.png" />
+                    </Button>
                     <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Link" Command="{Binding LinkCommand}" Visibility="{Binding LinkableItem, Converter={StaticResource LinkableItemVisibilityConverter}}">
                         <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/link.png" />
                     </Button>
                     <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Unlink" Command="{Binding UnlinkCommand}" Visibility="{Binding LinkableItem, Converter={StaticResource UnlinkableItemVisibilityConverter}}">
                         <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/unlink.png" />
                     </Button>
-                    <Button DockPanel.Dock="Top" MinWidth="0" ToolTip="Duplicate" Command="{Binding DuplicateCommand}">
-                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/duplicate.png" />
-                    </Button>
                 </DockPanel>
                 
                 <Grid>
-                    <DataGrid ItemsSource="{Binding Concepts}" CanUserAddRows="False" IsReadOnly="True" SelectedItem="{Binding SelectedConcept}">
+                    <DataGrid ItemsSource="{Binding StringViews}" CanUserAddRows="False" IsReadOnly="True" SelectedItem="{Binding SelectedStringView}">
                     </DataGrid>
                     <platform:Spinner Busy="{Binding SearchingBusy}" />
                 </Grid>

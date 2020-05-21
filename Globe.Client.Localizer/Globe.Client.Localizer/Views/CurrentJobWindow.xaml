@@ -68,7 +68,7 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition />
                 </Grid.RowDefinitions>
-                <DataGrid Name="grid" Grid.Row="1" ItemsSource="{Binding StringViewItems}" AutoGenerateColumns="False" CanUserAddRows="False">
+                <DataGrid Name="grid" Grid.Row="1" ItemsSource="{Binding ConceptViews}" AutoGenerateColumns="False" CanUserAddRows="False">
                     <DataGrid.Resources>
                         <Style TargetType="{x:Type TextBlock}">
                             <Setter Property="FontSize" Value="20"/>
@@ -78,7 +78,7 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn IsReadOnly="True" Header="Component Namespace" Binding="{Binding ComponentNamespace}" />
                         <DataGridTextColumn IsReadOnly="True" Header="Internal Namespace" Binding="{Binding InternalNamespace}" />
-                        <DataGridTextColumn IsReadOnly="True" Header="Concept" Binding="{Binding Concept}"/>
+                        <DataGridTextColumn IsReadOnly="True" Header="Concept" Binding="{Binding Name}"/>
                         <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="*">
                             <DataGridTemplateColumn.HeaderStyle>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
@@ -110,7 +110,7 @@
                             </DataGridTemplateColumn.HeaderStyle>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <ItemsControl ItemsSource="{Binding ContextViewItems}">
+                                    <ItemsControl ItemsSource="{Binding ContextViews}">
                                         <ItemsControl.ItemsPanel>
                                             <ItemsPanelTemplate>
                                                 <VirtualizingStackPanel />
@@ -137,7 +137,7 @@
                         <DataGridTemplateColumn Width="50">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button MinWidth="0" Command="{Binding ElementName=grid, Path=DataContext.StringViewItemEditCommand}" CommandParameter="{Binding}">
+                                    <Button MinWidth="0" Command="{Binding ElementName=grid, Path=DataContext.ConceptViewEditCommand}" CommandParameter="{Binding}">
                                         <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/edit.png" />
                                     </Button>
                                 </DataTemplate>

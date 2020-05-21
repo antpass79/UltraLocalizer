@@ -17,10 +17,10 @@ namespace Globe.Client.Localizer.Services
 
         private readonly IAsyncSecureHttpClient _secureHttpClient;
 
-        public CurrentJobFiltersService(IAsyncSecureHttpClient secureHttpClient)
+        public CurrentJobFiltersService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
         {
             _secureHttpClient = secureHttpClient;
-            _secureHttpClient.BaseAddress(ConfigurationManager.AppSettings["LocalizableStringBaseAddress"]);
+            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddress());
         }
 
         async public Task<IEnumerable<ComponentNamespace>> GetComponentNamespacesAsync()

@@ -21,10 +21,10 @@ namespace Globe.Client.Localizer.Services
         private readonly IEventAggregator _eventAggregator;
         IGlobeDataStorage _globeDataStorage;
 
-        public HttpLoginService(HttpClient httpClient, IEventAggregator eventAggregator, IGlobeDataStorage globeDataStorage)
+        public HttpLoginService(HttpClient httpClient, IEventAggregator eventAggregator, IGlobeDataStorage globeDataStorage, ISettingsService settingsService)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri(ConfigurationManager.AppSettings["LoginBaseAddress"]);
+            _httpClient.BaseAddress = new Uri(settingsService.GetLoginBaseAddress());
             _eventAggregator = eventAggregator;
             _globeDataStorage = globeDataStorage;
         }

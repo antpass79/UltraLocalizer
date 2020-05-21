@@ -2,11 +2,11 @@
 
 namespace Globe.TranslationServer.DTOs
 {
-    public class StringViewItemDTO
+    public class ConceptViewDTO
     {
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }
-        public string Concept { get; set; }
-        public IEnumerable<ContextViewItemDTO> ContextViewItems { get; set; }
+        public string Name { get; set; }
+        public IEnumerable<ContextViewDTO> ContextViews { get; set; }
     }
 }

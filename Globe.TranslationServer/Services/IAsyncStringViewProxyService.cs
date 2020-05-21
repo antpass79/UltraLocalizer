@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
-    public interface IAsyncStringViewItemProxyService
+    public interface IAsyncStringViewProxyService
     {
-        Task<IEnumerable<StringViewItemDTO>> GetAllAsync(StringViewItemSearchDTO search);
+        Task<IEnumerable<StringViewDTO>> GetAllAsync(StringViewSearchDTO search);
     }
 }

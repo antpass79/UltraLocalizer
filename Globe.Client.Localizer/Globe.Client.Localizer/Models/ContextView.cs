@@ -1,6 +1,6 @@
 ﻿namespace Globe.Client.Localizer.Models
 {
-    class ContextViewItem
+    class ContextView
     {
         public string Name { get; set; }
         public StringType Type { get; set; }

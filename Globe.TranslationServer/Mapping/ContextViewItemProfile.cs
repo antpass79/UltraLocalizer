@@ -8,7 +8,7 @@ namespace Globe.TranslationServer.Mapping
     {
         public ContextViewItemProfile()
         {
-            CreateMap<StringEntity, ContextViewItemDTO>()
+            CreateMap<StringEntity, ContextViewDTO>()
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.ContextName))
                 .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.StringType))
                 .ForMember(dest => dest.StringValue, opt => opt.MapFrom(src => src.DataString))
