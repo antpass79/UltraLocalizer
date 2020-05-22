@@ -10,7 +10,7 @@ namespace Globe.TranslationServer.Mapping
         {
             CreateMap<StringEntity, ContextViewDTO>()
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.ContextName))
-                .ForMember(dest => dest.Type, opt => opt.MapFrom(src => src.StringType))
+                .ForMember(dest => dest.StringType, opt => opt.MapFrom(src => src.StringType))
                 .ForMember(dest => dest.StringValue, opt => opt.MapFrom(src => src.DataString))
                 .ForMember(dest => dest.StringId, opt => opt.MapFrom(src => src.IDString))
                 .ForMember(dest => dest.Concept2ContextId, opt => opt.MapFrom(src => src.IDConcept2Context));

@@ -1,0 +1,41 @@
+﻿using Globe.TranslationServer.DTOs;
+using Globe.TranslationServer.Entities;
+using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
+using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
+using System.Threading.Tasks;
+
+namespace Globe.TranslationServer.Services.PortingAdapters
+{
+    public class ConceptDetailsAdapterService : IAsyncConceptDetailsService
+    {
+        const string XML_FOLDER = "XmlDefinitions";
+
+        private readonly XmlManager _xmlManager;
+        private readonly UltraDBConcept _ultraDBConcept;
+
+        public ConceptDetailsAdapterService(XmlManager xmlManager, UltraDBConcept ultraDBConcept)
+        {
+            _xmlManager = xmlManager;
+            _xmlManager.XmlDirectory = XML_FOLDER;
+            _xmlManager.LoadXmlOnly();
+            _ultraDBConcept = ultraDBConcept;
+        }
+
+        async public Task<ConceptDetailsDTO> GetAsync(ConceptViewDTO concept)
+        {
+            var key = _xmlManager.GetKey(concept.ComponentNamespace, concept.InternalNamespace, concept.Name);
+            var softwareDeveloperComment = _xmlManager.KeyComments[key];
+
+            var currentConcept = _ultraDBConcept.GetConceptbyID(concept.Id);
+            var masterTranslatorComment = currentConcept.Comment;
+
+            var conceptDetails = new ConceptDetailsDTO
+            {
+                SoftwareDeveloperComment = softwareDeveloperComment,
+                MasterTranslatorComment = masterTranslatorComment
+            };
+
+            return await Task.FromResult(conceptDetails);
+        }
+    }
+}

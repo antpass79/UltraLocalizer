@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.Services
 {
-    interface ICurrentJobConceptViewsService
+    interface ICurrentJobConceptViewService
     {
         Task<IEnumerable<ConceptView>> GetConceptViewsAsync(ConceptViewSearch search);
+        Task<ConceptDetails> GetConceptDetailsAsync(ConceptView concept);
     }
 }

@@ -22,133 +22,137 @@
         </Style>
     </UserControl.Resources>
 
-    <DockPanel>
+    <Grid>
+        <DockPanel>
 
-        <DockPanel DockPanel.Dock="Left" Width="350">
-            <DockPanel DockPanel.Dock="Top" LastChildFill="False" Style="{StaticResource SectionPanel}">
-                <Label DockPanel.Dock="Top">Working Mode</Label>
-                <RadioButton IsChecked="True" DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromXml}">From Xml</RadioButton>
-                <RadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromDatabase}">From Database</RadioButton>
-                <RadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.EditUnsatisfiedConstrains}">Edit Unsatisfied Constrains</RadioButton>
+            <DockPanel DockPanel.Dock="Left" Width="350">
+                <DockPanel DockPanel.Dock="Top" LastChildFill="False" Style="{StaticResource SectionPanel}">
+                    <Label DockPanel.Dock="Top">Working Mode</Label>
+                    <RadioButton IsChecked="True" DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromXml}">From Xml</RadioButton>
+                    <RadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromDatabase}">From Database</RadioButton>
+                    <RadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.EditUnsatisfiedConstrains}">Edit Unsatisfied Constrains</RadioButton>
+                </DockPanel>
+
+                <Grid DockPanel.Dock="Top"  Style="{StaticResource SectionPanel}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.ColumnSpan="2">Filters</Label>
+                    <TextBlock Grid.Row="1" Grid.Column="0">Language</TextBlock>
+                    <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="ISOCoding" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}" ToolTip="{Binding SelectedLanguage.ISOCoding}" ToolTipService.InitialShowDelay="500"></ComboBox>
+                    <TextBlock Grid.Row="2" Grid.Column="0">Job Name</TextBlock>
+                    <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding JobItems}" SelectedItem="{Binding SelectedJobItem}" DisplayMemberPath="JobName" ToolTip="{Binding SelectedJobItem.JobName}"  ToolTipService.InitialShowDelay="500"></ComboBox>
+                    <TextBlock Grid.Row="3" Grid.Column="0">Component Namespace</TextBlock>
+                    <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}" ToolTip="{Binding SelectedComponentNamespace.Description}"  ToolTipService.InitialShowDelay="500"></ComboBox>
+                    <TextBlock Grid.Row="4" Grid.Column="0">Internal Namespace</TextBlock>
+                    <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description" ToolTip="{Binding SelectedInternalNamespace.Description}"  ToolTipService.InitialShowDelay="500"></ComboBox>
+                    <Button Grid.Row="5" Grid.Column="1" Command="{Binding SearchCommand}">Search</Button>
+
+                    <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
+                </Grid>
             </DockPanel>
 
-            <Grid DockPanel.Dock="Top"  Style="{StaticResource SectionPanel}">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <Label Grid.ColumnSpan="2">Filters</Label>
-                <TextBlock Grid.Row="1" Grid.Column="0">Language</TextBlock>
-                <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="ISOCoding" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}" ToolTip="{Binding SelectedLanguage.ISOCoding}" ToolTipService.InitialShowDelay="500"></ComboBox>
-                <TextBlock Grid.Row="2" Grid.Column="0">Job Name</TextBlock>
-                <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding JobItems}" SelectedItem="{Binding SelectedJobItem}" DisplayMemberPath="JobName" ToolTip="{Binding SelectedJobItem.JobName}"  ToolTipService.InitialShowDelay="500"></ComboBox>
-                <TextBlock Grid.Row="3" Grid.Column="0">Component Namespace</TextBlock>
-                <ComboBox Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}" ToolTip="{Binding SelectedComponentNamespace.Description}"  ToolTipService.InitialShowDelay="500"></ComboBox>
-                <TextBlock Grid.Row="4" Grid.Column="0">Internal Namespace</TextBlock>
-                <ComboBox Grid.Row="4" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description" ToolTip="{Binding SelectedInternalNamespace.Description}"  ToolTipService.InitialShowDelay="500"></ComboBox>
-                <Button Grid.Row="5" Grid.Column="1" Command="{Binding SearchCommand}">Search</Button>
-
-                <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
-            </Grid>
-        </DockPanel>
-
-        <DockPanel Style="{StaticResource SectionPanel}">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <DataGrid Name="grid" Grid.Row="1" ItemsSource="{Binding ConceptViews}" AutoGenerateColumns="False" CanUserAddRows="False">
-                    <DataGrid.Resources>
-                        <Style TargetType="{x:Type TextBlock}">
-                            <Setter Property="FontSize" Value="20"/>
-                            <Setter Property="FontWeight" Value="DemiBold"/>
-                        </Style>
-                    </DataGrid.Resources>
-                    <DataGrid.Columns>
-                        <DataGridTextColumn IsReadOnly="True" Header="Component Namespace" Binding="{Binding ComponentNamespace}" />
-                        <DataGridTextColumn IsReadOnly="True" Header="Internal Namespace" Binding="{Binding InternalNamespace}" />
-                        <DataGridTextColumn IsReadOnly="True" Header="Concept" Binding="{Binding Name}"/>
-                        <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="*">
-                            <DataGridTemplateColumn.HeaderStyle>
-                                <Style TargetType="{x:Type DataGridColumnHeader}">
-                                    <Setter Property="Template">
-                                        <Setter.Value>
-                                            <ControlTemplate TargetType="DataGridColumnHeader">
-                                                <DockPanel LastChildFill="False" Background="Transparent">
-                                                    <TextBlock FontSize="16" DockPanel.Dock="Top" HorizontalAlignment="Center">Contexts</TextBlock>
+            <DockPanel Style="{StaticResource SectionPanel}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <DataGrid Name="grid" Grid.Row="1" ItemsSource="{Binding ConceptViews}" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="FontSize" Value="20"/>
+                                <Setter Property="FontWeight" Value="DemiBold"/>
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn IsReadOnly="True" Header="Component Namespace" Binding="{Binding ComponentNamespace}" />
+                            <DataGridTextColumn IsReadOnly="True" Header="Internal Namespace" Binding="{Binding InternalNamespace}" />
+                            <DataGridTextColumn IsReadOnly="True" Header="Concept" Binding="{Binding Name}"/>
+                            <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="*">
+                                <DataGridTemplateColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="DataGridColumnHeader">
+                                                    <DockPanel LastChildFill="False" Background="Transparent">
+                                                        <TextBlock FontSize="16" DockPanel.Dock="Top" HorizontalAlignment="Center">Contexts</TextBlock>
+                                                        <Grid DockPanel.Dock="Bottom">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition />
+                                                                <ColumnDefinition />
+                                                                <ColumnDefinition />
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock Grid.Column="0">Name</TextBlock>
+                                                            <TextBlock Grid.Column="1">Type</TextBlock>
+                                                            <TextBlock Grid.Column="2">Value</TextBlock>
+                                                        </Grid>
+                                                    </DockPanel>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                        <Setter Property="Foreground" Value="Black"/>
+                                        <Setter Property="FontSize" Value="14"/>
+                                        <Setter Property="FontWeight" Value="DemiBold"/>
+                                        <Setter Property="MinWidth" Value="150"/>
+                                    </Style>
+                                </DataGridTemplateColumn.HeaderStyle>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ItemsControl ItemsSource="{Binding ContextViews}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <VirtualizingStackPanel />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
                                                     <Grid DockPanel.Dock="Bottom">
                                                         <Grid.ColumnDefinitions>
                                                             <ColumnDefinition />
                                                             <ColumnDefinition />
                                                             <ColumnDefinition />
                                                         </Grid.ColumnDefinitions>
-                                                        <TextBlock Grid.Column="0">Name</TextBlock>
-                                                        <TextBlock Grid.Column="1">Type</TextBlock>
-                                                        <TextBlock Grid.Column="2">Value</TextBlock>
+                                                        <TextBlock Grid.Column="0" Text="{Binding Name}" />
+                                                        <TextBlock Grid.Column="1" Text="{Binding StringType}" />
+                                                        <TextBlock Grid.Column="2" Text="{Binding StringValue}" />
                                                     </Grid>
-                                                </DockPanel>
-                                            </ControlTemplate>
-                                        </Setter.Value>
-                                    </Setter>
-                                    <Setter Property="HorizontalContentAlignment" Value="Center" />
-                                    <Setter Property="Foreground" Value="Black"/>
-                                    <Setter Property="FontSize" Value="14"/>
-                                    <Setter Property="FontWeight" Value="DemiBold"/>
-                                    <Setter Property="MinWidth" Value="150"/>
-                                </Style>
-                            </DataGridTemplateColumn.HeaderStyle>
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <ItemsControl ItemsSource="{Binding ContextViews}">
-                                        <ItemsControl.ItemsPanel>
-                                            <ItemsPanelTemplate>
-                                                <VirtualizingStackPanel />
-                                            </ItemsPanelTemplate>
-                                        </ItemsControl.ItemsPanel>
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <Grid DockPanel.Dock="Bottom">
-                                                    <Grid.ColumnDefinitions>
-                                                        <ColumnDefinition />
-                                                        <ColumnDefinition />
-                                                        <ColumnDefinition />
-                                                    </Grid.ColumnDefinitions>
-                                                    <TextBlock Grid.Column="0" Text="{Binding Name}" />
-                                                    <TextBlock Grid.Column="1" Text="{Binding Type}" />
-                                                    <TextBlock Grid.Column="2" Text="{Binding StringValue}" />
-                                                </Grid>
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Width="50">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button MinWidth="0" Command="{Binding ElementName=grid, Path=DataContext.ConceptViewEditCommand}" CommandParameter="{Binding}">
-                                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/edit.png" />
-                                    </Button>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="50">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button MinWidth="0" Command="{Binding ElementName=grid, Path=DataContext.ConceptViewEditCommand}" CommandParameter="{Binding}">
+                                            <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/edit.png" />
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
 
-                <platform:Spinner Grid.Row="1" Diameter="60" Busy="{Binding GridBusy}" />
-            </Grid>
+                    <platform:Spinner Grid.Row="1" Diameter="60" Busy="{Binding GridBusy}" />
+                </Grid>
+            </DockPanel>
+
         </DockPanel>
-        
-    </DockPanel>
+
+        <platform:Spinner Grid.Row="1" Diameter="60" Busy="{Binding ConceptDetailsBusy}" />
+    </Grid>
 </UserControl>

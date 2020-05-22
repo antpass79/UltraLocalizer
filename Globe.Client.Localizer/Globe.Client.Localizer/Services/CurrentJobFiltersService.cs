@@ -20,7 +20,7 @@ namespace Globe.Client.Localizer.Services
         public CurrentJobFiltersService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
         {
             _secureHttpClient = secureHttpClient;
-            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddress());
+            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
         }
 
         async public Task<IEnumerable<ComponentNamespace>> GetComponentNamespacesAsync()

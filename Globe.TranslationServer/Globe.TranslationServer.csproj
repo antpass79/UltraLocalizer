@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Controllers.Write\" />
     <Folder Include="XmlDefinitions\" />
   </ItemGroup>
 

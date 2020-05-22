@@ -18,8 +18,8 @@ namespace Globe.Client.Localizer.Converters
 
             var enableLink =
                 editableContext.StringId == 0 &&
-                editableContext.EditableValue == null &&
-                editableContext.ContextType == StringType.String ? true : false;
+                editableContext.StringEditableValue == null &&
+                editableContext.StringType == StringType.String ? true : false;
 
             return !(enableLink ^ EnableLinkMode) ? Visibility.Visible : Visibility.Collapsed;
         }

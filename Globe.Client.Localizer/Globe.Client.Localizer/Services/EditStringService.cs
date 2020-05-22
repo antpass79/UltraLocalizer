@@ -18,7 +18,7 @@ namespace Globe.Client.Localizer.Services
         public EditStringService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
         {
             _secureHttpClient = secureHttpClient;
-            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddress());
+            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
         }
 
         async public Task<IEnumerable<StringView>> GetStringViewsAsync(StringViewSearch search)
@@ -31,5 +31,11 @@ namespace Globe.Client.Localizer.Services
         {
             return await _secureHttpClient.GetAsync<IEnumerable<Context>>(ENDPOINT_Context);
         }
+
+        async public Task SaveAsync()
+        {
+            await Task.CompletedTask;
+        }
+
     }
 }

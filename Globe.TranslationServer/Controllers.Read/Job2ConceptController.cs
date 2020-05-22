@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/read/[controller]")]
     public class Job2ConceptController : Controller
     {
         private readonly IAsyncJob2ConceptService _job2ConceptService;

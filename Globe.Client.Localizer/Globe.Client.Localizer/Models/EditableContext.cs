@@ -6,35 +6,38 @@ namespace Globe.Client.Localizer.Models
     {
         public EditableContext(string defaultValue)
         {
-            DefaultValue = defaultValue;
-            EditableValue = defaultValue;
+            StringDefaultValue = defaultValue;
+            StringEditableValue = defaultValue;
         }
+
+        public string Name { get; set; }
 
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }
         public string Concept { get; set; }
-        public string ContextName { get; set; }
-        public string DefaultValue { get; }
+
         public int Concept2ContextId { get; set; }
 
+        public string StringDefaultValue { get; }
 
-        public StringType _contextType;
-        public StringType ContextType
+
+        public StringType _stringType;
+        public StringType StringType
         {
-            get => _contextType;
+            get => _stringType;
             set
             {
-                SetProperty<StringType>(ref _contextType, value);
+                SetProperty<StringType>(ref _stringType, value);
             }
         }
 
-        string _editableValue;
-        public string EditableValue
+        string _stringEditableValue;
+        public string StringEditableValue
         {
-            get => _editableValue;
+            get => _stringEditableValue;
             set
             {
-                SetProperty<string>(ref _editableValue, value);
+                SetProperty<string>(ref _stringEditableValue, value);
             }
         }
 

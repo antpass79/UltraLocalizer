@@ -6,6 +6,7 @@ using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
+using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Repositories;
 using Globe.TranslationServer.Services;
 using Globe.TranslationServer.Services.PortingAdapters;
@@ -56,6 +57,7 @@ namespace Globe.TranslationServer
 
             // Adapters
             services
+                .AddScoped<XmlManager, XmlManager>()
                 .AddScoped<UltraDBEditConcept, UltraDBEditConcept>()
                 .AddScoped<UltraDBConcept, UltraDBConcept>()
                 .AddScoped<UltraDBJobList, UltraDBJobList>()
@@ -68,6 +70,7 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncGroupedStringEntityService, GroupedStringEntityAdapterService>()
                 .AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncJobListService, JobListAdapterService>()
+                .AddScoped<IAsyncConceptDetailsService, ConceptDetailsAdapterService>()
                 .AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
                 .AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>();
 

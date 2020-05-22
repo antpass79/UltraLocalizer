@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/read/[controller]")]
     public class StringViewController : Controller
     {
         private readonly IAsyncStringViewProxyService _stringViewProxyService;

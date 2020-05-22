@@ -85,7 +85,7 @@ namespace Globe.TranslationServer.Porting.XmlGeneration
                                 List<DBGlobal> mL = sList.ToList();
                                 foreach (DBGlobal d in mL)
                                 {
-                                    MyString s = new MyString();
+                                    TagString s = new TagString();
                                     s.Context = d.ContextName;
                                     s.TypedValue = d.DataString;
                                     if (DebugMode)

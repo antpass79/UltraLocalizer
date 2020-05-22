@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/read/[controller]")]
     public class ConceptViewController : Controller
     {
         private readonly IAsyncConceptViewProxyService _conceptViewProxyService;

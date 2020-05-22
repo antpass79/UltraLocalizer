@@ -8,7 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 
 namespace Globe.Client.Localizer.Dialogs.ViewModels
 {
@@ -21,6 +20,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             _editStringService = editStringService;
             _loggerService = loggerService;
+        }
+
+        private bool _savingBusy = false;
+        public bool SavingBusy
+        {
+            get { return _savingBusy; }
+            set { SetProperty(ref _savingBusy, value); }
         }
 
         private bool _searchingBusy = false;
@@ -44,11 +50,11 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _stringValue, value); }
         }
 
-        private string _ISOCoding;
-        public string ISOCoding
+        private Language _language;
+        public Language Language
         {
-            get { return _ISOCoding; }
-            set { SetProperty(ref _ISOCoding, value); }
+            get { return _language; }
+            set { SetProperty(ref _language, value); }
         }
 
         private EditableConcept _editableConcept;
@@ -141,6 +147,26 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 RaiseRequestClose(new DialogResult(result));
             }));
 
+        private DelegateCommand _saveCommand;
+        public DelegateCommand SaveCommand =>
+            _saveCommand ?? (_saveCommand = new DelegateCommand(async () =>
+            {
+                SavingBusy = true;
+
+                try
+                {
+                    await _editStringService.SaveAsync();
+                }
+                catch (Exception e)
+                {
+                    _loggerService.Exception(e);
+                }
+                finally
+                {
+                    SavingBusy = false;
+                }
+            }));
+        
         private DelegateCommand<EditableContext> _linkCommand;
         public DelegateCommand<EditableContext> LinkCommand =>
             _linkCommand ?? (_linkCommand = new DelegateCommand<EditableContext>((editableContext) =>
@@ -148,9 +174,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 var index = EditableConcept.EditableContexts.IndexOf(editableContext);
                 EditableConcept.EditableContexts.Remove(editableContext);
 
-                editableContext.StringId = this.SelectedStringView.StringId;
-                editableContext.EditableValue = this.SelectedStringView.Value;
-                editableContext.ContextType = this.SelectedStringView.StringType;
+                editableContext.StringId = this.SelectedStringView.Id;
+                editableContext.StringEditableValue = this.SelectedStringView.Value;
+                editableContext.StringType = this.SelectedStringView.Type;
 
                 EditableConcept.EditableContexts.Insert(index, editableContext);
             },
@@ -167,8 +193,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 EditableConcept.EditableContexts.Remove(editableContext);
 
                 editableContext.StringId = 0;
-                editableContext.EditableValue = null;
-                editableContext.ContextType = StringType.String;
+                editableContext.StringEditableValue = null;
+                editableContext.StringType = StringType.String;
 
                 EditableConcept.EditableContexts.Insert(index, editableContext);
             },
@@ -184,9 +210,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 var index = EditableConcept.EditableContexts.IndexOf(editableContext);
                 EditableConcept.EditableContexts.Remove(editableContext);
 
-                editableContext.EditableValue = this.SelectedStringView.Value;
-                editableContext.ContextType = this.SelectedStringView.StringType;
-                editableContext.StringId = this.SelectedStringView.StringId;
+                editableContext.StringId = 0;
+                editableContext.StringEditableValue = this.SelectedStringView.Value;
+                editableContext.StringType = this.SelectedStringView.Type;
 
                 EditableConcept.EditableContexts.Insert(index, editableContext);
             },
@@ -220,7 +246,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     this.StringViews = await _editStringService.GetStringViewsAsync(new StringViewSearch
                     {
                         StringValue = this.StringValue,
-                        ISOCoding = this.ISOCoding,
+                        ISOCoding = this.Language.ISOCoding,
                         SearchBy = this.SearchBy,
                         FilterBy = this.FilterBy,
                         StringType = this.SelectedStringType,
@@ -256,9 +282,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         async public virtual void OnDialogOpened(IDialogParameters parameters)
         {
             EditableConcept = parameters.GetValue<EditableConcept>("editableConcept");
-            ISOCoding = parameters.GetValue<string>("ISOCoding");
-            this.Contexts = await _editStringService.GetContextsAsync();
-            this.SelectedContext = this.Contexts.ElementAt(0);
+            Language = parameters.GetValue<Language>("language");
+            Contexts = await _editStringService.GetContextsAsync();
+            SelectedContext = this.Contexts.ElementAt(0);
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs args)

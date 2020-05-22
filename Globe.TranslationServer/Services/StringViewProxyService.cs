@@ -66,8 +66,8 @@ namespace Globe.TranslationServer.Services
                     Context = item.Context,
                     InternalNamespace = item.InternalNamespace,
                     Value = item.String,
-                    StringId = item.IDString,
-                    StringType = Enum.Parse<StringTypeDTO>(item.Type),
+                    Id = item.IDString,
+                    Type = Enum.Parse<StringTypeDTO>(item.Type),
                     SoftwareComment = item.SWComment,
                     MasterTranslatorComment = item.MTComment
                 };

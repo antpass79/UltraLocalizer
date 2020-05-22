@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/read/[controller]")]
     public class ExtendedStringController : Controller
     {
         private readonly IMapper _mapper;

@@ -42,6 +42,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
         public XmlManager(LocalizationContext context)
         {
             this.context = context;
+            this.CurrentLogManager = new LogManager();
         }
 
         #endregion
@@ -104,10 +105,10 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
         #region Ctor
 
-        public XmlManager()
-        {
+        //public XmlManager()
+        //{
 
-        }
+        //}
 
         #endregion
 

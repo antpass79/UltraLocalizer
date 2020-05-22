@@ -1,6 +1,7 @@
 ﻿using Globe.Client.Localizer.Dialogs;
 using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
 using Prism.Commands;
@@ -22,19 +23,19 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IDialogService _dialogService;
         private readonly ILoggerService _loggerService;
         private readonly ICurrentJobFiltersService _currentJobFiltersService;
-        private readonly ICurrentJobConceptViewsService _currentJobConceptViewsService;
+        private readonly ICurrentJobConceptViewService _currentJobConceptViewService;
         public CurrentJobWindowViewModel(
             IEventAggregator eventAggregator,
             IDialogService dialogService,
             ILoggerService loggerService,
             ICurrentJobFiltersService currentJobFiltersService,
-            ICurrentJobConceptViewsService currentJobConceptViewsService)
+            ICurrentJobConceptViewService currentJobConceptViewService)
             : base(eventAggregator)
         {
             _dialogService = dialogService;
             _loggerService = loggerService;
             _currentJobFiltersService = currentJobFiltersService;
-            _currentJobConceptViewsService = currentJobConceptViewsService;
+            _currentJobConceptViewService = currentJobConceptViewService;
         }
 
         WorkingMode _workingMode;
@@ -44,6 +45,16 @@ namespace Globe.Client.Localizer.ViewModels
             set
             {
                 SetProperty<WorkingMode>(ref _workingMode, value);
+            }
+        }
+
+        bool _conceptDetailsBusy;
+        public bool ConceptDetailsBusy
+        {
+            get => _conceptDetailsBusy;
+            set
+            {
+                SetProperty<bool>(ref _conceptDetailsBusy, value);
             }
         }
 
@@ -66,7 +77,6 @@ namespace Globe.Client.Localizer.ViewModels
                 SetProperty<bool>(ref _filtersBusy, value);
             }
         }
-
 
         IEnumerable<JobItem> _jobItems;
         public IEnumerable<JobItem> JobItems
@@ -186,7 +196,7 @@ namespace Globe.Client.Localizer.ViewModels
                     }
                     else
                     {
-                        this.ConceptViews = await _currentJobConceptViewsService.GetConceptViewsAsync(
+                        this.ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
                             new ConceptViewSearch
                             {
                                 ComponentNamespace = this.SelectedComponentNamespace.Description,
@@ -209,40 +219,48 @@ namespace Globe.Client.Localizer.ViewModels
         
         private DelegateCommand<ConceptView> _conceptViewEditCommand = null;
         public DelegateCommand<ConceptView> ConceptViewEditCommand =>
-            _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<ConceptView>(conceptView =>
+            _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<ConceptView>((conceptView) =>
             {
-                string result = string.Empty;
-                var @params = new DialogParameters();
+                ConceptDetails conceptDetails = new ConceptDetails();
 
+                ConceptDetailsBusy = true;
+
+                try
+                {
+                    conceptDetails = _currentJobConceptViewService.GetConceptDetailsAsync(conceptView).RunSync();
+                }
+                catch (Exception e)
+                {
+                    _loggerService.Exception(e);
+                }
+                finally
+                {
+                    ConceptDetailsBusy = false;
+                }
+
+                var @params = new DialogParameters();
 
                 @params.Add("editableConcept", new EditableConcept(
                     conceptView.ComponentNamespace,
                     conceptView.InternalNamespace,
                     conceptView.Name,
-                    "SoftwareDeveloperComment",
+                    conceptDetails.SoftwareDeveloperComment,
                     new ObservableCollection<EditableContext>(conceptView.ContextViews.Select(contextView => new EditableContext(contextView.StringValue)
+                    {
+                        ComponentNamespace = conceptView.ComponentNamespace,
+                        InternalNamespace = conceptView.InternalNamespace,
+                        Concept = conceptView.Name,
+                        Name = contextView.Name,
+                        Concept2ContextId = contextView.Concept2ContextId,
+                        StringType = contextView.StringType,
+                        StringId = contextView.StringId,
+                    }).ToList()))
                 {
-                    ComponentNamespace = conceptView.ComponentNamespace,
-                    InternalNamespace = conceptView.InternalNamespace,
-                    Concept = conceptView.Name,
-                    ContextName = contextView.Name,
-                    Concept2ContextId = contextView.Concept2ContextId,
-                    ContextType = contextView.Type,
-                    StringId = contextView.StringId                    
-                }).ToList())));
-                @params.Add("ISOCoding", this.SelectedLanguage.ISOCoding);
-
-                _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, r =>
-                {
-                    if (r.Result == ButtonResult.None)
-                        result = "Result is None";
-                    else if (r.Result == ButtonResult.OK)
-                        result = "Result is OK";
-                    else if (r.Result == ButtonResult.Cancel)
-                        result = "Result is Cancel";
-                    else
-                        result = "I Don't know what you did!?";
+                    MasterTranslatorComment = conceptDetails.MasterTranslatorComment
                 });
+                @params.Add("language", this.SelectedLanguage);
+
+                _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, dialogResult => { });
             }));
 
         private DelegateCommand _checkNewJobCommand = null;
