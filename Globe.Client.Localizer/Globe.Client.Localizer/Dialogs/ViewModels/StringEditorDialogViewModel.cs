@@ -155,7 +155,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
                 try
                 {
-                    await _editStringService.SaveAsync();
+                    await _editStringService.SaveAsync(new SavableConceptModel(Language, EditableConcept));
                 }
                 catch (Exception e)
                 {

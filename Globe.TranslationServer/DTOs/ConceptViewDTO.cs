@@ -8,7 +8,7 @@ namespace Globe.TranslationServer.DTOs
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }
         public string Name { get; set; }
-        public IEnumerable<ContextViewDTO> ContextViews { get; set; }
+        public IList<ContextViewDTO> ContextViews { get; set; }
 
         public string DetailsLink { get; } = "ConceptDetails";
     }

@@ -72,6 +72,7 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncJobListService, JobListAdapterService>()
                 .AddScoped<IAsyncConceptDetailsService, ConceptDetailsAdapterService>()
                 .AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
+                .AddScoped<IAsyncConceptService, ConceptService>()
                 .AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>();
 
             // Security

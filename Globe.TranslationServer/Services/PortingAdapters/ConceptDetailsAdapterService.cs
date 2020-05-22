@@ -1,5 +1,4 @@
 ﻿using Globe.TranslationServer.DTOs;
-using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using System.Threading.Tasks;

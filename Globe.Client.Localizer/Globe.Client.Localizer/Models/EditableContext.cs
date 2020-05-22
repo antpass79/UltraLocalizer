@@ -4,10 +4,12 @@ namespace Globe.Client.Localizer.Models
 {
     class EditableContext : BindableBase
     {
-        public EditableContext(string defaultValue)
+        public EditableContext(string defaultValue, int oldStringId)
         {
             StringDefaultValue = defaultValue;
             StringEditableValue = defaultValue;
+
+            OldStringId = oldStringId;
         }
 
         public string Name { get; set; }
@@ -19,7 +21,7 @@ namespace Globe.Client.Localizer.Models
         public int Concept2ContextId { get; set; }
 
         public string StringDefaultValue { get; }
-
+        public int OldStringId { get; }
 
         public StringType _stringType;
         public StringType StringType

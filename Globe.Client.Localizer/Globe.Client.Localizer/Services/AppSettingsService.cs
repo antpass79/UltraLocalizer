@@ -4,6 +4,7 @@ namespace Globe.Client.Localizer.Services
 {
     public class AppSettingsService : ISettingsService
     {
+        const string LocalizableStringBaseAddress = "LocalizableStringBaseAddress";
         const string LocalizableStringBaseAddressRead = "LocalizableStringBaseAddressRead";
         const string LocalizableStringBaseAddressWrite = "LocalizableStringBaseAddressWrite";
         const string LoginBaseAddress = "LoginBaseAddress";
@@ -11,6 +12,11 @@ namespace Globe.Client.Localizer.Services
         public string GetLoginBaseAddress()
         {
             return ConfigurationManager.AppSettings[LoginBaseAddress];
+        }
+
+        public string GetLocalizableStringBaseAddress()
+        {
+            return ConfigurationManager.AppSettings[LocalizableStringBaseAddress];
         }
 
         public string GetLocalizableStringBaseAddressRead()

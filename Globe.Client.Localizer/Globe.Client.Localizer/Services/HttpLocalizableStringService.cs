@@ -17,7 +17,7 @@ namespace Globe.Client.Localizer.Services
         public HttpLocalizableStringService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
         {
             _secureHttpClient = secureHttpClient;
-            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
+            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddress());
         }
 
         async public Task<IEnumerable<LocalizableString>> GetAllAsync()

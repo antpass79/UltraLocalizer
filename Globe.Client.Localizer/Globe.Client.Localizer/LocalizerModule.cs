@@ -37,6 +37,7 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IProxyLocalizableStringService, ProxyLocalizableStringService>();
             containerRegistry.Register<IFileSystemLocalizableStringService, FileSystemLocalizableStringService>();
             containerRegistry.Register<IHttpLocalizableStringService, HttpLocalizableStringService>();
+            containerRegistry.Register<IHttpLocalizableStringService, HttpLocalizableStringService>();
             containerRegistry.Register<ICurrentJobFiltersService, CurrentJobFiltersService>();
             containerRegistry.Register<ICurrentJobConceptViewService, CurrentJobConceptViewService>();
             containerRegistry.Register<IEditStringService, EditStringService>();

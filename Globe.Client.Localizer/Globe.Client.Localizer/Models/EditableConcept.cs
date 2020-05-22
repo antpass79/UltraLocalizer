@@ -1,17 +1,18 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace Globe.Client.Localizer.Models
 {
     class EditableConcept
     {
         public EditableConcept(
+            int id,
             string componentNamespace,
             string internalNamespace,
             string name,
             string softwareDeveloperComment,
             ObservableCollection<EditableContext> editableContexts)
         {
+            Id = id;
             ComponentNamespace = componentNamespace;
             InternalNamespace = internalNamespace;
             Name = name;
@@ -19,6 +20,7 @@ namespace Globe.Client.Localizer.Models
             EditableContexts = editableContexts;
         }
 
+        public int Id { get; }
         public string ComponentNamespace { get; }
         public string InternalNamespace { get; }
         public string Name { get; }

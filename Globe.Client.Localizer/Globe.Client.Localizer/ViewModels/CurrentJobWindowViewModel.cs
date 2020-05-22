@@ -241,11 +241,12 @@ namespace Globe.Client.Localizer.ViewModels
                 var @params = new DialogParameters();
 
                 @params.Add("editableConcept", new EditableConcept(
+                    conceptView.Id,
                     conceptView.ComponentNamespace,
                     conceptView.InternalNamespace,
                     conceptView.Name,
                     conceptDetails.SoftwareDeveloperComment,
-                    new ObservableCollection<EditableContext>(conceptView.ContextViews.Select(contextView => new EditableContext(contextView.StringValue)
+                    new ObservableCollection<EditableContext>(conceptView.ContextViews.Select(contextView => new EditableContext(contextView.StringValue, contextView.OldStringId)
                     {
                         ComponentNamespace = conceptView.ComponentNamespace,
                         InternalNamespace = conceptView.InternalNamespace,
