@@ -99,11 +99,10 @@ namespace Globe.TranslationServer.Services.PortingAdapters
                 {
                     _ultraDBConcept.UpdateConcept(savableConceptModel.Concept.Id, savableConceptModel.Concept.IgnoreTranslation, savableConceptModel.Concept.MasterTranslatorComment);
                     Console.WriteLine($"Concept {savableConceptModel.Concept.Id} has been updated with the comment: {savableConceptModel.Concept.MasterTranslatorComment}");
-
                 }
             }
 
-            await Task.CompletedTask;
+            await _localizationContext.SaveChangesAsync();
         }
     }
 }

@@ -61,7 +61,8 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBEditConcept, UltraDBEditConcept>()
                 .AddScoped<UltraDBConcept, UltraDBConcept>()
                 .AddScoped<UltraDBJobList, UltraDBJobList>()
-                .AddScoped<UltraDBStrings, UltraDBStrings>();
+                .AddScoped<UltraDBStrings, UltraDBStrings>()
+                .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>();
             services
                 .AddScoped<IAsyncContextService, ContextService>()
                 .AddScoped<IAsyncStringViewProxyService, StringViewProxyService>()

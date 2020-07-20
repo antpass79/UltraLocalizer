@@ -1,6 +1,7 @@
 ﻿using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -156,7 +157,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         {
             var stringToUpdate = context.LocStrings.Find(ID);
             stringToUpdate.String = DataString;
-            context.SaveChanges();
+            //context.SaveChanges();
         }
 
         //        INSERT INTO[LOC_STRINGS] ([IDLanguage], [IDType], [String]) VALUES(@IDLanguage, @IDType, @String);
@@ -164,13 +165,15 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //SELECT @@IDENTITY
         public static int InsertNewString(this LocalizationContext context, int IDLanguage, int IDType, string DataString)
         {
+            throw new NotImplementedException();
+
             context.LocStrings.Add(new LocStrings
             {
                 Idlanguage = IDLanguage,
                 Idtype = IDType,
                 String = DataString
             });
-            return context.SaveChanges();
+            //return context.SaveChanges();
         }
     }
 }
