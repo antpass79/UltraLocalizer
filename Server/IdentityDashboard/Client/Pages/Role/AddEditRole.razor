@@ -1,0 +1,29 @@
+﻿@page "/role/add"
+@page "/role/edit/{roleId}"
+@inherits AddEditRoleDataModel
+
+
+<h1>@Title Role</h1>
+<hr />
+
+<EditForm Model="@role" OnValidSubmit="SaveRole">
+    <DataAnnotationsValidator />
+    <div class="form-group row">
+        <label class="control-label col-md-12">Name</label>
+        <div class="col-md-4">
+            <input class="form-control" @bind="role.Name" />
+        </div>
+        <ValidationMessage For="@(() => role.Name)" />
+    </div>
+    <div class="form-group row">
+        <label class="control-label col-md-12">Description</label>
+        <div class="col-md-4">
+            <input class="form-control" @bind="role.Description" />
+        </div>
+        <ValidationMessage For="@(() => role.Description)" />
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save</button>
+        <button class="btn btn-light" @onclick="Cancel">Cancel</button>
+    </div>
+</EditForm>

@@ -1,0 +1,28 @@
+{
+    "useWebAssemblyDebugging": true,
+    "iisSettings": {
+      "windowsAuthentication": false,
+      "anonymousAuthentication": true,
+      "iisExpress": {
+        "applicationUrl": "http://localhost:53946",
+        "sslPort": 44317
+      }
+    },
+    "profiles": {
+      "IIS Express": {
+        "commandName": "IISExpress",
+        "launchBrowser": true,
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Development"
+        }
+      },
+      "Globe.Identity.AdministrativeDashboard.Server": {
+        "commandName": "Project",
+        "launchBrowser": true,
+        "applicationUrl": "https://localhost:6001;http://localhost:6000",
+        "environmentVariables": {
+          "ASPNETCORE_ENVIRONMENT": "Docker"
+        }
+      }
+    }
+  }

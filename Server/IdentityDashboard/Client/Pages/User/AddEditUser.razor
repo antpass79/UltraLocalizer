@@ -1,0 +1,74 @@
+﻿@page "/user/add"
+@page "/user/edit/{userId}"
+@inherits AddEditUserDataModel
+
+
+<style>
+    .form-container {
+        display: flex;
+    }
+    .form-control-column {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-group-roles-label {
+        flex: 0;
+    }
+</style>
+
+<h1>@Title User</h1>
+<hr />
+
+<EditForm Model="@userWithRoles" OnValidSubmit="SaveUser">
+    <DataAnnotationsValidator />
+    <div class="form-container">
+        <div class="form-control-column">
+            <div class="form-group row">
+                <label class="control-label col-md-12">Last Name</label>
+                <div class="col-md-10">
+                    <input class="form-control" @bind="userWithRoles.User.LastName" />
+                </div>
+                <ValidationMessage For="@(() => userWithRoles.User.LastName)" />
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-12">First Name</label>
+                <div class="col-md-10">
+                    <input class="form-control" @bind="userWithRoles.User.FirstName" />
+                </div>
+                <ValidationMessage For="@(() => userWithRoles.User.FirstName)" />
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-12">User Name</label>
+                <div class="col-md-10">
+                    <input class="form-control" @bind="userWithRoles.User.UserName" />
+                </div>
+                <ValidationMessage For="@(() => userWithRoles.User.UserName)" />
+            </div>
+            <div class="form-group row">
+                <label class="control-label col-md-12">Email</label>
+                <div class="col-md-10">
+                    <input class="form-control" @bind="userWithRoles.User.Email" />
+                </div>
+                <ValidationMessage For="@(() => userWithRoles.User.Email)" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button class="btn btn-light" @onclick="Cancel">Cancel</button>
+            </div>
+        </div>
+        <div class="form-control-column">
+            <label class="control-label col-md-12 form-group-roles-label">Roles</label>
+            <div class="form-group">
+                @foreach (var role in editableRoles)
+                {
+                    <div class="checkbox">
+                        <label>
+                            <InputCheckbox @bind-Value="@role.Selected"></InputCheckbox>
+                            @role.Name
+                        </label>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</EditForm>

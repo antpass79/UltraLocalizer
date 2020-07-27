@@ -1,0 +1,114 @@
+﻿@page "/users"
+@inherits UsersDataModel
+
+@using Globe.Identity.AdministrativeDashboard.Client.Components
+
+<style>
+    .sort-th {
+        cursor: pointer;
+    }
+
+    .fa {
+        float: right;
+    }
+
+    .flex-button {
+        display: inline-flex;
+    }
+
+    .button-icon {
+        display: flex;
+        align-self: center;
+        margin: 3px;
+    }
+</style>
+
+<h1>Users</h1>
+
+<p>All users registered in the Globe System.</p>
+
+<div class="row">
+    <div class="input-group col-md-3">
+        <input type="text" class="form-control" placeholder="Search users by name" @bind="SearchString" />
+        <div class="input-group-append">
+            <button class="btn btn-info" @onclick="SearchUsers">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <AuthorizeView Roles="Admin, UserManager">
+        <div class="col-md-4">
+            <a href='/user/add' class="btn btn-primary flex-button" role="button">
+                <i class="fa fa-user-plus button-icon"></i>
+                Add User
+            </a>
+        </div>
+    </AuthorizeView>
+</div>
+<br />
+
+@if (users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="sort-th" @onclick="@(() => TableSortService.Sort("LastName", users))">
+                    Last Name
+                    <span class="fa @(TableSortService.SortIcon("LastName"))"></span>
+                </th>
+                <th class="sort-th" @onclick="@(() => TableSortService.Sort("FirstName", users))">
+                    First Name
+                    <span class="fa @(TableSortService.SortIcon("FirstName"))"></span>
+                </th>
+                <th class="sort-th" @onclick="@(() => TableSortService.Sort("UserName", users))">
+                    User Name
+                    <span class="fa @(TableSortService.SortIcon("UserName"))"></span>
+                </th>
+                <th class="sort-th" @onclick="@(() => TableSortService.Sort("Email", users))">
+                    Email
+                    <span class="fa @(TableSortService.SortIcon("Email"))"></span>
+                </th>
+                <AuthorizeView Roles="Admin, UserManager">
+                    <th></th>
+                    <th></th>
+                </AuthorizeView>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in users)
+            {
+                <tr>
+                    <td>@user.LastName</td>
+                    <td>@user.FirstName</td>
+                    <td>@user.UserName</td>
+                    <td>@user.Email</td>
+                    <AuthorizeView Roles="Admin, UserManager">
+                        <td>
+                            <a href='/user/edit/@user.Id' class="btn btn-outline-dark flex-button" role="button">
+                                <i class="fa fa-pencil-square-o button-icon"></i>
+                                Edit
+                            </a>
+                        </td>
+                        <td>
+                            <button class="btn btn-outline-danger" @onclick="@(() => DeleteUserConfirm(user))">
+                                <i class="oi oi-trash"></i>
+                                Delete
+                            </button>
+                        </td>
+                    </AuthorizeView>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <ModalDialog ShowYes="true"
+                 ShowNo="true"
+                 Title="Warning"
+                 Message="Are you sure to delete the selected user?"
+                 IsOpen="ShowConfirmation"
+                 OnButtonClick="@(async (ButtonType buttonType) => await OnDialogButtonClick(buttonType))"></ModalDialog>
+}
