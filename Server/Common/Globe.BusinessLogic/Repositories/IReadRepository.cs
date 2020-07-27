@@ -9,6 +9,13 @@ namespace Globe.BusinessLogic.Repositories
     public interface IReadRepository<T, in K>
         where T: class
     {
+        IQueryable<T> Query(
+            Expression<Func<T, bool>> filter = null,
+            Func<IQueryable<T>,
+                IOrderedQueryable<T>> orderBy = null)
+        {
+            throw new NotImplementedException();
+        }
         IEnumerable<T> Get(
                     Expression<Func<T, bool>> filter = null,
                     Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null);
@@ -23,6 +30,13 @@ namespace Globe.BusinessLogic.Repositories
     public interface IAsyncReadRepository<T, in K>
         where T : class
     {
+        Task<IQueryable<T>> QueryAsync(
+            Expression<Func<T, bool>> filter = null,
+            Func<IQueryable<T>,
+                IOrderedQueryable<T>> orderBy = null)
+        {
+            throw new NotImplementedException();
+        }
         Task<IEnumerable<T>> GetAsync(
                     Expression<Func<T, bool>> filter = null,
                     Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null);

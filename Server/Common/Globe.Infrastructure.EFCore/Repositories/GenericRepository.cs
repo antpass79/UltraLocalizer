@@ -8,28 +8,40 @@ using System.Threading.Tasks;
 
 namespace Globe.Infrastructure.EFCore.Repositories
 {
-    public class GenericRepository<T> : IRepository<T>
-        where T : class
+    public class GenericRepository<TContext, TEntity> : IRepository<TEntity>
+        where TContext : DbContext
+        where TEntity : class
     {
-        readonly protected DbContext _context;
+        readonly protected TContext _context;
 
-        private DbSet<T> DbSet { get { return this._context.Set<T>(); } }
+        private DbSet<TEntity> DbSet { get { return this._context.Set<TEntity>(); } }
 
-        public GenericRepository(DbContext context)
+        public GenericRepository(TContext context)
         {
             _context = context;
         }
 
-        virtual public T FindById(Guid id)
+        public virtual IQueryable<TEntity> Query(
+            Expression<Func<TEntity, bool>> filter = null,
+            Func<IQueryable<TEntity>,
+                IOrderedQueryable<TEntity>> orderBy = null)
         {
-            return _context.Find<T>(id);
+            IQueryable<TEntity> query = DbSet;
+
+            if (filter != null)
+                query = query.Where(filter);
+
+            if (orderBy != null)
+                query = orderBy(query);
+
+            return query;
         }
 
-        virtual public IEnumerable<T> Get(
-                    Expression<Func<T, bool>> filter = null,
-                    Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
+        virtual public IEnumerable<TEntity> Get(
+                    Expression<Func<TEntity, bool>> filter = null,
+                    Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
         {
-            IQueryable<T> query = this.DbSet.AsQueryable();
+            IQueryable<TEntity> query = this.DbSet.AsQueryable();
 
             if (filter != null)
                 query = query.Where(filter);
@@ -40,44 +52,61 @@ namespace Globe.Infrastructure.EFCore.Repositories
             return query.ToList();
         }
 
-        virtual public void Insert(T entity)
+        virtual public TEntity FindById(Guid id)
+        {
+            return _context.Find<TEntity>(id);
+        }
+
+        virtual public void Insert(TEntity entity)
         {
             this.DbSet.Add(entity);
         }
 
-        virtual public void Update(T entity)
+        virtual public void Update(TEntity entity)
         {
             this.DbSet.Update(entity);
         }
 
-        virtual public void Delete(T entity)
+        virtual public void Delete(TEntity entity)
         {
             this.DbSet.Remove(entity);
         }
     }
 
-    public class AsyncGenericRepository<T> : IAsyncRepository<T>
-        where T : class
+    public class AsyncGenericRepository<TContext, TEntity> : IAsyncRepository<TEntity>
+        where TContext : DbContext
+        where TEntity : class
     {
-        readonly protected DbContext _context;
+        readonly protected TContext _context;
 
-        private DbSet<T> DbSet { get { return this._context.Set<T>(); } }
+        private DbSet<TEntity> DbSet { get { return this._context.Set<TEntity>(); } }
 
-        public AsyncGenericRepository(DbContext context)
+        public AsyncGenericRepository(TContext context)
         {
             _context = context;
         }
 
-        async virtual public Task<T> FindByIdAsync(Guid id)
+        public virtual Task<IQueryable<TEntity>> QueryAsync(
+            Expression<Func<TEntity, bool>> filter = null,
+            Func<IQueryable<TEntity>,
+                IOrderedQueryable<TEntity>> orderBy = null)
         {
-            return await _context.FindAsync<T>(id);
+            IQueryable<TEntity> query = DbSet;
+
+            if (filter != null)
+                query = query.Where(filter);
+
+            if (orderBy != null)
+                query = orderBy(query);
+
+            return Task.FromResult(query);
         }
 
-        async virtual public Task<IEnumerable<T>> GetAsync(
-                    Expression<Func<T, bool>> filter = null,
-                    Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null)
+        async virtual public Task<IEnumerable<TEntity>> GetAsync(
+                    Expression<Func<TEntity, bool>> filter = null,
+                    Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null)
         {
-            IQueryable<T> query = this.DbSet.AsQueryable();
+            IQueryable<TEntity> query = this.DbSet.AsQueryable();
 
             if (filter != null)
                 query = query.Where(filter);
@@ -88,17 +117,22 @@ namespace Globe.Infrastructure.EFCore.Repositories
             return await query.ToListAsync();
         }
 
-        async virtual public Task InsertAsync(T entity)
+        async virtual public Task<TEntity> FindByIdAsync(Guid id)
+        {
+            return await _context.FindAsync<TEntity>(id);
+        }
+
+        async virtual public Task InsertAsync(TEntity entity)
         {
             await this.DbSet.AddAsync(entity);
         }
 
-        async virtual public Task UpdateAsync(T entity)
+        async virtual public Task UpdateAsync(TEntity entity)
         {
             await Task.Run(() => this.DbSet.Update(entity));
         }
 
-        async virtual public Task DeleteAsync(T entity)
+        async virtual public Task DeleteAsync(TEntity entity)
         {
             await Task.Run(() => this.DbSet.Remove(entity));
         }

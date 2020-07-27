@@ -1,7 +1,9 @@
 using AutoMapper;
 using FluentValidation.AspNetCore;
+using Globe.BusinessLogic.Repositories;
 using Globe.Identity.Options;
 using Globe.Identity.Security;
+using Globe.Infrastructure.EFCore.Repositories;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
@@ -55,7 +57,12 @@ namespace Globe.TranslationServer
             services
                 .AddScoped<LocalizableStringRepository, LocalizableStringRepository>();
 
-            // Adapters
+            // Repositories
+            services
+                .AddScoped<IAsyncReadRepository<LocLanguages>, AsyncGenericRepository<LocalizationContext, LocLanguages>>()
+                .AddScoped<IAsyncReadRepository<LocConceptsTable>, AsyncGenericRepository<LocalizationContext, LocConceptsTable>>();
+
+            // Services
             services
                 .AddScoped<XmlManager, XmlManager>()
                 .AddScoped<UltraDBEditConcept, UltraDBEditConcept>()
@@ -64,15 +71,15 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBStrings, UltraDBStrings>()
                 .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>();
             services
+                .AddScoped<IAsyncLanguageService, Services.EFServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
+                .AddScoped<IAsyncComponentConceptsService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
                 .AddScoped<IAsyncContextService, ContextService>()
                 .AddScoped<IAsyncStringViewProxyService, StringViewProxyService>()
                 .AddScoped<IAsyncConceptViewProxyService, ConceptViewProxyService>()
                 .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()
                 .AddScoped<IAsyncGroupedStringEntityService, GroupedStringEntityAdapterService>()
-                .AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncJobListService, JobListAdapterService>()
                 .AddScoped<IAsyncConceptDetailsService, ConceptDetailsAdapterService>()
-                .AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
                 .AddScoped<IAsyncConceptService, ConceptService>()
                 .AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>();
 
