@@ -1,0 +1,21 @@
+﻿@inherits SpinnerDataModel
+
+<style>
+    .spinner-container {
+        display: flex;
+        position: absolute;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        background: lightgray;
+        opacity: 0.3;
+        align-items: center;
+    }
+</style>
+
+@if (IsVisible)
+{
+<div class="spinner-container">
+    <SpinKitCircle />
+</div>
+}
