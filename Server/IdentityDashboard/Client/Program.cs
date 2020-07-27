@@ -46,7 +46,7 @@ namespace Globe.Identity.AdministrativeDashboard.Client
 
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddBaseAddressHttpClient();
+            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
 
             var host = builder.Build();
             // https://stackoverflow.com/questions/60793142/decoding-jwt-in-blazore-client-side-results-wasm-system-argumentexception-idx1
