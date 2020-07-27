@@ -1,0 +1,58 @@
+﻿@inherits ModalDialogDataModel
+
+<style>
+    .modal-dialog-overlay {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+@if (IsOpen)
+{
+    <div class="modal-dialog-overlay">
+
+        <div class="modal-open">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">@Title</h4>
+                        <button type="button" class="close" @onclick="(() => HandleButton(ButtonType.Cancel))">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        @Message
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        @if (ShowOK)
+                        {
+                            <button class="btn btn-danger" @onclick="(() => HandleButton(ButtonType.OK))">OK</button>
+                        }
+                        @if (ShowYes)
+                        {
+                            <button class="btn btn-danger" @onclick="(() => HandleButton(ButtonType.Yes))">Yes</button>
+                        }
+                        @if (ShowCancel)
+                        {
+                            <button class="btn btn-dark" @onclick="(() => HandleButton(ButtonType.Cancel))">Cancel</button>
+                        }
+                        @if (ShowNo)
+                        {
+                            <button class="btn btn-dark" @onclick="(() => HandleButton(ButtonType.No))">No</button>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+}

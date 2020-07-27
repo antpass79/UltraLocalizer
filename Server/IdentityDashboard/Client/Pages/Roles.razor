@@ -1,0 +1,102 @@
+﻿@page "/roles"
+@inherits RolesDataModel
+
+<style>
+    .sort-th {
+        cursor: pointer;
+    }
+
+    .fa {
+        float: right;
+    }
+
+    .flex-button {
+        display: inline-flex;
+    }
+
+    .button-icon {
+        display: flex;
+        align-self: center;
+        margin: 3px;
+    }
+</style>
+
+<h1>Roles</h1>
+
+<p>All roles registered in the Globe System.</p>
+
+<div class="row">
+    <div class="input-group col-md-3">
+        <input type="text" class="form-control" placeholder="Search roles by name" @bind="SearchString" />
+        <div class="input-group-append">
+            <button class="btn btn-info" @onclick="SearchRoles">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+    <AuthorizeView Roles="Admin">
+        <div class="col-md-4">
+            <a href='/role/add' class="btn btn-primary flex-button" role="button">
+                <i class="fa fa-user-tag button-icon"></i>
+                Add Role
+            </a>
+        </div>
+    </AuthorizeView>
+</div>
+<br />
+
+@if (roles == null)
+{
+<p><em>Loading...</em></p>
+}
+else
+{
+<table class="table">
+    <thead>
+        <tr>
+            <th class="sort-th" @onclick="@(() => TableSortService.Sort("Name", roles))">
+                Name
+                <span class="fa @(TableSortService.SortIcon("Name"))"></span>
+            </th>
+            <th class="sort-th" @onclick="@(() => TableSortService.Sort("Description", roles))">
+                Description
+                <span class="fa @(TableSortService.SortIcon("Description"))"></span>
+            </th>
+            <AuthorizeView Roles="Admin">
+                <th></th>
+                <th></th>
+            </AuthorizeView>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var role in roles)
+            {
+        <tr>
+            <td>@role.Name</td>
+            <td>@role.Description</td>
+            <AuthorizeView Roles="Admin">
+                <td>
+                    <a href='/role/edit/@role.Id' class="btn btn-outline-dark flex-button" role="button">
+                        <i class="fa fa-pencil-square-o button-icon"></i>
+                        Edit
+                    </a>
+                </td>
+                <td>
+                    <button class="btn btn-outline-danger" @onclick="@(() => DeleteRoleConfirm(role))">
+                        <i class="oi oi-trash"></i>
+                        Delete
+                    </button>
+                </td>
+            </AuthorizeView>
+        </tr>
+            }
+    </tbody>
+</table>
+
+<ModalDialog ShowYes="true"
+             ShowNo="true"
+             Title="Warning"
+             Message="Are you sure to delete the selected role?"
+             IsOpen="ShowConfirmation"
+             OnButtonClick="@(async (ButtonType buttonType) => await OnDialogButtonClick(buttonType))"></ModalDialog>
+}

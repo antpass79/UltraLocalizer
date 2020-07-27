@@ -1,0 +1,38 @@
+﻿@page "/user/login"
+@inherits LoginUserDataModel
+
+
+<h1>Login User</h1>
+<hr />
+
+@if (ShowErrors)
+{
+    <div class="alert alert-danger" role="alert">
+        <p>@Error</p>
+    </div>
+}
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Please enter your details</h5>
+        <EditForm Model="credentials" OnValidSubmit="HandleLogin">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-group">
+                <label for="email">User Name</label>
+                <InputText Id="email" Class="form-control" @bind-Value="credentials.UserName" />
+                <ValidationMessage For="@(() => credentials.UserName)" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <InputText Id="password" type="password" Class="form-control" @bind-Value="credentials.Password" />
+                <ValidationMessage For="@(() => credentials.Password)" />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <button class="btn btn-light" @onclick="Cancel">Cancel</button>
+            </div>
+        </EditForm>
+    </div>
+</div>
