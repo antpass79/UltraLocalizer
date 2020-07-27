@@ -119,11 +119,25 @@
                 <!-- EditableContext DataGrid -->
                 <DataGrid x:Name="contextGrid" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Context" Binding="{Binding Name}" />
+                        <DataGridTextColumn Header="Context" Binding="{Binding Name}" /> <!-- Should be Read Only? Almost dropDown! -->
                         <DataGridComboBoxColumn Header="String Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding StringType}" />
                         <DataGridTextColumn Header="Developer String" Binding="{Binding StringDefaultValue}" IsReadOnly="True" />
                         <DataGridTextColumn Header="Localized String" Binding="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" />
-                        <DataGridTemplateColumn Header="Preview" IsReadOnly="True">
+                        <DataGridTemplateColumn Header="Preview Style 1" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <platform:PreviewString Text="{Binding StringEditableValue}" PreviewStyleInfo="{Binding Name, Converter={StaticResource ContextNameToPreviewStyleInfoConverter}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Preview Style 2" IsReadOnly="True">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <platform:PreviewString Text="{Binding StringEditableValue}" PreviewStyleInfo="{Binding Name, Converter={StaticResource ContextNameToPreviewStyleInfoConverter}}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="Preview Style 3" IsReadOnly="True">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <platform:PreviewString Text="{Binding StringEditableValue}" PreviewStyleInfo="{Binding Name, Converter={StaticResource ContextNameToPreviewStyleInfoConverter}}" />
