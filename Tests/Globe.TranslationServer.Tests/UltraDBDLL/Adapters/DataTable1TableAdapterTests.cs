@@ -1,7 +1,6 @@
 ﻿using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Tests.Mocks;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Xunit;
 
@@ -28,7 +27,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetDataByConcept2Context) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetDataByConcept2Context) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetDataByConcept2Context()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -38,7 +37,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetComplimentaryDataByComponentInternalISOjob) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetComplimentaryDataByComponentInternalISOjob) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetComplimentaryDataByComponentInternalISOjob()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);

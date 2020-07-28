@@ -19,7 +19,7 @@ namespace Globe.TranslationServer.Tests
             _optionsBuilder.UseSqlServer(MockConstants.CONNECTION_STRING);
         }
 
-        [Fact]
+        [Fact(Skip = "SQL CONNECTION REQUIRED")]
         async public Task GetAllAsyncWithParameters()
         {
             //using var context = new MockLocalizationContext().Mock().Object;

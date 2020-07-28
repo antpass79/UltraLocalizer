@@ -9,7 +9,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
     [Trait(nameof(DataTableEditConceptsTableAdapterTests), "Tested all methods")]
     public class DataTableEditConceptsTableAdapterTests : AdapterTestsWithSqlCommand
     {
-        [Fact(DisplayName = nameof(GetDataByJob) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetDataByJob) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetDataByJob()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -18,7 +18,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetDatabyComponentInternalJob) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetDatabyComponentInternalJob) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetDatabyComponentInternalJob()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -30,7 +30,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetEditDataByComponentInternal) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetEditDataByComponentInternal) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetEditDataByComponentInternal()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);

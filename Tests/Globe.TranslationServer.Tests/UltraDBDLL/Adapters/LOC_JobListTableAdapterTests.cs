@@ -9,7 +9,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
     [Trait(nameof(LOC_JobListTableAdapterTests), "Tested all methods")]
     public class LOC_JobListTableAdapterTests : AdapterTestsWithSqlCommand
     {
-        [Fact(DisplayName = nameof(GetDataByIDIso) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetDataByIDIso) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetDataByIDIso()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -19,7 +19,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetDataByUserISO) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetDataByUserISO) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetDataByUserISO()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -30,7 +30,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetDataByUserNameIDISO) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetDataByUserNameIDISO) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetDataByUserNameIDISO()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -41,7 +41,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(Delete) + " - Not found the original code")]
+        [Fact(DisplayName = nameof(Delete), Skip = "NOT FOUND ORIGINAL CODE")]
         public void Delete()
         {
             using var context = new MockLocalizationContext().Mock().Object;
