@@ -5,7 +5,7 @@ using Xunit;
 
 namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
 {
-    [Trait(nameof(Concept2ContextTableAdapterTests), "Tested all methods")]
+    [Trait(nameof(Concept2ContextTableAdapterTests), "MOCKED")]
     public class Concept2ContextTableAdapterTests
     {
         [Fact]

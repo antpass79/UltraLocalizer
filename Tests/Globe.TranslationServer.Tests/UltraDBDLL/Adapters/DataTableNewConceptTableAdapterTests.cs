@@ -9,7 +9,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
     [Trait(nameof(DataTableNewConceptTableAdapterTests), "Tested all methods")]
     public class DataTableNewConceptTableAdapterTests : AdapterTestsWithSqlCommand
     {
-        [Fact(DisplayName = nameof(GetNewConceptAndContextIDbyComponent) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetNewConceptAndContextIDbyComponent) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetNewConceptAndContextIDbyComponent()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -19,7 +19,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetNewConceptAndContextIDbyComponentInternal) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetNewConceptAndContextIDbyComponentInternal) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetNewConceptAndContextIDbyComponentInternal()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);

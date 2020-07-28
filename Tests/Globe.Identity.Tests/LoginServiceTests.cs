@@ -1,15 +1,13 @@
 ﻿using Globe.Identity.Models;
 using Globe.Identity.Security;
 using Globe.Identity.Services;
-using Globe.Tests;
 using Globe.Tests.Identity;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using Xunit;
 
 namespace Globe.Identity.Tests
 {
+    [Trait("Globe.Identity", "Login")]
     public class LoginServiceTests
     {
         [Theory]

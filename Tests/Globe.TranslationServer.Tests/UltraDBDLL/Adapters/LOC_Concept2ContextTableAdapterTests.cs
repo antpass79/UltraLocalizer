@@ -18,7 +18,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetSiblingsByIDStringISO) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetSiblingsByIDStringISO) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetSiblingsByIDStringISO()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);

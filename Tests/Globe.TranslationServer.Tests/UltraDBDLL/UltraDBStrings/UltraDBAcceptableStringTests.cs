@@ -9,7 +9,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.UltraDBStrings
     [Trait(nameof(UltraDBAcceptableStringTests), "Tested all methods")]
     public class UltraDBAcceptableStringTests : AdapterTestsWithSqlCommand
     {
-        [Fact]
+        [Fact(Skip = "UNDER INVESTIGATION")]
         public void InsertNewAcceptable()
         {
             using var context = new MockLocalizationContext().Mock().Object;
@@ -28,7 +28,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.UltraDBStrings
             Assert.NotNull(afterInsertItem);
         }
 
-        [Fact(DisplayName = nameof(isAcceptable) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(isAcceptable) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void isAcceptable()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -40,7 +40,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.UltraDBStrings
             Assert.True(result);
         }
 
-        [Fact]
+        [Fact(Skip = "UNDER INVESTIGATION")]
         public void DeleteAcceptable()
         {
             using var context = new MockLocalizationContext().Mock().Object;
