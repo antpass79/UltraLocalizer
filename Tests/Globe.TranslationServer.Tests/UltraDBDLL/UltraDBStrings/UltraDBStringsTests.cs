@@ -67,7 +67,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.UltraDBStrings
             Assert.True(result != null);
         }
 
-        [Fact]
+        [Fact(Skip = "SQL CONNECTION REQUIRED")]
         public void GetConceptContextEquivalentStrings()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -79,7 +79,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.UltraDBStrings
             Assert.True(result.Count() > 0);
         }
 
-        [Fact]
+        [Fact(Skip = "SQL CONNECTION REQUIRED")]
         public void GetConcept2ContextStrings()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
