@@ -3,7 +3,7 @@ using Globe.TranslationServer.Entities;
 
 namespace Globe.TranslationServer.Repositories
 {
-    public class LocalizableStringRepository : AsyncGenericRepository<LocalizableStringRepository>
+    public class LocalizableStringRepository : AsyncGenericRepository<LocalizationContext, LocalizableStringRepository>
     {
         public LocalizableStringRepository(LocalizationContext dbContext)
             : base(dbContext)

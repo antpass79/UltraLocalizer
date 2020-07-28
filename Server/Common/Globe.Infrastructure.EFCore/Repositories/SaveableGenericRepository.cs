@@ -4,18 +4,19 @@ using System.Threading.Tasks;
 
 namespace Globe.Infrastructure.EFCore.Repositories
 {
-    public class SaveableGenericRepository<T> : GenericRepository<T>, ISaveable
-        where T : class
+    public class SaveableGenericRepository<TContext, TEntity> : GenericRepository<TContext, TEntity>, ISaveable
+        where TContext : DbContext
+        where TEntity : class
     {
         readonly private bool _saveOnChange;
 
-        public SaveableGenericRepository(DbContext context, bool saveOnChange = false)
+        public SaveableGenericRepository(TContext context, bool saveOnChange = false)
             : base(context)
         {
             _saveOnChange = saveOnChange;
         }
 
-        public override void Insert(T entity)
+        public override void Insert(TEntity entity)
         {
             base.Insert(entity);
 
@@ -23,7 +24,7 @@ namespace Globe.Infrastructure.EFCore.Repositories
                 this.Save();
         }
 
-        public override void Update(T entity)
+        public override void Update(TEntity entity)
         {
             base.Update(entity);
 
@@ -37,18 +38,19 @@ namespace Globe.Infrastructure.EFCore.Repositories
         }
     }
 
-    public class AsyncSaveableGenericRepository<T> : AsyncGenericRepository<T>, IAsyncSaveable
-        where T : class
+    public class AsyncSaveableGenericRepository<TContext, TEntity> : AsyncGenericRepository<TContext, TEntity>, IAsyncSaveable
+        where TContext : DbContext
+        where TEntity : class
     {
         readonly private bool _saveOnChange;
 
-        public AsyncSaveableGenericRepository(DbContext context, bool saveOnChange = false)
+        public AsyncSaveableGenericRepository(TContext context, bool saveOnChange = false)
             : base(context)
         {
             _saveOnChange = saveOnChange;
         }
 
-        async public override Task InsertAsync(T entity)
+        async public override Task InsertAsync(TEntity entity)
         {
             await base.InsertAsync(entity);
 
@@ -56,7 +58,7 @@ namespace Globe.Infrastructure.EFCore.Repositories
                 await this.SaveAsync();
         }
 
-        async public override Task UpdateAsync(T entity)
+        async public override Task UpdateAsync(TEntity entity)
         {
             await base.UpdateAsync(entity);
 
