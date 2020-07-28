@@ -1,3 +1,10 @@
 obj
 bin
 .vs
+.vs/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
