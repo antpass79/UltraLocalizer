@@ -4,7 +4,7 @@ using Xunit;
 
 namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
 {
-    [Trait(nameof(ComponentConceptsTableTableAdapterTests), "Tested all methods")]
+    [Trait(nameof(ComponentConceptsTableTableAdapterTests), "MOCKED")]
     public class ComponentConceptsTableTableAdapterTests
     {
         [Fact]

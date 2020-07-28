@@ -10,7 +10,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
     [Trait(nameof(DataTableGlobalTableAdapterTests), "Tested all methods")]
     public class DataTableGlobalTableAdapterTests : AdapterTestsWithSqlCommand
     {
-        [Fact(DisplayName = nameof(GetEngDatabyComponentInternal) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetEngDatabyComponentInternal) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetEngDatabyComponentInternal()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -22,7 +22,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetMissingDataByComponentISO) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetMissingDataByComponentISO) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetMissingDataByComponentISO()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -33,7 +33,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetMissingDataByComponentISOInternal) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetMissingDataByComponentISOInternal) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetMissingDataByComponentISOInternal()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -45,7 +45,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetMissingDataByConceptID) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetMissingDataByConceptID) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetMissingDataByConceptID()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);
@@ -56,7 +56,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.True(result.Count() > 0);
         }
 
-        [Fact(DisplayName = nameof(GetDatabyComponentISO) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetDatabyComponentISO) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetDatabyComponentISO()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);

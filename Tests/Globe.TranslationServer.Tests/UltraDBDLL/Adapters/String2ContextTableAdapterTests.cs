@@ -8,7 +8,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
     [Trait(nameof(String2ContextTableAdapterTests), "Tested all methods")]
     public class String2ContextTableAdapterTests
     {
-        [Fact]
+        [Fact(Skip = "UNDER INVESTIGATION")]
         public void DeletebyIDStringIDConcept2Context()
         {
             using var context = new MockLocalizationContext().Mock().Object;
@@ -21,7 +21,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
             Assert.Equal(count - 1, context.LocStrings2Context.Count());
         }
 
-        [Fact]
+        [Fact(Skip = "UNDER INVESTIGATION")]
         public void InsertNewStrings2Context()
         {
             using var context = new MockLocalizationContext().Mock().Object;

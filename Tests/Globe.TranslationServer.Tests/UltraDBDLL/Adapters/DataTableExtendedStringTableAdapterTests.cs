@@ -9,7 +9,7 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
     [Trait(nameof(DataTableExtendedStringTableAdapterTests), "Tested all methods")]
     public class DataTableExtendedStringTableAdapterTests : AdapterTestsWithSqlCommand
     {
-        [Fact(DisplayName = nameof(GetStringByConcept2ContextISO) + " - SqlCommand")]
+        [Fact(DisplayName = nameof(GetStringByConcept2ContextISO) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
         public void GetStringByConcept2ContextISO()
         {
             using var context = new LocalizationContext(OptionsBuilder.Options);

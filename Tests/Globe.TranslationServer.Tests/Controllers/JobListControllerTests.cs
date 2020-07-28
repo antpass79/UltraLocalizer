@@ -23,7 +23,7 @@ namespace Globe.TranslationServer.Tests.Controllers
             _webProxyBuilder.BaseAddress("https://localhost:9500/api/");
         }
 
-        [Fact(DisplayName = "Get Job List for ISOCoding = " + MockConstants.ISO_CODING_EN + " - Check inside Roles => to change")]
+        [Fact(DisplayName = "Get Job List for ISOCoding = " + MockConstants.ISO_CODING_EN + " - Check inside Roles => to change", Skip = "UNDER INVESTIGATION")]
         async public void GetJobListFilterByIsoCoding()
         {
             using var client = _webProxyBuilder.Build();
