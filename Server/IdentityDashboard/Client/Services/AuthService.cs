@@ -2,6 +2,7 @@
 using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -41,9 +42,18 @@ namespace Globe.Identity.AdministrativeDashboard.Client.Services
         {
             var loginAsJson = JsonSerializer.Serialize(credentials);
             var response = await _httpClient.PostAsync("api/Login", new StringContent(loginAsJson, Encoding.UTF8, "application/json"));
-            var loginResult = JsonSerializer.Deserialize<LoginResultDTO>(await response.Content.ReadAsStringAsync(), new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            if (!response.IsSuccessStatusCode)
+            {
+                return new LoginResultDTO
+                {
+                    Error = response.ReasonPhrase,
+                    Successful = false,
+                    Token = string.Empty
+                };
+            }
 
-            if (!response.IsSuccessStatusCode || !loginResult.Successful)
+            var loginResult = JsonSerializer.Deserialize<LoginResultDTO>(await response.Content.ReadAsStringAsync(), new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            if (!loginResult.Successful)
             {
                 return loginResult;
             }
@@ -56,6 +66,7 @@ namespace Globe.Identity.AdministrativeDashboard.Client.Services
 
             await ((ApiAuthenticationStateProvider)_authenticationStateProvider).MarkUserAsAuthenticated(credentials.UserName);
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", loginResult.Token);
+            Console.WriteLine($"LOGIN {loginResult.Token}");
 
             return loginResult;
         }

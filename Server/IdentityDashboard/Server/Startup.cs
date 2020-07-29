@@ -37,7 +37,7 @@ namespace Globe.Identity.AdministrativeDashboard.Server
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // Configurations
+            // Options
             services
                 .AddOptions()
                 .Configure<DatabaseOptions>(options =>
@@ -49,12 +49,11 @@ namespace Globe.Identity.AdministrativeDashboard.Server
                 .Configure<JwtAuthenticationOptions>(options => _configuration.GetSection(nameof(JwtAuthenticationOptions)).Bind(options))
                 .Configure<UserSettingsOptions>(options => _configuration.GetSection(nameof(UserSettingsOptions)).Bind(options));
 
-            services
-                .AddSingleton<IConfigureOptions<JwtAuthenticationOptions>, ConfigureJwtAuthenticationOptions>();
-
+            // Database
             services.AddDbContext<ApplicationDbContext, ApplicationDbContext>(
                 ServiceLifetime.Transient);
 
+            // Identity
             services.AddDefaultIdentity<ApplicationUser>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -65,6 +64,14 @@ namespace Globe.Identity.AdministrativeDashboard.Server
             })
                 .AddRoles<ApplicationRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services
+                .AddAuthentication(options =>
+                {
+                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+                })
+                .AddJwtBearer();
 
             // Repositories
             services
@@ -86,17 +93,10 @@ namespace Globe.Identity.AdministrativeDashboard.Server
             // Security
             services
                 .AddScoped<IJwtTokenEncoder<ApplicationUser>, UserRolesJwtTokenEncoder<ApplicationUser>>()
-                .AddSingleton<IPostConfigureOptions<JwtBearerOptions>, ConfigureJwtBearerOptions>()
                 .AddSingleton<ISigningCredentialsBuilder, SigningCredentialsBuilder>();
-
             services
-                .AddAuthentication(options =>
-                {
-                    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-
-                })
-                .AddJwtBearer();
+                .AddSingleton<IConfigureOptions<JwtAuthenticationOptions>, ConfigureJwtAuthenticationOptions>()
+                .AddSingleton<IPostConfigureOptions<JwtBearerOptions>, ConfigureJwtBearerOptions>();
 
             services.AddAutoMapper(typeof(Startup));
 

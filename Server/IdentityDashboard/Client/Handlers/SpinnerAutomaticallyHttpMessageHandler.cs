@@ -16,11 +16,21 @@ namespace Globe.Identity.AdministrativeDashboard.Client.Handlers
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            Console.WriteLine("Send Async");
+            HttpResponseMessage response = new HttpResponseMessage(System.Net.HttpStatusCode.InternalServerError);
 
-            _spinnerService.Show();
-            var response = await base.SendAsync(request, cancellationToken);
-            _spinnerService.Hide();
+            try
+            {
+                _spinnerService.Show();
+                response = await base.SendAsync(request, cancellationToken);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            finally
+            {
+                _spinnerService.Hide();
+            }
 
             return response;
         }
