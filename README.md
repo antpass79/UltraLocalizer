@@ -93,6 +93,10 @@ Is Context that contains Concept or the contrary?
 
 ## References
 
+### Blazor
+
+- <https://bipinpaul.com/posts/display-spinner-on-each-api-call-automatically-in-blazor>
+
 ### Testing
 
 - <https://asp.net-hacker.rocks/2019/01/15/unit-testing-data-access-dotnetcore.html>
