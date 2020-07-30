@@ -19,12 +19,14 @@ namespace Globe.TranslationServer.Services.NewServices
 
         async public Task<IEnumerable<ComponentConceptsTable>> GetAllAsync()
         {
-            var componentNamespaces = (await _repository.QueryAsync())
+            var query = await _repository.QueryAsync();
+            var componentNamespaces = query
+                .Select(item => item.ComponentNamespace)
                 .Distinct()
-                .OrderBy(item => item.ComponentNamespace)
+                .OrderBy(item => item)
                 .Select(item => new ComponentConceptsTable
                 {
-                    ComponentNamespace = item.ComponentNamespace
+                    ComponentNamespace = item
                 })
                 .ToList();
 
