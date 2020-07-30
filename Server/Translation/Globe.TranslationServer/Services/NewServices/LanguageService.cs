@@ -19,14 +19,14 @@ namespace Globe.TranslationServer.Services.EFServices
 
         async public Task<IEnumerable<DBLanguage>> GetAllAsync()
         {
-            var languages = await _repository.GetAsync();
-
-            return languages
+            var query = await _repository.QueryAsync();
+            return query
                 .Select(language => new DBLanguage
                 {
                     IDLanguage = language.Id,
                     DataString = $"{language.LanguageName} ({language.Isocoding})"
                 })
+                .AsEnumerable()
                 .OrderBy(language => language.DataString);
         }
 

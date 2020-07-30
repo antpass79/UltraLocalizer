@@ -60,7 +60,8 @@ namespace Globe.TranslationServer
             // Repositories
             services
                 .AddScoped<IAsyncReadRepository<LocLanguages>, AsyncGenericRepository<LocalizationContext, LocLanguages>>()
-                .AddScoped<IAsyncReadRepository<LocConceptsTable>, AsyncGenericRepository<LocalizationContext, LocConceptsTable>>();
+                .AddScoped<IAsyncReadRepository<LocConceptsTable>, AsyncGenericRepository<LocalizationContext, LocConceptsTable>>()
+                .AddScoped<IAsyncReadRepository<LocJobList>, AsyncGenericRepository<LocalizationContext, LocJobList>>();
 
             // Services
             services
@@ -73,15 +74,16 @@ namespace Globe.TranslationServer
             services
                 .AddScoped<IAsyncLanguageService, Services.EFServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncComponentConceptsService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
+                .AddScoped<IAsyncInternalConceptsService, Services.NewServices.InternalNamespaceService> () //.AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>()
+                .AddScoped<IAsyncJobListService, Services.NewServices.JobItemService>() //.AddScoped<IAsyncJobListService, JobListAdapterService>()
+
                 .AddScoped<IAsyncContextService, ContextService>()
                 .AddScoped<IAsyncStringViewProxyService, StringViewProxyService>()
                 .AddScoped<IAsyncConceptViewProxyService, ConceptViewProxyService>()
                 .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()
                 .AddScoped<IAsyncGroupedStringEntityService, GroupedStringEntityAdapterService>()
-                .AddScoped<IAsyncJobListService, JobListAdapterService>()
                 .AddScoped<IAsyncConceptDetailsService, ConceptDetailsAdapterService>()
-                .AddScoped<IAsyncConceptService, ConceptService>()
-                .AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>();
+                .AddScoped<IAsyncConceptService, ConceptService>();
 
             // Security
             services
