@@ -1,16 +1,9 @@
-﻿using Globe.Client.Platform.Controls;
-using Globe.Client.Platform.Models;
-using Globe.Client.Platform.Services;
+﻿using Globe.Client.Platform.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.IO;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Markup;
 using System.Windows.Media;
-using System.Xml;
 
 namespace Globe.Client.Platform.Services
 {
@@ -18,8 +11,13 @@ namespace Globe.Client.Platform.Services
     {
         #region Data Members
 
-        private string _customizableStylesDirectory;
-        private string _defaultStylesDirectory;
+        string[] _customFileNames = new string[]
+            {
+                "Veterinary_Custom.xaml",
+                "Standard_Custom.xaml",
+                "StandardV2_Custom.xaml",
+                "OrangeGrey_Custom.xaml"
+            };
 
         ResourceDictionary _commonResourceDictionary = new ResourceDictionary();
 
@@ -56,7 +54,6 @@ namespace Globe.Client.Platform.Services
 
         private void InitializeMapping()
         {
-            InitPaths();
             InitResources();
 
             //Font Size
@@ -87,7 +84,7 @@ namespace Globe.Client.Platform.Services
             foreach (KeyValuePair<string, int> pair in _typeNameToMergedDictionaryIndexMapping)
             {
                 var customResourceDictionary = Application.Current.Resources.MergedDictionaries[pair.Value];
-            
+
                 //Font Size
                 ETouchScreenABtnFontSize1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.ETouchScreenABtnFontSize1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.ETouchScreenABtnFontSize1)] : ETouchScreenABtnFontSize1;
                 ETouchScreenBBtnFontSize1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.ETouchScreenBBtnFontSize1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.ETouchScreenBBtnFontSize1)] : ETouchScreenBBtnFontSize1;
@@ -97,14 +94,14 @@ namespace Globe.Client.Platform.Services
                 GDIEInfoWindowVersion2FontSize1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.GDIEInfoWindowVersion2FontSize1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.GDIEInfoWindowVersion2FontSize1)] : GDIEInfoWindowVersion2FontSize1;
                 GDIEInfoWindowMagnifiedFontSize1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.GDIEInfoWindowMagnifiedFontSize1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.GDIEInfoWindowMagnifiedFontSize1)] : GDIEInfoWindowMagnifiedFontSize1;
                 EEditFontSize1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.EEditFontSize1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.EEditFontSize1)] : EEditFontSize1;
-                EInfoWindowFontSize1 = customResourceDictionary.Contains( nameof(DefaultPreviewStyleValues.EInfoWindowFontSize1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.EInfoWindowFontSize1)] : EInfoWindowFontSize1;
-                EInfoWindowVersion2FontSize1 = customResourceDictionary.Contains( nameof(DefaultPreviewStyleValues.EInfoWindowVersion2FontSize1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.EInfoWindowVersion2FontSize1)] : EInfoWindowVersion2FontSize1;  
+                EInfoWindowFontSize1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.EInfoWindowFontSize1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.EInfoWindowFontSize1)] : EInfoWindowFontSize1;
+                EInfoWindowVersion2FontSize1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.EInfoWindowVersion2FontSize1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.EInfoWindowVersion2FontSize1)] : EInfoWindowVersion2FontSize1;
                 ELabelStyle2FontSize = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.ELabelStyle2FontSize)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.ELabelStyle2FontSize)] : ELabelStyle2FontSize;
-           
+
                 //Font Weight
                 ETouchScreenBtnFontWeight = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.ETouchScreenBtnFontWeight)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.ETouchScreenBtnFontWeight)] : ETouchScreenBtnFontWeight;
                 EStandardFontWeight = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.EStandardFontWeight)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.EStandardFontWeight)] : EStandardFontWeight;
-                GDIEInfoWindowFontWeight1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.GDIEInfoWindowFontWeight1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.GDIEInfoWindowMagnifiedFontWeight1)] : GDIEInfoWindowFontWeight1;       
+                GDIEInfoWindowFontWeight1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.GDIEInfoWindowFontWeight1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.GDIEInfoWindowMagnifiedFontWeight1)] : GDIEInfoWindowFontWeight1;
                 GDIEInfoWindowMagnifiedFontWeight1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.GDIEInfoWindowMagnifiedFontWeight1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.GDIEInfoWindowMagnifiedFontWeight1)] : GDIEInfoWindowMagnifiedFontWeight1;
                 EInfoWindowFontWeight1 = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.EInfoWindowFontWeight1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.EInfoWindowFontWeight1)] : EInfoWindowFontWeight1;
                 ELabelStyle2FontWeight = customResourceDictionary.Contains(nameof(DefaultPreviewStyleValues.EInfoWindowFontWeight1)) ? customResourceDictionary[nameof(DefaultPreviewStyleValues.EInfoWindowFontWeight1)] : EInfoWindowFontWeight1;
@@ -154,77 +151,50 @@ namespace Globe.Client.Platform.Services
 
         #region Private Functions
 
-        private void InitPaths()
-        {
-            _defaultStylesDirectory = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "DefaultStyles\\");
-            _customizableStylesDirectory = System.IO.Path.Combine(Directory.GetCurrentDirectory(), "CustomStyles\\");
-        }
-
         private void InitResources()
         {
-            LoadDefaultStyles(_defaultStylesDirectory, _commonResourceDictionary.MergedDictionaries);
-            LoadCommonControlStyles(_defaultStylesDirectory, _commonResourceDictionary.MergedDictionaries);
-            
+            LoadDefaultStyles(_commonResourceDictionary.MergedDictionaries);
+            LoadCommonControlStyles(_commonResourceDictionary.MergedDictionaries);
+
             foreach (var resourceDictionary in _commonResourceDictionary.MergedDictionaries)
             {
                 Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
             }
 
-            LoadCustomizableStyles(_customizableStylesDirectory, Application.Current.Resources.MergedDictionaries);
+            LoadCustomizableStyles(Application.Current.Resources.MergedDictionaries);
         }
 
-        private void LoadDefaultStyles(string p_DefaultDictionaryDirectory, Collection<ResourceDictionary> p_TargetResources)
+        private void LoadDefaultStyles(Collection<ResourceDictionary> targetResources)
         {
-            string l_DefaultStylesFilePath = p_DefaultDictionaryDirectory + @"\DefaultBasicStyles.xaml";
-            ResourceDictionary l_ResourceDictionary;
+            string uri2Path = @"/Globe.Client.Platform;component/Styles/DefaultStyles/DefaultBasicStyles.xaml";
+            Uri uri = new Uri(uri2Path, UriKind.Relative);
+            ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
 
-            if (!System.IO.File.Exists(l_DefaultStylesFilePath))
-            {
-                throw new ApplicationException("Default Style File not found: " + l_DefaultStylesFilePath);
-            }
-            using (XmlReader l_XmlRead = XmlReader.Create(l_DefaultStylesFilePath))
-            {
-                l_ResourceDictionary = (ResourceDictionary)XamlReader.Load(l_XmlRead);
-            }
-
-            p_TargetResources.Add(l_ResourceDictionary);
+            targetResources.Add(resourceDictionary);
         }
 
-        private void LoadCommonControlStyles(string p_DefaultDictionaryDirectory, Collection<ResourceDictionary> p_TargetResources)
+        private void LoadCommonControlStyles(Collection<ResourceDictionary> targetResources)
         {
-           
-            string l_uri2Path = @"/StyleManager;component/CommonControlsStyle.xaml";
-            Uri l_uri = new Uri(l_uri2Path, UriKind.Relative);
-            ResourceDictionary l_ResourceDictionary2 = (ResourceDictionary)Application.LoadComponent(l_uri);
+            string uri2Path = @"/StyleManager;component/CommonControlsStyle.xaml";
+            Uri uri = new Uri(uri2Path, UriKind.Relative);
+            ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
 
-            p_TargetResources.Add(l_ResourceDictionary2);
-         
+            targetResources.Add(resourceDictionary);
+
         }
 
-        private void LoadCustomizableStyles(string p_CustomDictionaryDirectory, Collection<ResourceDictionary> p_TargetResources)
+        private void LoadCustomizableStyles(Collection<ResourceDictionary> targetResources)
         {
-            string[] filePaths = Directory.GetFiles(p_CustomDictionaryDirectory, "*Custom.xaml");
-            
-            //string[] filePaths = Directory.GetFiles(p_CustomDictionaryDirectory, "StandardV2_Custom.xaml");
-
-            // Impossibile trovare la risorsa denominata 'TSButtonStyleCommon' (io la vedo definita sul CommonControlsStyle.xaml) 
-            //string[] filePaths = Directory.GetFiles(p_CustomDictionaryDirectory, "Standard_Custom.xaml");
-
-
-            foreach (string filePath in filePaths)
+            foreach (string customFileName in _customFileNames)
             {
-                ResourceDictionary l_ResourceDictionaryCustom = new ResourceDictionary();
+                string uri2Path = @"/Globe.Client.Platform;component/Styles/CustomStyles/" + customFileName;
+                Uri uri = new Uri(uri2Path, UriKind.Relative);
+                ResourceDictionary resourceDictionaryCustom = (ResourceDictionary)Application.LoadComponent(uri);
 
-                using (XmlReader l_XmlRead = XmlReader.Create(filePath))
-                {
-                    l_ResourceDictionaryCustom = (ResourceDictionary)XamlReader.Load(l_XmlRead);
-                }
+                targetResources.Add(resourceDictionaryCustom);
 
-                p_TargetResources.Add(l_ResourceDictionaryCustom);
-
-                var typeName = Path.GetFileName(filePath).Replace("_Custom.xaml", string.Empty);
-                _typeNameToMergedDictionaryIndexMapping.Add(typeName, p_TargetResources.Count - 1);
-
+                var typeName = customFileName.Replace("_Custom.xaml", string.Empty);
+                _typeNameToMergedDictionaryIndexMapping.Add(typeName, targetResources.Count - 1);
             }
         }
 

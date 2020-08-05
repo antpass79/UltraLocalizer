@@ -1,0 +1,630 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib"  xmlns:contract="clr-namespace:UIFramework.Contract.Interfaces;assembly=UIFramework.Contract">
+  <Style  x:Key="IGelRectangleTemplate2" TargetType="Rectangle">
+    <Setter Property="Opacity" Value="1"/>
+    <Setter Property="Panel.ZIndex" Value="0"/>
+    <Setter Property="StrokeThickness" Value="0.35"/>
+    <Setter Property="Stroke" Value="{DynamicResource EControlBorderBrush1}"/>
+  </Style>
+
+  <SolidColorBrush x:Key="EPagesNavigationButtonsthumbnails">#FF000000</SolidColorBrush>
+  <SolidColorBrush x:Key="  EThumbnailsButtonBackground1">#FF0087FA</SolidColorBrush>
+    <SolidColorBrush x:Key="EMeasureButtonColor">#FF292929</SolidColorBrush>
+ <LinearGradientBrush StartPoint="0,1" EndPoint="0,0" x:Key="EHighlightedItemBackgroundBrush2">
+        <LinearGradientBrush.GradientStops>
+            <GradientStop Color="#FF0087FA" Offset="0" />
+            <GradientStop Color="#FF0087FA" Offset="1" />
+        </LinearGradientBrush.GradientStops>
+    </LinearGradientBrush>
+  <SolidColorBrush x:Key="ETSTabSelectedForeground">#FF0087FA</SolidColorBrush>
+  <StreamGeometry x:Key="EUpArrowGeometry1">M0,0L0,1 4,4 8,1 8,0z</StreamGeometry>
+  <SolidColorBrush x:Key="EListHeaderBorderBrush1">#FF303030</SolidColorBrush>
+  <Color x:Key="ENotActiveObjectColor">#FF00FF00</Color>
+  <SolidColorBrush x:Key="ETouchScreenBackgroundBrush">#FF000000</SolidColorBrush>
+  <Color x:Key="EFocusedItemTextColor1">#FFFFFFFF</Color>
+  <Thickness x:Key="ETouchscreenAreaMargin1">10,0,10,1</Thickness>
+  <SolidColorBrush x:Key="EControlToggleDisabledGlyphFill">#FF7B838B</SolidColorBrush>
+  <SolidColorBrush x:Key="EHighlightedItemForegroundBrush1">#FF0087FA</SolidColorBrush>
+  <SolidColorBrush x:Key="EControlAreaBackGroundBrush1">#FF7B838B</SolidColorBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="EControlToggleMouseOverBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EViewerControlBackground1">#FF000000</SolidColorBrush>
+  <s:Double x:Key="EOverlayScaleFontSize">11</s:Double>
+  <s:Double x:Key="EEditFontSize1">14</s:Double>
+  <SolidColorBrush x:Key="EDisabledEditableAreaBrush1">#FF7B838B</SolidColorBrush>
+  <FontFamily x:Key="EditFontFamily1">Arial, SimHei, Verdana, Times new Roman</FontFamily>
+  <SolidColorBrush x:Key="EQwertyKeybButtonColor">#FF303030</SolidColorBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ETgcMouseOverBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EDisabledTextBrush1">#FF505050</SolidColorBrush>
+  <FontWeight x:Key="EOverlayMeasureFontWeight">Normal</FontWeight>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" SpreadMethod="Pad" x:Key="ERepeatButtonNormalBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="0.5" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EInfoWindowBackground1">#FF000000</SolidColorBrush>
+  <s:Double x:Key="EButtonShineRadiusX1">6</s:Double>
+  <FontWeight x:Key="ETouchScreenBtnFontWeight">Normal</FontWeight>
+  <Color x:Key="EActiveObjectColor">#FFE5E500</Color>
+  <Color x:Key="EThreeDActiveObjectColor">#FFFFFF00</Color>
+  <Color x:Key="EThreeDNotActiveObjectColor">#FFFFFFFF</Color>
+  <SolidColorBrush x:Key="ETooltipForeground1">#FF0087FA</SolidColorBrush>
+  <StreamGeometry x:Key="EPlusGlyphGeometry1">M0,-1L0,1 3,1 3,4 5,4 5,1 8,1 8,-1 5,-1 5,-4 3,-4 3,-1z</StreamGeometry>
+  <CornerRadius x:Key="ECheckboxCornerRadius1">2,2,2,2</CornerRadius>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" x:Key="EBatteryProgressEmptyBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FFFF0000" Offset="0" />
+      <GradientStop Color="#FFFF0000" Offset="0.5" />
+      <GradientStop Color="#FFFF0000" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EScrollBackgroundBrush1">#FF303030</SolidColorBrush>
+  <SolidColorBrush x:Key="EButtonMouseHoverBackground1">#FF303030</SolidColorBrush>
+  <SolidColorBrush x:Key="EThumbnailsButtonMouseHoverBackground1">#FF0087FA</SolidColorBrush>
+  <s:Double x:Key="ETouchScreenSBtnFontSize1">18</s:Double>
+  <s:Double x:Key="ETouchScreenSBtnFontSize2">14</s:Double>
+  <SolidColorBrush Color="#FF0087FA" x:Key="EButtonPressedForeground1" />
+  <SolidColorBrush Color="#FF0087FA" x:Key="EButtonPressedForeground2" />
+  <SolidColorBrush x:Key="EQwertyKeybDisabledButtonColor">#FFB1B6E9</SolidColorBrush>
+  <SolidColorBrush x:Key="ERepeatButtonDisabledBorderBrush">#FFAAAAAA</SolidColorBrush>
+  <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="EPanelTooltipBackgroundBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EDisabledControlBackgroundBrush">#FF151515</SolidColorBrush>
+    <SolidColorBrush x:Key="EThumbnailsDisabledControlBackgroundBrush">#FF0087FA</SolidColorBrush>
+
+  <SolidColorBrush x:Key="EQwertyKeybShftColor">#FF303030</SolidColorBrush>
+  <CornerRadius x:Key="ETabItemCornerRadius1">10,10,0,0</CornerRadius>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ECheckboxPressedBackgroundBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FFBBBBBB" Offset="0" />
+      <GradientStop Color="#FFEEEEEE" Offset="0.1" />
+      <GradientStop Color="#FFEEEEEE" Offset="0.9" />
+      <GradientStop Color="#FFFFFFFF" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <FontWeight x:Key="ETouchScreenEncoderSelectedFontWeight">Bold</FontWeight>
+  <s:Double x:Key="EInfoWindowFontSize1">12</s:Double>
+  <s:Double x:Key="EInfoWindowVersion2FontSize1">15</s:Double>
+  <s:Double x:Key="EInfoWindowMagnifiedFontSize1">14</s:Double>
+  <s:Double x:Key="EInfoWindowFontSizeGroup">14</s:Double>
+  <s:Double x:Key="EInfoWindowFontSizeMacro">12</s:Double>
+  <s:Double x:Key="EInfoWindowFontSizeSub">11</s:Double>
+  <s:Double x:Key="ELabelStyle2FontSize">13</s:Double>
+    <s:Double x:Key="ELabelStyleQElaxto2d">16</s:Double>
+  <!--fictitious font size and weight used in  AREA18 measure panel-->
+  <s:Double x:Key="GDIEInfoWindowFontSize1">14</s:Double>
+  <s:Double x:Key="GDIEInfoWindowVersion2FontSize1">16</s:Double>
+  <s:Double x:Key="GDIEInfoWindowMagnifiedFontSize1">18</s:Double>
+  <FontWeight x:Key="GDIEInfoWindowFontWeight1">Bold</FontWeight>
+  <FontWeight x:Key="GDIEInfoWindowMagnifiedFontWeight1">Normal</FontWeight>
+  <FontWeight x:Key="GDIEInfoWindowHeaderStyle1FontWeight">Bold</FontWeight>
+  <FontWeight x:Key="GDIEInfoWindowMagnifiedHeaderStyle1FontWeight">Normal</FontWeight>
+  <FontFamily x:Key="GDIEditFontFamily1">Arial, Verdana, Times new Roman</FontFamily>
+  <!-- end fictitious font size and weight used in  AREA18 measure panel-->
+
+  <RadialGradientBrush Center="0.500000000000002,1" GradientOrigin="0.5,1.2" x:Key="ETouchScreenEncoderMouseOverBackground1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0.074444444444445632" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+  <FontWeight x:Key="EOverlayScaleFontWeight">Normal</FontWeight>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ERepeatButtonMouseOverBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <Color x:Key="EOverlayItemForegroundColor">#FFFFFFFF</Color>
+  <StreamGeometry x:Key="EMinusGlyphGeometry1">M0,0L0,2 8,2 8,0z</StreamGeometry>
+  <SolidColorBrush x:Key="ETouchScreenAdvancedBtnBorderBrush1">#FF303030</SolidColorBrush>
+  <SolidColorBrush x:Key="EEditableAreaBrush1">#FF303030</SolidColorBrush>
+  <SolidColorBrush x:Key="EListHeaderPressedForeground1">#FFFFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="HelpAreaBackGroundBrush">#FF303030</SolidColorBrush>
+  <RadialGradientBrush x:Key="EListHeaderPressedBackground1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="0.985" />
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ECheckboxMouseOverBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="ERepeatButtonDisabledBackgroundBrush">#FFEEEEEE</SolidColorBrush>
+  <SolidColorBrush x:Key="EQwertyKeybPressedButtonColor">#FF0087FA</SolidColorBrush>
+  <RadialGradientBrush Center="0.500000000000002,1" GradientOrigin="0.5,1.2" x:Key="ETouchScreenNavigationBtnBackground1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#FF1E1E1E" Offset="0.074444444444445632" />
+      <GradientStop Color="#FF1E1E1E" Offset="1" />
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+  <s:Double x:Key="ETouchScreenABtnFontSize1">20</s:Double>
+  <s:Double x:Key="EButtonShapeRadiusY1">9</s:Double>
+  <LinearGradientBrush StartPoint="0,1" EndPoint="0,0" x:Key="EHighlightedItemBackgroundBrush1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EButtonForeground1">#FFFFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="EButtonForeground2">#FFFFFFFF</SolidColorBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" x:Key="EBatteryProgressFullBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF008000" Offset="0" />
+      <GradientStop Color="#FF008000" Offset="0.5" />
+      <GradientStop Color="#FF008000" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <Thickness x:Key="ETouchScreenAdvancedBtnBorderThickness1">0,0,0,0</Thickness>
+  <CornerRadius x:Key="ETouchScreenAdvancedBtnCornerRadius1">5,5,5,5</CornerRadius>
+  <SolidColorBrush x:Key="EButtonShineFillBrush1">#FF303030</SolidColorBrush>
+  <SolidColorBrush x:Key="ELabelTextBrush1">#FFFFFFF0</SolidColorBrush>
+  <Color x:Key="EInfoWindowProgressColor1">#FF0087FA</Color>
+  <Color x:Key="ERotYAxesForeground">#FFFF0000</Color>
+  <SolidColorBrush x:Key="ELabelTextBrush2">#FFFFFFF0</SolidColorBrush>
+  <SolidColorBrush x:Key="EListHeaderMouseOverForeground1">#FFFFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="EControlToggleGlyphFill">#FFFFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="EControlBorderBrush1">#FF808080</SolidColorBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" SpreadMethod="Pad" x:Key="EScrollThumbNormalBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="0.5" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="EListViewBorderBrush1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <s:Double x:Key="ETouchScreenBBtnFontSize1">16</s:Double>
+  <Color x:Key="EFocusedItemBackgroundColor1">#FF316AC5</Color>
+  <CornerRadius x:Key="EControlCornerRadius1">2,2,2,2</CornerRadius>
+  <LinearGradientBrush StartPoint="0.5,-0.5" EndPoint="0.547,0.913" x:Key="ETooltipBackgroundBrush1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EButtonMouseOverForeground1">#FF0087FA</SolidColorBrush>
+  <SolidColorBrush x:Key="EButtonMouseOverForeground2">#FF0087FA</SolidColorBrush>
+  <SolidColorBrush x:Key="EPanelSolidBackgroundBrush">#FF303030</SolidColorBrush>
+    <SolidColorBrush x:Key="EPanelSolidBackgroundBrushThumbnails">#FF151515</SolidColorBrush>
+  <s:Double x:Key="MinControlHeight1">14</s:Double>
+  <SolidColorBrush x:Key="EButtonPressedBackground1">#FF303030</SolidColorBrush>
+    <SolidColorBrush x:Key="EThumbnailsButtonPressedBackground1">#FF0087FA</SolidColorBrush>
+  <SolidColorBrush x:Key="EButtonPressedBackground1Archive">#FF0087FA</SolidColorBrush>
+
+
+  <SolidColorBrush x:Key="EDisabledControlBorderBrush1">#FFAAAAAA</SolidColorBrush>
+  <SolidColorBrush x:Key="ERepeatButtonDefaultedBorderBrush">#FF0087FA</SolidColorBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" x:Key="EScrollThumbNormalBorderBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF286FB4" Offset="1" />
+      <GradientStop Color="#FF18354E" Offset="0.865" />
+      <GradientStop Color="#FF286FB4" Offset="0" />
+      <GradientStop Color="#FF173D52" Offset="0.145" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <LinearGradientBrush StartPoint="0,1" EndPoint="0,0" x:Key="EListViewBackgroundBrush1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EButtonBackground1">#FF303030</SolidColorBrush>
+  <SolidColorBrush x:Key="EButtonBackground3">#FF0087FA</SolidColorBrush>
+  <SolidColorBrush x:Key="EButtonBackground2">#FF303030</SolidColorBrush>
+  <SolidColorBrush x:Key="EButtonBackground4">#FF303030</SolidColorBrush>
+  <!--<LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="EButtonBackground2">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+   <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="EButtonBackground4">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>-->
+  <SolidColorBrush x:Key="EButtonPressedBackground2">#FF1E1E1E</SolidColorBrush>
+  <SolidColorBrush x:Key="ECheckboxMarkBrush1">#FF3FC606</SolidColorBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ERepeatButtonPressedBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="0.1" />
+      <GradientStop Color="#FF0087FA" Offset="0.9" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <s:Double x:Key="EButtonShapeRadiusX1">9</s:Double>
+  <s:Double x:Key="EVirtualkeyboardBtnOnMainScreenFontSize1">20</s:Double>
+  <SolidColorBrush x:Key="EListHeaderBackground1">#FF303030</SolidColorBrush>
+  <Thickness x:Key="EButtonMargin1">10,10,10,10</Thickness>
+  <FontWeight x:Key="ELabelStyle2FontWeight">Bold</FontWeight>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" SpreadMethod="Pad" x:Key="ESliderTrackBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF000000" Offset="0" />
+      <GradientStop Color="#FF000000" Offset="0.5" />
+      <GradientStop Color="#FF000000" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EUserControlBrush">#FF000000</SolidColorBrush>
+  <SolidColorBrush x:Key="HeaderBackGroundBrush">#FF000000</SolidColorBrush>
+  <s:Double x:Key="ETouchScreenBtnFontSize1">20</s:Double>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="EControlToggleNormalBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <Color x:Key="EWarningForeground1">#FFFF7D00</Color>
+  <Color x:Key="EWarningForeground2">#FFFFFF00</Color>
+  <SolidColorBrush x:Key="ETouchscreenAAreaBorderBrush">#FF303030</SolidColorBrush>
+  <SolidColorBrush x:Key="ETouchscreenTABBorderBrush">#FF0087FA</SolidColorBrush>
+  <SolidColorBrush x:Key="ETouchscreenTABFontColor">#FF0087FA</SolidColorBrush>
+  <s:Double x:Key="EButtonShineRadiusY1">6</s:Double>
+  <RadialGradientBrush Center="0.5,0" RadiusX="0.5" RadiusY="0.45" GradientOrigin="0.5,0" x:Key="EEllipseButtonShineFillBrush1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+  <Color x:Key="ERotXAxesForeground">#FFFF7D00</Color>
+  <FontWeight x:Key="EOverlayGenericFontWeight">Bold</FontWeight>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="EControlAreaBorderBrush1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EListViewForegroundBrush1">#FFFFFFFF</SolidColorBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ERepeatButtonPressedBorderBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="EProgressBrush1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="0.5" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="ERepeatButtonDisabledForegroundBrush">#FF303030</SolidColorBrush>
+  <!--<SolidColorBrush x:Key="ETouchscreenAAreaBackground">#ff000000</SolidColorBrush>-->
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ETouchscreenAAreaBackground">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ECheckboxPressedBorderBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FFFFFFFF" Offset="0" />
+      <GradientStop Color="#FFFFFFFF" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="EControlTogglePressedBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="0.1" />
+      <GradientStop Color="#FF0087FA" Offset="0.9" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <RadialGradientBrush Center="0.5,1" GradientOrigin="0.5,1" x:Key="ETabItemBackgroundBrush1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#FF202020" Offset="0.13" />
+      <GradientStop Color="#FF202020" Offset="1" />
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+  <Color x:Key="ESelectedItemTextColor1">#FF0087FA</Color>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ERepeatButtonNormalBorderBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ETouchscreenBAreaBackground">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF000000" Offset="0" />
+      <GradientStop Color="#ff000000" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <RadialGradientBrush Center="0.5,1" GradientOrigin="0.5,0.722222222222222" Opacity="1" x:Key="ESelectedTabItemBackgroundBrush1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0.20999999999999972" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+  <Thickness x:Key="EStandardMargin">2,2,2,2</Thickness>
+  <SolidColorBrush x:Key="EEditableTextBrush1">#FFF0F0F0</SolidColorBrush>
+  <Color x:Key="ESelectedItemBackgroundColor1">#FF303030</Color>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="KeyboardBrush1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FFEDE8DD" Offset="0" />
+      <GradientStop Color="#FF7C7A76" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <RadialGradientBrush Opacity="0.82222222222222274" x:Key="EIconForeground1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#FFFFFFFF" Offset="0.33333333333333343" />
+      <GradientStop Color="#FFFFFFFF" Offset="0.985" />
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+  <RadialGradientBrush x:Key="EListHeaderMouseOverBackground1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#FF0087FA" Offset="0" />
+      <GradientStop Color="#FF0087FA" Offset="1" />
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+  <SolidColorBrush x:Key="EQwertyKeybAltGrColor">#FF3399CC</SolidColorBrush>
+  <s:Double x:Key="ETouchScreenTabFontSize1">16</s:Double>
+  <s:Double x:Key="EOverlayGenericFontSize">11</s:Double>
+  <SolidColorBrush x:Key="EButtonShinePressedFillBrush1">#FF303030</SolidColorBrush>
+
+  <s:Double x:Key="EOverlayMeasureFontSize">11</s:Double>
+  <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="EPanelTooltipBorderBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <StreamGeometry x:Key="EDownArrowGeometry1">M0,3L0,4 8,4 8,3 4,0z</StreamGeometry>
+  <SolidColorBrush x:Key="EQwertyKeybLetterColor">#FFFFFFFF</SolidColorBrush>
+  <FontWeight x:Key="EInfoWindowFontWeight1">Bold</FontWeight>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ETgcBackNormalBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" x:Key="EBatteryProgressMediumBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF9ACD32" Offset="0" />
+      <GradientStop Color="#FF9ACD32" Offset="0.5" />
+      <GradientStop Color="#FF9ACD32" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <CornerRadius x:Key="ETouchScreenEncoderCornerRadius1">0,0,0,0</CornerRadius>
+  <SolidColorBrush x:Key="ELabelBackgroundBrush1">#00FFFFFF</SolidColorBrush>
+  <SolidColorBrush x:Key="ETouchToggleBorder">#FF000000</SolidColorBrush>
+  <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="EComboBoxEditableAreaBrush1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0.02" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="EScrollForegroundBrush1">#FF303030</SolidColorBrush>
+  <FontWeight x:Key="EStandardFontWeight">Normal</FontWeight>
+  <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" x:Key="EPanelBackgroundBrush1">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0.02" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <SolidColorBrush x:Key="ETouchscreenBAreaBorderBrush">#FF000000</SolidColorBrush>
+  <Color x:Key="ERotZAxesForeground">#FF303030</Color>
+  <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" x:Key="ESliderTrackBorderBrush">
+    <LinearGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="1" />
+      <GradientStop Color="#FF303030" Offset="0.865" />
+      <GradientStop Color="#FF303030" Offset="0" />
+      <GradientStop Color="#FF303030" Offset="0.145" />
+    </LinearGradientBrush.GradientStops>
+  </LinearGradientBrush>
+  <RadialGradientBrush Center="0.500000000000002,0.500000000000001" GradientOrigin="0.5,0.499999999999999" Opacity="1" x:Key="ETouchScreenEncoderBackground1">
+    <RadialGradientBrush.GradientStops>
+      <GradientStop Color="#FF303030" Offset="0.29666666666666774" />
+      <GradientStop Color="#FF303030" Offset="1" />
+    </RadialGradientBrush.GradientStops>
+  </RadialGradientBrush>
+
+  <Style x:Key="EButtonStyle1" TargetType="{x:Type ButtonBase}">
+    <Setter Property="Margin" Value="{DynamicResource EButtonMargin1}"/>
+    <Setter Property="Foreground" Value="{DynamicResource EButtonForeground1}"/>
+    <Setter Property="Background" Value="{DynamicResource EButtonBackground1}"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="Padding" Value="10,5,10,5" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ButtonBase}">
+          <Grid>
+            <Rectangle x:Name="GelBackground" Style="{StaticResource IGelRectangleTemplate2}" Fill="{TemplateBinding Background}" Effect="{StaticResource IButtonShadowEffect}"  >
+            </Rectangle>
+            <ContentPresenter  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="contentPresenter" OpacityMask="#FF0F0F0F"/>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Fill" TargetName="GelBackground" Value="{DynamicResource EButtonMouseHoverBackground1}"/>
+              <Setter Property = "Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+              <Setter Property="Fill" TargetName="GelBackground" Value="{DynamicResource EButtonPressedBackground1}"/>
+              <Setter Property = "Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+              <Setter Property="Fill" TargetName="GelBackground" Value="{DynamicResource EDisabledControlBackgroundBrush}"/>
+              <Setter Property="Foreground" Value="{DynamicResource EDisabledTextBrush1}"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Foreground" Value="{DynamicResource EButtonMouseOverForeground1}"/>
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter Property="Foreground" Value="{DynamicResource EButtonPressedForeground1}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="TSButtonStyleBasic" TargetType="{x:Type contract:TSButton}"  BasedOn="{StaticResource TSButtonStyleCommon}">
+    <Setter Property="Margin"  Value="0,0,0,0" />
+    <Setter Property="Padding" Value="10,5,10,5" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type contract:TSButton}">
+          <Grid>
+            <Rectangle x:Name="GelBackground" Style="{StaticResource IGelRectangleTemplate2}" Fill="{TemplateBinding Background}"  >
+            </Rectangle>
+            <!--<Rectangle x:Name="GelShine" Style="{StaticResource IGelShineTemplate}" Fill="{DynamicResource EButtonShineFillBrush1}" />-->
+            <ContentPresenter  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="contentPresenter" OpacityMask="#FF0F0F0F"/>
+            <!--<TextBlock Text="{TemplateBinding Content}" TextWrapping="Wrap"  Margin="10,5,10,5" VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="contentPresenter" OpacityMask="#FF0F0F0F"/>-->
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Background" Value="{DynamicResource EButtonPressedBackground2}"/>
+              <Setter Property="Foreground" Value="{DynamicResource EButtonMouseOverForeground2}"/>
+              <Setter Property="Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+              <Setter Property="Background" Value="{DynamicResource EButtonPressedBackground2}"/>
+
+              <Setter Property="Foreground" Value="{DynamicResource EButtonMouseOverForeground2}"/>
+              <Setter Property = "Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+              <Setter Property="Fill" TargetName="GelBackground" Value="{DynamicResource EDisabledControlBackgroundBrush}"/>
+              <Setter Property="Foreground" Value="{DynamicResource EDisabledTextBrush1}"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+              <Setter Property="Background" Value="{DynamicResource EButtonPressedBackground2}"/>
+              <Setter Property="Foreground" Value="{DynamicResource EButtonMouseOverForeground2}"/>
+              <Setter Property = "Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+
+
+    <Style.Triggers>
+
+      <Trigger Property="IsChecked" Value="True">
+        <Setter Property="Foreground" Value="{DynamicResource EButtonPressedForeground1}"/>
+        <Setter Property="Background" Value="{DynamicResource EButtonPressedBackground1}"/>
+
+
+      </Trigger>
+      <Trigger Property="IsEnabled" Value="false">
+        <Setter Property="Foreground" Value="{DynamicResource EDisabledTextBrush1}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+
+  <Style x:Key="EButtonStyle3" TargetType="{x:Type ButtonBase}">
+    <Setter Property="Margin" Value="{DynamicResource EButtonMargin1}"/>
+    <Setter Property="Foreground" Value="{DynamicResource EButtonForeground2}"/>
+    <Setter Property="Background" Value="{DynamicResource EButtonBackground2}"/>
+    <Setter Property="VerticalContentAlignment" Value="Center"/>
+    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    <Setter Property="Padding" Value="10,5,10,5" />
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type ButtonBase}">
+          <Grid>
+            <Rectangle x:Name="GelBackground" Style="{StaticResource IGelRectangleTemplate}" Fill="{TemplateBinding Background}" Effect="{StaticResource IButtonShadowEffect}">
+            </Rectangle>
+            <ContentPresenter  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="contentPresenter" OpacityMask="#FF0F0F0F"/>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Foreground" Value="{DynamicResource EButtonMouseOverForeground2}"/>
+              <Setter Property = "Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+              <Setter Property="Fill" TargetName="GelBackground" Value="{DynamicResource EButtonPressedBackground2}"/>
+              <Setter Property = "Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+              <Setter Property="Fill" TargetName="GelBackground" Value="{DynamicResource EDisabledControlBackgroundBrush}"/>
+              <Setter Property="Foreground" Value="{DynamicResource EDisabledTextBrush2}"/>
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="IsMouseOver" Value="True">
+        <Setter Property="Foreground" Value="{DynamicResource EButtonMouseOverForeground2}"/>
+      </Trigger>
+      <Trigger Property="IsPressed" Value="True">
+        <Setter Property="Foreground" Value="{DynamicResource EButtonPressedForeground2}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+  <Style x:Key="ESpecialToggleButtonStyle2" TargetType="{x:Type contract:TSButton}"  BasedOn="{StaticResource EButtonStyle3}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type contract:TSButton}">
+          <Grid>
+            <Rectangle x:Name="GelBackground" Style="{StaticResource IGelRectangleTemplate}" Fill="{TemplateBinding Background}" Effect="{StaticResource IButtonShadowEffect}" >
+            </Rectangle>
+            <ContentPresenter  Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="contentPresenter" OpacityMask="#FF0F0F0F"/>
+          </Grid>
+          <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Setter Property="Foreground" Value="{DynamicResource EButtonMouseOverForeground2}"/>
+              <Setter Property = "Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="true">
+              <Setter Property="Fill" TargetName="GelBackground" Value="{DynamicResource EButtonPressedBackground2}"/>
+              <Setter Property = "Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="false">
+              <Setter Property="Fill" TargetName="GelBackground" Value="{DynamicResource EDisabledControlBackgroundBrush}"/>
+              <Setter Property="Foreground" Value="{DynamicResource EDisabledTextBrush2}"/>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="True">
+              <Setter Property="Background" Value="{DynamicResource EButtonPressedBackground2}"/>
+
+              <Setter Property="Foreground" Value="{DynamicResource EButtonMouseOverForeground2}"/>
+              <Setter Property = "Stroke"  TargetName="GelBackground" Value="#FF0087FA" />
+              <Setter Property="StrokeThickness"  TargetName="GelBackground" Value="2" />
+            </Trigger>
+          </ControlTemplate.Triggers>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+    <Style.Triggers>
+      <Trigger Property="IsEnabled" Value="false">
+        <Setter Property="Foreground" Value="{DynamicResource EDisabledTextBrush2}"/>
+      </Trigger>
+    </Style.Triggers>
+  </Style>
+</ResourceDictionary>
