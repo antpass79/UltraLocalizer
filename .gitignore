@@ -3,6 +3,7 @@ bin
 .vs
 .vs/
 
+
 # User-specific files
 *.suo
 *.user

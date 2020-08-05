@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Media;
 
-namespace Globe.Client.Platform.Controls
+namespace Globe.Client.Platform.Models
 {
     public class PreviewStyleInfo
     {

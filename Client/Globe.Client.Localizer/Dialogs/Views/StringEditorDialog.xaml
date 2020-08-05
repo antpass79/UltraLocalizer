@@ -123,24 +123,45 @@
                         <DataGridComboBoxColumn Header="String Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding StringType}" />
                         <DataGridTextColumn Header="Developer String" Binding="{Binding StringDefaultValue}" IsReadOnly="True" />
                         <DataGridTextColumn Header="Localized String" Binding="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" />
-                        <DataGridTemplateColumn Header="Preview Style 1" IsReadOnly="True">
+                        <DataGridTemplateColumn Header="Preview Style Standard" IsReadOnly="True">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <platform:PreviewString Text="{Binding StringEditableValue}" PreviewStyleInfo="{Binding Name, Converter={StaticResource ContextNameToPreviewStyleInfoConverter}}" />
+                                    <platform:PreviewString Text="{Binding StringEditableValue}">
+                                        <platform:PreviewString.PreviewStyleInfo>
+                                                <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="Standard" >
+                                                    <Binding Path="Name" />
+                                                    <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                </MultiBinding>
+                                        </platform:PreviewString.PreviewStyleInfo>
+                                    </platform:PreviewString>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Preview Style 2" IsReadOnly="True">
+                        <DataGridTemplateColumn Header="Preview Style Orange grey" IsReadOnly="True">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <platform:PreviewString Text="{Binding StringEditableValue}" PreviewStyleInfo="{Binding Name, Converter={StaticResource ContextNameToPreviewStyleInfoConverter}}" />
+                                    <platform:PreviewString Text="{Binding StringEditableValue}">
+                                        <platform:PreviewString.PreviewStyleInfo>
+                                            <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="OrangeGrey" >
+                                                <Binding Path="Name" />
+                                                <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                            </MultiBinding>
+                                        </platform:PreviewString.PreviewStyleInfo>
+                                    </platform:PreviewString>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTemplateColumn Header="Preview Style 3" IsReadOnly="True">
+                        <DataGridTemplateColumn Header="Preview Style StandardV2" IsReadOnly="True">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <platform:PreviewString Text="{Binding StringEditableValue}" PreviewStyleInfo="{Binding Name, Converter={StaticResource ContextNameToPreviewStyleInfoConverter}}" />
+                                    <platform:PreviewString Text="{Binding StringEditableValue}">
+                                        <platform:PreviewString.PreviewStyleInfo>
+                                            <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="StandardV2" >
+                                                <Binding Path="Name" />
+                                                <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                            </MultiBinding>
+                                        </platform:PreviewString.PreviewStyleInfo>
+                                    </platform:PreviewString>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

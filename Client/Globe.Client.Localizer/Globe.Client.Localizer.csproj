@@ -18,6 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="StyleManager">
+      <HintPath>Dependencies\StyleManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UIFramework.Contract">
+      <HintPath>Dependencies\UIFramework.Contract.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
