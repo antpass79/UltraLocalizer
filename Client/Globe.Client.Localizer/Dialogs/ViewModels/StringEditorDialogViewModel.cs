@@ -1,5 +1,6 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform.Controls;
 using Globe.Client.Platform.Services;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -15,12 +16,24 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
     {
         private readonly IEditStringService _editStringService;
         private readonly ILoggerService _loggerService;
+        private readonly IPreviewStyleService _previewStyleService;
 
-        public StringEditorDialogViewModel(IEditStringService editStringService, ILoggerService loggerService)
+        public StringEditorDialogViewModel(
+            IEditStringService editStringService,
+            ILoggerService loggerService,
+            IPreviewStyleService previewStyleService)
         {
             _editStringService = editStringService;
             _loggerService = loggerService;
+            _previewStyleService = previewStyleService;
         }
+
+        public IPreviewStyleService PreviewStyleService
+        {
+            get { return _previewStyleService; }
+        }
+
+
 
         private bool _savingBusy = false;
         public bool SavingBusy
