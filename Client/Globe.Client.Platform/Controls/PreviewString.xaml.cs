@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+﻿using Globe.Client.Platform.Models;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -16,7 +16,7 @@ namespace Globe.Client.Platform.Controls
             InitializeComponent();
         }
 
-        #endregion
+        #endregion       
 
         #region Dependency Properties
 
