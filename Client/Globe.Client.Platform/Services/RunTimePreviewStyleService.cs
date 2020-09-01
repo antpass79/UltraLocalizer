@@ -1,15 +1,27 @@
-﻿using Globe.Client.Platform.Models;
+﻿using Globe.Client.Platform.Controls;
+using Globe.Client.Platform.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Reflection;
 using System.Windows;
+using System.Windows.Markup;
 using System.Windows.Media;
+using System.Xml;
 
 namespace Globe.Client.Platform.Services
 {
     public class RunTimePreviewStyleService : IPreviewStyleService
     {
         #region Data Members
+
+        //const string PATH_DEFAULT_BASIC_STYLE = @"/Globe.Client.Platform;component/Styles/DefaultStyles/DefaultBasicStyles.xaml";
+        //const string PATH_COMMON_CONTROL_STYLE = @"/StyleManager;component/CommonControlsStyle.xaml";
+        //const string ROOT_PATH_CUSTOM_STYLE = @"/Globe.Client.Platform;component/Styles/CustomStyles";
+
+        string PATH_DEFAULT_BASIC_STYLE = $"{AppDomain.CurrentDomain.BaseDirectory}/Styles/DefaultStyles/DefaultBasicStyles.xaml";
+        string PATH_COMMON_CONTROL_STYLE = @"/StyleManager;component/CommonControlsStyle.xaml";
+        string ROOT_PATH_CUSTOM_STYLE = $"{AppDomain.CurrentDomain.BaseDirectory}/Styles/CustomStyles";
 
         string[] _customFileNames = new string[]
             {
@@ -153,9 +165,9 @@ namespace Globe.Client.Platform.Services
 
         private void InitResources()
         {
-            LoadDefaultStyles(_commonResourceDictionary.MergedDictionaries);
-            LoadCommonControlStyles(_commonResourceDictionary.MergedDictionaries);
-
+            LoadStyles(_commonResourceDictionary.MergedDictionaries, PATH_DEFAULT_BASIC_STYLE);
+            LoadStyles(_commonResourceDictionary.MergedDictionaries, PATH_COMMON_CONTROL_STYLE, true);
+  
             foreach (var resourceDictionary in _commonResourceDictionary.MergedDictionaries)
             {
                 Application.Current.Resources.MergedDictionaries.Add(resourceDictionary);
@@ -164,34 +176,31 @@ namespace Globe.Client.Platform.Services
             LoadCustomizableStyles(Application.Current.Resources.MergedDictionaries);
         }
 
-        private void LoadDefaultStyles(Collection<ResourceDictionary> targetResources)
-        {
-            string uri2Path = @"/Globe.Client.Platform;component/Styles/DefaultStyles/DefaultBasicStyles.xaml";
-            Uri uri = new Uri(uri2Path, UriKind.Relative);
-            ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
-
-            targetResources.Add(resourceDictionary);
+        private ResourceDictionary LoadSkin(string FilePath)
+        {   
+            using var XmlRead = XmlReader.Create(FilePath);
+            return XamlReader.Load(XmlRead) as ResourceDictionary;
         }
 
-        private void LoadCommonControlStyles(Collection<ResourceDictionary> targetResources)
+        private void LoadStyles(Collection<ResourceDictionary> targetResources, string path, bool embedded = false)
         {
-            string uri2Path = @"/StyleManager;component/CommonControlsStyle.xaml";
-            Uri uri = new Uri(uri2Path, UriKind.Relative);
-            ResourceDictionary resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
+            ResourceDictionary resourceDictionary;
+            if (embedded)
+            {
+                Uri uri = new Uri(path, UriKind.Relative);
+                resourceDictionary = (ResourceDictionary)Application.LoadComponent(uri);
+            }
+            else
+                resourceDictionary = LoadSkin(path);
 
             targetResources.Add(resourceDictionary);
-
         }
 
         private void LoadCustomizableStyles(Collection<ResourceDictionary> targetResources)
         {
             foreach (string customFileName in _customFileNames)
             {
-                string uri2Path = @"/Globe.Client.Platform;component/Styles/CustomStyles/" + customFileName;
-                Uri uri = new Uri(uri2Path, UriKind.Relative);
-                ResourceDictionary resourceDictionaryCustom = (ResourceDictionary)Application.LoadComponent(uri);
-
-                targetResources.Add(resourceDictionaryCustom);
+                LoadStyles(targetResources, $"{ROOT_PATH_CUSTOM_STYLE}/{customFileName}");
 
                 var typeName = customFileName.Replace("_Custom.xaml", string.Empty);
                 _typeNameToMergedDictionaryIndexMapping.Add(typeName, targetResources.Count - 1);

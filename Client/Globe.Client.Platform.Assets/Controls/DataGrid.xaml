@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Globe.Client.Platform.Assets.Controls">
     
-    <Style TargetType="{x:Type DataGrid}">
+    <Style TargetType="{x:Type controls:LocDataGrid}">
         <Setter Property="AlternationCount" Value="2" />
         <Setter Property="VerticalGridLinesBrush" Value="Transparent" />
         <Setter Property="HorizontalGridLinesBrush" Value="LightGray" />

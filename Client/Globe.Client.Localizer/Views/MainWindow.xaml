@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:platform="http://schemas.platform.com/"
+        xmlns:controls="http://schemas.controls.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         Name="view"
@@ -23,14 +24,14 @@
         <platform:MessageTypeToColorConverter
             x:Key="MessageTypeToColorConverter" />
     </Window.Resources>
-    <DockPanel>
-
-        <!--Side Menu-->
+    <controls:LocDockPanel>
+      
+      <!--Side Menu-->
         <DockPanel Style="{StaticResource MenuPanel}">
             <ToggleButton DockPanel.Dock="Top" Style="{StaticResource MenuToggle}" IsChecked="{Binding IsMenuOpen}">
                 <DockPanel Background="Transparent">
                     <Image DockPanel.Dock="Left" Width="28" Height="28" Source="/Globe.Client.Platform.Assets;component/Icons/menu.png" />
-                    <TextBlock Text="Options" VerticalAlignment="Center" Margin="20,0,0,0" Visibility="{Binding IsMenuOpen, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                    <controls:LocTextBlock Text="Options" VerticalAlignment="Center" Margin="20,0,0,0" Visibility="{Binding IsMenuOpen, Converter={StaticResource BooleanToVisibilityConverter}}" />
                 </DockPanel>
             </ToggleButton>
             <ListBox Style="{StaticResource SideMenu}" ItemsSource="{Binding MenuOptions}" SelectedItem="{Binding SelectedMenuOption}" Name="menu">
@@ -50,7 +51,7 @@
                                 <Button Style="{StaticResource SideMenuItem}" Foreground="White" Command="{Binding ElementName=menu, Path=DataContext.MenuOptionCommand}" CommandParameter="{Binding}">
                                     <DockPanel Background="Transparent" VerticalAlignment="Center">
                                         <Image DockPanel.Dock="Left" Source="{Binding IconName, Converter={StaticResource ImageNameToSourceImageConverter}}" />
-                                        <TextBlock Text="{Binding Title}" VerticalAlignment="Center" Margin="10,0,0,0" Visibility="{Binding ElementName=view, Path=DataContext.IsMenuOpen, Converter={StaticResource BooleanToVisibilityConverter}}" />
+                                        <controls:LocTextBlock Text="{Binding Title}" VerticalAlignment="Center" Margin="10,0,0,0" Visibility="{Binding ElementName=view, Path=DataContext.IsMenuOpen, Converter={StaticResource BooleanToVisibilityConverter}}" />
                                     </DockPanel>
                                 </Button>
                             </platform:AuthorizeView.PlaceHolder>
@@ -73,7 +74,7 @@
                 </DockPanel>
             </ContentControl>
             <StackPanel HorizontalAlignment="Right" Grid.Column="1" Orientation="Horizontal">
-                <TextBlock Text="{Binding HeaderTitle}" Style="{StaticResource HeaderTextBlock}"></TextBlock>
+                <controls:LocTextBlock Text="{Binding HeaderTitle}" Style="{StaticResource HeaderTextBlock}"></controls:LocTextBlock>
                 <Button Command="{Binding LoginCommand}" Style="{StaticResource HeaderLoginButton}" Visibility="{Binding IsAuthenticated, Converter={StaticResource InvertBooleanToVisibilityConverter}}">
                     Log in
                 </Button>
@@ -87,9 +88,9 @@
         <Label DockPanel.Dock="Bottom" HorizontalAlignment="Right" FontWeight="Bold" FontSize="20" Content="{Binding StatusBarMessage.Text}" Foreground="{Binding StatusBarMessage.MessageType, Converter={StaticResource MessageTypeToColorConverter}}"></Label>
 
         <!--Content-->
-        <Grid>
+        <controls:LocGrid>
             <ContentControl x:Name="contentRegion" prism:RegionManager.RegionName="{x:Static platform:RegionNames.MAIN_REGION}" />
             <platform:Spinner Diameter="100" Busy="{Binding Busy}" />
-        </Grid>
-    </DockPanel>
+        </controls:LocGrid>
+    </controls:LocDockPanel>
 </Window>
