@@ -1,8 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Globe.Client.Platform.Assets.Controls">
 
     <SolidColorBrush x:Key="PanelBackground" Color="Transparent" />
-    <Style TargetType="Grid">
+    <Style TargetType="controls:LocGrid">
         <Setter Property="Background" Value="{StaticResource PanelBackground}" />
     </Style>
 

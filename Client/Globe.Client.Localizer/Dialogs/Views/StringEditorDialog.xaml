@@ -7,6 +7,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:converters="clr-namespace:Globe.Client.Localizer.Converters"
              xmlns:platform="http://schemas.platform.com/"
+             xmlns:controls="http://schemas.controls.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              BorderThickness="5" BorderBrush="#05163D"
              MaxWidth="1200"
@@ -27,8 +28,9 @@
         <converters:EditableContextToVisibilityConverter x:Key="LinkEditableContextToVisibilityConverter" />
         <converters:EditableContextToVisibilityConverter EnableLinkMode="False" x:Key="UnlinkEditableContextToVisibilityConverter" />
         <converters:ContextNameToPreviewStyleInfoConverter x:Key="ContextNameToPreviewStyleInfoConverter" />
+        <converters:TextSizeToBrushConverter x:Key="TextSizeToBrushConverter" />
 
-        <Style TargetType="{x:Type Label}" x:Key="SectionTitle">
+        <Style TargetType="controls:LocLabel" x:Key="SectionTitle">
             <Setter Property="Margin" Value="5" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="FontWeight" Value="DemiBold" />
@@ -52,7 +54,7 @@
             <!-- Header -->
             <Grid DockPanel.Dock="Top" Style="{StaticResource MenuPanel}">
                 <Grid.Resources>
-                    <Style TargetType="{x:Type TextBlock}">
+                    <Style TargetType="{x:Type controls:LocTextBlock}">
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="HorizontalAlignment" Value="Center" />
                         <Setter Property="FontSize" Value="15" />
@@ -71,12 +73,12 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <TextBlock Grid.Column="0" Text="Component Namespace" />
-                <TextBlock Grid.Column="1" Text="Internal Namespace" />
-                <TextBlock Grid.Column="2" Text="Concept Name" />
-                <TextBlock Grid.Row="1" Grid.Column="0" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.ComponentNamespace}" />
-                <TextBlock Grid.Row="1" Grid.Column="1" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.InternalNamespace}" />
-                <TextBlock Grid.Row="1" Grid.Column="2" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.Name}" />
+                <controls:LocTextBlock Grid.Column="0" Text="Component Namespace" />
+                <controls:LocTextBlock Grid.Column="1" Text="Internal Namespace" />
+                <controls:LocTextBlock Grid.Column="2" Text="Concept Name" />
+                <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.ComponentNamespace}" />
+                <controls:LocTextBlock Grid.Row="1" Grid.Column="1" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.InternalNamespace}" />
+                <controls:LocTextBlock Grid.Row="1" Grid.Column="2" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.Name}" />
             </Grid>
 
             <!-- Comments -->
@@ -91,11 +93,11 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Grid.Column="0">Software Developer Comment</TextBlock>
-                <TextBlock Grid.Row="0" Grid.Column="2" Text="{Binding EditableConcept.SoftwareDeveloperComment}"></TextBlock>
-                <TextBlock Grid.Row="1" Grid.Column="0">Master Translator Comment</TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="2" Text="{Binding EditableConcept.MasterTranslatorComment}"></TextBox>
-                <CheckBox Grid.Row="2" Grid.ColumnSpan="2">Ignore Translation</CheckBox>
+                <controls:LocTextBlock Grid.Row="0" Grid.Column="0">Software Developer Comment</controls:LocTextBlock>
+                <controls:LocTextBlock Grid.Row="0" Grid.Column="2" Text="{Binding EditableConcept.SoftwareDeveloperComment}"></controls:LocTextBlock>
+                <controls:LocTextBlock Grid.Row="1" Grid.Column="0">Master Translator Comment</controls:LocTextBlock>
+                <controls:LocTextBox Grid.Row="1" Grid.Column="2" Text="{Binding EditableConcept.MasterTranslatorComment}"></controls:LocTextBox>
+                <controls:LocCheckBox Grid.Row="2" Grid.ColumnSpan="2">Ignore Translation</controls:LocCheckBox>
             </Grid>
 
             <DockPanel DockPanel.Dock="Top" Margin="10">
@@ -117,13 +119,52 @@
                 </DockPanel>
 
                 <!-- EditableContext DataGrid -->
-                <DataGrid x:Name="contextGrid" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False">
+                <controls:LocDataGrid x:Name="contextGrid" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Header="Context" Binding="{Binding Name}" /> <!-- Should be Read Only? Almost dropDown! -->
-                        <DataGridComboBoxColumn Header="String Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding StringType}" />
-                        <DataGridTextColumn Header="Developer String" Binding="{Binding StringDefaultValue}" IsReadOnly="True" />
-                        <DataGridTextColumn Header="Localized String" Binding="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" />
+                        <!-- DataGridColumn 1 -->
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Context">
+                            <DataGridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTextColumn.HeaderTemplate>
+                        </DataGridTextColumn>
+                        <!-- DataGridColumn 2 -->
+                        <DataGridComboBoxColumn Header="String Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding StringType}">
+                            <DataGridComboBoxColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                             {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridComboBoxColumn.HeaderTemplate>
+                        </DataGridComboBoxColumn>
+                        <!-- DataGridColumn 3 -->                      
+                        <DataGridTextColumn Binding="{Binding StringDefaultValue}" Header="Developer String" IsReadOnly="True">
+                            <DataGridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTextColumn.HeaderTemplate>
+                        </DataGridTextColumn>
+                        <!-- DataGridColumn 4 -->
+                        <DataGridTextColumn Header="Localized String" Binding="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}">
+                            <DataGridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                             {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTextColumn.HeaderTemplate>
+                        </DataGridTextColumn>
+                        <!-- DataGridColumn 5 -->
                         <DataGridTemplateColumn Header="Preview Style Standard" IsReadOnly="True">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <platform:PreviewString Text="{Binding StringEditableValue}">
@@ -133,11 +174,26 @@
                                                     <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
+                                        <platform:PreviewString.BorderBrush>
+                                            <MultiBinding Converter="{StaticResource TextSizeToBrushConverter}" ConverterParameter="Standard" >
+                                                <Binding Path="Name" />
+                                                <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                <Binding Path="StringEditableValue"/>
+                                                <Binding RelativeSource="{RelativeSource Mode=Self}"/>
+                                            </MultiBinding>
+                                        </platform:PreviewString.BorderBrush>
                                     </platform:PreviewString>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <!--DataGridColumn 6 -->
                         <DataGridTemplateColumn Header="Preview Style Orange grey" IsReadOnly="True">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <platform:PreviewString Text="{Binding StringEditableValue}">
@@ -147,11 +203,26 @@
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                             </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
+                                        <platform:PreviewString.BorderBrush>
+                                            <MultiBinding Converter="{StaticResource TextSizeToBrushConverter}" ConverterParameter="Standard" >
+                                                <Binding Path="Name" />
+                                                <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                <Binding Path="StringEditableValue"/>
+                                                <Binding RelativeSource="{RelativeSource Mode=Self}"/>
+                                            </MultiBinding>
+                                        </platform:PreviewString.BorderBrush>
                                     </platform:PreviewString>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <!--<DataGridColumn 7 -->
                         <DataGridTemplateColumn Header="Preview Style StandardV2" IsReadOnly="True">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <platform:PreviewString Text="{Binding StringEditableValue}">
@@ -161,10 +232,19 @@
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                             </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
+                                        <platform:PreviewString.BorderBrush>
+                                            <MultiBinding Converter="{StaticResource TextSizeToBrushConverter}" ConverterParameter="Standard" >
+                                                <Binding Path="Name" />
+                                                <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                <Binding Path="StringEditableValue"/>
+                                                <Binding RelativeSource="{RelativeSource Mode=Self}"/>
+                                            </MultiBinding>
+                                        </platform:PreviewString.BorderBrush>
                                     </platform:PreviewString>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <!--<DataGridColumn 8 -->
                         <DataGridTemplateColumn IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -179,6 +259,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <!--<DataGridColumn 9 -->
                         <DataGridTemplateColumn IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -189,15 +270,15 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                     </DataGrid.Columns>
-                </DataGrid>
+                </controls:LocDataGrid>
             </DockPanel>
 
             <!-- Searching Options -->
             <Expander DockPanel.Dock="Top" Margin="10">
                 <Expander.Header>
-                    <Label>
+                    <controls:LocLabel>
                         Searching Options for selected String
-                    </Label>
+                    </controls:LocLabel>
                 </Expander.Header>
 
                 <DockPanel>
@@ -212,7 +293,7 @@
                                 <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
 
-                            <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding StringValue}" VerticalAlignment="Center" />
+                            <controls:LocTextBox Grid.Row="0" Grid.Column="0" Text="{Binding StringValue}" VerticalAlignment="Center" />
                             <Button Grid.Row="0" Grid.Column="1" Command="{Binding SearchConceptsCommand}" MinWidth="0">
                                 <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/search.png" />
                             </Button>
@@ -228,8 +309,8 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
 
-                            <RadioButton Grid.Row="0" Grid.ColumnSpan="2" GroupName="SearchBy" IsChecked="True" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.Concept}">By Concept (English language only)</RadioButton>
-                            <RadioButton Grid.Row="1" Grid.ColumnSpan="2" GroupName="SearchBy" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.String}">By Value (Current language only)</RadioButton>
+                            <controls:LocRadioButton Grid.Row="0" Grid.ColumnSpan="2" GroupName="SearchBy" IsChecked="True" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.Concept}">By Concept (English language only)</controls:LocRadioButton>
+                            <controls:LocRadioButton Grid.Row="1" Grid.ColumnSpan="2" GroupName="SearchBy" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.String}">By Value (Current language only)</controls:LocRadioButton>
                         </Grid>
 
                         <Grid Style="{StaticResource SectionPanel}">
@@ -243,12 +324,12 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
 
-                            <RadioButton Grid.Row="0" Grid.Column="0" GroupName="FilterBy" IsChecked="True" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.None}">No Filters</RadioButton>
-                            <RadioButton Grid.Row="1" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.Context}">Filter by Context</RadioButton>
-                            <RadioButton Grid.Row="2" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.StringType}">Filter by String Type</RadioButton>
+                            <controls:LocRadioButton Grid.Row="0" Grid.Column="0" GroupName="FilterBy" IsChecked="True" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.None}">No Filters</controls:LocRadioButton>
+                            <controls:LocRadioButton Grid.Row="1" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.Context}">Filter by Context</controls:LocRadioButton>
+                            <controls:LocRadioButton Grid.Row="2" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.StringType}">Filter by String Type</controls:LocRadioButton>
 
-                            <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Contexts}" SelectedItem="{Binding SelectedContext}" DisplayMemberPath="Name"></ComboBox>
-                            <ComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding StringTypes}" SelectedItem="{Binding SelectedStringType}"></ComboBox>
+                            <controls:LocComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Contexts}" SelectedItem="{Binding SelectedContext}" DisplayMemberPath="Name"></controls:LocComboBox>
+                            <controls:LocComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding StringTypes}" SelectedItem="{Binding SelectedStringType}"></controls:LocComboBox>
                         </Grid>
                     </DockPanel>
 

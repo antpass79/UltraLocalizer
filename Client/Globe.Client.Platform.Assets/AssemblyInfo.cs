@@ -1,4 +1,7 @@
 using System.Windows;
+using System.Windows.Markup;
+
+[assembly: XmlnsDefinition("http://schemas.controls.com/", "Globe.Client.Platform.Assets.Controls")]
 
 [assembly: ThemeInfo(
     ResourceDictionaryLocation.None, //where theme specific resource dictionaries are located

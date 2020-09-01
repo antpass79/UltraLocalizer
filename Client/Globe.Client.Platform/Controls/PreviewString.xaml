@@ -12,7 +12,8 @@
         <converters:MultilineToWrapConverter x:Key="MultilineToWrapConverter" />
     </UserControl.Resources>
 
-    <TextBox
+    <TextBox Name="innerTextBox" 
+        HorizontalAlignment="Left"
         IsReadOnly="True"
         Text="{Binding ElementName=control, Path=Text}"
         FontSize="{Binding ElementName=control, Path=PreviewStyleInfo.FontSize}"
@@ -20,5 +21,7 @@
         FontFamily="{Binding ElementName=control, Path=PreviewStyleInfo.FontFamily}"
         TextWrapping="{Binding ElementName=control, Path=PreviewStyleInfo.Multiline, Converter={StaticResource MultilineToWrapConverter}}"
         Width="{Binding ElementName=control, Path=PreviewStyleInfo.Size.Width}"
-        Height="{Binding ElementName=control, Path=PreviewStyleInfo.Size.Height}"></TextBox>
+        Height="{Binding ElementName=control, Path=PreviewStyleInfo.Size.Height}"
+        BorderBrush="{Binding ElementName=control, Path=BorderBrush}">
+    </TextBox>
 </UserControl>

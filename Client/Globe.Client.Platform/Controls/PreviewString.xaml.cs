@@ -1,4 +1,5 @@
 ﻿using Globe.Client.Platform.Models;
+using Globe.Client.Platform.Services;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -8,7 +9,7 @@ namespace Globe.Client.Platform.Controls
     /// Interaction logic for StringPreview.xaml
     /// </summary>
     public partial class PreviewString : UserControl
-    {
+    {       
         #region Constructors
 
         public PreviewString()
@@ -35,6 +36,9 @@ namespace Globe.Client.Platform.Controls
             get { return (string)GetValue(TextProperty); }
             set { SetValue(TextProperty, value); }
         }
+
+        public TextBox InnerTextBox =>
+           innerTextBox;
 
         #endregion
     }

@@ -15,12 +15,19 @@
                         <ContentPresenter Content="{TemplateBinding Content}"
                                           Margin="{TemplateBinding Margin}"
                                           HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <ContentPresenter.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="14"></Setter>
+                                    <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType=Button},Path=Foreground}"></Setter>
+                                </Style>
+                            </ContentPresenter.Resources>
+                        </ContentPresenter>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-
+ 
         <Setter Property="Margin" Value="3" />
         <Setter Property="MinWidth" Value="100" />
         <Setter Property="MinHeight" Value="40" />
