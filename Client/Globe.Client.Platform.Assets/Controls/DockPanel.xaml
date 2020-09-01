@@ -1,8 +1,12 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:Globe.Client.Platform.Assets.Controls">
 
     <SolidColorBrush x:Key="PanelBackground" Color="White" />
-    <Style TargetType="DockPanel">
+    <Style TargetType="controls:LocDockPanel">
+        <Setter Property="Background" Value="{StaticResource PanelBackground}" />
+    </Style>
+    <Style TargetType="controls:LocDockPanel" x:Key="LocDockPanelStyle">
         <Setter Property="Background" Value="{StaticResource PanelBackground}" />
     </Style>
 
