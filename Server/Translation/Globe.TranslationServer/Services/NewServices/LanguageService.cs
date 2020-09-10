@@ -1,12 +1,12 @@
 ﻿using Globe.BusinessLogic.Repositories;
 using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings.Models;
+using Globe.TranslationServer.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Services.EFServices
+namespace Globe.TranslationServer.Services.NewServices
 {
     public class LanguageService : IAsyncLanguageService
     {
@@ -17,20 +17,22 @@ namespace Globe.TranslationServer.Services.EFServices
             _repository = repository;
         }
 
-        async public Task<IEnumerable<DBLanguage>> GetAllAsync()
+        async public Task<IEnumerable<LanguageDTO>> GetAllAsync()
         {
             var query = await _repository.QueryAsync();
             return query
-                .Select(language => new DBLanguage
+                .Select(language => new LanguageDTO
                 {
-                    IDLanguage = language.Id,
-                    DataString = $"{language.LanguageName} ({language.Isocoding})"
+                    Id = language.Id,
+                    Name = language.LanguageName,
+                    Description = $"{language.LanguageName} ({language.Isocoding})",
+                    IsoCoding = language.Isocoding
                 })
                 .AsEnumerable()
-                .OrderBy(language => language.DataString);
+                .OrderBy(language => language.Description);
         }
 
-        public Task<DBLanguage> GetAsync(int key)
+        public Task<LanguageDTO> GetAsync(int key)
         {
             throw new NotImplementedException();
         }
