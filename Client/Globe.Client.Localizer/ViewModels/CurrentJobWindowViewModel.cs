@@ -78,6 +78,19 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
+        int _numRows;
+
+        public int NumRows
+        {
+            get => _numRows;
+            set
+            {
+                SetProperty<int>(ref _numRows, value);
+            }
+        }
+
+
+
         IEnumerable<JobItem> _jobItems;
         public IEnumerable<JobItem> JobItems
         {
@@ -201,7 +214,7 @@ namespace Globe.Client.Localizer.ViewModels
                             {
                                 ComponentNamespace = this.SelectedComponentNamespace.Description,
                                 InternalNamespace = this.SelectedInternalNamespace.Description,
-                                ISOCoding = this.SelectedLanguage.ISOCoding,
+                                ISOCoding = this.SelectedLanguage.IsoCoding,
                                 JobListId = this.SelectedJobItem.Id,
                                 WorkingMode = this.WorkingMode
                             });
@@ -214,6 +227,7 @@ namespace Globe.Client.Localizer.ViewModels
                 finally
                 {
                     this.GridBusy = false;
+                    this.NumRows = ConceptViews.Count();
                 }
             }));
         
@@ -301,7 +315,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.FiltersBusy = true;
 
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync("marco.delpiano", this.SelectedLanguage != null ? this.SelectedLanguage.ISOCoding : ALL_ITEMS);
+                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync("marco.delpiano", this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : ALL_ITEMS);
                 this.SelectedJobItem = this.JobItems.FirstOrDefault();
 
                 this.FiltersBusy = false;
@@ -327,7 +341,7 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync("marco.delpiano", this.SelectedLanguage != null ? this.SelectedLanguage.ISOCoding : ALL_ITEMS);
+                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync("marco.delpiano", this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : ALL_ITEMS);
                 this.ComponentNamespaces = await _currentJobFiltersService.GetComponentNamespacesAsync();
                 this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : ALL_ITEMS);
                 this.Languages = await _currentJobFiltersService.GetLanguagesAsync();
@@ -335,7 +349,7 @@ namespace Globe.Client.Localizer.ViewModels
                 this.SelectedJobItem = this.JobItems.FirstOrDefault();
                 this.SelectedComponentNamespace = this.ComponentNamespaces.FirstOrDefault();
                 this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
-                this.SelectedLanguage = this.Languages.FirstOrDefault(item => item.ISOCoding == "en");
+                this.SelectedLanguage = this.Languages.FirstOrDefault(item => item.IsoCoding == "en");
             }
             catch (Exception e)
             {

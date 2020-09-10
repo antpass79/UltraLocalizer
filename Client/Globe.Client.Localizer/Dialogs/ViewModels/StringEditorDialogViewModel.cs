@@ -259,7 +259,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     this.StringViews = await _editStringService.GetStringViewsAsync(new StringViewSearch
                     {
                         StringValue = this.StringValue,
-                        ISOCoding = this.Language.ISOCoding,
+                        ISOCoding = this.Language.IsoCoding,
                         SearchBy = this.SearchBy,
                         FilterBy = this.FilterBy,
                         StringType = this.SelectedStringType,

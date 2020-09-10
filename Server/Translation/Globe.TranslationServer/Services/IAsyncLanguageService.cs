@@ -1,8 +1,8 @@
-﻿using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings.Models;
+﻿using Globe.TranslationServer.DTOs;
 
 namespace Globe.TranslationServer.Services
 {
-    public interface IAsyncLanguageService : IAsyncReadService<DBLanguage>
+    public interface IAsyncLanguageService : IAsyncReadService<LanguageDTO>
     {
     }
 }
