@@ -33,7 +33,7 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
         async public Task SaveAsync(SavableConceptModelDTO savableConceptModel)
         {
-            if (savableConceptModel.Language.ISOCoding == ISO_CODING_EN)
+            if (savableConceptModel.Language.IsoCoding == ISO_CODING_EN)
             {
                 foreach (var context in savableConceptModel.Concept.EditableContexts)
                 {
@@ -76,7 +76,7 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             }
             else
             {
-                UltraDBExtendedStrings.Languages language = UltraDBExtendedStrings.ParseFromString(savableConceptModel.Language.ISOCoding);
+                UltraDBExtendedStrings.Languages language = UltraDBExtendedStrings.ParseFromString(savableConceptModel.Language.IsoCoding);
                 foreach (var context in savableConceptModel.Concept.EditableContexts)
                 {
                     // Nothing happens

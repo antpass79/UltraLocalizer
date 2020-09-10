@@ -72,7 +72,7 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBStrings, UltraDBStrings>()
                 .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>();
             services
-                .AddScoped<IAsyncLanguageService, Services.EFServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
+                .AddScoped<IAsyncLanguageService, Services.NewServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncComponentConceptsService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
                 .AddScoped<IAsyncInternalConceptsService, Services.NewServices.InternalNamespaceService> () //.AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>()
                 .AddScoped<IAsyncJobListService, Services.NewServices.JobItemService>() //.AddScoped<IAsyncJobListService, JobListAdapterService>()

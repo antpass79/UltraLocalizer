@@ -9,9 +9,12 @@ namespace Globe.TranslationServer.Mapping
         public LanguageProfile()
         {
             CreateMap<DBLanguage, LanguageDTO>()
-                .ForMember(dest => dest.ISOCoding, opt => opt.MapFrom(src => src.DataString));
+                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.IDLanguage))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.DataString))
+                .ForMember(dest => dest.IsoCoding, opt => opt.MapFrom(src => "DBLanguage hasn't IsoCoding"));
             CreateMap<LanguageDTO, DBLanguage>()
-                .ForMember(dest => dest.DataString, opt => opt.MapFrom(src => src.ISOCoding));
+                .ForMember(dest => dest.IDLanguage, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.DataString, opt => opt.MapFrom(src => src.Name));
         }
     }
 }

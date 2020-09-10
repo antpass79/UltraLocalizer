@@ -1,6 +1,6 @@
-﻿namespace Globe.TranslationServer.DTOs
+﻿namespace Globe.Client.Localizer.Models
 {
-    public class LanguageDTO
+    class Language
     {
         public int Id { get; set; }
         public string Name { get; set; }

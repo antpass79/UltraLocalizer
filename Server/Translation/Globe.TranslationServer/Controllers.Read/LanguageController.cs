@@ -23,8 +23,7 @@ namespace Globe.TranslationServer.Controllers
         [HttpGet]
         async public Task<IEnumerable<LanguageDTO>> Get()
         {
-            var result = await _languageService.GetAllAsync();
-            return await Task.FromResult(_mapper.Map<IEnumerable<LanguageDTO>>(result));
+            return await _languageService.GetAllAsync();
         }
     }
 }
