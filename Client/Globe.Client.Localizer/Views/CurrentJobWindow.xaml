@@ -120,7 +120,7 @@
                                                             </Grid.ColumnDefinitions>
                                                             <controls:LocTextBlock Grid.Column="0">Name</controls:LocTextBlock>
                                                             <controls:LocTextBlock Grid.Column="1">Type</controls:LocTextBlock>
-                                                            <controls:LocTextBlock Grid.Column="2">Value</controls:LocTextBlock>
+                                                            <controls:LocTextBlock Grid.Column="2">Original Value</controls:LocTextBlock>
                                                         </controls:LocGrid>
                                                     </controls:LocDockPanel>
                                                 </ControlTemplate>

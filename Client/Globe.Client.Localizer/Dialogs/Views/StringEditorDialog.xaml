@@ -122,7 +122,7 @@
                 <controls:LocDataGrid x:Name="contextGrid" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False">
                     <DataGrid.Columns>
                         <!-- DataGridColumn 1 -->
-                        <DataGridTextColumn Binding="{Binding Name}" Header="Context">
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Name">
                             <DataGridTextColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
@@ -131,7 +131,7 @@
                             </DataGridTextColumn.HeaderTemplate>
                         </DataGridTextColumn>
                         <!-- DataGridColumn 2 -->
-                        <DataGridComboBoxColumn Header="String Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding StringType}">
+                        <DataGridComboBoxColumn Header="Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding StringType}">
                             <DataGridComboBoxColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
@@ -140,7 +140,7 @@
                             </DataGridComboBoxColumn.HeaderTemplate>
                         </DataGridComboBoxColumn>
                         <!-- DataGridColumn 3 -->                      
-                        <DataGridTextColumn Binding="{Binding StringDefaultValue}" Header="Developer String" IsReadOnly="True">
+                        <DataGridTextColumn Binding="{Binding StringDefaultValue}" Header="Original Value" IsReadOnly="True">
                             <DataGridTextColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
@@ -149,7 +149,7 @@
                             </DataGridTextColumn.HeaderTemplate>
                         </DataGridTextColumn>
                         <!-- DataGridColumn 4 -->
-                        <DataGridTextColumn Header="Localized String" Binding="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}">
+                        <DataGridTextColumn Header="Localized Value" Binding="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}">
                             <DataGridTextColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
