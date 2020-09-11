@@ -80,8 +80,9 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncContextService, ContextService>()
                 .AddScoped<IAsyncStringViewProxyService, StringViewProxyService>()
                 .AddScoped<IAsyncConceptViewProxyService, ConceptViewProxyService>()
-                .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()
                 .AddScoped<IAsyncGroupedStringEntityService, GroupedStringEntityAdapterService>()
+                .AddScoped<IAsyncXmlGroupedStringEntityService, Services.NewServices.XmlGroupedStringEntityService>()
+                .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()
                 .AddScoped<IAsyncConceptDetailsService, ConceptDetailsAdapterService>()
                 .AddScoped<IAsyncConceptService, ConceptService>();
 

@@ -11,9 +11,9 @@ namespace Globe.TranslationServer.Validations
                 .NotEmpty();
             RuleFor(model => model.InternalNamespace)
                 .NotEmpty();
-            RuleFor(model => model.ISOCoding)
+            RuleFor(model => model.LanguageId)
                 .NotEmpty();
-            RuleFor(model => model.JobListId)
+            RuleFor(model => model.JobItemId)
                 .NotEmpty();
         }
     }
