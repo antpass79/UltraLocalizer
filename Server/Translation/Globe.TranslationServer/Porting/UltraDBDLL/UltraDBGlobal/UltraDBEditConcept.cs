@@ -22,6 +22,11 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal
             this.dbContext = context;
         }
 
+        internal List<GroupedStringEntity> GetGroupledDataBy(string componentNamespace, object internalNamespace, object iSOCoding, int jobItemId)
+        {
+            throw new NotImplementedException();
+        }
+
         #region Public Functions
 
         public List<GroupedStringEntity> GetGroupledDataBy(string ComponentName, string InternalNamespace, string iso, int idJobList)

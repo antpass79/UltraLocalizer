@@ -196,6 +196,8 @@ namespace Globe.Client.Localizer.ViewModels
             _searchCommand ?? (_searchCommand = new DelegateCommand(async () =>
             {
                 this.GridBusy = true;
+                this.ConceptViews = null;
+                this.NumRows = 0;
 
                 try
                 {
@@ -214,10 +216,12 @@ namespace Globe.Client.Localizer.ViewModels
                             {
                                 ComponentNamespace = this.SelectedComponentNamespace.Description,
                                 InternalNamespace = this.SelectedInternalNamespace.Description,
-                                ISOCoding = this.SelectedLanguage.IsoCoding,
-                                JobListId = this.SelectedJobItem.Id,
+                                LanguageId = this.SelectedLanguage.Id,
+                                JobItemId = this.SelectedJobItem.Id,
                                 WorkingMode = this.WorkingMode
                             });
+
+                        this.NumRows = ConceptViews.Count();
                     }
                 }
                 catch (Exception exception)
@@ -226,8 +230,7 @@ namespace Globe.Client.Localizer.ViewModels
                 }
                 finally
                 {
-                    this.GridBusy = false;
-                    this.NumRows = ConceptViews.Count();
+                    this.GridBusy = false;                  
                 }
             }));
         

@@ -25,22 +25,35 @@ namespace Globe.TranslationServer.Services.NewServices
 
         async public Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync(string componentNamespace)
         {
-            var query = await _repository.QueryAsync();
-            var items = query
-                .WhereIf(entity => entity.ComponentNamespace == componentNamespace, !string.IsNullOrWhiteSpace(componentNamespace) && componentNamespace.ToLower() != "all")
-                .Select(entity => entity.InternalNamespace)
-                .Distinct()
-                .OrderBy(entity => entity)
-                .Select(entity => new InternalNamespaceDTO
-                {
-                    Description = entity
-                })
-                .ToList();
+            IList<InternalNamespaceDTO> items;
 
-            items.Insert(0, new InternalNamespaceDTO
+            if (componentNamespace.ToLower() != "all")
             {
-                Description = "all"
-            });
+                var query = await _repository.QueryAsync();
+                items = query
+                    .WhereIf(entity => entity.ComponentNamespace == componentNamespace, !string.IsNullOrWhiteSpace(componentNamespace) && componentNamespace.ToLower() != "all")
+                    .Select(entity => entity.InternalNamespace)
+                    .Distinct()
+                    .OrderBy(entity => entity)
+                    .Select(entity => new InternalNamespaceDTO
+                    {
+                        Description = entity
+                    })
+                    .ToList();
+
+                items.Insert(0, new InternalNamespaceDTO
+                {
+                    Description = "all"
+                });
+            }
+            else
+            {
+                items = new List<InternalNamespaceDTO>();
+                items.Insert(0, new InternalNamespaceDTO
+                {
+                    Description = "all"
+                });
+            }
 
             return items;
         }

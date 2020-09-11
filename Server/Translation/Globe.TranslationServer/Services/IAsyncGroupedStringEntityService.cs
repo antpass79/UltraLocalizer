@@ -1,11 +1,16 @@
-﻿using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
+﻿using Globe.TranslationServer.DTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
-    public interface IAsyncGroupedStringEntityService : IAsyncReadService<GroupedStringEntity>
+    public interface IAsyncGroupedStringEntityService : IAsyncReadService<ConceptViewDTO>
     {
-        public Task<IEnumerable<GroupedStringEntity>> GetAllAsync(string componentNamespace, string InternalNamespace, string ISOCoding, int jobListId);
+        public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobItemId);
+    }
+
+    public interface IAsyncXmlGroupedStringEntityService : IAsyncReadService<ConceptViewDTO>
+    {
+        public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobItemId);
     }
 }
