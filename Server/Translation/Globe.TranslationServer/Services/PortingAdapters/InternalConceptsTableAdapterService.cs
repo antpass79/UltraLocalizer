@@ -1,4 +1,6 @@
-﻿using Globe.TranslationServer.Entities;
+﻿using AutoMapper;
+using Globe.TranslationServer.DTOs;
+using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using System;
@@ -8,21 +10,23 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.PortingAdapters
 {
-    public class InternalConceptsTableAdapterService : IAsyncInternalConceptsService
+    public class InternalConceptsTableAdapterService : IAsyncInternalNamespaceService
     {
+        private readonly IMapper _mapper;
         private readonly LocalizationContext _context;
 
-        public InternalConceptsTableAdapterService(LocalizationContext context)
+        public InternalConceptsTableAdapterService(IMapper mapper, LocalizationContext context)
         {
+            _mapper = mapper;
             _context = context;
         }
 
-        public Task<IEnumerable<InternalConceptsTable>> GetAllAsync()
+        public Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        async public Task<IEnumerable<InternalConceptsTable>> GetAllAsync(string componentNamespace)
+        async public Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync(string componentNamespace)
         {
             var result = _context
                 .GetInternalByComponent(componentNamespace)
@@ -31,10 +35,13 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             {
                 InternalNamespace = "all"
             });
-            return await Task.FromResult(result);
+
+            var items = await Task.FromResult(_mapper.Map<IEnumerable<InternalNamespaceDTO>>(result));
+
+            return await Task.FromResult(items);
         }
 
-        public Task<InternalConceptsTable> GetAsync(int key)
+        public Task<InternalNamespaceDTO> GetAsync(int key)
         {
             throw new NotImplementedException();
         }
