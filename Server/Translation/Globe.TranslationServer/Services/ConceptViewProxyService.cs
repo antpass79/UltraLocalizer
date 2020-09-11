@@ -8,20 +8,15 @@ namespace Globe.TranslationServer.Services
 {
     public class ConceptViewProxyService : IAsyncConceptViewProxyService
     {
-        const string XML_FOLDER = "XmlDefinitions";
-
-        private readonly IMapper _mapper;
         private readonly IAsyncGroupedStringEntityService _groupedStringEntityService;
-        private readonly IAsyncXmlDefinitionReaderService _xmlDefinitionReaderService;
+        private readonly IAsyncXmlGroupedStringEntityService _xmlGroupedStringEntityService;
 
         public ConceptViewProxyService(
-                    IMapper mapper,
                     IAsyncGroupedStringEntityService groupedStringEntityService,
-                    IAsyncXmlDefinitionReaderService xmlDefinitionReaderService)
+                    IAsyncXmlGroupedStringEntityService xmlGroupedStringEntityService)
         {
-            _mapper = mapper;
             _groupedStringEntityService = groupedStringEntityService;
-            _xmlDefinitionReaderService = xmlDefinitionReaderService;
+            _xmlGroupedStringEntityService = xmlGroupedStringEntityService;
         }
 
         async public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(ConceptViewSearchDTO search)
@@ -29,12 +24,9 @@ namespace Globe.TranslationServer.Services
             IEnumerable<ConceptViewDTO> result;
 
             if (search.WorkingMode == WorkingMode.FromXml)
-                result = await _xmlDefinitionReaderService.ReadAsync(Path.Combine(Directory.GetCurrentDirectory(), XML_FOLDER));
+                result = await _xmlGroupedStringEntityService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.LanguageId, search.JobItemId);
             else
-            {
-                var items = await _groupedStringEntityService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.ISOCoding, search.JobListId);
-                result = _mapper.Map<IEnumerable<ConceptViewDTO>>(items);
-            }
+                result = await _groupedStringEntityService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.LanguageId, search.JobItemId);
 
             return result;
         }
