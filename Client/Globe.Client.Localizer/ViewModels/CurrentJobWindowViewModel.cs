@@ -236,7 +236,7 @@ namespace Globe.Client.Localizer.ViewModels
         
         private DelegateCommand<ConceptView> _conceptViewEditCommand = null;
         public DelegateCommand<ConceptView> ConceptViewEditCommand =>
-            _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<ConceptView>((conceptView) =>
+            _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<ConceptView>(async (conceptView) =>
             {
                 ConceptDetails conceptDetails = new ConceptDetails();
 
@@ -244,7 +244,7 @@ namespace Globe.Client.Localizer.ViewModels
 
                 try
                 {
-                    conceptDetails = _currentJobConceptViewService.GetConceptDetailsAsync(conceptView).RunSync();
+                    conceptDetails = await _currentJobConceptViewService.GetConceptDetailsAsync(conceptView);
                 }
                 catch (Exception e)
                 {
