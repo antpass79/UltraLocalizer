@@ -10,20 +10,17 @@ namespace Globe.TranslationServer.Controllers
     [Route("api/read/[controller]")]
     public class InternalNamespaceController : Controller
     {
-        private readonly IMapper _mapper;
-        private readonly IAsyncInternalConceptsService _internalConceptsService;
+        private readonly IAsyncInternalNamespaceService _internalConceptsService;
 
-        public InternalNamespaceController(IMapper mapper, IAsyncInternalConceptsService internalConceptsService)
+        public InternalNamespaceController(IAsyncInternalNamespaceService internalConceptsService)
         {
-            _mapper = mapper;
             _internalConceptsService = internalConceptsService;
         }
 
         [HttpGet]
         async public Task<IEnumerable<InternalNamespaceDTO>> Get([FromQuery] string componentNamespace)
         {
-            var result = await _internalConceptsService.GetAllAsync(componentNamespace);
-            return await Task.FromResult(_mapper.Map<IEnumerable<InternalNamespaceDTO>>(result));
+            return await _internalConceptsService.GetAllAsync(componentNamespace);
         }
     }
 }

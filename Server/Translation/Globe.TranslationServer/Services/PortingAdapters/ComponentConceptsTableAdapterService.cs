@@ -1,4 +1,6 @@
-﻿using Globe.TranslationServer.Entities;
+﻿using AutoMapper;
+using Globe.TranslationServer.DTOs;
+using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using System;
@@ -8,16 +10,18 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.PortingAdapters
 {
-    public class ComponentConceptsTableAdapterService : IAsyncComponentConceptsService
+    public class ComponentConceptsTableAdapterService : IAsyncComponentNamespaceService
     {
+        private readonly IMapper _mapper;
         private readonly LocalizationContext _context;
 
-        public ComponentConceptsTableAdapterService(LocalizationContext context)
+        public ComponentConceptsTableAdapterService(IMapper mapper, LocalizationContext context)
         {
+            _mapper = mapper;
             _context = context;
         }
 
-        async public Task<IEnumerable<ComponentConceptsTable>> GetAllAsync()
+        async public Task<IEnumerable<ComponentNamespaceDTO>> GetAllAsync()
         {
             var result = _context
                 .GetAllComponentName()
@@ -26,10 +30,13 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             {
                 ComponentNamespace = "all"
             });
-            return await Task.FromResult(result);
+
+            var items = await Task.FromResult(_mapper.Map<IEnumerable<ComponentNamespaceDTO>>(result));
+
+            return await Task.FromResult(items);
         }
 
-        public Task<ComponentConceptsTable> GetAsync(int key)
+        public Task<ComponentNamespaceDTO> GetAsync(int key)
         {
             throw new NotImplementedException();
         }

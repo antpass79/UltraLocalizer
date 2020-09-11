@@ -11,12 +11,10 @@ namespace Globe.TranslationServer.Controllers
     [Route("api/read/[controller]")]
     public class LanguageController : Controller
     {
-        private readonly IMapper _mapper;
         private readonly IAsyncLanguageService _languageService;
 
-        public LanguageController(IMapper mapper, IAsyncLanguageService languageService)
+        public LanguageController(IAsyncLanguageService languageService)
         {
-            _mapper = mapper;
             _languageService = languageService;
         }
 

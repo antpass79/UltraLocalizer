@@ -1,6 +1,4 @@
-﻿using AutoMapper;
-using Globe.TranslationServer.DTOs;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
+﻿using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -11,13 +9,11 @@ namespace Globe.TranslationServer.Controllers
     [Route("api/read/[controller]")]
     public class JobItemController : ControllerBase
     {
-        private readonly IMapper _mapper;
-        private readonly IAsyncJobListService _jobListService;
+        private readonly IAsyncJobItemService _jobItemService;
 
-        public JobItemController(IMapper mapper, IAsyncJobListService jobListService)
+        public JobItemController(IAsyncJobItemService jobItemService)
         {
-            _mapper = mapper;
-            _jobListService = jobListService;
+            _jobItemService = jobItemService;
         }
 
         [HttpGet]
@@ -28,28 +24,27 @@ namespace Globe.TranslationServer.Controllers
                 throw new System.Exception("search");
             }
 
-            var result = await _jobListService.GetAllAsync(search.UserName, search.ISOCoding);
-            return await Task.FromResult(_mapper.Map<IEnumerable<JobItemDTO>>(result));
+            return await _jobItemService.GetAllAsync(search.UserName, search.ISOCoding);
         }
 
-        [Microsoft.AspNetCore.Mvc.HttpPost]
-        async public Task<IActionResult> Post([FromBody] JobList jobList)
+        [HttpPost]
+        async public Task<IActionResult> Post([FromBody] JobItemDTO jobItem)
         {
-            await _jobListService.InsertAsync(jobList);
+            await _jobItemService.InsertAsync(jobItem);
             return await Task.FromResult(Ok());
         }
 
         [HttpPut]
-        async public Task<IActionResult> Put([FromBody] JobList jobList)
+        async public Task<IActionResult> Put([FromBody] JobItemDTO jobItem)
         {
-            await _jobListService.UpdateAsync(jobList);
+            await _jobItemService.UpdateAsync(jobItem);
             return await Task.FromResult(Ok());
         }
 
         [HttpDelete]
-        async public Task<IActionResult> Delete([FromBody] JobList jobList)
+        async public Task<IActionResult> Delete([FromBody] JobItemDTO jobItem)
         {
-            await _jobListService.DeleteAsync(jobList);
+            await _jobItemService.DeleteAsync(jobItem);
             return await Task.FromResult(Ok());
         }
     }
