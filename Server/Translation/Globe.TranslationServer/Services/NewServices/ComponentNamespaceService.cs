@@ -1,6 +1,6 @@
 ﻿using Globe.BusinessLogic.Repositories;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
-    public class ComponentNamespaceService : IAsyncComponentConceptsService
+    public class ComponentNamespaceService : IAsyncComponentNamespaceService
     {
         private readonly IAsyncReadRepository<LocConceptsTable> _repository;
 
@@ -17,28 +17,28 @@ namespace Globe.TranslationServer.Services.NewServices
             _repository = repository;
         }
 
-        async public Task<IEnumerable<ComponentConceptsTable>> GetAllAsync()
+        async public Task<IEnumerable<ComponentNamespaceDTO>> GetAllAsync()
         {
             var query = await _repository.QueryAsync();
             var componentNamespaces = query
                 .Select(item => item.ComponentNamespace)
                 .Distinct()
                 .OrderBy(item => item)
-                .Select(item => new ComponentConceptsTable
+                .Select(item => new ComponentNamespaceDTO
                 {
-                    ComponentNamespace = item
+                    Description = item
                 })
                 .ToList();
 
-            componentNamespaces.Insert(0, new ComponentConceptsTable
+            componentNamespaces.Insert(0, new ComponentNamespaceDTO
             {
-                ComponentNamespace = "all"
+                Description = "all"
             });
 
             return componentNamespaces;
         }
 
-        public Task<ComponentConceptsTable> GetAsync(int key)
+        public Task<ComponentNamespaceDTO> GetAsync(int key)
         {
             throw new NotImplementedException();
         }

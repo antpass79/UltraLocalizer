@@ -1,14 +1,14 @@
 ﻿using Globe.BusinessLogic.Repositories;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Extensions;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
-    public class JobItemService : IAsyncJobListService
+    public class JobItemService : IAsyncJobItemService
     {
         private readonly IAsyncReadRepository<LocJobList> _repository;
 
@@ -17,12 +17,12 @@ namespace Globe.TranslationServer.Services.NewServices
             _repository = repository;
         }
 
-        public Task DeleteAsync(JobList job2Concept)
+        public Task DeleteAsync(JobItemDTO jobItem)
         {
             throw new System.NotImplementedException();
         }
 
-        async public Task<IEnumerable<JobList>> GetAllAsync(string userName, string ISOCoding)
+        async public Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding)
         {
             //bool l_isMaster = (Roles.IsUserInRole(UserName, "MasterTranslator") ||
             //                  Roles.IsUserInRole(UserName, "Admin"));
@@ -38,34 +38,34 @@ namespace Globe.TranslationServer.Services.NewServices
             var jobs = query
                 .WhereIf(item => item.UserName == userName && item.IdisoCoding == (int)language, !isMaster)
                 .WhereIf(item => item.IdisoCoding == (int)language, isMaster)
-                .Select(item => new JobList
+                .Select(item => new JobItemDTO
                 {
-                    IDJob = item.Id,
-                    JobName = isMaster ? $"{item.UserName} - {item.JobName}" : item.JobName,
-                    IDIso = (int)language
+                    Id = item.Id,
+                    Name = isMaster ? $"{item.UserName} - {item.JobName}" : item.JobName,
+                    IsoId = (int)language
                 })
                 .AsEnumerable()
-                .OrderBy(item => item.JobName);
+                .OrderBy(item => item.Name);
 
             return await Task.FromResult(jobs);
         }
 
-        public Task<IEnumerable<JobList>> GetAllAsync()
+        public Task<IEnumerable<JobItemDTO>> GetAllAsync()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<JobList> GetAsync(int key)
+        public Task<JobItemDTO> GetAsync(int key)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task InsertAsync(JobList job2Concept)
+        public Task InsertAsync(JobItemDTO jobItem)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task UpdateAsync(JobList job2Concept)
+        public Task UpdateAsync(JobItemDTO jobItem)
         {
             throw new System.NotImplementedException();
         }

@@ -1,7 +1,7 @@
 ﻿using Globe.BusinessLogic.Repositories;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Extensions;
-using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
-    public class InternalNamespaceService : IAsyncInternalConceptsService
+    public class InternalNamespaceService : IAsyncInternalNamespaceService
     {
         private readonly IAsyncReadRepository<LocConceptsTable> _repository;
 
@@ -18,12 +18,12 @@ namespace Globe.TranslationServer.Services.NewServices
             _repository = repository;
         }
 
-        public Task<IEnumerable<InternalConceptsTable>> GetAllAsync()
+        public Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        async public Task<IEnumerable<InternalConceptsTable>> GetAllAsync(string componentNamespace)
+        async public Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync(string componentNamespace)
         {
             var query = await _repository.QueryAsync();
             var items = query
@@ -31,21 +31,21 @@ namespace Globe.TranslationServer.Services.NewServices
                 .Select(entity => entity.InternalNamespace)
                 .Distinct()
                 .OrderBy(entity => entity)
-                .Select(entity => new InternalConceptsTable
+                .Select(entity => new InternalNamespaceDTO
                 {
-                    InternalNamespace = entity
+                    Description = entity
                 })
                 .ToList();
 
-            items.Insert(0, new InternalConceptsTable
+            items.Insert(0, new InternalNamespaceDTO
             {
-                InternalNamespace = "all"
+                Description = "all"
             });
 
             return items;
         }
 
-        public Task<InternalConceptsTable> GetAsync(int key)
+        public Task<InternalNamespaceDTO> GetAsync(int key)
         {
             throw new NotImplementedException();
         }
