@@ -14,8 +14,9 @@ namespace Globe.Client.Localizer.Services
 
         private const string ENDPOINT_StringView = "StringView";
         private const string ENDPOINT_Context = "Context";
+        private const string ENDPOINT_StringType = "StringType";
         private const string ENDPOINT_Concept = "Concept";
-
+        
         private readonly IAsyncSecureHttpClient _secureHttpClient;
 
         public EditStringService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
@@ -33,6 +34,11 @@ namespace Globe.Client.Localizer.Services
         async public Task<IEnumerable<Context>> GetContextsAsync()
         {
             return await _secureHttpClient.GetAsync<IEnumerable<Context>>(ENDPOINT_READ + ENDPOINT_Context);
+        }
+
+        async public Task<IEnumerable<StringType>> GetStringTypesAsync()
+        {
+            return await _secureHttpClient.GetAsync<IEnumerable<StringType>>(ENDPOINT_READ + ENDPOINT_StringType);
         }
 
         async public Task SaveAsync(SavableConceptModel savableConceptModel)

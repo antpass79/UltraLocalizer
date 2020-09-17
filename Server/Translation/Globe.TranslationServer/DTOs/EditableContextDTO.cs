@@ -11,7 +11,6 @@
         public string InternalNamespace { get; set; }
         public string Concept { get; set; }
         public int Concept2ContextId { get; set; }
-        public string StringValue { get; set; }
         public StringTypeDTO StringType { get; set; }
         public string StringEditableValue { get; set; }
         public string StringDefaultValue { get; set; }

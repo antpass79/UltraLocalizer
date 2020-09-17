@@ -26,8 +26,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
             var concept = context.LocConceptsTable.Find(ID);
             concept.Ignore = Ignore;
             concept.Comment = Comment;
-
-            context.SaveChanges();
         }
 
         public static void CleanOrphanedConcepts(this LocalizationContext context)

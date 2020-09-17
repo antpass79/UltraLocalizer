@@ -27,13 +27,6 @@
         <controls:LocDockPanel Style="{DynamicResource LocDockPanelStyle}">
 
             <controls:LocDockPanel Style="{DynamicResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
-                <controls:LocDockPanel DockPanel.Dock="Top" LastChildFill="False" Style="{StaticResource SectionPanel}">
-                    <controls:LocLabel Style="{DynamicResource LocLabelTitle}" DockPanel.Dock="Top">Working Mode</controls:LocLabel>
-                    <controls:LocRadioButton IsChecked="True" DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromXml}">From Xml</controls:LocRadioButton>
-                    <controls:LocRadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.FromDatabase}">From Database</controls:LocRadioButton>
-                    <controls:LocRadioButton DockPanel.Dock="Top" GroupName="WorkingMode" Command="{Binding WorkingModeCommand}" CommandParameter="{x:Static models:WorkingMode.EditUnsatisfiedConstrains}">Edit Unsatisfied Constrains</controls:LocRadioButton>
-                </controls:LocDockPanel>
-
                 <controls:LocGrid DockPanel.Dock="Top"  Style="{StaticResource SectionPanel}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />

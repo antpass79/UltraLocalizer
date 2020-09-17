@@ -54,9 +54,9 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
                     if (context.StringId == 0)
                     {
-                        var stringId = _ultraDBStrings.InsertNewString(1, (int)context.StringType, context.StringValue);
+                        var stringId = _ultraDBStrings.InsertNewString(1, (int)context.StringType, context.StringEditableValue);
                         _ultraDBStrings2Context.InsertNewStrings2Context(stringId, context.Concept2ContextId);
-                        Console.WriteLine($"New string {context.StringValue} has been inserted with type ID = {context.StringType}");
+                        Console.WriteLine($"New string {context.StringEditableValue} has been inserted with type ID = {context.StringType}");
                     }
                     else
                     {
@@ -80,7 +80,7 @@ namespace Globe.TranslationServer.Services.PortingAdapters
                 foreach (var context in savableConceptModel.Concept.EditableContexts)
                 {
                     // Nothing happens
-                    if (context.OldStringId != 0 && context.StringDefaultValue == context.StringValue)
+                    if (context.OldStringId != 0 && context.StringDefaultValue == context.StringEditableValue)
                     {
                         continue;
                     }

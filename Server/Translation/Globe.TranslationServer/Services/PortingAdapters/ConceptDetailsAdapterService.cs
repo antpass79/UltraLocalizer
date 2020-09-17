@@ -1,6 +1,7 @@
 ﻿using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.PortingAdapters
@@ -31,7 +32,8 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             var conceptDetails = new ConceptDetailsDTO
             {
                 SoftwareDeveloperComment = softwareDeveloperComment,
-                MasterTranslatorComment = masterTranslatorComment
+                MasterTranslatorComment = masterTranslatorComment,
+                OriginalStringContextValues = concept.ContextViews.Select(item => new OriginalStringContextValueDTO { ContextName = item.Name, StringValue = _xmlManager.GetUserString(concept.ComponentNamespace, concept.InternalNamespace == "null" ? null : concept.InternalNamespace, concept.Name, item.Name) })
             };
 
             return await Task.FromResult(conceptDetails);

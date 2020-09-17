@@ -38,16 +38,6 @@ namespace Globe.Client.Localizer.ViewModels
             _currentJobConceptViewService = currentJobConceptViewService;
         }
 
-        WorkingMode _workingMode;
-        public WorkingMode WorkingMode
-        {
-            get => _workingMode;
-            set
-            {
-                SetProperty<WorkingMode>(ref _workingMode, value);
-            }
-        }
-
         bool _conceptDetailsBusy;
         public bool ConceptDetailsBusy
         {
@@ -217,8 +207,7 @@ namespace Globe.Client.Localizer.ViewModels
                                 ComponentNamespace = this.SelectedComponentNamespace.Description,
                                 InternalNamespace = this.SelectedInternalNamespace.Description,
                                 LanguageId = this.SelectedLanguage.Id,
-                                JobItemId = this.SelectedJobItem.Id,
-                                WorkingMode = this.WorkingMode
+                                JobItemId = this.SelectedJobItem.Id
                             });
 
                         this.NumRows = ConceptViews.Count();
@@ -263,7 +252,8 @@ namespace Globe.Client.Localizer.ViewModels
                     conceptView.InternalNamespace,
                     conceptView.Name,
                     conceptDetails.SoftwareDeveloperComment,
-                    new ObservableCollection<EditableContext>(conceptView.ContextViews.Select(contextView => new EditableContext(contextView.StringValue, contextView.OldStringId)
+                    new ObservableCollection<EditableContext>(conceptView.ContextViews.Select(contextView => new EditableContext(conceptDetails.OriginalStringContextValues
+                        .Single(item => item.ContextName == contextView.Name).StringValue, contextView.StringValue, contextView.StringId)
                     {
                         ComponentNamespace = conceptView.ComponentNamespace,
                         InternalNamespace = conceptView.InternalNamespace,
@@ -291,13 +281,6 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand ExportToXmlCommand =>
             _exportToXmlCommand ?? (_exportToXmlCommand = new DelegateCommand(() =>
             {
-            }));
-
-        private DelegateCommand<WorkingMode?> _workingModeCommand = null;
-        public DelegateCommand<WorkingMode?> WorkingModeCommand =>
-            _workingModeCommand ?? (_workingModeCommand = new DelegateCommand<WorkingMode?>((workingMode) =>
-            {
-                this.WorkingMode = workingMode.HasValue ? workingMode.Value : WorkingMode.FromXml;
             }));
 
         private DelegateCommand _componentNamespaceChangeCommand = null;

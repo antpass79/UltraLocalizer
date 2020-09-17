@@ -249,10 +249,10 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Link" Command="{Binding ElementName=contextGrid, Path=DataContext.LinkCommand}" CommandParameter="{Binding}" Visibility="{Binding ., Converter={StaticResource LinkEditableContextToVisibilityConverter}}">
+                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Link" Command="{Binding ElementName=contextGrid, Path=DataContext.LinkCommand}" CommandParameter="{Binding}" Visibility="{Binding StringId, Converter={StaticResource LinkEditableContextToVisibilityConverter}}">
                                             <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/link.png" />
                                         </Button>
-                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Unlink" Command="{Binding ElementName=contextGrid, Path=DataContext.UnlinkCommand}" CommandParameter="{Binding}" Visibility="{Binding ., Converter={StaticResource UnlinkEditableContextToVisibilityConverter}}">
+                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Unlink" Command="{Binding ElementName=contextGrid, Path=DataContext.UnlinkCommand}" CommandParameter="{Binding}" Visibility="{Binding StringId, Converter={StaticResource UnlinkEditableContextToVisibilityConverter}}">
                                             <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/unlink.png" />
                                         </Button>
                                     </Grid>
