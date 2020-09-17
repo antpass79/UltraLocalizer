@@ -13,8 +13,6 @@ namespace Globe.TranslationServer.Validations
                 .NotEmpty();
             RuleFor(model => model.LanguageId)
                 .NotEmpty();
-            RuleFor(model => model.JobItemId)
-                .NotEmpty();
         }
     }
 }

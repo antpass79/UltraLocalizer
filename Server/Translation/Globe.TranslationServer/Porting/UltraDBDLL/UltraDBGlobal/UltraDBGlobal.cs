@@ -51,9 +51,9 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal
             context.DeletebyIDStringIDConcept2Context(idString, idConcept2Context);
         }
 
-        public int InsertNewStrings2Context(int IDString, int IDConcept2Context)
+        public void InsertNewStrings2Context(int IDString, int IDConcept2Context)
         {
-            return context.InsertNewStrings2Context(IDString, IDConcept2Context);
+            context.InsertNewStrings2Context(IDString, IDConcept2Context);
         }
 
         public List<DBGlobal> GetDataByComponentISO(string ComponentName, string isocoding)

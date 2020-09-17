@@ -8,6 +8,7 @@ namespace Globe.Client.Localizer.Services
     {
         Task<IEnumerable<StringView>> GetStringViewsAsync(StringViewSearch search);
         Task<IEnumerable<Context>> GetContextsAsync();
+        Task<IEnumerable<StringType>> GetStringTypesAsync();
         Task SaveAsync(SavableConceptModel savableConceptModel);
     }
 }

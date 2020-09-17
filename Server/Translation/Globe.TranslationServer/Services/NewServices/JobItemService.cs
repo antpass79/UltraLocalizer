@@ -45,7 +45,10 @@ namespace Globe.TranslationServer.Services.NewServices
                     IsoId = (int)language
                 })
                 .AsEnumerable()
-                .OrderBy(item => item.Name);
+                .OrderBy(item => item.Name)
+                .ToList();
+
+            jobs.Insert(0, new JobItemDTO { Id = 0, IsoId = 0, Name = "all" });
 
             return await Task.FromResult(jobs);
         }
