@@ -12,14 +12,10 @@ namespace Globe.Client.Localizer.Converters
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            var editableContext = value as EditableContext;
-            if (editableContext == null)
-                return Visibility.Collapsed;
+            var stringId = (int)value;
 
             var enableLink =
-                editableContext.StringId == 0 &&
-                editableContext.StringEditableValue == null &&
-                editableContext.StringType == StringType.String ? true : false;
+                stringId == 0 ? true : false;
 
             return !(enableLink ^ EnableLinkMode) ? Visibility.Visible : Visibility.Collapsed;
         }

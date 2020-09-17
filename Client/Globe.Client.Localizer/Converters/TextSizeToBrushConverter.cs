@@ -22,7 +22,9 @@ namespace Globe.Client.Localizer.Converters
 
             var previewStyleInfo = previewStyleService[typeName, contextName];
 
-            bool lightGreen = CheckStringDimension(text, textBox, previewStyleInfo, textBox.Padding.Left, textBox.Padding.Right, textBox.Padding.Top, textBox.Padding.Bottom);
+            text = string.IsNullOrEmpty(text) ? string.Empty : text;
+
+            bool lightGreen = CheckStringDimension(text, textBox, previewStyleInfo, textBox.Padding.Left, textBox.Padding.Right, textBox.Padding.Top, textBox.Padding.Bottom, culture);
 
             if (lightGreen)
                 return Brushes.Green;
@@ -57,33 +59,33 @@ namespace Globe.Client.Localizer.Converters
             unitY = pixelY / dpiY;
         }
 
-        private double StringWidth(string text, TextBox textBox, PreviewStyleInfo previewStyleInfo)
+        private double StringWidth(string text, TextBox textBox, PreviewStyleInfo previewStyleInfo, CultureInfo cultureInfo)
         {
             //FontFamily = TypeFace? TODO
             Typeface typeface = new Typeface(previewStyleInfo.FontFamily.ToString());
 
-            FormattedText formattedText = new FormattedText(text, CultureInfo.GetCultureInfo("en-us"),
+            FormattedText formattedText = new FormattedText(text, cultureInfo,
             FlowDirection.LeftToRight, typeface, previewStyleInfo.FontSize, Brushes.Black,
             VisualTreeHelper.GetDpi(textBox).PixelsPerDip);
 
             return formattedText.Width;
         }
 
-        private double StringHeight(string text, TextBox textBox, PreviewStyleInfo previewStyleInfo)
+        private double StringHeight(string text, TextBox textBox, PreviewStyleInfo previewStyleInfo, CultureInfo cultureInfo)
         {
             Typeface typeface = new Typeface(previewStyleInfo.FontFamily.ToString());
 
-            FormattedText formattedText = new FormattedText(text, CultureInfo.GetCultureInfo("en-us"),
+            FormattedText formattedText = new FormattedText(text, cultureInfo,
             FlowDirection.LeftToRight, typeface, previewStyleInfo.FontSize, Brushes.Black,
             VisualTreeHelper.GetDpi(textBox).PixelsPerDip);
 
             return formattedText.Height;
         }
 
-        private bool CheckStringDimension(string text, TextBox textBox, PreviewStyleInfo previewStyleInfo, double pixelPaddingLeft, double pixelPaddingRight, double pixelPaddingTop, double pixelPaddingBottom)
+        private bool CheckStringDimension(string text, TextBox textBox, PreviewStyleInfo previewStyleInfo, double pixelPaddingLeft, double pixelPaddingRight, double pixelPaddingTop, double pixelPaddingBottom, CultureInfo cultureInfo)
         {
-            double stringWidth = StringWidth(text, textBox, previewStyleInfo);
-            double stringHeight = StringHeight(text, textBox, previewStyleInfo);
+            double stringWidth = StringWidth(text, textBox, previewStyleInfo, cultureInfo);
+            double stringHeight = StringHeight(text, textBox, previewStyleInfo, cultureInfo);
 
             //-------------- Inizio Test---------------------
   

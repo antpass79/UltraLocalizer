@@ -9,12 +9,12 @@ namespace Globe.TranslationServer.Controllers
     [Route("api/read/[controller]")]
     public class ConceptViewController : Controller
     {
-        private readonly IAsyncConceptViewProxyService _conceptViewProxyService;
+        private readonly IAsyncGroupedStringEntityService _groupedStringEntityService;
 
         public ConceptViewController(
-            IAsyncConceptViewProxyService conceptViewProxyService)
+            IAsyncGroupedStringEntityService groupedStringEntityService)
         {
-            _conceptViewProxyService = conceptViewProxyService;
+            _groupedStringEntityService = groupedStringEntityService;
         }
 
         [HttpGet]
@@ -25,7 +25,7 @@ namespace Globe.TranslationServer.Controllers
                 throw new System.Exception("search");
             }
             
-            return await _conceptViewProxyService.GetAllAsync(search);
+            return await _groupedStringEntityService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.LanguageId, search.JobItemId);
         }
     }
 }

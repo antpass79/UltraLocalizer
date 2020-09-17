@@ -126,7 +126,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _selectedStringView, value); }
         }
 
-        IEnumerable<StringType> _stringTypes = Enum.GetValues(typeof(StringType)).Cast<StringType>();
+        IEnumerable<StringType> _stringTypes;
         public IEnumerable<StringType> StringTypes
         {
             get => _stringTypes;
@@ -184,14 +184,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public DelegateCommand<EditableContext> LinkCommand =>
             _linkCommand ?? (_linkCommand = new DelegateCommand<EditableContext>((editableContext) =>
             {
-                var index = EditableConcept.EditableContexts.IndexOf(editableContext);
-                EditableConcept.EditableContexts.Remove(editableContext);
-
                 editableContext.StringId = this.SelectedStringView.Id;
                 editableContext.StringEditableValue = this.SelectedStringView.Value;
                 editableContext.StringType = this.SelectedStringView.Type;
-
-                EditableConcept.EditableContexts.Insert(index, editableContext);
             },
             (editableContext) =>
             {
@@ -202,32 +197,27 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public DelegateCommand<EditableContext> UnlinkCommand =>
             _unlinkCommand ?? (_unlinkCommand = new DelegateCommand<EditableContext>((editableContext) =>
             {
-                var index = EditableConcept.EditableContexts.IndexOf(editableContext);
-                EditableConcept.EditableContexts.Remove(editableContext);
-
                 editableContext.StringId = 0;
                 editableContext.StringEditableValue = null;
                 editableContext.StringType = StringType.String;
-
-                EditableConcept.EditableContexts.Insert(index, editableContext);
             },
             (editableContext) =>
             {
-                return this.SelectedStringView != null;
+                return true;
             }));
 
         private DelegateCommand<EditableContext> _duplicateCommand;
         public DelegateCommand<EditableContext> DuplicateCommand =>
             _duplicateCommand ?? (_duplicateCommand = new DelegateCommand<EditableContext>((editableContext) =>
             {
-                var index = EditableConcept.EditableContexts.IndexOf(editableContext);
-                EditableConcept.EditableContexts.Remove(editableContext);
+                //var index = EditableConcept.EditableContexts.IndexOf(editableContext);
+                //EditableConcept.EditableContexts.Remove(editableContext);
 
                 editableContext.StringId = 0;
                 editableContext.StringEditableValue = this.SelectedStringView.Value;
                 editableContext.StringType = this.SelectedStringView.Type;
 
-                EditableConcept.EditableContexts.Insert(index, editableContext);
+                //EditableConcept.EditableContexts.Insert(index, editableContext);
             },
             (editableContext) =>
             {
@@ -297,6 +287,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             EditableConcept = parameters.GetValue<EditableConcept>("editableConcept");
             Language = parameters.GetValue<Language>("language");
             Contexts = await _editStringService.GetContextsAsync();
+            StringTypes = await _editStringService.GetStringTypesAsync();
             SelectedContext = this.Contexts.ElementAt(0);
         }
 

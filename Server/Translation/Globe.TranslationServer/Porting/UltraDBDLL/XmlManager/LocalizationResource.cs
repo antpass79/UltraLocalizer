@@ -45,7 +45,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
             localizationResource.ComponentNamespace = componentNamespace.Value;
             localizationResource.Language = language.Value;
-            localizationResource.Version = decimal.Parse(version.Value);
+            localizationResource.Version = decimal.Parse(version.Value, System.Globalization.CultureInfo.InvariantCulture);
 
             var localizationSectionTags = document.Descendants(TAG_LOCALIZATION_SECTION);
 
@@ -66,13 +66,13 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                     var conceptId = conceptTag.Attribute(ATTRIBUTE_CONCEPT_ID);
                     concept.Id = conceptId.Value;
 
-                    var commentsTag = document.Element(TAG_COMMENTS);
+                    var commentsTag = conceptTag.Element(TAG_COMMENTS);
                     concept.Comments = new Comments
                     {
                         TypedValue = commentsTag != null ? commentsTag.Value : string.Empty
                     };
 
-                    var stringTags = document.Descendants(TAG_STRING);
+                    var stringTags = conceptTag.Descendants(TAG_STRING);
                     foreach (var stringTag in stringTags)
                     {
                         TagString tagString = new TagString();
@@ -80,6 +80,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
                         var context = stringTag.Attribute(ATTRIBUTE_CONTEXT);
                         tagString.Context = context.Value;
+                        tagString.TypedValue = stringTag.Value;
                     }
                 }
             }
@@ -91,7 +92,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
     // ANTO fake, see NewXmlFormat for the auto generated file
     public class LocalizationSection
     {
-        public int Id { get; set; }
         public string InternalNamespace { get; set; }
         public IList<Concept> Concept { get; set; } = new List<Concept>();
     }
@@ -109,8 +109,8 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
     {
         public string Context { get; set; }
         public string TypedValue { get; set; }
-        public int DatabaseID { get; set; }
-        public bool IsAcceptable { get; set; }
+        public int? DatabaseID { get; set; }
+        public bool? IsAcceptable { get; set; }
     }
 
     // ANTO fake, see NewXmlFormat for the auto generated file
