@@ -70,7 +70,8 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBConcept, UltraDBConcept>()
                 .AddScoped<UltraDBJobList, UltraDBJobList>()
                 .AddScoped<UltraDBStrings, UltraDBStrings>()
-                .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>();
+                .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>()
+                .AddScoped<UltraDBJobGlobal, UltraDBJobGlobal>();
             services
                 .AddScoped<IAsyncLanguageService, Services.NewServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncComponentNamespaceService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
@@ -84,7 +85,10 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncXmlGroupedStringEntityService, Services.NewServices.XmlGroupedStringEntityService>()
                 .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()
                 .AddScoped<IAsyncConceptDetailsService, ConceptDetailsAdapterService>()
-                .AddScoped<IAsyncConceptService, ConceptService>();
+                .AddScoped<IAsyncConceptService, ConceptService>()
+                .AddScoped<IAsyncNotTranslatedConceptViewService, NotTranslatedConceptViewService>()
+                .AddScoped<IAsyncInternalNamespaceGroupService, InternalNamespaceGroupService>()
+                .AddScoped<IAsyncJobListService, JobListService>();
 
             // Security
             services

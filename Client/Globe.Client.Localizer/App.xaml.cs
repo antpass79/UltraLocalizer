@@ -29,6 +29,7 @@ namespace Globe.Client.Localizer
             containerRegistry.RegisterSingleton<IAsyncLoginService, HttpLoginService>();
             containerRegistry.RegisterSingleton<ILoggerService, ConsoleLoggerService>();
             containerRegistry.RegisterSingleton<ISettingsService, AppSettingsService>();
+            containerRegistry.RegisterSingleton<IUserService, UserService>();
         }
 
         protected override Window CreateShell()

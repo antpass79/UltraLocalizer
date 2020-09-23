@@ -19,6 +19,8 @@ namespace Globe.Client.Localizer
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(HomeWindow));
             regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(HomeWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(LoginWindow));
+            regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(JobListManagementWindow));
+            regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(JobListManagementWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(CurrentJobWindow));
             regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(CurrentJobWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(JobsWindow));
@@ -42,10 +44,12 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<ICurrentJobConceptViewService, CurrentJobConceptViewService>();
             containerRegistry.Register<IEditStringService, EditStringService>();
             containerRegistry.Register<IStringMergeService, StringsMergeService>();
-            //containerRegistry.Register<IPreviewStyleService, HardCodedPreviewStyleService>();
             containerRegistry.Register<IPreviewStyleService, RunTimePreviewStyleService>();
+            containerRegistry.Register<IJobListManagementFiltersService, JobListManagementFiltersService>();
+            containerRegistry.Register<IJobListManagementService, JobListManagementService>();
 
             containerRegistry.RegisterDialog<StringEditorDialog, StringEditorDialogViewModel>();
+            containerRegistry.RegisterDialog<SaveJoblistDialog, SaveJoblistViewModel>();
         }
 
         private void ActivateDefaultView(IContainerProvider containerProvider)

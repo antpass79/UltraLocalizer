@@ -334,7 +334,73 @@
                     </DockPanel>
 
                     <Grid>
-                        <DataGrid ItemsSource="{Binding StringViews}" CanUserAddRows="False" IsReadOnly="True" SelectedItem="{Binding SelectedStringView}">
+                        <DataGrid ItemsSource="{Binding StringViews}" CanUserAddRows="False" AutoGenerateColumns="False"  IsReadOnly="True" SelectedItem="{Binding SelectedStringView}">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding Type}" Header="String Type">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Value}" Header="String">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Context}" Header="Context">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding ComponentNamespace}" Header="Component">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding InternalNamespace}" Header="Internal">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Concept}" Header="Concept">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding SoftwareComment}" Header="SW Comment">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding MasterTranslatorComment}" Header="MT Comment">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                            </DataGrid.Columns>
                         </DataGrid>
                         <platform:Spinner Busy="{Binding SearchingBusy}" />
                     </Grid>

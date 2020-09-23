@@ -17,12 +17,14 @@ namespace Globe.Identity.AdministrativeDashboard.Server.Services
         private readonly IMapper _mapper;
         private readonly IAsyncUserUnitOfWork _userUnitOfWork;
         private readonly IAsyncRoleRepository _roleRepository;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public UserService(IMapper mapper, IAsyncUserUnitOfWork userUnitOfWork, IAsyncRoleRepository roleRepository)
+        public UserService(IMapper mapper, IAsyncUserUnitOfWork userUnitOfWork, IAsyncRoleRepository roleRepository, UserManager<ApplicationUser> userManager)
         {
             _mapper = mapper;
             _userUnitOfWork = userUnitOfWork;
             _roleRepository = roleRepository;
+            _userManager = userManager;
         }
 
         async public Task DeleteAsync(ApplicationUserDTO entity)
@@ -51,6 +53,59 @@ namespace Globe.Identity.AdministrativeDashboard.Server.Services
                 User = _mapper.Map<ApplicationUserDTO>(user),
                 Roles = await GetUserRolesAsync(user)
             };
+        }
+
+        async public Task<IEnumerable<ApplicationUserDTO>> FindByLanguageAsync(LanguageDTO language)
+        {
+            List<ApplicationUserDTO> users = new List<ApplicationUserDTO>();
+            var allUsers = await _userUnitOfWork.UserRepository.GetAsync();
+            foreach (var user in allUsers)
+            {
+                
+                if (await _userManager.IsInRoleAsync(user, "MasterTranslator") ||
+                    await _userManager.IsInRoleAsync(user, "Admin"))
+                {
+                    users.Add(new ApplicationUserDTO
+                    {
+                        Id = user.Id,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        UserName = user.UserName,
+                        Email = user.Email
+                    });
+                }
+                else
+                {
+                    bool isInRole = false;
+                    if (await _userManager.IsInRoleAsync(user, "TranslatorDE")) 
+                        isInRole |= language.IsoCoding == "de";
+                    if (await _userManager.IsInRoleAsync(user, "TranslatorIT"))                       
+                        isInRole |= language.IsoCoding == "it";
+                    if (await _userManager.IsInRoleAsync(user, "TranslatorRU"))                       
+                        isInRole |= language.IsoCoding == "ru";
+                    if (await _userManager.IsInRoleAsync(user, "TranslatorFR"))                     
+                        isInRole |= language.IsoCoding == "fr";
+                    if (await _userManager.IsInRoleAsync(user, "TranslatorZH"))                      
+                        isInRole |= language.IsoCoding == "zh";
+                    if (await _userManager.IsInRoleAsync(user, "TranslatorES"))                      
+                        isInRole |= language.IsoCoding == "es";
+                    if (await _userManager.IsInRoleAsync(user, "TranslatorPT"))                        
+                        isInRole |= language.IsoCoding == "pt";
+                    if (isInRole)
+                    {
+                        users.Add(new ApplicationUserDTO
+                        {
+                            Id = user.Id,
+                            FirstName = user.FirstName,
+                            LastName = user.LastName,
+                            UserName = user.UserName,
+                            Email = user.Email
+                        });
+                    }
+                }
+            }
+
+            return await Task.FromResult(users);
         }
 
         async public Task<IEnumerable<ApplicationUserDTO>> GetAsync(Expression<Func<ApplicationUserDTO, bool>> filter = null, Func<IQueryable<ApplicationUserDTO>, IOrderedQueryable<ApplicationUserDTO>> orderBy = null)
