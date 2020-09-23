@@ -33,6 +33,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Views\JobListManagementWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JobListManagementWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\CurrentJobWindowToolBar.xaml">
       <SubType>Designer</SubType>
     </Page>

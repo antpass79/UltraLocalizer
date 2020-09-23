@@ -55,6 +55,15 @@ namespace Globe.Client.Localizer.ViewModels
                 },
                 new MenuOption
                 {
+                    Title = "Joblist Management",
+                    IconName = "current_job",
+                    IsSelected = false,
+                    Roles = "Admin, UserManager",
+                    AlwaysVisible = true,
+                    ViewName = ViewNames.JOBLIST_MANAGEMENT_VIEW
+                },
+                new MenuOption
+                {
                     Title = "Current Job",
                     IconName = "current_job",
                     IsSelected = false,
