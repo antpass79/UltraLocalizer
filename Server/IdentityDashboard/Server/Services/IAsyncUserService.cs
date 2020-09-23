@@ -10,6 +10,7 @@ namespace Globe.Identity.AdministrativeDashboard.Server.Services
     public interface IAsyncUserService
     {
         Task<UserWithRoles> FindByIdAsync(string id);
+        Task<IEnumerable<ApplicationUserDTO>> FindByLanguageAsync(LanguageDTO language);
         Task<IEnumerable<ApplicationUserDTO>> GetAsync(Expression<Func<ApplicationUserDTO, bool>> filter = null, Func<IQueryable<ApplicationUserDTO>, IOrderedQueryable<ApplicationUserDTO>> orderBy = null);
         Task InsertAsync(UserWithRoles entity);
         Task UpdateAsync(UserWithRoles entity);

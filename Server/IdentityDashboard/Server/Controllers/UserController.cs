@@ -31,6 +31,14 @@ namespace Globe.Identity.AdministrativeDashboard.Server.Controllers
             return await _userService.FindByIdAsync(userId);
         }
 
+        [HttpGet]
+        [Authorize]
+        [Route("GetUserByLanguage")]
+        async public Task<IEnumerable<ApplicationUserDTO>> GetUserByLanguage([FromBody] LanguageDTO language)
+        {
+            return await _userService.FindByLanguageAsync(language);
+        }
+
         [HttpPost]
         [Authorize(Roles = "Admin, UserManager")]
         async public Task Post([FromBody] UserWithRoles userWithRoles)

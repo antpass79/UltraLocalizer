@@ -18,6 +18,13 @@
         <Setter Property="Margin" Value="5"/>
     </Style>
 
+    <Style TargetType="{x:Type TextBlock}" x:Key="HeaderDialogSearchingOption">
+        <Setter Property="FontSize" Value="10"/>
+        <Setter Property="FontWeight" Value="DemiBold"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="3"/>
+    </Style>
+
     <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource HeaderTextBlock}" x:Key="HeaderLogin">
         <Setter Property="Foreground" Value="#0366D6" />
         <Setter Property="FontWeight" Value="Medium" />

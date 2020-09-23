@@ -1,6 +1,7 @@
 ﻿using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -107,23 +108,31 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
             {
                 while (reader.Read())
                 {
-                    result.Add(new GroupledData
+                    try 
+                    { 
+                        result.Add(new GroupledData
+                        {
+                            ID = (int)reader[0],
+                            ComponentNamespace = reader[1] as string,
+                            InternalNamespace = reader[2] as string,
+                            LocalizationID = reader[3] as string,
+                            Comment = reader[4] as string,
+                            IDConcept2Context = (int)reader[5],
+                            ContextName = reader[6] as string,
+                            IDContext = (int)reader[7],
+                            IDString2Context = !string.IsNullOrWhiteSpace(reader[8].ToString()) ? (int)reader[8] : 0,
+                            String = reader[9] as string,
+                            IDLanguage = !string.IsNullOrWhiteSpace(reader[10].ToString()) ? (int)reader[10] : 0,
+                            IDType = !string.IsNullOrWhiteSpace(reader[11].ToString()) ? (int)reader[11] : 0,
+                            StringType = reader[12] as string,
+                            IDString = !string.IsNullOrWhiteSpace(reader[13].ToString()) ? (int)reader[13] : 0
+                        });
+                    }
+                    catch(Exception e)
                     {
-                        ID = (int)reader[0],
-                        ComponentNamespace = reader[1] as string,
-                        InternalNamespace = reader[2] as string,
-                        LocalizationID = reader[3] as string,
-                        Comment = reader[4] as string,
-                        IDConcept2Context = (int)reader[5],
-                        ContextName = reader[6] as string,
-                        IDContext = (int)reader[7],
-                        IDString2Context = (int)reader[8],
-                        String = reader[9] as string,
-                        IDLanguage = (int)reader[10],
-                        IDType = (int)reader[11],
-                        StringType = reader[12] as string,
-                        IDString = (int)reader[13]
-                    });
+                        
+
+                    }
                 }
             }
 
