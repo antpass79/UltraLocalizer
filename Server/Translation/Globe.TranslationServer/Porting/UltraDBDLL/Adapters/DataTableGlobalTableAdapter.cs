@@ -226,13 +226,11 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                         ISOCoding = isocoding,
                         ContextName = reader[5] as string,
                         String = reader[6] as string,
-                        IDType = (int)reader[7],
-                        Type = reader[8] as string,
-                        StringID = (int)reader[9],
+                        StringID = (int)reader[7],
+                        IDType = (int)reader[8],
+                        Type = reader[9] as string,                       
                         Ignore = (bool)reader[10],
-                        ConceptID = (int)reader[11],
-                        Expr1 = (int)reader[12],
-                        IsAcceptable = (bool)reader[13]
+                        ConceptID = (int)reader[11]
                     });
                 }
             }

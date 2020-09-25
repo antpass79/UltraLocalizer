@@ -39,6 +39,16 @@ namespace Globe.Client.Localizer.ViewModels
             _jobListManagementService = jobListManagementService;
         }
 
+        bool _conceptDetailsBusy;
+        public bool ConceptDetailsBusy
+        {
+            get => _conceptDetailsBusy;
+            set
+            {
+                SetProperty<bool>(ref _conceptDetailsBusy, value);
+            }
+        }
+
         IEnumerable<Language> _languages;
         public IEnumerable<Language> Languages
         {
@@ -145,7 +155,7 @@ namespace Globe.Client.Localizer.ViewModels
                 this.JobItems = await _jobListManagementFiltersService.GetJobItemsAsync("marco.delpiano", this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : ALL_ITEMS);
                 this.SelectedJobItem = this.JobItems.FirstOrDefault();
 
-                this.InternalNamespaceGroups = await _jobListManagementService.GetInternalNamespaceGroupsAsync(new Language { IsoCoding = "en" });
+                this.InternalNamespaceGroups = await _jobListManagementService.GetInternalNamespaceGroupsAsync(this.SelectedLanguage);
 
                 this.FiltersBusy = false;
             }));
@@ -156,9 +166,21 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 if (SelectedInternalNamespaceGroup == null || SelectedInternalNamespace == null)
                     return;
-                    
-                var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(SelectedInternalNamespaceGroup.ComponentNamespace, SelectedInternalNamespace, this.SelectedLanguage);
-                this.NotTranslatedConceptViews = NotTranslatedConceptViews == null ? result : NotTranslatedConceptViews.Union(result);            
+                
+                try
+                {
+                    ConceptDetailsBusy = true;
+                    var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(SelectedInternalNamespaceGroup.ComponentNamespace, SelectedInternalNamespace, this.SelectedLanguage);
+                    this.NotTranslatedConceptViews = NotTranslatedConceptViews == null ? result : NotTranslatedConceptViews.Union(result);            
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    ConceptDetailsBusy = false;
+                }
             }));
 
         private DelegateCommand _removeCommand = null;
@@ -166,6 +188,13 @@ namespace Globe.Client.Localizer.ViewModels
             _removeCommand ?? (_removeCommand = new DelegateCommand(() =>
             {
                 this.NotTranslatedConceptViews = NotTranslatedConceptViews == null ? null : NotTranslatedConceptViews.Where(item => !item.IsSelected);
+            }));
+
+        private DelegateCommand _removeAllCommand = null;
+        public DelegateCommand RemoveAllCommand =>
+            _removeAllCommand ?? (_removeAllCommand = new DelegateCommand(() =>
+            {
+                this.NotTranslatedConceptViews = null;
             }));
 
         private DelegateCommand _saveJoblistCommand = null;
@@ -178,6 +207,14 @@ namespace Globe.Client.Localizer.ViewModels
                 @params.Add("notTranslatedConceptViews", this.NotTranslatedConceptViews);
 
                 _dialogService.ShowDialog(DialogNames.SAVE_JOBLIST, @params, dialogResult => { });
+            }));
+
+        private DelegateCommand _checkNewConceptsCommand = null;
+        public DelegateCommand CheckNewConceptsCommand =>
+            _checkNewConceptsCommand ?? (_checkNewConceptsCommand = new DelegateCommand(async () =>
+            {
+                var result = await _jobListManagementService.CheckNewConceptsAsync();
+                Console.WriteLine(result);
             }));
 
         async public void OnNavigatedTo(NavigationContext navigationContext)
