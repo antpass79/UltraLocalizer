@@ -58,17 +58,17 @@ namespace Globe.Client.Localizer.ViewModels
                     Title = "Joblist Management",
                     IconName = "current_job",
                     IsSelected = false,
-                    Roles = "Admin, UserManager",
-                    AlwaysVisible = true,
+                    Roles = "Admin, SuperUser, MasterTranslator",
+                    AlwaysVisible = false,
                     ViewName = ViewNames.JOBLIST_MANAGEMENT_VIEW
                 },
                 new MenuOption
                 {
                     Title = "Current Job",
-                    IconName = "current_job",
+                    IconName = "edit",
                     IsSelected = false,
-                    Roles = string.Empty,
-                    AlwaysVisible = true,
+                    Roles = "Admin, SuperUser, MasterTranslator, TranslatorDE, TranslatorEN, TranslatorES, TranslatorFR, TranslatorIT, TranslatorPT, TranslatorRU",
+                    AlwaysVisible = false,
                     ViewName = ViewNames.CURRENT_JOB_VIEW
                 },
                 new MenuOption

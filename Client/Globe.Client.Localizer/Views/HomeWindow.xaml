@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Globe.Client.Localizer"
         xmlns:prism="http://prismlibrary.com/"
+        xmlns:controls="http://schemas.controls.com/"
         xmlns:core="http://schemas.localizer.com/core"
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" x:Key="Title">
+            <Setter Property="FontSize" Value="50"/>
+        </Style>
+    </UserControl.Resources>
     <DockPanel LastChildFill="False">
-        <Label DockPanel.Dock="Top" Content="Ultra Localizer" FontSize="45" FontWeight="Normal"></Label>
-        <Label DockPanel.Dock="Top" Content="The Ultra Localizer provides an User Interface to translate all strings in different languages." FontSize="15"></Label>
-        <Label DockPanel.Dock="Top" Content="The translator can work without network connection, thanks to the offline mode." FontSize="15"></Label>
+        <controls:LocTextBlock DockPanel.Dock="Top" Text="Ultra Localizer" Style="{StaticResource Title}"></controls:LocTextBlock>
+        <controls:LocLabel DockPanel.Dock="Top" Content="The Ultra Localizer provides an User Interface to translate all strings in different languages." FontSize="15"></controls:LocLabel>
+        <controls:LocLabel DockPanel.Dock="Top" Content="The translator can work without network connection, thanks to the offline mode." FontSize="15"></controls:LocLabel>
     </DockPanel>
 </UserControl>

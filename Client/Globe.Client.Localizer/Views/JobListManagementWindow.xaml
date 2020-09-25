@@ -19,14 +19,10 @@
     </UserControl.Resources>
 
     <controls:LocGrid>
-        <controls:LocDockPanel Style="{DynamicResource LocDockPanelStyle}">
-            <controls:LocDockPanel Style="{DynamicResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
+        <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
+            <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
                 <controls:LocGrid DockPanel.Dock="Left"  Style="{StaticResource SectionPanel}">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
-                        <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
@@ -36,20 +32,10 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <controls:LocLabel Style="{DynamicResource LocLabelTitle}" Grid.ColumnSpan="2">Filters</controls:LocLabel>
+                    <controls:LocLabel Style="{StaticResource LocLabelTitle}" Grid.ColumnSpan="2">Components</controls:LocLabel>
                     <controls:LocTextBlock Grid.Row="1" Grid.Column="0">Language</controls:LocTextBlock>
                     <controls:LocComboBox  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}" ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
-                    <controls:LocTextBlock Grid.Row="2" Grid.Column="0">Job Name</controls:LocTextBlock>
-                    <controls:LocComboBox  Grid.Row="2" Grid.Column="1" ItemsSource="{Binding JobItems}" SelectedItem="{Binding SelectedJobItem}" DisplayMemberPath="Name" ToolTip="{Binding SelectedJobItem.Name}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
-                    <Button Grid.Row="5" Grid.Column="1" Command="{Binding SearchCommand}">Search</Button>
-
-                    <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
-                </controls:LocGrid>
-            </controls:LocDockPanel>
-
-            <controls:LocDockPanel>
-                <controls:LocDockPanel LastChildFill="false">
-                    <TreeView ItemsSource="{Binding InternalNamespaceGroups}">
+                    <TreeView  Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding InternalNamespaceGroups}">
                         <TreeView.ItemContainerStyle>
                             <Style TargetType="{x:Type TreeViewItem}">
                                 <Setter Property="IsSelected" Value="{Binding IsSelected}" />
@@ -58,123 +44,120 @@
                         <TreeView.Resources>
                             <HierarchicalDataTemplate DataType="{x:Type models:InternalNamespaceGroup}" ItemsSource="{Binding InternalNamespaces}">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding ComponentNamespace.Description}" />
-                                    <TextBlock Text=" [" Foreground="Blue" />
-                                    <TextBlock Text="{Binding Count}" Foreground="Blue" />
-                                    <TextBlock Text="]" Foreground="Blue" />
+                                    <controls:LocTextBlock Text="{Binding ComponentNamespace.Description}" />
+                                    <controls:LocTextBlock Text=" [" Foreground="Blue" />
+                                    <controls:LocTextBlock Text="{Binding Count}" Foreground="Blue" />
+                                    <controls:LocTextBlock Text="]" Foreground="Blue" />
                                 </StackPanel>
                             </HierarchicalDataTemplate>
                             <DataTemplate DataType="{x:Type models:InternalNamespace}">
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="{Binding Description}" />
+                                    <controls:LocTextBlock Text="{Binding Description}" />
                                 </StackPanel>
                             </DataTemplate>
                         </TreeView.Resources>
                     </TreeView>
-                </controls:LocDockPanel>
-                <controls:LocDockPanel LastChildFill="false">
-                    <controls:LocButton DockPanel.Dock="Top" Content="ADD" Command="{Binding AddCommand}" CommandParameter="{Binding }"></controls:LocButton>
-                    <controls:LocButton DockPanel.Dock="Top" Content="REMOVE" Command="{Binding RemoveCommand}"></controls:LocButton>
+                    <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
+                </controls:LocGrid>
+            </controls:LocDockPanel>
+
+            <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
+                <controls:LocDockPanel Margin="0,63,0,0" LastChildFill="false" Style="{StaticResource LocDockPanelStyle}">
+                    <Button Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&gt;" Command="{Binding AddCommand}"></Button>
+                    <Button Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&lt;" Command="{Binding RemoveCommand}"></Button>
+                    <Button Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&lt;&lt;" Command="{Binding RemoveAllCommand}"></Button>
                 </controls:LocDockPanel>
                 <controls:LocDockPanel>
-                    <controls:LocDataGrid Name="grid" Grid.Row="0" ItemsSource="{Binding NotTranslatedConceptViews}" SelectionMode="Extended" IsReadOnly="true" AutoGenerateColumns="False" CanUserAddRows="False">
-                        <DataGrid.Resources>
-                            <Style TargetType="{x:Type TextBlock}">
-                                <Setter Property="FontSize" Value="20"/>
-                                <Setter Property="FontWeight" Value="DemiBold"/>
-                            </Style>
-                            <Style TargetType="DataGridRow">
-                                <Setter Property="IsSelected" Value="{Binding IsSelected}" />
-                            </Style>
-                        </DataGrid.Resources>
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding ComponentNamespace.Description}" Header="Component Namespace">
-                                <DataGridTextColumn.HeaderTemplate>
-                                    <DataTemplate>
-                                        <controls:LocTextBlock Style="{DynamicResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                    <controls:LocGrid>
+                        <controls:LocDataGrid Name="grid" Grid.Row="0" ItemsSource="{Binding NotTranslatedConceptViews}" SelectionMode="Extended" IsReadOnly="true" AutoGenerateColumns="False" CanUserAddRows="False">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type TextBlock}">
+                                    <Setter Property="FontSize" Value="20"/>
+                                    <Setter Property="FontWeight" Value="DemiBold"/>
+                                </Style>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Binding="{Binding ComponentNamespace.Description}" Header="Component Namespace">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{DynamicResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
-                                    </DataTemplate>
-                                </DataGridTextColumn.HeaderTemplate>
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding InternalNamespace.Description}" Header="Internal Namespace">
-                                <DataGridTextColumn.HeaderTemplate>
-                                    <DataTemplate>
-                                        <controls:LocTextBlock Style="{DynamicResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding InternalNamespace.Description}" Header="Internal Namespace">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{DynamicResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
-                                    </DataTemplate>
-                                </DataGridTextColumn.HeaderTemplate>
-                            </DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Concept">
-                                <DataGridTextColumn.HeaderTemplate>
-                                    <DataTemplate>
-                                        <controls:LocTextBlock Style="{DynamicResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTextColumn Binding="{Binding Name}" Header="Concept">
+                                    <DataGridTextColumn.HeaderTemplate>
+                                        <DataTemplate>
+                                            <controls:LocTextBlock Style="{DynamicResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
-                                    </DataTemplate>
-                                </DataGridTextColumn.HeaderTemplate>
-                            </DataGridTextColumn>
-                            <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="*">
-                                <DataGridTemplateColumn.HeaderStyle>
-                                    <Style TargetType="{x:Type DataGridColumnHeader}">
-                                        <Setter Property="Template">
-                                            <Setter.Value>
-                                                <ControlTemplate TargetType="DataGridColumnHeader">
-                                                    <controls:LocDockPanel LastChildFill="False" Background="Transparent">
-                                                        <controls:LocTextBlock FontSize="16" DockPanel.Dock="Top" HorizontalAlignment="Center">Contexts</controls:LocTextBlock>
+                                        </DataTemplate>
+                                    </DataGridTextColumn.HeaderTemplate>
+                                </DataGridTextColumn>
+                                <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="*">
+                                    <DataGridTemplateColumn.HeaderStyle>
+                                        <Style TargetType="{x:Type DataGridColumnHeader}">
+                                            <Setter Property="Template">
+                                                <Setter.Value>
+                                                    <ControlTemplate TargetType="DataGridColumnHeader">
+                                                        <controls:LocDockPanel LastChildFill="False" Background="Transparent">
+                                                            <controls:LocTextBlock FontSize="16" DockPanel.Dock="Top">Contexts</controls:LocTextBlock>
+                                                            <controls:LocGrid DockPanel.Dock="Bottom">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition />
+                                                                </Grid.ColumnDefinitions>
+                                                                <controls:LocTextBlock Grid.Column="0">Name</controls:LocTextBlock>
+                                                            </controls:LocGrid>
+                                                        </controls:LocDockPanel>
+                                                    </ControlTemplate>
+                                                </Setter.Value>
+                                            </Setter>
+                                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                            <Setter Property="Foreground" Value="Black"/>
+                                            <Setter Property="FontSize" Value="14"/>
+                                            <Setter Property="FontWeight" Value="DemiBold"/>
+                                            <Setter Property="MinWidth" Value="150"/>
+                                        </Style>
+                                    </DataGridTemplateColumn.HeaderStyle>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <ItemsControl ItemsSource="{Binding ContextViews}">
+                                                <ItemsControl.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <VirtualizingStackPanel />
+                                                    </ItemsPanelTemplate>
+                                                </ItemsControl.ItemsPanel>
+                                                <ItemsControl.ItemTemplate>
+                                                    <DataTemplate>
                                                         <controls:LocGrid DockPanel.Dock="Bottom">
-                                                            <Grid.ColumnDefinitions>
+                                                            <controls:LocGrid.ColumnDefinitions>
                                                                 <ColumnDefinition />
-                                                                <ColumnDefinition />
-                                                                <ColumnDefinition />
-                                                            </Grid.ColumnDefinitions>
-                                                            <controls:LocTextBlock Grid.Column="0">Name</controls:LocTextBlock>
-                                                            <controls:LocTextBlock Grid.Column="1">Type</controls:LocTextBlock>
-                                                            <controls:LocTextBlock Grid.Column="2">Original Value</controls:LocTextBlock>
+                                                            </controls:LocGrid.ColumnDefinitions>
+                                                            <controls:LocTextBlock Grid.Column="0" Text="{Binding Name}" />
                                                         </controls:LocGrid>
-                                                    </controls:LocDockPanel>
-                                                </ControlTemplate>
-                                            </Setter.Value>
-                                        </Setter>
-                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
-                                        <Setter Property="Foreground" Value="Black"/>
-                                        <Setter Property="FontSize" Value="14"/>
-                                        <Setter Property="FontWeight" Value="DemiBold"/>
-                                        <Setter Property="MinWidth" Value="150"/>
-                                    </Style>
-                                </DataGridTemplateColumn.HeaderStyle>
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <ItemsControl ItemsSource="{Binding ContextViews}">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <VirtualizingStackPanel />
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <controls:LocGrid DockPanel.Dock="Bottom">
-                                                        <controls:LocGrid.ColumnDefinitions>
-                                                            <ColumnDefinition />
-                                                            <ColumnDefinition />
-                                                            <ColumnDefinition />
-                                                        </controls:LocGrid.ColumnDefinitions>
-                                                        <controls:LocTextBlock Grid.Column="0" Text="{Binding Name}" />
-                                                        <controls:LocTextBlock Grid.Column="1" Text="{Binding StringType}" />
-                                                        <controls:LocTextBlock Grid.Column="2" Text="{Binding StringValue}" />
-                                                    </controls:LocGrid>
-                                                </DataTemplate>
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                        </DataGrid.Columns>
-                    </controls:LocDataGrid>
+                                                    </DataTemplate>
+                                                </ItemsControl.ItemTemplate>
+                                            </ItemsControl>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </controls:LocDataGrid>
+                        <platform:Spinner Grid.Row="1" Diameter="60" Busy="{Binding ConceptDetailsBusy}" />
+                    </controls:LocGrid>
                 </controls:LocDockPanel>
             </controls:LocDockPanel>
         </controls:LocDockPanel>
-
-        <platform:Spinner Grid.Row="1" Diameter="60" Busy="{Binding ConceptDetailsBusy}" />
     </controls:LocGrid>
-
 
 </UserControl>

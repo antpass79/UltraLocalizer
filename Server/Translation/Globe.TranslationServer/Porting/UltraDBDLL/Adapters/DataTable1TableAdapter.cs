@@ -225,8 +225,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         {
             var result = (from entity1 in context.LocConcept2Context
                           join entity2 in context.LocConceptsTable on entity1.Idconcept equals entity2.Id
-                          join entity3 in context.LocContexts on entity1.Idconcept equals entity3.Id
-                          where entity1.Id == entity1.Idconcept
+                          join entity3 in context.LocContexts on entity1.Idcontext equals entity3.Id
                           select new Concept2ContextID
                           {
                               IDContext = entity1.Idcontext,

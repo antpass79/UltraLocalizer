@@ -4,31 +4,37 @@ using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
+using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.PortingAdapters
 {
     public class ConceptService : IAsyncConceptService
     {
-        const string ISO_CODING_EN = "en";
         const bool IS_MASTER = true;
+        const string ISO_CODING_EN = "en";     
+        const string XML_FOLDER = "XmlDefinitions";
 
         private readonly LocalizationContext _localizationContext;
         private readonly UltraDBStrings _ultraDBStrings;
         private readonly UltraDBStrings2Context _ultraDBStrings2Context;
         private readonly UltraDBConcept _ultraDBConcept;
+        private readonly XmlManager _xmlManager;
 
         public ConceptService(
             LocalizationContext localizationContext,
             UltraDBStrings ultraDBStrings,
             UltraDBStrings2Context ultraDBStrings2Context,
-            UltraDBConcept ultraDBConcept)
+            UltraDBConcept ultraDBConcept,
+            XmlManager xmlManager)
         {
             _localizationContext = localizationContext;
             _ultraDBStrings = ultraDBStrings;
             _ultraDBStrings2Context = ultraDBStrings2Context;
             _ultraDBConcept = ultraDBConcept;
+            _xmlManager = xmlManager;
         }
 
         async public Task SaveAsync(SavableConceptModelDTO savableConceptModel)
@@ -103,6 +109,18 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             }
 
             await _localizationContext.SaveChangesAsync();
+        }
+
+        async public Task<bool> CheckNewConceptsAsync()
+        {
+            var xmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), XML_FOLDER);
+            _xmlManager.XmlDirectory = xmlFilePath;
+            _xmlManager.LoadXmlOnly();
+            _xmlManager.Completed.WaitOne();
+            _xmlManager.ChangesFound = false;
+            _xmlManager.FillDB(_xmlManager.KeyTuplas);
+           
+            return await Task.FromResult(_xmlManager.ChangesFound);
         }
     }
 }

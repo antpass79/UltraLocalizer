@@ -16,6 +16,7 @@ namespace Globe.Client.Localizer.Services
         private const string ENDPOINT_NotTranslatedConceptView = "NotTranslatedConceptView";
         private const string ENDPOINT_InternalNamespaceGroup = "InternalNamespaceGroup";
         private const string ENDPOINT_JobList = "JobList";
+        private const string ENDPOINT_Concept = "Concept";
 
         private readonly IAsyncSecureHttpClient _secureHttpClient;
 
@@ -49,6 +50,19 @@ namespace Globe.Client.Localizer.Services
             var savableJobList = new SavableJobList(jobListName, notTranslatedConceptViews, user, language);
             
             await _secureHttpClient.PutAsync<SavableJobList>(ENDPOINT_WRITE + ENDPOINT_JobList, savableJobList);
+        }
+
+        async public Task<bool> CheckNewConceptsAsync()
+        {
+            var savableConcept = new SavableConcept
+            {
+                Name = "Prova",
+                InternalNamespace = new InternalNamespace { Description = "InternalNameSpaceProva" },
+                ComponentNamespace = new ComponentNamespace { Description = "ComponentNameSpaceProva" }
+            };
+
+            var result = await _secureHttpClient.PostAsync<SavableConcept>(ENDPOINT_WRITE + ENDPOINT_Concept, savableConcept); 
+            return await result.GetValue<bool>();
         }
     }
 }
