@@ -2,19 +2,24 @@
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platofrm.Events;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
+using System;
 
 namespace Globe.Client.Localizer.ViewModels
 {
     internal class LoginWindowViewModel : BindableBase
     {
+        private readonly IEventAggregator _eventAggregator;
         private readonly IViewNavigationService _viewNavigationService;
         private readonly IAsyncLoginService _loginService;
 
-        public LoginWindowViewModel(IViewNavigationService viewNavigationService, IAsyncLoginService loginService)
+        public LoginWindowViewModel(IEventAggregator eventAggregator, IViewNavigationService viewNavigationService, IAsyncLoginService loginService)
         {
+            _eventAggregator = eventAggregator;
             _viewNavigationService = viewNavigationService;
             _loginService = loginService;
         }
@@ -51,17 +56,30 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand LoginCommand =>
             _loginCommand ?? (_loginCommand = new DelegateCommand(async () =>
             {
-                LoginResult = new LoginResult();
-                LoginResult = await _loginService.LoginAsync(new Credentials
+                try
                 {
-                    UserName = this.UserName,
-                    Password = this.Password
-                });
+                    _eventAggregator.GetEvent<BusyChangedEvent>().Publish(true);
 
-                ClearFields();
-                if (LoginResult.Successful)
+                    LoginResult = new LoginResult();
+                    LoginResult = await _loginService.LoginAsync(new Credentials
+                    {
+                        UserName = this.UserName,
+                        Password = this.Password
+                    });
+
+                    ClearFields();
+                    if (LoginResult.Successful)
+                    {
+                        _viewNavigationService.NavigateTo(ViewNames.HOME_VIEW);
+                    }
+                }
+                catch(Exception e)
                 {
-                    _viewNavigationService.NavigateTo(ViewNames.HOME_VIEW);
+                    Console.WriteLine(e.Message);
+                }
+                finally
+                {
+                    _eventAggregator.GetEvent<BusyChangedEvent>().Publish(false);
                 }
             }));
 

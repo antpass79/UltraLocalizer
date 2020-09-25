@@ -9,5 +9,6 @@ namespace Globe.Client.Localizer.Services
         Task<IEnumerable<InternalNamespaceGroup>> GetInternalNamespaceGroupsAsync(Language language);
         Task<IEnumerable<NotTranslatedConceptView>> GetNotTranslatedConceptsAsync(ComponentNamespace componentNamespace, InternalNamespace internalNamespace, Language language);
         Task SaveAsync(string jobListName, IEnumerable<NotTranslatedConceptView> notTranslatedConceptViews, ApplicationUser user, Language language);
+        Task<bool> CheckNewConceptsAsync();
     }
 }
