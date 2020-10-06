@@ -2,7 +2,9 @@
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Controls;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platofrm.Events;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using System;
@@ -15,6 +17,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
     class SaveJoblistViewModel : BindableBase, IDialogAware
     {
         private readonly ILoggerService _loggerService;
+        private readonly IEventAggregator _eventAggregator;
         private readonly IUserService _userService;
         private readonly IJobListManagementService _jobListManagementService;
 
@@ -23,10 +26,12 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         public SaveJoblistViewModel(
             ILoggerService loggerService,
+            IEventAggregator eventAggregator,
             IUserService userService,
             IJobListManagementService jobListManagementService)
         {
             _loggerService = loggerService;
+            _eventAggregator = eventAggregator;
             _userService = userService;
             _jobListManagementService = jobListManagementService;
         }
@@ -63,21 +68,37 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public DelegateCommand SaveCommand =>
             _saveCommand ?? (_saveCommand = new DelegateCommand(() =>
             {
-                _jobListManagementService.SaveAsync(JobListName, _notTranslatedConceptViews, SelectedUser, _language);
+                try
+                {
+                    _eventAggregator.GetEvent<BusyChangedEvent>().Publish(true);
+                    _jobListManagementService.SaveAsync(JobListName, _notTranslatedConceptViews, SelectedUser, _language);
+                    _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    {
+                        Text = $"New Joblist ({JobListName}) saved",
+                        MessageType = MessageType.Information
+                    });
+                    RaiseRequestClose(new DialogResult(ButtonResult.OK));                  
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    {
+                        Text = "Joblist not saved",
+                        MessageType = MessageType.Error
+                    });              
+                }
+                finally
+                {
+                    _eventAggregator.GetEvent<BusyChangedEvent>().Publish(false);
+                }
             }, () => !string.IsNullOrWhiteSpace(JobListName)));
 
-        private DelegateCommand<string> _closeDialogCommand;
-        public DelegateCommand<string> CloseDialogCommand =>
-            _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand<string>(parameter =>
+        private DelegateCommand _closeDialogCommand;
+        public DelegateCommand CloseDialogCommand =>
+            _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand(() =>
             {
-                ButtonResult result = ButtonResult.None;
-
-                if (parameter?.ToLower() == "true")
-                    result = ButtonResult.OK;
-                else if (parameter?.ToLower() == "false")
-                    result = ButtonResult.Cancel;
-
-                RaiseRequestClose(new DialogResult(result));
+                RaiseRequestClose(new DialogResult(ButtonResult.Cancel));
             }));
         public event Action<IDialogResult> RequestClose;
 

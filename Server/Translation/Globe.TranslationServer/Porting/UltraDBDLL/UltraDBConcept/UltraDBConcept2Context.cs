@@ -12,9 +12,9 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
             this.context = context;
         }
 
-        public int InsertNewConcept2Context(int IDConcept, int IDContext)
+        public void InsertNewConcept2Context(int IDConcept, int IDContext)
         {
-            return context.InsertNewConcept2Context(IDConcept, IDContext);
+            context.InsertNewConcept2Context(IDConcept, IDContext);
         }
     }
 }

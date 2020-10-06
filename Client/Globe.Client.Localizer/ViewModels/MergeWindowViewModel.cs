@@ -5,6 +5,7 @@ using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Prism.Commands;
 using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
@@ -100,8 +101,9 @@ namespace Globe.Client.Localizer.ViewModels
                         Text = _localizationService.Resolve("Operation_successfully_completed")
                     });
                 }
-                catch
+                catch(Exception e)
                 {
+                    Console.WriteLine(e.Message);
                     _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
                     {
                         MessageType = MessageType.Error,

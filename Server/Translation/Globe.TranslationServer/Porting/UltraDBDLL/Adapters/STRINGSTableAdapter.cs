@@ -165,15 +165,16 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //SELECT @@IDENTITY
         public static int InsertNewString(this LocalizationContext context, int IDLanguage, int IDType, string DataString)
         {
-            throw new NotImplementedException();
-
-            context.LocStrings.Add(new LocStrings
+            var item = new LocStrings
             {
                 Idlanguage = IDLanguage,
                 Idtype = IDType,
                 String = DataString
-            });
-            //return context.SaveChanges();
+            };
+
+            context.LocStrings.Add(item);
+            context.SaveChanges();
+            return item.Id;
         }
     }
 }

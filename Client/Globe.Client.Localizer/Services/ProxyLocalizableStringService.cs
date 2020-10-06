@@ -2,6 +2,7 @@
 using Globe.Client.Platform.Services;
 using Globe.Client.Platofrm.Events;
 using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -46,8 +47,9 @@ namespace Globe.Client.Localizer.Services
                     {
                         strings = await _httpLocalizableStringService.GetAllAsync();
                     }
-                    catch
+                    catch (Exception e)
                     {
+                        Console.WriteLine(e.Message);
                         _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
                         {
                             MessageType = MessageType.Error,
@@ -64,8 +66,9 @@ namespace Globe.Client.Localizer.Services
                                 Text = _localizationService.Resolve("Strings_from_file_system")
                             });
                         }
-                        catch
+                        catch(Exception innerException)
                         {
+                            Console.WriteLine(innerException.Message);
                             _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
                             {
                                 MessageType = MessageType.Error,
@@ -103,8 +106,9 @@ namespace Globe.Client.Localizer.Services
                             Text = _localizationService.Resolve("Operation_successfully_completed")
                         });
                     }
-                    catch
+                    catch(Exception e)
                     {
+                        Console.WriteLine(e.Message);
                         _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
                         {
                             MessageType = MessageType.Error,
@@ -121,8 +125,9 @@ namespace Globe.Client.Localizer.Services
                                 Text = _localizationService.Resolve("Strings_saved_in_file_system")
                             });
                         }
-                        catch
+                        catch(Exception innerException)
                         {
+                            Console.WriteLine(innerException.Message);
                             _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
                             {
                                 MessageType = MessageType.Error,
