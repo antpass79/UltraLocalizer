@@ -56,7 +56,7 @@ namespace Globe.Client.Localizer.ViewModels
                 new MenuOption
                 {
                     Title = "Joblist Management",
-                    IconName = "current_job",
+                    IconName = "management",
                     IsSelected = false,
                     Roles = "Admin, SuperUser, MasterTranslator",
                     AlwaysVisible = false,
@@ -65,7 +65,7 @@ namespace Globe.Client.Localizer.ViewModels
                 new MenuOption
                 {
                     Title = "Current Job",
-                    IconName = "edit",
+                    IconName = "current_job",
                     IsSelected = false,
                     Roles = "Admin, SuperUser, MasterTranslator, TranslatorDE, TranslatorEN, TranslatorES, TranslatorFR, TranslatorIT, TranslatorPT, TranslatorRU",
                     AlwaysVisible = false,
@@ -74,6 +74,7 @@ namespace Globe.Client.Localizer.ViewModels
                 new MenuOption
                 {
                     Title = "Jobs",
+                    IconName = "work_in_progress",
                     IsSelected = false,
                     Roles = "Admin, UserManager",
                     ViewName = ViewNames.JOBS_VIEW
@@ -81,6 +82,7 @@ namespace Globe.Client.Localizer.ViewModels
                 new MenuOption
                 {
                     Title = "Merge",
+                    IconName = "work_in_progress",
                     IsSelected = false,
                     Roles = "Admin",
                     ViewName = ViewNames.MERGE_VIEW
@@ -208,23 +210,7 @@ namespace Globe.Client.Localizer.ViewModels
             if (!Identity.IsAuthenticated)
                 return string.Empty;
 
-            StringBuilder builder = new StringBuilder($"Hello {Identity.Name} ");
-
-            if (this.UserRoles != null && this.UserRoles.Count() > 0)
-            {
-                builder.Append("[");
-
-                foreach (var userRole in UserRoles)
-                {
-                    builder.Append($" {userRole} ");
-                }
-
-                builder.Append("]");
-            }
-
-            builder.Append("!");
-
-            return builder.ToString();
+            return $"{Identity.Name} is logged";
         }
     }
 }

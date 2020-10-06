@@ -85,7 +85,7 @@
         </Grid>
 
         <!--Footer-->
-        <Label DockPanel.Dock="Bottom" HorizontalAlignment="Right" FontWeight="Bold" FontSize="20" Content="{Binding StatusBarMessage.Text}" Foreground="{Binding StatusBarMessage.MessageType, Converter={StaticResource MessageTypeToColorConverter}}"></Label>
+        <controls:LocLabel DockPanel.Dock="Bottom" HorizontalAlignment="Left" FontWeight="Bold" FontSize="20" Content="{Binding StatusBarMessage.Text}" Foreground="{Binding StatusBarMessage.MessageType, Converter={StaticResource MessageTypeToColorConverter}}"></controls:LocLabel>
 
         <!--Content-->
         <controls:LocGrid>

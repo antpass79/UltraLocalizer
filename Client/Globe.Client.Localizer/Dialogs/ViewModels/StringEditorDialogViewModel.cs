@@ -2,7 +2,9 @@
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Controls;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platofrm.Events;
 using Prism.Commands;
+using Prism.Events;
 using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using System;
@@ -17,23 +19,24 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         private readonly IEditStringService _editStringService;
         private readonly ILoggerService _loggerService;
         private readonly IPreviewStyleService _previewStyleService;
+        private readonly IEventAggregator _eventAggregator;
 
         public StringEditorDialogViewModel(
             IEditStringService editStringService,
             ILoggerService loggerService,
-            IPreviewStyleService previewStyleService)
+            IPreviewStyleService previewStyleService,
+            IEventAggregator eventAggregator)
         {
             _editStringService = editStringService;
             _loggerService = loggerService;
             _previewStyleService = previewStyleService;
+            _eventAggregator = eventAggregator;
         }
 
         public IPreviewStyleService PreviewStyleService
         {
             get { return _previewStyleService; }
         }
-
-
 
         private bool _savingBusy = false;
         public bool SavingBusy
@@ -169,10 +172,21 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 try
                 {
                     await _editStringService.SaveAsync(new SavableConceptModel(Language, EditableConcept));
+                    _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    {
+                        Text = "String saved",
+                        MessageType = MessageType.Information
+                    });
                 }
                 catch (Exception e)
                 {
                     _loggerService.Exception(e);
+                    Console.WriteLine(e.Message);
+                    _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    {
+                        Text = "String not saved",
+                        MessageType = MessageType.Error
+                    });
                 }
                 finally
                 {

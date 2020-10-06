@@ -12,17 +12,24 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <platform:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" True="Collapsed" False="Visible" />
         <Style TargetType="Panel" x:Key="SectionPanel">
             <Setter Property="Background" Value="WhiteSmoke" />
             <Setter Property="Margin" Value="3" />
+        </Style>
+        <Style TargetType="Panel" x:Key="BottomGridPanel">
+            <Setter Property="Background" Value="WhiteSmoke" />
+            <Setter Property="Margin" Value="1" />
+            <Setter Property="DockPanel.Dock" Value="Bottom" />
         </Style>
     </UserControl.Resources>
 
     <controls:LocGrid>
         <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
             <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
-                <controls:LocGrid DockPanel.Dock="Left"  Style="{StaticResource SectionPanel}">
+                <controls:LocGrid DockPanel.Dock="Left" Style="{StaticResource SectionPanel}">
                     <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
@@ -32,31 +39,35 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <controls:LocLabel Style="{StaticResource LocLabelTitle}" Grid.ColumnSpan="2">Components</controls:LocLabel>
+                    <controls:LocLabel Style="{StaticResource LocLabelTitle}" Grid.ColumnSpan="2">Filters</controls:LocLabel>
                     <controls:LocTextBlock Grid.Row="1" Grid.Column="0">Language</controls:LocTextBlock>
                     <controls:LocComboBox  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}" ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
-                    <TreeView  Grid.Row="2" Grid.ColumnSpan="2" ItemsSource="{Binding InternalNamespaceGroups}">
-                        <TreeView.ItemContainerStyle>
-                            <Style TargetType="{x:Type TreeViewItem}">
-                                <Setter Property="IsSelected" Value="{Binding IsSelected}" />
-                            </Style>
-                        </TreeView.ItemContainerStyle>
-                        <TreeView.Resources>
-                            <HierarchicalDataTemplate DataType="{x:Type models:InternalNamespaceGroup}" ItemsSource="{Binding InternalNamespaces}">
-                                <StackPanel Orientation="Horizontal">
-                                    <controls:LocTextBlock Text="{Binding ComponentNamespace.Description}" />
-                                    <controls:LocTextBlock Text=" [" Foreground="Blue" />
-                                    <controls:LocTextBlock Text="{Binding Count}" Foreground="Blue" />
-                                    <controls:LocTextBlock Text="]" Foreground="Blue" />
-                                </StackPanel>
-                            </HierarchicalDataTemplate>
-                            <DataTemplate DataType="{x:Type models:InternalNamespace}">
-                                <StackPanel Orientation="Horizontal">
-                                    <controls:LocTextBlock Text="{Binding Description}" />
-                                </StackPanel>
-                            </DataTemplate>
-                        </TreeView.Resources>
-                    </TreeView>
+                    <controls:LocTextBlock Grid.Row="2" Grid.Column="0">Components</controls:LocTextBlock>
+                    <controls:LocGrid Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource SectionPanel}">
+                        <TreeView ItemsSource="{Binding InternalNamespaceGroups}" Background="Transparent" BorderThickness="0">
+                            <TreeView.ItemContainerStyle>
+                                <Style TargetType="{x:Type TreeViewItem}">
+                                    <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+                                </Style>
+                            </TreeView.ItemContainerStyle>
+                            <TreeView.Resources>
+                                <HierarchicalDataTemplate DataType="{x:Type models:InternalNamespaceGroup}" ItemsSource="{Binding InternalNamespaces}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <controls:LocTextBlock Text="{Binding ComponentNamespace.Description}" />
+                                        <controls:LocTextBlock Text=" [" Foreground="Blue" />
+                                        <controls:LocTextBlock Text="{Binding Count}" Foreground="Blue" />
+                                        <controls:LocTextBlock Text="]" Foreground="Blue" />
+                                    </StackPanel>
+                                </HierarchicalDataTemplate>
+                                <DataTemplate DataType="{x:Type models:InternalNamespace}">
+                                    <StackPanel Orientation="Horizontal">
+                                        <controls:LocTextBlock Text="{Binding Description}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </TreeView.Resources>
+                        </TreeView>
+                        <controls:LocTextBlock FontStyle="Italic" HorizontalAlignment="Center" Visibility="{Binding ComponentsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">No Components</controls:LocTextBlock>
+                    </controls:LocGrid>
                     <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
                 </controls:LocGrid>
             </controls:LocDockPanel>
@@ -69,7 +80,11 @@
                 </controls:LocDockPanel>
                 <controls:LocDockPanel>
                     <controls:LocGrid>
-                        <controls:LocDataGrid Name="grid" Grid.Row="0" ItemsSource="{Binding NotTranslatedConceptViews}" SelectionMode="Extended" IsReadOnly="true" AutoGenerateColumns="False" CanUserAddRows="False">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="95*" />
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <controls:LocDataGrid Name="grid" Grid.Row="0" ItemsSource="{Binding NotTranslatedConceptViews}" SelectedItem="{Binding SelectedNotTranslatedConceptView}" SelectionMode="Extended" IsReadOnly="true" AutoGenerateColumns="False" CanUserAddRows="False">
                             <DataGrid.Resources>
                                 <Style TargetType="{x:Type TextBlock}">
                                     <Setter Property="FontSize" Value="20"/>
@@ -153,7 +168,11 @@
                                 </DataGridTemplateColumn>
                             </DataGrid.Columns>
                         </controls:LocDataGrid>
-                        <platform:Spinner Grid.Row="1" Diameter="60" Busy="{Binding ConceptDetailsBusy}" />
+                        <platform:Spinner Grid.Row="0" Diameter="60" Busy="{Binding ConceptDetailsBusy}" />
+                        <controls:LocDockPanel Grid.Row="1" DockPanel.Dock="Bottom" LastChildFill="True" Style="{StaticResource BottomGridPanel}">
+                            <controls:LocTextBlock DockPanel.Dock="Right" Text="{Binding ItemCount}" TextAlignment="Left" FontSize="11" FontWeight="Bold"></controls:LocTextBlock>
+                            <controls:LocTextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="Item Count: " FontSize="11" FontWeight="Bold"></controls:LocTextBlock>
+                        </controls:LocDockPanel>
                     </controls:LocGrid>
                 </controls:LocDockPanel>
             </controls:LocDockPanel>
