@@ -24,17 +24,28 @@
         </Style>
     </prism:Dialog.WindowStyle>
 
-    <DockPanel>
-        <controls:LocLabel>Users</controls:LocLabel>
-        <controls:LocComboBox DockPanel.Dock="Top" ItemsSource="{Binding Users}" DisplayMemberPath="DisplayName" SelectedItem="{Binding SelectedUser}"></controls:LocComboBox>
-
-        <controls:LocTextBlock>Save As</controls:LocTextBlock>
-        <controls:LocTextBox Text="{Binding JobListName, UpdateSourceTrigger=PropertyChanged}"></controls:LocTextBox>
-        <!-- Buttons -->
-        <DockPanel LastChildFill="False">
-            <Button DockPanel.Dock="Right" Command="{Binding CloseDialogCommand}" CommandParameter="true">Close</Button>
-            <Button DockPanel.Dock="Right" Command="{Binding SaveCommand}">Save</Button>
-        </DockPanel>
+    <DockPanel Margin="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <controls:LocLabel Grid.Row="0" Grid.Column="0">Select User</controls:LocLabel>
+            <controls:LocComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Users}" DisplayMemberPath="DisplayName" SelectedItem="{Binding SelectedUser}"></controls:LocComboBox>
+            <controls:LocLabel Grid.Row="1" Grid.Column="0">Save As</controls:LocLabel>
+            <controls:LocTextBox Grid.Row="1" Grid.Column="1" Text="{Binding JobListName, UpdateSourceTrigger=PropertyChanged}"></controls:LocTextBox>
+            <!-- Buttons -->
+            <DockPanel Margin="0,20,0,0" Grid.Row="2" Grid.ColumnSpan="2" LastChildFill="False">
+                <Button DockPanel.Dock="Right" Style="{StaticResource GrayButton}" Command="{Binding CloseDialogCommand}">Close</Button>
+                <Button DockPanel.Dock="Right" Command="{Binding SaveCommand}">Save</Button>
+            </DockPanel>
+        </Grid>
     </DockPanel>
 
 </UserControl>

@@ -61,9 +61,7 @@
                 <controls:LocGrid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="95*" />
-                        <RowDefinition />
                         <RowDefinition Height="auto"/>
-                        <RowDefinition />
                     </Grid.RowDefinitions>
                     <controls:LocDataGrid Name="grid" Grid.Row="0" ItemsSource="{Binding ConceptViews}" AutoGenerateColumns="False" CanUserAddRows="False">
                         <DataGrid.Resources>
@@ -165,8 +163,9 @@
                     </controls:LocDataGrid>
 
                     <platform:Spinner Grid.Row="0" Diameter="60" Busy="{Binding GridBusy}" />
-                    <controls:LocDockPanel Grid.Row="2" DockPanel.Dock="Bottom" LastChildFill="True" Style="{StaticResource BottomGridPanel}">
-                        <controls:LocTextBlock Text="{Binding NumRows}" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="11"></controls:LocTextBlock>
+                    <controls:LocDockPanel Grid.Row="1" DockPanel.Dock="Bottom" LastChildFill="True" Style="{StaticResource BottomGridPanel}">
+                        <controls:LocTextBlock DockPanel.Dock="Right" Text="{Binding ItemCount}" TextAlignment="Left" FontSize="11" FontWeight="Bold"></controls:LocTextBlock>
+                        <controls:LocTextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="Item Count: " FontSize="11" FontWeight="Bold"></controls:LocTextBlock>
                     </controls:LocDockPanel> 
                 </controls:LocGrid>
             </controls:LocDockPanel>

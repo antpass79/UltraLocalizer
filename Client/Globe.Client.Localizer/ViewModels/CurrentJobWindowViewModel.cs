@@ -68,14 +68,14 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        int _numRows;
+        int _itemCount;
 
-        public int NumRows
+        public int ItemCount
         {
-            get => _numRows;
+            get => _itemCount;
             set
             {
-                SetProperty<int>(ref _numRows, value);
+                SetProperty<int>(ref _itemCount, value);
             }
         }
 
@@ -185,44 +185,9 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand SearchCommand =>
             _searchCommand ?? (_searchCommand = new DelegateCommand(async () =>
             {
-                this.GridBusy = true;
-                this.ConceptViews = null;
-                this.NumRows = 0;
-
-                try
-                {
-                    if (
-                        this.SelectedJobItem == null ||
-                        this.SelectedComponentNamespace == null ||
-                        this.SelectedInternalNamespace == null ||
-                        this.SelectedLanguage == null)
-                    {
-                        this.ConceptViews = null;
-                    }
-                    else
-                    {
-                        this.ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
-                            new ConceptViewSearch
-                            {
-                                ComponentNamespace = this.SelectedComponentNamespace.Description,
-                                InternalNamespace = this.SelectedInternalNamespace.Description,
-                                LanguageId = this.SelectedLanguage.Id,
-                                JobItemId = this.SelectedJobItem.Id
-                            });
-
-                        this.NumRows = ConceptViews.Count();
-                    }
-                }
-                catch (Exception exception)
-                {
-                    _loggerService.Exception(exception);
-                }
-                finally
-                {
-                    this.GridBusy = false;                  
-                }
+                await OnSearch();
             }));
-        
+
         private DelegateCommand<ConceptView> _conceptViewEditCommand = null;
         public DelegateCommand<ConceptView> ConceptViewEditCommand =>
             _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<ConceptView>(async (conceptView) =>
@@ -246,6 +211,8 @@ namespace Globe.Client.Localizer.ViewModels
 
                 var @params = new DialogParameters();
 
+                //Replicato il comportamento del vecchio localizzatore: in caso di doppio context identico (concettualmente sbagliato, ma frutto di errore XML o User)
+                //si prende il primo (FirstOfDefault) invece che lanciare eccezione se si usasse "Single"
                 @params.Add("editableConcept", new EditableConcept(
                     conceptView.Id,
                     conceptView.ComponentNamespace,
@@ -268,13 +235,11 @@ namespace Globe.Client.Localizer.ViewModels
                 });
                 @params.Add("language", this.SelectedLanguage);
 
-                _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, dialogResult => { });
-            }));
-
-        private DelegateCommand _checkNewJobCommand = null;
-        public DelegateCommand CheckNewJobCommand =>
-            _checkNewJobCommand ?? (_checkNewJobCommand = new DelegateCommand(() =>
-            {
+                _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, async dialogResult =>
+                { 
+                    if(dialogResult.Result == ButtonResult.OK)
+                        await OnSearch();
+                });
             }));
 
         private DelegateCommand _exportToXmlCommand = null;
@@ -301,7 +266,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.FiltersBusy = true;
 
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync("marco.delpiano", this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : ALL_ITEMS);
+                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : ALL_ITEMS);
                 this.SelectedJobItem = this.JobItems.FirstOrDefault();
 
                 this.FiltersBusy = false;
@@ -327,7 +292,7 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync("marco.delpiano", this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : ALL_ITEMS);
+                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : ALL_ITEMS);
                 this.ComponentNamespaces = await _currentJobFiltersService.GetComponentNamespacesAsync();
                 this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : ALL_ITEMS);
                 this.Languages = await _currentJobFiltersService.GetLanguagesAsync();
@@ -344,6 +309,46 @@ namespace Globe.Client.Localizer.ViewModels
             finally
             {
                 this.FiltersBusy = false;
+            }
+        }
+
+        private async Task OnSearch()
+        {
+            this.GridBusy = true;
+            this.ConceptViews = null;
+            this.ItemCount = 0;
+
+            try
+            {
+                if (
+                    this.SelectedJobItem == null ||
+                    this.SelectedComponentNamespace == null ||
+                    this.SelectedInternalNamespace == null ||
+                    this.SelectedLanguage == null)
+                {
+                    this.ConceptViews = null;
+                }
+                else
+                {
+                    this.ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
+                        new ConceptViewSearch
+                        {
+                            ComponentNamespace = this.SelectedComponentNamespace.Description,
+                            InternalNamespace = this.SelectedInternalNamespace.Description,
+                            LanguageId = this.SelectedLanguage.Id,
+                            JobItemId = this.SelectedJobItem.Id
+                        });
+
+                    this.ItemCount = ConceptViews.Count();
+                }
+            }
+            catch (Exception exception)
+            {
+                _loggerService.Exception(exception);
+            }
+            finally
+            {
+                this.GridBusy = false;
             }
         }
     }

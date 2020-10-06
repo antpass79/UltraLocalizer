@@ -11,9 +11,11 @@
     <None Remove="Icons\edit.png" />
     <None Remove="Icons\home.png" />
     <None Remove="Icons\link.png" />
+    <None Remove="Icons\management.png" />
     <None Remove="Icons\menu.png" />
     <None Remove="Icons\search.png" />
     <None Remove="Icons\unlink.png" />
+    <None Remove="Icons\work_in_progress.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -64,9 +66,11 @@
     <Resource Include="Icons\edit.png" />
     <Resource Include="Icons\home.png" />
     <Resource Include="Icons\link.png" />
+    <Resource Include="Icons\management.png" />
     <Resource Include="Icons\menu.png" />
     <Resource Include="Icons\search.png" />
     <Resource Include="Icons\unlink.png" />
+    <Resource Include="Icons\work_in_progress.png" />
   </ItemGroup>
 
 </Project>
