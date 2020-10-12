@@ -674,6 +674,15 @@
       <Comments>Generic Error</Comments>
       <String Context="Generic_Warning">An error was detected during the operation. Please try again</String>
     </Concept>
+	<Concept Id="STIC LOW DEMO RATE">
+      <Comments>DEMO1</Comments>
+      <String Context="TS_SButton">Please, increase Frame rate</String>
+	  <String Context="MD_RT13HelpLine">Please, increase Frame rate</String>
+    </Concept>
+	<Concept Id="GENERIC DEMO ERROR">
+      <Comments>Demo 2</Comments>
+      <String Context="Generic_Warning">An error was detected during the operation. Please try again</String>
+    </Concept>
   </LocalizationSection> 
   <LocalizationSection InternalNamespace="Error_Messages">
     <Concept Id="ELIGIBILITY_MSG">

@@ -346,5 +346,14 @@
       <Comments>[StoryID: 8597] Message when Tomtec AutoEF fails</Comments>
       <String Context="Generic_Warning" >AUTOEF: contours detection failed.</String>
     </Concept >
+	<Concept Id="deno0710">
+      <Comments>[StoryID: 8597] Message when Tomtec AutoEF fails</Comments>
+		<String Context="TS_SButton">Pulmonary demo</String>
+		<String Context="Generic_Short">Pul</String>
+    </Concept >
+	<Concept Id="demo07102">
+      <Comments>[StoryID: 8597] Message when Tomtec AutoEF fails</Comments>
+      <String Context="Generic_Warning" >AUTOEF: contours detection failed.</String>
+    </Concept >
   </LocalizationSection>
 </LocalizationResource>

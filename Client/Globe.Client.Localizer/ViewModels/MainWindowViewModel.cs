@@ -189,7 +189,10 @@ namespace Globe.Client.Localizer.ViewModels
                     continue;
                 }
 
-                string[] roles = menuOption.Roles.Split(',', System.StringSplitOptions.RemoveEmptyEntries);
+                string[] roles = menuOption.Roles
+                    .Split(',', System.StringSplitOptions.RemoveEmptyEntries)
+                    .Select(item => item.Trim())
+                    .ToArray();
                 foreach (var role in roles)
                 {
                     if (principal.IsInRole(role))
