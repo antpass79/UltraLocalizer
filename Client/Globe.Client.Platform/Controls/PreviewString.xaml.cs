@@ -2,9 +2,16 @@
 using Globe.Client.Platform.Services;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Globe.Client.Platform.Controls
 {
+    public enum PreviewState
+    {
+        Valid,
+        Invalid
+    }
+
     /// <summary>
     /// Interaction logic for StringPreview.xaml
     /// </summary>
@@ -17,9 +24,31 @@ namespace Globe.Client.Platform.Controls
             InitializeComponent();
         }
 
-        #endregion       
+        #endregion
 
         #region Dependency Properties
+
+        public static readonly DependencyProperty IsValidProperty =
+            DependencyProperty.Register("IsValid", typeof(bool), typeof(PreviewString), new PropertyMetadata(true));
+        public bool IsValid
+        {
+            get { return (bool)GetValue(IsValidProperty); }
+            set { SetValue(IsValidProperty, value); }
+        }
+
+        public static readonly DependencyProperty PreviewStateProperty =
+            DependencyProperty.Register("PreviewState", typeof(PreviewState), typeof(PreviewString), new PropertyMetadata(PreviewState.Valid, OnPreviewStateChanged));
+        public PreviewState PreviewState
+        {
+            get { return (PreviewState)GetValue(PreviewStateProperty); }
+            set { SetValue(PreviewStateProperty, value); }
+        }
+        private static void OnPreviewStateChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var previewString = (PreviewString)d;
+            previewString.BorderBrush = previewString.PreviewState == PreviewState.Valid ? Brushes.Green : Brushes.Red;
+            previewString.IsValid = previewString.PreviewState == PreviewState.Valid ? true : false;
+        }
 
         public static readonly DependencyProperty PreviewStyleInfoProperty =
             DependencyProperty.Register("PreviewStyleInfo", typeof(PreviewStyleInfo), typeof(PreviewString), new PropertyMetadata(PreviewStyleInfo.Default()));
