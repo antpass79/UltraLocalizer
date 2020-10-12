@@ -149,14 +149,20 @@
                             </DataGridTextColumn.HeaderTemplate>
                         </DataGridTextColumn>
                         <!-- DataGridColumn 4 -->
-                        <DataGridTextColumn Header="Localized Value" Binding="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}">
-                            <DataGridTextColumn.HeaderTemplate>
+                        <DataGridTemplateColumn Header="Localized Value">
+                            <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                              {RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
-                            </DataGridTextColumn.HeaderTemplate>
-                        </DataGridTextColumn>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBox Text="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" platform:TextChangedBehaviour.Command="{Binding Path=DataContext.LocalizeChangeCommand, 
+                                        RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <!-- DataGridColumn 5 -->
                         <DataGridTemplateColumn Header="Preview Style Standard" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
@@ -167,21 +173,21 @@
                             </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <platform:PreviewString Text="{Binding StringEditableValue}">
+                                    <platform:PreviewString Text="{Binding StringEditableValue}" IsValid="{Binding IsPreviewStandardValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                         <platform:PreviewString.PreviewStyleInfo>
                                                 <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="Standard" >
                                                     <Binding Path="Name" />
                                                     <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
-                                        <platform:PreviewString.BorderBrush>
+                                        <platform:PreviewString.PreviewState>
                                             <MultiBinding Converter="{StaticResource TextSizeToBrushConverter}" ConverterParameter="Standard" >
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 <Binding Path="StringEditableValue"/>
                                                 <Binding RelativeSource="{RelativeSource Mode=Self}"/>
                                             </MultiBinding>
-                                        </platform:PreviewString.BorderBrush>
+                                        </platform:PreviewString.PreviewState>
                                     </platform:PreviewString>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -196,21 +202,21 @@
                             </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <platform:PreviewString Text="{Binding StringEditableValue}">
+                                    <platform:PreviewString Text="{Binding StringEditableValue}" IsValid="{Binding IsPreviewOrangeGrayValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                         <platform:PreviewString.PreviewStyleInfo>
                                             <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="OrangeGrey" >
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                             </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
-                                        <platform:PreviewString.BorderBrush>
+                                        <platform:PreviewString.PreviewState>
                                             <MultiBinding Converter="{StaticResource TextSizeToBrushConverter}" ConverterParameter="Standard" >
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 <Binding Path="StringEditableValue"/>
                                                 <Binding RelativeSource="{RelativeSource Mode=Self}"/>
                                             </MultiBinding>
-                                        </platform:PreviewString.BorderBrush>
+                                        </platform:PreviewString.PreviewState>
                                     </platform:PreviewString>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -225,21 +231,21 @@
                             </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <platform:PreviewString Text="{Binding StringEditableValue}">
+                                    <platform:PreviewString Text="{Binding StringEditableValue}" IsValid="{Binding IsPreviewStandardV2Valid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                         <platform:PreviewString.PreviewStyleInfo>
                                             <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="StandardV2" >
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                             </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
-                                        <platform:PreviewString.BorderBrush>
+                                      <platform:PreviewString.PreviewState>
                                             <MultiBinding Converter="{StaticResource TextSizeToBrushConverter}" ConverterParameter="Standard" >
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 <Binding Path="StringEditableValue"/>
                                                 <Binding RelativeSource="{RelativeSource Mode=Self}"/>
                                             </MultiBinding>
-                                        </platform:PreviewString.BorderBrush>
+                                        </platform:PreviewString.PreviewState>
                                     </platform:PreviewString>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

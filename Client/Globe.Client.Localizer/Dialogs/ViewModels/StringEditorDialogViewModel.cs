@@ -192,8 +192,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 {
                     SavingBusy = false;
                 }
-            }));
-        
+            }, () => CanSave()));
+
         private DelegateCommand<EditableContext> _linkCommand;
         public DelegateCommand<EditableContext> LinkCommand =>
             _linkCommand ?? (_linkCommand = new DelegateCommand<EditableContext>((editableContext) =>
@@ -280,6 +280,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 }
             }));
 
+        private DelegateCommand _localizeChangeCommand;
+        public DelegateCommand LocalizeChangeCommand =>
+            _localizeChangeCommand ?? (_localizeChangeCommand = new DelegateCommand(() =>
+            {
+               SaveCommand.RaiseCanExecuteChanged();
+            }));
+
         public event Action<IDialogResult> RequestClose;
 
         public virtual void RaiseRequestClose(IDialogResult dialogResult)
@@ -315,6 +322,11 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 UnlinkCommand.RaiseCanExecuteChanged();
                 DuplicateCommand.RaiseCanExecuteChanged();
             }
+        }
+
+        private bool CanSave()
+        {
+            return EditableConcept != null && EditableConcept.EditableContexts.All(item => item.IsPreviewStandardValid && item.IsPreviewOrangeGrayValid && item.IsPreviewStandardV2Valid);
         }
     }
 }

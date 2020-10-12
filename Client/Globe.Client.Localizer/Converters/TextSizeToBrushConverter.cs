@@ -24,12 +24,12 @@ namespace Globe.Client.Localizer.Converters
 
             text = string.IsNullOrEmpty(text) ? string.Empty : text;
 
-            bool lightGreen = CheckStringDimension(text, textBox, previewStyleInfo, textBox.Padding.Left, textBox.Padding.Right, textBox.Padding.Top, textBox.Padding.Bottom, culture);
+            bool isValid = CheckStringDimension(text, textBox, previewStyleInfo, textBox.Padding.Left, textBox.Padding.Right, textBox.Padding.Top, textBox.Padding.Bottom, culture);
 
-            if (lightGreen)
-                return Brushes.Green;
+            if (isValid)
+                return PreviewState.Valid;
             else
-                return Brushes.Red;
+                return PreviewState.Invalid;
         }
 
         public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
