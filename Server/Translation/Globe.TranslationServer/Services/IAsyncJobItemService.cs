@@ -6,6 +6,6 @@ namespace Globe.TranslationServer.Services
 {
     public interface IAsyncJobItemService : IAsyncService<JobItemDTO>
     {
-        Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding);
+        Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding, bool isMasterTranslator);
     }
 }

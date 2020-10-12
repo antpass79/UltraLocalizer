@@ -22,26 +22,17 @@ namespace Globe.TranslationServer.Services.NewServices
             throw new System.NotImplementedException();
         }
 
-        async public Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding)
-        {
-            //bool l_isMaster = (Roles.IsUserInRole(UserName, "MasterTranslator") ||
-            //                  Roles.IsUserInRole(UserName, "Admin"));
-
-            //var user = await userManager.FindByNameAsync(UserName);
-            //bool l_isMaster = await userManager.IsInRoleAsync(user, "MasterTranslator") || await userManager.IsInRoleAsync(user, "Admin");
-
-            // ANTO check roles before
-            var isMaster = true;
-
+        async public Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding, bool isMasterTranslator)
+        {      
             var language = ISOCoding.GetLanguage();
             var query = await _repository.QueryAsync();
             var jobs = query
-                .WhereIf(item => item.UserName == userName && item.IdisoCoding == (int)language, !isMaster)
-                .WhereIf(item => item.IdisoCoding == (int)language, isMaster)
+                .WhereIf(item => item.UserName == userName && item.IdisoCoding == (int)language, !isMasterTranslator)
+                .WhereIf(item => item.IdisoCoding == (int)language, isMasterTranslator)
                 .Select(item => new JobItemDTO
                 {
                     Id = item.Id,
-                    Name = isMaster ? $"{item.UserName} - {item.JobName}" : item.JobName,
+                    Name = isMasterTranslator ? $"{item.UserName} - {item.JobName}" : item.JobName,
                     IsoId = (int)language
                 })
                 .AsEnumerable()

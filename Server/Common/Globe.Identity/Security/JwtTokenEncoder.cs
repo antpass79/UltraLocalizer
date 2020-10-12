@@ -4,6 +4,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
@@ -41,7 +42,8 @@ namespace Globe.Identity.Security
         {
             List<Claim> claims = new List<Claim>
             {
-                new Claim(ClaimTypes.NameIdentifier, Guid.NewGuid().ToString())
+                new Claim(ClaimTypes.NameIdentifier, input.Id),
+                new Claim(ClaimTypes.Role, string.Join(",", await UserManager.GetRolesAsync(input)))
             };
 
             return await Task.FromResult<IEnumerable<Claim>>(claims);
