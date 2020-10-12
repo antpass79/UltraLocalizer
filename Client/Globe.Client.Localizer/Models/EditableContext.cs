@@ -43,6 +43,34 @@ namespace Globe.Client.Localizer.Models
             }
         }
 
+        bool _isPreviewStandardValid = true;
+        public bool IsPreviewStandardValid
+        {
+            get => _isPreviewStandardValid;
+            set
+            {
+                SetProperty<bool>(ref _isPreviewStandardValid, value);
+            }
+        }
+        bool _isPreviewOrangeGrayValid = true;
+        public bool IsPreviewOrangeGrayValid
+        {
+            get => _isPreviewOrangeGrayValid;
+            set
+            {
+                SetProperty<bool>(ref _isPreviewOrangeGrayValid, value);
+            }
+        }
+        bool _isPreviewStandardV2Valid = true;
+        public bool IsPreviewStandardV2Valid
+        {
+            get => _isPreviewStandardV2Valid;
+            set
+            {
+                SetProperty<bool>(ref _isPreviewStandardV2Valid, value);
+            }
+        }
+
         int _stringId;
         public int StringId
         {
