@@ -31,16 +31,9 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             throw new NotImplementedException();
         }
 
-        async public Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding)
+        async public Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding, bool isMasterTranslator)
         {
-            //var user = await _userManager.FindByNameAsync(userName);
-            //var isMaster =
-            //    await _userManager.IsInRoleAsync(user, "Admin") ||
-            //    await _userManager.IsInRoleAsync(user, "MasterTranslator");
-
-            var isMaster = true;
-
-            var result = await Task.FromResult(_ultraDBJobList.GetAllJobListByUserNameIso(userName, ISOCoding, isMaster));
+            var result = await Task.FromResult(_ultraDBJobList.GetAllJobListByUserNameIso(userName, ISOCoding, isMasterTranslator));
             return await Task.FromResult(_mapper.Map<IEnumerable<JobItemDTO>>(result));
         }
 

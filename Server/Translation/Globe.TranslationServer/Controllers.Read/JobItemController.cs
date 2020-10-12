@@ -1,7 +1,10 @@
 ﻿using Globe.TranslationServer.DTOs;
+using Globe.TranslationServer.Extensions;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
@@ -24,7 +27,7 @@ namespace Globe.TranslationServer.Controllers
                 throw new System.Exception("search");
             }
 
-            return await _jobItemService.GetAllAsync(search.UserName, search.ISOCoding);
+            return await _jobItemService.GetAllAsync(search.UserName, search.ISOCoding, this.User.IsMasterTranslator());
         }
 
         [HttpPost]
