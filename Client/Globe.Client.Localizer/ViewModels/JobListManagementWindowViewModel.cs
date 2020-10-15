@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.ViewModels
 {
-    internal class JobListManagementWindowViewModel : AuthorizeWindowViewModel, INavigationAware
+    internal class JobListManagementWindowViewModel : LocalizeWindowViewModel, INavigationAware
     {       
         private readonly ILoggerService _loggerService;
         private readonly IDialogService _dialogService;
@@ -28,9 +28,10 @@ namespace Globe.Client.Localizer.ViewModels
             ILoggerService loggerService,
             IDialogService dialogService,
             IJobListManagementFiltersService jobListManagementFiltersService,
-            IJobListManagementService jobListManagementService
+            IJobListManagementService jobListManagementService,
+            ILocalizationAppService localizationAppService
             )
-            : base(eventAggregator)
+            : base(eventAggregator, localizationAppService)
         {
             _loggerService = loggerService;
             _dialogService = dialogService;

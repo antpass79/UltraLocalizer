@@ -67,7 +67,6 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <!--Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}"-->
             <ContentControl>
                 <DockPanel Background="Transparent">
                     <ContentControl prism:RegionManager.RegionName="{x:Static platform:RegionNames.TOOLBAR_REGION}" prism:RegionManager.RegionContext="{Binding ElementName=contentRegion, Path=Content.DataContext}" />
@@ -75,12 +74,16 @@
             </ContentControl>
             <StackPanel HorizontalAlignment="Right" Grid.Column="1" Orientation="Horizontal">
                 <controls:LocTextBlock Text="{Binding HeaderTitle}" Style="{StaticResource HeaderTextBlock}"></controls:LocTextBlock>
-                <Button Command="{Binding LoginCommand}" Style="{StaticResource HeaderLoginButton}" Visibility="{Binding IsAuthenticated, Converter={StaticResource InvertBooleanToVisibilityConverter}}">
-                    Log in
-                </Button>
-                <Button Command="{Binding LogoutCommand}" Style="{StaticResource HeaderLoginButton}" Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}">
-                    Log out
-                </Button>
+                <Button Command="{Binding LoginCommand}" Style="{StaticResource HeaderLoginButton}" Visibility="{Binding IsAuthenticated, Converter={StaticResource InvertBooleanToVisibilityConverter}}" Content="{Binding Localize[Login]}"/>
+                <Button Command="{Binding LogoutCommand}" Style="{StaticResource HeaderLoginButton}" Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}" Content="{Binding Localize[Logout]}"/>
+
+                <controls:LocComboBox Name="languages" ItemsSource="{Binding LanguageOptions}" SelectedItem="{Binding SelectedLanguageOption}" VerticalAlignment="Center">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource LanguageButton}" Content="{Binding Title}" Command="{Binding ElementName=languages, Path=DataContext.LanguageOptionCommand}" CommandParameter="{Binding}"></Button>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </controls:LocComboBox>
             </StackPanel>
         </Grid>
 

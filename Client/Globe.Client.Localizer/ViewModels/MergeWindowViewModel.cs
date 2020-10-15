@@ -18,21 +18,21 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IAsyncLocalizableStringService _fileSystemLocalizableStringService;
         private readonly IAsyncLocalizableStringService _httpLocalizableStringService;
         private readonly IStringMergeService _stringMergeService;
-        private readonly ILocalizationService _localizationService;
+        private readonly ILocalizationAppService _localizationAppService;
 
         public MergeWindowViewModel(
             IEventAggregator eventAggregator,
             IFileSystemLocalizableStringService fileSystemLocalizableStringService,
             IHttpLocalizableStringService httpLocalizableStringService,
             IStringMergeService stringMergeService,
-            ILocalizationService localizationService)
+            ILocalizationAppService localizationAppService)
             : base(eventAggregator)
         {
             _eventAggregator = eventAggregator;
             _fileSystemLocalizableStringService = fileSystemLocalizableStringService;
             _httpLocalizableStringService = httpLocalizableStringService;
             _stringMergeService = stringMergeService;
-            _localizationService = localizationService;
+            _localizationAppService = localizationAppService;
         }
 
         IEnumerable<LocalizableString> _fileSystemStrings;
@@ -98,7 +98,7 @@ namespace Globe.Client.Localizer.ViewModels
                     _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
                     {
                         MessageType = MessageType.Information,
-                        Text = _localizationService.Resolve("Operation_successfully_completed")
+                        Text = _localizationAppService.Resolve("Operation_successfully_completed")
                     });
                 }
                 catch(Exception e)
@@ -107,7 +107,7 @@ namespace Globe.Client.Localizer.ViewModels
                     _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
                     {
                         MessageType = MessageType.Error,
-                        Text = _localizationService.Resolve("Error_during_server_communication")
+                        Text = _localizationAppService.Resolve("Error_during_server_communication")
                     });
                 }
                 finally

@@ -13,7 +13,7 @@
 
     </platform:ContextToolBar.Resources>
     <DockPanel LastChildFill="False" Background="Transparent">
-        <Button Margin="5" Width="150" Style ="{StaticResource GrayButton}" Command="{Binding CheckNewConceptsCommand}">Check New Concepts</Button>
-        <Button Margin="5" Width="150" Style ="{StaticResource GrayButton}" Command="{Binding SaveJoblistCommand}">Save Joblist</Button>
+        <Button Margin="5" Width="150" Style ="{StaticResource GrayButton}" Command="{Binding CheckNewConceptsCommand}" Content="{Binding Localize[Check_New_Concepts]}"/>
+        <Button Margin="5" Width="150" Style ="{StaticResource GrayButton}" Command="{Binding SaveJoblistCommand}" Content="{Binding Localize[Save_Joblist]}"/>
     </DockPanel>
 </platform:ContextToolBar>
