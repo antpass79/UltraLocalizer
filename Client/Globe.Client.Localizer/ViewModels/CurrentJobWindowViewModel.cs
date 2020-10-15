@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.ViewModels
 {
-    internal class CurrentJobWindowViewModel : AuthorizeWindowViewModel, INavigationAware
+    internal class CurrentJobWindowViewModel : LocalizeWindowViewModel, INavigationAware
     {
         const string ALL_ITEMS = "All";
 
@@ -29,8 +29,9 @@ namespace Globe.Client.Localizer.ViewModels
             IDialogService dialogService,
             ILoggerService loggerService,
             ICurrentJobFiltersService currentJobFiltersService,
-            ICurrentJobConceptViewService currentJobConceptViewService)
-            : base(eventAggregator)
+            ICurrentJobConceptViewService currentJobConceptViewService,
+            ILocalizationAppService localizationAppService)
+            : base(eventAggregator, localizationAppService)
         {
             _dialogService = dialogService;
             _loggerService = loggerService;
