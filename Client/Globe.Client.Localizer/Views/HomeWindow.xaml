@@ -16,7 +16,7 @@
     </UserControl.Resources>
     <DockPanel LastChildFill="False">
         <controls:LocTextBlock DockPanel.Dock="Top" Text="Ultra Localizer" Style="{StaticResource Title}"></controls:LocTextBlock>
-        <controls:LocLabel DockPanel.Dock="Top" Content="The Ultra Localizer provides an User Interface to translate all strings in different languages." FontSize="15"></controls:LocLabel>
-        <controls:LocLabel DockPanel.Dock="Top" Content="The translator can work without network connection, thanks to the offline mode." FontSize="15"></controls:LocLabel>
+        <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_1]}" FontSize="15"></controls:LocLabel>
+        <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_2]}" FontSize="15"></controls:LocLabel>
     </DockPanel>
 </UserControl>

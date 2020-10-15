@@ -40,6 +40,13 @@
             <Setter Property="Margin" Value="3" />
             <Setter Property="DockPanel.Dock" Value="Top" />
         </Style>
+        <Style TargetType="{x:Type ContentControl}" x:Key="ComboBoxCellStyle">
+            <Setter Property="Background" Value="#FF3F3F3F" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
 
         <ObjectDataProvider x:Key="stringTypes" MethodName="GetValues" ObjectType="{x:Type models:StringType}">
             <ObjectDataProvider.MethodParameters>
@@ -131,7 +138,7 @@
                             </DataGridTextColumn.HeaderTemplate>
                         </DataGridTextColumn>
                         <!-- DataGridColumn 2 -->
-                        <DataGridComboBoxColumn Header="Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding StringType}">
+                        <DataGridComboBoxColumn ElementStyle="{DynamicResource ComboBoxStandardStyle}" EditingElementStyle="{DynamicResource ComboBoxStandardStyle}" Header="Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding StringType}">
                             <DataGridComboBoxColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=

@@ -33,7 +33,6 @@ namespace Globe.Client.Localizer
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.Register<ILocalizationService, FakeLocalizationService>();
             containerRegistry.Register<ICheckConnectionService, CheckConnectionService>();
             containerRegistry.Register<IAsyncSecureHttpClient, SecureHttpClient>();
             containerRegistry.Register<IProxyLocalizableStringService, ProxyLocalizableStringService>();
