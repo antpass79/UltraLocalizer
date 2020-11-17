@@ -5,6 +5,7 @@ using Globe.Identity.Options;
 using Globe.Identity.Security;
 using Globe.Infrastructure.EFCore.Repositories;
 using Globe.TranslationServer.Entities;
+using Globe.TranslationServer.Hubs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
@@ -21,6 +22,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using System.Reflection;
+using System.Threading.Tasks;
 
 namespace Globe.TranslationServer
 {
@@ -56,6 +58,10 @@ namespace Globe.TranslationServer
                 .AddSingleton<IAsyncLocalizableStringService, FakeLocalizableStringService>();
             services
                 .AddScoped<LocalizableStringRepository, LocalizableStringRepository>();
+
+            // Notifications
+            services
+                .AddSingleton<IAsyncNotificationService, NotificationService>();
 
             // Repositories
             services
@@ -99,7 +105,24 @@ namespace Globe.TranslationServer
                     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 })
-                .AddJwtBearer();
+                .AddJwtBearer(options =>
+                {                  
+                    options.Events = new JwtBearerEvents
+                    {
+                        OnMessageReceived = context =>
+                        {
+                            var accessToken = context.Request.Query["access_token"];
+
+                            var path = context.HttpContext.Request.Path;
+                            if (!string.IsNullOrEmpty(accessToken) &&
+                                (path.StartsWithSegments("/NotificationHub")))
+                            {
+                                context.Token = accessToken;
+                            }
+                            return Task.CompletedTask;
+                        }
+                    };
+                });
 
             services.AddAutoMapper(typeof(Startup));
 
@@ -109,6 +132,8 @@ namespace Globe.TranslationServer
                 {
                     options.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
                 });
+
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -129,6 +154,7 @@ namespace Globe.TranslationServer
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHub<NotificationHub>("/NotificationHub");
                 endpoints.MapControllers();
             });
         }
