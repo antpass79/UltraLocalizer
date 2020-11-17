@@ -1,6 +1,7 @@
 ﻿using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
+using Globe.TranslationServer.Utilities;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -8,15 +9,13 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 {
     public class ConceptDetailsAdapterService : IAsyncConceptDetailsService
     {
-        const string XML_FOLDER = "XmlDefinitions";
-
         private readonly XmlManager _xmlManager;
         private readonly UltraDBConcept _ultraDBConcept;
 
         public ConceptDetailsAdapterService(XmlManager xmlManager, UltraDBConcept ultraDBConcept)
         {
             _xmlManager = xmlManager;
-            _xmlManager.XmlDirectory = XML_FOLDER;
+            _xmlManager.XmlDirectory = Constants.XML_FOLDER;
             _xmlManager.LoadXmlOnly();
             _ultraDBConcept = ultraDBConcept;
         }

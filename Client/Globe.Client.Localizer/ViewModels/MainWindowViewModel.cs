@@ -3,14 +3,16 @@ using Globe.Client.Localizer.Services;
 using Globe.Client.Platform;
 using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
+using Microsoft.AspNetCore.SignalR.Client;
 using Prism.Commands;
 using Prism.Events;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.ViewModels
@@ -19,15 +21,25 @@ namespace Globe.Client.Localizer.ViewModels
     {
         List<MenuOption> _allMenuOptions = new List<MenuOption>();
         List<LanguageOption> _allLanguageOptions = new List<LanguageOption>();
+        HubConnection connection;
 
         private readonly IViewNavigationService _viewNavigationService;
         private readonly IAsyncLoginService _loginService;
+        
 
-        public MainWindowViewModel(IViewNavigationService viewNavigationService, IEventAggregator eventAggregator, IAsyncLoginService loginService, ILocalizationAppService localizationAppService)
+        public MainWindowViewModel(
+            IViewNavigationService viewNavigationService,
+            IEventAggregator eventAggregator,
+            IAsyncLoginService loginService,
+            ILocalizationAppService localizationAppService,
+            INotificationService notificationService)
             : base(eventAggregator, localizationAppService)
         {
             _viewNavigationService = viewNavigationService;
             _loginService = loginService;
+            NotificationService = notificationService;
+
+            InitializeSignalR();
 
             eventAggregator.GetEvent<BusyChangedEvent>().Subscribe(busy =>
             {
@@ -37,6 +49,14 @@ namespace Globe.Client.Localizer.ViewModels
             eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Subscribe(statusBarMessage =>
             {
                 this.StatusBarMessage = statusBarMessage;
+            });
+
+            eventAggregator.GetEvent<ViewNavigationChangedEvent>().Subscribe(viewNavigation =>
+            {
+                MenuOptions
+                .ToList()
+                .ForEach(menuOption => menuOption.IsSelected = viewNavigation.ToView == menuOption.ViewName);
+                SelectedMenuOption = MenuOptions.SingleOrDefault(menuOption => menuOption.IsSelected);
             });
 
             this.StatusBarMessage = new StatusBarMessage
@@ -122,6 +142,8 @@ namespace Globe.Client.Localizer.ViewModels
             MenuOptions = _allMenuOptions;
             SelectedMenuOption = _allMenuOptions[0];
         }
+
+        public INotificationService NotificationService { get; }
 
         IEnumerable<MenuOption> _menuOptions;
         public IEnumerable<MenuOption> MenuOptions
@@ -234,6 +256,27 @@ namespace Globe.Client.Localizer.ViewModels
                 _viewNavigationService.NavigateTo(ViewNames.HOME_VIEW);
             }));
 
+        private DelegateCommand<string> _navigateToCommand = null;
+        public DelegateCommand<string> NavigateToCommand =>
+            _navigateToCommand ?? (_navigateToCommand = new DelegateCommand<string>((navigateTo) =>
+            {
+                _viewNavigationService.NavigateTo(navigateTo);
+            }));
+
+        private DelegateCommand _removeAllNotificationsCommand = null;
+        public DelegateCommand RemoveAllNotificationsCommand =>
+            _removeAllNotificationsCommand ?? (_removeAllNotificationsCommand = new DelegateCommand(() =>
+            {
+                NotificationService.Clear();
+            }));
+
+        private DelegateCommand<Notification> _removeNotificationCommand = null;
+        public DelegateCommand<Notification> RemoveNotificationCommand =>
+            _removeNotificationCommand ?? (_removeNotificationCommand = new DelegateCommand<Notification>((notification) =>
+            {
+                NotificationService.Notifications.Remove(notification);
+            }));
+
         protected override void OnAuthenticationChanged(IPrincipal principal)
         {
             base.OnAuthenticationChanged(principal);
@@ -310,5 +353,71 @@ namespace Globe.Client.Localizer.ViewModels
             return $"{Identity.Name} {Localize[LanguageKeys.Is_logged]}";
         }
 
+        private async void InitializeSignalR()
+        {
+            try
+            {
+                //per funzionare ha bisogno del pacchetto NUGET Microsoft.Extensions.Logging.Console
+                connection = new HubConnectionBuilder()
+                            .WithUrl("https://localhost:44360/NotificationHub")
+                            //.ConfigureLogging(logging => {
+                            //    logging.AddConsole();        
+                            .Build();
+
+                #region Restart Connection
+                connection.Closed += async (error) =>
+                {
+                    await Task.Delay(new Random().Next(0, 5) * 1000);
+                    await connection.StartAsync();
+                };
+                #endregion
+
+                #region snippet_ConnectionOn
+                connection.On<string>("JoblistChanged", async (jobListName) =>
+                {
+                    var notification = new JobListStatusNotification(jobListName);
+                    await NotificationService.NotifyAsync(notification);
+                });
+
+                connection.On<int>("ConceptsChanged", async (conceptCount) =>
+                {
+                    var notification = new ConceptsChangedNotification(conceptCount.ToString());
+                    await NotificationService.NotifyAsync(notification);
+                });
+
+                #endregion
+
+                try
+                {
+                    await connection.StartAsync();
+                    if (connection.State == HubConnectionState.Connected)
+                    {
+                        await NotificationService.NotifyAsync(new Notification
+                        {
+                            Title = "Connection Status",
+                            Message = $"{connection.State}",
+                            Level = NotificationLevel.Info
+                        });
+                    }
+                    else
+                    {
+                        await NotificationService.NotifyAsync(new Notification
+                        {
+                            Title = "Connection Status",
+                            Message = $"{connection.State}",
+                            Level = NotificationLevel.Error
+                        });
+                    }
+                }
+                catch (Exception innerException)
+                {
+                    Console.WriteLine(innerException);
+                }
+            }
+            catch (System.Exception exception)
+            {
+                throw exception;
+            }
+        }
     }
 }
