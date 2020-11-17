@@ -5,6 +5,7 @@ using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
 using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
+using Globe.TranslationServer.Utilities;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,21 +16,24 @@ namespace Globe.TranslationServer.Services.PortingAdapters
     {
         const bool IS_MASTER = true;
         const string ISO_CODING_EN = "en";     
-        const string XML_FOLDER = "XmlDefinitions";
 
+        private readonly IAsyncNotificationService _notificationService;
+        
         private readonly LocalizationContext _localizationContext;
         private readonly UltraDBStrings _ultraDBStrings;
         private readonly UltraDBStrings2Context _ultraDBStrings2Context;
         private readonly UltraDBConcept _ultraDBConcept;
         private readonly XmlManager _xmlManager;
-
+        
         public ConceptService(
+            IAsyncNotificationService notificationService,
             LocalizationContext localizationContext,
             UltraDBStrings ultraDBStrings,
             UltraDBStrings2Context ultraDBStrings2Context,
             UltraDBConcept ultraDBConcept,
             XmlManager xmlManager)
         {
+            _notificationService = notificationService;
             _localizationContext = localizationContext;
             _ultraDBStrings = ultraDBStrings;
             _ultraDBStrings2Context = ultraDBStrings2Context;
@@ -113,12 +117,17 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
         async public Task<bool> CheckNewConceptsAsync()
         {
-            var xmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), XML_FOLDER);
+            var xmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), Constants.XML_FOLDER);
             _xmlManager.XmlDirectory = xmlFilePath;
             _xmlManager.LoadXmlOnly();
             _xmlManager.Completed.WaitOne();
             _xmlManager.ChangesFound = false;
             _xmlManager.FillDB(_xmlManager.KeyTuplas);
+
+            if(_xmlManager.ChangesFound)
+            {
+                await _notificationService.ConceptsChanged(_xmlManager.KeyTuplas.Count);
+            }
            
             return await Task.FromResult(_xmlManager.ChangesFound);
         }

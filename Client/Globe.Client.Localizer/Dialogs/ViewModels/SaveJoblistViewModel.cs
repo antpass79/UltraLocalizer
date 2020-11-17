@@ -100,8 +100,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             {
                 RaiseRequestClose(new DialogResult(ButtonResult.Cancel));
             }));
-        public event Action<IDialogResult> RequestClose;
 
+        public event Action<IDialogResult> RequestClose;
         public virtual void RaiseRequestClose(IDialogResult dialogResult)
         {
             RequestClose?.Invoke(dialogResult);

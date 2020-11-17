@@ -2,6 +2,7 @@
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
+using Globe.TranslationServer.Utilities;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -10,8 +11,6 @@ namespace Globe.TranslationServer.Services.NewServices
 {
     public class XmlGroupedStringEntityService : IAsyncXmlGroupedStringEntityService
     {
-        const string XML_FOLDER = "XmlDefinitions";
-
         private readonly LocalizationContext _localizationContext;
         private readonly IAsyncXmlDefinitionReaderService _xmlDefinitionReaderService;
 
@@ -25,7 +24,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
         async public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobItemId)
         {
-            var items = await _xmlDefinitionReaderService.ReadAsync(Path.Combine(Directory.GetCurrentDirectory(), XML_FOLDER));
+            var items = await _xmlDefinitionReaderService.ReadAsync(Path.Combine(Directory.GetCurrentDirectory(), Constants.XML_FOLDER));
             return await Task.FromResult(Filter(items, componentNamespace, internalNamespace, languageId, jobItemId));
         }
 

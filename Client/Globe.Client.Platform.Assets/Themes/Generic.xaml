@@ -20,6 +20,7 @@
 
         <!-- COMPONENTS -->
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Header.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Footer.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/SideMenu.xaml" />
     </ResourceDictionary.MergedDictionaries>
     

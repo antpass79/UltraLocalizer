@@ -6,19 +6,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Icons\bell.png" />
+    <None Remove="Icons\check.png" />
     <None Remove="Icons\current_job.png" />
+    <None Remove="Icons\delete.png" />
     <None Remove="Icons\duplicate.png" />
     <None Remove="Icons\edit.png" />
+    <None Remove="Icons\error.png" />
     <None Remove="Icons\home.png" />
+    <None Remove="Icons\information.png" />
     <None Remove="Icons\link.png" />
     <None Remove="Icons\management.png" />
     <None Remove="Icons\menu.png" />
     <None Remove="Icons\search.png" />
     <None Remove="Icons\unlink.png" />
+    <None Remove="Icons\warning.png" />
     <None Remove="Icons\work_in_progress.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Page Update="Controls\Footer.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\ToolBarButton.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -61,15 +70,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Icons\bell.png" />
+    <Resource Include="Icons\check.png" />
     <Resource Include="Icons\current_job.png" />
+    <Resource Include="Icons\delete.png" />
     <Resource Include="Icons\duplicate.png" />
     <Resource Include="Icons\edit.png" />
+    <Resource Include="Icons\error.png" />
     <Resource Include="Icons\home.png" />
+    <Resource Include="Icons\information.png" />
     <Resource Include="Icons\link.png" />
     <Resource Include="Icons\management.png" />
     <Resource Include="Icons\menu.png" />
     <Resource Include="Icons\search.png" />
     <Resource Include="Icons\unlink.png" />
+    <Resource Include="Icons\warning.png" />
     <Resource Include="Icons\work_in_progress.png" />
   </ItemGroup>
 
