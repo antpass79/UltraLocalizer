@@ -1,6 +1,7 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Prism.Commands;
@@ -19,13 +20,15 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IAsyncLocalizableStringService _httpLocalizableStringService;
         private readonly IStringMergeService _stringMergeService;
         private readonly ILocalizationAppService _localizationAppService;
+        private readonly INotificationService _notificationService;
 
         public MergeWindowViewModel(
             IEventAggregator eventAggregator,
             IFileSystemLocalizableStringService fileSystemLocalizableStringService,
             IHttpLocalizableStringService httpLocalizableStringService,
             IStringMergeService stringMergeService,
-            ILocalizationAppService localizationAppService)
+            ILocalizationAppService localizationAppService,
+            INotificationService notificationService)
             : base(eventAggregator)
         {
             _eventAggregator = eventAggregator;
@@ -33,6 +36,7 @@ namespace Globe.Client.Localizer.ViewModels
             _httpLocalizableStringService = httpLocalizableStringService;
             _stringMergeService = stringMergeService;
             _localizationAppService = localizationAppService;
+            _notificationService = notificationService;
         }
 
         IEnumerable<LocalizableString> _fileSystemStrings;
@@ -95,19 +99,21 @@ namespace Globe.Client.Localizer.ViewModels
                 try
                 {
                     await _httpLocalizableStringService.SaveAsync(this.MergedStrings);
-                    _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    await _notificationService.NotifyAsync(new Notification
                     {
-                        MessageType = MessageType.Information,
-                        Text = _localizationAppService.Resolve("Operation_successfully_completed")
+                        Title = string.Empty,
+                        Message = _localizationAppService.Resolve("Operation_successfully_completed"),
+                        Level = NotificationLevel.Info
                     });
                 }
                 catch(Exception e)
                 {
                     Console.WriteLine(e.Message);
-                    _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    await _notificationService.NotifyAsync(new Notification
                     {
-                        MessageType = MessageType.Error,
-                        Text = _localizationAppService.Resolve("Error_during_server_communication")
+                        Title = string.Empty,
+                        Message = _localizationAppService.Resolve("Error_during_server_communication"),
+                        Level = NotificationLevel.Error
                     });
                 }
                 finally

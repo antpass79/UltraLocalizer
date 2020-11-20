@@ -1,4 +1,5 @@
 ﻿using Globe.TranslationServer.Hubs;
+using Globe.TranslationServer.Utilities;
 using Microsoft.AspNetCore.SignalR;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ namespace Globe.TranslationServer.Services
 
         public async Task ConceptsChanged(int count)
         {
-            await _notificationHub.Clients.All.ConceptsChanged(count);
+            await _notificationHub.Clients.Group(Constants.GROUP_MASTER_TRANSLATOR).ConceptsChanged(count);
         }
     }
 }

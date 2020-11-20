@@ -1,4 +1,5 @@
 ﻿using Globe.Client.Platform.Services.Notifications;
+using Prism.Services.Dialogs;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -7,8 +8,11 @@ namespace Globe.Client.Platform.Services
 {
     public class NotificationService : INotificationService
     {
-        public NotificationService()
+        private readonly IDialogService _dialogService;
+
+        public NotificationService(IDialogService dialogService)
         {
+            _dialogService = dialogService;
         }
 
         ObservableCollection<Notification> _notifications = new ObservableCollection<Notification>();
@@ -31,6 +35,17 @@ namespace Globe.Client.Platform.Services
         {
             _notifications.Insert(0, notification);
             _lastNotification = notification;
+
+            if (_lastNotification.Level == NotificationLevel.Error)
+            {
+                var @params = new DialogParameters();
+
+                @params.Add("notification", notification);
+
+                _dialogService.ShowDialog("MessageDialog", @params, dialogResult =>
+                {
+                });
+            }
 
             await Task.CompletedTask;
         }

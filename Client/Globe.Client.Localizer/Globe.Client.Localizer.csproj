@@ -38,6 +38,9 @@
     <Page Update="Dialogs\Views\NotificationDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Dialogs\Views\MessageDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\JobListManagementWindowToolBar.xaml">
       <SubType>Designer</SubType>
     </Page>

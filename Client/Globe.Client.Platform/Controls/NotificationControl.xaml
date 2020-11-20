@@ -82,7 +82,8 @@
             <Hyperlink
                 Command="{Binding ElementName=notificationControl, Path=DataContext.RemoveNotificationCommand}"
                 CommandParameter="{Binding}"
-                Cursor="Hand">X</Hyperlink>
+                Cursor="Hand"
+                TextDecorations="None">x</Hyperlink>
                 </TextBlock>
             </Grid>
         </DataTemplate>
