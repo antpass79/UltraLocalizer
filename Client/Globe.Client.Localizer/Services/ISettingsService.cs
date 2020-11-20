@@ -6,5 +6,6 @@
         string GetLocalizableStringBaseAddress();
         string GetLocalizableStringBaseAddressRead();
         string GetLocalizableStringBaseAddressWrite();
+        string GetNotificationHubAddress();
     }
 }

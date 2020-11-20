@@ -8,6 +8,7 @@ namespace Globe.Client.Localizer.Services
         const string LocalizableStringBaseAddressRead = "LocalizableStringBaseAddressRead";
         const string LocalizableStringBaseAddressWrite = "LocalizableStringBaseAddressWrite";
         const string LoginBaseAddress = "LoginBaseAddress";
+        const string NotificationHubAddress = "NotificationHubAddress";
 
         public string GetLoginBaseAddress()
         {
@@ -27,6 +28,11 @@ namespace Globe.Client.Localizer.Services
         public string GetLocalizableStringBaseAddressWrite()
         {
             return ConfigurationManager.AppSettings[LocalizableStringBaseAddressWrite];
+        }
+
+        public string GetNotificationHubAddress()
+        {
+            return ConfigurationManager.AppSettings[NotificationHubAddress];
         }
     }
 }

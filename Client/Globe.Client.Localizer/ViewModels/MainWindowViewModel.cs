@@ -25,30 +25,28 @@ namespace Globe.Client.Localizer.ViewModels
 
         private readonly IViewNavigationService _viewNavigationService;
         private readonly IAsyncLoginService _loginService;
-        
+        private readonly IGlobeDataStorage _globeDataStorage;
+        private readonly ISettingsService _settingsService;
 
         public MainWindowViewModel(
             IViewNavigationService viewNavigationService,
             IEventAggregator eventAggregator,
             IAsyncLoginService loginService,
+            IGlobeDataStorage globeDataStorage,
             ILocalizationAppService localizationAppService,
-            INotificationService notificationService)
+            INotificationService notificationService,
+            ISettingsService settingsService)
             : base(eventAggregator, localizationAppService)
         {
             _viewNavigationService = viewNavigationService;
             _loginService = loginService;
+            _globeDataStorage = globeDataStorage;
             NotificationService = notificationService;
-
-            InitializeSignalR();
+            _settingsService = settingsService;
 
             eventAggregator.GetEvent<BusyChangedEvent>().Subscribe(busy =>
             {
                 this.Busy = busy;
-            });
-
-            eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Subscribe(statusBarMessage =>
-            {
-                this.StatusBarMessage = statusBarMessage;
             });
 
             eventAggregator.GetEvent<ViewNavigationChangedEvent>().Subscribe(viewNavigation =>
@@ -58,12 +56,6 @@ namespace Globe.Client.Localizer.ViewModels
                 .ForEach(menuOption => menuOption.IsSelected = viewNavigation.ToView == menuOption.ViewName);
                 SelectedMenuOption = MenuOptions.SingleOrDefault(menuOption => menuOption.IsSelected);
             });
-
-            this.StatusBarMessage = new StatusBarMessage
-            {
-                MessageType = MessageType.Information,
-                Text = string.Empty
-            };
 
             _allLanguageOptions = new List<LanguageOption>
             {
@@ -195,16 +187,6 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        StatusBarMessage _statusBarMessage;
-        public StatusBarMessage StatusBarMessage
-        {
-            get => _statusBarMessage;
-            set
-            {
-                SetProperty<StatusBarMessage>(ref _statusBarMessage, value);
-            }
-        }
-
         MenuOption _selectedMenuOption;
         public MenuOption SelectedMenuOption
         {
@@ -275,11 +257,14 @@ namespace Globe.Client.Localizer.ViewModels
             _removeNotificationCommand ?? (_removeNotificationCommand = new DelegateCommand<Notification>((notification) =>
             {
                 NotificationService.Notifications.Remove(notification);
+                //NotificationService.LastNotification = null;
             }));
 
         protected override void OnAuthenticationChanged(IPrincipal principal)
         {
             base.OnAuthenticationChanged(principal);
+            
+            UpdateSignalR();
 
             List<MenuOption> menuOptions = new List<MenuOption>();
 
@@ -353,71 +338,50 @@ namespace Globe.Client.Localizer.ViewModels
             return $"{Identity.Name} {Localize[LanguageKeys.Is_logged]}";
         }
 
-        private async void InitializeSignalR()
+        private async void UpdateSignalR()
         {
-            try
-            {
-                //per funzionare ha bisogno del pacchetto NUGET Microsoft.Extensions.Logging.Console
-                connection = new HubConnectionBuilder()
-                            .WithUrl("https://localhost:44360/NotificationHub")
-                            //.ConfigureLogging(logging => {
-                            //    logging.AddConsole();        
-                            .Build();
-
-                #region Restart Connection
-                connection.Closed += async (error) =>
-                {
-                    await Task.Delay(new Random().Next(0, 5) * 1000);
-                    await connection.StartAsync();
-                };
-                #endregion
-
-                #region snippet_ConnectionOn
-                connection.On<string>("JoblistChanged", async (jobListName) =>
-                {
-                    var notification = new JobListStatusNotification(jobListName);
-                    await NotificationService.NotifyAsync(notification);
-                });
-
-                connection.On<int>("ConceptsChanged", async (conceptCount) =>
-                {
-                    var notification = new ConceptsChangedNotification(conceptCount.ToString());
-                    await NotificationService.NotifyAsync(notification);
-                });
-
-                #endregion
-
-                try
-                {
-                    await connection.StartAsync();
-                    if (connection.State == HubConnectionState.Connected)
-                    {
-                        await NotificationService.NotifyAsync(new Notification
-                        {
-                            Title = "Connection Status",
-                            Message = $"{connection.State}",
-                            Level = NotificationLevel.Info
-                        });
-                    }
-                    else
-                    {
-                        await NotificationService.NotifyAsync(new Notification
-                        {
-                            Title = "Connection Status",
-                            Message = $"{connection.State}",
-                            Level = NotificationLevel.Error
-                        });
-                    }
+            if(!this.IsAuthenticated)
+            {                  
+                if (connection != null && connection.State == HubConnectionState.Connected)
+                { 
+                    await connection.StopAsync();
+                    connection = null;
                 }
-                catch (Exception innerException)
-                {
-                    Console.WriteLine(innerException);
-                }
+                NotificationService.Clear();
+
+                return;
             }
-            catch (System.Exception exception)
+
+            connection = new HubConnectionBuilder()
+                    .WithUrl(_settingsService.GetNotificationHubAddress(), options =>
+                    {
+                        options.AccessTokenProvider = async () => (await _globeDataStorage.GetAsync()).Token;
+                    })
+                    .Build();
+
+            connection.On<string>("JoblistChanged", async (jobListName) =>
             {
-                throw exception;
-            }
+                var notification = new JobListStatusNotification(jobListName);
+                await NotificationService.NotifyAsync(notification);
+            });
+
+            connection.On<int>("ConceptsChanged", async (conceptCount) =>
+            {
+                var notification = new ConceptsChangedNotification(conceptCount.ToString());
+                await NotificationService.NotifyAsync(notification);
+            });
+
+            connection.On<string>("SendAsync", async (message) =>
+            {
+                await NotificationService.NotifyAsync(new Notification
+                {
+                    Title = "Server Says:",
+                    Message = message,
+                    Level = NotificationLevel.Error
+                });
+            });
+
+            await connection.StartAsync();        
         }
     }
 }
