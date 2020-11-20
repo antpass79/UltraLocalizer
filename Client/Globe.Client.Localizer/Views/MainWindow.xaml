@@ -21,8 +21,6 @@
             x:Key="InvertBooleanToVisibilityConverter" 
             True="Collapsed" 
             False="Visible" />
-        <platform:MessageTypeToColorConverter
-            x:Key="MessageTypeToColorConverter" />
     </Window.Resources>
     <controls:LocDockPanel>
       
@@ -93,7 +91,6 @@
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <controls:LocLabel Grid.Column="0" FontWeight="Bold" FontSize="20" Content="{Binding StatusBarMessage.Text}" Foreground="{Binding StatusBarMessage.MessageType, Converter={StaticResource MessageTypeToColorConverter}}"></controls:LocLabel>
             <platform:NotificationControl 
                 HorizontalAlignment="Right" 
                 Grid.Column="1"

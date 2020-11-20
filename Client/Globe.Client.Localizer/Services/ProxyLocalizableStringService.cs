@@ -1,5 +1,6 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platofrm.Events;
 using Prism.Events;
 using System;
@@ -18,19 +19,22 @@ namespace Globe.Client.Localizer.Services
         private readonly IAsyncLocalizableStringService _fileSystemLocalizableStringService;
         private readonly IAsyncLocalizableStringService _httpLocalizableStringService;
         private readonly ILocalizationAppService _localizationAppService;
-        
+        private readonly INotificationService _notificationService;
+
         public ProxyLocalizableStringService(
             IEventAggregator eventAggregator,
             ICheckConnectionService checkConnectionService,
             IFileSystemLocalizableStringService fileSystemLocalizableStringService,
             IHttpLocalizableStringService httpLocalizableStringService,
-            ILocalizationAppService localizationAppService)
+            ILocalizationAppService localizationAppService,
+            INotificationService notificationService)
         {
             _eventAggregator = eventAggregator;
             _checkConnectionService = checkConnectionService;
             _fileSystemLocalizableStringService = fileSystemLocalizableStringService;
             _httpLocalizableStringService = httpLocalizableStringService;
             _localizationAppService = localizationAppService;
+            _notificationService = notificationService;
         }
 
         async public Task<IEnumerable<LocalizableString>> GetAllAsync()
@@ -50,29 +54,32 @@ namespace Globe.Client.Localizer.Services
                     catch (Exception e)
                     {
                         Console.WriteLine(e.Message);
-                        _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                        await _notificationService.NotifyAsync(new Notification
                         {
-                            MessageType = MessageType.Error,
-                            Text = _localizationAppService.Resolve("Error_during_server_communication")
+                            Title = "Error!",
+                            Message = _localizationAppService.Resolve("Error_during_server_communication"),
+                            Level = NotificationLevel.Error
                         });
 
                         try
                         {
                             strings = await _fileSystemLocalizableStringService.GetAllAsync();
 
-                            _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                            await _notificationService.NotifyAsync(new Notification
                             {
-                                MessageType = MessageType.Warning,
-                                Text = _localizationAppService.Resolve("Strings_from_file_system")
+                                Title = "Warning",
+                                Message = _localizationAppService.Resolve("Strings_from_file_system"),
+                                Level = NotificationLevel.Warning
                             });
                         }
                         catch(Exception innerException)
                         {
                             Console.WriteLine(innerException.Message);
-                            _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                            await _notificationService.NotifyAsync(new Notification
                             {
-                                MessageType = MessageType.Error,
-                                Text = _localizationAppService.Resolve("Impossible_to_retrieve_strings")
+                                Title = "Error!",
+                                Message = _localizationAppService.Resolve("Impossible_to_retrieve_strings"),
+                                Level = NotificationLevel.Error
                             });
                         }
                     }
@@ -100,38 +107,42 @@ namespace Globe.Client.Localizer.Services
                         await _httpLocalizableStringService.SaveAsync(strings);
                         await _fileSystemLocalizableStringService.SaveAsync(strings);
 
-                        _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                        await _notificationService.NotifyAsync(new Notification
                         {
-                            MessageType = MessageType.Information,
-                            Text = _localizationAppService.Resolve("Operation_successfully_completed")
+                            Title = "Information",
+                            Message = _localizationAppService.Resolve("Operation_successfully_completed"),
+                            Level = NotificationLevel.Info
                         });
                     }
                     catch(Exception e)
                     {
                         Console.WriteLine(e.Message);
-                        _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                        await _notificationService.NotifyAsync(new Notification
                         {
-                            MessageType = MessageType.Error,
-                            Text = _localizationAppService.Resolve("Error_during_server_communication")
+                            Title = "Error",
+                            Message = _localizationAppService.Resolve("Error_during_server_communication"),
+                            Level = NotificationLevel.Error
                         });
 
                         try
                         {
                             await _fileSystemLocalizableStringService.SaveAsync(strings);
-
-                            _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                           
+                            await _notificationService.NotifyAsync(new Notification
                             {
-                                MessageType = MessageType.Warning,
-                                Text = _localizationAppService.Resolve("Strings_saved_in_file_system")
+                                Title = "Warning",
+                                Message = _localizationAppService.Resolve("Strings_saved_in_file_system"),
+                                Level = NotificationLevel.Warning
                             });
                         }
                         catch(Exception innerException)
                         {
                             Console.WriteLine(innerException.Message);
-                            _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                            await _notificationService.NotifyAsync(new Notification
                             {
-                                MessageType = MessageType.Error,
-                                Text = _localizationAppService.Resolve("Impossible_to_save_strings")
+                                Title = "Error",
+                                Message = _localizationAppService.Resolve("Impossible_to_save_strings"),
+                                Level = NotificationLevel.Error
                             });
                         }
                     }
@@ -140,10 +151,11 @@ namespace Globe.Client.Localizer.Services
                 {
                     await _fileSystemLocalizableStringService.SaveAsync(strings);
 
-                    _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    await _notificationService.NotifyAsync(new Notification
                     {
-                        MessageType = MessageType.Warning,
-                        Text = _localizationAppService.Resolve("Strings_saved_in_file_system")
+                        Title = "Warning",
+                        Message = _localizationAppService.Resolve("Strings_saved_in_file_system"),
+                        Level = NotificationLevel.Warning
                     });
                 }
             }

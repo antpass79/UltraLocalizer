@@ -2,6 +2,7 @@
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Controls;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platofrm.Events;
 using Prism.Commands;
 using Prism.Events;
@@ -20,6 +21,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         private readonly IEventAggregator _eventAggregator;
         private readonly IUserService _userService;
         private readonly IJobListManagementService _jobListManagementService;
+        private readonly INotificationService _notificationService;
 
         private IEnumerable<NotTranslatedConceptView> _notTranslatedConceptViews;
         private Language _language;
@@ -28,12 +30,14 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             ILoggerService loggerService,
             IEventAggregator eventAggregator,
             IUserService userService,
-            IJobListManagementService jobListManagementService)
+            IJobListManagementService jobListManagementService,
+            INotificationService notificationService)
         {
             _loggerService = loggerService;
             _eventAggregator = eventAggregator;
             _userService = userService;
             _jobListManagementService = jobListManagementService;
+            _notificationService = notificationService;
         }
 
         private string _title = DialogNames.SAVE_JOBLIST;
@@ -72,21 +76,23 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 {
                     _eventAggregator.GetEvent<BusyChangedEvent>().Publish(true);
                     _jobListManagementService.SaveAsync(JobListName, _notTranslatedConceptViews, SelectedUser, _language);
-                    _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    _notificationService.NotifyAsync(new Notification
                     {
-                        Text = $"New Joblist ({JobListName}) saved",
-                        MessageType = MessageType.Information
+                        Title = "Joblist Status",
+                        Message = $"New Joblist ({JobListName}) saved",
+                        Level = NotificationLevel.Info
                     });
                     RaiseRequestClose(new DialogResult(ButtonResult.OK));                  
                 }
                 catch(Exception e)
                 {
                     Console.WriteLine(e.Message);
-                    _eventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    _notificationService.NotifyAsync(new Notification
                     {
-                        Text = "Joblist not saved",
-                        MessageType = MessageType.Error
-                    });              
+                        Title = "Joblist Status",
+                        Message = "Joblist not saved",
+                        Level = NotificationLevel.Error
+                    });         
                 }
                 finally
                 {

@@ -49,6 +49,7 @@ namespace Globe.Client.Localizer
 
             containerRegistry.RegisterDialog<StringEditorDialog, StringEditorDialogViewModel>();
             containerRegistry.RegisterDialog<SaveJoblistDialog, SaveJoblistViewModel>();
+            containerRegistry.RegisterDialog<MessageDialog, MessageDialogViewModel>();
         }
 
         private void ActivateDefaultView(IContainerProvider containerProvider)

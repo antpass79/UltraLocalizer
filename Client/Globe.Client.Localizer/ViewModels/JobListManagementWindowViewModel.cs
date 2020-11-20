@@ -2,6 +2,7 @@
 using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Prism.Commands;
@@ -22,14 +23,17 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IDialogService _dialogService;
         private readonly IJobListManagementFiltersService _jobListManagementFiltersService;
         private readonly IJobListManagementService _jobListManagementService;
-        
+        private readonly INotificationService _notificationService;
+
+
         public JobListManagementWindowViewModel(
             IEventAggregator eventAggregator,
             ILoggerService loggerService,
             IDialogService dialogService,
             IJobListManagementFiltersService jobListManagementFiltersService,
             IJobListManagementService jobListManagementService,
-            ILocalizationAppService localizationAppService
+            ILocalizationAppService localizationAppService,
+            INotificationService notificationService
             )
             : base(eventAggregator, localizationAppService)
         {
@@ -37,6 +41,8 @@ namespace Globe.Client.Localizer.ViewModels
             _dialogService = dialogService;
             _jobListManagementFiltersService = jobListManagementFiltersService;
             _jobListManagementService = jobListManagementService;
+            _notificationService = notificationService;
+
         }
 
         bool _conceptDetailsBusy;
@@ -247,19 +253,22 @@ namespace Globe.Client.Localizer.ViewModels
                 {
                     EventAggregator.GetEvent<BusyChangedEvent>().Publish(true);
                     var result = await _jobListManagementService.CheckNewConceptsAsync();
-                    EventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    
+                    await _notificationService.NotifyAsync(new Notification
                     {
-                        Text = result ? "New Concepts Found" : "No Concepts Found",
-                        MessageType = MessageType.Information
+                        Title = "Get new concepts",
+                        Message = result ? "New Concepts Found" : "No Concepts Found",
+                        Level = NotificationLevel.Info
                     });
                     await OnLanguageChange();
                 }
                 catch(Exception e)
                 {
-                    EventAggregator.GetEvent<StatusBarMessageChangedEvent>().Publish(new StatusBarMessage
+                    await _notificationService.NotifyAsync(new Notification
                     {
-                        Text = "Error during searching new Concepts",
-                        MessageType = MessageType.Error
+                        Title = "Error: Get new concepts",
+                        Message = "Error during searching new Concepts",
+                        Level = NotificationLevel.Error
                     });
                 }
                 finally
