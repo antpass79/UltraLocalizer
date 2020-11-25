@@ -1,4 +1,4 @@
-﻿namespace Globe.Client.Localizer.Services
+﻿namespace Globe.Client.Platform.Services
 {
     public interface ISettingsService
     {

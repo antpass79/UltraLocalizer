@@ -10,7 +10,6 @@
     <Page Remove="Styles\CustomStyles\StandardV2_Custom.xaml" />
     <Page Remove="Styles\CustomStyles\Standard_Custom.xaml" />
     <Page Remove="Styles\CustomStyles\Veterinary_Custom.xaml" />
-    <Page Remove="Styles\DefaultStyles\CommonControlsStyle.xaml" />
     <Page Remove="Styles\DefaultStyles\DefaultBasicStyles.xaml" />
   </ItemGroup>
 
@@ -48,9 +47,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Styles\CustomStyles\Veterinary_Custom.xaml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Styles\DefaultStyles\CommonControlsStyle.xaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Styles\DefaultStyles\DefaultBasicStyles.xaml">

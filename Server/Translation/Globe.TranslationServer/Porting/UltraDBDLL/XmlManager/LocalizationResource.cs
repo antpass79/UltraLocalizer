@@ -31,7 +31,34 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
         public void Save(string file)
         {
-            throw new NotImplementedException();
+            XDocument document = new XDocument(new XElement("LocalizationResource"));
+            document.Root.SetAttributeValue(ATTRIBUTE_COMPONENT_NAMESPACE, ComponentNamespace);
+            document.Root.SetAttributeValue(ATTRIBUTE_LANGUAGE, Language);
+            document.Root.SetAttributeValue(ATTRIBUTE_VERSION, Version);
+
+            foreach (var section in LocalizationSection)
+            {
+                var sectionTag = new XElement(TAG_LOCALIZATION_SECTION);
+                sectionTag.SetAttributeValue(ATTRIBUTE_INTERNAL_NAMESPACE, section.InternalNamespace);
+
+                foreach (var concept in section.Concept)
+                {
+                    var conceptTag = new XElement(TAG_CONCEPT);
+                    conceptTag.SetAttributeValue(ATTRIBUTE_CONCEPT_ID, concept.Id);
+                    conceptTag.SetElementValue(TAG_COMMENTS, concept.Comments?.TypedValue);
+
+                    foreach (var @string in concept.String)
+                    {
+                        var stringTag = new XElement(TAG_STRING);
+                        stringTag.SetAttributeValue(ATTRIBUTE_CONTEXT, @string.Context);
+                        stringTag.SetValue(@string.TypedValue);                   
+                    }
+                }
+
+                document.Root.Add(sectionTag);
+            }
+
+            document.Save(file);
         }
 
         public static LocalizationResource Load(string file)

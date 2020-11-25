@@ -7,6 +7,7 @@ using Prism.Modularity;
 using Prism.Unity;
 using System;
 using System.Windows;
+using Unity;
 
 namespace Globe.Client.Localizer
 {
@@ -24,6 +25,9 @@ namespace Globe.Client.Localizer
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<IStyleService, StyleService>();
+            containerRegistry.Register<IVersionService, RemoteVersionService>("RemoteVersionService");
+            containerRegistry.Register<IVersionService, LocalVersionService>("LocalVersionService");
             containerRegistry.Register<IViewNavigationService, ViewNavigationService>();
             containerRegistry.RegisterSingleton<IGlobeDataStorage, GlobeInMemoryStorage>();
             containerRegistry.RegisterSingleton<IAsyncLoginService, HttpLoginService>();
@@ -32,6 +36,13 @@ namespace Globe.Client.Localizer
             containerRegistry.RegisterSingleton<IUserService, UserService>();
             containerRegistry.RegisterSingleton<ILocalizationAppService, FakeLocalizationAppService>();
             containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
+
+            var unityContainer = containerRegistry.GetContainer();
+            unityContainer.RegisterFactory<ICompareVersionService>((container) =>
+            {
+                return new CompareVersionService(container.Resolve<IVersionService>("RemoteVersionService"), container.Resolve<IVersionService>("LocalVersionService"));
+            },
+            FactoryLifetime.Singleton);
         }
 
         protected override Window CreateShell()
