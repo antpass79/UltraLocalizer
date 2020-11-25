@@ -43,9 +43,9 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<ICurrentJobConceptViewService, CurrentJobConceptViewService>();
             containerRegistry.Register<IEditStringService, EditStringService>();
             containerRegistry.Register<IStringMergeService, StringsMergeService>();
-            containerRegistry.Register<IPreviewStyleService, RunTimePreviewStyleService>();
             containerRegistry.Register<IJobListManagementFiltersService, JobListManagementFiltersService>();
             containerRegistry.Register<IJobListManagementService, JobListManagementService>();
+            containerRegistry.RegisterSingleton<IPreviewStyleService, RemotePreviewStyleService>();
 
             containerRegistry.RegisterDialog<StringEditorDialog, StringEditorDialogViewModel>();
             containerRegistry.RegisterDialog<SaveJoblistDialog, SaveJoblistViewModel>();

@@ -17,7 +17,7 @@ namespace Globe.TranslationServer.Porting.XmlGeneration
 {
     public class Convertion
     {
-        private StreamWriter _sw;
+        //private StreamWriter _sw;
         private string _DirPath;
         private readonly LocalizationContext context;
 
@@ -36,7 +36,7 @@ namespace Globe.TranslationServer.Porting.XmlGeneration
 
         public bool LocalizeDB(bool DebugMode)
         {
-            _sw = new StreamWriter(_DirPath + "\\log.txt");
+            //_sw = new StreamWriter(_DirPath + "\\log.txt");
             bool retVal = true;
             string CurrComponent = "";
             string CurrLang = "";
@@ -108,14 +108,14 @@ namespace Globe.TranslationServer.Porting.XmlGeneration
             }
             finally
             {
-                _sw.Close();
+                //_sw.Close();
             }
             return retVal;
         }
         public bool ExportDBExcel()
         {
             //DataClassesGroupledEntityDataContext DBLinq = new DataClassesGroupledEntityDataContext(ConfigurationManager.ConnectionStrings["UltraDBWrapper.Properties.Settings.LocalizationConnectionString"].ConnectionString);
-            _sw = new StreamWriter(_DirPath + "\\log.txt");
+            //_sw = new StreamWriter(_DirPath + "\\log.txt");
             bool retVal = true;
             string CurrComponent = "";
             string CurrLang = "";
@@ -244,7 +244,7 @@ namespace Globe.TranslationServer.Porting.XmlGeneration
             }
             finally
             {
-                _sw.Close();
+                //_sw.Close();
             }
             return retVal;
         }
@@ -304,8 +304,8 @@ namespace Globe.TranslationServer.Porting.XmlGeneration
         }
         private void AppendNewLog(string mess, string ID)
         {
-            _sw.WriteLine(mess + " " + ID);
-            _sw.Flush();
+            //_sw.WriteLine(mess + " " + ID);
+            //_sw.Flush();
         }
 
         public void ReadDB()

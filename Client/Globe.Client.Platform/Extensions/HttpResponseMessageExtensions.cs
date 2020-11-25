@@ -13,5 +13,11 @@ namespace Globe.Client.Platform.Extensions
 
             return value;
         }
+
+        async public static Task<string> GetValue(this HttpResponseMessage httpResponseMessage)
+        {
+            var content = await httpResponseMessage.Content.ReadAsStringAsync();
+            return content;
+        }
     }
 }
