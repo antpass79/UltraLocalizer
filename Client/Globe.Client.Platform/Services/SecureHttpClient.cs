@@ -46,7 +46,7 @@ namespace Globe.Client.Platform.Services
                 Content = stringContent
             });
             if (!result.IsSuccessStatusCode)
-                throw new Exception();
+                throw new Exception($"The request uri is {requestUri}");
 
             return result;
         }
@@ -61,7 +61,7 @@ namespace Globe.Client.Platform.Services
 
             var httpResponseMessage = await _httpClient.GetAsync(requestUri);
             if (!httpResponseMessage.IsSuccessStatusCode)
-                throw new Exception();
+                throw new Exception($"The request uri is {requestUri}");
 
             return await httpResponseMessage.GetValue<T>();
         }
@@ -79,7 +79,7 @@ namespace Globe.Client.Platform.Services
 
             var result = await _httpClient.PostAsync(requestUri, stringContent);
             if (!result.IsSuccessStatusCode)
-                throw new Exception();
+                throw new Exception($"The request uri is {requestUri}");
 
             return result;
         }
@@ -97,7 +97,7 @@ namespace Globe.Client.Platform.Services
 
             var result = await _httpClient.PutAsync(requestUri, stringContent);
             if (!result.IsSuccessStatusCode)
-                throw new Exception();
+                throw new Exception($"The request uri is {requestUri}");
 
             return result;
         }

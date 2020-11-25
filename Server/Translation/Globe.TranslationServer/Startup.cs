@@ -55,7 +55,9 @@ namespace Globe.TranslationServer
 
             // Services
             services
-                .AddSingleton<IAsyncLocalizableStringService, FakeLocalizableStringService>();
+                .AddSingleton<IAsyncLocalizableStringService, FakeLocalizableStringService>()
+                .AddSingleton<IAsyncStyleService, StyleService>()
+                .AddSingleton<IAsyncVersionService, VersionService>();
             services
                 .AddScoped<LocalizableStringRepository, LocalizableStringRepository>();
 
@@ -94,7 +96,8 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncConceptService, ConceptService>()
                 .AddScoped<IAsyncNotTranslatedConceptViewService, NotTranslatedConceptViewService>()
                 .AddScoped<IAsyncInternalNamespaceGroupService, InternalNamespaceGroupService>()
-                .AddScoped<IAsyncJobListService, JobListService>();
+                .AddScoped<IAsyncJobListService, JobListService>()
+                .AddScoped<IAsyncXmlService, XmlService>();
 
             // Security
             services

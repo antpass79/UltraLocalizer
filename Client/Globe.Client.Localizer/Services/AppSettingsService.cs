@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using Globe.Client.Platform.Services;
+using System.Configuration;
 
 namespace Globe.Client.Localizer.Services
 {

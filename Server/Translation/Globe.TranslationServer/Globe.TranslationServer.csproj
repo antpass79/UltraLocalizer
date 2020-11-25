@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Zip\" />
     <Folder Include="XmlDefinitions\" />
   </ItemGroup>
 
@@ -34,6 +35,21 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Styles\CustomStyles\OrangeGrey_Custom.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Styles\CustomStyles\StandardV2_Custom.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Styles\CustomStyles\Standard_Custom.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Styles\CustomStyles\Veterinary_Custom.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Styles\DefaultStyles\DefaultBasicStyles.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="XmlDefinitions\AcquisitionProtocolsManager.definition.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

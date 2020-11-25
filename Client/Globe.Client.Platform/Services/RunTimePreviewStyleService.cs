@@ -15,13 +15,9 @@ namespace Globe.Client.Platform.Services
     {
         #region Data Members
 
-        //const string PATH_DEFAULT_BASIC_STYLE = @"/Globe.Client.Platform;component/Styles/DefaultStyles/DefaultBasicStyles.xaml";
-        //const string PATH_COMMON_CONTROL_STYLE = @"/StyleManager;component/CommonControlsStyle.xaml";
-        //const string ROOT_PATH_CUSTOM_STYLE = @"/Globe.Client.Platform;component/Styles/CustomStyles";
-
-        string PATH_DEFAULT_BASIC_STYLE = $"{AppDomain.CurrentDomain.BaseDirectory}/Styles/DefaultStyles/DefaultBasicStyles.xaml";
+        string PATH_DEFAULT_BASIC_STYLE = string.Empty;
+        string ROOT_PATH_CUSTOM_STYLE = string.Empty;
         string PATH_COMMON_CONTROL_STYLE = @"/StyleManager;component/CommonControlsStyle.xaml";
-        string ROOT_PATH_CUSTOM_STYLE = $"{AppDomain.CurrentDomain.BaseDirectory}/Styles/CustomStyles";
 
         string[] _customFileNames = new string[]
             {
@@ -39,8 +35,12 @@ namespace Globe.Client.Platform.Services
 
         #region Constructors
 
-        public RunTimePreviewStyleService()
+        public RunTimePreviewStyleService(string baseDirectory = "")
         {
+            baseDirectory = string.IsNullOrWhiteSpace(baseDirectory) ? AppDomain.CurrentDomain.BaseDirectory : baseDirectory;
+            PATH_DEFAULT_BASIC_STYLE = $"{baseDirectory}/Styles/DefaultStyles/DefaultBasicStyles.xaml";
+            ROOT_PATH_CUSTOM_STYLE = $"{baseDirectory}/Styles/CustomStyles";
+
             InitializeMapping();
         }
 
@@ -158,10 +158,6 @@ namespace Globe.Client.Platform.Services
                 PreviewStyleMapping.Add($"{pair.Key}MC_GENERAL_200PX", new PreviewStyleInfo((double)ELabelStyle2FontSize, (FontWeight)EStandardFontWeight, (FontFamily)EditFontFamily1, false, new Size(200, 20)));
             }
         }
-
-        #endregion
-
-        #region Private Functions
 
         private void InitResources()
         {
