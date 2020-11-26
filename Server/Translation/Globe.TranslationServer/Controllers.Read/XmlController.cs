@@ -14,10 +14,10 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public IActionResult Get()
         {
-            var zip = await _xmlService.GetZippedContent();
-            return File(zip, "application/octet-stream");
+            var zip = _xmlService.GetZippedContent();
+            return File(zip, "application/octet-stream", "xml.zip");
         }
     }
 }
