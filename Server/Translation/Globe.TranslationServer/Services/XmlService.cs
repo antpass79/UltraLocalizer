@@ -28,10 +28,9 @@ namespace Globe.TranslationServer.Services
 
         #region Public Functions
 
-        public async Task<byte[]> GetZippedContent()
+        public Stream GetZippedContent()
         {
             string dirPath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Zip");
-            byte[] archiveFile;
             List<InMemoryFile> files = new List<InMemoryFile>();
             Convertion conv = new Convertion(dirPath, _context);
             conv.EraseOldFiles();
@@ -43,27 +42,25 @@ namespace Globe.TranslationServer.Services
             }
 
             string[] fileNames = Directory.GetFiles(dirPath);
-            foreach( var fileName in fileNames)
+            foreach (var fileName in fileNames)
             {
                 files.Add(new InMemoryFile { FileName = fileName, Content = File.ReadAllBytes(fileName) });
             }
 
-            using (var archiveStream = new MemoryStream())
-            {
-                using (var archive = new ZipArchive(archiveStream, ZipArchiveMode.Create, true))
-                {
-                    foreach (var file in files)
-                    {
-                        var zipArchiveEntry = archive.CreateEntry(file.FileName, CompressionLevel.Fastest);
-                        using (var zipStream = zipArchiveEntry.Open())
-                            zipStream.Write(file.Content, 0, file.Content.Length);
-                    }
-                }
+            var zipStream = new MemoryStream();
 
-                archiveFile = archiveStream.ToArray();
+            using (var archive = new ZipArchive(zipStream, ZipArchiveMode.Create, true))
+            {
+                foreach (var file in files)
+                {
+                    var zipArchiveEntry = archive.CreateEntry(file.FileName, CompressionLevel.Fastest);
+                    using (var zipArchive = zipArchiveEntry.Open())
+                        zipArchive.Write(file.Content, 0, file.Content.Length);
+                }
             }
 
-            return await Task.FromResult(archiveFile);
+            zipStream.Position = 0;
+            return zipStream;
         }
 
         #endregion
