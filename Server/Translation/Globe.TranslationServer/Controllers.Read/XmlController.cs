@@ -1,5 +1,8 @@
 ﻿using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System.IO.Compression;
+using System.Text.Unicode;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
@@ -17,7 +20,7 @@ namespace Globe.TranslationServer.Controllers
         public IActionResult Get()
         {
             var zip = _xmlService.GetZippedContent();
-            return File(zip, "application/octet-stream", "xml.zip");
+            return File((zip as MemoryStream).ToArray(), "application/zip", "xml.zip");
         }
     }
 }
