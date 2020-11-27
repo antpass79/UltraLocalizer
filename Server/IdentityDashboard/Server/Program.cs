@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using System;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
@@ -15,6 +16,8 @@ namespace Globe.Identity.AdministrativeDashboard.Server
             Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((context, options) =>
                 {
+                    Console.WriteLine($"Environment Name {context.HostingEnvironment.EnvironmentName}");
+
                     options
                         .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                         .AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true)
