@@ -44,7 +44,7 @@ namespace Globe.TranslationServer.Services
             string[] fileNames = Directory.GetFiles(dirPath);
             foreach (var fileName in fileNames)
             {
-                files.Add(new InMemoryFile { FileName = fileName, Content = File.ReadAllBytes(fileName) });
+                files.Add(new InMemoryFile { FileName = Path.GetFileName(fileName), Content = File.ReadAllBytes(fileName) });
             }
 
             var zipStream = new MemoryStream();
@@ -59,7 +59,6 @@ namespace Globe.TranslationServer.Services
                 }
             }
 
-            zipStream.Position = 0;
             return zipStream;
         }
 
