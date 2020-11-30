@@ -28,7 +28,7 @@ namespace Globe.Client.Localizer.Services
             ISettingsService settingsService)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri(settingsService.GetLoginBaseAddress());
+            _httpClient.BaseAddress = new Uri(settingsService.GetIdentitytBaseAddress());
             _eventAggregator = eventAggregator;
             _globeDataStorage = globeDataStorage;
         }

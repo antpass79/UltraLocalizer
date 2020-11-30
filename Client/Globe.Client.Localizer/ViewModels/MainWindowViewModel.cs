@@ -9,7 +9,6 @@ using Globe.Client.Platofrm.Events;
 using Microsoft.AspNetCore.SignalR.Client;
 using Prism.Commands;
 using Prism.Events;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Principal;

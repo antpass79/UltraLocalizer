@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation.AspNetCore;
 using Globe.Identity.AdministrativeDashboard.Server.Data;
-using Globe.Identity.AdministrativeDashboard.Server.Extensions;
 using Globe.Identity.AdministrativeDashboard.Server.Models;
 using Globe.Identity.AdministrativeDashboard.Server.Options;
 using Globe.Identity.AdministrativeDashboard.Server.Repositories;
@@ -15,7 +14,6 @@ using Globe.Identity.Servicess;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -72,6 +70,12 @@ namespace Globe.Identity.AdministrativeDashboard.Server
 
                 })
                 .AddJwtBearer();
+
+            // Application
+            services
+                .AddScoped<IAsyncVersionService, VersionService>()
+                .AddScoped<IAsyncStyleService, StyleService>()
+                .AddScoped<IAsyncApplicationService, ApplicationService>();
 
             // Repositories
             services

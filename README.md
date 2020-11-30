@@ -13,6 +13,9 @@ Some notes about the porting of the old code in the new infrastructure
 How to run with a specified profile
 https://jporwol.wordpress.com/2017/10/23/asp-net-core-launch-profile-and-launchsettings-json/
 
+How to publish
+https://www.taithienbo.com/deploy-an-asp-net-core-application-to-iis-on-windows-server-2019/
+
 ## Notes on code under Porting folder
 
 Each folder represents the porting of a single dll.

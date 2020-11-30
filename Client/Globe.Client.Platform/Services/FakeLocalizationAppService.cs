@@ -44,6 +44,7 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Impossible_to_save_strings), "Impossible to save strings");
             _english.Add(nameof(LanguageKeys.HomeIntro_1), "The Ultra Localizer provides an User Interface to translate all strings in different languages.");
             _english.Add(nameof(LanguageKeys.HomeIntro_2), "The translator can work without network connection, thanks to the offline mode.");
+            _english.Add(nameof(LanguageKeys.Download), "Check the last available application version.");
             _english.Add(nameof(LanguageKeys.Is_logged), "is logged");
             _english.Add(nameof(LanguageKeys.Items_Count), "Items Count: ");
             _english.Add(nameof(LanguageKeys.Filters), "Filters");

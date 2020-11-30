@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Reflection;
-using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
@@ -28,7 +27,7 @@ namespace Globe.TranslationServer.Services
 
         #region Public Functions
 
-        public Stream GetZippedContent()
+        public Stream Zip()
         {
             string dirPath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Zip");
             List<InMemoryFile> files = new List<InMemoryFile>();
@@ -63,11 +62,5 @@ namespace Globe.TranslationServer.Services
         }
 
         #endregion
-
-        public class InMemoryFile
-        {
-            public string FileName { get; set; }
-            public byte[] Content { get; set; }
-        }
     }
 }

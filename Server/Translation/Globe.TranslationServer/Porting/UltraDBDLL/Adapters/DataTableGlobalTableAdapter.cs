@@ -1,6 +1,7 @@
 ﻿using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using Microsoft.EntityFrameworkCore;
+using Serilog.Core;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -130,8 +131,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                     }
                     catch(Exception e)
                     {
-                        
-
+                        Console.WriteLine(e.Message);
                     }
                 }
             }

@@ -16,7 +16,7 @@ namespace Globe.Client.Localizer.Services
         public UserService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
         {
             _secureHttpClient = secureHttpClient;
-            _secureHttpClient.BaseAddress(settingsService.GetLoginBaseAddress());
+            _secureHttpClient.BaseAddress(settingsService.GetIdentitytBaseAddress());
         }
 
         async public Task<IEnumerable<ApplicationUser>> GetUsersAsync(Language language)

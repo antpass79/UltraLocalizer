@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Services
+namespace Globe.Identity.AdministrativeDashboard.Server.Services
 {
     public class StyleService : IAsyncStyleService
     {

@@ -264,6 +264,7 @@ namespace Globe.Client.Localizer.ViewModels
                 }
                 catch(Exception e)
                 {
+                    _loggerService.Exception(e);
                     await _notificationService.NotifyAsync(new Notification
                     {
                         Title = "Error: Get new concepts",
