@@ -1,11 +1,11 @@
-﻿using Globe.TranslationServer.DTOs;
-using Globe.TranslationServer.Services;
+﻿using Globe.Identity.AdministrativeDashboard.Server.DTOs;
+using Globe.Identity.AdministrativeDashboard.Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Controllers
+namespace Globe.Identity.AdministrativeDashboard.Server.Controllers
 {
-    [Route("api/read/[controller]")]
+    [Route("api/[controller]")]
     public class VersionController : Controller
     {
         private readonly IAsyncVersionService _versionService;

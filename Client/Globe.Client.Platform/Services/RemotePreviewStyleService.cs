@@ -1,6 +1,5 @@
 ﻿using Globe.Client.Platform.Models;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -35,22 +34,21 @@ namespace Globe.Client.Platform.Services
             _styleService = styleService;
             _compareVersionService = compareVersionService;
 
-            Task.Run(async () =>
+            if (_compareVersionService.NewStyleVersionAvailable())
             {
-                if (await _compareVersionService.NewXamlVersionAvailable())
+                foreach (var stylePath in _stylePaths)
                 {
-                    foreach (var stylePath in _stylePaths)
-                        {
-                            var path = $"{PATH_DEFAULT_BASIC_STYLE}{stylePath}";
-                            if (File.Exists(path))
-                                File.Delete(path);
+                    var path = $"{PATH_DEFAULT_BASIC_STYLE}{stylePath}";
+                    if (File.Exists(path))
+                        File.Delete(path);
 
-                            var content = await _styleService.Get(stylePath);
-
-                            File.WriteAllText(path, content);
-                        }
+                    Task.Run(async () =>
+                    {
+                        var content = await _styleService.Get(stylePath);
+                        File.WriteAllText(path, content);
+                    }).Wait();
                 }
-            }).Wait();
+            };
 
             _runTimePreviewStyleService = new RunTimePreviewStyleService(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
         }

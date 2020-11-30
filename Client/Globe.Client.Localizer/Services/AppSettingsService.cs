@@ -8,10 +8,13 @@ namespace Globe.Client.Localizer.Services
         const string Environment = "Environment";
         const string Schema = "Schema";
 
+        const string ApplicationDownloadAddress = "ApplicationDownloadAddress";
+        const string IdentityBaseAddress = "IdentityBaseAddress";
+
         const string LocalizableStringBaseAddress = "LocalizableStringBaseAddress";
         const string LocalizableStringBaseAddressRead = "LocalizableStringBaseAddressRead";
         const string LocalizableStringBaseAddressWrite = "LocalizableStringBaseAddressWrite";
-        const string LoginBaseAddress = "LoginBaseAddress";
+
         const string NotificationHubAddress = "NotificationHubAddress";
 
         private readonly string _environment;
@@ -23,9 +26,14 @@ namespace Globe.Client.Localizer.Services
             _schema = ConfigurationManager.AppSettings[Schema];
         }
 
-        public string GetLoginBaseAddress()
+        public string GetApplicationDownloadAddress()
         {
-            return _schema + ConfigurationManager.AppSettings[$"{_environment}{LoginBaseAddress}"];
+            return _schema + ConfigurationManager.AppSettings[$"{_environment}{ApplicationDownloadAddress}"];
+        }
+
+        public string GetIdentitytBaseAddress()
+        {
+            return _schema + ConfigurationManager.AppSettings[$"{_environment}{IdentityBaseAddress}"];
         }
 
         public string GetLocalizableStringBaseAddress()

@@ -1,5 +1,4 @@
 ﻿using Globe.Client.Platform.Models;
-using System;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Platform.Services
@@ -18,7 +17,7 @@ namespace Globe.Client.Platform.Services
         public RemoteVersionService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
         {
             _secureHttpClient = secureHttpClient;
-            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
+            _secureHttpClient.BaseAddress(settingsService.GetIdentitytBaseAddress());
         }
 
         #endregion

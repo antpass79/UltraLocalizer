@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Globe.Client.Platform.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Platform.Services
@@ -7,8 +8,8 @@ namespace Globe.Client.Platform.Services
     {
         #region Data Members
 
-        private readonly IVersionService _remoteVersionService;
-        private readonly IVersionService _localVersionService;
+        private VersionDTO _remoteVersion;
+        private VersionDTO _localVersion;
 
         #endregion
 
@@ -16,34 +17,39 @@ namespace Globe.Client.Platform.Services
 
         public CompareVersionService(IVersionService remoteVersionService, IVersionService localVersionService)
         {
-            _remoteVersionService = remoteVersionService;
-            _localVersionService = localVersionService;
+            Task.Run(async () =>
+            {
+                _remoteVersion = await remoteVersionService.Get();
+                _localVersion = await localVersionService.Get();
+            }).Wait();
         }
 
-        async public Task<bool> NewVersionAvailable()
-        {
-            var remoteVersion = await _remoteVersionService.Get();
-            var localVersion = await _localVersionService.Get();
+        #endregion
 
+        #region Properties
+
+        public VersionDTO CurrentVersion => _localVersion;
+        public VersionDTO AvailableVersion => _remoteVersion;
+
+        #endregion
+
+        #region Public Functions
+
+        public bool NewVersionAvailable()
+        {
             return
-                remoteVersion.StyleManagerVersion != localVersion.StyleManagerVersion ||
-                remoteVersion.XamlVersion != localVersion.XamlVersion;
+                _remoteVersion.ApplicationVersion != _localVersion.ApplicationVersion ||
+                _remoteVersion.StyleVersion != _localVersion.StyleVersion;
         }
 
-        async public Task<bool> NewStyleManagerVersionAvailable()
+        public bool NewApplicationVersionAvailable()
         {
-            var remoteVersion = await _remoteVersionService.Get();
-            var localVersion = await _localVersionService.Get();
-
-            return remoteVersion.StyleManagerVersion != localVersion.StyleManagerVersion;
+            return _remoteVersion.ApplicationVersion != _localVersion.ApplicationVersion;
         }
 
-        async public Task<bool> NewXamlVersionAvailable()
+        public bool NewStyleVersionAvailable()
         {
-            var remoteVersion = await _remoteVersionService.Get();
-            var localVersion = await _localVersionService.Get();
-
-            return remoteVersion.XamlVersion != localVersion.XamlVersion;
+            return _remoteVersion.StyleVersion != _localVersion.StyleVersion;
         }
 
         #endregion

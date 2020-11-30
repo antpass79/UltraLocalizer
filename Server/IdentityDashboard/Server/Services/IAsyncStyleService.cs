@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Services
+namespace Globe.Identity.AdministrativeDashboard.Server.Services
 {
     public interface IAsyncStyleService
     {

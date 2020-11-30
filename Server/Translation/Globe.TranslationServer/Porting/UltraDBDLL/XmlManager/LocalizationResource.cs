@@ -51,8 +51,12 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                     {
                         var stringTag = new XElement(TAG_STRING);
                         stringTag.SetAttributeValue(ATTRIBUTE_CONTEXT, @string.Context);
-                        stringTag.SetValue(@string.TypedValue);                   
+                        stringTag.SetValue(@string.TypedValue);
+
+                        conceptTag.Add(stringTag);
                     }
+
+                    sectionTag.Add(conceptTag);
                 }
 
                 document.Root.Add(sectionTag);

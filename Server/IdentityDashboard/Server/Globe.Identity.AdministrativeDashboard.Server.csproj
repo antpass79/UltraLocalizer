@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="version.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="version.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="3.2.1" />
@@ -31,6 +41,29 @@
     <ProjectReference Include="..\..\Common\Globe.Infrastructure.EFCore\Globe.Infrastructure.EFCore.csproj" />
     <ProjectReference Include="..\Client\Globe.Identity.AdministrativeDashboard.Client.csproj" />
     <ProjectReference Include="..\Shared\Globe.Identity.AdministrativeDashboard.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Styles\CustomStyles\OrangeGrey_Custom.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\CustomStyles\StandardV2_Custom.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\CustomStyles\Standard_Custom.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\CustomStyles\Veterinary_Custom.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Styles\DefaultStyles\DefaultBasicStyles.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 

@@ -147,7 +147,6 @@ namespace Globe.TranslationServer.Porting.XmlGeneration
                              ))
                         {
                             continue;
-                            CurrLang = CurrComponent;
                         }
                         List<DBGlobal> xmlFile = globaldata.GetDataByComponentISO(component.ComponentNamespace, ((UltraDBStrings.Languages)value).ToString());
                         var EditStringCollection = (from p in xmlFile

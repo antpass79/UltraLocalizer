@@ -18,7 +18,7 @@ namespace Globe.Client.Platform.Services
         public StyleService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
         {
             _secureHttpClient = secureHttpClient;
-            _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
+            _secureHttpClient.BaseAddress(settingsService.GetIdentitytBaseAddress());
         }
 
         public async Task<string> Get(string stylePath)
@@ -28,6 +28,5 @@ namespace Globe.Client.Platform.Services
         }
 
         #endregion
-
     }
 }

@@ -29,6 +29,7 @@ namespace Globe.Identity.AdministrativeDashboard.Client
             builder.Services.AddScoped<AuthenticationStateProvider, ApiAuthenticationStateProvider>();
             builder.Services.AddScoped<IAuthService, AuthService>();
             builder.Services.AddScoped<IGlobeDataStorage, GlobeLocalStorage>();
+            builder.Services.AddScoped<IApplicationService, ApplicationService>();
 
             builder.Services.AddTransient(services => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddScoped<SpinnerService>();
