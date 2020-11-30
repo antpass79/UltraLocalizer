@@ -1,13 +1,11 @@
 ﻿using AutoMapper;
 using Globe.Identity.AdministrativeDashboard.Server.Data;
-using Globe.Identity.AdministrativeDashboard.Server.Extensions;
 using Globe.Identity.AdministrativeDashboard.Server.Models;
 using Globe.Identity.AdministrativeDashboard.Server.Options;
 using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
 using Globe.Identity.Models;
 using Globe.Identity.Services;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;

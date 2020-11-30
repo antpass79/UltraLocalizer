@@ -19,7 +19,7 @@ namespace Globe.TranslationServer.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var zip = _xmlService.GetZippedContent();
+            var zip = _xmlService.Zip();
             return File((zip as MemoryStream).ToArray(), "application/zip", "xml.zip");
         }
     }

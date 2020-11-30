@@ -10,6 +10,7 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></BooleanToVisibilityConverter>
         <Style TargetType="{x:Type TextBlock}" x:Key="Title">
             <Setter Property="FontSize" Value="50"/>
         </Style>
@@ -18,5 +19,46 @@
         <controls:LocTextBlock DockPanel.Dock="Top" Text="Ultra Localizer" Style="{StaticResource Title}"></controls:LocTextBlock>
         <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_1]}" FontSize="15"></controls:LocLabel>
         <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_2]}" FontSize="15"></controls:LocLabel>
+
+        <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[Download]}" FontSize="15"></controls:LocLabel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition />-->
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <!--<TextBlock>
+                Current Style Version
+            </TextBlock>
+            <TextBlock Grid.Column="1" Text="{Binding CurrentVersion.StyleVersion}" />
+            <TextBlock Grid.Column="2">
+                Available Style Version
+            </TextBlock>
+            <TextBlock Grid.Column="3" Text="{Binding AvailableVersion.StyleVersion}" />
+            <TextBlock Grid.Column="4" Visibility="{Binding NewStyleAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Hyperlink Command="{Binding DownloadStyleCommand}">
+                    Download the last version of style
+                </Hyperlink>
+            </TextBlock>-->
+            <TextBlock Grid.Row="1">
+                Current Application Version
+            </TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentVersion.ApplicationVersion}" />
+            <TextBlock Grid.Row="1" Grid.Column="2">
+                Available Application Version
+            </TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding AvailableVersion.ApplicationVersion}" />
+            <TextBlock Grid.Row="2" Grid.Column="4" Visibility="{Binding NewApplicationAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Hyperlink Command="{Binding DownloadApplicationCommand}">
+                    Download the last version of application
+                </Hyperlink>
+            </TextBlock>
+        </Grid>
     </DockPanel>
 </UserControl>

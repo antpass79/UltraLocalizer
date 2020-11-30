@@ -120,35 +120,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
             });
 
             return strings;
-
-            string query =
-                    $@"
-                            SELECT LOC_STRINGS.*
-                    FROM LOC_STRINGS
-                    where ID = '{ID}'
-                    ";
-
-            using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
-            using var command = new SqlCommand(query, connection);
-            connection.Open();
-
-            List<STRING> result = new List<STRING>();
-
-            using (SqlDataReader reader = command.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    result.Add(new STRING
-                    {
-                        ID = (int)reader[0],
-                        IDLanguage = (int)reader[1],
-                        IDType = (int)reader[2],
-                        String = reader[3] as string
-                    });
-                }
-            }
-
-            return result.ToList();
         }
 
         //        UPDATE LOC_STRINGS SET String = @String WHERE ID = @ID

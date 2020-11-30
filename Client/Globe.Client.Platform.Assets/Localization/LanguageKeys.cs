@@ -30,6 +30,7 @@
 
         public readonly static string HomeIntro_1 = "HomeIntro_1";
         public readonly static string HomeIntro_2 = "HomeIntro_2";
+        public readonly static string Download = "Download";
         public readonly static string Is_logged = "Is_logged";
         public readonly static string Items_Count = "Items_Count";
         public readonly static string Filters = "Filters";

@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using Globe.BusinessLogic.Repositories;
 using Globe.Identity.AdministrativeDashboard.Server.Models;
-using Globe.Identity.AdministrativeDashboard.Server.Repositories;
 using Globe.Identity.AdministrativeDashboard.Server.UnitOfWorks;
 using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
 using System;

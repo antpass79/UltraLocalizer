@@ -4,7 +4,7 @@ namespace Globe.Client.Platform.Models
 {
     public class VersionDTO
     {
-        public float XamlVersion { get; }
-        public float StyleManagerVersion { get; }
+        public float StyleVersion { get; set; }
+        public float ApplicationVersion { get; set; }
     }
 }

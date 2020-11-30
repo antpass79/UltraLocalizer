@@ -2,7 +2,8 @@
 {
     public interface ISettingsService
     {
-        string GetLoginBaseAddress();
+        string GetApplicationDownloadAddress();
+        string GetIdentitytBaseAddress();
         string GetLocalizableStringBaseAddress();
         string GetLocalizableStringBaseAddressRead();
         string GetLocalizableStringBaseAddressWrite();

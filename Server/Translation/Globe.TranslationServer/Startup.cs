@@ -55,9 +55,7 @@ namespace Globe.TranslationServer
 
             // Services
             services
-                .AddSingleton<IAsyncLocalizableStringService, FakeLocalizableStringService>()
-                .AddSingleton<IAsyncStyleService, StyleService>()
-                .AddSingleton<IAsyncVersionService, VersionService>();
+                .AddSingleton<IAsyncLocalizableStringService, FakeLocalizableStringService>();
             services
                 .AddScoped<LocalizableStringRepository, LocalizableStringRepository>();
 

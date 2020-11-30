@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace Globe.TranslationServer
 {
@@ -19,6 +20,8 @@ namespace Globe.TranslationServer
             Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((context, options) =>
                 {
+                    Console.WriteLine($"Environment Name {context.HostingEnvironment.EnvironmentName}");
+
                     options
                         .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                         .AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true)
