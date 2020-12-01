@@ -6,6 +6,8 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
 using System;
+using System.Net;
+using System.Net.Http;
 using System.Windows;
 using Unity;
 
@@ -18,6 +20,8 @@ namespace Globe.Client.Localizer
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            DispatcherUnhandledException += Application_DispatcherUnhandledException;
+
             AppDomain.CurrentDomain.SetThreadPrincipal(new AnonymousPrincipal());
 
             base.OnStartup(e);
@@ -39,11 +43,27 @@ namespace Globe.Client.Localizer
             containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
 
             var unityContainer = containerRegistry.GetContainer();
-            unityContainer.RegisterFactory<ICompareVersionService>((container) =>
+            unityContainer.RegisterFactory<ICompareVersionService>(container =>
             {
                 return new CompareVersionService(container.Resolve<IVersionService>("RemoteVersionService"), container.Resolve<IVersionService>("LocalVersionService"));
             },
             FactoryLifetime.Singleton);
+            unityContainer.RegisterFactory<HttpClient>(container =>
+            {
+                var byPassCertificateHandler = new HttpClientHandler()
+                {
+                    ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) =>
+                    {
+                        Console.WriteLine($"Sender: {sender}");
+                        Console.WriteLine($"cert: {cert}");
+                        Console.WriteLine($"chain: {chain}");
+                        Console.WriteLine($"sslPolicyErrors: {sslPolicyErrors}");
+                        return true;
+                    }
+                };
+                return new HttpClient(byPassCertificateHandler);
+            },
+            FactoryLifetime.Transient);
         }
 
         protected override Window CreateShell()
@@ -62,6 +82,13 @@ namespace Globe.Client.Localizer
                 ModuleName = translatorModule.Name,
                 ModuleType = translatorModule.AssemblyQualifiedName,
             });
+        }
+
+        private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
+        {
+            this.Container.GetContainer()
+                .Resolve<INotificationService>()
+                .NotifyAsync("Critical", $"{e.Exception.Message}", Platform.Services.Notifications.NotificationLevel.Error);
         }
     }
 }
