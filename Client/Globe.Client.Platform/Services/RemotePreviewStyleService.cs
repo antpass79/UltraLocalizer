@@ -34,7 +34,14 @@ namespace Globe.Client.Platform.Services
             _styleService = styleService;
             _compareVersionService = compareVersionService;
 
-            if (_compareVersionService.NewStyleVersionAvailable())
+            bool exist = Directory.Exists(PATH_DEFAULT_BASIC_STYLE);
+            if (!exist)
+            {
+                Directory.CreateDirectory(Path.Combine(PATH_DEFAULT_BASIC_STYLE, "CustomStyles"));
+                Directory.CreateDirectory(Path.Combine(PATH_DEFAULT_BASIC_STYLE, "DefaultStyles"));
+            }
+
+            if (!exist || _compareVersionService.NewStyleVersionAvailable())
             {
                 foreach (var stylePath in _stylePaths)
                 {

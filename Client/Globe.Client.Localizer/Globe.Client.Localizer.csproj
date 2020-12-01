@@ -45,9 +45,6 @@
     <None Update="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="unblock.ps1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="version.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
