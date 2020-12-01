@@ -1,9 +1,9 @@
 ﻿using Globe.Client.Localizer.Dialogs;
 using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
-using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
+using Globe.Client.Platofrm.Events;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Regions;
@@ -22,21 +22,28 @@ namespace Globe.Client.Localizer.ViewModels
 
         private readonly IDialogService _dialogService;
         private readonly ILoggerService _loggerService;
+        private readonly INotificationService _notificationService;
         private readonly ICurrentJobFiltersService _currentJobFiltersService;
         private readonly ICurrentJobConceptViewService _currentJobConceptViewService;
+        private readonly IXmlService _xmlService;
+
         public CurrentJobWindowViewModel(
             IEventAggregator eventAggregator,
             IDialogService dialogService,
             ILoggerService loggerService,
+            INotificationService notificationService,
             ICurrentJobFiltersService currentJobFiltersService,
             ICurrentJobConceptViewService currentJobConceptViewService,
-            ILocalizationAppService localizationAppService)
+            ILocalizationAppService localizationAppService,
+            IXmlService xmlService)
             : base(eventAggregator, localizationAppService)
         {
             _dialogService = dialogService;
             _loggerService = loggerService;
+            _notificationService = notificationService;
             _currentJobFiltersService = currentJobFiltersService;
             _currentJobConceptViewService = currentJobConceptViewService;
+            _xmlService = xmlService;
         }
 
         bool _conceptDetailsBusy;
@@ -245,8 +252,28 @@ namespace Globe.Client.Localizer.ViewModels
 
         private DelegateCommand _exportToXmlCommand = null;
         public DelegateCommand ExportToXmlCommand =>
-            _exportToXmlCommand ?? (_exportToXmlCommand = new DelegateCommand(() =>
+            _exportToXmlCommand ?? (_exportToXmlCommand = new DelegateCommand(async () =>
             {
+                EventAggregator
+                .GetEvent<BusyChangedEvent>()
+                .Publish(true);
+
+                try
+                {
+                    await _xmlService.Download();
+                    await _notificationService.NotifyAsync("Info", "Download completed", Platform.Services.Notifications.NotificationLevel.Info);
+                }
+                catch (Exception e)
+                {
+                    _loggerService.Exception(e);
+                    await _notificationService.NotifyAsync("Error", "Download error", Platform.Services.Notifications.NotificationLevel.Error);
+                }
+                finally
+                {
+                    EventAggregator
+                    .GetEvent<BusyChangedEvent>()
+                    .Publish(false);
+                }
             }));
 
         private DelegateCommand _componentNamespaceChangeCommand = null;

@@ -41,7 +41,7 @@
             <Separator Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Red" />
             <Image Grid.Row="2" Grid.Column="0" Width="50" Height="50"  HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,5,5,5" Source="{Binding Notification.Level, Converter={StaticResource notificationLevelToImageConverter}}"/>
             <controls:LocTextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding Notification.Message}"/>
-            <Separator  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Red"/>
+            <Separator Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Foreground="Red"/>
             <!-- Buttons -->
             <DockPanel Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin ="0,5,0,0"  LastChildFill="False">
                 <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" Style="{StaticResource GrayButton}" Command="{Binding CloseDialogCommand}">Ok</Button>
