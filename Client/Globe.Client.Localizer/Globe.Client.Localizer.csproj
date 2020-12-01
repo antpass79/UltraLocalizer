@@ -12,11 +12,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\PASSA\PROJECTS\UltraLocalizer\Server\IdentityDashboard\Server\bin\Debug\netcoreapp3.1\UltraLocalizer\</OutputPath>
+    <OutputPath>..\..\Server\IdentityDashboard\Server\bin\Debug\netcoreapp3.1\UltraLocalizer\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>C:\PASSA\PROJECTS\UltraLocalizer\Server\IdentityDashboard\Server\bin\Release\netcoreapp3.1\UltraLocalizer\</OutputPath>
+    <OutputPath>..\..\Server\IdentityDashboard\Server\bin\Release\netcoreapp3.1\UltraLocalizer\</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -43,6 +43,9 @@
 
   <ItemGroup>
     <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="unblock.ps1">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="version.json">

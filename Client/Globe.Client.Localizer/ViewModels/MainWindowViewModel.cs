@@ -11,6 +11,7 @@ using Prism.Commands;
 using Prism.Events;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Principal;
 using System.Threading.Tasks;
 
@@ -355,6 +356,17 @@ namespace Globe.Client.Localizer.ViewModels
                     .WithUrl(_settingsService.GetNotificationHubAddress(), options =>
                     {
                         options.AccessTokenProvider = async () => (await _globeDataStorage.GetAsync()).Token;
+
+                        var handler = new HttpClientHandler
+                        {
+                            ClientCertificateOptions = ClientCertificateOption.Manual,
+                            ServerCertificateCustomValidationCallback = (httpRequestMessage, cert, cetChain, policyErrors) => true
+                        };
+                        options.HttpMessageHandlerFactory = _ => handler;
+                        options.WebSocketConfiguration = sockets =>
+                        {
+                            sockets.RemoteCertificateValidationCallback = (sender, certificate, chain, policyErrors) => true;
+                        };
                     })
                     .Build();
 

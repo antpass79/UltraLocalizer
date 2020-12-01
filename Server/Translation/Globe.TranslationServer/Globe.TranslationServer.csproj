@@ -35,6 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Certificate\identity.pfx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="XmlDefinitions\AcquisitionProtocolsManager.definition.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
