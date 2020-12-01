@@ -16,6 +16,9 @@ https://jporwol.wordpress.com/2017/10/23/asp-net-core-launch-profile-and-launchs
 How to publish
 https://www.taithienbo.com/deploy-an-asp-net-core-application-to-iis-on-windows-server-2019/
 
+How to manage certificates
+https://devblogs.microsoft.com/aspnet/configuring-https-in-asp-net-core-across-different-platforms/
+
 ## Notes on code under Porting folder
 
 Each folder represents the porting of a single dll.

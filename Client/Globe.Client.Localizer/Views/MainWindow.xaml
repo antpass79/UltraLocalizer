@@ -75,13 +75,13 @@
                 <Button Command="{Binding LoginCommand}" Style="{StaticResource HeaderLoginButton}" Visibility="{Binding IsAuthenticated, Converter={StaticResource InvertBooleanToVisibilityConverter}}" Content="{Binding Localize[Login]}"/>
                 <Button Command="{Binding LogoutCommand}" Style="{StaticResource HeaderLoginButton}" Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}" Content="{Binding Localize[Logout]}"/>
 
-                <controls:LocComboBox Name="languages" ItemsSource="{Binding LanguageOptions}" SelectedItem="{Binding SelectedLanguageOption}" VerticalAlignment="Center">
+                <!--<controls:LocComboBox Name="languages" ItemsSource="{Binding LanguageOptions}" SelectedItem="{Binding SelectedLanguageOption}" VerticalAlignment="Center">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <Button Style="{StaticResource LanguageButton}" Content="{Binding Title}" Command="{Binding ElementName=languages, Path=DataContext.LanguageOptionCommand}" CommandParameter="{Binding}"></Button>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
-                </controls:LocComboBox>
+                </controls:LocComboBox>-->
             </StackPanel>
         </Grid>
 

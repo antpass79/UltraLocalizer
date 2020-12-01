@@ -30,6 +30,9 @@ namespace Globe.TranslationServer.Services
         public Stream Zip()
         {
             string dirPath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Zip");
+            if (!Directory.Exists(dirPath))
+                Directory.CreateDirectory(dirPath);
+
             List<InMemoryFile> files = new List<InMemoryFile>();
             Convertion conv = new Convertion(dirPath, _context);
             conv.EraseOldFiles();

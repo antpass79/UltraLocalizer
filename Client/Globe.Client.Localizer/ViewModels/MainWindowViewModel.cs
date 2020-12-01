@@ -110,24 +110,24 @@ namespace Globe.Client.Localizer.ViewModels
                     AlwaysVisible = false,
                     ViewName = ViewNames.CURRENT_JOB_VIEW
                 },
-                new MenuOption
-                {
-                    Title = Localize[LanguageKeys.Translation],
-                    TitleKey = LanguageKeys.Translation,
-                    IconName = "work_in_progress",
-                    IsSelected = false,
-                    Roles = "Admin, UserManager",
-                    ViewName = ViewNames.JOBS_VIEW
-                },
-                new MenuOption
-                {
-                    Title = Localize[LanguageKeys.Merge],
-                    TitleKey = LanguageKeys.Merge,
-                    IconName = "work_in_progress",
-                    IsSelected = false,
-                    Roles = "Admin",
-                    ViewName = ViewNames.MERGE_VIEW
-                }
+                //new MenuOption
+                //{
+                //    Title = Localize[LanguageKeys.Translation],
+                //    TitleKey = LanguageKeys.Translation,
+                //    IconName = "work_in_progress",
+                //    IsSelected = false,
+                //    Roles = "Admin, UserManager",
+                //    ViewName = ViewNames.JOBS_VIEW
+                //},
+                //new MenuOption
+                //{
+                //    Title = Localize[LanguageKeys.Merge],
+                //    TitleKey = LanguageKeys.Merge,
+                //    IconName = "work_in_progress",
+                //    IsSelected = false,
+                //    Roles = "Admin",
+                //    ViewName = ViewNames.MERGE_VIEW
+                //}
             };
 
             MenuOptions = _allMenuOptions;

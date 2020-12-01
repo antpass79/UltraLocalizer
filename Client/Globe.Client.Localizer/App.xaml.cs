@@ -26,6 +26,7 @@ namespace Globe.Client.Localizer
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.Register<IStyleService, StyleService>();
+            containerRegistry.Register<IXmlService, XmlService>();
             containerRegistry.Register<IVersionService, RemoteVersionService>("RemoteVersionService");
             containerRegistry.Register<IVersionService, LocalVersionService>("LocalVersionService");
             containerRegistry.Register<IViewNavigationService, ViewNavigationService>();

@@ -20,6 +20,8 @@
         <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_1]}" FontSize="15"></controls:LocLabel>
         <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_2]}" FontSize="15"></controls:LocLabel>
 
+        <Separator DockPanel.Dock="Top" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+        
         <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[Download]}" FontSize="15"></controls:LocLabel>
         <Grid DockPanel.Dock="Top">
             <Grid.RowDefinitions>
@@ -27,11 +29,11 @@
                 <RowDefinition />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <!--<TextBlock>
                 Current Style Version
@@ -46,19 +48,19 @@
                     Download the last version of style
                 </Hyperlink>
             </TextBlock>-->
-            <TextBlock Grid.Row="1">
+            <controls:LocTextBlock Grid.Row="1" FontSize="14">
                 Current Application Version
-            </TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentVersion.ApplicationVersion}" />
-            <TextBlock Grid.Row="1" Grid.Column="2">
+            </controls:LocTextBlock>
+            <controls:LocTextBlock Grid.Row="1" Grid.Column="1" FontSize="14" Text="{Binding CurrentVersion.ApplicationVersion}" />
+            <controls:LocTextBlock Grid.Row="1" Grid.Column="2" FontSize="14">
                 Available Application Version
-            </TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="3" Text="{Binding AvailableVersion.ApplicationVersion}" />
-            <TextBlock Grid.Row="2" Grid.Column="4" Visibility="{Binding NewApplicationAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+            </controls:LocTextBlock>
+            <controls:LocTextBlock Grid.Row="1" Grid.Column="3" FontSize="14" Text="{Binding AvailableVersion.ApplicationVersion}" />
+            <controls:LocTextBlock Grid.Row="2" Grid.Column="4" FontSize="14" Visibility="{Binding NewApplicationAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Hyperlink Command="{Binding DownloadApplicationCommand}">
                     Download the last version of application
                 </Hyperlink>
-            </TextBlock>
+            </controls:LocTextBlock>
         </Grid>
     </DockPanel>
 </UserControl>
