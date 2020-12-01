@@ -21,6 +21,10 @@ namespace Globe.Client.Platform.Services
             _secureHttpClient.BaseAddress(settingsService.GetIdentitytBaseAddress());
         }
 
+        #endregion
+
+        #region Public Functions
+
         public async Task<string> Get(string stylePath)
         {
             var response = await _secureHttpClient.SendAsync<object>(HttpMethod.Get, $"{ENDPOINT_Style}/?filePath={stylePath}", null);

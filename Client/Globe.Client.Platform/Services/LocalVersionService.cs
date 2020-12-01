@@ -11,10 +11,6 @@ namespace Globe.Client.Platform.Services
         public async Task<VersionDTO> Get()
         {
             var directory = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            var styleDirectory = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Styles");
-            if (!Directory.Exists(styleDirectory))
-                return new VersionDTO();
-
             var content = await File.ReadAllTextAsync(Path.Combine(directory, "version.json"));
             var version = JsonConvert.DeserializeObject<VersionDTO>(content);
 
