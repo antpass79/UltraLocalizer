@@ -36,7 +36,7 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IViewNavigationService, ViewNavigationService>();
             containerRegistry.RegisterSingleton<IGlobeDataStorage, GlobeInMemoryStorage>();
             containerRegistry.RegisterSingleton<IAsyncLoginService, HttpLoginService>();
-            containerRegistry.RegisterSingleton<ILoggerService, ConsoleLoggerService>();
+            containerRegistry.RegisterSingleton<ILoggerService, FileLoggerService>();
             containerRegistry.RegisterSingleton<ISettingsService, AppSettingsService>();
             containerRegistry.RegisterSingleton<IUserService, UserService>();
             containerRegistry.RegisterSingleton<ILocalizationAppService, FakeLocalizationAppService>();
@@ -86,7 +86,11 @@ namespace Globe.Client.Localizer
 
         private void Application_DispatcherUnhandledException(object sender, System.Windows.Threading.DispatcherUnhandledExceptionEventArgs e)
         {
-            this.Container.GetContainer()
+            var unityContainer = this.Container.GetContainer();
+            unityContainer
+                .Resolve<ILoggerService>()
+                .Exception(e.Exception);
+            unityContainer
                 .Resolve<INotificationService>()
                 .NotifyAsync("Critical", $"{e.Exception.Message}", Platform.Services.Notifications.NotificationLevel.Error);
         }
