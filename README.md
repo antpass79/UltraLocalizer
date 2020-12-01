@@ -18,6 +18,7 @@ https://www.taithienbo.com/deploy-an-asp-net-core-application-to-iis-on-windows-
 
 How to manage certificates
 https://devblogs.microsoft.com/aspnet/configuring-https-in-asp-net-core-across-different-platforms/
+http://www.prowaretech.com/Computer/AspNetCore/ChangeKestrelServerPort
 
 ## Notes on code under Porting folder
 

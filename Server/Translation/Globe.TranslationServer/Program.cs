@@ -4,6 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.IO;
+using System.Net;
+using System.Reflection;
 
 namespace Globe.TranslationServer
 {
@@ -31,7 +34,15 @@ namespace Globe.TranslationServer
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder
-                        .UseStartup<Startup>();
+                        .UseStartup<Startup>()
+                    .UseKestrel(options =>
+                    {
+                        options.Listen(IPAddress.Any, 5001, listenOptions =>
+                        {
+                            var folder = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Certificate");
+                            listenOptions.UseHttps(Path.Combine(folder, "identity.pfx"), "identity");
+                        });
+                    });
                 })
                 .ConfigureServices((hostContext, services) =>
                 {

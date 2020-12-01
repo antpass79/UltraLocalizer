@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Net;
+using System.Reflection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -26,7 +29,16 @@ namespace Globe.Identity.AdministrativeDashboard.Server
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder
+                    .UseStartup<Startup>()
+                    .UseKestrel(options =>
+                    {
+                        options.Listen(IPAddress.Any, 6001, listenOptions =>
+                        {
+                            var folder = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Certificate");
+                            listenOptions.UseHttps(Path.Combine(folder, "identity.pfx"), "identity");
+                        });
+                    });
                 });
     }
 }
