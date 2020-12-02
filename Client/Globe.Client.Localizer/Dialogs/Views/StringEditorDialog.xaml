@@ -25,8 +25,9 @@
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
         <platform:NullValueToBooleanConverter x:Key="NullValueToBooleanConverter" />
-        <converters:EditableContextToVisibilityConverter x:Key="LinkEditableContextToVisibilityConverter" />
-        <converters:EditableContextToVisibilityConverter EnableLinkMode="False" x:Key="UnlinkEditableContextToVisibilityConverter" />
+        <platform:BooleanToVisibilityConverter x:Key="UnlinkToVisibilityConverter" />
+        <platform:BooleanToVisibilityConverter True="Collapsed" False="Visible" x:Key="LinkToVisibilityConverter" />
+        <platform:BooleanConverter True="False" False="True" x:Key="LinkToEnabledConverter" />
         <converters:ContextNameToPreviewStyleInfoConverter x:Key="ContextNameToPreviewStyleInfoConverter" />
         <converters:TextSizeToBrushConverter x:Key="TextSizeToBrushConverter" />
 
@@ -126,7 +127,7 @@
                 </DockPanel>
 
                 <!-- EditableContext DataGrid -->
-                <controls:LocDataGrid x:Name="contextGrid" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False">
+                <controls:LocDataGrid x:Name="contextGrid" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
                     <DataGrid.Columns>
                         <!-- DataGridColumn 1 -->
                         <DataGridTextColumn Binding="{Binding Name}" Header="Name">
@@ -138,14 +139,21 @@
                             </DataGridTextColumn.HeaderTemplate>
                         </DataGridTextColumn>
                         <!-- DataGridColumn 2 -->
-                        <DataGridComboBoxColumn ElementStyle="{DynamicResource ComboBoxStandardStyle}" EditingElementStyle="{DynamicResource ComboBoxStandardStyle}" Header="Type" ItemsSource="{Binding Source={StaticResource stringTypes}}" SelectedItemBinding="{Binding StringType}">
-                            <DataGridComboBoxColumn.HeaderTemplate>
+                        <DataGridTemplateColumn Header="Type">
+                            <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                              {RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
-                            </DataGridComboBoxColumn.HeaderTemplate>
-                        </DataGridComboBoxColumn>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <controls:LocComboBox ItemsSource="{Binding Source={StaticResource stringTypes}}" 
+                                                          SelectedValue="{Binding DataContext.StringType, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                          IsEnabled="{Binding DataContext.Linked, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource LinkToEnabledConverter}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <!-- DataGridColumn 3 -->                      
                         <DataGridTextColumn Binding="{Binding StringDefaultValue}" Header="Original Value" IsReadOnly="True">
                             <DataGridTextColumn.HeaderTemplate>
@@ -156,7 +164,7 @@
                             </DataGridTextColumn.HeaderTemplate>
                         </DataGridTextColumn>
                         <!-- DataGridColumn 4 -->
-                        <DataGridTemplateColumn Header="Localized Value">
+                        <DataGridTemplateColumn Header="Localized Value" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
@@ -166,7 +174,8 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBox Text="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" platform:TextChangedBehaviour.Command="{Binding Path=DataContext.LocalizeChangeCommand, 
-                                        RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"/>
+                                        RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" IsEnabled="{Binding DataContext.Linked, RelativeSource=
+                                             {RelativeSource Mode=TemplatedParent}, Converter={StaticResource LinkToEnabledConverter}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -262,10 +271,10 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid>
-                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Link" Command="{Binding ElementName=contextGrid, Path=DataContext.LinkCommand}" CommandParameter="{Binding}" Visibility="{Binding StringId, Converter={StaticResource LinkEditableContextToVisibilityConverter}}">
+                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Link" Command="{Binding ElementName=contextGrid, Path=DataContext.LinkCommand}" CommandParameter="{Binding}" Visibility="{Binding Linked, Converter={StaticResource LinkToVisibilityConverter}}">
                                             <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/link.png" />
                                         </Button>
-                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Unlink" Command="{Binding ElementName=contextGrid, Path=DataContext.UnlinkCommand}" CommandParameter="{Binding}" Visibility="{Binding StringId, Converter={StaticResource UnlinkEditableContextToVisibilityConverter}}">
+                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Unlink" Command="{Binding ElementName=contextGrid, Path=DataContext.UnlinkCommand}" CommandParameter="{Binding}" Visibility="{Binding Linked, Converter={StaticResource UnlinkToVisibilityConverter}}">
                                             <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/unlink.png" />
                                         </Button>
                                     </Grid>

@@ -63,7 +63,7 @@
                         <RowDefinition Height="95*" />
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <controls:LocDataGrid Name="grid" Grid.Row="0" ItemsSource="{Binding ConceptViews}" AutoGenerateColumns="False" CanUserAddRows="False">
+                    <controls:LocDataGrid Name="grid" Grid.Row="0" ItemsSource="{Binding ConceptViews}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type TextBlock}">
                                 <Setter Property="FontSize" Value="20"/>

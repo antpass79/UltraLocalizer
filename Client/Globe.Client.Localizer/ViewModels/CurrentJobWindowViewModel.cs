@@ -373,6 +373,7 @@ namespace Globe.Client.Localizer.ViewModels
             catch (Exception exception)
             {
                 _loggerService.Exception(exception);
+                await _notificationService.NotifyAsync("Error", "Error during concepts request", Platform.Services.Notifications.NotificationLevel.Error);
             }
             finally
             {
