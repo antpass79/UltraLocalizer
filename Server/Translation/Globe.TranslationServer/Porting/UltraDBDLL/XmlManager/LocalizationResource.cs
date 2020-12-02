@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Xml.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
@@ -31,36 +32,23 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
         public void Save(string file)
         {
-            XDocument document = new XDocument(new XElement("LocalizationResource"));
-            document.Root.SetAttributeValue(ATTRIBUTE_COMPONENT_NAMESPACE, ComponentNamespace);
-            document.Root.SetAttributeValue(ATTRIBUTE_LANGUAGE, Language);
-            document.Root.SetAttributeValue(ATTRIBUTE_VERSION, Version);
-
-            foreach (var section in LocalizationSection)
-            {
-                var sectionTag = new XElement(TAG_LOCALIZATION_SECTION);
-                sectionTag.SetAttributeValue(ATTRIBUTE_INTERNAL_NAMESPACE, section.InternalNamespace);
-
-                foreach (var concept in section.Concept)
-                {
-                    var conceptTag = new XElement(TAG_CONCEPT);
-                    conceptTag.SetAttributeValue(ATTRIBUTE_CONCEPT_ID, concept.Id);
-                    conceptTag.SetElementValue(TAG_COMMENTS, concept.Comments?.TypedValue);
-
-                    foreach (var @string in concept.String)
-                    {
-                        var stringTag = new XElement(TAG_STRING);
-                        stringTag.SetAttributeValue(ATTRIBUTE_CONTEXT, @string.Context);
-                        stringTag.SetValue(@string.TypedValue);
-
-                        conceptTag.Add(stringTag);
-                    }
-
-                    sectionTag.Add(conceptTag);
-                }
-
-                document.Root.Add(sectionTag);
-            }
+            XDocument document = new XDocument(new XElement("LocalizationResource",
+                new XAttribute(ATTRIBUTE_COMPONENT_NAMESPACE, ComponentNamespace),
+                new XAttribute(ATTRIBUTE_LANGUAGE, Language),
+                new XAttribute(ATTRIBUTE_VERSION, Version),
+                from section in LocalizationSection
+                select new XElement(TAG_LOCALIZATION_SECTION,
+                    new XAttribute(ATTRIBUTE_INTERNAL_NAMESPACE, string.IsNullOrEmpty(section.InternalNamespace) ? string.Empty : section.InternalNamespace),
+                    from concept in section.Concept
+                    select new XElement(TAG_CONCEPT,
+                        new XAttribute(ATTRIBUTE_CONCEPT_ID, string.IsNullOrEmpty(concept.Id) ? string.Empty : concept.Id),
+                        from @string in concept.String
+                        select new XElement(TAG_STRING,
+                            new XAttribute(ATTRIBUTE_CONTEXT, string.IsNullOrEmpty(@string.Context) ? string.Empty : @string.Context),
+                             string.IsNullOrEmpty(@string.TypedValue) ? string.Empty : @string.TypedValue)
+                    )
+                )
+            ));
 
             document.Save(file);
         }
