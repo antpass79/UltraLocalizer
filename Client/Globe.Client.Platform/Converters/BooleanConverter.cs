@@ -26,4 +26,12 @@ namespace Globe.Client.Platform.Converters
             return value is T && EqualityComparer<T>.Default.Equals((T)value, True);
         }
     }
+
+    public class BooleanConverter : BooleanConverter<bool>
+    {
+        public BooleanConverter()
+            : base(true, false)
+        {
+        }
+    }
 }

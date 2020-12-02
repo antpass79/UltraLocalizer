@@ -110,8 +110,8 @@
                             <RowDefinition Height="25" />
                         </Grid.RowDefinitions>
                         <Rectangle Grid.Row="0" Fill="#05163D"/>
-                        <TextBlock Grid.Row="0" Text="Notifications" Style="{StaticResource ToolTextBlock}" TextAlignment="Left" HorizontalAlignment="Left"/>
-                        <TextBlock Grid.Row="0" Text="X" Style="{StaticResource ToolTextBlock}" TextAlignment="Right" HorizontalAlignment="Right" MouseLeftButtonDown="NotificationHistoryPopUp_MouseLeftButtonDown"/>
+                        <schemasControls:LocTextBlock Grid.Row="0" Text="Notifications" Style="{StaticResource ToolTextBlock}" TextAlignment="Left" HorizontalAlignment="Left"/>
+                        <schemasControls:LocTextBlock Grid.Row="0" Text="X" Style="{StaticResource ToolTextBlock}" TextAlignment="Right" HorizontalAlignment="Right" MouseLeftButtonDown="NotificationHistoryPopUp_MouseLeftButtonDown"/>
                         <ListBox Grid.Row="1" Name="notificationList"
                                     MaxHeight="300"
                                     ItemsSource="{Binding ElementName=notificationControl, Path=Notifications}"
@@ -120,9 +120,9 @@
                                     HorizontalContentAlignment="Stretch"
                                     VerticalContentAlignment="Stretch">
                         </ListBox>
-                        <TextBlock Grid.Row="2" HorizontalAlignment="Right" Margin="4">
+                        <schemasControls:LocTextBlock Grid.Row="2" HorizontalAlignment="Right" Margin="4">
                   <Hyperlink Command="{Binding ElementName=notificationControl, Path=DataContext.RemoveAllNotificationsCommand}">Remove All</Hyperlink>
-                        </TextBlock>
+                        </schemasControls:LocTextBlock>
                     </Grid>
                 </DockPanel>
             </Border>

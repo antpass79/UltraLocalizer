@@ -71,15 +71,15 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                          INNER JOIN LOC_Concept2Context ON LOC_ConceptsTable.ID = LOC_Concept2Context.IDConcept
                          INNER JOIN LOC_Job2Concept ON LOC_Concept2Context.ID = LOC_Job2Concept.IDConcept2Context ON LOC_CONTEXTS.ID = LOC_Concept2Context.IDContext ON LOC_Strings2Context.IDConcept2Context = LOC_Concept2Context.ID
                          WHERE (LOC_Job2Concept.IDJobList = {idJobList}) AND
-                               (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
-                               (LOC_ConceptsTable.InternalNamespace = {InternalNamespace}) AND
-                               ({InternalNamespace} IS NOT NULL) AND
+                               (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND
+                               (LOC_ConceptsTable.InternalNamespace = '{InternalNamespace}') AND
+                               ('{InternalNamespace}' IS NOT NULL) AND
                                (LOC_ConceptsTable.Ignore = 0) AND
                                (LOC_STRINGS.IDLanguage = {iso}) OR
                                (LOC_Job2Concept.IDJobList = {idJobList}) AND
-                               (LOC_ConceptsTable.ComponentNamespace = {ComponentName}) AND
+                               (LOC_ConceptsTable.ComponentNamespace = '{ComponentName}') AND
                                (LOC_ConceptsTable.InternalNamespace IS NULL) AND
-                               ({InternalNamespace} IS  NULL) AND
+                               ('{InternalNamespace}' IS  NULL) AND
                                (LOC_ConceptsTable.Ignore = 0) AND
                                (LOC_STRINGS.IDLanguage = {iso})
                     ";

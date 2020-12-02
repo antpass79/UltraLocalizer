@@ -306,6 +306,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         public virtual void OnDialogClosed()
         {
+            EditableConcept.EditableContexts.ToList().ForEach(item => item.PropertyChanged -= EditableContextPropertyChanged);
         }
 
         async public virtual void OnDialogOpened(IDialogParameters parameters)
@@ -315,6 +316,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             Contexts = await _editStringService.GetContextsAsync();
             StringTypes = await _editStringService.GetStringTypesAsync();
             SelectedContext = this.Contexts.ElementAt(0);
+
+            EditableConcept.EditableContexts.ToList().ForEach(item => item.PropertyChanged += EditableContextPropertyChanged);            
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs args)
@@ -327,6 +330,15 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 UnlinkCommand.RaiseCanExecuteChanged();
                 DuplicateCommand.RaiseCanExecuteChanged();
             }
+            if (args.PropertyName == "StringType")
+            {
+                SaveCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        private void EditableContextPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            OnPropertyChanged(args);
         }
 
         private bool CanSave()

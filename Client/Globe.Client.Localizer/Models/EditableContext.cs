@@ -23,7 +23,17 @@ namespace Globe.Client.Localizer.Models
         public string StringDefaultValue { get; }
         public int OldStringId { get; }
 
-        public StringType _stringType;
+        bool _linked;
+        public bool Linked
+        {
+            get => _linked;
+            private set
+            {
+                SetProperty<bool>(ref _linked, value);
+            }
+        }
+
+        StringType _stringType;
         public StringType StringType
         {
             get => _stringType;
@@ -78,6 +88,7 @@ namespace Globe.Client.Localizer.Models
             set
             {
                 SetProperty<int>(ref _stringId, value);
+                Linked = _stringId != 0;
             }
         }
     }
