@@ -32,25 +32,32 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
         public void Save(string file)
         {
-            XDocument document = new XDocument(new XElement("LocalizationResource",
-                new XAttribute(ATTRIBUTE_COMPONENT_NAMESPACE, ComponentNamespace),
-                new XAttribute(ATTRIBUTE_LANGUAGE, Language),
-                new XAttribute(ATTRIBUTE_VERSION, Version),
-                from section in LocalizationSection
-                select new XElement(TAG_LOCALIZATION_SECTION,
-                    new XAttribute(ATTRIBUTE_INTERNAL_NAMESPACE, string.IsNullOrEmpty(section.InternalNamespace) ? string.Empty : section.InternalNamespace),
-                    from concept in section.Concept
-                    select new XElement(TAG_CONCEPT,
-                        new XAttribute(ATTRIBUTE_CONCEPT_ID, string.IsNullOrEmpty(concept.Id) ? string.Empty : concept.Id),
-                        from @string in concept.String
-                        select new XElement(TAG_STRING,
-                            new XAttribute(ATTRIBUTE_CONTEXT, string.IsNullOrEmpty(@string.Context) ? string.Empty : @string.Context),
-                             string.IsNullOrEmpty(@string.TypedValue) ? string.Empty : @string.TypedValue)
+            try
+            {
+                XDocument document = new XDocument(new XElement("LocalizationResource",
+                    new XAttribute(ATTRIBUTE_COMPONENT_NAMESPACE, ComponentNamespace),
+                    new XAttribute(ATTRIBUTE_LANGUAGE, Language),
+                    new XAttribute(ATTRIBUTE_VERSION, Version),
+                    from section in LocalizationSection
+                    select new XElement(TAG_LOCALIZATION_SECTION,
+                        new XAttribute(ATTRIBUTE_INTERNAL_NAMESPACE, string.IsNullOrEmpty(section.InternalNamespace) ? string.Empty : section.InternalNamespace),
+                        from concept in section.Concept
+                        select new XElement(TAG_CONCEPT,
+                            new XAttribute(ATTRIBUTE_CONCEPT_ID, string.IsNullOrEmpty(concept.Id) ? string.Empty : concept.Id),
+                            from @string in concept.String
+                            select new XElement(TAG_STRING,
+                                new XAttribute(ATTRIBUTE_CONTEXT, string.IsNullOrEmpty(@string.Context) ? string.Empty : @string.Context),
+                                 string.IsNullOrEmpty(@string.TypedValue) ? string.Empty : @string.TypedValue)
+                        )
                     )
-                )
-            ));
+                ));
 
-            document.Save(file);
+                document.Save(file);
+            }
+            catch (Exception e)
+            {
+                File.WriteAllText($"ERROR-{file}", e.Message);
+            }
         }
 
         public static LocalizationResource Load(string file)

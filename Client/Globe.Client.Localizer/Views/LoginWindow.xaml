@@ -47,18 +47,18 @@
 
     </UserControl.Resources>
 
-    <DockPanel>
-        <controls:LocTextBlock DockPanel.Dock="Top" Text="Login User" Style="{StaticResource Title}" />
-        <ContentControl DockPanel.Dock="Top" Margin="20">
+    <DockPanel Width="500">
+        <controls:LocTextBlock DockPanel.Dock="Top" Text="User Login" Style="{StaticResource Title}" />
+        <ContentControl DockPanel.Dock="Top" Margin="0,30,0,0">
             <StackPanel>
-                <controls:LocTextBlock Text="{Binding Localize[Please_enter_your_details]}" Style="{StaticResource TitleDetails}" />
+                <controls:LocTextBlock Text="{Binding Localize[Please_enter_your_credentials]}" Style="{StaticResource TitleDetails}" />
                 <controls:LocTextBlock Text="{Binding Localize[UserName]}" Style="{StaticResource TextTitle}" />
                 <controls:LocTextBox Text="{Binding UserName}" Margin="0,10,0,0" FontSize="20" />
                 <controls:LocTextBlock Text="Password" Style="{StaticResource TextTitle}" />
                 <platform:PasswordInput Name="passwordInput" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource LoginPasswordInput}" />
                 <StackPanel Orientation="Horizontal">
-                    <Button Margin="20" Width="150" Command="{Binding LoginCommand}" Content="{Binding Localize[Login]}"/>
-                    <Button Margin="20" Width="150" Style="{StaticResource GrayButton}" Command="{Binding CancelCommand}" Content="{Binding Localize[Cancel]}"/>
+                    <Button Margin="10" Width="100" Command="{Binding LoginCommand}" Content="{Binding Localize[Login]}"/>
+                    <Button Margin="10" Width="100" Style="{StaticResource GrayButton}" Command="{Binding CancelCommand}" Content="{Binding Localize[Cancel]}"/>
                 </StackPanel>
                 <TextBlock Style="{StaticResource LoginError}" Visibility="{Binding Path=LoginResult.Successful, Converter={StaticResource BooleanToVisibilityConverter}}" Text="{Binding LoginResult.Error}"></TextBlock>
             </StackPanel>

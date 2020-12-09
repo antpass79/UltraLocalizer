@@ -2,8 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>3ce02af0-996b-4541-92e9-736376fd79d6</UserSecretsId>
     <!--<UserSecretsId>bf78c344-a2b0-4f2f-aa96-41bb0828bc8b</UserSecretsId>-->
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Zip\**" />
+    <Content Remove="Zip\**" />
+    <EmbeddedResource Remove="Zip\**" />
+    <None Remove="Zip\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
@@ -24,7 +32,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Zip\" />
     <Folder Include="XmlDefinitions\" />
   </ItemGroup>
 

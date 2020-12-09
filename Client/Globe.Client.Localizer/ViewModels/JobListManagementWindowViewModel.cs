@@ -3,6 +3,7 @@ using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
+using Globe.Client.Platform.Utilities;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Prism.Commands;
@@ -18,7 +19,7 @@ using System.Threading.Tasks;
 namespace Globe.Client.Localizer.ViewModels
 {
     internal class JobListManagementWindowViewModel : LocalizeWindowViewModel, INavigationAware
-    {       
+    {
         private readonly ILoggerService _loggerService;
         private readonly IDialogService _dialogService;
         private readonly IJobListManagementFiltersService _jobListManagementFiltersService;
@@ -45,23 +46,13 @@ namespace Globe.Client.Localizer.ViewModels
 
         }
 
-        bool _conceptDetailsBusy;
-        public bool ConceptDetailsBusy
-        {
-            get => _conceptDetailsBusy;
-            set
-            {
-                SetProperty<bool>(ref _conceptDetailsBusy, value);
-            }
-        }
-
         bool _componentsVisible;
         public bool ComponentsVisible
         {
             get => _componentsVisible;
             private set
             {
-                SetProperty<bool>(ref _componentsVisible, value);
+                SetProperty(ref _componentsVisible, value);
             }
         }
 
@@ -71,7 +62,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _ItemCount;
             set
             {
-                SetProperty<int>(ref _ItemCount, value);
+                SetProperty(ref _ItemCount, value);
             }
         }
 
@@ -81,7 +72,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _languages;
             set
             {
-                SetProperty<IEnumerable<Language>>(ref _languages, value);
+                SetProperty(ref _languages, value);
             }
         }
 
@@ -91,7 +82,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _selectedLanguage;
             set
             {
-                SetProperty<Language>(ref _selectedLanguage, value);
+                SetProperty(ref _selectedLanguage, value);
             }
         }
 
@@ -101,7 +92,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _selectedNotTranslatedConceptView;
             set
             {
-                SetProperty<NotTranslatedConceptView>(ref _selectedNotTranslatedConceptView, value);
+                SetProperty(ref _selectedNotTranslatedConceptView, value);
             }
         }
 
@@ -111,7 +102,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _internalNamespaceGroups;
             set
             {
-                SetProperty<IEnumerable<InternalNamespaceGroup>>(ref _internalNamespaceGroups, value);
+                SetProperty(ref _internalNamespaceGroups, value);
             }
         }
 
@@ -121,13 +112,13 @@ namespace Globe.Client.Localizer.ViewModels
             get => _notTranslatedConceptViews;
             set
             {
-                SetProperty<IEnumerable<NotTranslatedConceptView>>(ref _notTranslatedConceptViews, value);
+                SetProperty(ref _notTranslatedConceptViews, value);
             }
         }
 
         public InternalNamespace SelectedInternalNamespace
         {
-            get 
+            get
             {
                 if (InternalNamespaceGroups == null)
                     return null;
@@ -152,13 +143,27 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
+        SmartBusy _smartConceptDetailsBusy = new SmartBusy();
+        bool _conceptDetailsBusy;
+        public bool ConceptDetailsBusy
+        {
+            get => _smartConceptDetailsBusy.Busy;
+            set
+            {
+                _smartConceptDetailsBusy.Busy = value;
+                SetProperty(ref _conceptDetailsBusy, _smartConceptDetailsBusy.Busy);
+            }
+        }
+
+        SmartBusy _smartFiltersBusy = new SmartBusy();
         bool _filtersBusy;
         public bool FiltersBusy
         {
-            get => _filtersBusy;
+            get => _smartFiltersBusy.Busy;
             set
             {
-                SetProperty<bool>(ref _filtersBusy, value);
+                _smartFiltersBusy.Busy = value;
+                SetProperty(ref _filtersBusy, _smartFiltersBusy.Busy);
             }
         }
 
@@ -176,7 +181,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 if (SelectedInternalNamespaceGroup == null || SelectedInternalNamespace == null)
                     return;
-                
+
                 try
                 {
                     ConceptDetailsBusy = true;
@@ -190,18 +195,24 @@ namespace Globe.Client.Localizer.ViewModels
                     {
                         var newElements = result.Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name)).ToList();
                         if (newElements != null)
-                        { 
+                        {
                             NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
                             .OrderBy(item => item.ComponentNamespace.Description)
                             .ThenBy(item => item.InternalNamespace.Description)
                             .ThenBy(item => item.Name)
                             .ToList();
                         }
-                    }         
+                    }
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine(e.Message);
+                    _loggerService.Exception(e);
+                    await _notificationService.NotifyAsync(new Notification
+                    {
+                        Title = "Error",
+                        Message = "Error during getting list",
+                        Level = NotificationLevel.Error
+                    });
                 }
                 finally
                 {
@@ -235,10 +246,10 @@ namespace Globe.Client.Localizer.ViewModels
                 @params.Add("language", SelectedLanguage);
                 @params.Add("notTranslatedConceptViews", NotTranslatedConceptViews);
 
-                _dialogService.ShowDialog(DialogNames.SAVE_JOBLIST, @params, dialogResult => 
-                {   
+                _dialogService.ShowDialog(DialogNames.SAVE_JOBLIST, @params, dialogResult =>
+                {
                     if (dialogResult.Result == ButtonResult.OK)
-                    { 
+                    {
                         NotTranslatedConceptViews = null;
                         ItemCount = 0;
                     }
@@ -249,11 +260,11 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand CheckNewConceptsCommand =>
             _checkNewConceptsCommand ?? (_checkNewConceptsCommand = new DelegateCommand(async () =>
             {
-                try 
+                try
                 {
                     EventAggregator.GetEvent<BusyChangedEvent>().Publish(true);
                     var result = await _jobListManagementService.CheckNewConceptsAsync();
-                    
+
                     await _notificationService.NotifyAsync(new Notification
                     {
                         Title = "Get new concepts",
@@ -262,7 +273,7 @@ namespace Globe.Client.Localizer.ViewModels
                     });
                     await OnLanguageChange();
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     _loggerService.Exception(e);
                     await _notificationService.NotifyAsync(new Notification
@@ -317,12 +328,23 @@ namespace Globe.Client.Localizer.ViewModels
         {
             try
             {
+                FiltersBusy = true;
                 Languages = await _jobListManagementFiltersService.GetLanguagesAsync();
                 SelectedLanguage = Languages.FirstOrDefault(item => item.IsoCoding == "en");
             }
             catch (Exception e)
             {
                 _loggerService.Exception(e);
+                await _notificationService.NotifyAsync(new Notification
+                {
+                    Title = "Error",
+                    Message = "Error during searching new Concepts",
+                    Level = NotificationLevel.Error
+                });
+            }
+            finally
+            {
+                FiltersBusy = false;
             }
         }
         private async Task OnLanguageChange()
@@ -330,12 +352,27 @@ namespace Globe.Client.Localizer.ViewModels
             if (SelectedLanguage == null)
                 return;
 
-            FiltersBusy = true;
+            try
+            {
+                FiltersBusy = true;
 
-            InternalNamespaceGroups = await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage);
-            ComponentsVisible = InternalNamespaceGroups != null && InternalNamespaceGroups.Count() > 0;
-
-            FiltersBusy = false;
+                InternalNamespaceGroups = await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage);
+                ComponentsVisible = InternalNamespaceGroups != null && InternalNamespaceGroups.Count() > 0;
+            }
+            catch (Exception e)
+            {
+                _loggerService.Exception(e);
+                await _notificationService.NotifyAsync(new Notification
+                {
+                    Title = "Error",
+                    Message = "Error during getting languages",
+                    Level = NotificationLevel.Error
+                });
+            }
+            finally
+            {
+                FiltersBusy = false;
+            }
         }
     }
 }

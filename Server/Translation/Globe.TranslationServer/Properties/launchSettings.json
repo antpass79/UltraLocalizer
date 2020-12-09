@@ -15,7 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Globe.TranslationServer": {
+    "Docker": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
@@ -23,7 +23,7 @@
       },
       "applicationUrl": "https://localhost:5001;http://localhost:5000"
     },
-    "Globe.TranslationServer.OnServer": {
+    "Kestrel": {
       "commandName": "Project",
       "launchBrowser": false,
       "environmentVariables": {

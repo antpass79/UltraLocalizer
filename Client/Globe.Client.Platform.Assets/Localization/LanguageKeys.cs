@@ -19,7 +19,7 @@
         public readonly static string Joblist_Management = "Joblist_Management";
         public readonly static string Current_Job = "Current_Job";
 
-        public readonly static string Please_enter_your_details = "Please_enter_your_details";
+        public readonly static string Please_enter_your_credentials = "Please_enter_your_credentials";
 
         public readonly static string Operation_successfully_completed = "Operation_successfully_completed";
         public readonly static string Error_during_server_communication = "Error_during_server_communication";
