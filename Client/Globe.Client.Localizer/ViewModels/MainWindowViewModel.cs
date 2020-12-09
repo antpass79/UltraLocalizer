@@ -48,6 +48,10 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.Busy = busy;
             });
+            eventAggregator.GetEvent<BackgroundBusyChangedEvent>().Subscribe(backgroundBusy =>
+            {
+                this.BackgroundBusy = backgroundBusy;
+            });
 
             eventAggregator.GetEvent<ViewNavigationChangedEvent>().Subscribe(viewNavigation =>
             {
@@ -173,7 +177,16 @@ namespace Globe.Client.Localizer.ViewModels
             get => _busy;
             set
             {
-                SetProperty<bool>(ref _busy, value);
+                SetProperty(ref _busy, value);
+            }
+        }
+        bool _backgroundBusy;
+        public bool BackgroundBusy
+        {
+            get => _backgroundBusy;
+            set
+            {
+                SetProperty(ref _backgroundBusy, value);
             }
         }
 

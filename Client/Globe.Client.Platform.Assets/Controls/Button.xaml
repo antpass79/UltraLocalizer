@@ -29,8 +29,8 @@
         </Setter>
  
         <Setter Property="Margin" Value="3" />
-        <Setter Property="MinWidth" Value="100" />
-        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="MinWidth" Value="80" />
+        <Setter Property="MinHeight" Value="30" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
         <Setter Property="FontSize" Value="15" />
 

@@ -110,24 +110,27 @@ namespace Globe.Client.Platform.Controls
 
         private void ShowLastNotification(int dueTime)
         {
-            this.lastNotification.IsOpen = true;
-            this._timerLastNotification.Change(dueTime, System.Threading.Timeout.Infinite);
+            if (NewNotification == null || NotificationCount == 0)
+                return;
+
+            lastNotification.IsOpen = true;
+            _timerLastNotification.Change(dueTime, System.Threading.Timeout.Infinite);
         }
 
         void ShowNotifications(bool staysOpen = false)
         {
-            this.notificationHistory.IsOpen = true;
-            this.lastNotification.IsOpen = false;
+            notificationHistory.IsOpen = true;
+            lastNotification.IsOpen = false;
         }
 
         void LastNotification_MouseLeave(object sender, MouseEventArgs e)
         {
-            this._timerLastNotification.Change(500, System.Threading.Timeout.Infinite);
+            _timerLastNotification.Change(500, System.Threading.Timeout.Infinite);
         }
 
         private void LastNotification_MouseEnter(object sender, MouseEventArgs e)
         {
-            this._timerLastNotification.Change(40000, System.Threading.Timeout.Infinite);
+            _timerLastNotification.Change(40000, System.Threading.Timeout.Infinite);
         }
 
         void SeeNotificationHistoryButton_MouseEnter(object sender, MouseEventArgs e)
@@ -135,22 +138,21 @@ namespace Globe.Client.Platform.Controls
             if (notificationHistory.IsOpen)
                 return;
 
-            if (this.NewNotification != null)
-                ShowLastNotification(4000);
+            ShowLastNotification(4000);
         }
 
         void SeeNotificationHistoryButton_Click(object sender, RoutedEventArgs e)
         {
-            if (this.notificationHistory.IsOpen)
-                this.notificationHistory.IsOpen = false;
+            if (notificationHistory.IsOpen)
+                notificationHistory.IsOpen = false;
             else
                 ShowNotifications();        
         }
 
         private void SeeNotificationHistoryButton_VisibilityChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
-            if(!this.IsVisible)
-                this.notificationHistory.IsOpen = false;
+            if(!IsVisible)
+                notificationHistory.IsOpen = false;
         }
 
 
@@ -192,17 +194,17 @@ namespace Globe.Client.Platform.Controls
 
         private void CloseLastNotification(object param)
         {
-            this.lastNotification.Dispatcher.BeginInvoke((Action)(() =>
+            lastNotification.Dispatcher.BeginInvoke((Action)(() =>
             {
-                this.lastNotification.IsOpen = false;
+                lastNotification.IsOpen = false;
             }
             ));
         }
 
         private void NotificationHistoryPopUp_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.lastNotification.IsOpen = false;
-            this.notificationHistory.IsOpen = false;
+            lastNotification.IsOpen = false;
+            notificationHistory.IsOpen = false;
         }
 
         #endregion

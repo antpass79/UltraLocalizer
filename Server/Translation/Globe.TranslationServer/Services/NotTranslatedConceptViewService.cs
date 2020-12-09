@@ -1,7 +1,4 @@
-﻿using AutoMapper;
-using Globe.TranslationServer.DTOs;
-using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
+﻿using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
 using System;
 using System.Collections.Generic;

@@ -29,15 +29,16 @@ namespace Globe.TranslationServer.Entities
         public virtual DbSet<LocStrings2translate> LocStrings2translate { get; set; }
         public virtual DbSet<LocStringsacceptable> LocStringsacceptable { get; set; }
         public virtual DbSet<LocStringslocked> LocStringslocked { get; set; }
+        public virtual DbSet<VLocalization> VLocalization { get; set; }
 
-//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//        {
-//            if (!optionsBuilder.IsConfigured)
-//            {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-//                optionsBuilder.UseSqlServer("Server=PC\\SQLExpress;Database=Localization;Trusted_Connection=True;");
-//            }
-//        }
+        //        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //        {
+        //            if (!optionsBuilder.IsConfigured)
+        //            {
+        //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+        //                optionsBuilder.UseSqlServer("Server=PC\\SQLExpress;Database=Localization;Trusted_Connection=True;");
+        //            }
+        //        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -324,6 +325,49 @@ namespace Globe.TranslationServer.Entities
                     .HasForeignKey(d => d.Idstring)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("STRINGSLocked$STRINGSSTRINGSLocked");
+            });
+
+            modelBuilder.Entity<VLocalization>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("vLocalization");
+
+                entity.Property(e => e.Concept)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.ConceptComment).HasMaxLength(255);
+
+                entity.Property(e => e.ConceptComponentNamespace)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.ConceptInternalNamespace).HasMaxLength(50);
+
+                entity.Property(e => e.Context)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.JobList).HasMaxLength(50);
+
+                entity.Property(e => e.JobListUserName).HasMaxLength(50);
+
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.LanguageIsoCode)
+                    .IsRequired()
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.String)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.StringType)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

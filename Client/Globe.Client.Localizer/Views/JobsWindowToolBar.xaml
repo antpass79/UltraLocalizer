@@ -10,7 +10,7 @@
     <platform:ContextToolBar.Resources>
         <Style TargetType="Button">
             <Style.Resources>
-                <Style TargetType="{x:Type Border}">
+                <Style TargetType="{x:Type Button}">
                 </Style>
             </Style.Resources>
 

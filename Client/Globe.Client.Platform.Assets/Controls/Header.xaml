@@ -7,7 +7,7 @@
     </LinearGradientBrush>
 
     <Style TargetType="{x:Type Grid}" x:Key="Header">
-        <Setter Property="MinHeight" Value="70" />
+        <Setter Property="MinHeight" Value="50" />
         <Setter Property="Background" Value="{StaticResource HeaderBackgroundBrush}" />
     </Style>
 
