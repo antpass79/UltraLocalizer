@@ -13,7 +13,7 @@
     <Style TargetType="{x:Type ContentControl}" x:Key="MenuHeader">
         <Setter Property="MinHeight" Value="30" />
         <Setter Property="Foreground" Value="White" />
-        <Setter Property="Margin" Value="20" />
+        <Setter Property="Margin" Value="20,10,0,10" />
         <Setter Property="FontSize" Value="20" />
     </Style>
 

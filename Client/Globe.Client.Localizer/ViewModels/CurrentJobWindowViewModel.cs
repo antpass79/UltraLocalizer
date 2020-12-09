@@ -254,13 +254,17 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand ExportToXmlCommand =>
             _exportToXmlCommand ?? (_exportToXmlCommand = new DelegateCommand(async () =>
             {
+                var downloadPath = ChooseFilePathToDownloadXml();
+                if (string.IsNullOrWhiteSpace(downloadPath))
+                    return;
+
                 EventAggregator
-                .GetEvent<BusyChangedEvent>()
+                .GetEvent<BackgroundBusyChangedEvent>()
                 .Publish(true);
 
                 try
                 {
-                    await _xmlService.Download();
+                    await _xmlService.Download(downloadPath);
                     await _notificationService.NotifyAsync("Info", "Download completed", Platform.Services.Notifications.NotificationLevel.Info);
                 }
                 catch (Exception e)
@@ -271,7 +275,7 @@ namespace Globe.Client.Localizer.ViewModels
                 finally
                 {
                     EventAggregator
-                    .GetEvent<BusyChangedEvent>()
+                    .GetEvent<BackgroundBusyChangedEvent>()
                     .Publish(false);
                 }
             }));
@@ -379,6 +383,19 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.GridBusy = false;
             }
+        }
+
+        private string ChooseFilePathToDownloadXml()
+        {
+            Microsoft.Win32.SaveFileDialog saveDialog = new Microsoft.Win32.SaveFileDialog();
+            saveDialog.FileName = "xml";
+            saveDialog.DefaultExt = ".zip";
+            saveDialog.Filter = "Zip documents (.zip)|*.zip";
+
+            if (saveDialog.ShowDialog() != true)
+                return null;
+
+            return saveDialog.FileName;
         }
     }
 }

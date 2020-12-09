@@ -87,6 +87,61 @@
                 </TextBlock>
             </Grid>
         </DataTemplate>
+        <DataTemplate x:Key="lastNotificationTemplate">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="25*" />
+                </Grid.ColumnDefinitions>
+                <Image
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="0"
+            Width="50"
+            Height="50"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Source="{Binding Level, Converter={StaticResource notificationLevelToImageConverter}}" />
+                <schemasControls:LocTextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            TextTrimming="WordEllipsis"
+            Foreground="{Binding Level, Converter={StaticResource notificationToColorConverter}}"
+            Text="{Binding Title}"
+            FontWeight="Bold"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Stretch"
+            Margin="3"/>
+                <schemasControls:LocTextBlock
+            Grid.Row="1"
+            Grid.Column="1"
+            TextTrimming="WordEllipsis"
+            Foreground="{Binding Level, Converter={StaticResource notificationToColorConverter}}"
+            Text="{Binding Message}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Stretch"/>
+                <controls:NotificationButton
+            Grid.Row="0"
+            Grid.RowSpan="2"
+            Grid.Column="2"
+            Width="50"
+            Height="50"
+            Background="#05163D"
+            Visibility="{Binding Linkable, Converter={StaticResource booleanToVisibilityConverter}}"
+            Cursor="Hand"
+            Level="{Binding}"
+            Notifier="{Binding ElementName=notificationControl}"
+            Command="{Binding ElementName=notificationHistory, Path=DataContext.NavigateToCommand}"
+            CommandParameter="{Binding ViewToNavigate}">
+                    <Image Source="{Binding Image}" />
+                </controls:NotificationButton>
+            </Grid>
+        </DataTemplate>
     </UserControl.Resources>
 
     <DockPanel>
@@ -121,7 +176,7 @@
                                     VerticalContentAlignment="Stretch">
                         </ListBox>
                         <schemasControls:LocTextBlock Grid.Row="2" HorizontalAlignment="Right" Margin="4">
-                  <Hyperlink Command="{Binding ElementName=notificationControl, Path=DataContext.RemoveAllNotificationsCommand}">Remove All</Hyperlink>
+                            <Hyperlink Command="{Binding ElementName=notificationControl, Path=DataContext.RemoveAllNotificationsCommand}">Remove All</Hyperlink>
                         </schemasControls:LocTextBlock>
                     </Grid>
                 </DockPanel>
@@ -140,32 +195,26 @@
                 <ContentControl Name="notification"
                         MaxHeight="300"
                         Content="{Binding ElementName=notificationControl, Path=NewNotification}"
-                        ContentTemplate="{StaticResource notificationTemplate}"
+                        ContentTemplate="{StaticResource lastNotificationTemplate}"
                         Background="Transparent"
                         HorizontalContentAlignment="Stretch"
                         VerticalContentAlignment="Stretch" />
             </Border>
         </Popup>
 
-        <Button x:Name="seeNotificationHistory"
-                         Margin="1"
-                         DockPanel.Dock="Right"
-                         Height="{Binding ElementName=notificationControl, Path=Height, Mode=OneWay}"
-                         Width="{Binding ElementName=notificationControl, Path=Width, Mode=OneWay}">
+        <Button x:Name="seeNotificationHistory" MinWidth="0" MinHeight="0" Background="Transparent">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5" />
-                    <ColumnDefinition Width="40"/>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30*" />
-                    <RowDefinition Height="70*"/>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Image Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" Height="30" Width="30" Margin="2" Source="{Binding ElementName=notificationControl, Path=ImageSource, Mode=OneWay}"/>
-                <Border Grid.Column="2" Grid.Row="0" Background="Red" CornerRadius="999" Padding="5,2,5,2" Visibility="{Binding ElementName=notificationControl, Path=NotificationExists, Converter={StaticResource booleanToVisibilityConverter}}">
-                    <TextBlock Foreground="White" FontWeight="Bold" FontSize="12" Text="{Binding ElementName=notificationControl, Path=NotificationCount}"/>
+                <Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" Height="24" Width="24" Margin="2" Source="{Binding ElementName=notificationControl, Path=ImageSource, Mode=OneWay}" />
+                <Border Grid.Column="1" Grid.Row="0" Background="Red" CornerRadius="999" Padding="5,2,5,2" Visibility="{Binding ElementName=notificationControl, Path=NotificationExists, Converter={StaticResource booleanToVisibilityConverter}}">
+                    <TextBlock Foreground="White" FontWeight="Bold" FontSize="10" Text="{Binding ElementName=notificationControl, Path=NotificationCount}"/>
                 </Border>
             </Grid>
         </Button>

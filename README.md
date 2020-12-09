@@ -20,6 +20,12 @@ How to manage certificates
 https://devblogs.microsoft.com/aspnet/configuring-https-in-asp-net-core-across-different-platforms/
 http://www.prowaretech.com/Computer/AspNetCore/ChangeKestrelServerPort
 
+How to map View on EF Core
+https://docs.microsoft.com/it-it/ef/core/what-is-new/ef-core-3.x/
+
+How to install/update the client
+https://github.com/Squirrel/Squirrel.Windows
+
 ## Notes on code under Porting folder
 
 Each folder represents the porting of a single dll.

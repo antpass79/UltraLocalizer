@@ -34,7 +34,7 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Joblist_Management), LanguageKeys.Joblist_Management);
             _english.Add(nameof(LanguageKeys.Current_Job), LanguageKeys.Current_Job);
 
-            _english.Add(nameof(LanguageKeys.Please_enter_your_details), "Please enter your details");
+            _english.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Please enter your details");
 
             _english.Add(nameof(LanguageKeys.Operation_successfully_completed), "Operation successfully completed");
             _english.Add(nameof(LanguageKeys.Error_during_server_communication), "Error during server communication");
@@ -73,7 +73,7 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Joblist_Management), "Gestione JobList");
             _italian.Add(nameof(LanguageKeys.Current_Job), "Lavoro Corrente");
 
-            _italian.Add(nameof(LanguageKeys.Please_enter_your_details), "Inserisci i dettagli");
+            _italian.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Inserisci i dettagli");
 
             _italian.Add(nameof(LanguageKeys.Operation_successfully_completed), "Operazione eseguita con successo");
             _italian.Add(nameof(LanguageKeys.Error_during_server_communication), "Errore durante la comunicazione con il server");

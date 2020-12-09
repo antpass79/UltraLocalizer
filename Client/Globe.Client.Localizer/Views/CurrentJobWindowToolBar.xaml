@@ -13,6 +13,6 @@
 
     </platform:ContextToolBar.Resources>
     <DockPanel LastChildFill="False" Background="Transparent">
-        <Button Margin="5" Width="150" Style ="{StaticResource GrayButton}" Command="{Binding ExportToXmlCommand}" Content="{Binding Localize[Export_to_XML]}" />
+        <Button Command="{Binding ExportToXmlCommand}" Content="{Binding Localize[Export_to_XML]}" />
     </DockPanel>
 </platform:ContextToolBar>

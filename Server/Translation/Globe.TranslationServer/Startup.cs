@@ -67,13 +67,15 @@ namespace Globe.TranslationServer
             services
                 .AddScoped<IAsyncReadRepository<LocLanguages>, AsyncGenericRepository<LocalizationContext, LocLanguages>>()
                 .AddScoped<IAsyncReadRepository<LocConceptsTable>, AsyncGenericRepository<LocalizationContext, LocConceptsTable>>()
-                .AddScoped<IAsyncReadRepository<LocJobList>, AsyncGenericRepository<LocalizationContext, LocJobList>>();
+                .AddScoped<IAsyncReadRepository<LocJobList>, AsyncGenericRepository<LocalizationContext, LocJobList>>()
+                .AddScoped<IAsyncReadRepository<VLocalization>, AsyncGenericRepository<LocalizationContext, VLocalization>>();
 
             // Services
             services
                 .AddScoped<XmlManager, XmlManager>()
                 .AddScoped<UltraDBEditConcept, UltraDBEditConcept>()
                 .AddScoped<UltraDBConcept, UltraDBConcept>()
+                .AddScoped<UltraDBGlobal, UltraDBGlobal>()
                 .AddScoped<UltraDBJobList, UltraDBJobList>()
                 .AddScoped<UltraDBStrings, UltraDBStrings>()
                 .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>()
@@ -83,6 +85,7 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncComponentNamespaceService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
                 .AddScoped<IAsyncInternalNamespaceService, Services.NewServices.InternalNamespaceService> () //.AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>()
                 .AddScoped<IAsyncJobItemService, Services.NewServices.JobItemService>() //.AddScoped<IAsyncJobListService, JobListAdapterService>()
+                .AddScoped<IDBToXmlService, Services.NewServices.DBToXmlService>() //.AddScoped<IAsyncJobListService, JobListAdapterService>()
 
                 .AddScoped<IAsyncContextService, ContextService>()
                 .AddScoped<IAsyncStringTypeService, StringTypeService>()

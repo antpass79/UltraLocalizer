@@ -88,20 +88,21 @@
         <!--Footer-->
         <Grid DockPanel.Dock="Bottom" Style="{StaticResource Footer}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
+            <ProgressBar Grid.Column="1" IsIndeterminate="{Binding BackgroundBusy}" Width="100" Height="20" VerticalContentAlignment="Center" VerticalAlignment="Center" Background="Transparent" BorderThickness="0"></ProgressBar>
             <platform:NotificationControl 
-                HorizontalAlignment="Right" 
-                Grid.Column="1"
-                BorderBrush="DarkGray"
+                Grid.Column="2"
                 RemoveNotificationCommand="{Binding RemoveNotificationCommand}"
                 RemoveAllNotificationsCommand="{Binding RemoveAllNotificationsCommand}"
                 Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}" 
-                ImageSource="/Globe.Client.Platform.Assets;component/Icons/bell.png"
+                ImageSource="/Globe.Client.Platform.Assets;component/Icons/bell_black.png"
                 Notifications="{Binding NotificationService.Notifications}">
             </platform:NotificationControl>
         </Grid>
+
         <!--Content-->
         <controls:LocGrid>
             <ContentControl x:Name="contentRegion" prism:RegionManager.RegionName="{x:Static platform:RegionNames.MAIN_REGION}" />
