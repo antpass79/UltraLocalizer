@@ -3,11 +3,12 @@ using System.Windows.Media.Imaging;
 
 namespace Globe.Client.Platform.Services.Notifications
 {
-    public class ConceptsChangedNotification : Notification
+    public class DownloadCompletedNotification : Notification
     {
-        public ConceptsChangedNotification()
+        public DownloadCompletedNotification()
         {
-            Title = "New Concepts";
+            Title = "Information";
+            Message = "Download Completed";
             Level = NotificationLevel.Error;
             Linkable = true;
             ViewToNavigate = ViewNames.JOBLIST_MANAGEMENT_VIEW;

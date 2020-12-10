@@ -14,8 +14,6 @@ namespace Globe.Client.Platform.Converters
             NotificationLevel level = (NotificationLevel)value;
             switch (level)
             {
-                case NotificationLevel.Ok:
-                    return new BitmapImage(new Uri("/Globe.Client.Platform.Assets;component/Icons/check.png", UriKind.Relative));
                 case NotificationLevel.Error:
                     return new BitmapImage(new Uri("/Globe.Client.Platform.Assets;component/Icons/error.png", UriKind.Relative));
                 case NotificationLevel.Warning:
