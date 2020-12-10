@@ -1,4 +1,5 @@
 ﻿using Globe.Client.Platform.Services;
+using Globe.Client.Platform.Utilities;
 using Globe.Client.Platofrm.Events;
 using Prism.Events;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace Globe.Client.Platform.ViewModels
 
         protected ILocalizationAppService LocalizationAppService { get; }
 
-        IDictionary<string, string> _localize = new Dictionary<string, string>();
+        IDictionary<string, string> _localize = new LocalizedDictionary();
         public IDictionary<string, string> Localize
         {
             get => _localize;

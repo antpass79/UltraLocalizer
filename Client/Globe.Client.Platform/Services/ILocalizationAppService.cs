@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using Globe.Client.Platform.Utilities;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Platform.Services
@@ -6,7 +6,7 @@ namespace Globe.Client.Platform.Services
     public interface ILocalizationAppService
     {
         string SelectedLanguage { get; }
-        Task<Dictionary<string, string>> LoadAsync(string language);
+        Task<LocalizedDictionary> LoadAsync(string language);
         string Resolve(string key);
     }
 }

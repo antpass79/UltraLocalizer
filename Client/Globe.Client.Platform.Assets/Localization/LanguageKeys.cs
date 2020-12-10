@@ -12,6 +12,8 @@
         public readonly static string AutoMerge = "AutoMerge";
         public readonly static string Cancel = "Cancel";
         public readonly static string UserName = "UserName";
+        public readonly static string Password = "Password";
+        public readonly static string UserLogin = "UserLogin";
         public readonly static string Login = "Login";
         public readonly static string Logout = "Logout";
         public readonly static string Search = "Search";

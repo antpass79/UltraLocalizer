@@ -14,6 +14,8 @@
     <None Remove="Icons\duplicate.png" />
     <None Remove="Icons\edit.png" />
     <None Remove="Icons\error.png" />
+    <None Remove="Icons\folder.png" />
+    <None Remove="Icons\folder_black.png" />
     <None Remove="Icons\home.png" />
     <None Remove="Icons\information.png" />
     <None Remove="Icons\link.png" />
@@ -79,6 +81,8 @@
     <Resource Include="Icons\duplicate.png" />
     <Resource Include="Icons\edit.png" />
     <Resource Include="Icons\error.png" />
+    <Resource Include="Icons\folder.png" />
+    <Resource Include="Icons\folder_black.png" />
     <Resource Include="Icons\home.png" />
     <Resource Include="Icons\information.png" />
     <Resource Include="Icons\link.png" />

@@ -9,7 +9,7 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
         Name="view"
-        Title="Ultra Localizator" Height="450" Width="800" WindowState="Maximized">
+        Title="Ultra Localizator" WindowState="Maximized">
     <Window.Resources>
         <platform:ImageNameToSourceImageConverter
             x:Key="ImageNameToSourceImageConverter" />

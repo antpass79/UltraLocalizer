@@ -18,7 +18,6 @@ namespace Globe.Client.Platform.Converters
                     return new SolidColorBrush(Colors.Red);
                 case NotificationLevel.Warning:
                     return new SolidColorBrush(Colors.Orange);
-                case NotificationLevel.Ok:
                 case NotificationLevel.Info:
                 default:
                     return new SolidColorBrush(Colors.Green);
