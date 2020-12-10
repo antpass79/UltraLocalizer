@@ -385,13 +385,13 @@ namespace Globe.Client.Localizer.ViewModels
 
             connection.On<string>("JoblistChanged", async (jobListName) =>
             {
-                var notification = new JobListStatusNotification(jobListName);
+                var notification = new JobListStatusNotification { Message = jobListName };
                 await NotificationService.NotifyAsync(notification);
             });
 
             connection.On<int>("ConceptsChanged", async (conceptCount) =>
             {
-                var notification = new ConceptsChangedNotification(conceptCount.ToString());
+                var notification = new ConceptsChangedNotification { Message = conceptCount.ToString() };
                 await NotificationService.NotifyAsync(notification);
             });
 

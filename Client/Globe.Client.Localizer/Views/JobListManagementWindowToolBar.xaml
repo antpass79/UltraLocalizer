@@ -3,17 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Globe.Client.Localizer"
-        xmlns:prism="http://prismlibrary.com/"
+        xmlns:controls="http://schemas.controls.com/"
         xmlns:platform="http://schemas.platform.com/"
         mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
     <platform:ContextToolBar.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource ToolBarButton}">
+        <Style TargetType="controls:LocButton" BasedOn="{StaticResource ToolBarButton}">
         </Style>
 
     </platform:ContextToolBar.Resources>
     <DockPanel LastChildFill="False" Background="Transparent">
-        <Button Command="{Binding CheckNewConceptsCommand}" Content="{Binding Localize[Check_New_Concepts]}"/>
-        <Button Command="{Binding SaveJoblistCommand}" Content="{Binding Localize[Save_Joblist]}"/>
+        <controls:LocButton Command="{Binding CheckNewConceptsCommand}" Content="{Binding Localize[Check_New_Concepts]}"/>
+        <controls:LocButton Command="{Binding SaveJoblistCommand}" Content="{Binding Localize[Save_Joblist]}"/>
     </DockPanel>
 </platform:ContextToolBar>
