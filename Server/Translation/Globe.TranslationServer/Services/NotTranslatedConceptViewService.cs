@@ -9,9 +9,9 @@ namespace Globe.TranslationServer.Services
 {
     public class NotTranslatedConceptViewService : IAsyncNotTranslatedConceptViewService
     {
-        private readonly UltraDBJobGlobal _ultraDBJobGlobal;
+        private readonly IUltraDBJobGlobal _ultraDBJobGlobal;
 
-        public NotTranslatedConceptViewService(UltraDBJobGlobal ultraDBJobGlobal)
+        public NotTranslatedConceptViewService(IUltraDBJobGlobal ultraDBJobGlobal)
         {
             _ultraDBJobGlobal = ultraDBJobGlobal;
         }

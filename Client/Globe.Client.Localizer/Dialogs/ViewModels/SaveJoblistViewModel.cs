@@ -70,13 +70,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         private DelegateCommand _saveCommand;
         public DelegateCommand SaveCommand =>
-            _saveCommand ?? (_saveCommand = new DelegateCommand(() =>
+            _saveCommand ?? (_saveCommand = new DelegateCommand(async () =>
             {
                 try
                 {
                     _eventAggregator.GetEvent<BusyChangedEvent>().Publish(true);
-                    _jobListManagementService.SaveAsync(JobListName, _notTranslatedConceptViews, SelectedUser, _language);
-                    _notificationService.NotifyAsync(new Notification
+                    await _jobListManagementService.SaveAsync(JobListName, _notTranslatedConceptViews, SelectedUser, _language);
+                    await _notificationService.NotifyAsync(new Notification
                     {
                         Title = "Joblist Status",
                         Message = $"New Joblist ({JobListName}) saved",
@@ -87,7 +87,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 catch(Exception e)
                 {
                     Console.WriteLine(e.Message);
-                    _notificationService.NotifyAsync(new Notification
+                    await _notificationService.NotifyAsync(new Notification
                     {
                         Title = "Joblist Status",
                         Message = "Joblist not saved",
