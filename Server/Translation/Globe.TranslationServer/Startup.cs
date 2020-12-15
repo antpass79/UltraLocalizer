@@ -65,10 +65,12 @@ namespace Globe.TranslationServer
 
             // Repositories
             services
-                .AddScoped<IAsyncReadRepository<LocLanguages>, AsyncGenericRepository<LocalizationContext, LocLanguages>>()
+                .AddScoped<IReadRepository<LocLanguages>, GenericRepository<LocalizationContext, LocLanguages>>()
+                .AddScoped<IReadRepository<VLocalization>, GenericRepository<LocalizationContext, VLocalization>>()
+                .AddScoped<IReadRepository<VConceptStringToContext>, GenericRepository<LocalizationContext, VConceptStringToContext>>()
+                .AddScoped<IReadRepository<VStringsToContext>, GenericRepository<LocalizationContext, VStringsToContext>>()
                 .AddScoped<IAsyncReadRepository<LocConceptsTable>, AsyncGenericRepository<LocalizationContext, LocConceptsTable>>()
-                .AddScoped<IAsyncReadRepository<LocJobList>, AsyncGenericRepository<LocalizationContext, LocJobList>>()
-                .AddScoped<IAsyncReadRepository<VLocalization>, AsyncGenericRepository<LocalizationContext, VLocalization>>();
+                .AddScoped<IAsyncReadRepository<LocJobList>, AsyncGenericRepository<LocalizationContext, LocJobList>>();
 
             // Services
             services
@@ -79,24 +81,24 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBJobList, UltraDBJobList>()
                 .AddScoped<UltraDBStrings, UltraDBStrings>()
                 .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>()
-                .AddScoped<UltraDBJobGlobal, UltraDBJobGlobal>();
+                .AddScoped<IUltraDBJobGlobal, UltraDBJobGlobal>();
             services
                 .AddScoped<IAsyncLanguageService, Services.NewServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncComponentNamespaceService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
-                .AddScoped<IAsyncInternalNamespaceService, Services.NewServices.InternalNamespaceService> () //.AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>()
+                .AddScoped<IAsyncInternalNamespaceService, Services.NewServices.InternalNamespaceService>() //.AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>()
                 .AddScoped<IAsyncJobItemService, Services.NewServices.JobItemService>() //.AddScoped<IAsyncJobListService, JobListAdapterService>()
                 .AddScoped<IDBToXmlService, Services.NewServices.DBToXmlService>() //.AddScoped<IAsyncJobListService, JobListAdapterService>()
 
                 .AddScoped<IAsyncContextService, ContextService>()
                 .AddScoped<IAsyncStringTypeService, StringTypeService>()
                 .AddScoped<IAsyncStringViewProxyService, StringViewProxyService>()
-                .AddScoped<IAsyncGroupedStringEntityService, GroupedStringEntityAdapterService>()
+                .AddScoped<IAsyncGroupedStringEntityService, Services.NewServices.GroupedStringEntityAdapterService>()//.AddScoped<IAsyncGroupedStringEntityService, GroupedStringEntityAdapterService>()
                 .AddScoped<IAsyncXmlGroupedStringEntityService, Services.NewServices.XmlGroupedStringEntityService>()
                 .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()
                 .AddScoped<IAsyncConceptDetailsService, ConceptDetailsAdapterService>()
                 .AddScoped<IAsyncConceptService, ConceptService>()
                 .AddScoped<IAsyncNotTranslatedConceptViewService, NotTranslatedConceptViewService>()
-                .AddScoped<IAsyncInternalNamespaceGroupService, InternalNamespaceGroupService>()
+                .AddScoped<IAsyncInternalNamespaceGroupService, Services.NewServices.InternalNamespaceGroupService>() //.AddScoped<IAsyncInternalNamespaceGroupService, InternalNamespaceGroupService>()
                 .AddScoped<IAsyncJobListService, JobListService>()
                 .AddScoped<IAsyncXmlService, XmlService>();
 

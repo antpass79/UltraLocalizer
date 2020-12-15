@@ -12,13 +12,13 @@
     </UserControl.Resources>
 
     <DockPanel LastChildFill="False">
-        <controls:LocPageTitleTextBlock DockPanel.Dock="Top" Text="Ultra Localizer"></controls:LocPageTitleTextBlock>
-        <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_1]}"></controls:LocLabel>
-        <!--<controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_2]}"></controls:LocLabel>-->
+        <controls:LocPageTitleTextBlock DockPanel.Dock="Top" Text="{Binding Localize[UltraLocalizer]}"></controls:LocPageTitleTextBlock>
 
+        <controls:LocPageSubTitleTextBlock DockPanel.Dock="Top" Text="{Binding Localize[HomeIntro_1]}"></controls:LocPageSubTitleTextBlock>
+        <!--<controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_2]}"></controls:LocLabel>-->
         <Separator DockPanel.Dock="Top" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
-        
-        <controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[Download]}"></controls:LocLabel>
+        <controls:LocPageSubTitleTextBlock DockPanel.Dock="Top" Text="{Binding Localize[Download]}"></controls:LocPageSubTitleTextBlock>
+
         <Grid DockPanel.Dock="Top">
             <Grid.RowDefinitions>
                 <!--<RowDefinition />-->

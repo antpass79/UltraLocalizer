@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.ViewModels
 {
-    internal class CurrentJobWindowViewModel : LocalizeWindowViewModel, INavigationAware
+    internal class CurrentJobWindowViewModel : LocalizeWindowViewModel
     {
         const string ALL_ITEMS = "All";
 
@@ -304,18 +304,15 @@ namespace Globe.Client.Localizer.ViewModels
                 this.FiltersBusy = false;
             }));
 
-        async public void OnNavigatedTo(NavigationContext navigationContext)
+        async protected override Task OnLoad()
         {
             await InitializeFilters();
         }
 
-        public bool IsNavigationTarget(NavigationContext navigationContext)
+        protected override Task OnUnload()
         {
-            return true;
-        }
-
-        public void OnNavigatedFrom(NavigationContext navigationContext)
-        {
+            ClearPage();
+            return Task.CompletedTask;
         }
 
         async private Task InitializeFilters()
@@ -346,32 +343,32 @@ namespace Globe.Client.Localizer.ViewModels
 
         private async Task OnSearch()
         {
-            this.GridBusy = true;
-            this.ConceptViews = null;
-            this.ItemCount = 0;
+            GridBusy = true;
+            ConceptViews = null;
+            ItemCount = 0;
 
             try
             {
                 if (
-                    this.SelectedJobItem == null ||
-                    this.SelectedComponentNamespace == null ||
-                    this.SelectedInternalNamespace == null ||
-                    this.SelectedLanguage == null)
+                    SelectedJobItem == null ||
+                    SelectedComponentNamespace == null ||
+                    SelectedInternalNamespace == null ||
+                    SelectedLanguage == null)
                 {
-                    this.ConceptViews = null;
+                    ConceptViews = null;
                 }
                 else
                 {
-                    this.ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
+                    ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
                         new ConceptViewSearch
                         {
-                            ComponentNamespace = this.SelectedComponentNamespace.Description,
-                            InternalNamespace = this.SelectedInternalNamespace.Description,
-                            LanguageId = this.SelectedLanguage.Id,
-                            JobItemId = this.SelectedJobItem.Id
+                            ComponentNamespace = SelectedComponentNamespace.Description,
+                            InternalNamespace = SelectedInternalNamespace.Description,
+                            LanguageId = SelectedLanguage.Id,
+                            JobItemId = SelectedJobItem.Id
                         });
 
-                    this.ItemCount = ConceptViews.Count();
+                    ItemCount = ConceptViews.Count();
                 }
             }
             catch (Exception exception)
@@ -383,6 +380,12 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.GridBusy = false;
             }
+        }
+
+        private void ClearPage()
+        {
+            ConceptViews = null;
+            ItemCount = 0;
         }
 
         private string ChooseFilePathToDownloadXml()

@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.ViewModels
 {
-    internal class JobListManagementWindowViewModel : LocalizeWindowViewModel, INavigationAware
+    internal class JobListManagementWindowViewModel : LocalizeWindowViewModel
     {
         private readonly ILoggerService _loggerService;
         private readonly IDialogService _dialogService;
@@ -289,18 +289,15 @@ namespace Globe.Client.Localizer.ViewModels
                 }
             }));
 
-        async public void OnNavigatedTo(NavigationContext navigationContext)
+        async protected override Task OnLoad()
         {
             await InitializeFilters();
         }
 
-        public bool IsNavigationTarget(NavigationContext navigationContext)
+        protected override Task OnUnload()
         {
-            return true;
-        }
-
-        public void OnNavigatedFrom(NavigationContext navigationContext)
-        {
+            ClearPage();
+            return Task.CompletedTask;
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs args)
@@ -347,6 +344,7 @@ namespace Globe.Client.Localizer.ViewModels
                 FiltersBusy = false;
             }
         }
+
         private async Task OnLanguageChange()
         {
             if (SelectedLanguage == null)
@@ -362,10 +360,12 @@ namespace Globe.Client.Localizer.ViewModels
             catch (Exception e)
             {
                 _loggerService.Exception(e);
+
+                InternalNamespaceGroups = null;
                 await _notificationService.NotifyAsync(new Notification
                 {
                     Title = "Error",
-                    Message = "Error during getting languages",
+                    Message = "Error during building groups",
                     Level = NotificationLevel.Error
                 });
             }
@@ -373,6 +373,13 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 FiltersBusy = false;
             }
+        }
+
+        private void ClearPage()
+        {
+            NotTranslatedConceptViews = null;
+            InternalNamespaceGroups = null;
+            ItemCount = 0;
         }
     }
 }
