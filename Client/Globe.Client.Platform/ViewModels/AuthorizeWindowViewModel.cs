@@ -8,7 +8,7 @@ using System.Security.Principal;
 
 namespace Globe.Client.Platform.ViewModels
 {
-    public abstract class AuthorizeWindowViewModel : BindableBase, IAuthorizeWindowViewModel
+    public abstract class AuthorizeWindowViewModel : LifecycleWindowViewModel, IAuthorizeWindowViewModel
     {
         protected IEventAggregator EventAggregator { get; private set; }
 

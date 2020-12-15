@@ -3,12 +3,13 @@ using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
+using Globe.TranslationServer.Services;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal
 {
-    public class UltraDBJobGlobal
+    public class UltraDBJobGlobal : IUltraDBJobGlobal
     {
         private readonly LocalizationContext context;
 

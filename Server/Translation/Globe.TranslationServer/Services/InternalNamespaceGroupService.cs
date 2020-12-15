@@ -12,9 +12,9 @@ namespace Globe.TranslationServer.Services
 {
     public class InternalNamespaceGroupService : IAsyncInternalNamespaceGroupService
     {
-        private readonly UltraDBJobGlobal _ultraDBJobGlobal;
+        private readonly IUltraDBJobGlobal _ultraDBJobGlobal;
 
-        public InternalNamespaceGroupService(UltraDBJobGlobal ultraDBJobGlobal)
+        public InternalNamespaceGroupService(IUltraDBJobGlobal ultraDBJobGlobal)
         {
             _ultraDBJobGlobal = ultraDBJobGlobal;
         }

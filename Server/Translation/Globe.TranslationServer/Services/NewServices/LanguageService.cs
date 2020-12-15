@@ -10,17 +10,17 @@ namespace Globe.TranslationServer.Services.NewServices
 {
     public class LanguageService : IAsyncLanguageService
     {
-        private readonly IAsyncReadRepository<LocLanguages> _repository;
+        private readonly IReadRepository<LocLanguages> _repository;
 
-        public LanguageService(IAsyncReadRepository<LocLanguages> repository)
+        public LanguageService(IReadRepository<LocLanguages> repository)
         {
             _repository = repository;
         }
 
         async public Task<IEnumerable<LanguageDTO>> GetAllAsync()
         {
-            var query = await _repository.QueryAsync();
-            return query
+            var items = _repository
+                .Query()
                 .Select(language => new LanguageDTO
                 {
                     Id = language.Id,
@@ -30,6 +30,8 @@ namespace Globe.TranslationServer.Services.NewServices
                 })
                 .AsEnumerable()
                 .OrderBy(language => language.Description);
+
+            return await Task.FromResult(items);
         }
 
         public Task<LanguageDTO> GetAsync(int key)
