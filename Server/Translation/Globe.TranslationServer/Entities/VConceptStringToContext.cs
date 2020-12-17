@@ -12,6 +12,7 @@ namespace Globe.TranslationServer.Entities
         public int Idcontext { get; set; }
         public int Idconcept2Context { get; set; }
         public string ContextName { get; set; }
-        public int? Idstring { get; set; }
+        public int? StringId { get; set; }
+        public int? Strings2ContextId { get; set; }
     }
 }

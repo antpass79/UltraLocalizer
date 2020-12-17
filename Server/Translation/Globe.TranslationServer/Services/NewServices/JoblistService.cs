@@ -12,34 +12,25 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
-    public class GroupedStringEntityAdapterService : IAsyncGroupedStringEntityService
+    public class JobListService : IAsyncGroupedStringEntityService
     {
-        private readonly IReadRepository<VLocalization> _repository;
-        private readonly IMapper _mapper;
-        private readonly UltraDBEditConcept _ultraDBEditConcept;
-        private readonly LocalizationContext _context;
+        private readonly IReadRepository<VJobListConcept> _repository;
 
-        public GroupedStringEntityAdapterService(
-            IReadRepository<VLocalization> repository,
-            IMapper mapper,
-            UltraDBEditConcept ultraDBEditConcept,
-            LocalizationContext context)
+        public JobListService(
+            IReadRepository<VJobListConcept> repository)
         {
             _repository = repository;
-            _mapper = mapper;
-            _ultraDBEditConcept = ultraDBEditConcept;
-            _context = context;
         }
 
-        async public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobItemId)
+        async public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobListId)
         {
             try
             {
                 var items = _repository.Query()
                     .Where(item =>
-                        item.LanguageId == languageId)
+                        item.JobListLanguageId == languageId)
                     .WhereIf(item =>
-                        item.JobListId == jobItemId, jobItemId != 0)
+                        item.JobListId == jobListId, jobListId != 0)
                     .WhereIf(item =>
                         item.ConceptComponentNamespace == componentNamespace, componentNamespace != Constants.COMPONENT_NAMESPACE_ALL)
                     .WhereIf(item =>
@@ -52,45 +43,47 @@ namespace Globe.TranslationServer.Services.NewServices
                         InternalNamespace = item.ConceptInternalNamespace,
                         Concept = item.Concept,
                         ContextName = item.Context,
-                        ContextType = item.StringType,
+                        ConceptToContextId = item.ConceptToContextId,
+                        StringType = item.StringType,
                         StringValue = item.String,
                         StringId = item.StringId
                     })
                     .ToList();
 
                 var result = items
-                .GroupBy(item => new { item.ComponentNamespace, item.InternalNamespace, item.Concept })
+                .GroupBy(item => item.ConceptId)
                 .Select(group => new ConceptViewDTO
                 {
                     ComponentNamespace = group.First().ComponentNamespace,
                     InternalNamespace = group.First().InternalNamespace,
                     Id = group.First().ConceptId,
-                    Name = group.First().Concept,
+                    Name = group.First().Concept,                    
                     ContextViews = group.Select(item => new ContextViewDTO
                     {
                         StringId = item.StringId.HasValue ? item.StringId.Value : 0,
-                        StringType = !string.IsNullOrWhiteSpace(item.ContextType) ? Enum.Parse<StringTypeDTO>(item.ContextType) : StringTypeDTO.Label,
+                        StringType = !string.IsNullOrWhiteSpace(item.StringType) ? Enum.Parse<StringTypeDTO>(item.StringType) : StringTypeDTO.Label,
                         StringValue = item.StringValue,
-                        Name = item.ContextName                        
+                        Name = item.ContextName,
+                        Concept2ContextId = item.ConceptToContextId
                     }).ToList()
                 });
 
-            return await Task.FromResult(result);
+                return await Task.FromResult(result);
             }
             catch (Exception e)
             {
-                return new List<ConceptViewDTO>();
+                throw new InvalidOperationException($"Error during JobListService.GetAllAsync({componentNamespace}, {internalNamespace}, {languageId}, {jobListId}), {e.Message}");
             }
         }
 
         public Task<IEnumerable<ConceptViewDTO>> GetAllAsync()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public Task<ConceptViewDTO> GetAsync(int key)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

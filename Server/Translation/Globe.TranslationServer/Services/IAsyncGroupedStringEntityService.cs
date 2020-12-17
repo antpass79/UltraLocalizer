@@ -6,11 +6,11 @@ namespace Globe.TranslationServer.Services
 {
     public interface IAsyncGroupedStringEntityService : IAsyncReadService<ConceptViewDTO>
     {
-        public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobItemId);
+        public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobListId);
     }
 
     public interface IAsyncXmlGroupedStringEntityService : IAsyncReadService<ConceptViewDTO>
     {
-        public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobItemId);
+        public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobListId);
     }
 }

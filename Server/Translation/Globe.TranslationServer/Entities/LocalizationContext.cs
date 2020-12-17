@@ -29,13 +29,9 @@ namespace Globe.TranslationServer.Entities
         public virtual DbSet<LocStrings2translate> LocStrings2translate { get; set; }
         public virtual DbSet<LocStringsacceptable> LocStringsacceptable { get; set; }
         public virtual DbSet<LocStringslocked> LocStringslocked { get; set; }
-        public virtual DbSet<VConcept2Context> VConcept2Context { get; set; }
         public virtual DbSet<VConceptStringToContext> VConceptStringToContext { get; set; }
-        public virtual DbSet<VConceptToContextJob2Concept> VConceptToContextJob2Concept { get; set; }
-        public virtual DbSet<VGetDatabyComponentIso> VGetDatabyComponentIso { get; set; }
-        public virtual DbSet<VJobToConcept> VJobToConcept { get; set; }
+        public virtual DbSet<VJobListConcept> VJobListConcept { get; set; }
         public virtual DbSet<VLocalization> VLocalization { get; set; }
-        public virtual DbSet<VStringLockedStringToTranslate> VStringLockedStringToTranslate { get; set; }
         public virtual DbSet<VStringsToContext> VStringsToContext { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -60,13 +56,13 @@ namespace Globe.TranslationServer.Entities
                     .WithMany(p => p.LocConcept2Context)
                     .HasForeignKey(d => d.Idconcept)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("Concept2Context$ConceptsTableConcept2Context");
+                    .HasConstraintName("FK_ConceptToContext_Concept");
 
                 entity.HasOne(d => d.IdcontextNavigation)
                     .WithMany(p => p.LocConcept2Context)
                     .HasForeignKey(d => d.Idcontext)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("Concept2Context$CONTEXTSConcept2Context");
+                    .HasConstraintName("FK_ConceptToContext_Context");
             });
 
             modelBuilder.Entity<LocConceptsTable>(entity =>
@@ -325,183 +321,67 @@ namespace Globe.TranslationServer.Entities
                     .HasConstraintName("STRINGSLocked$STRINGSSTRINGSLocked");
             });
 
-            modelBuilder.Entity<VConcept2Context>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("vConcept2Context");
-
-                //entity.Property(e => e.Comment).HasMaxLength(255);
-
-                //entity.Property(e => e.ComponentNamespace)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
-
-                //entity.Property(e => e.ContextName)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
-
-                //entity.Property(e => e.Id).HasColumnName("ID");
-
-                //entity.Property(e => e.Idconcept).HasColumnName("IDConcept");
-
-                //entity.Property(e => e.Idcontext).HasColumnName("IDContext");
-
-                //entity.Property(e => e.InternalNamespace).HasMaxLength(50);
-
-                //entity.Property(e => e.LocalizationId)
-                //    .IsRequired()
-                //    .HasColumnName("LocalizationID")
-                //    .HasMaxLength(255);
-            });
-
             modelBuilder.Entity<VConceptStringToContext>(entity =>
             {
                 entity.HasNoKey();
 
                 entity.ToView("vConceptStringToContext");
 
-                //entity.Property(e => e.ComponentNamespace)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
+                entity.Property(e => e.ComponentNamespace)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                //entity.Property(e => e.ContextName)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
+                entity.Property(e => e.ContextName)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
-                //entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
-                //entity.Property(e => e.Idconcept2Context).HasColumnName("IDConcept2Context");
+                entity.Property(e => e.Idconcept2Context).HasColumnName("IDConcept2Context");
 
-                //entity.Property(e => e.Idcontext).HasColumnName("IDContext");
+                entity.Property(e => e.Idcontext).HasColumnName("IDContext");
 
-                //entity.Property(e => e.Idstring).HasColumnName("IDString");
+                entity.Property(e => e.InternalNamespace).HasMaxLength(50);
 
-                //entity.Property(e => e.InternalNamespace).HasMaxLength(50);
-
-                //entity.Property(e => e.LocalizationId)
-                //    .IsRequired()
-                //    .HasColumnName("LocalizationID")
-                //    .HasMaxLength(255);
+                entity.Property(e => e.LocalizationId)
+                    .IsRequired()
+                    .HasColumnName("LocalizationID")
+                    .HasMaxLength(255);
             });
 
-            modelBuilder.Entity<VConceptToContextJob2Concept>(entity =>
+            modelBuilder.Entity<VJobListConcept>(entity =>
             {
                 entity.HasNoKey();
 
-                entity.ToView("vConceptToContext_Job2Concept");
+                entity.ToView("vJobListConcept");
 
-                //entity.Property(e => e.Comment).HasMaxLength(255);
+                entity.Property(e => e.Concept)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
-                //entity.Property(e => e.ComponentNamespace)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
+                entity.Property(e => e.ConceptComment).HasMaxLength(255);
 
-                //entity.Property(e => e.ContextName)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
+                entity.Property(e => e.ConceptComponentNamespace)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                //entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.ConceptInternalNamespace).HasMaxLength(50);
 
-                //entity.Property(e => e.Idconcept).HasColumnName("IDConcept");
+                entity.Property(e => e.Context)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
-                //entity.Property(e => e.Idcontext).HasColumnName("IDContext");
+                entity.Property(e => e.JobList).HasMaxLength(50);
 
-                //entity.Property(e => e.InternalNamespace).HasMaxLength(50);
+                entity.Property(e => e.JobListLanguageId).HasColumnName("jobListLanguageId");
 
-                //entity.Property(e => e.LocalizationId)
-                //    .IsRequired()
-                //    .HasColumnName("LocalizationID")
-                //    .HasMaxLength(255);
-            });
+                entity.Property(e => e.JobListUserName)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-            modelBuilder.Entity<VGetDatabyComponentIso>(entity =>
-            {
-                entity.HasNoKey();
+                entity.Property(e => e.String).HasMaxLength(255);
 
-                entity.ToView("vGetDatabyComponentISO");
-
-                //entity.Property(e => e.ComponentNamespace)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
-
-                //entity.Property(e => e.ConceptId).HasColumnName("ConceptID");
-
-                //entity.Property(e => e.ContextName)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
-
-                //entity.Property(e => e.Id).HasColumnName("ID");
-
-                //entity.Property(e => e.Idtype).HasColumnName("IDType");
-
-                //entity.Property(e => e.InternalNamespace).HasMaxLength(50);
-
-                //entity.Property(e => e.Isocoding)
-                //    .IsRequired()
-                //    .HasColumnName("ISOCoding")
-                //    .HasMaxLength(10);
-
-                //entity.Property(e => e.LocalizationId)
-                //    .IsRequired()
-                //    .HasColumnName("LocalizationID")
-                //    .HasMaxLength(255);
-
-                //entity.Property(e => e.String)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
-
-                //entity.Property(e => e.StringId).HasColumnName("StringID");
-
-                //entity.Property(e => e.Type)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<VJobToConcept>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("vJobToConcept");
-
-                //entity.Property(e => e.Comment).HasMaxLength(255);
-
-                //entity.Property(e => e.ComponentNamespace)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
-
-                //entity.Property(e => e.ContextName)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
-
-                //entity.Property(e => e.Id).HasColumnName("ID");
-
-                //entity.Property(e => e.Idconcept2Context).HasColumnName("IDConcept2Context");
-
-                //entity.Property(e => e.Idcontext).HasColumnName("IDContext");
-
-                //entity.Property(e => e.Idlanguage).HasColumnName("IDLanguage");
-
-                //entity.Property(e => e.Idstring).HasColumnName("IDString");
-
-                //entity.Property(e => e.Idstring2Context).HasColumnName("IDString2Context");
-
-                //entity.Property(e => e.Idtype).HasColumnName("IDType");
-
-                //entity.Property(e => e.InternalNamespace).HasMaxLength(50);
-
-                //entity.Property(e => e.LocalizationId)
-                //    .IsRequired()
-                //    .HasColumnName("LocalizationID")
-                //    .HasMaxLength(255);
-
-                //entity.Property(e => e.String)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
-
-                //entity.Property(e => e.StringType)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
+                entity.Property(e => e.StringType).HasMaxLength(50);
             });
 
             modelBuilder.Entity<VLocalization>(entity =>
@@ -510,71 +390,31 @@ namespace Globe.TranslationServer.Entities
 
                 entity.ToView("vLocalization");
 
-                //entity.Property(e => e.Concept)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
+                entity.Property(e => e.Concept)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
-                //entity.Property(e => e.ConceptComment).HasMaxLength(255);
+                entity.Property(e => e.ConceptComment).HasMaxLength(255);
 
-                //entity.Property(e => e.ConceptComponentNamespace)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
+                entity.Property(e => e.ConceptComponentNamespace)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                //entity.Property(e => e.ConceptInternalNamespace).HasMaxLength(50);
+                entity.Property(e => e.ConceptInternalNamespace).HasMaxLength(50);
 
-                //entity.Property(e => e.Context).HasMaxLength(255);
+                entity.Property(e => e.Context).HasMaxLength(255);
 
-                //entity.Property(e => e.JobList).HasMaxLength(50);
+                entity.Property(e => e.JobList).HasMaxLength(50);
 
-                //entity.Property(e => e.JobListUserName).HasMaxLength(50);
+                entity.Property(e => e.JobListUserName).HasMaxLength(50);
 
-                //entity.Property(e => e.Language).HasMaxLength(50);
+                entity.Property(e => e.Language).HasMaxLength(50);
 
-                //entity.Property(e => e.LanguageIsoCode).HasMaxLength(10);
+                entity.Property(e => e.LanguageIsoCode).HasMaxLength(10);
 
-                //entity.Property(e => e.String).HasMaxLength(255);
+                entity.Property(e => e.String).HasMaxLength(255);
 
-                //entity.Property(e => e.StringType).HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<VStringLockedStringToTranslate>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("vStringLockedStringToTranslate");
-
-                //entity.Property(e => e.ContextName)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
-
-                //entity.Property(e => e.Id).HasColumnName("ID");
-
-                //entity.Property(e => e.Idconcept2Context).HasColumnName("IDConcept2Context");
-
-                //entity.Property(e => e.Idcontext).HasColumnName("IDContext");
-
-                //entity.Property(e => e.Idlanguage).HasColumnName("IDLanguage");
-
-                //entity.Property(e => e.Idstrings2Context).HasColumnName("IDStrings2Context");
-
-                //entity.Property(e => e.Idtype).HasColumnName("IDType");
-
-                //entity.Property(e => e.Is2Translate).HasColumnName("is2Translate");
-
-                //entity.Property(e => e.IsLocked).HasColumnName("isLocked");
-
-                //entity.Property(e => e.Isocoding)
-                //    .IsRequired()
-                //    .HasColumnName("ISOCoding")
-                //    .HasMaxLength(10);
-
-                //entity.Property(e => e.String)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
-
-                //entity.Property(e => e.Type)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
+                entity.Property(e => e.StringType).HasMaxLength(50);
             });
 
             modelBuilder.Entity<VStringsToContext>(entity =>
@@ -583,41 +423,41 @@ namespace Globe.TranslationServer.Entities
 
                 entity.ToView("vStringsToContext");
 
-                //entity.Property(e => e.ComponentNamespace)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
+                entity.Property(e => e.ComponentNamespace)
+                    .IsRequired()
+                    .HasMaxLength(50);
 
-                //entity.Property(e => e.ConceptId).HasColumnName("ConceptID");
+                entity.Property(e => e.ConceptId).HasColumnName("ConceptID");
 
-                //entity.Property(e => e.ContextName)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
+                entity.Property(e => e.ContextName)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
-                //entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.Id).HasColumnName("ID");
 
-                //entity.Property(e => e.Idtype).HasColumnName("IDType");
+                entity.Property(e => e.Idtype).HasColumnName("IDType");
 
-                //entity.Property(e => e.InternalNamespace).HasMaxLength(50);
+                entity.Property(e => e.InternalNamespace).HasMaxLength(50);
 
-                //entity.Property(e => e.Isocoding)
-                //    .IsRequired()
-                //    .HasColumnName("ISOCoding")
-                //    .HasMaxLength(10);
+                entity.Property(e => e.Isocoding)
+                    .IsRequired()
+                    .HasColumnName("ISOCoding")
+                    .HasMaxLength(10);
 
-                //entity.Property(e => e.LocalizationId)
-                //    .IsRequired()
-                //    .HasColumnName("LocalizationID")
-                //    .HasMaxLength(255);
+                entity.Property(e => e.LocalizationId)
+                    .IsRequired()
+                    .HasColumnName("LocalizationID")
+                    .HasMaxLength(255);
 
-                //entity.Property(e => e.String)
-                //    .IsRequired()
-                //    .HasMaxLength(255);
+                entity.Property(e => e.String)
+                    .IsRequired()
+                    .HasMaxLength(255);
 
-                //entity.Property(e => e.StringId).HasColumnName("StringID");
+                entity.Property(e => e.StringId).HasColumnName("StringID");
 
-                //entity.Property(e => e.Type)
-                //    .IsRequired()
-                //    .HasMaxLength(50);
+                entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

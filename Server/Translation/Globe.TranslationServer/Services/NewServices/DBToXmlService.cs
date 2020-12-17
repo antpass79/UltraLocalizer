@@ -15,13 +15,13 @@ namespace Globe.TranslationServer.Services.NewServices
 {
     public class DBToXmlService : IDBToXmlService
     {
-        private readonly IAsyncReadRepository<VLocalization> _localizationViewRepository;
-        IAsyncReadRepository<LocLanguages> _languageRepository;
+        private readonly IReadRepository<VLocalization> _localizationViewRepository;
+        IReadRepository<LocLanguages> _languageRepository;
         private readonly UltraDBGlobal _ultraDBGlobal;
 
         public DBToXmlService(
-            IAsyncReadRepository<VLocalization> localizationViewRepository,
-            IAsyncReadRepository<LocLanguages> languageRepository,
+            IReadRepository<VLocalization> localizationViewRepository,
+            IReadRepository<LocLanguages> languageRepository,
             UltraDBGlobal ultraDBGlobal)
         {
             _localizationViewRepository = localizationViewRepository;
@@ -31,15 +31,13 @@ namespace Globe.TranslationServer.Services.NewServices
 
         async public Task Generate(string outputFolder, bool debugMode = true)
         {
-            var components = (await _localizationViewRepository
-                .QueryAsync())
-                .ToList()
+            var components = _localizationViewRepository
+                .Get()
                 .GroupBy(item => item.ConceptComponentNamespace)
                 .Select(item => item.First())
                 .OrderBy(item => item.ConceptComponentNamespace);
 
-            var languages = (await _languageRepository.QueryAsync())
-                .ToList();
+            var languages = _languageRepository.Get();
 
             Parallel.ForEach(components, (component) =>
             {

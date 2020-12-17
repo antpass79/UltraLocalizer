@@ -24,10 +24,10 @@ namespace Globe.TranslationServer.Services
             _localizationContext = localizationContext;
         }
 
-        async public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobItemId)
+        async public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobListId)
         {
             var ISOCoding = _localizationContext.LocLanguages.Find(languageId).Isocoding;
-            var result = await Task.FromResult(_ultraDBEditConcept.GetGroupledDataBy(componentNamespace, internalNamespace, ISOCoding, jobItemId));
+            var result = await Task.FromResult(_ultraDBEditConcept.GetGroupledDataBy(componentNamespace, internalNamespace, ISOCoding, jobListId));
             
             return await Task.FromResult(_mapper.Map<IEnumerable<ConceptViewDTO>>(result));
         }
