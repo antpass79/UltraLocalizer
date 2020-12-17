@@ -25,7 +25,7 @@ namespace Globe.TranslationServer.Controllers
                 throw new System.Exception("search");
             }
             
-            return await _groupedStringEntityService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.LanguageId, search.JobItemId);
+            return await _groupedStringEntityService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.LanguageId, search.JobListId);
         }
     }
 }

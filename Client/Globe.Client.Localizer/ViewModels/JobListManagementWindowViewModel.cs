@@ -356,11 +356,13 @@ namespace Globe.Client.Localizer.ViewModels
 
                 InternalNamespaceGroups = await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage);
                 ComponentsVisible = InternalNamespaceGroups != null && InternalNamespaceGroups.Count() > 0;
+                NotTranslatedConceptViews = null;
             }
             catch (Exception e)
             {
                 _loggerService.Exception(e);
 
+                NotTranslatedConceptViews = null;
                 InternalNamespaceGroups = null;
                 await _notificationService.NotifyAsync(new Notification
                 {

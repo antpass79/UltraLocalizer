@@ -59,7 +59,7 @@ namespace Globe.TranslationServer.Services.NewServices
         {
             var items = _conceptStringToContextRepository
                 .Query(item =>
-                    item.Idstring == null &&
+                    item.StringId == null &&
                     item.ComponentNamespace != Constants.COMPONENT_NAMESPACE_OLD)
                 .AsNoTracking()
                 .ToList()
