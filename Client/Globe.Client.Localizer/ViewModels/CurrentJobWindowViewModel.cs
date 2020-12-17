@@ -365,7 +365,7 @@ namespace Globe.Client.Localizer.ViewModels
                             ComponentNamespace = SelectedComponentNamespace.Description,
                             InternalNamespace = SelectedInternalNamespace.Description,
                             LanguageId = SelectedLanguage.Id,
-                            JobItemId = SelectedJobItem.Id
+                            JobListId = SelectedJobItem.Id
                         });
 
                     ItemCount = ConceptViews.Count();

@@ -42,7 +42,7 @@
                     <controls:LocLabel Style="{DynamicResource LocLabelTitle}" Grid.ColumnSpan="2" Content="{Binding Localize[Filters]}"/>
                     <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Localize[Language]}"/>
                     <controls:LocComboBox  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}" ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
-                    <controls:LocTextBlock Grid.Row="2" Grid.Column="0">Job Name</controls:LocTextBlock>
+                    <controls:LocTextBlock Grid.Row="2" Grid.Column="0">JobList Name</controls:LocTextBlock>
                     <controls:LocComboBox  Grid.Row="2" Grid.Column="1" ItemsSource="{Binding JobItems}" SelectedItem="{Binding SelectedJobItem}" DisplayMemberPath="Name" ToolTip="{Binding SelectedJobItem.Name}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
                     <controls:LocTextBlock Grid.Row="3" Grid.Column="0">Component Namespace</controls:LocTextBlock>
                     <controls:LocComboBox  Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}" ToolTip="{Binding SelectedComponentNamespace.Description}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
@@ -108,7 +108,7 @@
                                                             </Grid.ColumnDefinitions>
                                                             <controls:LocTextBlock Grid.Column="0">Name</controls:LocTextBlock>
                                                             <controls:LocTextBlock Grid.Column="1">Type</controls:LocTextBlock>
-                                                            <controls:LocTextBlock Grid.Column="2">Original Value</controls:LocTextBlock>
+                                                            <controls:LocTextBlock Grid.Column="2">Localized Value</controls:LocTextBlock>
                                                         </controls:LocGrid>
                                                     </controls:LocDockPanel>
                                                 </ControlTemplate>

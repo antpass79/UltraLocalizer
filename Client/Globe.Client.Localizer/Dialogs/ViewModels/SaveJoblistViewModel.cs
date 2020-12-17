@@ -47,6 +47,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             private set { SetProperty(ref _title, value); }
         }
 
+        private bool _busy;
+        public bool Busy
+        {
+            get { return _busy; }
+            private set { SetProperty(ref _busy, value); }
+        }
+
         private string _jobListName;
         public string JobListName
         {
@@ -124,9 +131,23 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         async public virtual void OnDialogOpened(IDialogParameters parameters)
         {
-            _language = parameters.GetValue<Language>("language");
-            Users = await _userService.GetUsersAsync(_language);
-            _notTranslatedConceptViews = parameters.GetValue<IEnumerable<NotTranslatedConceptView>>("notTranslatedConceptViews");
+            try
+            {
+                Busy = true;
+                _language = parameters.GetValue<Language>("language");
+                Users = await _userService.GetUsersAsync(_language);
+                _notTranslatedConceptViews = parameters.GetValue<IEnumerable<NotTranslatedConceptView>>("notTranslatedConceptViews");
+            }
+            catch (Exception e)
+            {
+                _loggerService.Exception(e);
+                Users = null;
+                _notTranslatedConceptViews = null;
+            }
+            finally
+            {
+                Busy = false;
+            }
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs args)
