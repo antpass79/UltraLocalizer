@@ -1,7 +1,7 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
@@ -18,14 +18,14 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpGet]
-        async public Task<ConceptDetailsDTO> Get([FromBody] ConceptViewDTO conceptView)
+        async public Task<ConceptDetailsDTO> Get([FromBody] JobListConcept jobListConcept)
         {
             if (!ModelState.IsValid)
             {
-                throw new System.Exception("concept");
+                throw new System.Exception("jobListConcept");
             }
             
-            return await _conceptDetailsService.GetAsync(conceptView);
+            return await _conceptDetailsService.GetAsync(jobListConcept);
         }
     }
 }

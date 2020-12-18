@@ -4,6 +4,7 @@ using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
+using Globe.Shared.DTOs;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Regions;
@@ -52,7 +53,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _conceptDetailsBusy;
             set
             {
-                SetProperty<bool>(ref _conceptDetailsBusy, value);
+                SetProperty(ref _conceptDetailsBusy, value);
             }
         }
 
@@ -62,7 +63,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _gridBusy;
             set
             {
-                SetProperty<bool>(ref _gridBusy, value);
+                SetProperty(ref _gridBusy, value);
             }
         }
 
@@ -72,7 +73,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _filtersBusy;
             set
             {
-                SetProperty<bool>(ref _filtersBusy, value);
+                SetProperty(ref _filtersBusy, value);
             }
         }
 
@@ -83,7 +84,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _itemCount;
             set
             {
-                SetProperty<int>(ref _itemCount, value);
+                SetProperty(ref _itemCount, value);
             }
         }
 
@@ -95,7 +96,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _jobItems;
             set
             {
-                SetProperty<IEnumerable<JobItem>>(ref _jobItems, value);
+                SetProperty(ref _jobItems, value);
             }
         }
 
@@ -105,47 +106,47 @@ namespace Globe.Client.Localizer.ViewModels
             get => _selectedJobItem;
             set
             {
-                SetProperty<JobItem>(ref _selectedJobItem, value);
+                SetProperty(ref _selectedJobItem, value);
             }
         }
 
-        IEnumerable<ComponentNamespace> _componentNamespaces;
-        public IEnumerable<ComponentNamespace> ComponentNamespaces
+        IEnumerable<BindableComponentNamespace> _componentNamespaces;
+        public IEnumerable<BindableComponentNamespace> ComponentNamespaces
         {
             get => _componentNamespaces;
             set
             {
-                SetProperty<IEnumerable<ComponentNamespace>>(ref _componentNamespaces, value);
+                SetProperty(ref _componentNamespaces, value);
             }
         }
 
-        ComponentNamespace _selectedComponentNamespace;
-        public ComponentNamespace SelectedComponentNamespace
+        BindableComponentNamespace _selectedComponentNamespace;
+        public BindableComponentNamespace SelectedComponentNamespace
         {
             get => _selectedComponentNamespace;
             set
             {
-                SetProperty<ComponentNamespace>(ref _selectedComponentNamespace, value);
+                SetProperty(ref _selectedComponentNamespace, value);
             }
         }
 
-        IEnumerable<InternalNamespace> _internalNamespaces;
-        public IEnumerable<InternalNamespace> InternalNamespaces
+        IEnumerable<Globe.Client.Localizer.Models.BindableInternalNamespace> _internalNamespaces;
+        public IEnumerable<Globe.Client.Localizer.Models.BindableInternalNamespace> InternalNamespaces
         {
             get => _internalNamespaces;
             set
             {
-                SetProperty<IEnumerable<InternalNamespace>>(ref _internalNamespaces, value);
+                SetProperty(ref _internalNamespaces, value);
             }
         }
 
-        InternalNamespace _selectedInternalNamespace;
-        public InternalNamespace SelectedInternalNamespace
+        Globe.Client.Localizer.Models.BindableInternalNamespace _selectedInternalNamespace;
+        public Globe.Client.Localizer.Models.BindableInternalNamespace SelectedInternalNamespace
         {
             get => _selectedInternalNamespace;
             set
             {
-                SetProperty<InternalNamespace>(ref _selectedInternalNamespace, value);
+                SetProperty(ref _selectedInternalNamespace, value);
             }
         }
 
@@ -155,7 +156,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _languages;
             set
             {
-                SetProperty<IEnumerable<Language>>(ref _languages, value);
+                SetProperty(ref _languages, value);
             }
         }
 
@@ -165,27 +166,27 @@ namespace Globe.Client.Localizer.ViewModels
             get => _selectedLanguage;
             set
             {
-                SetProperty<Language>(ref _selectedLanguage, value);
+                SetProperty(ref _selectedLanguage, value);
             }
         }
 
-        IEnumerable<ConceptView> _conceptViews;
-        public IEnumerable<ConceptView> ConceptViews
+        IEnumerable<JobListConcept> _conceptViews;
+        public IEnumerable<JobListConcept> ConceptViews
         {
             get => _conceptViews;
             set
             {
-                SetProperty<IEnumerable<ConceptView>>(ref _conceptViews, value);
+                SetProperty(ref _conceptViews, value);
             }
         }
 
-        ConceptView _selectedConceptView;
-        public ConceptView SelectedConceptView
+        JobListConcept _selectedConceptView;
+        public JobListConcept SelectedConceptView
         {
             get => _selectedConceptView;
             set
             {
-                SetProperty<ConceptView>(ref _selectedConceptView, value);
+                SetProperty(ref _selectedConceptView, value);
             }
         }
 
@@ -196,9 +197,9 @@ namespace Globe.Client.Localizer.ViewModels
                 await OnSearch();
             }));
 
-        private DelegateCommand<ConceptView> _conceptViewEditCommand = null;
-        public DelegateCommand<ConceptView> ConceptViewEditCommand =>
-            _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<ConceptView>(async (conceptView) =>
+        private DelegateCommand<JobListConcept> _conceptViewEditCommand = null;
+        public DelegateCommand<JobListConcept> ConceptViewEditCommand =>
+            _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<JobListConcept>(async (conceptView) =>
             {
                 ConceptDetails conceptDetails = new ConceptDetails();
 
@@ -360,7 +361,7 @@ namespace Globe.Client.Localizer.ViewModels
                 else
                 {
                     ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
-                        new ConceptViewSearch
+                        new JobListConceptSearch
                         {
                             ComponentNamespace = SelectedComponentNamespace.Description,
                             InternalNamespace = SelectedInternalNamespace.Description,

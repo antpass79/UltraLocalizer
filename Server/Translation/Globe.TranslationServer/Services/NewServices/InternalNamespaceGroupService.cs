@@ -1,5 +1,6 @@
 ﻿using Globe.BusinessLogic.Repositories;
-using Globe.TranslationServer.DTOs;
+using Globe.Client.Localizer.Models;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +34,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
         #region Public Functions
 
-        async public Task<IEnumerable<InternalNamespaceGroupDTO>> GetAllAsync(LanguageDTO language)
+        async public Task<IEnumerable<InternalNamespaceGroup>> GetAllAsync(Language language)
         {
             try
             {
@@ -55,7 +56,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
         #region Private Functions
 
-        IEnumerable<InternalNamespaceGroupDTO> GetGroupsByEnglish()
+        IEnumerable<InternalNamespaceGroup> GetGroupsByEnglish()
         {
             var items = _conceptStringToContextRepository
                 .Query(item =>
@@ -69,9 +70,9 @@ namespace Globe.TranslationServer.Services.NewServices
             return BuildGroups(items);
         }
 
-        IEnumerable<InternalNamespaceGroupDTO> GetGroupsByLanguage(LanguageDTO language)
+        IEnumerable<InternalNamespaceGroup> GetGroupsByLanguage(Language language)
         {
-            var internalNamespaceGroups = new List<InternalNamespaceGroupDTO>();
+            var internalNamespaceGroups = new List<InternalNamespaceGroup>();
 
             var subQuery = _stringsToContextRepository
                 .Query(item =>
@@ -94,9 +95,9 @@ namespace Globe.TranslationServer.Services.NewServices
             return BuildGroups(items);
         }
 
-        private IEnumerable<InternalNamespaceGroupDTO> BuildGroups(IEnumerable<Tuple<string, string>> items)
+        private IEnumerable<InternalNamespaceGroup> BuildGroups(IEnumerable<Tuple<string, string>> items)
         {
-            var internalNamespaceGroups = new List<InternalNamespaceGroupDTO>();
+            var internalNamespaceGroups = new List<InternalNamespaceGroup>();
 
             var groups = items
                 .GroupBy(item => item.Item1)
@@ -104,12 +105,12 @@ namespace Globe.TranslationServer.Services.NewServices
 
             foreach (var group in groups)
             {
-                internalNamespaceGroups.Add(new InternalNamespaceGroupDTO
+                internalNamespaceGroups.Add(new InternalNamespaceGroup
                 {
-                    ComponentNamespace = new ComponentNamespaceDTO { Description = group.Key },
+                    ComponentNamespace = new ComponentNamespace { Description = group.Key },
                     InternalNamespaces = group
                     .GroupBy(item => item.Item2)
-                    .Select(item => new InternalNamespaceDTO { Description = item.Key })
+                    .Select(item => new InternalNamespace { Description = item.Key })
                     .OrderBy(item => item.Description)
                 });
             }

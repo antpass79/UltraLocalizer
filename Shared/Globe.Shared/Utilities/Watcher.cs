@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 
-namespace Globe.TranslationServer.Utilities
+namespace Globe.Shared.Utilities
 {
     public class Watcher : IDisposable
     {

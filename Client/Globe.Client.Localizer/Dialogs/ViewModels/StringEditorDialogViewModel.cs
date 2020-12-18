@@ -1,8 +1,8 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
-using Globe.Client.Platform.Controls;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
+using Globe.Shared.DTOs;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
@@ -138,7 +138,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             get => _stringTypes;
             private set
             {
-                SetProperty<IEnumerable<StringType>>(ref _stringTypes, value);
+                SetProperty(ref _stringTypes, value);
             }
         }
 
@@ -148,7 +148,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             get => _selectedStringType;
             set
             {
-                SetProperty<StringType>(ref _selectedStringType, value);
+                SetProperty(ref _selectedStringType, value);
             }
         }
 

@@ -1,9 +1,9 @@
 ﻿using FluentValidation;
-using Globe.TranslationServer.DTOs;
+using Globe.Shared.DTOs;
 
 namespace Globe.TranslationServer.Validations
 {
-    public class StringViewItemSearchDTOValidator : AbstractValidator<ConceptViewSearchDTO>
+    public class StringViewItemSearchDTOValidator : AbstractValidator<JobListConceptSearch>
     {
         public StringViewItemSearchDTOValidator()
         {

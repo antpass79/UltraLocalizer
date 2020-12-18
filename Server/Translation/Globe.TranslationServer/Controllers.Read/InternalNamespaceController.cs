@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -18,7 +17,7 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpGet]
-        async public Task<IEnumerable<InternalNamespaceDTO>> Get([FromQuery] string componentNamespace)
+        async public Task<IEnumerable<InternalNamespace>> Get([FromQuery] string componentNamespace)
         {
             return await _internalConceptsService.GetAllAsync(componentNamespace);
         }

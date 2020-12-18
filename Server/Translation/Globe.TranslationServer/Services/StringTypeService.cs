@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
 using Globe.TranslationServer.Entities;
 using System;
 using System.Collections.Generic;
@@ -17,13 +16,13 @@ namespace Globe.TranslationServer.Services
             _context = context;
         }
 
-        async public Task<IEnumerable<StringTypeDTO>> GetAllAsync()
+        async public Task<IEnumerable<StringType>> GetAllAsync()
         {
             var result = _context.LocStringTypes.ToList();
-            return await Task.FromResult(result.Select(item => (StringTypeDTO)item.Id));
+            return await Task.FromResult(result.Select(item => (StringType)item.Id));
         }
 
-        public Task<StringTypeDTO> GetAsync(int key)
+        public Task<StringType> GetAsync(int key)
         {
             throw new NotImplementedException();
         }

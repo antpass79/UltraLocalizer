@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
@@ -22,23 +23,23 @@ namespace Globe.TranslationServer.Services.NewServices
             _xmlDefinitionReaderService = xmlDefinitionReaderService;
         }
 
-        async public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobItemId)
+        async public Task<IEnumerable<JobListConcept>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobItemId)
         {
             var items = await _xmlDefinitionReaderService.ReadAsync(Path.Combine(Directory.GetCurrentDirectory(), Constants.XML_FOLDER));
             return await Task.FromResult(Filter(items, componentNamespace, internalNamespace, languageId, jobItemId));
         }
 
-        public Task<IEnumerable<ConceptViewDTO>> GetAllAsync()
+        public Task<IEnumerable<JobListConcept>> GetAllAsync()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ConceptViewDTO> GetAsync(int key)
+        public Task<JobListConcept> GetAsync(int key)
         {
             throw new System.NotImplementedException();
         }
 
-        private IEnumerable<ConceptViewDTO> Filter(IEnumerable<ConceptViewDTO> items, string componentNamespace, string internalNamespace, int languageId, int jobItemId)
+        private IEnumerable<JobListConcept> Filter(IEnumerable<JobListConcept> items, string componentNamespace, string internalNamespace, int languageId, int jobItemId)
         {
             //var ISOCoding = _localizationContext.LocLanguages.Find(languageId).Isocoding;
             //var result = items

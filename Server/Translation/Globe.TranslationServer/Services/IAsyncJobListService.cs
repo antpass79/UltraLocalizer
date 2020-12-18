@@ -1,10 +1,10 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
     public interface IAsyncJobListService
     {
-        Task SaveAsync(SavableJobListDTO savableJobList);
+        Task SaveAsync(NewJobList newJobList);
     }
 }

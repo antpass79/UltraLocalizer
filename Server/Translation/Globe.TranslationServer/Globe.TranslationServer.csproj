@@ -36,6 +36,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Shared\Globe.Shared\Globe.Shared.csproj" />
     <ProjectReference Include="..\..\Common\Globe.BusinessLogic\Globe.BusinessLogic.csproj" />
     <ProjectReference Include="..\..\Common\Globe.Identity\Globe.Identity.csproj" />
     <ProjectReference Include="..\..\Common\Globe.Infrastructure.EFCore\Globe.Infrastructure.EFCore.csproj" />

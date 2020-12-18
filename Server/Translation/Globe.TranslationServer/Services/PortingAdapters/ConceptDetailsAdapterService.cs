@@ -1,4 +1,5 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Utilities;
@@ -20,19 +21,19 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             _ultraDBConcept = ultraDBConcept;
         }
 
-        async public Task<ConceptDetailsDTO> GetAsync(ConceptViewDTO concept)
+        async public Task<ConceptDetailsDTO> GetAsync(JobListConcept jobListConcept)
         {
-            var key = _xmlManager.GetKey(concept.ComponentNamespace, concept.InternalNamespace, concept.Name);
+            var key = _xmlManager.GetKey(jobListConcept.ComponentNamespace, jobListConcept.InternalNamespace, jobListConcept.Name);
             var softwareDeveloperComment = _xmlManager.KeyComments[key];
 
-            var currentConcept = _ultraDBConcept.GetConceptbyID(concept.Id);
+            var currentConcept = _ultraDBConcept.GetConceptbyID(jobListConcept.Id);
             var masterTranslatorComment = currentConcept.Comment;
 
             var conceptDetails = new ConceptDetailsDTO
             {
                 SoftwareDeveloperComment = softwareDeveloperComment,
                 MasterTranslatorComment = masterTranslatorComment,
-                OriginalStringContextValues = concept.ContextViews.Select(item => new OriginalStringContextValueDTO { ContextName = item.Name, StringValue = _xmlManager.GetUserString(concept.ComponentNamespace, concept.InternalNamespace == "null" ? null : concept.InternalNamespace, concept.Name, item.Name) })
+                OriginalStringContextValues = jobListConcept.ContextViews.Select(item => new OriginalStringContextValueDTO { ContextName = item.Name, StringValue = _xmlManager.GetUserString(jobListConcept.ComponentNamespace, jobListConcept.InternalNamespace == "null" ? null : jobListConcept.InternalNamespace, jobListConcept.Name, item.Name) })
             };
 
             return await Task.FromResult(conceptDetails);

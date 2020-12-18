@@ -1,4 +1,5 @@
-﻿using Prism.Mvvm;
+﻿using Globe.Shared.DTOs;
+using Prism.Mvvm;
 
 namespace Globe.Client.Localizer.Models
 {
@@ -29,7 +30,7 @@ namespace Globe.Client.Localizer.Models
             get => _linked;
             private set
             {
-                SetProperty<bool>(ref _linked, value);
+                SetProperty(ref _linked, value);
             }
         }
 
@@ -39,7 +40,7 @@ namespace Globe.Client.Localizer.Models
             get => _stringType;
             set
             {
-                SetProperty<StringType>(ref _stringType, value);
+                SetProperty(ref _stringType, value);
             }
         }
 
@@ -49,7 +50,7 @@ namespace Globe.Client.Localizer.Models
             get => _stringEditableValue;
             set
             {
-                SetProperty<string>(ref _stringEditableValue, value);
+                SetProperty(ref _stringEditableValue, value);
             }
         }
 
@@ -59,7 +60,7 @@ namespace Globe.Client.Localizer.Models
             get => _isPreviewStandardValid;
             set
             {
-                SetProperty<bool>(ref _isPreviewStandardValid, value);
+                SetProperty(ref _isPreviewStandardValid, value);
             }
         }
         bool _isPreviewOrangeGrayValid = true;
@@ -68,7 +69,7 @@ namespace Globe.Client.Localizer.Models
             get => _isPreviewOrangeGrayValid;
             set
             {
-                SetProperty<bool>(ref _isPreviewOrangeGrayValid, value);
+                SetProperty(ref _isPreviewOrangeGrayValid, value);
             }
         }
         bool _isPreviewStandardV2Valid = true;
@@ -77,7 +78,7 @@ namespace Globe.Client.Localizer.Models
             get => _isPreviewStandardV2Valid;
             set
             {
-                SetProperty<bool>(ref _isPreviewStandardV2Valid, value);
+                SetProperty(ref _isPreviewStandardV2Valid, value);
             }
         }
 
@@ -87,7 +88,7 @@ namespace Globe.Client.Localizer.Models
             get => _stringId;
             set
             {
-                SetProperty<int>(ref _stringId, value);
+                SetProperty(ref _stringId, value);
                 Linked = _stringId != 0;
             }
         }

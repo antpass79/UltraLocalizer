@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Globe.TranslationServer.DTOs;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 
 namespace Globe.TranslationServer.Mapping
@@ -8,9 +8,9 @@ namespace Globe.TranslationServer.Mapping
     {
         public InternalNamespaceProfile()
         {
-            CreateMap<InternalConceptsTable, InternalNamespaceDTO>()
+            CreateMap<InternalConceptsTable, InternalNamespace>()
                 .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.InternalNamespace)); ;
-            CreateMap<InternalNamespaceDTO, InternalConceptsTable>()
+            CreateMap<InternalNamespace, InternalConceptsTable>()
                 .ForMember(dest => dest.InternalNamespace, opt => opt.MapFrom(src => src.Description)); ;
         }
     }

@@ -8,6 +8,7 @@
              xmlns:converters="clr-namespace:Globe.Client.Localizer.Converters"
              xmlns:platform="http://schemas.platform.com/"
              xmlns:controls="http://schemas.controls.com/"
+             xmlns:dto="clr-namespace:Globe.Shared.DTOs;assembly=Globe.Shared"
              prism:ViewModelLocator.AutoWireViewModel="True"
              BorderThickness="5" BorderBrush="#05163D"
              MaxWidth="1200"
@@ -49,9 +50,9 @@
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
         </Style>
 
-        <ObjectDataProvider x:Key="stringTypes" MethodName="GetValues" ObjectType="{x:Type models:StringType}">
+        <ObjectDataProvider x:Key="stringTypes" MethodName="GetValues" ObjectType="{x:Type dto:StringType}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type Type="models:StringType"/>
+                <x:Type Type="dto:StringType"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </UserControl.Resources>

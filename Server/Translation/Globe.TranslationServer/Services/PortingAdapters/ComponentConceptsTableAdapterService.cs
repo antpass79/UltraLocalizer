@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
@@ -21,7 +22,7 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             _context = context;
         }
 
-        async public Task<IEnumerable<ComponentNamespaceDTO>> GetAllAsync()
+        async public Task<IEnumerable<ComponentNamespace>> GetAllAsync()
         {
             var result = _context
                 .GetAllComponentName()
@@ -31,12 +32,12 @@ namespace Globe.TranslationServer.Services.PortingAdapters
                 ComponentNamespace = "all"
             });
 
-            var items = await Task.FromResult(_mapper.Map<IEnumerable<ComponentNamespaceDTO>>(result));
+            var items = await Task.FromResult(_mapper.Map<IEnumerable<ComponentNamespace>>(result));
 
             return await Task.FromResult(items);
         }
 
-        public Task<ComponentNamespaceDTO> GetAsync(int key)
+        public Task<ComponentNamespace> GetAsync(int key)
         {
             throw new NotImplementedException();
         }

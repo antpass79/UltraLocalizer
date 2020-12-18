@@ -1,4 +1,6 @@
-﻿namespace Globe.Client.Localizer.Models
+﻿using Globe.Shared.DTOs;
+
+namespace Globe.Client.Localizer.Models
 {
     public enum ConceptSearchBy
     {

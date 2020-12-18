@@ -6,9 +6,9 @@ using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.Utilities;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
+using Globe.Shared.DTOs;
 using Prism.Commands;
 using Prism.Events;
-using Prism.Regions;
 using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -26,7 +26,6 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IJobListManagementService _jobListManagementService;
         private readonly INotificationService _notificationService;
 
-
         public JobListManagementWindowViewModel(
             IEventAggregator eventAggregator,
             ILoggerService loggerService,
@@ -43,7 +42,6 @@ namespace Globe.Client.Localizer.ViewModels
             _jobListManagementFiltersService = jobListManagementFiltersService;
             _jobListManagementService = jobListManagementService;
             _notificationService = notificationService;
-
         }
 
         bool _componentsVisible;
@@ -86,8 +84,8 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        NotTranslatedConceptView _selectedNotTranslatedConceptView;
-        public NotTranslatedConceptView SelectedNotTranslatedConceptView
+        BindableNotTranslatedConceptView _selectedNotTranslatedConceptView;
+        public BindableNotTranslatedConceptView SelectedNotTranslatedConceptView
         {
             get => _selectedNotTranslatedConceptView;
             set
@@ -96,8 +94,8 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        IEnumerable<InternalNamespaceGroup> _internalNamespaceGroups;
-        public IEnumerable<InternalNamespaceGroup> InternalNamespaceGroups
+        IEnumerable<BindableInternalNamespaceGroup> _internalNamespaceGroups;
+        public IEnumerable<BindableInternalNamespaceGroup> InternalNamespaceGroups
         {
             get => _internalNamespaceGroups;
             set
@@ -106,8 +104,8 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        IEnumerable<NotTranslatedConceptView> _notTranslatedConceptViews;
-        public IEnumerable<NotTranslatedConceptView> NotTranslatedConceptViews
+        IEnumerable<BindableNotTranslatedConceptView> _notTranslatedConceptViews;
+        public IEnumerable<BindableNotTranslatedConceptView> NotTranslatedConceptViews
         {
             get => _notTranslatedConceptViews;
             set
@@ -116,7 +114,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        public InternalNamespace SelectedInternalNamespace
+        public BindableInternalNamespace SelectedInternalNamespace
         {
             get
             {
@@ -129,17 +127,15 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        public InternalNamespaceGroup SelectedInternalNamespaceGroup
+        public BindableInternalNamespaceGroup SelectedInternalNamespaceGroup
         {
             get
             {
-                var selectedInternalNamespace = SelectedInternalNamespace;
-
-                if (selectedInternalNamespace == null)
+                if (SelectedInternalNamespace == null)
                     return null;
 
                 return InternalNamespaceGroups
-                    .SingleOrDefault(item => item.InternalNamespaces.Contains(selectedInternalNamespace));
+                    .SingleOrDefault(item => item.InternalNamespaces.Contains(SelectedInternalNamespace));
             }
         }
 
@@ -185,22 +181,42 @@ namespace Globe.Client.Localizer.ViewModels
                 try
                 {
                     ConceptDetailsBusy = true;
-                    var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(SelectedInternalNamespaceGroup.ComponentNamespace, SelectedInternalNamespace, SelectedLanguage);
+
+                    var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
+                        new ComponentNamespace { Description = SelectedInternalNamespaceGroup.ComponentNamespace.Description },
+                        new InternalNamespace { Description = SelectedInternalNamespace.Description },
+                        SelectedLanguage);
 
                     if (NotTranslatedConceptViews == null)
                     {
-                        NotTranslatedConceptViews = result;
+                        NotTranslatedConceptViews = result.Select(item => new BindableNotTranslatedConceptView
+                        {
+                            Id = item.Id,
+                            Name = item.Name,
+                            ComponentNamespace = item.ComponentNamespace,
+                            InternalNamespace = item.InternalNamespace,
+                            ContextViews = item.ContextViews
+                        });
                     }
                     else
                     {
-                        var newElements = result.Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name)).ToList();
+                        var newElements = result
+                            .Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name))
+                            .ToList();
                         if (newElements != null)
                         {
                             NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
-                            .OrderBy(item => item.ComponentNamespace.Description)
-                            .ThenBy(item => item.InternalNamespace.Description)
-                            .ThenBy(item => item.Name)
-                            .ToList();
+                                .OrderBy(item => item.ComponentNamespace.Description)
+                                .ThenBy(item => item.InternalNamespace.Description)
+                                .ThenBy(item => item.Name)
+                                .Select(item => new BindableNotTranslatedConceptView
+                                {
+                                    Id = item.Id,
+                                    Name = item.Name,
+                                    ComponentNamespace = item.ComponentNamespace,
+                                    InternalNamespace = item.InternalNamespace,
+                                    ContextViews = item.ContextViews
+                                });
                         }
                     }
                 }
@@ -209,8 +225,8 @@ namespace Globe.Client.Localizer.ViewModels
                     _loggerService.Exception(e);
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = "Error",
-                        Message = "Error during getting list",
+                        Title = Localize["Error"],
+                        Message = Localize["Error during getting list"],
                         Level = NotificationLevel.Error
                     });
                 }
@@ -243,8 +259,8 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 var @params = new DialogParameters();
 
-                @params.Add("language", SelectedLanguage);
-                @params.Add("notTranslatedConceptViews", NotTranslatedConceptViews);
+                @params.Add(DialogConstants.LANGUAGE, SelectedLanguage);
+                @params.Add(DialogConstants.NOT_TRANSLATED_CONCEPT_VIEWS, NotTranslatedConceptViews);
 
                 _dialogService.ShowDialog(DialogNames.SAVE_JOBLIST, @params, dialogResult =>
                 {
@@ -267,8 +283,8 @@ namespace Globe.Client.Localizer.ViewModels
 
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = "Get new concepts",
-                        Message = result ? "New Concepts Found" : "No Concepts Found",
+                        Title = Localize["Get new concepts"],
+                        Message = result ? Localize["New Concepts Found"] : Localize["No Concepts Found"],
                         Level = NotificationLevel.Info
                     });
                     await OnLanguageChange();
@@ -278,8 +294,8 @@ namespace Globe.Client.Localizer.ViewModels
                     _loggerService.Exception(e);
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = "Error: Get new concepts",
-                        Message = "Error during searching new Concepts",
+                        Title = Localize["Error: Get new concepts"],
+                        Message = Localize["Error during searching new Concepts"],
                         Level = NotificationLevel.Error
                     });
                 }
@@ -334,8 +350,8 @@ namespace Globe.Client.Localizer.ViewModels
                 _loggerService.Exception(e);
                 await _notificationService.NotifyAsync(new Notification
                 {
-                    Title = "Error",
-                    Message = "Error during searching new Concepts",
+                    Title = Localize["Error"],
+                    Message = Localize["Error during searching new Concepts"],
                     Level = NotificationLevel.Error
                 });
             }
@@ -354,7 +370,20 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 FiltersBusy = true;
 
-                InternalNamespaceGroups = await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage);
+                var internalNamespaceGroups = (await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage))
+                    .Select(group => new BindableInternalNamespaceGroup
+                    {
+                        ComponentNamespace = new BindableComponentNamespace { Description = group.ComponentNamespace.Description },
+                        InternalNamespaces = group.InternalNamespaces
+                            .Select(item => new BindableInternalNamespace
+                            {
+                                Description = item.Description,
+                                IsSelected = false
+                            })
+                    });
+
+                InternalNamespaceGroups = internalNamespaceGroups;
+
                 ComponentsVisible = InternalNamespaceGroups != null && InternalNamespaceGroups.Count() > 0;
                 NotTranslatedConceptViews = null;
             }
@@ -366,8 +395,8 @@ namespace Globe.Client.Localizer.ViewModels
                 InternalNamespaceGroups = null;
                 await _notificationService.NotifyAsync(new Notification
                 {
-                    Title = "Error",
-                    Message = "Error during building groups",
+                    Title = Localize["Error"],
+                    Message = Localize["Error during building groups"],
                     Level = NotificationLevel.Error
                 });
             }

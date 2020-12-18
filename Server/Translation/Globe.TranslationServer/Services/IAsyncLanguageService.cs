@@ -1,8 +1,8 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
 
 namespace Globe.TranslationServer.Services
 {
-    public interface IAsyncLanguageService : IAsyncReadService<LanguageDTO>
+    public interface IAsyncLanguageService : IAsyncReadService<Language>
     {
     }
 }

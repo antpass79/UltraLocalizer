@@ -1,9 +1,6 @@
-﻿using AutoMapper;
+﻿using Globe.Client.Localizer.Models;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
-using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -19,15 +16,15 @@ namespace Globe.TranslationServer.Services
             _ultraDBJobGlobal = ultraDBJobGlobal;
         }
 
-        async public Task<IEnumerable<InternalNamespaceGroupDTO>> GetAllAsync(LanguageDTO language)
+        async public Task<IEnumerable<InternalNamespaceGroup>> GetAllAsync(Language language)
         {
             var result = _ultraDBJobGlobal
                 .GetMissingDataBy(language.IsoCoding);
 
-            return await Task.FromResult(result.Select(group => new InternalNamespaceGroupDTO
+            return await Task.FromResult(result.Select(group => new InternalNamespaceGroup
             {
-                ComponentNamespace = new ComponentNamespaceDTO { Description = group.ComponentNamespace },
-                InternalNamespaces = group.InternalName.Select(item => new InternalNamespaceDTO
+                ComponentNamespace = new ComponentNamespace { Description = group.ComponentNamespace },
+                InternalNamespaces = group.InternalName.Select(item => new InternalNamespace
                 {
                     Description = item.InternalNamespace
                 })

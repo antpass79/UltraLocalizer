@@ -1,6 +1,7 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
+using Globe.Shared.DTOs;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -22,14 +23,14 @@ namespace Globe.Client.Localizer.Services
             _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
         }
 
-        async public Task<IEnumerable<ComponentNamespace>> GetComponentNamespacesAsync()
+        async public Task<IEnumerable<BindableComponentNamespace>> GetComponentNamespacesAsync()
         {
-            return await _secureHttpClient.GetAsync<IEnumerable<ComponentNamespace>>(ENDPOINT_ComponentNamespace);
+            return await _secureHttpClient.GetAsync<IEnumerable<BindableComponentNamespace>>(ENDPOINT_ComponentNamespace);
         }
 
-        async public Task<IEnumerable<InternalNamespace>> GetInternalNamespacesAsync(string componentNamespace)
+        async public Task<IEnumerable<Globe.Client.Localizer.Models.BindableInternalNamespace>> GetInternalNamespacesAsync(string componentNamespace)
         {
-            return await _secureHttpClient.GetAsync<IEnumerable<InternalNamespace>>(ENDPOINT_InternalNamespace + "/?componentNamespace=" + componentNamespace);
+            return await _secureHttpClient.GetAsync<IEnumerable<Globe.Client.Localizer.Models.BindableInternalNamespace>>(ENDPOINT_InternalNamespace + "/?componentNamespace=" + componentNamespace);
         }
 
         async public Task<IEnumerable<JobItem>> GetJobItemsAsync(string userName, string ISOCoding)

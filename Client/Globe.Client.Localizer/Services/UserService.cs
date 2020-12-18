@@ -1,6 +1,7 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
+using Globe.Shared.DTOs;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;

@@ -1,14 +1,15 @@
 ﻿using AutoMapper;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
 
 namespace Globe.TranslationServer.Mapping
 {
-    public class ConceptViewProfile : Profile
+    public class JobListConceptProfile : Profile
     {
-        public ConceptViewProfile()
+        public JobListConceptProfile()
         {
-            CreateMap<GroupedStringEntity, ConceptViewDTO>()
+            CreateMap<GroupedStringEntity, JobListConcept>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.ConceptID))
                 .ForMember(dest => dest.ComponentNamespace, opt => opt.MapFrom(src => src.ComponentNamespace))
                 .ForMember(dest => dest.InternalNamespace, opt => opt.MapFrom(src => src.InternalNamespace))
