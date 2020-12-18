@@ -182,42 +182,34 @@ namespace Globe.Client.Localizer.ViewModels
                 {
                     ConceptDetailsBusy = true;
 
-                    var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
+                    var result = (await _jobListManagementService.GetNotTranslatedConceptsAsync(
                         new ComponentNamespace { Description = SelectedInternalNamespaceGroup.ComponentNamespace.Description },
                         new InternalNamespace { Description = SelectedInternalNamespace.Description },
-                        SelectedLanguage);
-
-                    if (NotTranslatedConceptViews == null)
-                    {
-                        NotTranslatedConceptViews = result.Select(item => new BindableNotTranslatedConceptView
+                        SelectedLanguage))
+                        .Select(item => new BindableNotTranslatedConceptView
                         {
                             Id = item.Id,
                             Name = item.Name,
                             ComponentNamespace = item.ComponentNamespace,
                             InternalNamespace = item.InternalNamespace,
                             ContextViews = item.ContextViews
-                        });
+                        })
+                        .ToList();
+
+                    if (NotTranslatedConceptViews == null)
+                    {
+                        NotTranslatedConceptViews = result;
                     }
                     else
                     {
                         var newElements = result
                             .Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name))
                             .ToList();
-                        if (newElements != null)
-                        {
-                            NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
-                                .OrderBy(item => item.ComponentNamespace.Description)
-                                .ThenBy(item => item.InternalNamespace.Description)
-                                .ThenBy(item => item.Name)
-                                .Select(item => new BindableNotTranslatedConceptView
-                                {
-                                    Id = item.Id,
-                                    Name = item.Name,
-                                    ComponentNamespace = item.ComponentNamespace,
-                                    InternalNamespace = item.InternalNamespace,
-                                    ContextViews = item.ContextViews
-                                });
-                        }
+
+                        NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
+                            .OrderBy(item => item.ComponentNamespace.Description)
+                            .ThenBy(item => item.InternalNamespace.Description)
+                            .ThenBy(item => item.Name);                           
                     }
                 }
                 catch (Exception e)
@@ -370,7 +362,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 FiltersBusy = true;
 
-                var internalNamespaceGroups = (await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage))
+                InternalNamespaceGroups = (await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage))
                     .Select(group => new BindableInternalNamespaceGroup
                     {
                         ComponentNamespace = new BindableComponentNamespace { Description = group.ComponentNamespace.Description },
@@ -380,9 +372,9 @@ namespace Globe.Client.Localizer.ViewModels
                                 Description = item.Description,
                                 IsSelected = false
                             })
-                    });
-
-                InternalNamespaceGroups = internalNamespaceGroups;
+                            .ToList()
+                    })
+                    .ToList();
 
                 ComponentsVisible = InternalNamespaceGroups != null && InternalNamespaceGroups.Count() > 0;
                 NotTranslatedConceptViews = null;
