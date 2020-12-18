@@ -1,9 +1,7 @@
-﻿using AutoMapper;
-using Globe.BusinessLogic.Repositories;
-using Globe.TranslationServer.DTOs;
+﻿using Globe.BusinessLogic.Repositories;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Extensions;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
 using Globe.TranslationServer.Utilities;
 using System;
 using System.Collections.Generic;
@@ -12,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
-    public class JobListService : IAsyncGroupedStringEntityService
+    public class JobListService : IJobListService
     {
         private readonly IReadRepository<VJobListConcept> _repository;
 
@@ -22,7 +20,7 @@ namespace Globe.TranslationServer.Services.NewServices
             _repository = repository;
         }
 
-        async public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobListId)
+        async public Task<IEnumerable<JobListConcept>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobListId)
         {
             try
             {
@@ -52,16 +50,16 @@ namespace Globe.TranslationServer.Services.NewServices
 
                 var result = items
                 .GroupBy(item => item.ConceptId)
-                .Select(group => new ConceptViewDTO
+                .Select(group => new JobListConcept
                 {
                     ComponentNamespace = group.First().ComponentNamespace,
                     InternalNamespace = group.First().InternalNamespace,
                     Id = group.First().ConceptId,
                     Name = group.First().Concept,                    
-                    ContextViews = group.Select(item => new ContextViewDTO
+                    ContextViews = group.Select(item => new JobListContext
                     {
                         StringId = item.StringId.HasValue ? item.StringId.Value : 0,
-                        StringType = !string.IsNullOrWhiteSpace(item.StringType) ? Enum.Parse<StringTypeDTO>(item.StringType) : StringTypeDTO.Label,
+                        StringType = !string.IsNullOrWhiteSpace(item.StringType) ? Enum.Parse<StringType>(item.StringType) : StringType.Label,
                         StringValue = item.StringValue,
                         Name = item.ContextName,
                         Concept2ContextId = item.ConceptToContextId
@@ -76,12 +74,12 @@ namespace Globe.TranslationServer.Services.NewServices
             }
         }
 
-        public Task<IEnumerable<ConceptViewDTO>> GetAllAsync()
+        public Task<IEnumerable<JobListConcept>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public Task<ConceptViewDTO> GetAsync(int key)
+        public Task<JobListConcept> GetAsync(int key)
         {
             throw new NotImplementedException();
         }

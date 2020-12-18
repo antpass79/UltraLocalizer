@@ -1,8 +1,6 @@
 ﻿using AutoMapper;
-using Globe.TranslationServer.DTOs;
-using Globe.TranslationServer.Entities;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -20,13 +18,13 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             _ultraDBStrings = ultraDBStrings;
         }
 
-        async public Task<IEnumerable<LanguageDTO>> GetAllAsync()
+        async public Task<IEnumerable<Language>> GetAllAsync()
         {
             var result = await Task.FromResult(_ultraDBStrings.Getlanguage());
-            return await Task.FromResult(_mapper.Map<IEnumerable<LanguageDTO>>(result));
+            return await Task.FromResult(_mapper.Map<IEnumerable<Language>>(result));
         }
 
-        public Task<LanguageDTO> GetAsync(int key)
+        public Task<Language> GetAsync(int key)
         {
             throw new NotImplementedException();
         }

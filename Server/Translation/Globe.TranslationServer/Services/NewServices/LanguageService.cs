@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Globe.Shared.DTOs;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
@@ -17,11 +18,11 @@ namespace Globe.TranslationServer.Services.NewServices
             _repository = repository;
         }
 
-        async public Task<IEnumerable<LanguageDTO>> GetAllAsync()
+        async public Task<IEnumerable<Language>> GetAllAsync()
         {
             var items = _repository
                 .Query()
-                .Select(language => new LanguageDTO
+                .Select(language => new Language
                 {
                     Id = language.Id,
                     Name = language.LanguageName,
@@ -34,7 +35,7 @@ namespace Globe.TranslationServer.Services.NewServices
             return await Task.FromResult(items);
         }
 
-        public Task<LanguageDTO> GetAsync(int key)
+        public Task<Language> GetAsync(int key)
         {
             throw new NotImplementedException();
         }

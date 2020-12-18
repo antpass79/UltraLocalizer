@@ -1,8 +1,8 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
+using Globe.Shared.DTOs;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -20,15 +20,15 @@ namespace Globe.Client.Localizer.Services
             _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
         }
 
-        async public Task<IEnumerable<ConceptView>> GetConceptViewsAsync(ConceptViewSearch search)
+        async public Task<IEnumerable<JobListConcept>> GetConceptViewsAsync(JobListConceptSearch search)
         {
-            var result = await _secureHttpClient.SendAsync<ConceptViewSearch>(HttpMethod.Get, ENDPOINT_ConceptView, search);
-            return await result.GetValue<IEnumerable<ConceptView>>();
+            var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_ConceptView, search);
+            return await result.GetValue<IEnumerable<JobListConcept>>();
         }
 
-        async public Task<ConceptDetails> GetConceptDetailsAsync(ConceptView concept)
+        async public Task<ConceptDetails> GetConceptDetailsAsync(JobListConcept jobListConcept)
         {
-            var result = await _secureHttpClient.SendAsync<ConceptView>(HttpMethod.Get, concept.DetailsLink, concept);
+            var result = await _secureHttpClient.SendAsync<JobListConcept>(HttpMethod.Get, jobListConcept.DetailsLink, jobListConcept);
             return await result.GetValue<ConceptDetails>();
         }
     }

@@ -50,6 +50,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globe.Identity.Tests", "Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globe.Tests", "Server\Common\Globe.Tests\Globe.Tests.csproj", "{E4C6D431-E6E7-4006-9E28-D8CC0859793C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Globe.Shared", "Shared\Globe.Shared\Globe.Shared.csproj", "{CF23DC63-AEF9-4CC4-8A95-B3F89465C2EF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{92DE9DB4-CE25-47DB-9EE3-92D2A8CFB0F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -108,6 +112,10 @@ Global
 		{E4C6D431-E6E7-4006-9E28-D8CC0859793C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4C6D431-E6E7-4006-9E28-D8CC0859793C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4C6D431-E6E7-4006-9E28-D8CC0859793C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF23DC63-AEF9-4CC4-8A95-B3F89465C2EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF23DC63-AEF9-4CC4-8A95-B3F89465C2EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF23DC63-AEF9-4CC4-8A95-B3F89465C2EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF23DC63-AEF9-4CC4-8A95-B3F89465C2EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -129,6 +137,7 @@ Global
 		{49240872-B28D-47BB-89E5-9B41C6D712E1} = {C46E30A3-E70F-438F-AA08-1553815AD1F0}
 		{B1757E63-A2A0-44EC-BCCF-AD3F8BAF60C8} = {C46E30A3-E70F-438F-AA08-1553815AD1F0}
 		{E4C6D431-E6E7-4006-9E28-D8CC0859793C} = {6C8B4EBB-7E3A-4EFB-A1A6-69B3816CD805}
+		{CF23DC63-AEF9-4CC4-8A95-B3F89465C2EF} = {92DE9DB4-CE25-47DB-9EE3-92D2A8CFB0F5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FFE43F13-CE80-4B59-A9CA-756C806E9B3E}

@@ -1,4 +1,6 @@
-﻿namespace Globe.TranslationServer.DTOs
+﻿using Globe.Shared.DTOs;
+
+namespace Globe.TranslationServer.DTOs
 {
     public enum ConceptSearchBy
     {
@@ -17,7 +19,7 @@
     {
         public string StringValue { get; set; }
         public string Context { get; set; }
-        public StringTypeDTO StringType { get; set; }
+        public StringType StringType { get; set; }
         public ConceptSearchBy SearchBy { get; set; }
         public ConceptFilterBy FilterBy { get; set; }
         public string ISOCoding { get; set; }

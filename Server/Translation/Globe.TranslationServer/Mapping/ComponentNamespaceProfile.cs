@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 
@@ -8,9 +9,9 @@ namespace Globe.TranslationServer.Mapping
     {
         public ComponentNamespaceProfile()
         {
-            CreateMap<ComponentConceptsTable, ComponentNamespaceDTO>()
+            CreateMap<ComponentConceptsTable, ComponentNamespace>()
                 .ForMember(dest => dest.Description, opt => opt.MapFrom(src => src.ComponentNamespace)); ;
-            CreateMap<ComponentNamespaceDTO, ComponentConceptsTable>()
+            CreateMap<ComponentNamespace, ComponentConceptsTable>()
                 .ForMember(dest => dest.ComponentNamespace, opt => opt.MapFrom(src => src.Description)); ;
         }
     }

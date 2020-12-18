@@ -1,4 +1,5 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpGet]
-        async public Task<IEnumerable<NotTranslatedConceptViewDTO>> Get([FromBody] NotTranslateConceptViewSearchDTO search)
+        async public Task<IEnumerable<NotTranslatedConceptView>> Get([FromBody] NotTranslateConceptViewSearchDTO search)
         {
             if (!ModelState.IsValid)
             {

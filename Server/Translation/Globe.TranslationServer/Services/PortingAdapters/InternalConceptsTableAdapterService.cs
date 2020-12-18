@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Globe.TranslationServer.DTOs;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
@@ -21,12 +21,12 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             _context = context;
         }
 
-        public Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync()
+        public Task<IEnumerable<InternalNamespace>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        async public Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync(string componentNamespace)
+        async public Task<IEnumerable<InternalNamespace>> GetAllAsync(string componentNamespace)
         {
             var result = _context
                 .GetInternalByComponent(componentNamespace)
@@ -36,12 +36,12 @@ namespace Globe.TranslationServer.Services.PortingAdapters
                 InternalNamespace = "all"
             });
 
-            var items = await Task.FromResult(_mapper.Map<IEnumerable<InternalNamespaceDTO>>(result));
+            var items = await Task.FromResult(_mapper.Map<IEnumerable<InternalNamespace>>(result));
 
             return await Task.FromResult(items);
         }
 
-        public Task<InternalNamespaceDTO> GetAsync(int key)
+        public Task<InternalNamespace> GetAsync(int key)
         {
             throw new NotImplementedException();
         }

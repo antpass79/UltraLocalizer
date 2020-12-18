@@ -1,6 +1,6 @@
-﻿namespace Globe.TranslationServer.DTOs
+﻿namespace Globe.Shared.DTOs
 {
-    public class LanguageDTO
+    public class Language
     {
         public int Id { get; set; }
         public string Name { get; set; }

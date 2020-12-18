@@ -1,9 +1,11 @@
-﻿namespace Globe.TranslationServer.DTOs
+﻿using Globe.Shared.DTOs;
+
+namespace Globe.TranslationServer.DTOs
 {
     public class NotTranslateConceptViewSearchDTO
     {
-        public ComponentNamespaceDTO ComponentNamespace { get; set; }
-        public InternalNamespaceDTO InternalNamespace { get; set; }
-        public LanguageDTO Language { get; set; }
+        public ComponentNamespace ComponentNamespace { get; set; }
+        public InternalNamespace InternalNamespace { get; set; }
+        public Language Language { get; set; }
     }
 }

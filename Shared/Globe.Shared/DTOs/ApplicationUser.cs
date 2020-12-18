@@ -1,4 +1,4 @@
-﻿namespace Globe.Client.Localizer.Models
+﻿namespace Globe.Shared.DTOs
 {
     public class ApplicationUser
     {
@@ -7,7 +7,5 @@
         public string FirstName { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
-        public string FullName => $"{LastName} {FirstName}";
-        public string DisplayName => $"{FullName} ({UserName})";
     }
 }

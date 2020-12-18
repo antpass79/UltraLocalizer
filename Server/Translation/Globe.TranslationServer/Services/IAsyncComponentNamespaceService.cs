@@ -1,8 +1,8 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
 
 namespace Globe.TranslationServer.Services
 {
-    public interface IAsyncComponentNamespaceService : IAsyncReadService<ComponentNamespaceDTO>
+    public interface IAsyncComponentNamespaceService : IAsyncReadService<ComponentNamespace>
     {
     }
 }
