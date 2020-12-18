@@ -12,6 +12,7 @@ namespace Globe.Client.Localizer.Models
             get => _isSelected;
             set
             {
+                _isSelected = value;
                 OnPropertyChanged();
             }
         }
