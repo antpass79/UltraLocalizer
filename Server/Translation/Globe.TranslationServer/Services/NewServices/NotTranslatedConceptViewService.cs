@@ -1,4 +1,6 @@
 ﻿using Globe.BusinessLogic.Repositories;
+using Globe.Client.Localizer.Models;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Utilities;
@@ -27,7 +29,7 @@ namespace Globe.TranslationServer.Services.NewServices
             _ultraDBJobGlobal = ultraDBJobGlobal;
         }
 
-        async public Task<IEnumerable<NotTranslatedConceptViewDTO>> GetAllAsync(NotTranslateConceptViewSearchDTO search)
+        async public Task<IEnumerable<NotTranslatedConceptView>> GetAllAsync(NotTranslateConceptViewSearchDTO search)
         {
             try
             {
@@ -47,7 +49,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
         #region Private Functions
 
-        IEnumerable<NotTranslatedConceptViewDTO> GetConceptToContextsByEnglish(ComponentNamespaceDTO componentNamespace, InternalNamespaceDTO internalNamespace)
+        IEnumerable<NotTranslatedConceptView> GetConceptToContextsByEnglish(ComponentNamespace componentNamespace, InternalNamespace internalNamespace)
         {
             var items = _conceptStringToContextRepository
                 .Query(item =>
@@ -62,9 +64,9 @@ namespace Globe.TranslationServer.Services.NewServices
             return BuildGroups(items);
         }
 
-        IEnumerable<NotTranslatedConceptViewDTO> GetConceptToContextsByLanguage(ComponentNamespaceDTO componentNamespace, InternalNamespaceDTO internalNamespace, LanguageDTO language)
+        IEnumerable<NotTranslatedConceptView> GetConceptToContextsByLanguage(ComponentNamespace componentNamespace, InternalNamespace internalNamespace, Language language)
         {
-            var internalNamespaceGroups = new List<InternalNamespaceGroupDTO>();
+            var internalNamespaceGroups = new List<InternalNamespaceGroup>();
 
             var subQuery = _stringsToContextRepository
                 .Query(item =>
@@ -89,7 +91,7 @@ namespace Globe.TranslationServer.Services.NewServices
             return BuildGroups(items);
         }
 
-        private IEnumerable<NotTranslatedConceptViewDTO> BuildGroups(IEnumerable<Tuple<int, string, string, string, string, int>> items)
+        private IEnumerable<NotTranslatedConceptView> BuildGroups(IEnumerable<Tuple<int, string, string, string, string, int>> items)
         {
             //var result = _ultraDBJobGlobal
             //    .FillByComponentNamespace(search.InternalNamespace.Description, search.ComponentNamespace.Description, search.Language.IsoCoding)
@@ -112,7 +114,7 @@ namespace Globe.TranslationServer.Services.NewServices
             //    })
             //}));
 
-            var notTranslatedConceptToContextGroups = new List<NotTranslatedConceptViewDTO>();
+            var notTranslatedConceptToContextGroups = new List<NotTranslatedConceptView>();
 
             var groups = items
                 .GroupBy(item => item.Item1)
@@ -122,12 +124,12 @@ namespace Globe.TranslationServer.Services.NewServices
 
             foreach (var group in groups)
             {
-                notTranslatedConceptToContextGroups.Add(new NotTranslatedConceptViewDTO
+                notTranslatedConceptToContextGroups.Add(new NotTranslatedConceptView
                 {
-                    ComponentNamespace = new ComponentNamespaceDTO { Description = group.First().Item2 },
-                    InternalNamespace = new InternalNamespaceDTO { Description = group.First().Item3 },
+                    ComponentNamespace = new ComponentNamespace { Description = group.First().Item2 },
+                    InternalNamespace = new InternalNamespace { Description = group.First().Item3 },
                     Name = group.First().Item4,
-                    ContextViews = group.Select(item => new ContextViewDTO
+                    ContextViews = group.Select(item => new JobListContext
                     {
                         Name = item.Item5,
                         Concept2ContextId = item.Item6

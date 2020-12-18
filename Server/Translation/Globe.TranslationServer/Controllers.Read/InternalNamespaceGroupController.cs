@@ -1,6 +1,8 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Client.Localizer.Models;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -18,11 +20,11 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpGet]
-        async public Task<IEnumerable<InternalNamespaceGroupDTO>> Get([FromBody] LanguageDTO language)
+        async public Task<IEnumerable<InternalNamespaceGroup>> Get([FromBody] Language language)
         {
             if (!ModelState.IsValid)
             {
-                throw new System.Exception("search");
+                throw new Exception("search");
             }
             
             return await _internalNamespaceGroupService.GetAllAsync(language);

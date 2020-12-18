@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.InkML;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
@@ -32,16 +33,16 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             _ultraDBConcept = ultraDBConcept;
         }
 
-        async public Task SaveAsync(SavableJobListDTO savableJobList)
+        async public Task SaveAsync(NewJobList newJobList)
         {
             var jobList = new LocJobList
             {
-                IdisoCoding = savableJobList.Language.Id,
-                JobName = savableJobList.JobListName,
-                UserName = savableJobList.User.UserName
+                IdisoCoding = newJobList.Language.Id,
+                JobName = newJobList.Name,
+                UserName = newJobList.User.UserName
             };
 
-            savableJobList.NotTranslatedConceptViews
+            newJobList.Concepts
                 .ToList()
                 .ForEach(concept =>
                 {

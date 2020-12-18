@@ -1,11 +1,11 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
-    public interface IAsyncInternalNamespaceService : IAsyncReadService<InternalNamespaceDTO>
+    public interface IAsyncInternalNamespaceService : IAsyncReadService<InternalNamespace>
     {
-        Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync(string componentNamespace);
+        Task<IEnumerable<InternalNamespace>> GetAllAsync(string componentNamespace);
     }
 }

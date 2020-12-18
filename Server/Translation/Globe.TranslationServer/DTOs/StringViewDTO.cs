@@ -1,10 +1,12 @@
-﻿namespace Globe.TranslationServer.DTOs
+﻿using Globe.Shared.DTOs;
+
+namespace Globe.TranslationServer.DTOs
 {
     public class StringViewDTO
     {
         public int Id { get; set; }
         public string Value { get; set; }
-        public StringTypeDTO Type { get; set; }
+        public StringType Type { get; set; }
 
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }

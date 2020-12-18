@@ -1,6 +1,7 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
+using Globe.Shared.DTOs;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace Globe.Client.Localizer.Services
 
         async public Task<IEnumerable<StringView>> GetStringViewsAsync(StringViewSearch search)
         {
-            var result = await _secureHttpClient.SendAsync<StringViewSearch>(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_StringView, search);
+            var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_StringView, search);
             return await result.GetValue<IEnumerable<StringView>>();
         }
 
@@ -43,7 +44,7 @@ namespace Globe.Client.Localizer.Services
 
         async public Task SaveAsync(SavableConceptModel savableConceptModel)
         {
-            await _secureHttpClient.PutAsync<SavableConceptModel>(ENDPOINT_WRITE + ENDPOINT_Concept, savableConceptModel);
+            await _secureHttpClient.PutAsync(ENDPOINT_WRITE + ENDPOINT_Concept, savableConceptModel);
         }
 
     }

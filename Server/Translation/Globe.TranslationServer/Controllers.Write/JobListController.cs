@@ -1,4 +1,5 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
@@ -17,14 +18,14 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpPut]
-        async public Task Put([FromBody] SavableJobListDTO savableJobList)
+        async public Task Put([FromBody] NewJobList newJobList)
         {
             if (!ModelState.IsValid)
             {
-                throw new System.Exception("savableModel");
+                throw new System.Exception("newJobList");
             }
             
-            await _jobListService.SaveAsync(savableJobList);
+            await _jobListService.SaveAsync(newJobList);
         }
     }
 }

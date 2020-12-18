@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
-    public class GroupedStringEntityAdapterService : IAsyncGroupedStringEntityService
+    public class GroupedStringEntityAdapterService : IJobListService
     {
         private readonly IMapper _mapper;
         private readonly UltraDBEditConcept _ultraDBEditConcept;
@@ -24,20 +25,20 @@ namespace Globe.TranslationServer.Services
             _localizationContext = localizationContext;
         }
 
-        async public Task<IEnumerable<ConceptViewDTO>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobListId)
+        async public Task<IEnumerable<JobListConcept>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, int jobListId)
         {
             var ISOCoding = _localizationContext.LocLanguages.Find(languageId).Isocoding;
             var result = await Task.FromResult(_ultraDBEditConcept.GetGroupledDataBy(componentNamespace, internalNamespace, ISOCoding, jobListId));
             
-            return await Task.FromResult(_mapper.Map<IEnumerable<ConceptViewDTO>>(result));
+            return await Task.FromResult(_mapper.Map<IEnumerable<JobListConcept>>(result));
         }
 
-        public Task<IEnumerable<ConceptViewDTO>> GetAllAsync()
+        public Task<IEnumerable<JobListConcept>> GetAllAsync()
         {
             throw new System.NotImplementedException();
         }
 
-        public Task<ConceptViewDTO> GetAsync(int key)
+        public Task<JobListConcept> GetAsync(int key)
         {
             throw new System.NotImplementedException();
         }

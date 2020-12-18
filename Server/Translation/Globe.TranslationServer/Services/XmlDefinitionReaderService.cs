@@ -1,4 +1,5 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
+using Globe.TranslationServer.DTOs;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -23,9 +24,9 @@ namespace Globe.TranslationServer.Services
         const string TAG_COMMENTS = "Comments";
         const string TAG_STRING = "String";
 
-        async public Task<IEnumerable<ConceptViewDTO>> ReadAsync(string folder)
+        async public Task<IEnumerable<JobListConcept>> ReadAsync(string folder)
         {
-            List<ConceptViewDTO> conceptViews = new List<ConceptViewDTO>();
+            var jobListConcepts = new List<JobListConcept>();
 
             IEnumerable<string> filePaths = Directory.EnumerateFiles(folder, "*.definition.xml").Select(fileName => Path.Combine(folder, fileName));
             foreach (var filePath in filePaths)
@@ -45,22 +46,22 @@ namespace Globe.TranslationServer.Services
                     {
                         var conceptId = conceptTag.Attribute(ATTRIBUTE_CONCEPT_ID);
 
-                        var concept = new ConceptViewDTO
+                        var jobListConcept = new JobListConcept
                         {
                             ComponentNamespace = componentNamespace != null ? componentNamespace.Value : string.Empty,
                             InternalNamespace = internalNamespace != null ? internalNamespace.Value : string.Empty,
                             Name = conceptId != null ? conceptId.Value : string.Empty,
-                            ContextViews = new List<ContextViewDTO>()
+                            ContextViews = new List<JobListContext>()
                         };
 
-                        conceptViews.Add(concept);
+                        jobListConcepts.Add(jobListConcept);
 
                         var contextTags = conceptTag.Descendants(TAG_STRING);
                         foreach (var contextTag in contextTags)
                         {
                             var context = contextTag.Attribute(ATTRIBUTE_CONTEXT);
 
-                            concept.ContextViews.Add(new ContextViewDTO
+                            jobListConcept.ContextViews.Add(new JobListContext
                             {
                                 Name = context.Value,
                                 StringValue = contextTag.Value
@@ -70,7 +71,7 @@ namespace Globe.TranslationServer.Services
                 }
             }
 
-            return await Task.FromResult(conceptViews);
+            return await Task.FromResult(jobListConcepts);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
-using System;
+using Globe.Shared.DTOs;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -28,7 +28,7 @@ namespace Globe.Client.Localizer.Services
 
         async public Task<IEnumerable<InternalNamespaceGroup>> GetInternalNamespaceGroupsAsync(Language language)
         {
-            var result = await _secureHttpClient.SendAsync<Language>(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_InternalNamespaceGroup, language);
+            var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_InternalNamespaceGroup, language);
             return await result.GetValue<IEnumerable<InternalNamespaceGroup>>();
         }
 
@@ -41,15 +41,21 @@ namespace Globe.Client.Localizer.Services
                 Language = language
             };
 
-            var result = await _secureHttpClient.SendAsync<NotTranslatedConceptViewSearch>(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_NotTranslatedConceptView, search);
+            var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_NotTranslatedConceptView, search);
             return await result.GetValue<IEnumerable<NotTranslatedConceptView>>();
         }
 
         async public Task SaveAsync(string jobListName, IEnumerable<NotTranslatedConceptView> notTranslatedConceptViews, ApplicationUser user, Language language)
         {
-            var savableJobList = new SavableJobList(jobListName, notTranslatedConceptViews, user, language);
+            var newJobList = new NewJobList
+            {
+                Name = jobListName,
+                User = user,
+                Language = language,
+                Concepts = notTranslatedConceptViews
+            };
             
-            await _secureHttpClient.PutAsync<SavableJobList>(ENDPOINT_WRITE + ENDPOINT_JobList, savableJobList);
+            await _secureHttpClient.PutAsync(ENDPOINT_WRITE + ENDPOINT_JobList, newJobList);
         }
 
         async public Task<bool> CheckNewConceptsAsync()
@@ -57,8 +63,8 @@ namespace Globe.Client.Localizer.Services
             var savableConcept = new SavableConcept
             {
                 Name = "Prova",
-                InternalNamespace = new InternalNamespace { Description = "InternalNameSpaceProva" },
-                ComponentNamespace = new ComponentNamespace { Description = "ComponentNameSpaceProva" }
+                InternalNamespace = new Globe.Client.Localizer.Models.BindableInternalNamespace { Description = "InternalNameSpaceProva" },
+                ComponentNamespace = new BindableComponentNamespace { Description = "ComponentNameSpaceProva" }
             };
 
             var result = await _secureHttpClient.PostAsync<SavableConcept>(ENDPOINT_WRITE + ENDPOINT_Concept, savableConcept); 

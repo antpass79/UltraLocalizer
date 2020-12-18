@@ -1,4 +1,5 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
 using System;
@@ -67,7 +68,7 @@ namespace Globe.TranslationServer.Services
                     InternalNamespace = item.InternalNamespace,
                     Value = item.String,
                     Id = item.IDString,
-                    Type = Enum.Parse<StringTypeDTO>(item.Type),
+                    Type = Enum.Parse<StringType>(item.Type),
                     SoftwareComment = item.SWComment,
                     MasterTranslatorComment = item.MTComment
                 };

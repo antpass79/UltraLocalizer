@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using Globe.TranslationServer.DTOs;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
 
 namespace Globe.TranslationServer.Mapping
 {
-    public class ContextViewProfile : Profile
+    public class JobListContextProfile : Profile
     {
-        public ContextViewProfile()
+        public JobListContextProfile()
         {
-            CreateMap<StringEntity, ContextViewDTO>()
+            CreateMap<StringEntity, JobListContext>()
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.ContextName))
                 .ForMember(dest => dest.StringType, opt => opt.MapFrom(src => src.StringType))
                 .ForMember(dest => dest.StringValue, opt => opt.MapFrom(src => src.DataString))

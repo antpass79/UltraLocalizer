@@ -1,7 +1,8 @@
 ﻿using Globe.BusinessLogic.Repositories;
-using Globe.TranslationServer.DTOs;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Extensions;
+using Globe.TranslationServer.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,54 +12,56 @@ namespace Globe.TranslationServer.Services.NewServices
 {
     public class InternalNamespaceService : IAsyncInternalNamespaceService
     {
-        private readonly IAsyncReadRepository<LocConceptsTable> _repository;
+        private readonly IReadRepository<VJobListConcept> _repository;
 
-        public InternalNamespaceService(IAsyncReadRepository<LocConceptsTable> repository)
+        public InternalNamespaceService(IReadRepository<VJobListConcept> repository)
         {
             _repository = repository;
         }
 
-        public Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync()
+        public Task<IEnumerable<InternalNamespace>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        async public Task<IEnumerable<InternalNamespaceDTO>> GetAllAsync(string componentNamespace)
+        async public Task<IEnumerable<InternalNamespace>> GetAllAsync(string componentNamespace)
         {
-            IList<InternalNamespaceDTO> items;
+            IList<InternalNamespace> items;
 
-            if (componentNamespace.ToLower() != "all")
+            componentNamespace = componentNamespace.ToLower();
+
+            if (componentNamespace != Constants.COMPONENT_NAMESPACE_ALL)
             {
-                var query = await _repository.QueryAsync();
+                var query = _repository.Query();
                 items = query
-                    .WhereIf(entity => entity.ComponentNamespace == componentNamespace, !string.IsNullOrWhiteSpace(componentNamespace) && componentNamespace.ToLower() != "all")
-                    .Select(entity => entity.InternalNamespace)
+                    .WhereIf(entity => entity.ConceptComponentNamespace == componentNamespace, !string.IsNullOrWhiteSpace(componentNamespace))
+                    .Select(entity => entity.ConceptInternalNamespace)
                     .Distinct()
                     .OrderBy(entity => entity)
-                    .Select(entity => new InternalNamespaceDTO
+                    .Select(entity => new InternalNamespace
                     {
                         Description = entity
                     })
                     .ToList();
 
-                items.Insert(0, new InternalNamespaceDTO
+                items.Insert(0, new InternalNamespace
                 {
-                    Description = "all"
+                    Description = Constants.INTERNAL_NAMESPACE_ALL
                 });
             }
             else
             {
-                items = new List<InternalNamespaceDTO>();
-                items.Insert(0, new InternalNamespaceDTO
+                items = new List<InternalNamespace>();
+                items.Insert(0, new InternalNamespace
                 {
-                    Description = "all"
+                    Description = Constants.INTERNAL_NAMESPACE_ALL
                 });
             }
 
-            return items;
+            return await Task.FromResult(items);
         }
 
-        public Task<InternalNamespaceDTO> GetAsync(int key)
+        public Task<InternalNamespace> GetAsync(int key)
         {
             throw new NotImplementedException();
         }
