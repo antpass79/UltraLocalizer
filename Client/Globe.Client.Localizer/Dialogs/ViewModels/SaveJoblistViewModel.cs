@@ -23,7 +23,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         private readonly IJobListManagementService _jobListManagementService;
         private readonly INotificationService _notificationService;
 
-        private IEnumerable<NotTranslatedConceptView> _notTranslatedConceptViews;
+        private IEnumerable<BindableNotTranslatedConceptView> _notTranslatedConceptViews;
         private Language _language;
 
         public SaveJoblistViewModel(
@@ -144,7 +144,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                         UserName = item.UserName,
                         Email = item.Email
                     });
-                _notTranslatedConceptViews = parameters.GetValue<IEnumerable<NotTranslatedConceptView>>(DialogConstants.NOT_TRANSLATED_CONCEPT_VIEWS);
+                _notTranslatedConceptViews = parameters.GetValue<IEnumerable<BindableNotTranslatedConceptView>>(DialogConstants.NOT_TRANSLATED_CONCEPT_VIEWS);
             }
             catch (Exception e)
             {
