@@ -1,5 +1,4 @@
-﻿using Globe.Client.Localizer.Models;
-using Globe.Shared.DTOs;
+﻿using Globe.Shared.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;

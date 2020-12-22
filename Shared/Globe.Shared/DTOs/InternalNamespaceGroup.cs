@@ -1,13 +1,17 @@
 ﻿using Globe.Shared.DTOs;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace Globe.Client.Localizer.Models
+namespace Globe.Shared.DTOs
 {
-    public class InternalNamespaceGroup
+    public class InternalNamespaceGroup<TComponent, TInternal>
+        where TComponent : ComponentNamespace
+        where TInternal : InternalNamespace
     {
-        public ComponentNamespace ComponentNamespace { get; set; }
+        public TComponent ComponentNamespace { get; set; }
 
-        public IEnumerable<InternalNamespace> InternalNamespaces { get; set; }
+        public IEnumerable<TInternal> InternalNamespaces { get; set; }
+    }
+    public class InternalNamespaceGroup : InternalNamespaceGroup<ComponentNamespace, InternalNamespace>
+    {
     }
 }

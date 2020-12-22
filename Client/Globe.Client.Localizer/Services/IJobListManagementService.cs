@@ -7,9 +7,9 @@ namespace Globe.Client.Localizer.Services
 {
     interface IJobListManagementService
     {
-        Task<IEnumerable<InternalNamespaceGroup>> GetInternalNamespaceGroupsAsync(Language language);
-        Task<IEnumerable<NotTranslatedConceptView>> GetNotTranslatedConceptsAsync(ComponentNamespace componentNamespace, InternalNamespace internalNamespace, Language language);
-        Task SaveAsync(string jobListName, IEnumerable<NotTranslatedConceptView> notTranslatedConceptViews, ApplicationUser user, Language language);
+        Task<IEnumerable<BindableInternalNamespaceGroup>> GetInternalNamespaceGroupsAsync(Language language);
+        Task<IEnumerable<BindableNotTranslatedConceptView>> GetNotTranslatedConceptsAsync(BindableComponentNamespace componentNamespace, BindableInternalNamespace internalNamespace, Language language);
+        Task SaveAsync(string jobListName, IEnumerable<BindableNotTranslatedConceptView> notTranslatedConceptViews, ApplicationUser user, Language language);
         Task<bool> CheckNewConceptsAsync();
     }
 }

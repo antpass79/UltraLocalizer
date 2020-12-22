@@ -1,5 +1,4 @@
 ﻿using Globe.BusinessLogic.Repositories;
-using Globe.Client.Localizer.Models;
 using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
