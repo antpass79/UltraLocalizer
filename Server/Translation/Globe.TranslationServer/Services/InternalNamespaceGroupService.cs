@@ -1,6 +1,4 @@
-﻿using Globe.Client.Localizer.Models;
-using Globe.Shared.DTOs;
-using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

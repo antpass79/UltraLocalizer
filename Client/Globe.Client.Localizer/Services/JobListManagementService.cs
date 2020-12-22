@@ -26,13 +26,13 @@ namespace Globe.Client.Localizer.Services
             _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddress());
         }
 
-        async public Task<IEnumerable<InternalNamespaceGroup>> GetInternalNamespaceGroupsAsync(Language language)
+        async public Task<IEnumerable<BindableInternalNamespaceGroup>> GetInternalNamespaceGroupsAsync(Language language)
         {
             var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_InternalNamespaceGroup, language);
-            return await result.GetValue<IEnumerable<InternalNamespaceGroup>>();
+            return await result.GetValue<IEnumerable<BindableInternalNamespaceGroup>>();
         }
 
-        async public Task<IEnumerable<NotTranslatedConceptView>> GetNotTranslatedConceptsAsync(ComponentNamespace componentNamespace, InternalNamespace internalNamespace, Language language)
+        async public Task<IEnumerable<BindableNotTranslatedConceptView>> GetNotTranslatedConceptsAsync(BindableComponentNamespace componentNamespace, BindableInternalNamespace internalNamespace, Language language)
         {
             var search = new NotTranslatedConceptViewSearch
             {
@@ -42,10 +42,10 @@ namespace Globe.Client.Localizer.Services
             };
 
             var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_NotTranslatedConceptView, search);
-            return await result.GetValue<IEnumerable<NotTranslatedConceptView>>();
+            return await result.GetValue<IEnumerable<BindableNotTranslatedConceptView>>();
         }
 
-        async public Task SaveAsync(string jobListName, IEnumerable<NotTranslatedConceptView> notTranslatedConceptViews, ApplicationUser user, Language language)
+        async public Task SaveAsync(string jobListName, IEnumerable<BindableNotTranslatedConceptView> notTranslatedConceptViews, ApplicationUser user, Language language)
         {
             var newJobList = new NewJobList
             {
@@ -63,11 +63,11 @@ namespace Globe.Client.Localizer.Services
             var savableConcept = new SavableConcept
             {
                 Name = "Prova",
-                InternalNamespace = new Globe.Client.Localizer.Models.BindableInternalNamespace { Description = "InternalNameSpaceProva" },
+                InternalNamespace = new BindableInternalNamespace { Description = "InternalNameSpaceProva" },
                 ComponentNamespace = new BindableComponentNamespace { Description = "ComponentNameSpaceProva" }
             };
 
-            var result = await _secureHttpClient.PostAsync<SavableConcept>(ENDPOINT_WRITE + ENDPOINT_Concept, savableConcept); 
+            var result = await _secureHttpClient.PostAsync(ENDPOINT_WRITE + ENDPOINT_Concept, savableConcept); 
             return await result.GetValue<bool>();
         }
     }

@@ -182,19 +182,10 @@ namespace Globe.Client.Localizer.ViewModels
                 {
                     ConceptDetailsBusy = true;
 
-                    var result = (await _jobListManagementService.GetNotTranslatedConceptsAsync(
-                        new ComponentNamespace { Description = SelectedInternalNamespaceGroup.ComponentNamespace.Description },
-                        new InternalNamespace { Description = SelectedInternalNamespace.Description },
-                        SelectedLanguage))
-                        .Select(item => new BindableNotTranslatedConceptView
-                        {
-                            Id = item.Id,
-                            Name = item.Name,
-                            ComponentNamespace = item.ComponentNamespace,
-                            InternalNamespace = item.InternalNamespace,
-                            ContextViews = item.ContextViews
-                        })
-                        .ToList();
+                    var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
+                        SelectedInternalNamespaceGroup.ComponentNamespace,
+                        SelectedInternalNamespace,
+                        SelectedLanguage);
 
                     if (NotTranslatedConceptViews == null)
                     {
@@ -362,20 +353,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 FiltersBusy = true;
 
-                InternalNamespaceGroups = (await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage))
-                    .Select(group => new BindableInternalNamespaceGroup
-                    {
-                        ComponentNamespace = new BindableComponentNamespace { Description = group.ComponentNamespace.Description },
-                        InternalNamespaces = group.InternalNamespaces
-                            .Select(item => new BindableInternalNamespace
-                            {
-                                Description = item.Description,
-                                IsSelected = false
-                            })
-                            .ToList()
-                    })
-                    .ToList();
-
+                InternalNamespaceGroups = await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage);
                 ComponentsVisible = InternalNamespaceGroups != null && InternalNamespaceGroups.Count() > 0;
                 NotTranslatedConceptViews = null;
             }

@@ -1,19 +1,27 @@
-﻿using Prism.Mvvm;
+﻿using Globe.Shared.DTOs;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Globe.Client.Localizer.Models
 {
-    public class BindableInternalNamespace : BindableBase
+    public class BindableInternalNamespace : InternalNamespace, INotifyPropertyChanged
     {
-        public string Description { get; set; }
-
         bool _isSelected;
         public bool IsSelected
         {
             get => _isSelected;
             set
             {
-                SetProperty(ref _isSelected, value);
+                _isSelected = value;
+                OnPropertyChanged();
             }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
