@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 
 namespace Globe.Client.Localizer.Models
 {
-    public class BindableInternalNamespaceGroup : InternalNamespaceGroup<BindableComponentNamespace, BindableInternalNamespace>, INotifyPropertyChanged
+    public class BindableComponentNamespaceGroup : ComponentNamespaceGroup<BindableComponentNamespace, BindableInternalNamespace>, INotifyPropertyChanged
     {
         bool _isSelected;
         public bool IsSelected

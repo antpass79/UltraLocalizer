@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.PortingAdapters
 {
-    public class ComponentConceptsTableAdapterService : IAsyncComponentNamespaceService
+    public class ComponentConceptsTableAdapterService : IComponentNamespaceService
     {
         private readonly IMapper _mapper;
         private readonly LocalizationContext _context;

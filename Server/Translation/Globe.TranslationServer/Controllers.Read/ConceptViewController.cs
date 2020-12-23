@@ -2,6 +2,7 @@
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -23,7 +24,7 @@ namespace Globe.TranslationServer.Controllers
         {
             if (!ModelState.IsValid)
             {
-                throw new System.Exception("search");
+                throw new Exception("search");
             }
             
             return await _groupedStringEntityService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.LanguageId, search.JobListId);

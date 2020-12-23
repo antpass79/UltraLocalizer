@@ -10,9 +10,9 @@ namespace Globe.TranslationServer.Controllers
     [Route("api/read/[controller]")]
     public class ComponentNamespaceController : Controller
     {
-        private readonly IAsyncComponentNamespaceService _componentConceptsService;
+        private readonly IComponentNamespaceService _componentConceptsService;
 
-        public ComponentNamespaceController(IAsyncComponentNamespaceService componentConceptsService)
+        public ComponentNamespaceController(IComponentNamespaceService componentConceptsService)
         {
             _componentConceptsService = componentConceptsService;
         }

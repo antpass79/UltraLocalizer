@@ -42,14 +42,14 @@
                     <controls:LocComboBox  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}" ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
                     <controls:LocTextBlock Grid.Row="2" Grid.Column="0" Text="{Binding Localize[Components]}"/>
                     <controls:LocGrid Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource SectionPanel}">
-                        <TreeView ItemsSource="{Binding InternalNamespaceGroups}" Background="Transparent" BorderThickness="0">
+                        <TreeView ItemsSource="{Binding ComponentNamespaceGroups}" Background="Transparent" BorderThickness="0">
                             <TreeView.ItemContainerStyle>
                                 <Style TargetType="{x:Type TreeViewItem}">
                                     <Setter Property="IsSelected" Value="{Binding IsSelected}" />
                                 </Style>
                             </TreeView.ItemContainerStyle>
                             <TreeView.Resources>
-                                <HierarchicalDataTemplate DataType="{x:Type models:BindableInternalNamespaceGroup}" ItemsSource="{Binding InternalNamespaces}">
+                                <HierarchicalDataTemplate DataType="{x:Type models:BindableComponentNamespaceGroup}" ItemsSource="{Binding InternalNamespaces}">
                                     <StackPanel Orientation="Horizontal">
                                         <controls:LocTextBlock Text="{Binding ComponentNamespace.Description}" />
                                         <controls:LocTextBlock Text=" [" Foreground="Blue" />
