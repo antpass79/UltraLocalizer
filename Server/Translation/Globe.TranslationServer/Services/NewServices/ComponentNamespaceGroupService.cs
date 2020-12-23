@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
-    public class InternalNamespaceGroupService : IAsyncInternalNamespaceGroupService
+    public class ComponentNamespaceGroupService : IComponentNamespaceGroupService
     {
         #region Data Members
 
@@ -21,7 +21,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
         #region Constructors
 
-        public InternalNamespaceGroupService(
+        public ComponentNamespaceGroupService(
             IReadRepository<VConceptStringToContext> conceptStringToContextRepository,
             IReadRepository<VStringsToContext> stringsToContextRepository)
         {
@@ -33,7 +33,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
         #region Public Functions
 
-        async public Task<IEnumerable<InternalNamespaceGroup>> GetAllAsync(Language language)
+        async public Task<IEnumerable<ComponentNamespaceGroup>> GetAllAsync(Language language)
         {
             try
             {
@@ -47,7 +47,7 @@ namespace Globe.TranslationServer.Services.NewServices
             }
             catch (Exception e)
             {
-                throw new InvalidOperationException($"Error during InternalNamespaceGroupService.GetAllAsync({language.IsoCoding}), {e.Message}");
+                throw new InvalidOperationException($"Error during ComponentNamespaceGroupService.GetAllAsync({language.IsoCoding}), {e.Message}");
             }
         }
 
@@ -55,7 +55,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
         #region Private Functions
 
-        IEnumerable<InternalNamespaceGroup> GetGroupsByEnglish()
+        IEnumerable<ComponentNamespaceGroup> GetGroupsByEnglish()
         {
             var items = _conceptStringToContextRepository
                 .Query(item =>
@@ -69,9 +69,9 @@ namespace Globe.TranslationServer.Services.NewServices
             return BuildGroups(items);
         }
 
-        IEnumerable<InternalNamespaceGroup> GetGroupsByLanguage(Language language)
+        IEnumerable<ComponentNamespaceGroup> GetGroupsByLanguage(Language language)
         {
-            var internalNamespaceGroups = new List<InternalNamespaceGroup>();
+            var componentNamespaceGroups = new List<ComponentNamespaceGroup>();
 
             var subQuery = _stringsToContextRepository
                 .Query(item =>
@@ -94,9 +94,9 @@ namespace Globe.TranslationServer.Services.NewServices
             return BuildGroups(items);
         }
 
-        private IEnumerable<InternalNamespaceGroup> BuildGroups(IEnumerable<Tuple<string, string>> items)
+        private IEnumerable<ComponentNamespaceGroup> BuildGroups(IEnumerable<Tuple<string, string>> items)
         {
-            var internalNamespaceGroups = new List<InternalNamespaceGroup>();
+            var componentNamespaceGroups = new List<ComponentNamespaceGroup>();
 
             var groups = items
                 .GroupBy(item => item.Item1)
@@ -104,7 +104,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
             foreach (var group in groups)
             {
-                internalNamespaceGroups.Add(new InternalNamespaceGroup
+                componentNamespaceGroups.Add(new ComponentNamespaceGroup
                 {
                     ComponentNamespace = new ComponentNamespace { Description = group.Key },
                     InternalNamespaces = group
@@ -114,7 +114,7 @@ namespace Globe.TranslationServer.Services.NewServices
                 });
             }
 
-            return internalNamespaceGroups;
+            return componentNamespaceGroups;
         }
 
         #endregion

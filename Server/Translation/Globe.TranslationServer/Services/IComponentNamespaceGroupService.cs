@@ -4,8 +4,8 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
-    public interface IAsyncInternalNamespaceGroupService
+    public interface IComponentNamespaceGroupService
     {
-        Task<IEnumerable<InternalNamespaceGroup>> GetAllAsync(Language language);
+        Task<IEnumerable<ComponentNamespaceGroup>> GetAllAsync(Language language);
     }
 }

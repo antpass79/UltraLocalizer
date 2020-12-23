@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
-    public class ComponentNamespaceService : IAsyncComponentNamespaceService
+    public class ComponentNamespaceService : IComponentNamespaceService
     {
         private readonly IReadRepository<VJobListConcept> _repository;
 

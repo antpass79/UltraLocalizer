@@ -7,6 +7,6 @@ namespace Globe.TranslationServer.Services
 {
     public interface IAsyncNotTranslatedConceptViewService
     {
-        Task<IEnumerable<NotTranslatedConceptView>> GetAllAsync(NotTranslateConceptViewSearchDTO search);
+        Task<IEnumerable<NotTranslatedConceptView>> GetAllAsync(NotTranslatedConceptViewSearch search);
     }
 }
