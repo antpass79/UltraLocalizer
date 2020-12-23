@@ -19,7 +19,7 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpGet]
-        async public Task<IEnumerable<NotTranslatedConceptView>> Get([FromBody] NotTranslateConceptViewSearchDTO search)
+        async public Task<IEnumerable<NotTranslatedConceptView>> Get([FromBody] NotTranslatedConceptViewSearch search)
         {
             if (!ModelState.IsValid)
             {

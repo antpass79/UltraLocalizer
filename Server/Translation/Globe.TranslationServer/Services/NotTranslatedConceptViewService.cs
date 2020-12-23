@@ -16,7 +16,7 @@ namespace Globe.TranslationServer.Services
             _ultraDBJobGlobal = ultraDBJobGlobal;
         }
 
-        async public Task<IEnumerable<NotTranslatedConceptView>> GetAllAsync(NotTranslateConceptViewSearchDTO search)
+        async public Task<IEnumerable<NotTranslatedConceptView>> GetAllAsync(NotTranslatedConceptViewSearch search)
         {
             var result = _ultraDBJobGlobal
                 .FillByComponentNamespace(search.InternalNamespace.Description, search.ComponentNamespace.Description, search.Language.IsoCoding)

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Globe.Shared.DTOs
 {
-    public class InternalNamespaceGroup<TComponent, TInternal>
+    public class ComponentNamespaceGroup<TComponent, TInternal>
         where TComponent : ComponentNamespace
         where TInternal : InternalNamespace
     {
@@ -11,7 +11,7 @@ namespace Globe.Shared.DTOs
 
         public IEnumerable<TInternal> InternalNamespaces { get; set; }
     }
-    public class InternalNamespaceGroup : InternalNamespaceGroup<ComponentNamespace, InternalNamespace>
+    public class ComponentNamespaceGroup : ComponentNamespaceGroup<ComponentNamespace, InternalNamespace>
     {
     }
 }

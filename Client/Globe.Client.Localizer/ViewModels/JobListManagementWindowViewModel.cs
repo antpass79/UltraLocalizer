@@ -94,13 +94,13 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        IEnumerable<BindableInternalNamespaceGroup> _internalNamespaceGroups;
-        public IEnumerable<BindableInternalNamespaceGroup> InternalNamespaceGroups
+        IEnumerable<BindableComponentNamespaceGroup> _componentNamespaceGroups;
+        public IEnumerable<BindableComponentNamespaceGroup> ComponentNamespaceGroups
         {
-            get => _internalNamespaceGroups;
+            get => _componentNamespaceGroups;
             set
             {
-                SetProperty(ref _internalNamespaceGroups, value);
+                SetProperty(ref _componentNamespaceGroups, value);
             }
         }
 
@@ -118,23 +118,23 @@ namespace Globe.Client.Localizer.ViewModels
         {
             get
             {
-                if (InternalNamespaceGroups == null)
+                if (ComponentNamespaceGroups == null)
                     return null;
 
-                return InternalNamespaceGroups
+                return ComponentNamespaceGroups
                     .SelectMany(item => item.InternalNamespaces)
                     .SingleOrDefault(item => item.IsSelected);
             }
         }
 
-        public BindableInternalNamespaceGroup SelectedInternalNamespaceGroup
+        public BindableComponentNamespaceGroup SelectedComponentNamespaceGroup
         {
             get
             {
                 if (SelectedInternalNamespace == null)
                     return null;
 
-                return InternalNamespaceGroups
+                return ComponentNamespaceGroups
                     .SingleOrDefault(item => item.InternalNamespaces.Contains(SelectedInternalNamespace));
             }
         }
@@ -175,7 +175,7 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand AddCommand =>
             _addCommand ?? (_addCommand = new DelegateCommand(async () =>
             {
-                if (SelectedInternalNamespaceGroup == null || SelectedInternalNamespace == null)
+                if (SelectedComponentNamespaceGroup == null || SelectedInternalNamespace == null)
                     return;
 
                 try
@@ -183,7 +183,7 @@ namespace Globe.Client.Localizer.ViewModels
                     ConceptDetailsBusy = true;
 
                     var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
-                        SelectedInternalNamespaceGroup.ComponentNamespace,
+                        SelectedComponentNamespaceGroup.ComponentNamespace,
                         SelectedInternalNamespace,
                         SelectedLanguage);
 
@@ -353,8 +353,8 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 FiltersBusy = true;
 
-                InternalNamespaceGroups = await _jobListManagementService.GetInternalNamespaceGroupsAsync(SelectedLanguage);
-                ComponentsVisible = InternalNamespaceGroups != null && InternalNamespaceGroups.Count() > 0;
+                ComponentNamespaceGroups = await _jobListManagementService.GetComponentNamespaceGroupsAsync(SelectedLanguage);
+                ComponentsVisible = ComponentNamespaceGroups != null && ComponentNamespaceGroups.Count() > 0;
                 NotTranslatedConceptViews = null;
             }
             catch (Exception e)
@@ -362,7 +362,7 @@ namespace Globe.Client.Localizer.ViewModels
                 _loggerService.Exception(e);
 
                 NotTranslatedConceptViews = null;
-                InternalNamespaceGroups = null;
+                ComponentNamespaceGroups = null;
                 await _notificationService.NotifyAsync(new Notification
                 {
                     Title = Localize["Error"],
@@ -379,7 +379,7 @@ namespace Globe.Client.Localizer.ViewModels
         private void ClearPage()
         {
             NotTranslatedConceptViews = null;
-            InternalNamespaceGroups = null;
+            ComponentNamespaceGroups = null;
             ItemCount = 0;
         }
     }

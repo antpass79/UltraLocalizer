@@ -14,7 +14,7 @@ namespace Globe.Client.Localizer.Services
         private const string ENDPOINT_WRITE = "write/";
 
         private const string ENDPOINT_NotTranslatedConceptView = "NotTranslatedConceptView";
-        private const string ENDPOINT_InternalNamespaceGroup = "InternalNamespaceGroup";
+        private const string ENDPOINT_ComponentNamespaceGroup = "ComponentNamespaceGroup";
         private const string ENDPOINT_JobList = "JobList";
         private const string ENDPOINT_Concept = "Concept";
 
@@ -26,10 +26,10 @@ namespace Globe.Client.Localizer.Services
             _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddress());
         }
 
-        async public Task<IEnumerable<BindableInternalNamespaceGroup>> GetInternalNamespaceGroupsAsync(Language language)
+        async public Task<IEnumerable<BindableComponentNamespaceGroup>> GetComponentNamespaceGroupsAsync(Language language)
         {
-            var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_InternalNamespaceGroup, language);
-            return await result.GetValue<IEnumerable<BindableInternalNamespaceGroup>>();
+            var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_ComponentNamespaceGroup, language);
+            return await result.GetValue<IEnumerable<BindableComponentNamespaceGroup>>();
         }
 
         async public Task<IEnumerable<BindableNotTranslatedConceptView>> GetNotTranslatedConceptsAsync(BindableComponentNamespace componentNamespace, BindableInternalNamespace internalNamespace, Language language)
@@ -60,14 +60,7 @@ namespace Globe.Client.Localizer.Services
 
         async public Task<bool> CheckNewConceptsAsync()
         {
-            var savableConcept = new SavableConcept
-            {
-                Name = "Prova",
-                InternalNamespace = new BindableInternalNamespace { Description = "InternalNameSpaceProva" },
-                ComponentNamespace = new BindableComponentNamespace { Description = "ComponentNameSpaceProva" }
-            };
-
-            var result = await _secureHttpClient.PostAsync(ENDPOINT_WRITE + ENDPOINT_Concept, savableConcept); 
+            var result = await _secureHttpClient.PostAsync(ENDPOINT_WRITE + ENDPOINT_Concept, new object());
             return await result.GetValue<bool>();
         }
     }

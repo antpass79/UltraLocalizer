@@ -28,7 +28,7 @@ namespace Globe.TranslationServer.Services.NewServices
             _ultraDBJobGlobal = ultraDBJobGlobal;
         }
 
-        async public Task<IEnumerable<NotTranslatedConceptView>> GetAllAsync(NotTranslateConceptViewSearchDTO search)
+        async public Task<IEnumerable<NotTranslatedConceptView>> GetAllAsync(NotTranslatedConceptViewSearch search)
         {
             try
             {
@@ -42,7 +42,7 @@ namespace Globe.TranslationServer.Services.NewServices
             }
             catch (Exception e)
             {
-                throw new InvalidOperationException($"Error during InternalNamespaceGroupService.GetAllAsync({search.ComponentNamespace.Description}, {search.InternalNamespace.Description}, {search.Language.IsoCoding}), {e.Message}");
+                throw new InvalidOperationException($"Error during ComponentNamespaceGroupService.GetAllAsync({search.ComponentNamespace.Description}, {search.InternalNamespace.Description}, {search.Language.IsoCoding}), {e.Message}");
             }
         }
 
@@ -65,7 +65,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
         IEnumerable<NotTranslatedConceptView> GetConceptToContextsByLanguage(ComponentNamespace componentNamespace, InternalNamespace internalNamespace, Language language)
         {
-            var internalNamespaceGroups = new List<InternalNamespaceGroup>();
+            var componentNamespaceGroups = new List<ComponentNamespaceGroup>();
 
             var subQuery = _stringsToContextRepository
                 .Query(item =>
@@ -92,27 +92,6 @@ namespace Globe.TranslationServer.Services.NewServices
 
         private IEnumerable<NotTranslatedConceptView> BuildGroups(IEnumerable<Tuple<int, string, string, string, string, int>> items)
         {
-            //var result = _ultraDBJobGlobal
-            //    .FillByComponentNamespace(search.InternalNamespace.Description, search.ComponentNamespace.Description, search.Language.IsoCoding)
-            //    .OrderBy(p => p.ComponentNamespace)
-            //    .ThenBy(p => p.LocalizationID);
-
-            //return await Task.FromResult(result.Select(concept => new NotTranslatedConceptViewDTO 
-            //{ 
-            //    Id = concept.ConceptID,
-            //    Name = concept.LocalizationID,
-            //    ComponentNamespace = new ComponentNamespaceDTO { Description = concept.ComponentNamespace },
-            //    InternalNamespace = new InternalNamespaceDTO { Description = concept.InternalNamespace },
-            //    ContextViews = concept.Group.Select(context => new ContextViewDTO
-            //    {
-            //        Name = context.ContextName,
-            //        Concept2ContextId = context.IDConcept2Context,
-            //        StringId = context.IDString,
-            //        StringType = string.IsNullOrWhiteSpace(context.StringType) ? default(StringTypeDTO) : Enum.Parse<StringTypeDTO>(context.StringType),
-            //        StringValue = context.DataString
-            //    })
-            //}));
-
             var notTranslatedConceptToContextGroups = new List<NotTranslatedConceptView>();
 
             var groups = items

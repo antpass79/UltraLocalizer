@@ -5,21 +5,21 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
-    public class InternalNamespaceGroupService : IAsyncInternalNamespaceGroupService
+    public class ComponentNamespaceGroupService : IComponentNamespaceGroupService
     {
         private readonly IUltraDBJobGlobal _ultraDBJobGlobal;
 
-        public InternalNamespaceGroupService(IUltraDBJobGlobal ultraDBJobGlobal)
+        public ComponentNamespaceGroupService(IUltraDBJobGlobal ultraDBJobGlobal)
         {
             _ultraDBJobGlobal = ultraDBJobGlobal;
         }
 
-        async public Task<IEnumerable<InternalNamespaceGroup>> GetAllAsync(Language language)
+        async public Task<IEnumerable<ComponentNamespaceGroup>> GetAllAsync(Language language)
         {
             var result = _ultraDBJobGlobal
                 .GetMissingDataBy(language.IsoCoding);
 
-            return await Task.FromResult(result.Select(group => new InternalNamespaceGroup
+            return await Task.FromResult(result.Select(group => new ComponentNamespaceGroup
             {
                 ComponentNamespace = new ComponentNamespace { Description = group.ComponentNamespace },
                 InternalNamespaces = group.InternalName.Select(item => new InternalNamespace
