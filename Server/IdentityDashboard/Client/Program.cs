@@ -20,7 +20,7 @@ namespace Globe.Identity.AdministrativeDashboard.Client
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
-            builder.RootComponents.Add<App>("app");
+            builder.RootComponents.Add<App>("#app");
 
             builder.Services.AddBlazoredLocalStorage();
             builder.Services.AddOptions();
@@ -31,7 +31,7 @@ namespace Globe.Identity.AdministrativeDashboard.Client
             builder.Services.AddScoped<IGlobeDataStorage, GlobeLocalStorage>();
             builder.Services.AddScoped<IApplicationService, ApplicationService>();
 
-            builder.Services.AddTransient(services => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            //builder.Services.AddTransient(services => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
             builder.Services.AddScoped<SpinnerService>();
             builder.Services.AddScoped<AutoSpinnerHttpMessageHandler>();
             builder.Services.AddScoped(services =>
