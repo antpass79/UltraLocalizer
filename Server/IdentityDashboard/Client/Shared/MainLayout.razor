@@ -2,17 +2,21 @@
 
 <Spinner></Spinner>
 
-<div class="sidebar">
-    <NavMenu />
-</div>
+<div class="page">
 
-<div class="main flex-stretch">
-    <div class="top-row px-4">
-        <LoginDisplay />
-        @*<a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>*@
+    <div class="sidebar">
+        <NavMenu />
     </div>
 
-    <div class="content px-4 flex-stretch">
-        @Body
+    <div class="main flex-stretch">
+        <div class="top-row px-4">
+            <LoginDisplay />
+            @*<a href="http://blazor.net" target="_blank" class="ml-md-auto">About</a>*@
+        </div>
+
+        <div class="content px-4 flex-stretch">
+            @Body
+        </div>
     </div>
+
 </div>

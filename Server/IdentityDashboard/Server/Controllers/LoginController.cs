@@ -65,7 +65,7 @@ namespace Globe.Identity.AdministrativeDashboard.Server.Controllers
 
         async static Task ApplyMigrationsAsync(ApplicationDbContext dbContext)
         {
-            if (dbContext.Database.GetPendingMigrations().Any())
+            if ((await dbContext.Database.GetPendingMigrationsAsync()).Any())
                 await dbContext.Database.MigrateAsync();
         }
 
