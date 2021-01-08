@@ -20,6 +20,7 @@
 
         public readonly static string Joblist_Management = "Joblist_Management";
         public readonly static string Current_Job = "Current_Job";
+        public readonly static string Concept_Management = "Concept_Management";
 
         public readonly static string Please_enter_your_credentials = "Please_enter_your_credentials";
 
