@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
-    public class ComponentNamespaceService : IAsyncComponentNamespaceService
+    public class ConceptTranslatedComponentNamespaceService : IAsyncConceptTranslatedComponentNamespaceService
     {
-        private readonly IReadRepository<VJobListConcept> _repository;
+        private readonly IReadRepository<VTranslatedConcept> _repository;
 
-        public ComponentNamespaceService(IReadRepository<VJobListConcept> repository)
+        public ConceptTranslatedComponentNamespaceService(IReadRepository<VTranslatedConcept> repository)
         {
             _repository = repository;
         }

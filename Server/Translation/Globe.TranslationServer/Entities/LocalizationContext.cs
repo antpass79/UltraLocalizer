@@ -31,6 +31,7 @@ namespace Globe.TranslationServer.Entities
         public virtual DbSet<LocStringslocked> LocStringslocked { get; set; }
         public virtual DbSet<VConceptStringToContext> VConceptStringToContext { get; set; }
         public virtual DbSet<VJobListConcept> VJobListConcept { get; set; }
+        public virtual DbSet<VTranslatedConcept> VTranslatedConcept { get; set; }
         public virtual DbSet<VLocalization> VLocalization { get; set; }
         public virtual DbSet<VStringsToContext> VStringsToContext { get; set; }
 
@@ -378,6 +379,39 @@ namespace Globe.TranslationServer.Entities
                 entity.Property(e => e.JobListUserName)
                     .IsRequired()
                     .HasMaxLength(50);
+
+                entity.Property(e => e.String).HasMaxLength(255);
+
+                entity.Property(e => e.StringType).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<VTranslatedConcept>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("vTranslatedConcept");
+
+                entity.Property(e => e.Concept)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.ConceptComment).HasMaxLength(255);
+
+                entity.Property(e => e.ConceptComponentNamespace)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.ConceptInternalNamespace).HasMaxLength(50);
+
+                entity.Property(e => e.Context)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.Language).HasMaxLength(50);
+
+                entity.Property(e => e.LanguageIsoCode).HasMaxLength(50);
+
+                entity.Property(e => e.LanguageId).HasColumnName("languageId");
 
                 entity.Property(e => e.String).HasMaxLength(255);
 
