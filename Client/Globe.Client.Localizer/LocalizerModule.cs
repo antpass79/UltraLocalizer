@@ -23,6 +23,8 @@ namespace Globe.Client.Localizer
             regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(JobListManagementWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(CurrentJobWindow));
             regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(CurrentJobWindowToolBar));
+            regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(ConceptManagementWindow));
+            regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(ConceptManagementWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(JobsWindow));
             regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(JobsWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(MergeWindow));
@@ -41,6 +43,8 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IHttpLocalizableStringService, HttpLocalizableStringService>();
             containerRegistry.Register<ICurrentJobFiltersService, CurrentJobFiltersService>();
             containerRegistry.Register<ICurrentJobConceptViewService, CurrentJobConceptViewService>();
+            containerRegistry.Register<IConceptManagementFiltersService, ConceptManagementFiltersService>();
+            containerRegistry.Register<IConceptManagementViewService, ConceptManagementViewService>();
             containerRegistry.Register<IEditStringService, EditStringService>();
             containerRegistry.Register<IStringMergeService, StringsMergeService>();
             containerRegistry.Register<IJobListManagementFiltersService, JobListManagementFiltersService>();

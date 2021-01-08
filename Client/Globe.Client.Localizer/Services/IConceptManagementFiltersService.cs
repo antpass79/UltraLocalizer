@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.Services
 {
-    interface ICurrentJobFiltersService
+    interface IConceptManagementFiltersService
     {
-        Task<IEnumerable<JobItem>> GetJobItemsAsync(string userName, string ISOCoding);
+        Task<IEnumerable<Context>> GetContextAsync();
         Task<IEnumerable<BindableComponentNamespace>> GetComponentNamespacesAsync();
         Task<IEnumerable<BindableInternalNamespace>> GetInternalNamespacesAsync(string componentNamespace);
         Task<IEnumerable<Language>> GetLanguagesAsync();

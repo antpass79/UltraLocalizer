@@ -1,23 +1,22 @@
 ﻿using Globe.Client.Localizer.Models;
-using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
 using Globe.Shared.DTOs;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Globe.Client.Localizer.Services
 {
-    class CurrentJobFiltersService : ICurrentJobFiltersService
+    class ConceptManagementFiltersService : IConceptManagementFiltersService
     {
-        private const string ENDPOINT_ComponentNamespace = "ComponentNamespace";
-        private const string ENDPOINT_InternalNamespace = "InternalNamespace";
-        private const string ENDPOINT_JobItem = "JobItem";
+        private const string ENDPOINT_ComponentNamespace = "ConceptManagementComponentNamespace";
+        private const string ENDPOINT_InternalNamespace = "ConceptManagementInternalNamespace";
+        private const string ENDPOINT_Context = "Context";
         private const string ENDPOINT_Language = "Language";
 
         private readonly IAsyncSecureHttpClient _secureHttpClient;
 
-        public CurrentJobFiltersService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
+        public ConceptManagementFiltersService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
         {
             _secureHttpClient = secureHttpClient;
             _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
@@ -33,21 +32,32 @@ namespace Globe.Client.Localizer.Services
             return await _secureHttpClient.GetAsync<IEnumerable<BindableInternalNamespace>>(ENDPOINT_InternalNamespace + "/?componentNamespace=" + componentNamespace);
         }
 
-        async public Task<IEnumerable<JobItem>> GetJobItemsAsync(string userName, string ISOCoding)
+        async public Task<IEnumerable<Context>> GetContextAsync()
         {
-            var search = new JobItemSearch
-            {
-                UserName = userName,
-                ISOCoding = ISOCoding
-            };
+            var contexts = (await _secureHttpClient.GetAsync<IEnumerable<Context>>(ENDPOINT_Context)).ToList();
 
-            var result = await _secureHttpClient.SendAsync<JobItemSearch>(HttpMethod.Get, ENDPOINT_JobItem, search);
-            return await result.GetValue<IEnumerable<JobItem>>();
+            contexts.Insert(0, new Context
+            {
+                Name = "all"              
+            });
+
+            return await Task.FromResult(contexts);
+
         }
 
         async public Task<IEnumerable<Language>> GetLanguagesAsync()
         {
-            return await _secureHttpClient.GetAsync<IEnumerable<Language>>(ENDPOINT_Language);
+            var languages = (await _secureHttpClient.GetAsync<IEnumerable<Language>>(ENDPOINT_Language)).ToList();
+
+            languages.Insert(0, new Language
+            {
+                Id = 0,
+                IsoCoding = "all",
+                Description = "all",
+                Name = "all"
+            }) ;
+
+            return await Task.FromResult(languages);
         }
     }
 }
