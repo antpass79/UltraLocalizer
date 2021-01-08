@@ -8,6 +8,7 @@
         public static readonly string LOGIN_VIEW = "LoginWindow";
         public static readonly string JOBLIST_MANAGEMENT_VIEW = "JobListManagementWindow";
         public static readonly string CURRENT_JOB_VIEW = "CurrentJobWindow";
+        public static readonly string CONCEPT_MANAGEMENT_VIEW = "ConceptManagementWindow";
         public static readonly string JOBS_VIEW = "JobsWindow";
         public static readonly string HOME_VIEW = "HomeWindow";
         public static readonly string MERGE_VIEW = "MergeWindow";

@@ -22,6 +22,7 @@
     <None Remove="Icons\management.png" />
     <None Remove="Icons\menu.png" />
     <None Remove="Icons\search.png" />
+    <None Remove="Icons\translation.png" />
     <None Remove="Icons\unlink.png" />
     <None Remove="Icons\warning.png" />
     <None Remove="Icons\work_in_progress.png" />
@@ -89,6 +90,7 @@
     <Resource Include="Icons\management.png" />
     <Resource Include="Icons\menu.png" />
     <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\translation.png" />
     <Resource Include="Icons\unlink.png" />
     <Resource Include="Icons\warning.png" />
     <Resource Include="Icons\work_in_progress.png" />

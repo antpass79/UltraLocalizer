@@ -115,6 +115,16 @@ namespace Globe.Client.Localizer.ViewModels
                     AlwaysVisible = false,
                     ViewName = ViewNames.CURRENT_JOB_VIEW
                 },
+                new MenuOption
+                {
+                    Title = "Concept Management",
+                    TitleKey = LanguageKeys.Concept_Management,
+                    IconName = "translation",
+                    IsSelected = false,
+                    Roles = "Admin, SuperUser, MasterTranslator, TranslatorDE, TranslatorEN, TranslatorES, TranslatorFR, TranslatorIT, TranslatorPT, TranslatorRU",
+                    AlwaysVisible = false,
+                    ViewName = ViewNames.CONCEPT_MANAGEMENT_VIEW
+                }
                 //new MenuOption
                 //{
                 //    Title = Localize[LanguageKeys.Translation],
