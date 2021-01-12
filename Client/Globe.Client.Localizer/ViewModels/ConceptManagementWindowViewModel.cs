@@ -1,15 +1,14 @@
-﻿using Globe.Client.Localizer.Dialogs;
-using Globe.Client.Localizer.Models;
+﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
 using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
-using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,8 +16,6 @@ namespace Globe.Client.Localizer.ViewModels
 {
     internal class ConceptManagementWindowViewModel : LocalizeWindowViewModel
     {
-        const string ALL_ITEMS = "All";
-
         private readonly ILoggerService _loggerService;
         private readonly INotificationService _notificationService;
         private readonly IConceptManagementFiltersService _conceptManagementFiltersService;
@@ -203,7 +200,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.FiltersBusy = true;
 
-                this.InternalNamespaces = await _conceptManagementFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : ALL_ITEMS);
+                this.InternalNamespaces = await _conceptManagementFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);
                 this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
 
                 this.FiltersBusy = false;
@@ -228,7 +225,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.Contexts = await _conceptManagementFiltersService.GetContextAsync();
                 this.ComponentNamespaces = await _conceptManagementFiltersService.GetComponentNamespacesAsync();
-                this.InternalNamespaces = await _conceptManagementFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : ALL_ITEMS);
+                this.InternalNamespaces = await _conceptManagementFiltersService.GetInternalNamespacesAsync(SelectedComponentNamespace != null ? SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);
                 this.Languages = await _conceptManagementFiltersService.GetLanguagesAsync();
 
                 this.SelectedContext = this.Contexts.FirstOrDefault();
@@ -281,7 +278,7 @@ namespace Globe.Client.Localizer.ViewModels
             catch (Exception exception)
             {
                 _loggerService.Exception(exception);
-                await _notificationService.NotifyAsync("Error", "Error during concepts request", Platform.Services.Notifications.NotificationLevel.Error);
+                await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Error_during_concepts_request], Platform.Services.Notifications.NotificationLevel.Error);
             }
             finally
             {

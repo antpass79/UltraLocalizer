@@ -50,7 +50,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globe.Identity.Tests", "Tes
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globe.Tests", "Server\Common\Globe.Tests\Globe.Tests.csproj", "{E4C6D431-E6E7-4006-9E28-D8CC0859793C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Globe.Shared", "Shared\Globe.Shared\Globe.Shared.csproj", "{CF23DC63-AEF9-4CC4-8A95-B3F89465C2EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globe.Shared", "Shared\Globe.Shared\Globe.Shared.csproj", "{CF23DC63-AEF9-4CC4-8A95-B3F89465C2EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{92DE9DB4-CE25-47DB-9EE3-92D2A8CFB0F5}"
 EndProject

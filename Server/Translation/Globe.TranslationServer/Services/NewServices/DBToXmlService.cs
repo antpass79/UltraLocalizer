@@ -1,4 +1,5 @@
 ﻿using Globe.BusinessLogic.Repositories;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
@@ -42,8 +43,8 @@ namespace Globe.TranslationServer.Services.NewServices
             Parallel.ForEach(components, (component) =>
             {
                 if (
-                component.ConceptComponentNamespace != Constants.COMPONENT_NAMESPACE_ALL &&
-                component.ConceptComponentNamespace != Constants.COMPONENT_NAMESPACE_OLD)
+                component.ConceptComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_ALL &&
+                component.ConceptComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD)
                 {
                     Parallel.ForEach(languages, (language) =>
                     {
@@ -70,7 +71,7 @@ namespace Globe.TranslationServer.Services.NewServices
                         {
                             LocalizationSection localizationSection = new LocalizationSection
                             {
-                                InternalNamespace = sectionGroup.Key == Constants.INTERNAL_NAMESPACE_NULL ? null : sectionGroup.Key
+                                InternalNamespace = sectionGroup.Key == SharedConstants.INTERNAL_NAMESPACE_NULL ? null : sectionGroup.Key
                             };
                             localizationResource.LocalizationSection.Add(localizationSection);
 

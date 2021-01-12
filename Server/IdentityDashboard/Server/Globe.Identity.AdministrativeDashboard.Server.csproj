@@ -5,6 +5,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <DisableImplicitComponentsAnalyzers>true</DisableImplicitComponentsAnalyzers>
     <OutputType>exe</OutputType>
+    <UserSecretsId>e339c604-d251-41a4-8447-17f302419d28</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

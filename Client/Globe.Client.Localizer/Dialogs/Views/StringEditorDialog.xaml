@@ -11,8 +11,8 @@
              xmlns:dto="clr-namespace:Globe.Shared.DTOs;assembly=Globe.Shared"
              prism:ViewModelLocator.AutoWireViewModel="True"
              BorderThickness="5" BorderBrush="#05163D"
-             MaxWidth="1200"
-             MaxHeight="800"
+             MaxWidth="1000"
+             MaxHeight="1200"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <prism:Dialog.WindowStyle>
@@ -82,31 +82,30 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <controls:LocTextBlock Grid.Column="0" Text="Component Namespace" />
-                <controls:LocTextBlock Grid.Column="1" Text="Internal Namespace" />
-                <controls:LocTextBlock Grid.Column="2" Text="Concept Name" />
-                <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.ComponentNamespace}" />
-                <controls:LocTextBlock Grid.Row="1" Grid.Column="1" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.InternalNamespace}" />
-                <controls:LocTextBlock Grid.Row="1" Grid.Column="2" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.Name}" />
+                <controls:LocTextBlock Grid.Column="0" Text="{Binding Localize[Concept]}" />
+                <controls:LocTextBlock Grid.Column="1" Text="{Binding Localize[ComponentNamespace]}" />
+                <controls:LocTextBlock Grid.Column="2" Text="{Binding Localize[InternalNamespace]}" />
+                <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.Name}" />
+                <controls:LocTextBlock Grid.Row="1" Grid.Column="1" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.ComponentNamespace}" />
+                <controls:LocTextBlock Grid.Row="1" Grid.Column="2" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.InternalNamespace}" />
             </Grid>
 
             <!-- Comments -->
             <Grid DockPanel.Dock="Top" Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
-                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <controls:LocTextBlock Grid.Row="0" Grid.Column="0">Software Developer Comment</controls:LocTextBlock>
-                <controls:LocTextBlock Grid.Row="0" Grid.Column="2" Text="{Binding EditableConcept.SoftwareDeveloperComment}"></controls:LocTextBlock>
-                <controls:LocTextBlock Grid.Row="1" Grid.Column="0">Master Translator Comment</controls:LocTextBlock>
-                <controls:LocTextBox Grid.Row="1" Grid.Column="2" Text="{Binding EditableConcept.MasterTranslatorComment}"></controls:LocTextBox>
-                <controls:LocCheckBox Grid.Row="2" Grid.ColumnSpan="2">Ignore Translation</controls:LocCheckBox>
+                <controls:LocTextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Localize[Software_developer_comment]}" />
+                <controls:LocTextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding EditableConcept.SoftwareDeveloperComment}"></controls:LocTextBlock>
+                <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Localize[Master_translator_comment]}" />
+                <controls:LocTextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding EditableConcept.MasterTranslatorComment}"></controls:LocTextBox>
             </Grid>
 
             <DockPanel DockPanel.Dock="Top" Margin="10">
@@ -123,52 +122,41 @@
 
                 <!-- Buttons -->
                 <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
-                    <Button DockPanel.Dock="Right" Command="{Binding CloseDialogCommand}" CommandParameter="true">Close</Button>
-                    <Button DockPanel.Dock="Right" Command="{Binding SaveCommand}">Save</Button>
+                    <Button DockPanel.Dock="Right" Command="{Binding CloseDialogCommand}" CommandParameter="true" Content="{Binding Localize[Close]}" />
+                    <Button DockPanel.Dock="Right" Command="{Binding SaveCommand}" Content="{Binding Localize[Save]}" />
                 </DockPanel>
 
                 <!-- EditableContext DataGrid -->
-                <controls:LocDataGrid x:Name="contextGrid" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                <controls:LocDataGrid x:Name="contextGrid" FrozenColumnCount="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
                     <DataGrid.Columns>
-                        <!-- DataGridColumn 1 -->
-                        <DataGridTextColumn Binding="{Binding Name}" Header="Name">
-                            <DataGridTextColumn.HeaderTemplate>
-                                <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                         {RelativeSource Mode=TemplatedParent}}"/>
-                                </DataTemplate>
-                            </DataGridTextColumn.HeaderTemplate>
-                        </DataGridTextColumn>
-                        <!-- DataGridColumn 2 -->
-                        <DataGridTemplateColumn Header="Type">
-                            <DataGridTemplateColumn.HeaderTemplate>
-                                <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                             {RelativeSource Mode=TemplatedParent}}"/>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.HeaderTemplate>
+                        <!-- Fixed Rows Start -->
+                        <DataGridTemplateColumn Width="50" CanUserResize="False" IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <controls:LocComboBox ItemsSource="{Binding Source={StaticResource stringTypes}}" 
-                                                          SelectedValue="{Binding DataContext.StringType, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                                          IsEnabled="{Binding DataContext.Linked, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource LinkToEnabledConverter}}"/>
+                                    <Grid HorizontalAlignment="Center">
+                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Link" Command="{Binding ElementName=contextGrid, Path=DataContext.LinkCommand}" CommandParameter="{Binding}" Visibility="{Binding Linked, Converter={StaticResource LinkToVisibilityConverter}}">
+                                            <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/link.png" />
+                                        </Button>
+                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Unlink" Command="{Binding ElementName=contextGrid, Path=DataContext.UnlinkCommand}" CommandParameter="{Binding}" Visibility="{Binding Linked, Converter={StaticResource UnlinkToVisibilityConverter}}">
+                                            <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/unlink.png" />
+                                        </Button>
+                                    </Grid>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <!-- DataGridColumn 3 -->                      
-                        <DataGridTextColumn Binding="{Binding StringDefaultValue}" Header="Original Value" IsReadOnly="True">
-                            <DataGridTextColumn.HeaderTemplate>
+                        <DataGridTemplateColumn Width="50" CanUserResize="False" IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
+                            <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                    <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Duplicate" Command="{Binding ElementName=contextGrid, Path=DataContext.DuplicateCommand}" CommandParameter="{Binding}">
+                                        <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/duplicate.png" />
+                                    </Button>
                                 </DataTemplate>
-                            </DataGridTextColumn.HeaderTemplate>
-                        </DataGridTextColumn>
-                        <!-- DataGridColumn 4 -->
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="Localized Value" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                              {RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.HeaderTemplate>
@@ -180,11 +168,37 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <!-- DataGridColumn 5 -->
+                        <!-- Fixed Rows End -->
+
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Name">
+                            <DataGridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTextColumn.HeaderTemplate>
+                        </DataGridTextColumn>
+                        <DataGridTemplateColumn Header="Type">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                             {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <controls:LocComboBox ItemsSource="{Binding Source={StaticResource stringTypes}}" 
+                                                          SelectedValue="{Binding DataContext.StringType, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                          IsEnabled="{Binding DataContext.Linked, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource LinkToEnabledConverter}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <!-- Preview Rows Start -->
                         <DataGridTemplateColumn Header="Preview Style Standard" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.HeaderTemplate>
@@ -209,11 +223,10 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <!--DataGridColumn 6 -->
                         <DataGridTemplateColumn Header="Preview Style Orange grey" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.HeaderTemplate>
@@ -238,11 +251,10 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <!--<DataGridColumn 7 -->
                         <DataGridTemplateColumn Header="Preview Style StandardV2" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.HeaderTemplate>
@@ -267,31 +279,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <!--<DataGridColumn 8 -->
-                        <DataGridTemplateColumn IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Grid>
-                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Link" Command="{Binding ElementName=contextGrid, Path=DataContext.LinkCommand}" CommandParameter="{Binding}" Visibility="{Binding Linked, Converter={StaticResource LinkToVisibilityConverter}}">
-                                            <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/link.png" />
-                                        </Button>
-                                        <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Unlink" Command="{Binding ElementName=contextGrid, Path=DataContext.UnlinkCommand}" CommandParameter="{Binding}" Visibility="{Binding Linked, Converter={StaticResource UnlinkToVisibilityConverter}}">
-                                            <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/unlink.png" />
-                                        </Button>
-                                    </Grid>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        <!--<DataGridColumn 9 -->
-                        <DataGridTemplateColumn IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Duplicate" Command="{Binding ElementName=contextGrid, Path=DataContext.DuplicateCommand}" CommandParameter="{Binding}">
-                                        <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/duplicate.png" />
-                                    </Button>
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
+                        <!-- Preview Rows End -->
                     </DataGrid.Columns>
                 </controls:LocDataGrid>
             </DockPanel>
@@ -318,7 +306,7 @@
 
                             <controls:LocTextBox Grid.Row="0" Grid.Column="0" Text="{Binding StringValue}" VerticalAlignment="Center" />
                             <Button Grid.Row="0" Grid.Column="1" Command="{Binding SearchConceptsCommand}" MinWidth="0">
-                                <Image Width="28" Height="28" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/search.png" />
+                                <Image Width="24" Height="24" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/search.png" />
                             </Button>
 
                         </Grid>

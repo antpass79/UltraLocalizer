@@ -1,5 +1,6 @@
 ﻿using Globe.BusinessLogic.Repositories;
 using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -37,7 +38,7 @@ namespace Globe.TranslationServer.Services.NewServices
         {
             try
             {
-                var result = language.IsoCoding == Constants.LANGUAGE_EN
+                var result = language.IsoCoding == SharedConstants.LANGUAGE_EN
                     ?
                     GetGroupsByEnglish()
                     :
@@ -60,7 +61,7 @@ namespace Globe.TranslationServer.Services.NewServices
             var items = _conceptStringToContextRepository
                 .Query(item =>
                     item.StringId == null &&
-                    item.ComponentNamespace != Constants.COMPONENT_NAMESPACE_OLD)
+                    item.ComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD)
                 .AsNoTracking()
                 .ToList()
                 .Select(item =>
@@ -76,15 +77,15 @@ namespace Globe.TranslationServer.Services.NewServices
             var subQuery = _stringsToContextRepository
                 .Query(item =>
                     item.Isocoding == language.IsoCoding &&
-                    item.ComponentNamespace != Constants.COMPONENT_NAMESPACE_OLD)
+                    item.ComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD)
                 .Select(item => item.Id);
 
             var items = _stringsToContextRepository
                 .Query(item =>
                     item.Ignore.HasValue &&
                     !item.Ignore.Value &&
-                    item.Isocoding == Constants.LANGUAGE_EN &&
-                    item.ComponentNamespace != Constants.COMPONENT_NAMESPACE_OLD &&
+                    item.Isocoding == SharedConstants.LANGUAGE_EN &&
+                    item.ComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD &&
                     !subQuery.Contains(item.Id))
                 .AsNoTracking()
                 .ToList()

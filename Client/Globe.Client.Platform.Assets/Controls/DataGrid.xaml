@@ -20,7 +20,7 @@
             </Trigger>
         </Style.Triggers>
         <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="12"/>
         <Setter Property="Height" Value="auto"/>
     </Style>
     <Style TargetType="{x:Type DataGridCell}">
@@ -47,11 +47,16 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    <Style TargetType="{x:Type DataGridColumnHeader}">
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="FontSize" Value="14"/>
-        <Setter Property="FontWeight" Value="DemiBold"/>
-        <Setter Property="MinWidth" Value="150"/>
+
+    <!--Header-->
+    <Style x:Key="DataGridHeaderControl">
+        <Setter Property="TextBlock.FontSize" Value="12"/>
+        <Setter Property="TextBlock.FontWeight" Value="DemiBold"/>
+        <Setter Property="TextBlock.VerticalAlignment" Value="Stretch"/>
+    </Style>
+    <Style TargetType="{x:Type TextBlock}" x:Key="DataGridHeaderTextBlock" BasedOn="{StaticResource DataGridHeaderControl}">
+    </Style>
+    <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource DataGridHeaderControl}">
     </Style>
 
 </ResourceDictionary>

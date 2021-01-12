@@ -17,14 +17,15 @@
         <Style TargetType="TextBlock" x:Key="LoginError">
             <Setter Property="TextWrapping" Value="Wrap" />
             <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="14"/>
             <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="FontStyle" Value="Italic"/>
             <Setter Property="Foreground" Value="Red"/>
         </Style>
 
     </UserControl.Resources>
 
-    <DockPanel Width="500">
+    <DockPanel Width="350">
         <controls:LocPageTitleTextBlock DockPanel.Dock="Top" Text="{Binding Localize[UserLogin]}" />
         <ContentControl DockPanel.Dock="Top">
             <StackPanel>
@@ -33,9 +34,9 @@
                 <controls:LocTextBox Text="{Binding UserName}" />
                 <controls:LocTextBlock Text="{Binding Localize[Password]}" />
                 <platform:PasswordInput Name="passwordInput" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-                <StackPanel Orientation="Horizontal">
-                    <Button Margin="20" Width="150" Command="{Binding LoginCommand}" Content="{Binding Localize[Login]}"/>
-                    <Button Margin="20" Width="150" Style="{StaticResource GrayButton}" Command="{Binding CancelCommand}" Content="{Binding Localize[Cancel]}"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Command="{Binding LoginCommand}" Content="{Binding Localize[Login]}"/>
+                    <Button Style="{StaticResource GrayButton}" Command="{Binding CancelCommand}" Content="{Binding Localize[Cancel]}"/>
                 </StackPanel>
                 <TextBlock Style="{StaticResource LoginError}" Visibility="{Binding Path=LoginResult.Successful, Converter={StaticResource BooleanToVisibilityConverter}}" Text="{Binding LoginResult.Error}"></TextBlock>
             </StackPanel>
