@@ -13,13 +13,11 @@ namespace Globe.Client.Localizer.ViewModels
     {
 
         private readonly IAsyncLocalizableStringService _proxyLocalizableStringService;
-        private readonly IStringMergeService _stringMergeService;
 
         public JobsWindowViewModel(IEventAggregator eventAggregator, IProxyLocalizableStringService proxyLocalizableStringService, IStringMergeService stringMergeService)
             : base(eventAggregator)
         {
             _proxyLocalizableStringService = proxyLocalizableStringService;
-            _stringMergeService = stringMergeService;
         }
 
         IEnumerable<LocalizableString> _strings;
@@ -28,7 +26,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _strings;
             set
             {
-                SetProperty<IEnumerable<LocalizableString>>(ref _strings, value);
+                SetProperty(ref _strings, value);
             }
         }
 

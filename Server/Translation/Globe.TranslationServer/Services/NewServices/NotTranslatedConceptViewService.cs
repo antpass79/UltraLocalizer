@@ -1,6 +1,6 @@
 ﻿using Globe.BusinessLogic.Repositories;
 using Globe.Shared.DTOs;
-using Globe.TranslationServer.DTOs;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Utilities;
 using Microsoft.EntityFrameworkCore;
@@ -32,7 +32,7 @@ namespace Globe.TranslationServer.Services.NewServices
         {
             try
             {
-                var result = search.Language.IsoCoding == Constants.LANGUAGE_EN
+                var result = search.Language.IsoCoding == SharedConstants.LANGUAGE_EN
                     ?
                     GetConceptToContextsByEnglish(search.ComponentNamespace, search.InternalNamespace)
                     :
@@ -78,7 +78,7 @@ namespace Globe.TranslationServer.Services.NewServices
                 .Query(item =>
                     item.Ignore.HasValue &&
                     !item.Ignore.Value &&
-                    item.Isocoding == Constants.LANGUAGE_EN &&
+                    item.Isocoding == SharedConstants.LANGUAGE_EN &&
                     item.ComponentNamespace == componentNamespace.Description &&
                     item.InternalNamespace == internalNamespace.Description &&
                     !subQuery.Contains(item.Id))

@@ -66,18 +66,12 @@
                         <RowDefinition Height="95*" />
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <controls:LocDataGrid Name="grid" Grid.Row="0" ItemsSource="{Binding ConceptViews}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
-                        <DataGrid.Resources>
-                            <Style TargetType="{x:Type TextBlock}">
-                                <Setter Property="FontSize" Value="20"/>
-                                <Setter Property="FontWeight" Value="DemiBold"/>
-                            </Style>
-                        </DataGrid.Resources>
+                    <controls:LocDataGrid Grid.Row="0" ItemsSource="{Binding ConceptViews}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ComponentNamespace}" Header="Component Namespace">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
-                                        <controls:LocTextBlock Style="{DynamicResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                        <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
@@ -85,7 +79,7 @@
                             <DataGridTextColumn Binding="{Binding InternalNamespace}" Header="Internal Namespace">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
-                                        <controls:LocTextBlock Style="{DynamicResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                        <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
@@ -93,7 +87,7 @@
                             <DataGridTextColumn Binding="{Binding Concept}" Header="Concept">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
-                                        <controls:LocTextBlock Style="{DynamicResource HeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                        <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
@@ -105,7 +99,7 @@
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="DataGridColumnHeader">
                                                     <controls:LocDockPanel LastChildFill="False" Background="Transparent">
-                                                        <controls:LocTextBlock FontSize="16" DockPanel.Dock="Top" HorizontalAlignment="Center">Contexts</controls:LocTextBlock>
+                                                        <controls:LocTextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">Contexts</controls:LocTextBlock>
                                                         <controls:LocGrid DockPanel.Dock="Bottom">
                                                             <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition />

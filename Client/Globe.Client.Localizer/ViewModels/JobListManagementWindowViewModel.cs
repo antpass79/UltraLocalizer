@@ -1,12 +1,14 @@
 ﻿using Globe.Client.Localizer.Dialogs;
 using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.Utilities;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Services.Dialogs;
@@ -132,7 +134,7 @@ namespace Globe.Client.Localizer.ViewModels
             get
             {
                 if (SelectedInternalNamespace == null)
-                    return null;
+                    return ComponentNamespaceGroups.SingleOrDefault(item => item.IsSelected);
 
                 return ComponentNamespaceGroups
                     .SingleOrDefault(item => item.InternalNamespaces.Contains(SelectedInternalNamespace));
@@ -175,32 +177,61 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand AddCommand =>
             _addCommand ?? (_addCommand = new DelegateCommand(async () =>
             {
-                if (SelectedComponentNamespaceGroup == null || SelectedInternalNamespace == null)
+                if (SelectedComponentNamespaceGroup == null && SelectedInternalNamespace == null)
                     return;
 
                 try
                 {
                     ConceptDetailsBusy = true;
 
-                    var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
-                        SelectedComponentNamespaceGroup.ComponentNamespace,
-                        SelectedInternalNamespace,
-                        SelectedLanguage);
-
-                    if (NotTranslatedConceptViews == null)
+                    if (SelectedInternalNamespace != null)
                     {
-                        NotTranslatedConceptViews = result;
+                        var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
+                            SelectedComponentNamespaceGroup.ComponentNamespace,
+                            SelectedInternalNamespace,
+                            SelectedLanguage);
+
+                        if (NotTranslatedConceptViews == null)
+                        {
+                            NotTranslatedConceptViews = result;
+                        }
+                        else
+                        {
+                            var newElements = result
+                                .Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name))
+                                .ToList();
+
+                            NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
+                                .OrderBy(item => item.ComponentNamespace.Description)
+                                .ThenBy(item => item.InternalNamespace.Description)
+                                .ThenBy(item => item.Name);
+                        }
                     }
                     else
                     {
-                        var newElements = result
-                            .Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name))
-                            .ToList();
+                        foreach (var internalNamespace in SelectedComponentNamespaceGroup.InternalNamespaces)
+                        {
+                            var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
+                                SelectedComponentNamespaceGroup.ComponentNamespace,
+                                internalNamespace,
+                                SelectedLanguage);
 
-                        NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
-                            .OrderBy(item => item.ComponentNamespace.Description)
-                            .ThenBy(item => item.InternalNamespace.Description)
-                            .ThenBy(item => item.Name);                           
+                            if (NotTranslatedConceptViews == null)
+                            {
+                                NotTranslatedConceptViews = result;
+                            }
+                            else
+                            {
+                                var newElements = result
+                                    .Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name))
+                                    .ToList();
+
+                                NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
+                                    .OrderBy(item => item.ComponentNamespace.Description)
+                                    .ThenBy(item => item.InternalNamespace.Description)
+                                    .ThenBy(item => item.Name);
+                            }
+                        }
                     }
                 }
                 catch (Exception e)
@@ -208,8 +239,8 @@ namespace Globe.Client.Localizer.ViewModels
                     _loggerService.Exception(e);
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = Localize["Error"],
-                        Message = Localize["Error during getting list"],
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Error_during_getting_list],
                         Level = NotificationLevel.Error
                     });
                 }
@@ -240,10 +271,10 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand SaveJoblistCommand =>
             _saveJoblistCommand ?? (_saveJoblistCommand = new DelegateCommand(() =>
             {
-                var @params = new DialogParameters();
+                var @params = new Prism.Services.Dialogs.DialogParameters();
 
-                @params.Add(DialogConstants.LANGUAGE, SelectedLanguage);
-                @params.Add(DialogConstants.NOT_TRANSLATED_CONCEPT_VIEWS, NotTranslatedConceptViews);
+                @params.Add(Dialogs.DialogParams.LANGUAGE, SelectedLanguage);
+                @params.Add(Dialogs.DialogParams.NOT_TRANSLATED_CONCEPT_VIEWS, NotTranslatedConceptViews);
 
                 _dialogService.ShowDialog(DialogNames.SAVE_JOBLIST, @params, dialogResult =>
                 {
@@ -266,8 +297,8 @@ namespace Globe.Client.Localizer.ViewModels
 
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = Localize["Get new concepts"],
-                        Message = result ? Localize["New Concepts Found"] : Localize["No Concepts Found"],
+                        Title = Localize[LanguageKeys.Get_new_concepts],
+                        Message = result ? Localize[LanguageKeys.New_concepts_found] : Localize[LanguageKeys.No_concepts_found],
                         Level = NotificationLevel.Info
                     });
                     await OnLanguageChange();
@@ -277,8 +308,8 @@ namespace Globe.Client.Localizer.ViewModels
                     _loggerService.Exception(e);
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = Localize["Error: Get new concepts"],
-                        Message = Localize["Error during searching new Concepts"],
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Error_during_searching_new_concepts],
                         Level = NotificationLevel.Error
                     });
                 }
@@ -326,15 +357,15 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 FiltersBusy = true;
                 Languages = await _jobListManagementFiltersService.GetLanguagesAsync();
-                SelectedLanguage = Languages.FirstOrDefault(item => item.IsoCoding == "en");
+                SelectedLanguage = Languages.FirstOrDefault(item => item.IsoCoding == SharedConstants.LANGUAGE_EN);
             }
             catch (Exception e)
             {
                 _loggerService.Exception(e);
                 await _notificationService.NotifyAsync(new Notification
                 {
-                    Title = Localize["Error"],
-                    Message = Localize["Error during searching new Concepts"],
+                    Title = Localize[LanguageKeys.Error],
+                    Message = Localize[LanguageKeys.Error_during_searching_new_concepts],
                     Level = NotificationLevel.Error
                 });
             }
@@ -365,8 +396,8 @@ namespace Globe.Client.Localizer.ViewModels
                 ComponentNamespaceGroups = null;
                 await _notificationService.NotifyAsync(new Notification
                 {
-                    Title = Localize["Error"],
-                    Message = Localize["Error during building groups"],
+                    Title = Localize[LanguageKeys.Error],
+                    Message = Localize[LanguageKeys.Error_during_building_groups],
                     Level = NotificationLevel.Error
                 });
             }

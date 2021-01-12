@@ -2,6 +2,7 @@
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
+using Globe.Client.Platform.ViewModels;
 using Globe.Shared.DTOs;
 using Prism.Commands;
 using Prism.Events;
@@ -14,7 +15,7 @@ using System.Linq;
 
 namespace Globe.Client.Localizer.Dialogs.ViewModels
 {
-    class StringEditorDialogViewModel : BindableBase, IDialogAware
+    class StringEditorDialogViewModel : LocalizeWindowViewModel, IDialogAware
     {
         private readonly IEditStringService _editStringService;
         private readonly ILoggerService _loggerService;
@@ -27,7 +28,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             ILoggerService loggerService,
             IPreviewStyleService previewStyleService,
             IEventAggregator eventAggregator,
+            ILocalizationAppService localizationAppService,
             INotificationService notificationService)
+            : base(eventAggregator, localizationAppService)
         {
             _editStringService = editStringService;
             _loggerService = loggerService;
@@ -311,8 +314,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         async public virtual void OnDialogOpened(IDialogParameters parameters)
         {
-            EditableConcept = parameters.GetValue<EditableConcept>("editableConcept");
-            Language = parameters.GetValue<Language>("language");
+            EditableConcept = parameters.GetValue<EditableConcept>(DialogParams.EDITABLE_CONCEPT);
+            Language = parameters.GetValue<Language>(DialogParams.LANGUAGE);
             Contexts = await _editStringService.GetContextsAsync();
             StringTypes = await _editStringService.GetStringTypesAsync();
             SelectedContext = this.Contexts.ElementAt(0);
