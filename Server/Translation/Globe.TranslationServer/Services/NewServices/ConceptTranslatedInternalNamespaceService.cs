@@ -1,5 +1,6 @@
 ﻿using Globe.BusinessLogic.Repositories;
 using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Extensions;
 using Globe.TranslationServer.Utilities;
@@ -30,7 +31,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
             componentNamespace = componentNamespace.ToLower();
 
-            if (componentNamespace != Constants.COMPONENT_NAMESPACE_ALL)
+            if (componentNamespace != SharedConstants.COMPONENT_NAMESPACE_ALL)
             {
                 var query = _repository.Query();
                 items = query
@@ -46,7 +47,7 @@ namespace Globe.TranslationServer.Services.NewServices
 
                 items.Insert(0, new InternalNamespace
                 {
-                    Description = Constants.INTERNAL_NAMESPACE_ALL
+                    Description = SharedConstants.INTERNAL_NAMESPACE_ALL
                 });
             }
             else
@@ -54,7 +55,7 @@ namespace Globe.TranslationServer.Services.NewServices
                 items = new List<InternalNamespace>();
                 items.Insert(0, new InternalNamespace
                 {
-                    Description = Constants.INTERNAL_NAMESPACE_ALL
+                    Description = SharedConstants.INTERNAL_NAMESPACE_ALL
                 });
             }
 

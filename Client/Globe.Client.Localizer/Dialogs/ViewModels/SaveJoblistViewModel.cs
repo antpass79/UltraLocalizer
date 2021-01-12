@@ -134,7 +134,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             try
             {
                 Busy = true;
-                _language = parameters.GetValue<Language>(DialogConstants.LANGUAGE);
+                _language = parameters.GetValue<Language>(DialogParams.LANGUAGE);
                 Users = (await _userService.GetUsersAsync(_language))
                     .Select(item => new BindableApplicationUser
                     {
@@ -144,7 +144,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                         UserName = item.UserName,
                         Email = item.Email
                     });
-                _notTranslatedConceptViews = parameters.GetValue<IEnumerable<BindableNotTranslatedConceptView>>(DialogConstants.NOT_TRANSLATED_CONCEPT_VIEWS);
+                _notTranslatedConceptViews = parameters.GetValue<IEnumerable<BindableNotTranslatedConceptView>>(DialogParams.NOT_TRANSLATED_CONCEPT_VIEWS);
             }
             catch (Exception e)
             {

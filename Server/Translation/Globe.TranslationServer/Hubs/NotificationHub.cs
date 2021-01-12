@@ -1,4 +1,5 @@
-﻿using Globe.TranslationServer.Extensions;
+﻿using Globe.Shared.Utilities;
+using Globe.TranslationServer.Extensions;
 using Globe.TranslationServer.Services;
 using Globe.TranslationServer.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -16,7 +17,7 @@ namespace Globe.TranslationServer.Hubs
         {
             var masterTranslator = Context.User.IsMasterTranslator();
             if (masterTranslator)
-                await Groups.AddToGroupAsync(Context.ConnectionId, Constants.GROUP_MASTER_TRANSLATOR);
+                await Groups.AddToGroupAsync(Context.ConnectionId, SharedConstants.GROUP_MASTER_TRANSLATOR);
 
             await base.OnConnectedAsync();
         }
@@ -25,7 +26,7 @@ namespace Globe.TranslationServer.Hubs
         {
             var masterTranslator = Context.User.IsMasterTranslator();
             if (masterTranslator)
-                await Groups.RemoveFromGroupAsync(Context.ConnectionId, Constants.GROUP_MASTER_TRANSLATOR);
+                await Groups.RemoveFromGroupAsync(Context.ConnectionId, SharedConstants.GROUP_MASTER_TRANSLATOR);
 
             await base.OnDisconnectedAsync(exception);
         }
@@ -37,7 +38,7 @@ namespace Globe.TranslationServer.Hubs
 
         public async Task ConceptsChanged(int count)
         {
-            await Clients.Group(Constants.GROUP_MASTER_TRANSLATOR).ConceptsChanged(count);
+            await Clients.Group(SharedConstants.GROUP_MASTER_TRANSLATOR).ConceptsChanged(count);
         }
     }
 }

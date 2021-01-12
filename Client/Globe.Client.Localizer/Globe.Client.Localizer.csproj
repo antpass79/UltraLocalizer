@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>..\..\Server\IdentityDashboard\Server\bin\Debug\netcoreapp3.1\UltraLocalizer\</OutputPath>
+    <OutputPath>..\..\Server\IdentityDashboard\Server\bin\Debug\net5.0\UltraLocalizer\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -29,6 +29,7 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="5.0.1" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Prism.Unity" Version="8.0.0.1909" />
   </ItemGroup>

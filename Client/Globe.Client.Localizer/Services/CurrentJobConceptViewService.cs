@@ -26,6 +26,29 @@ namespace Globe.Client.Localizer.Services
             return await result.GetValue<IEnumerable<JobListConcept>>();
         }
 
+        //Stack<JobListConceptSearch> _stack = new Stack<JobListConceptSearch>();
+        //async public Task<IEnumerable<JobListConcept>> GetConceptViewsAsync(JobListConceptSearch search, CancellationToken cancellationToken = default(CancellationToken))
+        //{
+        //    HttpResponseMessage response = new HttpResponseMessage();
+        //    _stack.Push(search);
+
+        //    if (_stack.Count == 1)
+        //    {
+        //        response = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_ConceptView, search);
+        //        if (_stack.Count != 1)
+        //        {
+        //            var lastSearch = _stack.Pop();
+        //            _stack.Clear();
+        //            return await GetConceptViewsAsync(lastSearch, cancellationToken);
+        //        }
+        //        _stack.Clear();
+        //        cancellationToken.ThrowIfCancellationRequested();
+        //    }
+
+        //    return await response.GetValue<IEnumerable<JobListConcept>>();
+        //}
+
+
         async public Task<ConceptDetails> GetConceptDetailsAsync(JobListConcept jobListConcept)
         {
             var result = await _secureHttpClient.SendAsync<JobListConcept>(HttpMethod.Get, jobListConcept.DetailsLink, jobListConcept);

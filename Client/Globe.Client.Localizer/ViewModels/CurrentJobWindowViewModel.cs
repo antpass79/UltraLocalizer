@@ -1,10 +1,12 @@
 ﻿using Globe.Client.Localizer.Dialogs;
 using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Regions;
@@ -13,14 +15,13 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.ViewModels
 {
     internal class CurrentJobWindowViewModel : LocalizeWindowViewModel
     {
-        const string ALL_ITEMS = "All";
-
         private readonly IDialogService _dialogService;
         private readonly ILoggerService _loggerService;
         private readonly INotificationService _notificationService;
@@ -222,7 +223,7 @@ namespace Globe.Client.Localizer.ViewModels
 
                 //Replicato il comportamento del vecchio localizzatore: in caso di doppio context identico (concettualmente sbagliato, ma frutto di errore XML o User)
                 //si prende il primo (FirstOfDefault) invece che lanciare eccezione se si usasse "Single"
-                @params.Add("editableConcept", new EditableConcept(
+                @params.Add(DialogParams.EDITABLE_CONCEPT, new EditableConcept(
                     conceptView.Id,
                     conceptView.ComponentNamespace,
                     conceptView.InternalNamespace,
@@ -242,7 +243,7 @@ namespace Globe.Client.Localizer.ViewModels
                 {
                     MasterTranslatorComment = conceptDetails.MasterTranslatorComment
                 });
-                @params.Add("language", this.SelectedLanguage);
+                @params.Add(DialogParams.LANGUAGE, this.SelectedLanguage);
 
                 _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, async dialogResult =>
                 { 
@@ -266,12 +267,12 @@ namespace Globe.Client.Localizer.ViewModels
                 try
                 {
                     await _xmlService.Download(downloadPath);
-                    await _notificationService.NotifyAsync("Info", "Download completed", Platform.Services.Notifications.NotificationLevel.Info);
+                    await _notificationService.NotifyAsync(Localize[LanguageKeys.Information], Localize[LanguageKeys.Download_completed], Platform.Services.Notifications.NotificationLevel.Info);
                 }
                 catch (Exception e)
                 {
                     _loggerService.Exception(e);
-                    await _notificationService.NotifyAsync("Error", "Download error", Platform.Services.Notifications.NotificationLevel.Error);
+                    await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Download_error], Platform.Services.Notifications.NotificationLevel.Error);
                 }
                 finally
                 {
@@ -287,7 +288,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.FiltersBusy = true;
 
-                this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : ALL_ITEMS);
+                this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);
                 this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
 
                 this.FiltersBusy = false;
@@ -299,7 +300,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.FiltersBusy = true;
 
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : ALL_ITEMS);
+                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
                 this.SelectedJobItem = this.JobItems.FirstOrDefault();
 
                 this.FiltersBusy = false;
@@ -322,15 +323,15 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : ALL_ITEMS);
+                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
                 this.ComponentNamespaces = await _currentJobFiltersService.GetComponentNamespacesAsync();
-                this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : ALL_ITEMS);
+                this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);
                 this.Languages = await _currentJobFiltersService.GetLanguagesAsync();
 
                 this.SelectedJobItem = this.JobItems.FirstOrDefault();
                 this.SelectedComponentNamespace = this.ComponentNamespaces.FirstOrDefault();
                 this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
-                this.SelectedLanguage = this.Languages.FirstOrDefault(item => item.IsoCoding == "en");
+                this.SelectedLanguage = this.Languages.FirstOrDefault(item => item.IsoCoding == SharedConstants.LANGUAGE_EN);
             }
             catch (Exception e)
             {
@@ -372,10 +373,14 @@ namespace Globe.Client.Localizer.ViewModels
                     ItemCount = ConceptViews.Count();
                 }
             }
+            catch (OperationCanceledException exception)
+            {
+                _loggerService.Exception(exception);
+            }
             catch (Exception exception)
             {
                 _loggerService.Exception(exception);
-                await _notificationService.NotifyAsync("Error", "Error during concepts request", Platform.Services.Notifications.NotificationLevel.Error);
+                await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Error_during_concepts_request], Platform.Services.Notifications.NotificationLevel.Error);
             }
             finally
             {

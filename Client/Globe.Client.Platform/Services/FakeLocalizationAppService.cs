@@ -68,9 +68,8 @@ namespace Globe.Client.Platform.Services
 
         private void FillItalianValues()
         {
-            _italian.Add(nameof(LanguageKeys.Hello), "Ciao");
             _italian.Add(nameof(LanguageKeys.Options), "Opzioni");
-            _italian.Add(nameof(LanguageKeys.Home), LanguageKeys.Home);
+            _italian.Add(nameof(LanguageKeys.Page_Home), LanguageKeys.Page_Home);
             _italian.Add(nameof(LanguageKeys.Translation), "Traduzione");
             _italian.Add(nameof(LanguageKeys.Merge), "Unisci");
             _italian.Add(nameof(LanguageKeys.Load), "Carica");
@@ -84,8 +83,8 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Logout), "Esci");
             _italian.Add(nameof(LanguageKeys.Search), "Cerca");
 
-            _italian.Add(nameof(LanguageKeys.Joblist_Management), "Gestione JobList");
-            _italian.Add(nameof(LanguageKeys.Current_Job), "Lavoro Corrente");
+            _italian.Add(nameof(LanguageKeys.Page_Joblist_Management), "Gestione JobList");
+            _italian.Add(nameof(LanguageKeys.Page_Current_Job), "Lavoro Corrente");
 
             _italian.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Inserisci i dettagli");
 
@@ -109,9 +108,8 @@ namespace Globe.Client.Platform.Services
 
         private void FillEnglishValues()
         {
-            _english.Add(nameof(LanguageKeys.Hello), LanguageKeys.Hello);
             _english.Add(nameof(LanguageKeys.Options), LanguageKeys.Options);
-            _english.Add(nameof(LanguageKeys.Home), LanguageKeys.Home);
+            _english.Add(nameof(LanguageKeys.Page_Home), LanguageKeys.Page_Home);
             _english.Add(nameof(LanguageKeys.Translation), LanguageKeys.Translation);
             _english.Add(nameof(LanguageKeys.Merge), LanguageKeys.Merge);
             _english.Add(nameof(LanguageKeys.Load), LanguageKeys.Load);
@@ -125,8 +123,8 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Logout), LanguageKeys.Logout);
             _english.Add(nameof(LanguageKeys.Search), LanguageKeys.Search);
 
-            _english.Add(nameof(LanguageKeys.Joblist_Management), LanguageKeys.Joblist_Management);
-            _english.Add(nameof(LanguageKeys.Current_Job), LanguageKeys.Current_Job);
+            _english.Add(nameof(LanguageKeys.Page_Joblist_Management), LanguageKeys.Page_Joblist_Management);
+            _english.Add(nameof(LanguageKeys.Page_Current_Job), LanguageKeys.Page_Current_Job);
 
             _english.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Please enter your credentials");
 

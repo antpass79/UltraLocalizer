@@ -1,5 +1,6 @@
 ﻿using Globe.BusinessLogic.Repositories;
 using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Extensions;
 using Globe.TranslationServer.Utilities;
@@ -30,9 +31,9 @@ namespace Globe.TranslationServer.Services.NewServices
                     .WhereIf(item =>
                         item.JobListId == jobListId, jobListId != 0)
                     .WhereIf(item =>
-                        item.ConceptComponentNamespace == componentNamespace, componentNamespace != Constants.COMPONENT_NAMESPACE_ALL)
+                        item.ConceptComponentNamespace == componentNamespace, componentNamespace != SharedConstants.COMPONENT_NAMESPACE_ALL)
                     .WhereIf(item =>
-                        item.ConceptInternalNamespace == internalNamespace, internalNamespace != Constants.INTERNAL_NAMESPACE_ALL)
+                        item.ConceptInternalNamespace == internalNamespace, internalNamespace != SharedConstants.INTERNAL_NAMESPACE_ALL)
                     .ToList()
                     .Select(item => new
                     {

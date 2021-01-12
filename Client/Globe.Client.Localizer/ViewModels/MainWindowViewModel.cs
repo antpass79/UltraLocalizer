@@ -6,6 +6,7 @@ using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
+using Globe.Shared.Utilities;
 using Microsoft.AspNetCore.SignalR.Client;
 using Prism.Commands;
 using Prism.Events;
@@ -65,15 +66,15 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 new LanguageOption
                 {
-                    Title = "English",
+                    Title = LanguageKeys.English,
                     IsSelected = true,
-                    Language = "en"
+                    Language = SharedConstants.LANGUAGE_EN
                 },
                 new LanguageOption
                 {
-                    Title = "Italian",
+                    Title = LanguageKeys.Italian,
                     IsSelected = false,
-                    Language = "it"
+                    Language = SharedConstants.LANGUAGE_IT
                 },
             };
 
@@ -86,42 +87,41 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 new MenuOption
                 {
-                    Title = Localize[LanguageKeys.Home],
-                    TitleKey = LanguageKeys.Home,
+                    Title = Localize[LanguageKeys.Page_Home],
+                    TitleKey = LanguageKeys.Page_Home,
                     IconName = "home",
                     IsSelected = true,
-                    Roles = string.Empty,
+                    Roles = Rules.All,
                     AlwaysVisible = true,
                     ViewName = ViewNames.HOME_VIEW
                 },
                 new MenuOption
                 {
-                    Title = Localize[LanguageKeys.Joblist_Management],
-                    //Title = "JobList Management",
-                    TitleKey = LanguageKeys.Joblist_Management,
+                    Title = Localize[LanguageKeys.Page_Joblist_Management],
+                    TitleKey = LanguageKeys.Page_Joblist_Management,
                     IconName = "management",
                     IsSelected = false,
-                    Roles = "Admin, SuperUser, MasterTranslator",
+                    Roles = Rules.Group_Administrators,
                     AlwaysVisible = false,
                     ViewName = ViewNames.JOBLIST_MANAGEMENT_VIEW
                 },
                 new MenuOption
                 {
-                    Title = "Current Job",
-                    TitleKey = LanguageKeys.Current_Job,
+                    Title = Localize[LanguageKeys.Page_Current_Job],
+                    TitleKey = LanguageKeys.Page_Current_Job,
                     IconName = "current_job",
                     IsSelected = false,
-                    Roles = "Admin, SuperUser, MasterTranslator, TranslatorDE, TranslatorEN, TranslatorES, TranslatorFR, TranslatorIT, TranslatorPT, TranslatorRU",
+                    Roles = Rules.Group_All,
                     AlwaysVisible = false,
                     ViewName = ViewNames.CURRENT_JOB_VIEW
                 },
                 new MenuOption
                 {
-                    Title = "Concept Management",
-                    TitleKey = LanguageKeys.Concept_Management,
+                    Title = Localize[LanguageKeys.Page_Concept_Management],
+                    TitleKey = LanguageKeys.Page_Concept_Management,
                     IconName = "translation",
                     IsSelected = false,
-                    Roles = "Admin, SuperUser, MasterTranslator, TranslatorDE, TranslatorEN, TranslatorES, TranslatorFR, TranslatorIT, TranslatorPT, TranslatorRU",
+                    Roles = Rules.Group_All,
                     AlwaysVisible = false,
                     ViewName = ViewNames.CONCEPT_MANAGEMENT_VIEW
                 }
@@ -157,7 +157,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _menuOptions;
             set
             {
-                SetProperty<IEnumerable<MenuOption>>(ref _menuOptions, value);
+                SetProperty(ref _menuOptions, value);
             }
         }
 
@@ -167,7 +167,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _languageOptions;
             set
             {
-                SetProperty<IEnumerable<LanguageOption>>(ref _languageOptions, value);
+                SetProperty(ref _languageOptions, value);
             }
         }
 
@@ -177,7 +177,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _isMenuOpen;
             set
             {
-                SetProperty<bool>(ref _isMenuOpen, value);
+                SetProperty(ref _isMenuOpen, value);
             }
         }
 
@@ -206,7 +206,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _headerTitle;
             set
             {
-                SetProperty<string>(ref _headerTitle, value);
+                SetProperty(ref _headerTitle, value);
             }
         }
 
@@ -216,7 +216,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _selectedMenuOption;
             set
             {
-                SetProperty<MenuOption>(ref _selectedMenuOption, value);
+                SetProperty(ref _selectedMenuOption, value);
             }
         }
 
@@ -226,7 +226,7 @@ namespace Globe.Client.Localizer.ViewModels
             get => _selectedLanguageOption;
             set
             {
-                SetProperty<LanguageOption>(ref _selectedLanguageOption, value);
+                SetProperty(ref _selectedLanguageOption, value);
             }
         }
 
@@ -280,7 +280,6 @@ namespace Globe.Client.Localizer.ViewModels
             _removeNotificationCommand ?? (_removeNotificationCommand = new DelegateCommand<Notification>((notification) =>
             {
                 NotificationService.Notifications.Remove(notification);
-                //NotificationService.LastNotification = null;
             }));
 
         protected override void OnAuthenticationChanged(IPrincipal principal)
@@ -393,19 +392,19 @@ namespace Globe.Client.Localizer.ViewModels
                     })
                     .Build();
 
-            connection.On<string>("JoblistChanged", async (jobListName) =>
+            connection.On<string>(EventNames.JoblistChanged, async (jobListName) =>
             {
                 var notification = new JobListStatusNotification { Message = jobListName };
                 await NotificationService.NotifyAsync(notification);
             });
 
-            connection.On<int>("ConceptsChanged", async (conceptCount) =>
+            connection.On<int>(EventNames.ConceptsChanged, async (conceptCount) =>
             {
                 var notification = new ConceptsChangedNotification { Message = conceptCount.ToString() };
                 await NotificationService.NotifyAsync(notification);
             });
 
-            connection.On<string>("SendAsync", async (message) =>
+            connection.On<string>(EventNames.SendAsync, async (message) =>
             {
                 await NotificationService.NotifyAsync(new Notification
                 {
