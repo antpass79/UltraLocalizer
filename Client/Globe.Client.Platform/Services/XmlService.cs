@@ -22,7 +22,7 @@ namespace Globe.Client.Platform.Services
             _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
         }
 
-        public async Task Download(string downloadPath = "")
+        public async Task Download(string downloadPath = default(string))
         {
             downloadPath = !string.IsNullOrWhiteSpace(downloadPath) ? downloadPath : Path.Combine($"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}", "xml.zip");
             var result = await _secureHttpClient.SendAsync<object>(HttpMethod.Get, ENDPOINT_Xml, null);

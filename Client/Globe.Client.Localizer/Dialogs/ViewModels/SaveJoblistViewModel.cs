@@ -4,6 +4,7 @@ using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
+using Globe.Shared.Services;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
@@ -17,7 +18,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 {
     class SaveJoblistViewModel : BindableBase, IDialogAware
     {
-        private readonly ILoggerService _loggerService;
+        private readonly ILogService _logService;
         private readonly IEventAggregator _eventAggregator;
         private readonly IUserService _userService;
         private readonly IJobListManagementService _jobListManagementService;
@@ -27,13 +28,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         private Language _language;
 
         public SaveJoblistViewModel(
-            ILoggerService loggerService,
+            ILogService logService,
             IEventAggregator eventAggregator,
             IUserService userService,
             IJobListManagementService jobListManagementService,
             INotificationService notificationService)
         {
-            _loggerService = loggerService;
+            _logService = logService;
             _eventAggregator = eventAggregator;
             _userService = userService;
             _jobListManagementService = jobListManagementService;
@@ -148,7 +149,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             }
             catch (Exception e)
             {
-                _loggerService.Exception(e);
+                _logService.Exception(e);
                 Users = null;
                 _notTranslatedConceptViews = null;
             }
