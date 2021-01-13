@@ -1,10 +1,10 @@
-﻿using Globe.Client.Platform.Extensions;
+﻿using Globe.Shared.Extensions;
 using System;
 using System.Text;
 
-namespace Globe.Client.Platform.Services
+namespace Globe.Shared.Services
 {
-    public class ConsoleLoggerService : ILoggerService
+    public class ConsoleLogService : ILogService
     {
         public void Error(string message)
         {

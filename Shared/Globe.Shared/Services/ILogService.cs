@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Globe.Client.Platform.Services
+namespace Globe.Shared.Services
 {
     public enum LogSeverity
     {
@@ -10,7 +10,7 @@ namespace Globe.Client.Platform.Services
         Fatal = 3
     }
 
-    public interface ILoggerService
+    public interface ILogService
     {
         void Log(string message, LogSeverity severity);
         void Info(string message);

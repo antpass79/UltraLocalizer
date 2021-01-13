@@ -4,6 +4,7 @@ using Globe.BusinessLogic.Repositories;
 using Globe.Identity.Options;
 using Globe.Identity.Security;
 using Globe.Infrastructure.EFCore.Repositories;
+using Globe.Shared.Services;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Hubs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
@@ -105,7 +106,9 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncNotTranslatedConceptViewService, Services.NewServices.NotTranslatedConceptViewService>() //.AddScoped<IAsyncNotTranslatedConceptViewService, NotTranslatedConceptViewService>()
                 .AddScoped<IComponentNamespaceGroupService, Services.NewServices.ComponentNamespaceGroupService>() //.AddScoped<IComponentNamespaceGroupService, ComponentNamespaceGroupService>()
                 .AddScoped<IAsyncJobListService, JobListService>()
-                .AddScoped<IAsyncXmlService, XmlService>();
+                .AddScoped<IAsyncXmlService, XmlService>()
+
+                .AddScoped<ILogService, ConsoleLogService>();
 
             // Security
             services

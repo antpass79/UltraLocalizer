@@ -72,9 +72,9 @@
 
             <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
                 <controls:LocDockPanel Margin="0,63,0,0" LastChildFill="false" Style="{StaticResource LocDockPanelStyle}">
-                    <Button Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&gt;" Command="{Binding AddCommand}"></Button>
-                    <Button Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&lt;" Command="{Binding RemoveCommand}"></Button>
-                    <Button Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&lt;&lt;" Command="{Binding RemoveAllCommand}"></Button>
+                    <controls:LocButton Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&gt;" Command="{Binding AddCommand}"></controls:LocButton>
+                    <controls:LocButton Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&lt;" Command="{Binding RemoveCommand}"></controls:LocButton>
+                    <controls:LocButton Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&lt;&lt;" Command="{Binding RemoveAllCommand}"></controls:LocButton>
                 </controls:LocDockPanel>
                 <controls:LocDockPanel>
                     <controls:LocGrid>

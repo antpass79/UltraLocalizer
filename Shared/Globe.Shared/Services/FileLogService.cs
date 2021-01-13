@@ -1,17 +1,17 @@
-﻿using Globe.Client.Platform.Extensions;
+﻿using Globe.Shared.Extensions;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace Globe.Client.Platform.Services
+namespace Globe.Shared.Services
 {
-    public class FileLoggerService : ILoggerService
+    public class FileLogService : ILogService
     {
         string _path;
 
-        public FileLoggerService()
+        public FileLogService()
         {
             var folder = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Logs");
             if (!Directory.Exists(folder))

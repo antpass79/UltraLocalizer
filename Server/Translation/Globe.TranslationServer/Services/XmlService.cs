@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Globe.Shared.Services;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
@@ -12,14 +13,20 @@ namespace Globe.TranslationServer.Services
         #region Data Members
 
         private readonly IDBToXmlService _dbToXmlService;
+        private readonly ILogService _logService;
+
+        private static object _lock = new object();
 
         #endregion
 
         #region Constructors
 
-        public XmlService(IDBToXmlService dbToXmlService)
+        public XmlService(
+            IDBToXmlService dbToXmlService,
+            ILogService logService)
         {
             _dbToXmlService = dbToXmlService;
+            _logService = logService;
         }
 
         #endregion
@@ -28,13 +35,16 @@ namespace Globe.TranslationServer.Services
 
         public Stream Zip()
         {
-            string outputFolder = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Zip");
+            lock (_lock)
+            {
+                string outputFolder = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Zip");
 
-            CleanOutputFolder(outputFolder);
-            GenerateXmlFiles(outputFolder);
-            var inMemoryFiles = LoadInMemoryFiles(outputFolder);
+                CleanOutputFolder(outputFolder);
+                GenerateXmlFiles(outputFolder);
+                var inMemoryFiles = LoadInMemoryFiles(outputFolder);
 
-            return Zip(inMemoryFiles);
+                return Zip(inMemoryFiles);
+            }
         }
 
         #endregion
@@ -57,6 +67,7 @@ namespace Globe.TranslationServer.Services
             }
             catch(Exception e)
             {
+                _logService.Exception(e);
                 throw new InvalidOperationException($"Error during {nameof(CleanOutputFolder)}", e);
             }
         }
@@ -69,7 +80,7 @@ namespace Globe.TranslationServer.Services
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                _logService.Exception(e);
                 throw new InvalidOperationException($"Error during {nameof(GenerateXmlFiles)}", e);
             }
         }
@@ -89,6 +100,7 @@ namespace Globe.TranslationServer.Services
             }
             catch (Exception e)
             {
+                _logService.Exception(e);
                 throw new InvalidOperationException($"Error during {nameof(LoadInMemoryFiles)}", e);
             }
         }
@@ -113,6 +125,7 @@ namespace Globe.TranslationServer.Services
             }
             catch (Exception e)
             {
+                _logService.Exception(e);
                 throw new InvalidOperationException($"Error during {nameof(Zip)}", e);
             }
         }
