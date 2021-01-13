@@ -4,9 +4,9 @@ using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Shared.DTOs;
+using Globe.Shared.Services;
 using Prism.Commands;
 using Prism.Events;
-using Prism.Mvvm;
 using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
@@ -18,14 +18,14 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
     class StringEditorDialogViewModel : LocalizeWindowViewModel, IDialogAware
     {
         private readonly IEditStringService _editStringService;
-        private readonly ILoggerService _loggerService;
+        private readonly ILogService _logService;
         private readonly IPreviewStyleService _previewStyleService;
         private readonly IEventAggregator _eventAggregator;
         private readonly INotificationService _notificationService;
 
         public StringEditorDialogViewModel(
             IEditStringService editStringService,
-            ILoggerService loggerService,
+            ILogService logService,
             IPreviewStyleService previewStyleService,
             IEventAggregator eventAggregator,
             ILocalizationAppService localizationAppService,
@@ -33,7 +33,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             : base(eventAggregator, localizationAppService)
         {
             _editStringService = editStringService;
-            _loggerService = loggerService;
+            _logService = logService;
             _previewStyleService = previewStyleService;
             _eventAggregator = eventAggregator;
             _notificationService = notificationService;
@@ -187,7 +187,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 }
                 catch (Exception e)
                 {
-                    _loggerService.Exception(e);
+                    _logService.Exception(e);
                     Console.WriteLine(e.Message);                
                     await _notificationService.NotifyAsync(new Notification
                     {
@@ -280,7 +280,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 }
                 catch (Exception e)
                 {
-                    _loggerService.Exception(e);
+                    _logService.Exception(e);
                 }
                 finally
                 {

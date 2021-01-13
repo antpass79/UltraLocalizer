@@ -5,11 +5,12 @@
     <Style TargetType="controls:LocTextBox">
         <Style.Resources>
             <Style TargetType="{x:Type Border}">
-                <Setter Property="CornerRadius" Value="5"/>
+                <Setter Property="CornerRadius" Value="2"/>
             </Style>
         </Style.Resources>
 
-        <Setter Property="Margin" Value="5" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="Margin" Value="3" />
         <Setter Property="Padding" Value="3" />
         <Setter Property="MinWidth" Value="30" />
         <Setter Property="MinHeight" Value="18" />
