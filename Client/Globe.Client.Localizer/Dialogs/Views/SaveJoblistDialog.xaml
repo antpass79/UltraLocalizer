@@ -32,10 +32,10 @@
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <controls:LocLabel Grid.Row="0" Grid.Column="0">Select User</controls:LocLabel>
+        <controls:LocTextBlock Grid.Row="0" Grid.Column="0">Select User</controls:LocTextBlock>
         <controls:LocComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Users}" DisplayMemberPath="DisplayName" SelectedItem="{Binding SelectedUser}"></controls:LocComboBox>
-        <controls:LocLabel Grid.Row="1" Grid.Column="0">Save As</controls:LocLabel>
-        <controls:LocTextBox Grid.Row="1" Grid.Column="1" Text="{Binding JobListName, UpdateSourceTrigger=PropertyChanged}"></controls:LocTextBox>
+        <controls:LocTextBlock Grid.Row="1" Grid.Column="0">Save As</controls:LocTextBlock>
+        <controls:LocTextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding JobListName, UpdateSourceTrigger=PropertyChanged}"></controls:LocTextBox>
         <!-- Buttons -->
         <DockPanel Margin="0,20,0,0" Grid.Row="2" Grid.ColumnSpan="2" LastChildFill="False">
             <Button DockPanel.Dock="Right" Style="{StaticResource GrayButton}" Command="{Binding CloseDialogCommand}">Close</Button>

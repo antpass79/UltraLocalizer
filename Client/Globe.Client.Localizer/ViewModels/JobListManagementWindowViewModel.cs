@@ -187,13 +187,13 @@ namespace Globe.Client.Localizer.ViewModels
 
                     if (SelectedInternalNamespace != null)
                     {
-                        await UpdateNotTranslatedConceptViews(SelectedInternalNamespace);
+                        await UpdateNotTranslatedConceptViews(SelectedComponentNamespaceGroup.ComponentNamespace, SelectedInternalNamespace);
                     }
                     else
                     {
                         foreach (var internalNamespace in SelectedComponentNamespaceGroup.InternalNamespaces)
                         {
-                            await UpdateNotTranslatedConceptViews(internalNamespace);
+                            await UpdateNotTranslatedConceptViews(SelectedComponentNamespaceGroup.ComponentNamespace, internalNamespace);
                         }
                     }
                 }
@@ -214,13 +214,34 @@ namespace Globe.Client.Localizer.ViewModels
                 }
             }, () => !FiltersBusy));
 
-        private DelegateCommand _removeCommand = null;
-        public DelegateCommand RemoveCommand =>
-            _removeCommand ?? (_removeCommand = new DelegateCommand(() =>
+        private DelegateCommand _addAllCommand = null;
+        public DelegateCommand AddAllCommand =>
+            _addAllCommand ?? (_addAllCommand = new DelegateCommand(async () =>
             {
-                NotTranslatedConceptViews = NotTranslatedConceptViews == null ? null : NotTranslatedConceptViews.Where(item => !item.IsSelected);
-                ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
-            }, () => SelectedNotTranslatedConceptView != null));
+                try
+                {
+                    ConceptDetailsBusy = true;
+
+                    foreach (var componentNamespaceGroup in ComponentNamespaceGroups)
+                        foreach (var internalNamespace in componentNamespaceGroup.InternalNamespaces)
+                            await UpdateNotTranslatedConceptViews(componentNamespaceGroup.ComponentNamespace, internalNamespace);
+                }
+                catch (Exception e)
+                {
+                    _logService.Exception(e);
+                    await _notificationService.NotifyAsync(new Notification
+                    {
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Error_during_getting_list],
+                        Level = NotificationLevel.Error
+                    });
+                }
+                finally
+                {
+                    ConceptDetailsBusy = false;
+                    ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
+                }
+            }));
 
         private DelegateCommand _removeAllCommand = null;
         public DelegateCommand RemoveAllCommand =>
@@ -229,6 +250,69 @@ namespace Globe.Client.Localizer.ViewModels
                 NotTranslatedConceptViews = null;
                 ItemCount = 0;
             }, () => NotTranslatedConceptViews != null && NotTranslatedConceptViews.Count() > 0));
+
+        private DelegateCommand<BindableComponentNamespaceGroup> _addComponentNamespaceGroupCommand = null;
+        public DelegateCommand<BindableComponentNamespaceGroup> AddComponentNamespaceGroupCommand =>
+            _addComponentNamespaceGroupCommand ?? (_addComponentNamespaceGroupCommand = new DelegateCommand<BindableComponentNamespaceGroup>(async (componentNamespaceGroup) =>
+            {
+                try
+                {
+                    ConceptDetailsBusy = true;
+
+                    foreach (var internalNamespace in componentNamespaceGroup.InternalNamespaces)
+                        await UpdateNotTranslatedConceptViews(componentNamespaceGroup.ComponentNamespace, internalNamespace);
+                }
+                catch (Exception e)
+                {
+                    _logService.Exception(e);
+                    await _notificationService.NotifyAsync(new Notification
+                    {
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Error_during_getting_list],
+                        Level = NotificationLevel.Error
+                    });
+                }
+                finally
+                {
+                    ConceptDetailsBusy = false;
+                    ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
+                }
+            }));
+
+        private DelegateCommand<BindableInternalNamespace> _addInternalNamespaceCommand = null;
+        public DelegateCommand<BindableInternalNamespace> AddInternalNamespaceCommand =>
+            _addInternalNamespaceCommand ?? (_addInternalNamespaceCommand = new DelegateCommand<BindableInternalNamespace>(async (internalNamespace) =>
+            {
+                try
+                {
+                    ConceptDetailsBusy = true;
+
+                    await UpdateNotTranslatedConceptViews(SelectedComponentNamespaceGroup.ComponentNamespace, internalNamespace);
+                }
+                catch (Exception e)
+                {
+                    _logService.Exception(e);
+                    await _notificationService.NotifyAsync(new Notification
+                    {
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Error_during_getting_list],
+                        Level = NotificationLevel.Error
+                    });
+                }
+                finally
+                {
+                    ConceptDetailsBusy = false;
+                    ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
+                }
+            }));
+
+        private DelegateCommand _removeCommand = null;
+        public DelegateCommand RemoveCommand =>
+            _removeCommand ?? (_removeCommand = new DelegateCommand(() =>
+            {
+                NotTranslatedConceptViews = NotTranslatedConceptViews == null ? null : NotTranslatedConceptViews.Where(item => !item.IsSelected);
+                ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
+            }, () => SelectedNotTranslatedConceptView != null));
 
         private DelegateCommand _saveJoblistCommand = null;
         public DelegateCommand SaveJoblistCommand =>
@@ -314,10 +398,10 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        private async Task UpdateNotTranslatedConceptViews(BindableInternalNamespace internalNamespace)
+        private async Task UpdateNotTranslatedConceptViews(BindableComponentNamespace componentNamespace, BindableInternalNamespace internalNamespace)
         {
             var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
-                SelectedComponentNamespaceGroup.ComponentNamespace,
+                componentNamespace,
                 internalNamespace,
                 SelectedLanguage);
 

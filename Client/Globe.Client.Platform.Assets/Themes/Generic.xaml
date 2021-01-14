@@ -17,6 +17,7 @@
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/RadioButton.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/CheckBox.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Image.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/TreeView.xaml" />
 
         <!-- COMPONENTS -->
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Header.xaml" />
