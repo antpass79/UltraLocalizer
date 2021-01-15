@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#nullable disable
+
 namespace Globe.TranslationServer.Entities
 {
     public partial class VLocalization

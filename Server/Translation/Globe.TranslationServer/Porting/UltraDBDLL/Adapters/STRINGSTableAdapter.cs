@@ -136,7 +136,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //SELECT @@IDENTITY
         public static int InsertNewString(this LocalizationContext context, int IDLanguage, int IDType, string DataString)
         {
-            var item = new LocStrings
+            var item = new LocString
             {
                 Idlanguage = IDLanguage,
                 Idtype = IDType,

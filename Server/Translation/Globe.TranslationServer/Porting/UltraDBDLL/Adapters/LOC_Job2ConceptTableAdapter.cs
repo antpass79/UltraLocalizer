@@ -14,8 +14,8 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //DELETE FROM[dbo].[LOC_Job2Concept] WHERE[IDJobList] = @IDJobList
         public static void DeleteJob2Concept(this LocalizationContext context, int idJobList)
         {
-            var itemToRemove = context.LocJob2Concept.Find(idJobList);
-            context.LocJob2Concept.Remove(itemToRemove);
+            var itemToRemove = context.LocJob2Concepts.Find(idJobList);
+            context.LocJob2Concepts.Remove(itemToRemove);
             context.SaveChanges();
         }
     }

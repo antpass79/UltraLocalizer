@@ -6,7 +6,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
     {
         public static void InsertNewConcept2Context(this LocalizationContext context, int IDConcept, int IDContext)
         {
-            context.LocConcept2Context.Add(new LocConcept2Context
+            context.LocConcept2Contexts.Add(new LocConcept2Context
             {
                 Idconcept = IDConcept,
                 Idcontext = IDContext

@@ -12,7 +12,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         // ORDER BY ComponentNamespace
         public static List<ComponentConceptsTable> GetAllComponentName(this LocalizationContext context)
         {
-            var result = (from entity in context.LocConceptsTable
+            var result = (from entity in context.LocConceptsTables
                           orderby entity.ComponentNamespace
                           select new ComponentConceptsTable
                           {

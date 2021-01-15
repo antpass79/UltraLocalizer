@@ -12,7 +12,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         // FROM LOC_Concept2Context
         public static IEnumerable<int> GetAllC2CData(this LocalizationContext context)
         {
-            var result = from entity in context.LocConcept2Context
+            var result = from entity in context.LocConcept2Contexts
                          select entity.Id;
 
             return result.ToList();
