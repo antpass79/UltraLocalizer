@@ -10,16 +10,16 @@ namespace Globe.TranslationServer.Tests.Mocks
 {
     class MockLocContexts
     {
-        public Mock<DbSet<LocContexts>> Mock()
+        public Mock<DbSet<LocContext>> Mock()
         {
             var locContexts = GetLocStrings();
             var queryableLocContexts = locContexts.AsQueryable();
-            var dbSet = new Mock<DbSet<LocContexts>>();
+            var dbSet = new Mock<DbSet<LocContext>>();
 
-            dbSet.As<IQueryable<LocContexts>>().Setup(m => m.Provider).Returns(queryableLocContexts.Provider);
-            dbSet.As<IQueryable<LocContexts>>().Setup(m => m.Expression).Returns(queryableLocContexts.Expression);
-            dbSet.As<IQueryable<LocContexts>>().Setup(m => m.ElementType).Returns(queryableLocContexts.ElementType);
-            dbSet.As<IQueryable<LocContexts>>().Setup(m => m.GetEnumerator()).Returns(queryableLocContexts.GetEnumerator());
+            dbSet.As<IQueryable<LocContext>>().Setup(m => m.Provider).Returns(queryableLocContexts.Provider);
+            dbSet.As<IQueryable<LocContext>>().Setup(m => m.Expression).Returns(queryableLocContexts.Expression);
+            dbSet.As<IQueryable<LocContext>>().Setup(m => m.ElementType).Returns(queryableLocContexts.ElementType);
+            dbSet.As<IQueryable<LocContext>>().Setup(m => m.GetEnumerator()).Returns(queryableLocContexts.GetEnumerator());
 
             dbSet.Setup(m => m.Add(It.IsAny<LocContexts>())).Callback<LocContexts>((s) => locContexts.Add(s));
             dbSet.Setup(m => m.Remove(It.IsAny<LocContexts>())).Callback<LocContexts>((s) => locContexts.Remove(s));
@@ -28,13 +28,13 @@ namespace Globe.TranslationServer.Tests.Mocks
             return dbSet;
         }
 
-        private List<LocContexts> GetLocStrings()
+        private List<LocContext> GetLocStrings()
         {
             string directory = Path.Combine(Directory.GetCurrentDirectory(), "Data");
             string csvFile = Path.Combine(directory, nameof(LocContexts) + ".csv");
             var items = CsvParser.Parse<LocContextsForCsv>(csvFile).ToList().Select(item =>
             {
-                return new LocContexts
+                return new LocContext
                 {
                     Id = item.ID,
                     ContextName = item.ContextName
