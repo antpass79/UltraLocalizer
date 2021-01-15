@@ -91,23 +91,23 @@ namespace Globe.Client.Localizer.ViewModels
 
 
 
-        IEnumerable<JobItem> _jobItems;
-        public IEnumerable<JobItem> JobItems
+        IEnumerable<JobItem> _jobLists;
+        public IEnumerable<JobItem> JobLists
         {
-            get => _jobItems;
+            get => _jobLists;
             set
             {
-                SetProperty(ref _jobItems, value);
+                SetProperty(ref _jobLists, value);
             }
         }
 
-        JobItem _selectedJobItem;
-        public JobItem SelectedJobItem
+        JobItem _selectedJobList;
+        public JobItem SelectedJobList
         {
-            get => _selectedJobItem;
+            get => _selectedJobList;
             set
             {
-                SetProperty(ref _selectedJobItem, value);
+                SetProperty(ref _selectedJobList, value);
             }
         }
 
@@ -221,8 +221,6 @@ namespace Globe.Client.Localizer.ViewModels
 
                 var @params = new DialogParameters();
 
-                //Replicato il comportamento del vecchio localizzatore: in caso di doppio context identico (concettualmente sbagliato, ma frutto di errore XML o User)
-                //si prende il primo (FirstOfDefault) invece che lanciare eccezione se si usasse "Single"
                 @params.Add(DialogParams.EDITABLE_CONCEPT, new EditableConcept(
                     conceptView.Id,
                     conceptView.ComponentNamespace,
@@ -300,8 +298,8 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.FiltersBusy = true;
 
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
-                this.SelectedJobItem = this.JobItems.FirstOrDefault();
+                this.JobLists = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
+                this.SelectedJobList = this.JobLists.FirstOrDefault();
 
                 this.FiltersBusy = false;
             }));
@@ -323,12 +321,12 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
+                this.JobLists = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
                 this.ComponentNamespaces = await _currentJobFiltersService.GetComponentNamespacesAsync();
                 this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);
                 this.Languages = await _currentJobFiltersService.GetLanguagesAsync();
 
-                this.SelectedJobItem = this.JobItems.FirstOrDefault();
+                this.SelectedJobList = this.JobLists.FirstOrDefault();
                 this.SelectedComponentNamespace = this.ComponentNamespaces.FirstOrDefault();
                 this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
                 this.SelectedLanguage = this.Languages.FirstOrDefault(item => item.IsoCoding == SharedConstants.LANGUAGE_EN);
@@ -352,7 +350,7 @@ namespace Globe.Client.Localizer.ViewModels
             try
             {
                 if (
-                    SelectedJobItem == null ||
+                    SelectedJobList == null ||
                     SelectedComponentNamespace == null ||
                     SelectedInternalNamespace == null ||
                     SelectedLanguage == null)
@@ -367,7 +365,7 @@ namespace Globe.Client.Localizer.ViewModels
                             ComponentNamespace = SelectedComponentNamespace.Description,
                             InternalNamespace = SelectedInternalNamespace.Description,
                             LanguageId = SelectedLanguage.Id,
-                            JobListId = SelectedJobItem.Id
+                            JobListId = SelectedJobList.Id
                         });
 
                     ItemCount = ConceptViews.Count();

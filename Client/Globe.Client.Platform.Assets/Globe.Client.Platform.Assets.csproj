@@ -18,6 +18,7 @@
     <None Remove="Icons\folder_black.png" />
     <None Remove="Icons\home.png" />
     <None Remove="Icons\information.png" />
+    <None Remove="Icons\joblist_status.png" />
     <None Remove="Icons\link.png" />
     <None Remove="Icons\management.png" />
     <None Remove="Icons\menu.png" />
@@ -86,6 +87,7 @@
     <Resource Include="Icons\folder_black.png" />
     <Resource Include="Icons\home.png" />
     <Resource Include="Icons\information.png" />
+    <Resource Include="Icons\joblist_status.png" />
     <Resource Include="Icons\link.png" />
     <Resource Include="Icons\management.png" />
     <Resource Include="Icons\menu.png" />
