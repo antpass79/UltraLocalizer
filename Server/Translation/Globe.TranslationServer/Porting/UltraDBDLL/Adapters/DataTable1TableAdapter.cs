@@ -133,8 +133,8 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         // WHERE (LOC_ConceptsTable.ID = @ID)
         public static IEnumerable<Concept2ContextID> GetConcept2ContextIDsByConceptTableID(this LocalizationContext context, int conceptTableID)
         {
-            var result = (from entity1 in context.LocConcept2Context
-                          join entity2 in context.LocConceptsTable on entity1.Idconcept equals entity2.Id
+            var result = (from entity1 in context.LocConcept2Contexts
+                          join entity2 in context.LocConceptsTables on entity1.Idconcept equals entity2.Id
                           join entity3 in context.LocContexts on entity1.Idconcept equals entity3.Id
                           where entity2.Id == conceptTableID
                           select new Concept2ContextID
@@ -223,8 +223,8 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //      LOC_CONTEXTS ON LOC_Concept2Context.IDContext = LOC_CONTEXTS.ID
         public static IEnumerable<Concept2ContextID> GetConceptAndContextData(this LocalizationContext context)
         {
-            var result = (from entity1 in context.LocConcept2Context
-                          join entity2 in context.LocConceptsTable on entity1.Idconcept equals entity2.Id
+            var result = (from entity1 in context.LocConcept2Contexts
+                          join entity2 in context.LocConceptsTables on entity1.Idconcept equals entity2.Id
                           join entity3 in context.LocContexts on entity1.Idcontext equals entity3.Id
                           select new Concept2ContextID
                           {

@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#nullable disable
+
 namespace Globe.TranslationServer.Entities
 {
     public partial class LocConceptsTable
     {
         public LocConceptsTable()
         {
-            LocConcept2Context = new HashSet<LocConcept2Context>();
+            LocConcept2Contexts = new HashSet<LocConcept2Context>();
         }
 
         public int Id { get; set; }
@@ -18,6 +20,6 @@ namespace Globe.TranslationServer.Entities
         public string Comment { get; set; }
         public byte[] SsmaTimeStamp { get; set; }
 
-        public virtual ICollection<LocConcept2Context> LocConcept2Context { get; set; }
+        public virtual ICollection<LocConcept2Context> LocConcept2Contexts { get; set; }
     }
 }

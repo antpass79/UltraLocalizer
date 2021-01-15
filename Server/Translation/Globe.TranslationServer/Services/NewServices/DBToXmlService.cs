@@ -4,9 +4,7 @@ using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
 using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
-using Globe.TranslationServer.Utilities;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -18,13 +16,13 @@ namespace Globe.TranslationServer.Services.NewServices
     public class DBToXmlService : IDBToXmlService
     {
         private readonly IReadRepository<VLocalization> _localizationViewRepository;
-        private readonly IReadRepository<LocLanguages> _languageRepository;
+        private readonly IReadRepository<LocLanguage> _languageRepository;
         private readonly ILogService _logService;
         private readonly UltraDBGlobal _ultraDBGlobal;
 
         public DBToXmlService(
             IReadRepository<VLocalization> localizationViewRepository,
-            IReadRepository<LocLanguages> languageRepository,
+            IReadRepository<LocLanguage> languageRepository,
             ILogService logService,
             UltraDBGlobal ultraDBGlobal)
         {

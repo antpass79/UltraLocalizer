@@ -122,8 +122,8 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //WHERE(ID = @JoblistID)
         public static void DeleteJobListbyID(this LocalizationContext context, int idJobList)
         {
-            var itemToRemove = context.LocJobList.Find(idJobList);
-            context.LocJobList.Remove(itemToRemove);
+            var itemToRemove = context.LocJobLists.Find(idJobList);
+            context.LocJobLists.Remove(itemToRemove);
             context.SaveChanges();
         }
 
@@ -133,7 +133,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         public static int InsertNewJoblist(this LocalizationContext context, string JobName, string UserName, int IDIsoCoding)
         {
             // ANTO check ID = SCOPE_IDENTITY() meaning and query in general
-            context.LocJobList.Add(new LocJobList
+            context.LocJobLists.Add(new LocJobList
             {
                 JobName = JobName,
                 UserName = UserName,

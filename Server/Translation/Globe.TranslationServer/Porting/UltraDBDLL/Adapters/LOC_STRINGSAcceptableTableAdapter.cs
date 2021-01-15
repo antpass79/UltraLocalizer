@@ -10,8 +10,8 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         public static void DeleteAcceptable(this LocalizationContext context, int IDString)
         {
             // ANTO check id and idstring keys
-            var stringToRemove = context.LocStringsacceptable.Find(IDString);
-            context.LocStringsacceptable.Remove(stringToRemove);
+            var stringToRemove = context.LocStringsacceptables.Find(IDString);
+            context.LocStringsacceptables.Remove(stringToRemove);
 
             context.SaveChanges();
         }
@@ -20,7 +20,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //SELECT ID, ID_String FROM LOC_STRINGSAcceptable WHERE(ID = SCOPE_IDENTITY())
         public static int InsertNewAcceptable(this LocalizationContext context, int IDString)
         {
-            context.LocStringsacceptable.Add(new LocStringsacceptable
+            context.LocStringsacceptables.Add(new LocStringsacceptable
             {
                 IdString = IDString
             });

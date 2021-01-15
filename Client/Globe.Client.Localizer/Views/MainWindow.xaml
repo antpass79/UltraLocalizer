@@ -46,7 +46,7 @@
                     <DataTemplate>
                         <platform:AuthorizeView UserRoles="{Binding ElementName=menu, Path=DataContext.UserRoles}" Roles="{Binding Roles}" VisibileWithoutRoles="{Binding AlwaysVisible}">
                             <platform:AuthorizeView.PlaceHolder>
-                                <Button Style="{StaticResource SideMenuItem}" Foreground="White" Command="{Binding ElementName=menu, Path=DataContext.MenuOptionCommand}" CommandParameter="{Binding}">
+                                <Button HorizontalAlignment="Stretch" Style="{StaticResource SideMenuItem}" Foreground="White" Command="{Binding ElementName=menu, Path=DataContext.MenuOptionCommand}" CommandParameter="{Binding}">
                                     <DockPanel Background="Transparent" VerticalAlignment="Center">
                                         <Image DockPanel.Dock="Left" Source="{Binding IconName, Converter={StaticResource ImageNameToSourceImageConverter}}" />
                                         <controls:LocTextBlock Text="{Binding Title}" VerticalAlignment="Center" Margin="10,0,0,0" Visibility="{Binding ElementName=view, Path=DataContext.IsMenuOpen, Converter={StaticResource BooleanToVisibilityConverter}}" />

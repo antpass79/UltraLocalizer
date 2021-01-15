@@ -156,7 +156,7 @@ namespace Globe.TranslationServer.Porting.XmlGeneration
                                                         Context = p.ContextName,
                                                         InternalNamespace = p.InternalNamespace,
                                                         LocalizationID = p.LocalizationID,
-                                                        EngString = (from c in context.LocStrings2Context
+                                                        EngString = (from c in context.LocStrings2Contexts
                                                                      where c.IdstringNavigation.Idlanguage == 1 && c.Idconcept2Context == p.Concept2ContextID
                                                                      select c.IdstringNavigation.String).FirstOrDefault(),
                                                         edtStringID = p.DatabaseID,
