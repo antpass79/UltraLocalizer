@@ -1,6 +1,7 @@
 ﻿using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
+using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -9,10 +10,12 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal
     public class UltraDBJobList
     {
         private readonly LocalizationContext context;
+        private readonly IConfiguration configuration;
 
-        public UltraDBJobList(LocalizationContext context)
+        public UltraDBJobList(LocalizationContext context, IConfiguration configuration)
         {
             this.context = context;
+            this.configuration = configuration;
         }
 
         public List<JobList> GetAllJobListByUserNameIso(string UserName, string isocoding, bool isMaster)

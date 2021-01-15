@@ -10,7 +10,7 @@ namespace Globe.TranslationServer.Tests.Mocks
 {
     class MockLocStrings
     {
-        public Mock<DbSet<LocStrings>> Mock()
+        public Mock<DbSet<LocString>> Mock()
         {
             var locStrings = GetLocStrings();
             var queryableLocStrings = locStrings.AsQueryable();
@@ -28,13 +28,13 @@ namespace Globe.TranslationServer.Tests.Mocks
             return dbSet;
         }
 
-        private List<LocStrings> GetLocStrings()
+        private List<LocString> GetLocStrings()
         {
             string directory = Path.Combine(Directory.GetCurrentDirectory(), "Data");
             string csvFile = Path.Combine(directory, nameof(LocStrings) + ".csv");
             var items = CsvParser.Parse<LocStringsForCsv>(csvFile).ToList().Select(item =>
             {
-                return new LocStrings
+                return new LocString
                 {
                     Id = item.ID,
                     Idlanguage = item.IDLanguage,
