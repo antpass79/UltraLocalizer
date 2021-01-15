@@ -18,7 +18,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                 Comment = Comment
             };
 
-            context.LocConceptsTable.Add(item);
+            context.LocConceptsTables.Add(item);
 
             context.SaveChanges();
 
@@ -27,7 +27,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 
         public static void UpdateConcept(this LocalizationContext context, int ID, bool Ignore, string Comment)
         {
-            var concept = context.LocConceptsTable.Find(ID);
+            var concept = context.LocConceptsTables.Find(ID);
             concept.Ignore = Ignore;
             concept.Comment = Comment;
         }
@@ -41,7 +41,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //FROM LOC_ConceptsTable
         public static IQueryable<ConceptsTable> GetData(this LocalizationContext context)
         {
-            var result = (from entity in context.LocConceptsTable
+            var result = (from entity in context.LocConceptsTables
                           select new ConceptsTable
                           {
                               ID = entity.Id,
@@ -61,7 +61,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
         //where LOC_ConceptsTable.ID = @ID
         public static ConceptsTable GetDataByID(this LocalizationContext context, int id)
         {
-            var result = (from entity in context.LocConceptsTable
+            var result = (from entity in context.LocConceptsTables
                           where entity.Id == id
                           select new ConceptsTable
                           {

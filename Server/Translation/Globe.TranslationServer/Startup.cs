@@ -66,7 +66,7 @@ namespace Globe.TranslationServer
 
             // Repositories
             services
-                .AddScoped<IReadRepository<LocLanguages>, GenericRepository<LocalizationContext, LocLanguages>>()
+                .AddScoped<IReadRepository<LocLanguage>, GenericRepository<LocalizationContext, LocLanguage>>()
                 .AddScoped<IReadRepository<VLocalization>, GenericRepository<LocalizationContext, VLocalization>>()
                 .AddScoped<IReadRepository<VConceptStringToContext>, GenericRepository<LocalizationContext, VConceptStringToContext>>()
                 .AddScoped<IReadRepository<VStringsToContext>, GenericRepository<LocalizationContext, VStringsToContext>>()

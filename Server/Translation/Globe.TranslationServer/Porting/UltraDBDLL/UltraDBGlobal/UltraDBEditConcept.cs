@@ -64,25 +64,25 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal
 
         public void CleanupDuplicated()
         {
-            var duplicates = dbContext.LocStrings2Context.GroupBy(i => new { i.Idconcept2Context, i.IdstringNavigation.Idlanguage, i.IdstringNavigation.Idtype })
+            var duplicates = dbContext.LocStrings2Contexts.GroupBy(i => new { i.Idconcept2Context, i.IdstringNavigation.Idlanguage, i.IdstringNavigation.Idtype })
                               .Where(g => g.Count() > 1)
                               .Select(g => g.Key);
 
             foreach (var x in duplicates)
             {
-                List<LocStrings2Context> zList = (from c in dbContext.LocStrings2Context
+                List<LocStrings2Context> zList = (from c in dbContext.LocStrings2Contexts
                                                    where c.Idconcept2Context == x.Idconcept2Context && c.IdstringNavigation.Idlanguage == x.Idlanguage
                                                    select c).ToList();
                 if (zList.Count > 1)
                 {
-                    dbContext.LocStrings2Context.RemoveRange(zList);
+                    dbContext.LocStrings2Contexts.RemoveRange(zList);
                 }
 
             }
 
             dbContext.SaveChanges();
 
-            var usedStrings = (from x in dbContext.LocStrings2Context
+            var usedStrings = (from x in dbContext.LocStrings2Contexts
                                select x.Idstring).Distinct();
             var orphanedStrings = (from c in dbContext.LocStrings
                                    where !usedStrings.Contains(c.Id)
@@ -106,16 +106,16 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal
                                 ContextName = p.ContextName,
                                 IDConcept = p.IDConcept,
                                 MTComment = p.Comment,
-                                EngString = (from c in dbContext.LocStrings2Context
+                                EngString = (from c in dbContext.LocStrings2Contexts
                                              where c.IdstringNavigation.Idlanguage == 1 && c.Idconcept2Context == p.ID
                                              select c.IdstringNavigation.String).FirstOrDefault(),
-                                IDStringType = (from c in dbContext.LocStrings2Context
+                                IDStringType = (from c in dbContext.LocStrings2Contexts
                                                 where c.IdstringNavigation.Idlanguage == 1 && c.Idconcept2Context == p.ID
                                                 select c.IdstringNavigation.Idtype).FirstOrDefault(),
-                                edtString = (from c in dbContext.LocStrings2Context
+                                edtString = (from c in dbContext.LocStrings2Contexts
                                              where c.IdstringNavigation.Idlanguage == IDisoJob && c.Idconcept2Context == p.ID
                                              select c.IdstringNavigation.String).FirstOrDefault(),
-                                IDedtString = (from c in dbContext.LocStrings2Context
+                                IDedtString = (from c in dbContext.LocStrings2Contexts
                                                where c.IdstringNavigation.Idlanguage == IDisoJob && c.Idconcept2Context == p.ID
                                                select c.IdstringNavigation.Id).FirstOrDefault(),
 

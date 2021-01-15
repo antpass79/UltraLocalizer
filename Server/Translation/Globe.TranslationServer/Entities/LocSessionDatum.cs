@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#nullable disable
+
 namespace Globe.TranslationServer.Entities
 {
-    public partial class LocSessionData
+    public partial class LocSessionDatum
     {
-        public LocSessionData()
+        public LocSessionDatum()
         {
-            LocLoggedData = new HashSet<LocLoggedData>();
+            LocLoggedData = new HashSet<LocLoggedDatum>();
         }
 
         public int Id { get; set; }
@@ -16,6 +18,6 @@ namespace Globe.TranslationServer.Entities
         public DateTime InitSessionDate { get; set; }
         public DateTime LastModify { get; set; }
 
-        public virtual ICollection<LocLoggedData> LocLoggedData { get; set; }
+        public virtual ICollection<LocLoggedDatum> LocLoggedData { get; set; }
     }
 }

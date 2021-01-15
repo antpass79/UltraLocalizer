@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
+#nullable disable
+
 namespace Globe.TranslationServer.Entities
 {
     public partial class LocalizationContext : DbContext
@@ -15,37 +17,50 @@ namespace Globe.TranslationServer.Entities
         {
         }
 
-        public virtual DbSet<LocConcept2Context> LocConcept2Context { get; set; }
-        public virtual DbSet<LocConceptsTable> LocConceptsTable { get; set; }
-        public virtual DbSet<LocContexts> LocContexts { get; set; }
-        public virtual DbSet<LocJob2Concept> LocJob2Concept { get; set; }
-        public virtual DbSet<LocJobList> LocJobList { get; set; }
-        public virtual DbSet<LocLanguages> LocLanguages { get; set; }
-        public virtual DbSet<LocLoggedData> LocLoggedData { get; set; }
-        public virtual DbSet<LocSessionData> LocSessionData { get; set; }
-        public virtual DbSet<LocStringTypes> LocStringTypes { get; set; }
-        public virtual DbSet<LocStrings> LocStrings { get; set; }
-        public virtual DbSet<LocStrings2Context> LocStrings2Context { get; set; }
-        public virtual DbSet<LocStrings2translate> LocStrings2translate { get; set; }
-        public virtual DbSet<LocStringsacceptable> LocStringsacceptable { get; set; }
-        public virtual DbSet<LocStringslocked> LocStringslocked { get; set; }
-        public virtual DbSet<VConceptStringToContext> VConceptStringToContext { get; set; }
-        public virtual DbSet<VJobListConcept> VJobListConcept { get; set; }
-        public virtual DbSet<VTranslatedConcept> VTranslatedConcept { get; set; }
-        public virtual DbSet<VLocalization> VLocalization { get; set; }
-        public virtual DbSet<VStringsToContext> VStringsToContext { get; set; }
+        public virtual DbSet<LocConcept2Context> LocConcept2Contexts { get; set; }
+        public virtual DbSet<LocConceptsTable> LocConceptsTables { get; set; }
+        public virtual DbSet<LocContext> LocContexts { get; set; }
+        public virtual DbSet<LocJob2Concept> LocJob2Concepts { get; set; }
+        public virtual DbSet<LocJobList> LocJobLists { get; set; }
+        public virtual DbSet<LocLanguage> LocLanguages { get; set; }
+        public virtual DbSet<LocLoggedDatum> LocLoggedData { get; set; }
+        public virtual DbSet<LocSessionDatum> LocSessionData { get; set; }
+        public virtual DbSet<LocString> LocStrings { get; set; }
+        public virtual DbSet<LocStringType> LocStringTypes { get; set; }
+        public virtual DbSet<LocStrings2Context> LocStrings2Contexts { get; set; }
+        public virtual DbSet<LocStrings2translate> LocStrings2translates { get; set; }
+        public virtual DbSet<LocStringsacceptable> LocStringsacceptables { get; set; }
+        public virtual DbSet<LocStringslocked> LocStringslockeds { get; set; }
+        public virtual DbSet<VConceptStringToContext> VConceptStringToContexts { get; set; }
+        public virtual DbSet<VJobListConcept> VJobListConcepts { get; set; }
+        public virtual DbSet<VLocalization> VLocalizations { get; set; }
+        public virtual DbSet<VStringsToContext> VStringsToContexts { get; set; }
+        public virtual DbSet<VTranslatedConcept> VTranslatedConcepts { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer("Data Source=ESAOTE-IT-0246\\SQLEXPRESS;Initial Catalog=Localization;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
+
             modelBuilder.Entity<LocConcept2Context>(entity =>
             {
                 entity.ToTable("LOC_Concept2Context");
 
-                entity.HasIndex(e => e.Idconcept)
-                    .HasName("Concept2Context$IDConcept");
+                entity.HasIndex(e => e.Idcontext, "Concept2Context$CONTEXTSConcept2Context");
 
-                entity.HasIndex(e => e.Idcontext)
-                    .HasName("Concept2Context$IDContext");
+                entity.HasIndex(e => e.Idconcept, "Concept2Context$ConceptsTableConcept2Context");
+
+                entity.HasIndex(e => e.Idconcept, "Concept2Context$IDConcept");
+
+                entity.HasIndex(e => e.Idcontext, "Concept2Context$IDContext");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
@@ -54,13 +69,13 @@ namespace Globe.TranslationServer.Entities
                 entity.Property(e => e.Idcontext).HasColumnName("IDContext");
 
                 entity.HasOne(d => d.IdconceptNavigation)
-                    .WithMany(p => p.LocConcept2Context)
+                    .WithMany(p => p.LocConcept2Contexts)
                     .HasForeignKey(d => d.Idconcept)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ConceptToContext_Concept");
 
                 entity.HasOne(d => d.IdcontextNavigation)
-                    .WithMany(p => p.LocConcept2Context)
+                    .WithMany(p => p.LocConcept2Contexts)
                     .HasForeignKey(d => d.Idcontext)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_ConceptToContext_Context");
@@ -84,17 +99,17 @@ namespace Globe.TranslationServer.Entities
 
                 entity.Property(e => e.LocalizationId)
                     .IsRequired()
-                    .HasColumnName("LocalizationID")
-                    .HasMaxLength(255);
+                    .HasMaxLength(255)
+                    .HasColumnName("LocalizationID");
 
                 entity.Property(e => e.SsmaTimeStamp)
                     .IsRequired()
-                    .HasColumnName("SSMA_TimeStamp")
                     .IsRowVersion()
-                    .IsConcurrencyToken();
+                    .IsConcurrencyToken()
+                    .HasColumnName("SSMA_TimeStamp");
             });
 
-            modelBuilder.Entity<LocContexts>(entity =>
+            modelBuilder.Entity<LocContext>(entity =>
             {
                 entity.ToTable("LOC_CONTEXTS");
 
@@ -116,13 +131,13 @@ namespace Globe.TranslationServer.Entities
                 entity.Property(e => e.IdjobList).HasColumnName("IDJobList");
 
                 entity.HasOne(d => d.Idconcept2ContextNavigation)
-                    .WithMany(p => p.LocJob2Concept)
+                    .WithMany(p => p.LocJob2Concepts)
                     .HasForeignKey(d => d.Idconcept2Context)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_LOC_Job2Concept_LOC_Concept2Context");
 
                 entity.HasOne(d => d.IdjobListNavigation)
-                    .WithMany(p => p.LocJob2Concept)
+                    .WithMany(p => p.LocJob2Concepts)
                     .HasForeignKey(d => d.IdjobList)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_LOC_Job2Concept_LOC_JobList");
@@ -143,13 +158,13 @@ namespace Globe.TranslationServer.Entities
                     .HasMaxLength(50);
 
                 entity.HasOne(d => d.IdisoCodingNavigation)
-                    .WithMany(p => p.LocJobList)
+                    .WithMany(p => p.LocJobLists)
                     .HasForeignKey(d => d.IdisoCoding)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_LOC_JobList_LOC_Languages");
             });
 
-            modelBuilder.Entity<LocLanguages>(entity =>
+            modelBuilder.Entity<LocLanguage>(entity =>
             {
                 entity.ToTable("LOC_Languages");
 
@@ -157,15 +172,15 @@ namespace Globe.TranslationServer.Entities
 
                 entity.Property(e => e.Isocoding)
                     .IsRequired()
-                    .HasColumnName("ISOCoding")
-                    .HasMaxLength(10);
+                    .HasMaxLength(10)
+                    .HasColumnName("ISOCoding");
 
                 entity.Property(e => e.LanguageName)
                     .IsRequired()
                     .HasMaxLength(50);
             });
 
-            modelBuilder.Entity<LocLoggedData>(entity =>
+            modelBuilder.Entity<LocLoggedDatum>(entity =>
             {
                 entity.ToTable("LOC_LoggedData");
 
@@ -184,7 +199,7 @@ namespace Globe.TranslationServer.Entities
                     .HasConstraintName("_LOC_LoggedData2LOC_SessionData");
             });
 
-            modelBuilder.Entity<LocSessionData>(entity =>
+            modelBuilder.Entity<LocSessionDatum>(entity =>
             {
                 entity.ToTable("LOC_SessionData");
 
@@ -196,34 +211,21 @@ namespace Globe.TranslationServer.Entities
 
                 entity.Property(e => e.SessionId)
                     .IsRequired()
-                    .HasColumnName("SessionID")
-                    .HasMaxLength(255);
+                    .HasMaxLength(255)
+                    .HasColumnName("SessionID");
 
                 entity.Property(e => e.UserName)
                     .IsRequired()
                     .HasMaxLength(25);
             });
 
-            modelBuilder.Entity<LocStringTypes>(entity =>
-            {
-                entity.ToTable("LOC_StringTypes");
-
-                entity.Property(e => e.Id).HasColumnName("ID");
-
-                entity.Property(e => e.Type)
-                    .IsRequired()
-                    .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<LocStrings>(entity =>
+            modelBuilder.Entity<LocString>(entity =>
             {
                 entity.ToTable("LOC_STRINGS");
 
-                entity.HasIndex(e => e.Idlanguage)
-                    .HasName("STRINGS$IDLanguage");
+                entity.HasIndex(e => e.Idlanguage, "STRINGS$IDLanguage");
 
-                entity.HasIndex(e => e.Idtype)
-                    .HasName("STRINGS$IDType");
+                entity.HasIndex(e => e.Idtype, "STRINGS$IDType");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
@@ -248,15 +250,24 @@ namespace Globe.TranslationServer.Entities
                     .HasConstraintName("STRINGS$StringTypesSTRINGS");
             });
 
+            modelBuilder.Entity<LocStringType>(entity =>
+            {
+                entity.ToTable("LOC_StringTypes");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasMaxLength(50);
+            });
+
             modelBuilder.Entity<LocStrings2Context>(entity =>
             {
                 entity.ToTable("LOC_Strings2Context");
 
-                entity.HasIndex(e => e.Idconcept2Context)
-                    .HasName("Strings2Context$IDConcept2Context");
+                entity.HasIndex(e => e.Idconcept2Context, "Strings2Context$IDConcept2Context");
 
-                entity.HasIndex(e => e.Idstring)
-                    .HasName("Strings2Context$IDString");
+                entity.HasIndex(e => e.Idstring, "Strings2Context$IDString");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
@@ -265,13 +276,13 @@ namespace Globe.TranslationServer.Entities
                 entity.Property(e => e.Idstring).HasColumnName("IDString");
 
                 entity.HasOne(d => d.Idconcept2ContextNavigation)
-                    .WithMany(p => p.LocStrings2Context)
+                    .WithMany(p => p.LocStrings2Contexts)
                     .HasForeignKey(d => d.Idconcept2Context)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Strings2Context$Concept2ContextStrings2Context");
 
                 entity.HasOne(d => d.IdstringNavigation)
-                    .WithMany(p => p.LocStrings2Context)
+                    .WithMany(p => p.LocStrings2Contexts)
                     .HasForeignKey(d => d.Idstring)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("Strings2Context$STRINGSStrings2Context");
@@ -281,15 +292,14 @@ namespace Globe.TranslationServer.Entities
             {
                 entity.ToTable("LOC_STRINGS2Translate");
 
-                entity.HasIndex(e => e.Idstring)
-                    .HasName("STRINGS2Translate$IDString");
+                entity.HasIndex(e => e.Idstring, "STRINGS2Translate$IDString");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Idstring).HasColumnName("IDString");
 
                 entity.HasOne(d => d.IdstringNavigation)
-                    .WithMany(p => p.LocStrings2translate)
+                    .WithMany(p => p.LocStrings2translates)
                     .HasForeignKey(d => d.Idstring)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("STRINGS2Translate$STRINGSSTRINGS2Translate");
@@ -308,15 +318,14 @@ namespace Globe.TranslationServer.Entities
             {
                 entity.ToTable("LOC_STRINGSLocked");
 
-                entity.HasIndex(e => e.Idstring)
-                    .HasName("STRINGSLocked$IDString");
+                entity.HasIndex(e => e.Idstring, "STRINGSLocked$IDString");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Idstring).HasColumnName("IDString");
 
                 entity.HasOne(d => d.IdstringNavigation)
-                    .WithMany(p => p.LocStringslocked)
+                    .WithMany(p => p.LocStringslockeds)
                     .HasForeignKey(d => d.Idstring)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("STRINGSLocked$STRINGSSTRINGSLocked");
@@ -346,8 +355,8 @@ namespace Globe.TranslationServer.Entities
 
                 entity.Property(e => e.LocalizationId)
                     .IsRequired()
-                    .HasColumnName("LocalizationID")
-                    .HasMaxLength(255);
+                    .HasMaxLength(255)
+                    .HasColumnName("LocalizationID");
             });
 
             modelBuilder.Entity<VJobListConcept>(entity =>
@@ -379,39 +388,6 @@ namespace Globe.TranslationServer.Entities
                 entity.Property(e => e.JobListUserName)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.Property(e => e.String).HasMaxLength(255);
-
-                entity.Property(e => e.StringType).HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<VTranslatedConcept>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("vTranslatedConcept");
-
-                entity.Property(e => e.Concept)
-                    .IsRequired()
-                    .HasMaxLength(255);
-
-                entity.Property(e => e.ConceptComment).HasMaxLength(255);
-
-                entity.Property(e => e.ConceptComponentNamespace)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
-                entity.Property(e => e.ConceptInternalNamespace).HasMaxLength(50);
-
-                entity.Property(e => e.Context)
-                    .IsRequired()
-                    .HasMaxLength(255);
-
-                entity.Property(e => e.Language).HasMaxLength(50);
-
-                entity.Property(e => e.LanguageIsoCode).HasMaxLength(50);
-
-                entity.Property(e => e.LanguageId).HasColumnName("languageId");
 
                 entity.Property(e => e.String).HasMaxLength(255);
 
@@ -475,13 +451,13 @@ namespace Globe.TranslationServer.Entities
 
                 entity.Property(e => e.Isocoding)
                     .IsRequired()
-                    .HasColumnName("ISOCoding")
-                    .HasMaxLength(10);
+                    .HasMaxLength(10)
+                    .HasColumnName("ISOCoding");
 
                 entity.Property(e => e.LocalizationId)
                     .IsRequired()
-                    .HasColumnName("LocalizationID")
-                    .HasMaxLength(255);
+                    .HasMaxLength(255)
+                    .HasColumnName("LocalizationID");
 
                 entity.Property(e => e.String)
                     .IsRequired()
@@ -490,6 +466,45 @@ namespace Globe.TranslationServer.Entities
                 entity.Property(e => e.StringId).HasColumnName("StringID");
 
                 entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<VTranslatedConcept>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("vTranslatedConcept");
+
+                entity.Property(e => e.Concept)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.ConceptComment).HasMaxLength(255);
+
+                entity.Property(e => e.ConceptComponentNamespace)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.ConceptInternalNamespace).HasMaxLength(50);
+
+                entity.Property(e => e.Context)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.Language)
+                    .IsRequired()
+                    .HasMaxLength(50);
+
+                entity.Property(e => e.LanguageIsoCode)
+                    .IsRequired()
+                    .HasMaxLength(10);
+
+                entity.Property(e => e.String)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.StringType)
                     .IsRequired()
                     .HasMaxLength(50);
             });

@@ -51,12 +51,12 @@ namespace Globe.TranslationServer.Services.PortingAdapters
                         .ForEach(context =>
                         {
                             var job2Concept = new LocJob2Concept { Idconcept2Context = context.Concept2ContextId };
-                            jobList.LocJob2Concept.Add(job2Concept);
-                            _localizationContext.LocJob2Concept.Add(job2Concept);
+                            jobList.LocJob2Concepts.Add(job2Concept);
+                            _localizationContext.LocJob2Concepts.Add(job2Concept);
                         });
                 });
 
-            _localizationContext.LocJobList.Add(jobList);
+            _localizationContext.LocJobLists.Add(jobList);
 
             await _localizationContext.SaveChangesAsync();
         }

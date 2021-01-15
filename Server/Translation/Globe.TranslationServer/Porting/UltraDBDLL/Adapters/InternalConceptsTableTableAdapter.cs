@@ -21,7 +21,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
             //                  InternalNamespace = entity.InternalNamespace
             //              }).Distinct();
 
-            var result = from entity in context.LocConceptsTable
+            var result = from entity in context.LocConceptsTables
                           select entity;
 
             if (!string.IsNullOrWhiteSpace(Component) && Component.ToLower() != "all")
