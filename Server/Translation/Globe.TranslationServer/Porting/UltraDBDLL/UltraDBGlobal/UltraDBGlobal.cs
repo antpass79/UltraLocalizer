@@ -4,6 +4,9 @@ using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
+using Globe.TranslationServer.Utilities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -56,84 +59,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal
         {
             context.InsertNewStrings2Context(IDString, IDConcept2Context);
         }
-
-        public List<DBGlobal> GetDataByComponentISO(string ComponentName, string isocoding)
-        {
-            IEnumerable<VTranslatedConcept> translatedConcepts;
-
-            if (isocoding == SharedConstants.LANGUAGE_EN)
-            {
-                translatedConcepts = context.VTranslatedConcepts
-                    .Where(item =>
-                        item.ConceptComponentNamespace == ComponentName &&
-                        item.LanguageIsoCode == SharedConstants.LANGUAGE_EN);
-            }
-            else
-            {
-                translatedConcepts = context.VTranslatedConcepts
-                    .Where(item =>
-                        item.ConceptComponentNamespace == ComponentName &&
-                        item.LanguageIsoCode == isocoding &&
-                        !item.ConceptIgnore.HasValue || !item.ConceptIgnore.Value)
-                    .Union(context.VTranslatedConcepts
-                            .Where(item =>
-                                item.ConceptComponentNamespace == ComponentName &&
-                                item.LanguageIsoCode == SharedConstants.LANGUAGE_EN &&
-                                item.ConceptIgnore.HasValue && item.ConceptIgnore.Value)
-                            );
-            }
-
-            return translatedConcepts
-                .Select(concept => new DBGlobal
-                {
-                    ComponentNamespace = concept.ConceptComponentNamespace,
-                    ContextName = concept.Context,
-                    DataString = concept.String,
-                    InternalNamespace = concept.ConceptInternalNamespace,
-                    ISOCoding = isocoding,
-                    LocalizationID = concept.Concept,
-                    DatabaseID = concept.StringId,
-                    //item.IsAcceptable = concept.ConceptAcceptable;
-                    Concept2ContextID = concept.ConceptId,
-                    IsToIgnore = concept.ConceptIgnore.HasValue && concept.ConceptIgnore.Value
-                })
-                .ToList();
-
-            // ASK TO LAURA BIGI
-            // Replace all localized strings
-            //if (ComponentName == "MeasureComponent")
-            //{
-            //    var z = from k in englishConcepts
-            //            where k.ContextName == "MD_RT11ExtLabel"
-            //            select k;
-            //    foreach (var rz in z)
-            //    {
-            //        DBGlobal item = retList.FirstOrDefault(t => t.ComponentNamespace == rz.ComponentNamespace &&
-            //                                                    t.InternalNamespace == rz.InternalNamespace &&
-            //                                                    t.LocalizationID == rz.LocalizationID &&
-            //                                                    t.ContextName == rz.ContextName);
-            //        var item2 = specificLanguageConcepts.FirstOrDefault(t => t.ComponentNamespace == rz.ComponentNamespace &&
-            //                                                    t.InternalNamespace == rz.InternalNamespace &&
-            //                                                    t.LocalizationID == rz.LocalizationID &&
-            //                                                    t.ContextName == rz.ContextName);
-            //        if (item != null && item2 == null)
-            //        {
-            //            var itemFallback = specificLanguageConcepts.FirstOrDefault(t => t.ComponentNamespace == rz.ComponentNamespace &&
-            //                                                        t.InternalNamespace == rz.InternalNamespace &&
-            //                                                        t.LocalizationID == rz.LocalizationID &&
-            //                                                        t.ContextName == "MD_RT11MeasName");
-            //            if (itemFallback != null)
-            //            {
-            //                item.DataString = itemFallback.String;
-            //                item.DatabaseID = itemFallback.StringID;
-            //                item.IsAcceptable = itemFallback.IsAcceptable;
-            //                item.Concept2ContextID = itemFallback.ID;
-            //            }
-            //        }
-            //    }
-            //}
-        }
-
 
         public List<GroupedStringEntity> GetGroupledMissingDataBy(string ComponentName, string InternalNamespace, string isocoding)
         {

@@ -14,6 +14,7 @@ using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Repositories;
 using Globe.TranslationServer.Services;
 using Globe.TranslationServer.Services.PortingAdapters;
+using Globe.TranslationServer.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -50,7 +51,7 @@ namespace Globe.TranslationServer
                 {
                     if (!options.IsConfigured)
                     {
-                        options.UseSqlServer(_configuration.GetConnectionString("DefaultSqlServerConnection"));
+                        options.UseSqlServer(_configuration.GetConnectionString(Constants.DEFAULT_CONNECTION_STRING));
                     }
                 });
 
@@ -86,6 +87,7 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>()
                 .AddScoped<IUltraDBJobGlobal, UltraDBJobGlobal>();
             services
+                .AddScoped<ILocalizationResourceBuilder, Services.NewServices.ScopedLocalizationResourceBuilder>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncLanguageService, Services.NewServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IComponentNamespaceService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
                 .AddScoped<IAsyncInternalNamespaceService, Services.NewServices.InternalNamespaceService>() //.AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>()
