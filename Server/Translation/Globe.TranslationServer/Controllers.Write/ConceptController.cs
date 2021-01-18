@@ -1,4 +1,5 @@
-﻿using Globe.TranslationServer.DTOs;
+﻿using Globe.Shared.DTOs;
+using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -30,7 +31,7 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpPost]
-        async public Task<bool> Post()
+        async public Task<NewConceptsResult> Post()
         {
             return await _conceptService.CheckNewConceptsAsync();
         }

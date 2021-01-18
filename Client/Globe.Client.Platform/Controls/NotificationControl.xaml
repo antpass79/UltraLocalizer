@@ -68,7 +68,7 @@
             Background="#05163D"
             Visibility="{Binding Linkable, Converter={StaticResource booleanToVisibilityConverter}}"
             Cursor="Hand"
-            Level="{Binding}"
+            Level="{Binding Level}"
             Notifier="{Binding ElementName=notificationControl}"
             Command="{Binding ElementName=notificationHistory, Path=DataContext.NavigateToCommand}"
             CommandParameter="{Binding ViewToNavigate}">
@@ -78,7 +78,8 @@
             Grid.Row="0"
             Grid.Column="3"            
             FontSize="20"
-            Foreground="Gray">            
+            Foreground="Gray"
+            Margin="5,0,0,0">            
             <Hyperlink
                 Command="{Binding ElementName=notificationControl, Path=DataContext.RemoveNotificationCommand}"
                 CommandParameter="{Binding}"
@@ -134,7 +135,7 @@
             Background="#05163D"
             Visibility="{Binding Linkable, Converter={StaticResource booleanToVisibilityConverter}}"
             Cursor="Hand"
-            Level="{Binding}"
+            Level="{Binding Level}"
             Notifier="{Binding ElementName=notificationControl}"
             Command="{Binding ElementName=notificationHistory, Path=DataContext.NavigateToCommand}"
             CommandParameter="{Binding ViewToNavigate}">
@@ -154,7 +155,6 @@
             <Border BorderThickness="3"
               BorderBrush="#05163D"
               Background="WhiteSmoke"
-              Width="400"
               MaxHeight="1000"
               MaxWidth="600">
                 <DockPanel>
@@ -190,7 +190,6 @@
             <Border BorderThickness="1"
               BorderBrush="#05163D"
               Background="WhiteSmoke"
-              Width="350"
               MaxWidth="600">
                 <ContentControl Name="notification"
                         MaxHeight="300"
@@ -214,7 +213,7 @@
                 </Grid.RowDefinitions>
                 <Image Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Grid.RowSpan="2" Height="24" Width="24" Margin="2" Source="{Binding ElementName=notificationControl, Path=ImageSource, Mode=OneWay}" />
                 <Border Grid.Column="1" Grid.Row="0" Background="Red" CornerRadius="999" Padding="5,2,5,2" Visibility="{Binding ElementName=notificationControl, Path=NotificationExists, Converter={StaticResource booleanToVisibilityConverter}}">
-                    <TextBlock Foreground="White" FontWeight="Bold" FontSize="10" Text="{Binding ElementName=notificationControl, Path=NotificationCount}"/>
+                    <TextBlock Foreground="White" FontWeight="Bold" FontSize="10" TextWrapping="Wrap" Text="{Binding ElementName=notificationControl, Path=NotificationCount}"/>
                 </Border>
             </Grid>
         </Button>

@@ -59,59 +59,63 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                 File.WriteAllText($"ERROR-{file}", e.Message);
             }
         }
-
+        static object _lock = new object();
         public static LocalizationResource Load(string file)
         {
-            LocalizationResource localizationResource = new LocalizationResource();
-
-            XDocument document = XDocument.Load(File.OpenText(file), LoadOptions.PreserveWhitespace);
-            var componentNamespace = document.Root.Attribute(ATTRIBUTE_COMPONENT_NAMESPACE);
-            var language = document.Root.Attribute(ATTRIBUTE_LANGUAGE);
-            var version = document.Root.Attribute(ATTRIBUTE_VERSION);
-
-            localizationResource.ComponentNamespace = componentNamespace.Value;
-            localizationResource.Language = language.Value;
-            localizationResource.Version = decimal.Parse(version.Value, System.Globalization.CultureInfo.InvariantCulture);
-
-            var localizationSectionTags = document.Descendants(TAG_LOCALIZATION_SECTION);
-
-            foreach (var localizationSectionTag in localizationSectionTags)
+            lock (_lock)
             {
-                LocalizationSection localizationSection = new LocalizationSection();
-                localizationResource.LocalizationSection.Add(localizationSection);
+                LocalizationResource localizationResource = new LocalizationResource();
+                using var stream = File.OpenText(file);
 
-                var internalNamespace = localizationSectionTag.Attribute(ATTRIBUTE_INTERNAL_NAMESPACE);
-                localizationSection.InternalNamespace = internalNamespace != null ? internalNamespace.Value : string.Empty;
+                XDocument document = XDocument.Load(stream, LoadOptions.PreserveWhitespace);
+                var componentNamespace = document.Root.Attribute(ATTRIBUTE_COMPONENT_NAMESPACE);
+                var language = document.Root.Attribute(ATTRIBUTE_LANGUAGE);
+                var version = document.Root.Attribute(ATTRIBUTE_VERSION);
 
-                var conceptTags = localizationSectionTag.Descendants(TAG_CONCEPT);
+                localizationResource.ComponentNamespace = componentNamespace.Value;
+                localizationResource.Language = language.Value;
+                localizationResource.Version = decimal.Parse(version.Value, System.Globalization.CultureInfo.InvariantCulture);
 
-                foreach (var conceptTag in conceptTags)
+                var localizationSectionTags = document.Descendants(TAG_LOCALIZATION_SECTION);
+
+                foreach (var localizationSectionTag in localizationSectionTags)
                 {
-                    Concept concept = new Concept();
-                    localizationSection.Concept.Add(concept);
-                    var conceptId = conceptTag.Attribute(ATTRIBUTE_CONCEPT_ID);
-                    concept.Id = conceptId.Value;
+                    LocalizationSection localizationSection = new LocalizationSection();
+                    localizationResource.LocalizationSection.Add(localizationSection);
 
-                    var commentsTag = conceptTag.Element(TAG_COMMENTS);
-                    concept.Comments = new Comments
+                    var internalNamespace = localizationSectionTag.Attribute(ATTRIBUTE_INTERNAL_NAMESPACE);
+                    localizationSection.InternalNamespace = internalNamespace != null ? internalNamespace.Value : string.Empty;
+
+                    var conceptTags = localizationSectionTag.Descendants(TAG_CONCEPT);
+
+                    foreach (var conceptTag in conceptTags)
                     {
-                        TypedValue = commentsTag != null ? commentsTag.Value : string.Empty
-                    };
+                        Concept concept = new Concept();
+                        localizationSection.Concept.Add(concept);
+                        var conceptId = conceptTag.Attribute(ATTRIBUTE_CONCEPT_ID);
+                        concept.Id = conceptId.Value;
 
-                    var stringTags = conceptTag.Descendants(TAG_STRING);
-                    foreach (var stringTag in stringTags)
-                    {
-                        TagString tagString = new TagString();
-                        concept.String.Add(tagString);
+                        var commentsTag = conceptTag.Element(TAG_COMMENTS);
+                        concept.Comments = new Comments
+                        {
+                            TypedValue = commentsTag != null ? commentsTag.Value : string.Empty
+                        };
 
-                        var context = stringTag.Attribute(ATTRIBUTE_CONTEXT);
-                        tagString.Context = context.Value;
-                        tagString.TypedValue = stringTag.Value;
+                        var stringTags = conceptTag.Descendants(TAG_STRING);
+                        foreach (var stringTag in stringTags)
+                        {
+                            TagString tagString = new TagString();
+                            concept.String.Add(tagString);
+
+                            var context = stringTag.Attribute(ATTRIBUTE_CONTEXT);
+                            tagString.Context = context.Value;
+                            tagString.TypedValue = stringTag.Value;
+                        }
                     }
                 }
-            }
 
-            return localizationResource;
+                return localizationResource;
+            }
         }
     }
 

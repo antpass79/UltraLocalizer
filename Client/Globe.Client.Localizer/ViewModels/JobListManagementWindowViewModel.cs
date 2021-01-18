@@ -342,12 +342,15 @@ namespace Globe.Client.Localizer.ViewModels
                     EventAggregator.GetEvent<BusyChangedEvent>().Publish(true);
                     var result = await _jobListManagementService.CheckNewConceptsAsync();
 
-                    await _notificationService.NotifyAsync(new Notification
-                    {
-                        Title = Localize[LanguageKeys.Get_new_concepts],
-                        Message = result ? Localize[LanguageKeys.New_concepts_found] : Localize[LanguageKeys.No_concepts_found],
-                        Level = NotificationLevel.Info
-                    });
+                    if(result.IsNotified)
+                    { 
+                        await _notificationService.NotifyAsync(new Notification
+                        {
+                            Title = Localize[LanguageKeys.Get_new_concepts],
+                            Message = result.ChangesFound ? Localize[LanguageKeys.New_concepts_found] : Localize[LanguageKeys.No_concepts_found],
+                            Level = NotificationLevel.Info
+                        });
+                    }
                     await OnLanguageChange();
                 }
                 catch (Exception e)
