@@ -32,6 +32,15 @@
                 <controls:LocPageSubTitleTextBlock Text="{Binding Localize[Please_enter_your_credentials]}" />
                 <controls:LocTextBlock Text="{Binding Localize[UserName]}" />
                 <controls:LocTextBox Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}">
+                    <!--<controls:LocTextBox.Triggers>
+                        <EventTrigger RoutedEvent="Loaded">
+                            <EventTrigger.Actions>
+                                <
+                            </EventTrigger.Actions>
+                            <Setter Property="FocusManager.FocusedElement" 
+                                    Value="{Binding RelativeSource={RelativeSource Self}}" />
+                        </EventTrigger>
+                    </controls:LocTextBox.Triggers>-->
                     <controls:LocTextBox.InputBindings>
                         <KeyBinding Gesture="Return" Command="{Binding LoginCommand}"></KeyBinding>
                     </controls:LocTextBox.InputBindings>

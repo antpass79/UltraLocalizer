@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -24,8 +25,7 @@ namespace Globe.TranslationServer.Services
         }
 
         public Task StartAsync(CancellationToken cancellationToken)
-        {
-        
+        {        
             InitializeFileWatcher();
             return Task.CompletedTask;
         }
@@ -44,7 +44,7 @@ namespace Globe.TranslationServer.Services
         {
             _fileSystemWatcher = new FileSystemWatcher
             {
-                Path = Path.Combine(Directory.GetCurrentDirectory(), Constants.XML_FOLDER),
+                Path = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), Constants.XML_FOLDER),
                 NotifyFilter =
                     NotifyFilters.LastWrite |
                     NotifyFilters.CreationTime,
