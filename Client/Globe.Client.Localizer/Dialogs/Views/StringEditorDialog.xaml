@@ -100,15 +100,17 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
                 <controls:LocTextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Localize[Software_developer_comment]}" />
                 <controls:LocTextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding EditableConcept.SoftwareDeveloperComment}"></controls:LocTextBlock>
                 <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Localize[Master_translator_comment]}" />
                 <controls:LocTextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding EditableConcept.MasterTranslatorComment}"></controls:LocTextBox>
+                <controls:LocCheckBox Grid.Row="2" Grid.ColumnSpan="2" IsChecked="{Binding EditableConcept.IgnoreTranslation}" Content="{Binding Localize[Ignore_Translation]}"></controls:LocCheckBox>
             </Grid>
 
-            <DockPanel DockPanel.Dock="Top" Margin="10">
+            <DockPanel DockPanel.Dock="Top" Margin="10,0,10,5">
                 <DockPanel.Resources>
                     <Style TargetType="{x:Type Label}">
                         <Setter Property="FontSize" Value="15" />
@@ -119,12 +121,6 @@
                         <Setter Property="HorizontalAlignment" Value="Center" />
                     </Style>
                 </DockPanel.Resources>
-
-                <!-- Buttons -->
-                <DockPanel DockPanel.Dock="Bottom" LastChildFill="False">
-                    <Button DockPanel.Dock="Right" Command="{Binding CloseDialogCommand}" CommandParameter="true" Content="{Binding Localize[Close]}" />
-                    <Button DockPanel.Dock="Right" Command="{Binding SaveCommand}" Content="{Binding Localize[Save]}" />
-                </DockPanel>
 
                 <!-- EditableContext DataGrid -->
                 <controls:LocDataGrid x:Name="contextGrid" FrozenColumnCount="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
@@ -285,15 +281,30 @@
             </DockPanel>
 
             <!-- Searching Options -->
-            <Expander DockPanel.Dock="Top" Margin="10">
-                <Expander.Header>
-                    <controls:LocLabel>
-                        Searching Options for selected String
-                    </controls:LocLabel>
-                </Expander.Header>
+            <Expander DockPanel.Dock="Top" Margin="8,0,8,0" IsExpanded="True">
+                <Expander.HeaderTemplate>
+                    <DataTemplate>
+                        <DockPanel HorizontalAlignment="{Binding Path=HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}">
 
-                <DockPanel>
-                    <DockPanel Width="400">
+                            <controls:LocTextBlock>
+                                Searching Options for selected String
+                            </controls:LocTextBlock>
+                            <!-- Buttons -->
+                            <DockPanel DockPanel.Dock="Right" LastChildFill="False">
+                                <Button Foreground="Red" DockPanel.Dock="Right" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.CloseDialogCommand}" CommandParameter="true" Content="{Binding Localize[Close]}" />
+                                <Button DockPanel.Dock="Right" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.SaveCommand}" Content="{Binding Localize[Save]}" />
+                            </DockPanel>
+                        </DockPanel>
+                    </DataTemplate>
+                </Expander.HeaderTemplate>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    
+                    <DockPanel Grid.Column="0">
                         <Grid Style="{StaticResource SectionPanel}">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -306,7 +317,7 @@
 
                             <controls:LocTextBox Grid.Row="0" Grid.Column="0" Text="{Binding StringValue}" VerticalAlignment="Center" />
                             <Button Grid.Row="0" Grid.Column="1" Command="{Binding SearchConceptsCommand}" MinWidth="0">
-                                <Image Width="24" Height="24" Margin="3" Source="/Globe.Client.Platform.Assets;component/Icons/search.png" />
+                                <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/search.png" />
                             </Button>
 
                         </Grid>
@@ -320,11 +331,11 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
 
-                            <controls:LocRadioButton Grid.Row="0" Grid.ColumnSpan="2" GroupName="SearchBy" IsChecked="True" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.Concept}">By Concept (English language only)</controls:LocRadioButton>
-                            <controls:LocRadioButton Grid.Row="1" Grid.ColumnSpan="2" GroupName="SearchBy" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.String}">By Value (Current language only)</controls:LocRadioButton>
+                            <controls:LocRadioButton Grid.Row="0" Grid.ColumnSpan="2" GroupName="SearchBy" IsChecked="True" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.Concept}" Content="{Binding Localize[By_Concept_English_language_only]}" />
+                            <controls:LocRadioButton Grid.Row="1" Grid.ColumnSpan="2" GroupName="SearchBy" Command="{Binding SearchByCommand}" CommandParameter="{x:Static models:ConceptSearchBy.String}" Content="{Binding Localize[By_Value_Current_language_only]}" />
                         </Grid>
 
-                        <Grid Style="{StaticResource SectionPanel}">
+                        <Grid Style="{StaticResource SectionPanel}" VerticalAlignment="Top">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition />
@@ -335,19 +346,18 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
 
-                            <controls:LocRadioButton Grid.Row="0" Grid.Column="0" GroupName="FilterBy" IsChecked="True" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.None}">No Filters</controls:LocRadioButton>
-                            <controls:LocRadioButton Grid.Row="1" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.Context}">Filter by Context</controls:LocRadioButton>
-                            <controls:LocRadioButton Grid.Row="2" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.StringType}">Filter by String Type</controls:LocRadioButton>
+                            <controls:LocRadioButton Grid.Row="0" Grid.Column="0" GroupName="FilterBy" IsChecked="True" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.None}" Content="{Binding Localize[No_Filters]}" />
+                            <controls:LocRadioButton Grid.Row="1" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.Context}" Content="{Binding Localize[Filter_by_Context]}" />
+                            <controls:LocRadioButton Grid.Row="2" Grid.Column="0" GroupName="FilterBy" Command="{Binding FilterByCommand}" CommandParameter="{x:Static models:ConceptFilterBy.StringType}" Content="{Binding Localize[Filter_by_String_Type]}" />
 
                             <controls:LocComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Contexts}" SelectedItem="{Binding SelectedContext}" DisplayMemberPath="Name"></controls:LocComboBox>
                             <controls:LocComboBox Grid.Row="2" Grid.Column="1" ItemsSource="{Binding StringTypes}" SelectedItem="{Binding SelectedStringType}"></controls:LocComboBox>
                         </Grid>
                     </DockPanel>
-
-                    <Grid>
-                        <DataGrid ItemsSource="{Binding StringViews}" CanUserAddRows="False" AutoGenerateColumns="False"  IsReadOnly="True" SelectedItem="{Binding SelectedStringView}">
+                    <Grid Grid.Column="1">
+                        <DataGrid MaxHeight="190" FrozenColumnCount="1" ItemsSource="{Binding StringViews}" CanUserAddRows="False" AutoGenerateColumns="False"  IsReadOnly="True" SelectedItem="{Binding SelectedStringView}">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Binding="{Binding Type}" Header="String Type">
+                                <DataGridTextColumn Binding="{Binding Value}" Header="String Value">
                                     <DataGridTextColumn.HeaderTemplate>
                                         <DataTemplate>
                                             <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
@@ -355,7 +365,7 @@
                                         </DataTemplate>
                                     </DataGridTextColumn.HeaderTemplate>
                                 </DataGridTextColumn>
-                                <DataGridTextColumn Binding="{Binding Value}" Header="String">
+                                <DataGridTextColumn Binding="{Binding Type}" Header="String Type">
                                     <DataGridTextColumn.HeaderTemplate>
                                         <DataTemplate>
                                             <controls:LocTextBlock Style="{StaticResource HeaderDialogSearchingOption}" Text="{Binding Content, RelativeSource=
@@ -415,7 +425,7 @@
                         </DataGrid>
                         <platform:Spinner Busy="{Binding SearchingBusy}" />
                     </Grid>
-                </DockPanel>
+                </Grid>
             </Expander>
 
         </DockPanel>
