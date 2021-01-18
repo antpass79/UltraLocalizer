@@ -8,6 +8,7 @@ using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Utilities;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.PortingAdapters
@@ -117,7 +118,7 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
         async public Task<bool> CheckNewConceptsAsync()
         {
-            var xmlFilePath = Path.Combine(Directory.GetCurrentDirectory(), Constants.XML_FOLDER);
+            var xmlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), Constants.XML_FOLDER);
             _xmlManager.XmlDirectory = xmlFilePath;
             _xmlManager.LoadXmlOnly();
             _xmlManager.Completed.WaitOne();

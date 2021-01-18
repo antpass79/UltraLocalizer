@@ -21,7 +21,7 @@
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="False">
                         <ContentPresenter.Resources>
                             <Style TargetType="TextBlock">
-                                <Setter Property ="FontSize" Value ="14"></Setter>
+                                <Setter Property ="FontSize" Value ="12"></Setter>
                                 <Setter Property ="Foreground" Value ="Black" ></Setter>
                                 <Setter Property ="Padding" Value ="5,0,0,0" ></Setter>
                             </Style>

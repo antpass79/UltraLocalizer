@@ -5,7 +5,7 @@
     <Style TargetType="controls:LocRadioButton">
         <Setter Property="Margin" Value="3" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="AccessText.FontSize" Value="14"/>
+        <Setter Property="AccessText.FontSize" Value="12"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type RadioButton}">
@@ -19,7 +19,7 @@
                         <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" RecognizesAccessKey="False">
                             <ContentPresenter.Resources>
                                 <Style TargetType="TextBlock">
-                                    <Setter Property ="FontSize" Value ="14" ></Setter>
+                                    <Setter Property ="FontSize" Value ="12" />
                                     <Setter Property="Margin" Value="3" />
                                 </Style>
                             </ContentPresenter.Resources>
