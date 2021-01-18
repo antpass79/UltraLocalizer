@@ -15,13 +15,13 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.UltraDBStrings
             using var context = new MockLocalizationContext().Mock().Object;
             var ultraDBAcceptableString = new Porting.UltraDBDLL.UltraDBStrings.UltraDBAcceptableString(context);
 
-            var beforeDeleteItem = context.LocStringsacceptable.First(item => item.IdString == MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
+            var beforeDeleteItem = context.LocStringsacceptables.First(item => item.IdString == MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
 
             ultraDBAcceptableString.DeleteAcceptable(MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
-            var afterDeleteItem = context.LocStringsacceptable.First(item => item.IdString == MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
+            var afterDeleteItem = context.LocStringsacceptables.First(item => item.IdString == MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
 
             ultraDBAcceptableString.InsertNewAcceptable(MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
-            var afterInsertItem = context.LocStringsacceptable.First(item => item.IdString == MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
+            var afterInsertItem = context.LocStringsacceptables.First(item => item.IdString == MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
 
             Assert.NotNull(beforeDeleteItem);
             Assert.Null(afterDeleteItem);
@@ -46,11 +46,11 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.UltraDBStrings
             using var context = new MockLocalizationContext().Mock().Object;
             var ultraDBAcceptableString = new Porting.UltraDBDLL.UltraDBStrings.UltraDBAcceptableString(context);
 
-            var count = context.LocStringsacceptable.Count();
+            var count = context.LocStringsacceptables.Count();
             ultraDBAcceptableString.DeleteAcceptable(
                 MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
 
-            Assert.Equal(count - 1, context.LocStringsacceptable.Count());
+            Assert.Equal(count - 1, context.LocStringsacceptables.Count());
         }
     }
 }

@@ -22,10 +22,10 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         {
             var context = new MockLocalizationContext().Mock().Object;
 
-            var count = context.LocConceptsTable.Count();
+            var count = context.LocConceptsTables.Count();
             context.InsertNewConcept(MockConstants.COMPONENT_NAMESPACE_MEASURECOMPONENT, MockConstants.INTERNAL_NAMESPACE_VASCULAR, MockConstants.LOCALIZATION_ID_FAKE, MockConstants.IGNORED_TRUE, MockConstants.COMMENT_FAKE);
 
-            Assert.Equal(count + 1, context.LocConceptsTable.Count());
+            Assert.Equal(count + 1, context.LocConceptsTables.Count());
         }
 
         [Fact]
@@ -33,9 +33,9 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         {
             var context = new MockLocalizationContext().Mock().Object;
 
-            var item = context.LocConceptsTable.Find(MockConstants.LOC_CONCEPTSTABLE_ID_10);
+            var item = context.LocConceptsTables.Find(MockConstants.LOC_CONCEPTSTABLE_ID_10);
             context.UpdateConcept(MockConstants.LOC_CONCEPTSTABLE_ID_10, MockConstants.IGNORED_TRUE, MockConstants.COMMENT_FAKE);
-            var updatedItem = context.LocConceptsTable.Find(MockConstants.LOC_CONCEPTSTABLE_ID_10);
+            var updatedItem = context.LocConceptsTables.Find(MockConstants.LOC_CONCEPTSTABLE_ID_10);
 
             Assert.Equal(MockConstants.IGNORED_TRUE, item.Ignore);
             Assert.Equal(MockConstants.IGNORED_TRUE, updatedItem.Ignore);

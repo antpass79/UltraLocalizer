@@ -21,8 +21,8 @@ namespace Globe.TranslationServer.Tests.Mocks
             dbSet.As<IQueryable<LocContext>>().Setup(m => m.ElementType).Returns(queryableLocContexts.ElementType);
             dbSet.As<IQueryable<LocContext>>().Setup(m => m.GetEnumerator()).Returns(queryableLocContexts.GetEnumerator());
 
-            dbSet.Setup(m => m.Add(It.IsAny<LocContexts>())).Callback<LocContexts>((s) => locContexts.Add(s));
-            dbSet.Setup(m => m.Remove(It.IsAny<LocContexts>())).Callback<LocContexts>((s) => locContexts.Remove(s));
+            dbSet.Setup(m => m.Add(It.IsAny<LocContext>())).Callback<LocContext>((s) => locContexts.Add(s));
+            dbSet.Setup(m => m.Remove(It.IsAny<LocContext>())).Callback<LocContext>((s) => locContexts.Remove(s));
             dbSet.Setup(m => m.Find(It.IsAny<int>())).Returns<object[]>((@params) => locContexts.Find(item => item.Id == (int)@params[0]));
 
             return dbSet;
@@ -31,7 +31,7 @@ namespace Globe.TranslationServer.Tests.Mocks
         private List<LocContext> GetLocStrings()
         {
             string directory = Path.Combine(Directory.GetCurrentDirectory(), "Data");
-            string csvFile = Path.Combine(directory, nameof(LocContexts) + ".csv");
+            string csvFile = Path.Combine(directory, nameof(LocContext) + ".csv");
             var items = CsvParser.Parse<LocContextsForCsv>(csvFile).ToList().Select(item =>
             {
                 return new LocContext

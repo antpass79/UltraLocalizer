@@ -13,10 +13,10 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         {
             var context = new MockLocalizationContext().Mock().Object;
 
-            var count = context.LocConcept2Context.Count();
+            var count = context.LocConcept2Contexts.Count();
             context.InsertNewConcept2Context(50, 50);
 
-            Assert.Equal(count + 1, context.LocConcept2Context.Count());
+            Assert.Equal(count + 1, context.LocConcept2Contexts.Count());
         }
     }
 }
