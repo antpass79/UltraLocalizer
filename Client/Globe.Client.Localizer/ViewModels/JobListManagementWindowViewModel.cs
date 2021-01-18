@@ -8,6 +8,7 @@ using Globe.Client.Platform.Utilities;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
+using Globe.Shared.Services;
 using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
@@ -22,7 +23,7 @@ namespace Globe.Client.Localizer.ViewModels
 {
     internal class JobListManagementWindowViewModel : LocalizeWindowViewModel
     {
-        private readonly ILoggerService _loggerService;
+        private readonly ILogService _logService;
         private readonly IDialogService _dialogService;
         private readonly IJobListManagementFiltersService _jobListManagementFiltersService;
         private readonly IJobListManagementService _jobListManagementService;
@@ -30,7 +31,7 @@ namespace Globe.Client.Localizer.ViewModels
 
         public JobListManagementWindowViewModel(
             IEventAggregator eventAggregator,
-            ILoggerService loggerService,
+            ILogService logService,
             IDialogService dialogService,
             IJobListManagementFiltersService jobListManagementFiltersService,
             IJobListManagementService jobListManagementService,
@@ -39,7 +40,7 @@ namespace Globe.Client.Localizer.ViewModels
             )
             : base(eventAggregator, localizationAppService)
         {
-            _loggerService = loggerService;
+            _logService = logService;
             _dialogService = dialogService;
             _jobListManagementFiltersService = jobListManagementFiltersService;
             _jobListManagementService = jobListManagementService;
@@ -186,57 +187,19 @@ namespace Globe.Client.Localizer.ViewModels
 
                     if (SelectedInternalNamespace != null)
                     {
-                        var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
-                            SelectedComponentNamespaceGroup.ComponentNamespace,
-                            SelectedInternalNamespace,
-                            SelectedLanguage);
-
-                        if (NotTranslatedConceptViews == null)
-                        {
-                            NotTranslatedConceptViews = result;
-                        }
-                        else
-                        {
-                            var newElements = result
-                                .Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name))
-                                .ToList();
-
-                            NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
-                                .OrderBy(item => item.ComponentNamespace.Description)
-                                .ThenBy(item => item.InternalNamespace.Description)
-                                .ThenBy(item => item.Name);
-                        }
+                        await UpdateNotTranslatedConceptViews(SelectedComponentNamespaceGroup.ComponentNamespace, SelectedInternalNamespace);
                     }
                     else
                     {
                         foreach (var internalNamespace in SelectedComponentNamespaceGroup.InternalNamespaces)
                         {
-                            var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
-                                SelectedComponentNamespaceGroup.ComponentNamespace,
-                                internalNamespace,
-                                SelectedLanguage);
-
-                            if (NotTranslatedConceptViews == null)
-                            {
-                                NotTranslatedConceptViews = result;
-                            }
-                            else
-                            {
-                                var newElements = result
-                                    .Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name))
-                                    .ToList();
-
-                                NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
-                                    .OrderBy(item => item.ComponentNamespace.Description)
-                                    .ThenBy(item => item.InternalNamespace.Description)
-                                    .ThenBy(item => item.Name);
-                            }
+                            await UpdateNotTranslatedConceptViews(SelectedComponentNamespaceGroup.ComponentNamespace, internalNamespace);
                         }
                     }
                 }
                 catch (Exception e)
                 {
-                    _loggerService.Exception(e);
+                    _logService.Exception(e);
                     await _notificationService.NotifyAsync(new Notification
                     {
                         Title = Localize[LanguageKeys.Error],
@@ -251,13 +214,34 @@ namespace Globe.Client.Localizer.ViewModels
                 }
             }, () => !FiltersBusy));
 
-        private DelegateCommand _removeCommand = null;
-        public DelegateCommand RemoveCommand =>
-            _removeCommand ?? (_removeCommand = new DelegateCommand(() =>
+        private DelegateCommand _addAllCommand = null;
+        public DelegateCommand AddAllCommand =>
+            _addAllCommand ?? (_addAllCommand = new DelegateCommand(async () =>
             {
-                NotTranslatedConceptViews = NotTranslatedConceptViews == null ? null : NotTranslatedConceptViews.Where(item => !item.IsSelected);
-                ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
-            }, () => SelectedNotTranslatedConceptView != null));
+                try
+                {
+                    ConceptDetailsBusy = true;
+
+                    foreach (var componentNamespaceGroup in ComponentNamespaceGroups)
+                        foreach (var internalNamespace in componentNamespaceGroup.InternalNamespaces)
+                            await UpdateNotTranslatedConceptViews(componentNamespaceGroup.ComponentNamespace, internalNamespace);
+                }
+                catch (Exception e)
+                {
+                    _logService.Exception(e);
+                    await _notificationService.NotifyAsync(new Notification
+                    {
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Error_during_getting_list],
+                        Level = NotificationLevel.Error
+                    });
+                }
+                finally
+                {
+                    ConceptDetailsBusy = false;
+                    ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
+                }
+            }));
 
         private DelegateCommand _removeAllCommand = null;
         public DelegateCommand RemoveAllCommand =>
@@ -266,6 +250,69 @@ namespace Globe.Client.Localizer.ViewModels
                 NotTranslatedConceptViews = null;
                 ItemCount = 0;
             }, () => NotTranslatedConceptViews != null && NotTranslatedConceptViews.Count() > 0));
+
+        private DelegateCommand<BindableComponentNamespaceGroup> _addComponentNamespaceGroupCommand = null;
+        public DelegateCommand<BindableComponentNamespaceGroup> AddComponentNamespaceGroupCommand =>
+            _addComponentNamespaceGroupCommand ?? (_addComponentNamespaceGroupCommand = new DelegateCommand<BindableComponentNamespaceGroup>(async (componentNamespaceGroup) =>
+            {
+                try
+                {
+                    ConceptDetailsBusy = true;
+
+                    foreach (var internalNamespace in componentNamespaceGroup.InternalNamespaces)
+                        await UpdateNotTranslatedConceptViews(componentNamespaceGroup.ComponentNamespace, internalNamespace);
+                }
+                catch (Exception e)
+                {
+                    _logService.Exception(e);
+                    await _notificationService.NotifyAsync(new Notification
+                    {
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Error_during_getting_list],
+                        Level = NotificationLevel.Error
+                    });
+                }
+                finally
+                {
+                    ConceptDetailsBusy = false;
+                    ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
+                }
+            }));
+
+        private DelegateCommand<BindableInternalNamespace> _addInternalNamespaceCommand = null;
+        public DelegateCommand<BindableInternalNamespace> AddInternalNamespaceCommand =>
+            _addInternalNamespaceCommand ?? (_addInternalNamespaceCommand = new DelegateCommand<BindableInternalNamespace>(async (internalNamespace) =>
+            {
+                try
+                {
+                    ConceptDetailsBusy = true;
+
+                    await UpdateNotTranslatedConceptViews(SelectedComponentNamespaceGroup.ComponentNamespace, internalNamespace);
+                }
+                catch (Exception e)
+                {
+                    _logService.Exception(e);
+                    await _notificationService.NotifyAsync(new Notification
+                    {
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Error_during_getting_list],
+                        Level = NotificationLevel.Error
+                    });
+                }
+                finally
+                {
+                    ConceptDetailsBusy = false;
+                    ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
+                }
+            }));
+
+        private DelegateCommand _removeCommand = null;
+        public DelegateCommand RemoveCommand =>
+            _removeCommand ?? (_removeCommand = new DelegateCommand(() =>
+            {
+                NotTranslatedConceptViews = NotTranslatedConceptViews == null ? null : NotTranslatedConceptViews.Where(item => !item.IsSelected);
+                ItemCount = NotTranslatedConceptViews == null ? 0 : NotTranslatedConceptViews.Count();
+            }, () => SelectedNotTranslatedConceptView != null));
 
         private DelegateCommand _saveJoblistCommand = null;
         public DelegateCommand SaveJoblistCommand =>
@@ -305,7 +352,7 @@ namespace Globe.Client.Localizer.ViewModels
                 }
                 catch (Exception e)
                 {
-                    _loggerService.Exception(e);
+                    _logService.Exception(e);
                     await _notificationService.NotifyAsync(new Notification
                     {
                         Title = Localize[LanguageKeys.Error],
@@ -351,6 +398,30 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
+        private async Task UpdateNotTranslatedConceptViews(BindableComponentNamespace componentNamespace, BindableInternalNamespace internalNamespace)
+        {
+            var result = await _jobListManagementService.GetNotTranslatedConceptsAsync(
+                componentNamespace,
+                internalNamespace,
+                SelectedLanguage);
+
+            if (NotTranslatedConceptViews == null)
+            {
+                NotTranslatedConceptViews = result;
+            }
+            else
+            {
+                var newElements = result
+                    .Where(item => !NotTranslatedConceptViews.Any(gridItem => gridItem.Name == item.Name))
+                    .ToList();
+
+                NotTranslatedConceptViews = NotTranslatedConceptViews.Union(newElements)
+                    .OrderBy(item => item.ComponentNamespace.Description)
+                    .ThenBy(item => item.InternalNamespace.Description)
+                    .ThenBy(item => item.Name);
+            }
+        }
+
         async private Task InitializeFilters()
         {
             try
@@ -361,7 +432,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
             catch (Exception e)
             {
-                _loggerService.Exception(e);
+                _logService.Exception(e);
                 await _notificationService.NotifyAsync(new Notification
                 {
                     Title = Localize[LanguageKeys.Error],
@@ -390,7 +461,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
             catch (Exception e)
             {
-                _loggerService.Exception(e);
+                _logService.Exception(e);
 
                 NotTranslatedConceptViews = null;
                 ComponentNamespaceGroups = null;

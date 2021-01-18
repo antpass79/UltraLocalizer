@@ -4,6 +4,7 @@ using Globe.BusinessLogic.Repositories;
 using Globe.Identity.Options;
 using Globe.Identity.Security;
 using Globe.Infrastructure.EFCore.Repositories;
+using Globe.Shared.Services;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Hubs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
@@ -13,6 +14,7 @@ using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Repositories;
 using Globe.TranslationServer.Services;
 using Globe.TranslationServer.Services.PortingAdapters;
+using Globe.TranslationServer.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,7 +51,7 @@ namespace Globe.TranslationServer
                 {
                     if (!options.IsConfigured)
                     {
-                        options.UseSqlServer(_configuration.GetConnectionString("DefaultSqlServerConnection"));
+                        options.UseSqlServer(_configuration.GetConnectionString(Constants.DEFAULT_CONNECTION_STRING));
                     }
                 });
 
@@ -65,7 +67,7 @@ namespace Globe.TranslationServer
 
             // Repositories
             services
-                .AddScoped<IReadRepository<LocLanguages>, GenericRepository<LocalizationContext, LocLanguages>>()
+                .AddScoped<IReadRepository<LocLanguage>, GenericRepository<LocalizationContext, LocLanguage>>()
                 .AddScoped<IReadRepository<VLocalization>, GenericRepository<LocalizationContext, VLocalization>>()
                 .AddScoped<IReadRepository<VConceptStringToContext>, GenericRepository<LocalizationContext, VConceptStringToContext>>()
                 .AddScoped<IReadRepository<VStringsToContext>, GenericRepository<LocalizationContext, VStringsToContext>>()
@@ -85,6 +87,7 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>()
                 .AddScoped<IUltraDBJobGlobal, UltraDBJobGlobal>();
             services
+                .AddScoped<ILocalizationResourceBuilder, Services.NewServices.ScopedLocalizationResourceBuilder>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncLanguageService, Services.NewServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IComponentNamespaceService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
                 .AddScoped<IAsyncInternalNamespaceService, Services.NewServices.InternalNamespaceService>() //.AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>()
@@ -105,7 +108,9 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncNotTranslatedConceptViewService, Services.NewServices.NotTranslatedConceptViewService>() //.AddScoped<IAsyncNotTranslatedConceptViewService, NotTranslatedConceptViewService>()
                 .AddScoped<IComponentNamespaceGroupService, Services.NewServices.ComponentNamespaceGroupService>() //.AddScoped<IComponentNamespaceGroupService, ComponentNamespaceGroupService>()
                 .AddScoped<IAsyncJobListService, JobListService>()
-                .AddScoped<IAsyncXmlService, XmlService>();
+                .AddScoped<IAsyncXmlService, XmlService>()
+
+                .AddScoped<ILogService, ConsoleLogService>();
 
             // Security
             services

@@ -2,11 +2,11 @@
 using Globe.Client.Localizer.Views;
 using Globe.Client.Platform.Identity;
 using Globe.Client.Platform.Services;
+using Globe.Shared.Services;
 using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
 using System;
-using System.Net;
 using System.Net.Http;
 using System.Windows;
 using Unity;
@@ -36,7 +36,7 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IViewNavigationService, ViewNavigationService>();
             containerRegistry.RegisterSingleton<IGlobeDataStorage, GlobeInMemoryStorage>();
             containerRegistry.RegisterSingleton<IAsyncLoginService, HttpLoginService>();
-            containerRegistry.RegisterSingleton<ILoggerService, FileLoggerService>();
+            containerRegistry.RegisterSingleton<ILogService, FileLogService>();
             containerRegistry.RegisterSingleton<ISettingsService, AppSettingsService>();
             containerRegistry.RegisterSingleton<IUserService, UserService>();
             containerRegistry.RegisterSingleton<ILocalizationAppService, FakeLocalizationAppService>();
@@ -88,7 +88,7 @@ namespace Globe.Client.Localizer
         {
             var unityContainer = this.Container.GetContainer();
             unityContainer
-                .Resolve<ILoggerService>()
+                .Resolve<ILogService>()
                 .Exception(e.Exception);
             unityContainer
                 .Resolve<INotificationService>()

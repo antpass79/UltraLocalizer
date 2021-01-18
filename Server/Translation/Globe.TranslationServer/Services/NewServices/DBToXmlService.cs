@@ -1,13 +1,9 @@
 ﻿using Globe.BusinessLogic.Repositories;
+using Globe.Shared.Services;
 using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
-using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
-using Globe.TranslationServer.Utilities;
+using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,17 +13,20 @@ namespace Globe.TranslationServer.Services.NewServices
     public class DBToXmlService : IDBToXmlService
     {
         private readonly IReadRepository<VLocalization> _localizationViewRepository;
-        IReadRepository<LocLanguages> _languageRepository;
-        private readonly UltraDBGlobal _ultraDBGlobal;
+        private readonly IReadRepository<LocLanguage> _languageRepository;
+        private readonly IServiceScopeFactory _serviceScopeFactory;
+        private readonly ILogService _logService;
 
         public DBToXmlService(
             IReadRepository<VLocalization> localizationViewRepository,
-            IReadRepository<LocLanguages> languageRepository,
-            UltraDBGlobal ultraDBGlobal)
+            IReadRepository<LocLanguage> languageRepository,
+            IServiceScopeFactory serviceScopeFactory,
+            ILogService logService)
         {
             _localizationViewRepository = localizationViewRepository;
             _languageRepository = languageRepository;
-            _ultraDBGlobal = ultraDBGlobal;
+            _serviceScopeFactory = serviceScopeFactory;
+            _logService = logService;
         }
 
         async public Task Generate(string outputFolder, bool debugMode = true)
@@ -42,74 +41,37 @@ namespace Globe.TranslationServer.Services.NewServices
 
             Parallel.ForEach(components, (component) =>
             {
-                if (
-                component.ConceptComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_ALL &&
-                component.ConceptComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD)
+                try
                 {
-                    Parallel.ForEach(languages, (language) =>
+                    if (
+                    component.ConceptComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_ALL &&
+                    component.ConceptComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD)
                     {
-                        LocalizationResource localizationResource = new LocalizationResource
+                        Parallel.ForEach(languages, (language) =>
                         {
-                            ComponentNamespace = component.ConceptComponentNamespace,
-                            Language = language.Isocoding,
-                            Version = (decimal)1.0
-                        };
-
-                        List<DBGlobal> xmlFiles = _ultraDBGlobal.GetDataByComponentISO(component.ConceptComponentNamespace, language.ToString());
-                        var sections = from xmlFile in xmlFiles
-                                       group new DBGlobal
-                                       {
-                                           LocalizationID = xmlFile.LocalizationID,
-                                           ContextName = xmlFile.ContextName,
-                                           DataString = xmlFile.DataString,
-                                           DatabaseID = xmlFile.DatabaseID,
-                                           IsAcceptable = xmlFile.IsAcceptable
-                                       }
-                                       by xmlFile.InternalNamespace;
-
-                        foreach (IGrouping<string, DBGlobal> sectionGroup in sections)
-                        {
-                            LocalizationSection localizationSection = new LocalizationSection
+                            try
                             {
-                                InternalNamespace = sectionGroup.Key == SharedConstants.INTERNAL_NAMESPACE_NULL ? null : sectionGroup.Key
-                            };
-                            localizationResource.LocalizationSection.Add(localizationSection);
-
-                            var concepts = from section in sectionGroup
-                                           group new DBGlobal
-                                           {
-                                               LocalizationID = section.LocalizationID,
-                                               ContextName = section.ContextName,
-                                               DataString = section.DataString,
-                                               DatabaseID = section.DatabaseID,
-                                               IsAcceptable = section.IsAcceptable
-                                           }
-                                           by section.LocalizationID;
-
-                            foreach (IGrouping<string, DBGlobal> conceptGroup in concepts)
-                            {
-                                Concept concept = new Concept
+                                using (var scope = _serviceScopeFactory.CreateScope())
                                 {
-                                    Id = conceptGroup.Key
-                                };
-                                localizationSection.Concept.Add(concept);
+                                    var localizationResource = scope.ServiceProvider.GetRequiredService<ILocalizationResourceBuilder>()
+                                        .Component(component)
+                                        .Language(language)
+                                        .DebugMode(debugMode)
+                                        .Build();
 
-                                foreach (DBGlobal global in conceptGroup)
-                                {
-                                    TagString tagString = new TagString();
-                                    tagString.Context = global.ContextName;
-                                    tagString.TypedValue = global.DataString;
-                                    if (debugMode)
-                                    {
-                                        tagString.DatabaseID = global.DatabaseID;
-                                        tagString.IsAcceptable = global.IsAcceptable;
-                                    }
-                                    concept.String.Add(tagString);
+                                    localizationResource.Save(Path.Combine(outputFolder, $"{localizationResource.ComponentNamespace}.{localizationResource.Language}.xml"));
                                 }
                             }
-                        }
-                        localizationResource.Save(Path.Combine(outputFolder, $"{localizationResource.ComponentNamespace}.{localizationResource.Language}.xml"));
-                    });
+                            catch (Exception innerException)
+                            {
+                                _logService.Exception(innerException);
+                            }
+                        });
+                    }
+                }
+                catch (Exception outerException)
+                {
+                    _logService.Exception(outerException);
                 }
             });
 

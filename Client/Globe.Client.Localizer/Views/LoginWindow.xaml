@@ -31,12 +31,20 @@
             <StackPanel>
                 <controls:LocPageSubTitleTextBlock Text="{Binding Localize[Please_enter_your_credentials]}" />
                 <controls:LocTextBlock Text="{Binding Localize[UserName]}" />
-                <controls:LocTextBox Text="{Binding UserName}" />
+                <controls:LocTextBox Text="{Binding UserName, UpdateSourceTrigger=PropertyChanged}">
+                    <controls:LocTextBox.InputBindings>
+                        <KeyBinding Gesture="Return" Command="{Binding LoginCommand}"></KeyBinding>
+                    </controls:LocTextBox.InputBindings>
+                </controls:LocTextBox>
                 <controls:LocTextBlock Text="{Binding Localize[Password]}" />
-                <platform:PasswordInput Name="passwordInput" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <platform:PasswordInput Name="passwordInput" Password="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <platform:PasswordInput.InputBindings>
+                        <KeyBinding Gesture="Return" Command="{Binding LoginCommand}"></KeyBinding>
+                    </platform:PasswordInput.InputBindings>
+                </platform:PasswordInput>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button Command="{Binding LoginCommand}" Content="{Binding Localize[Login]}"/>
-                    <Button Style="{StaticResource GrayButton}" Command="{Binding CancelCommand}" Content="{Binding Localize[Cancel]}"/>
+                    <controls:LocButton Style="{StaticResource GrayButton}" Command="{Binding CancelCommand}" Content="{Binding Localize[Cancel]}"/>
                 </StackPanel>
                 <TextBlock Style="{StaticResource LoginError}" Visibility="{Binding Path=LoginResult.Successful, Converter={StaticResource BooleanToVisibilityConverter}}" Text="{Binding LoginResult.Error}"></TextBlock>
             </StackPanel>

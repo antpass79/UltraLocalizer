@@ -33,6 +33,10 @@
     <Page Update="Controls\Footer.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Controls\TreeView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Controls\ToolBarButton.xaml">
       <SubType>Designer</SubType>
     </Page>

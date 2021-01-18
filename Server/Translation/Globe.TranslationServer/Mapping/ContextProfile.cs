@@ -8,7 +8,7 @@ namespace Globe.TranslationServer.Mapping
     {
         public ContextProfile()
         {
-            CreateMap<LocContexts, ContextDTO>()
+            CreateMap<LocContext, ContextDTO>()
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.ContextName));
         }
     }

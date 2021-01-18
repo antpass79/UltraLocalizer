@@ -42,17 +42,41 @@
 
                     <controls:LocLabel Style="{DynamicResource LocLabelTitle}" Grid.ColumnSpan="2" Content="{Binding Localize[Filters]}"/>
                     <controls:LocTextBlock Grid.Row="1" Grid.Column="0">Translated String</controls:LocTextBlock>
-                    <controls:LocTextBox  Grid.Row="1" Grid.Column="1" Text="{Binding StringInserted}" VerticalAlignment="Center" />
+                    <controls:LocTextBox Grid.Row="1" Grid.Column="1" Text="{Binding StringInserted, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                        <controls:LocTextBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </controls:LocTextBox.InputBindings>
+                    </controls:LocTextBox>
                     <controls:LocTextBlock Grid.Row="2" Grid.Column="0">Concept</controls:LocTextBlock>
-                    <controls:LocTextBox  Grid.Row="2" Grid.Column="1" Text="{Binding ConceptInserted}" VerticalAlignment="Center" />
+                    <controls:LocTextBox  Grid.Row="2" Grid.Column="1" Text="{Binding ConceptInserted, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                        <controls:LocTextBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </controls:LocTextBox.InputBindings>
+                    </controls:LocTextBox>
                     <controls:LocTextBlock Grid.Row="3" Grid.Column="0">Context</controls:LocTextBlock>
-                    <controls:LocComboBox  Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Contexts}" SelectedItem="{Binding SelectedContext}" DisplayMemberPath="Name" ToolTip="{Binding SelectedContext.Name}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
+                    <controls:LocComboBox  Grid.Row="3" Grid.Column="1" ItemsSource="{Binding Contexts}" SelectedItem="{Binding SelectedContext}" DisplayMemberPath="Name" ToolTip="{Binding SelectedContext.Name}"  ToolTipService.InitialShowDelay="500">
+                        <controls:LocComboBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </controls:LocComboBox.InputBindings>
+                    </controls:LocComboBox>
                     <controls:LocTextBlock Grid.Row="4" Grid.Column="0">Component Namespace</controls:LocTextBlock>
-                    <controls:LocComboBox  Grid.Row="4" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}" ToolTip="{Binding SelectedComponentNamespace.Description}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
+                    <controls:LocComboBox  Grid.Row="4" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}" ToolTip="{Binding SelectedComponentNamespace.Description}"  ToolTipService.InitialShowDelay="500">
+                        <controls:LocComboBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </controls:LocComboBox.InputBindings>
+                    </controls:LocComboBox>
                     <controls:LocTextBlock Grid.Row="5" Grid.Column="0">Internal Namespace</controls:LocTextBlock>
-                    <controls:LocComboBox  Grid.Row="5" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description" ToolTip="{Binding SelectedInternalNamespace.Description}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
+                    <controls:LocComboBox  Grid.Row="5" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description" ToolTip="{Binding SelectedInternalNamespace.Description}"  ToolTipService.InitialShowDelay="500">
+                        <controls:LocComboBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </controls:LocComboBox.InputBindings>
+                    </controls:LocComboBox>
                     <controls:LocTextBlock Grid.Row="6" Grid.Column="0" Text="{Binding Localize[Language]}"/>
-                    <controls:LocComboBox  Grid.Row="6" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description"  ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
+                    <controls:LocComboBox  Grid.Row="6" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description"  ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500">
+                        <controls:LocComboBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </controls:LocComboBox.InputBindings>
+                    </controls:LocComboBox>
 
                     <Button Grid.Row="7" Grid.Column="1" Command="{Binding SearchCommand}" Content="{Binding Localize[Search]}"/>
 
@@ -92,7 +116,7 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="*">
+                            <DataGridTemplateColumn IsReadOnly="True" Header="Contexts">
                                 <DataGridTemplateColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="Template">

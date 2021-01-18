@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 
+#nullable disable
+
 namespace Globe.TranslationServer.Entities
 {
     public partial class LocStringslocked
@@ -8,6 +10,6 @@ namespace Globe.TranslationServer.Entities
         public int Id { get; set; }
         public int Idstring { get; set; }
 
-        public virtual LocStrings IdstringNavigation { get; set; }
+        public virtual LocString IdstringNavigation { get; set; }
     }
 }

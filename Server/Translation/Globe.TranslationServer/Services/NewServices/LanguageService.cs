@@ -11,9 +11,9 @@ namespace Globe.TranslationServer.Services.NewServices
 {
     public class LanguageService : IAsyncLanguageService
     {
-        private readonly IReadRepository<LocLanguages> _repository;
+        private readonly IReadRepository<LocLanguage> _repository;
 
-        public LanguageService(IReadRepository<LocLanguages> repository)
+        public LanguageService(IReadRepository<LocLanguage> repository)
         {
             _repository = repository;
         }

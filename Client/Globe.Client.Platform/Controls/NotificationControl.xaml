@@ -17,34 +17,34 @@
             <Setter Property="FontWeight" Value="DemiBold"/>
             <Setter Property="Background" Value="#05163D"/>
             <Setter Property="Foreground" Value="WhiteSmoke"/>
-            <Setter Property="Margin" Value="1"/>
+            <Setter Property="Margin" Value="7,2,7,0"/>
         </Style>
 
         <DataTemplate x:Key="notificationTemplate">
-            <Grid Margin="5">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="32" />
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20*" />
+                    <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="50*" />
                     <ColumnDefinition Width="25*" />
-                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Image
             Grid.Row="0"
             Grid.RowSpan="2"
             Grid.Column="0"
-            Width="50"
-            Height="50"
+            Width="32"
+            Height="32"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Source="{Binding Level, Converter={StaticResource notificationLevelToImageConverter}}" />
                 <schemasControls:LocTextBlock
             Grid.Row="0"
             Grid.Column="1"
-            TextTrimming="WordEllipsis"
+            TextWrapping="Wrap"
             Foreground="{Binding Level, Converter={StaticResource notificationToColorConverter}}"
             Text="{Binding Title}"
             FontWeight="Bold"
@@ -54,7 +54,7 @@
                 <schemasControls:LocTextBlock
             Grid.Row="1"
             Grid.Column="1"
-            TextTrimming="WordEllipsis"
+            TextWrapping="Wrap"
             Foreground="{Binding Level, Converter={StaticResource notificationToColorConverter}}"
             Text="{Binding Message}"
             VerticalAlignment="Center"
@@ -88,29 +88,29 @@
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="lastNotificationTemplate">
-            <Grid Margin="5">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="32" />
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="20*" />
-                    <ColumnDefinition Width="50*" />
-                    <ColumnDefinition Width="25*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Image
             Grid.Row="0"
             Grid.RowSpan="2"
             Grid.Column="0"
-            Width="50"
-            Height="50"
+            Width="32"
+            Height="32"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Source="{Binding Level, Converter={StaticResource notificationLevelToImageConverter}}" />
                 <schemasControls:LocTextBlock
             Grid.Row="0"
             Grid.Column="1"
-            TextTrimming="WordEllipsis"
+            TextWrapping="Wrap"
             Foreground="{Binding Level, Converter={StaticResource notificationToColorConverter}}"
             Text="{Binding Title}"
             FontWeight="Bold"
@@ -120,7 +120,7 @@
                 <schemasControls:LocTextBlock
             Grid.Row="1"
             Grid.Column="1"
-            TextTrimming="WordEllipsis"
+            TextWrapping="Wrap"
             Foreground="{Binding Level, Converter={StaticResource notificationToColorConverter}}"
             Text="{Binding Message}"
             VerticalAlignment="Center"

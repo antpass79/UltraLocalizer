@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
 
-namespace Globe.Client.Platform.Extensions
+namespace Globe.Shared.Extensions
 {
     public static class ExceptionExtensions
     {

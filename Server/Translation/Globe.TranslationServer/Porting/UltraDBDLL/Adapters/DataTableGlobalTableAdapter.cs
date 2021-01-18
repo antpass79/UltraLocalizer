@@ -6,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Net;
+using System.Security;
 
 namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
@@ -506,7 +508,19 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
                           AND(LOC_Languages.ISOCoding = 'en')
                           AND(LOC_ConceptsTable.Ignore = 1)";
 
-            using var connection = new SqlConnection(context.Database.GetDbConnection().ConnectionString);
+            var secureString = new SecureString();
+            var localizer = "localizer";
+            localizer
+                .ToList()
+                .ForEach(ch => secureString.AppendChar(ch));
+
+            secureString.MakeReadOnly();
+            var credentials = new SqlCredential(localizer, secureString);
+            var builder = new SqlConnectionStringBuilder(context.Database.GetDbConnection().ConnectionString);
+            builder.Remove("User Id");
+            builder.Remove("Password");
+
+            using var connection = new SqlConnection(builder.ConnectionString, credentials);
             using var command = new SqlCommand(query, connection);
             connection.Open();
 

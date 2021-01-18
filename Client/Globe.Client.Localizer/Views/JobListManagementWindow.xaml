@@ -10,7 +10,8 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
-        <platform:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" True="Collapsed" False="Visible" />
+        <platform:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" True="Visible" False="Collapsed" />
+        <platform:BooleanToVisibilityConverter x:Key="InvertedBooleanToVisibilityConverter" True="Collapsed" False="Visible" />
         <Style TargetType="Panel" x:Key="SectionPanel">
             <Setter Property="Background" Value="WhiteSmoke" />
             <Setter Property="Margin" Value="3" />
@@ -19,6 +20,24 @@
             <Setter Property="Background" Value="WhiteSmoke" />
             <Setter Property="Margin" Value="1" />
             <Setter Property="DockPanel.Dock" Value="Bottom" />
+        </Style>
+
+        <Style TargetType="controls:LocButton" x:Key="treeViewItemButton" BasedOn="{StaticResource GrayButton}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="LightGray" />
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Opacity" Value="0.3" />
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Margin" Value="0" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontWeight" Value="ExtraBlack" />
+            <Setter Property="MinWidth" Value="0" />
+            <Setter Property="Width" Value="24" />
         </Style>
     </UserControl.Resources>
 
@@ -40,43 +59,66 @@
                     <controls:LocLabel Style="{StaticResource LocLabelTitle}" Grid.ColumnSpan="2" Content="{Binding Localize[Filters]}"/>
                     <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Localize[Language]}"/>
                     <controls:LocComboBox  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding LanguageChangeCommand}" ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
-                    <controls:LocTextBlock Grid.Row="2" Grid.Column="0" Text="{Binding Localize[Components]}"/>
+                    <DockPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch">
+                        <controls:LocTextBlock Text="{Binding Localize[Components]}" HorizontalAlignment="Left" />
+                        <DockPanel HorizontalAlignment="Right" Margin="3,3,4,0">
+                            <controls:LocButton Content="&lt;&lt;" Style="{StaticResource treeViewItemButton}"
+                                                Command="{Binding RemoveCommand}" />
+                            <controls:LocButton Content="-" Style="{StaticResource treeViewItemButton}"
+                                                Command="{Binding RemoveAllCommand}" />
+                            <controls:LocButton Content="+" Style="{StaticResource treeViewItemButton}"
+                                                Command="{Binding AddAllCommand}" />
+                        </DockPanel>
+                    </DockPanel>
                     <controls:LocGrid Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource SectionPanel}">
-                        <TreeView ItemsSource="{Binding ComponentNamespaceGroups}" Background="Transparent" BorderThickness="0">
-                            <TreeView.ItemContainerStyle>
-                                <Style TargetType="{x:Type TreeViewItem}">
+                        <controls:LocTreeView ItemsSource="{Binding ComponentNamespaceGroups}" HorizontalContentAlignment="Stretch" BorderThickness="0">
+                            <controls:LocTreeView.ItemContainerStyle>
+                                <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource StretchedTreeViewItem}">
                                     <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Background" Value="LightBlue" />
+                                        </Trigger>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="LightBlue" />
+                                        </Trigger>
+                                    </Style.Triggers>
                                 </Style>
-                            </TreeView.ItemContainerStyle>
-                            <TreeView.Resources>
+                            </controls:LocTreeView.ItemContainerStyle>
+                            <controls:LocTreeView.Resources>
                                 <HierarchicalDataTemplate DataType="{x:Type models:BindableComponentNamespaceGroup}" ItemsSource="{Binding InternalNamespaces}">
-                                    <StackPanel Orientation="Horizontal">
+                                    <DockPanel Name="rootItem" Background="Transparent">
                                         <controls:LocTextBlock Text="{Binding ComponentNamespace.Description}" />
-                                        <controls:LocTextBlock Text=" [" Foreground="Blue" />
+                                        <controls:LocTextBlock Text="[" Foreground="Blue" />
                                         <controls:LocTextBlock Text="{Binding Count}" Foreground="Blue" />
                                         <controls:LocTextBlock Text="]" Foreground="Blue" />
-                                    </StackPanel>
+                                        <controls:LocButton
+                                            HorizontalAlignment="Right"
+                                            Visibility="{Binding ElementName=rootItem, Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                            Content="+"
+                                            Style="{StaticResource treeViewItemButton}"
+                                            Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.AddComponentNamespaceGroupCommand}"
+                                            CommandParameter="{Binding}" />
+                                    </DockPanel>
                                 </HierarchicalDataTemplate>
                                 <DataTemplate DataType="{x:Type models:BindableInternalNamespace}">
-                                    <StackPanel Orientation="Horizontal">
+                                    <DockPanel Name="leafItem" Background="Transparent">
                                         <controls:LocTextBlock Text="{Binding Description}" />
-                                    </StackPanel>
+                                        <controls:LocButton
+                                                HorizontalAlignment="Right"
+                                                Visibility="{Binding ElementName=leafItem, Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"                                                Content="+" Style="{StaticResource treeViewItemButton}"
+                                                Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.AddInternalNamespaceCommand}"
+                                                CommandParameter="{Binding}"/>
+                                    </DockPanel>
                                 </DataTemplate>
-                            </TreeView.Resources>
-                        </TreeView>
-                        <controls:LocTextBlock FontStyle="Italic" HorizontalAlignment="Center" Visibility="{Binding ComponentsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">No Components</controls:LocTextBlock>
+                            </controls:LocTreeView.Resources>
+                        </controls:LocTreeView>
+                        <controls:LocTextBlock FontStyle="Italic" HorizontalAlignment="Center" Visibility="{Binding ComponentsVisible, Converter={StaticResource InvertedBooleanToVisibilityConverter}}" Text="{Binding Localize[NoComponents]}"></controls:LocTextBlock>
                     </controls:LocGrid>
                     <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
                 </controls:LocGrid>
             </controls:LocDockPanel>
-
             <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
-                <controls:LocDockPanel Margin="0,63,0,0" LastChildFill="false" Style="{StaticResource LocDockPanelStyle}">
-                    <Button Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&gt;" Command="{Binding AddCommand}"></Button>
-                    <Button Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&lt;" Command="{Binding RemoveCommand}"></Button>
-                    <Button Style="{StaticResource GrayButton}" DockPanel.Dock="Top" Content="&lt;&lt;" Command="{Binding RemoveAllCommand}"></Button>
-                </controls:LocDockPanel>
-                <controls:LocDockPanel>
                     <controls:LocGrid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="95*" />
@@ -169,7 +211,6 @@
                         </controls:LocDockPanel>
                     </controls:LocGrid>
                 </controls:LocDockPanel>
-            </controls:LocDockPanel>
         </controls:LocDockPanel>
     </controls:LocGrid>
 

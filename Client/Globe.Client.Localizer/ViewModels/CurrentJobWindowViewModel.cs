@@ -6,6 +6,7 @@ using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
+using Globe.Shared.Services;
 using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
@@ -23,7 +24,7 @@ namespace Globe.Client.Localizer.ViewModels
     internal class CurrentJobWindowViewModel : LocalizeWindowViewModel
     {
         private readonly IDialogService _dialogService;
-        private readonly ILoggerService _loggerService;
+        private readonly ILogService _logService;
         private readonly INotificationService _notificationService;
         private readonly ICurrentJobFiltersService _currentJobFiltersService;
         private readonly ICurrentJobConceptViewService _currentJobConceptViewService;
@@ -32,7 +33,7 @@ namespace Globe.Client.Localizer.ViewModels
         public CurrentJobWindowViewModel(
             IEventAggregator eventAggregator,
             IDialogService dialogService,
-            ILoggerService loggerService,
+            ILogService logService,
             INotificationService notificationService,
             ICurrentJobFiltersService currentJobFiltersService,
             ICurrentJobConceptViewService currentJobConceptViewService,
@@ -41,7 +42,7 @@ namespace Globe.Client.Localizer.ViewModels
             : base(eventAggregator, localizationAppService)
         {
             _dialogService = dialogService;
-            _loggerService = loggerService;
+            _logService = logService;
             _notificationService = notificationService;
             _currentJobFiltersService = currentJobFiltersService;
             _currentJobConceptViewService = currentJobConceptViewService;
@@ -212,7 +213,7 @@ namespace Globe.Client.Localizer.ViewModels
                 }
                 catch (Exception e)
                 {
-                    _loggerService.Exception(e);
+                    _logService.Exception(e);
                 }
                 finally
                 {
@@ -269,7 +270,7 @@ namespace Globe.Client.Localizer.ViewModels
                 }
                 catch (Exception e)
                 {
-                    _loggerService.Exception(e);
+                    _logService.Exception(e);
                     await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Download_error], Platform.Services.Notifications.NotificationLevel.Error);
                 }
                 finally
@@ -333,7 +334,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
             catch (Exception e)
             {
-                _loggerService.Exception(e);
+                _logService.Exception(e);
             }
             finally
             {
@@ -373,11 +374,11 @@ namespace Globe.Client.Localizer.ViewModels
             }
             catch (OperationCanceledException exception)
             {
-                _loggerService.Exception(exception);
+                _logService.Exception(exception);
             }
             catch (Exception exception)
             {
-                _loggerService.Exception(exception);
+                _logService.Exception(exception);
                 await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Error_during_concepts_request], Platform.Services.Notifications.NotificationLevel.Error);
             }
             finally

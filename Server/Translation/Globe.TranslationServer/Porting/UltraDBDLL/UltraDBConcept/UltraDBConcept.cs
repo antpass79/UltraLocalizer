@@ -175,9 +175,9 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
             //
             try
             {
-                var conceptFiltered = dbContext.LocConceptsTable.Where(c => c.LocalizationId == Concept && c.ComponentNamespace == Component && c.InternalNamespace == Internal).Select(c => c);
+                var conceptFiltered = dbContext.LocConceptsTables.Where(c => c.LocalizationId == Concept && c.ComponentNamespace == Component && c.InternalNamespace == Internal).Select(c => c);
                 var joinc2c = from a in conceptFiltered
-                              join b in dbContext.LocConcept2Context on a.Id equals b.Idconcept
+                              join b in dbContext.LocConcept2Contexts on a.Id equals b.Idconcept
                               select new
                               {
                                   conceptID = a.Id,
@@ -202,7 +202,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
                                   };
 
                 var joinS2C = from a in joinConcept
-                              join b in dbContext.LocStrings2Context on a.c2cID equals b.Idconcept2Context
+                              join b in dbContext.LocStrings2Contexts on a.c2cID equals b.Idconcept2Context
                               select new
                               {
                                   strID = b.Idstring,
@@ -391,7 +391,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
                                      };
 
                 var joinToString2Context = from j in joinToLanguage
-                                           join s2c in dbContext.LocStrings2Context on j.strID equals s2c.Idstring
+                                           join s2c in dbContext.LocStrings2Contexts on j.strID equals s2c.Idstring
                                            select new
                                            {
                                                strID = j.strID,
@@ -402,7 +402,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
 
 
                 var joinConcepts2Context = from s2c in joinToString2Context
-                                           join c2c in dbContext.LocConcept2Context on s2c.concept2contextID equals c2c.Id
+                                           join c2c in dbContext.LocConcept2Contexts on s2c.concept2contextID equals c2c.Id
                                            select new
                                            {
                                                strID = s2c.strID,
@@ -424,7 +424,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
                                   };
 
                 var joinConcept = from a in joinContext
-                                  join b in dbContext.LocConceptsTable on a.conceptID equals b.Id
+                                  join b in dbContext.LocConceptsTables on a.conceptID equals b.Id
                                   select new
                                   {
                                       strID = a.strID,
@@ -495,7 +495,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
                                      };
 
                 var joinToString2Context = from j in joinToLanguage
-                                           join s2c in dbContext.LocStrings2Context on j.strID equals s2c.Idstring
+                                           join s2c in dbContext.LocStrings2Contexts on j.strID equals s2c.Idstring
                                            select new
                                            {
                                                strID = j.strID,
@@ -506,7 +506,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
 
 
                 var joinConcepts2Context = from s2c in joinToString2Context
-                                           join c2c in dbContext.LocConcept2Context on s2c.concept2contextID equals c2c.Id
+                                           join c2c in dbContext.LocConcept2Contexts on s2c.concept2contextID equals c2c.Id
                                            select new
                                            {
                                                strID = s2c.strID,
@@ -528,7 +528,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
                                   };
 
                 var joinConcept = from a in joinContext
-                                  join b in dbContext.LocConceptsTable on a.conceptID equals b.Id
+                                  join b in dbContext.LocConceptsTables on a.conceptID equals b.Id
                                   select new
                                   {
                                       strID = a.strID,
@@ -579,10 +579,10 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
             {
 
                 //var conceptFiltered = this.LocConceptsTable.Where(c => SqlMethods.Like(c.LocalizationId.ToUpper(), search.ToUpper().Trim())).Select(c => c);
-                var conceptFiltered = dbContext.LocConceptsTable.Where(c => EF.Functions.Like(c.LocalizationId.ToUpper(), search.ToUpper().Trim())).Select(c => c);
+                var conceptFiltered = dbContext.LocConceptsTables.Where(c => EF.Functions.Like(c.LocalizationId.ToUpper(), search.ToUpper().Trim())).Select(c => c);
 
                 var joinc2c = from a in conceptFiltered
-                              join b in dbContext.LocConcept2Context on a.Id equals b.Idconcept
+                              join b in dbContext.LocConcept2Contexts on a.Id equals b.Idconcept
                               select new
                               {
                                   conceptID = a.Id,
@@ -607,7 +607,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
                                   };
 
                 var joinS2C = from a in joinConcept
-                              join b in dbContext.LocStrings2Context on a.c2cID equals b.Idconcept2Context
+                              join b in dbContext.LocStrings2Contexts on a.c2cID equals b.Idconcept2Context
                               select new
                               {
                                   strID = b.Idstring,

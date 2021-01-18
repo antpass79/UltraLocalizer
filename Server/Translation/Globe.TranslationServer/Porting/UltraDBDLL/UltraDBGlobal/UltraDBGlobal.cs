@@ -1,8 +1,12 @@
-﻿using Globe.TranslationServer.Entities;
+﻿using Globe.Shared.Utilities;
+using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal.Models;
+using Globe.TranslationServer.Utilities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -55,79 +59,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal
         {
             context.InsertNewStrings2Context(IDString, IDConcept2Context);
         }
-
-        public List<DBGlobal> GetDataByComponentISO(string ComponentName, string isocoding)
-        {
-            List<DBGlobal> retList = new List<DBGlobal>();
-            var dt = context.GetDatabyComponentISO(ComponentName, isocoding);
-            var dten = context.GetDatabyComponentISO(ComponentName, "en");
-            foreach (var r in dten)
-            {
-                DBGlobal item = new DBGlobal();
-                item.ComponentNamespace = r.ComponentNamespace;
-                item.ContextName = r.ContextName;
-                item.DataString = r.String;
-                item.InternalNamespace = r.InternalNamespace;
-                item.ISOCoding = isocoding;
-                item.LocalizationID = r.LocalizationID;
-                item.DatabaseID = r.StringID;
-                item.IsAcceptable = r.IsAcceptable;
-                item.Concept2ContextID = r.ID;
-                item.IsToIgnore = r.Ignore;
-                retList.Add(item);
-            }
-
-            if (isocoding == "en")
-                return retList;
-            // Replace all localized strings
-            if (ComponentName == "MeasureComponent")
-            {
-                var z = from k in dten
-                        where k.ContextName == "MD_RT11ExtLabel"
-                        select k;
-                foreach (var rz in z)
-                {
-                    DBGlobal item = retList.FirstOrDefault(t => t.ComponentNamespace == rz.ComponentNamespace &&
-                                                                t.InternalNamespace == rz.InternalNamespace &&
-                                                                t.LocalizationID == rz.LocalizationID &&
-                                                                t.ContextName == rz.ContextName);
-                    var item2 = dt.FirstOrDefault(t => t.ComponentNamespace == rz.ComponentNamespace &&
-                                                                t.InternalNamespace == rz.InternalNamespace &&
-                                                                t.LocalizationID == rz.LocalizationID &&
-                                                                t.ContextName == rz.ContextName);
-                    if (item != null && item2 == null)
-                    {
-                        var itemFallback = dt.FirstOrDefault(t => t.ComponentNamespace == rz.ComponentNamespace &&
-                                                                    t.InternalNamespace == rz.InternalNamespace &&
-                                                                    t.LocalizationID == rz.LocalizationID &&
-                                                                    t.ContextName == "MD_RT11MeasName");
-                        if (itemFallback != null)
-                        {
-                            item.DataString = itemFallback.String;
-                            item.DatabaseID = itemFallback.StringID;
-                            item.IsAcceptable = itemFallback.IsAcceptable;
-                            item.Concept2ContextID = itemFallback.ID;
-                        }
-                    }
-                }
-            }
-            foreach (var r in dt)
-            {
-                DBGlobal item = retList.FirstOrDefault(t => t.ComponentNamespace == r.ComponentNamespace &&
-                                                            t.InternalNamespace == r.InternalNamespace &&
-                                                            t.LocalizationID == r.LocalizationID &&
-                                                            t.ContextName == r.ContextName);
-                if (item != null)
-                {
-                    item.DataString = r.String;
-                    item.DatabaseID = r.StringID;
-                    item.IsAcceptable = r.IsAcceptable;
-                    item.Concept2ContextID = r.ID;
-                }
-            }
-            return retList;
-        }
-
 
         public List<GroupedStringEntity> GetGroupledMissingDataBy(string ComponentName, string InternalNamespace, string isocoding)
         {

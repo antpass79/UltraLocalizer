@@ -27,7 +27,7 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
         async public Task<IEnumerable<LocJob2Concept>> GetAllAsync()
         {
-            return await Task.FromResult(_context.LocJob2Concept);
+            return await Task.FromResult(_context.LocJob2Concepts);
         }
 
         public Task<LocJob2Concept> GetAsync(int key)
