@@ -23,13 +23,13 @@ namespace Globe.TranslationServer.Tests.Mocks
 
             context.Setup(c => c.Database).Returns(databaseFacade);
 
-            context.Setup(c => c.LocConceptsTable).Returns(mockLocConceptsTable);
+            context.Setup(c => c.LocConceptsTables).Returns(mockLocConceptsTable);
             context.Setup(c => c.LocStrings).Returns(mockLocStrings);
-            context.Setup(c => c.LocConcept2Context).Returns(mockLocConcept2Contexts);
+            context.Setup(c => c.LocConcept2Contexts).Returns(mockLocConcept2Contexts);
             context.Setup(c => c.LocContexts).Returns(mockLocContexts);
-            context.Setup(c => c.LocJobList).Returns(mockLocJobList);
-            context.Setup(c => c.LocStringsacceptable).Returns(mockLocStringsacceptable);
-            context.Setup(c => c.LocStrings2Context).Returns(mockLocStrings2Context);
+            context.Setup(c => c.LocJobLists).Returns(mockLocJobList);
+            context.Setup(c => c.LocStringsacceptables).Returns(mockLocStringsacceptable);
+            context.Setup(c => c.LocStrings2Contexts).Returns(mockLocStrings2Context);
 
             return context;
         }

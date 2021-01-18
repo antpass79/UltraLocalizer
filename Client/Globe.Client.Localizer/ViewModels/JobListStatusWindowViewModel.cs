@@ -4,6 +4,7 @@ using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
 using Globe.Shared.DTOs;
+using Globe.Shared.Services;
 using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
@@ -16,21 +17,21 @@ namespace Globe.Client.Localizer.ViewModels
 {
     internal class JobListStatusWindowViewModel : LocalizeWindowViewModel
     {
-        private readonly ILoggerService _loggerService;
+        private readonly ILogService _logService;
         private readonly INotificationService _notificationService;
         private readonly IJobListStatusFiltersService _jobListStatusFiltersService;
         private readonly IJobListStatusViewService _jobListStatusViewService;
 
         public JobListStatusWindowViewModel(
             IEventAggregator eventAggregator,
-            ILoggerService loggerService,
+            ILogService logService,
             INotificationService notificationService,
             IJobListStatusFiltersService jobListStatusFiltersService,
             IJobListStatusViewService jobListStatusViewService,
             ILocalizationAppService localizationAppService)
             : base(eventAggregator, localizationAppService)
         {
-            _loggerService = loggerService;
+            _logService = logService;
             _notificationService = notificationService;
             _jobListStatusFiltersService = jobListStatusFiltersService;
             _jobListStatusViewService = jobListStatusViewService;
@@ -235,7 +236,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
             catch (Exception e)
             {
-                _loggerService.Exception(e);
+                _logService.Exception(e);
             }
             finally
             {
@@ -276,7 +277,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
             catch (Exception exception)
             {
-                _loggerService.Exception(exception);
+                _logService.Exception(exception);
                 await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Error_during_concepts_request], Platform.Services.Notifications.NotificationLevel.Error);
             }
             finally

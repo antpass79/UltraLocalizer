@@ -60,11 +60,11 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         {
             using var context = new MockLocalizationContext().Mock().Object;
 
-            var count = context.LocJobList.Count();
+            var count = context.LocJobLists.Count();
             context.DeleteJobListbyID(
                 MockConstants.LOC_JOBLIST_ID_299);
 
-            Assert.Equal(count - 1, context.LocJobList.Count());
+            Assert.Equal(count - 1, context.LocJobLists.Count());
         }
 
         [Fact(DisplayName = nameof(InsertNewJoblist) + " - Must return id job list")]
@@ -72,13 +72,13 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         {
             using var context = new MockLocalizationContext().Mock().Object;
 
-            var count = context.LocJobList.Count();
+            var count = context.LocJobLists.Count();
             context.InsertNewJoblist(
                 MockConstants.JOB_NAME_FAKE,
                 MockConstants.USERNAME_MARCODELPIANO,
                 MockConstants.LOC_LANGUAGES_ID_1_EN);
 
-            Assert.Equal(count + 1, context.LocJobList.Count());
+            Assert.Equal(count + 1, context.LocJobLists.Count());
         }        
     }
 }
