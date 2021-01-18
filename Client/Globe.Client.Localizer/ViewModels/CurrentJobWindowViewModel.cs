@@ -222,8 +222,6 @@ namespace Globe.Client.Localizer.ViewModels
 
                 var @params = new DialogParameters();
 
-                //Replicato il comportamento del vecchio localizzatore: in caso di doppio context identico (concettualmente sbagliato, ma frutto di errore XML o User)
-                //si prende il primo (FirstOfDefault) invece che lanciare eccezione se si usasse "Single"
                 @params.Add(DialogParams.EDITABLE_CONCEPT, new EditableConcept(
                     conceptView.Id,
                     conceptView.ComponentNamespace,
