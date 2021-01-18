@@ -13,12 +13,12 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         {
             using var context = new MockLocalizationContext().Mock().Object;
 
-            var count = context.LocJob2Concept.Count();
+            var count = context.LocJob2Concepts.Count();
             context.AppendConcept2JobList(
                 MockConstants.LOC_JOBLIST_ID_299,
                 MockConstants.LOC_CONCEPT2CONTEXT_ID_10);
 
-            Assert.Equal(count + 1, context.LocStringsacceptable.Count());
+            Assert.Equal(count + 1, context.LocStringsacceptables.Count());
         }
 
         [Fact(Skip = "UNDER INVESTIGATION")]
@@ -26,11 +26,11 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         {
             using var context = new MockLocalizationContext().Mock().Object;
 
-            var count = context.LocJob2Concept.Count();
+            var count = context.LocJob2Concepts.Count();
             context.DeleteAcceptable(
                 MockConstants.LOC_JOBLIST_ID_299);
 
-            Assert.Equal(count - 1, context.LocStringsacceptable.Count());
+            Assert.Equal(count - 1, context.LocStringsacceptables.Count());
         }
     }
 }

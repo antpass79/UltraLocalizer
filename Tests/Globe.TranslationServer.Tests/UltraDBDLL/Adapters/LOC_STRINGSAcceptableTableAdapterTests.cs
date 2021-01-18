@@ -14,11 +14,11 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         {
             using var context = new MockLocalizationContext().Mock().Object;
 
-            var count = context.LocStringsacceptable.Count();
+            var count = context.LocStringsacceptables.Count();
             context.DeleteAcceptable(
                 MockConstants.LOC_STRINGSACCEPTABLE_IDString_39955);
 
-            Assert.Equal(count - 1, context.LocStringsacceptable.Count());
+            Assert.Equal(count - 1, context.LocStringsacceptables.Count());
         }
 
         [Fact]
@@ -26,11 +26,11 @@ namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
         {
             using var context = new MockLocalizationContext().Mock().Object;
 
-            var count = context.LocStringsacceptable.Count();
+            var count = context.LocStringsacceptables.Count();
             context.InsertNewAcceptable(
                 MockConstants.LOC_STRING2CONTEXT_IDString_10);
 
-            Assert.Equal(count + 1, context.LocStringsacceptable.Count());
+            Assert.Equal(count + 1, context.LocStringsacceptables.Count());
         }
 
         [Fact(DisplayName = nameof(isAcceptable) + " - SqlCommand", Skip = "SQL CONNECTION REQUIRED")]
