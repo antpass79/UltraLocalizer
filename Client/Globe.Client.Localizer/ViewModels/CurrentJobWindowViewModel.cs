@@ -321,7 +321,7 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {
-                this.JobLists = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
+                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
                 this.ComponentNamespaces = await _currentJobFiltersService.GetComponentNamespacesAsync();
                 this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);
                 this.Languages = await _currentJobFiltersService.GetLanguagesAsync();

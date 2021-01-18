@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Globe.Client.Localizer.Models
 {
-    public class BindableJobListStatus : JobListStatus, INotifyPropertyChanged
+    public class BindableJobListStatus : INotifyPropertyChanged
     {
         bool _isSelected;
         public bool IsSelected

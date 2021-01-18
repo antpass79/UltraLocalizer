@@ -4,6 +4,7 @@ using Globe.Shared.DTOs;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using System;
 
 namespace Globe.Client.Localizer.Services
 {
@@ -22,18 +23,17 @@ namespace Globe.Client.Localizer.Services
 
         async public Task<IEnumerable<BindableJobListStatus>> GetJobListStatusesAsync()
         {
-            
-
+            throw new NotImplementedException();
         }
 
         async public Task<IEnumerable<BindableApplicationUser>> GetApplicationUsersAsync()
-        { 
-        
+        {
+            throw new NotImplementedException();
         }
      
         async public Task<IEnumerable<JobItem>> GetJobListsAsync(string userName)
-        { 
-        
+        {
+            throw new NotImplementedException();
         }
 
         async public Task<IEnumerable<Language>> GetLanguagesAsync()
