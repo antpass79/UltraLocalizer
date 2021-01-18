@@ -21,17 +21,17 @@ namespace Globe.Client.Localizer.Services
             _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
         }
 
-        async public Task<IEnumerable<BindableJobListStatus>> GetJobListStatusesAsync()
+        public Task<IEnumerable<BindableJobListStatus>> GetJobListStatusesAsync()
         {
             throw new NotImplementedException();
         }
 
-        async public Task<IEnumerable<BindableApplicationUser>> GetApplicationUsersAsync()
+        public Task<IEnumerable<BindableApplicationUser>> GetApplicationUsersAsync()
         {
             throw new NotImplementedException();
         }
      
-        async public Task<IEnumerable<JobItem>> GetJobListsAsync(string userName)
+        public Task<IEnumerable<JobItem>> GetJobListsAsync(string userName)
         {
             throw new NotImplementedException();
         }

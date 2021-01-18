@@ -1,4 +1,5 @@
 ﻿using DocumentFormat.OpenXml.InkML;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
@@ -116,21 +117,30 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             await _localizationContext.SaveChangesAsync();
         }
 
-        async public Task<bool> CheckNewConceptsAsync()
+        async public Task<NewConceptsResult> CheckNewConceptsAsync()
         {
             var xmlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), Constants.XML_FOLDER);
             _xmlManager.XmlDirectory = xmlFilePath;
             _xmlManager.LoadXmlOnly();
             _xmlManager.Completed.WaitOne();
             _xmlManager.ChangesFound = false;
+            _xmlManager.InsertedCount = 0;
+            _xmlManager.UpdatedCount = 0;
             _xmlManager.FillDB(_xmlManager.KeyTuplas);
 
+            var result = new NewConceptsResult
+            {
+                InsertedCount = _xmlManager.InsertedCount,
+                UpdatedCount = _xmlManager.UpdatedCount,
+                IsNotified = true
+            };
             if(_xmlManager.ChangesFound)
             {
-                await _notificationService.ConceptsChanged(_xmlManager.KeyTuplas.Count);
+                result.IsNotified = false;
+                await _notificationService.ConceptsChanged(result);
             }
            
-            return await Task.FromResult(_xmlManager.ChangesFound);
+            return await Task.FromResult(result);
         }
     }
 }

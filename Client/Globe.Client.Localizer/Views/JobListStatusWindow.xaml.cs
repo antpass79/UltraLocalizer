@@ -1,7 +1,4 @@
-﻿using System.Security.Permissions;
-using System.Security.Permissions;
-using System.Windows;
-using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
 namespace Globe.Client.Localizer.Views
 {
