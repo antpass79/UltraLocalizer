@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Globe.Shared.DTOs;
+using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
@@ -6,6 +7,6 @@ namespace Globe.TranslationServer.Services
     {
         Task JoblistChanged(string joblistName);
 
-        Task ConceptsChanged(int count);
+        Task ConceptsChanged(NewConceptsResult result);
     }
 }

@@ -1,4 +1,5 @@
-﻿using Globe.Shared.Utilities;
+﻿using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.Extensions;
 using Globe.TranslationServer.Services;
 using Globe.TranslationServer.Utilities;
@@ -36,9 +37,9 @@ namespace Globe.TranslationServer.Hubs
             await Clients.All.JoblistChanged(joblistName);           
         }
 
-        public async Task ConceptsChanged(int count)
+        public async Task ConceptsChanged(NewConceptsResult result)
         {
-            await Clients.Group(SharedConstants.GROUP_MASTER_TRANSLATOR).ConceptsChanged(count);
+            await Clients.Group(SharedConstants.GROUP_MASTER_TRANSLATOR).ConceptsChanged(result);
         }
     }
 }

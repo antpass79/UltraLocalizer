@@ -6,6 +6,7 @@ using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
+using Globe.Shared.DTOs;
 using Globe.Shared.Utilities;
 using Microsoft.AspNetCore.SignalR.Client;
 using Prism.Commands;
@@ -408,9 +409,10 @@ namespace Globe.Client.Localizer.ViewModels
                 await NotificationService.NotifyAsync(notification);
             });
 
-            connection.On<int>(EventNames.ConceptsChanged, async (conceptCount) =>
+            connection.On<NewConceptsResult>(EventNames.ConceptsChanged, async (result) =>
             {
-                var notification = new ConceptsChangedNotification { Message = conceptCount.ToString() };
+                var message = $"{Localize["Inserted_concepts"]} {result.InsertedCount}, {Localize["Updated_concepts"]} {result.UpdatedCount}";
+                var notification = new ConceptsChangedNotification { Message = message};
                 await NotificationService.NotifyAsync(notification);
             });
 
