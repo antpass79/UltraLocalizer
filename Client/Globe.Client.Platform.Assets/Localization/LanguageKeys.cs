@@ -26,6 +26,7 @@
         public readonly static string Page_Joblist_Management = nameof(Page_Joblist_Management);
         public readonly static string Page_Current_Job = nameof(Page_Current_Job);
         public readonly static string Page_Concept_Management = nameof(Page_Concept_Management);
+        public readonly static string Page_JobList_Status = nameof(Page_JobList_Status);
 
         public readonly static string Please_enter_your_credentials = nameof(Please_enter_your_credentials);
 

@@ -15,6 +15,7 @@
         public const string INTERNAL_NAMESPACE_ALL = "all";
         public const string INTERNAL_NAMESPACE_NULL = "null";
 
+        public const string USER_NAME_ALL = "all";
         public const string CONTEXT_ALL = "all";
     }
 }
