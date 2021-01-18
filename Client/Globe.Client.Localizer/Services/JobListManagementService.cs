@@ -58,10 +58,10 @@ namespace Globe.Client.Localizer.Services
             await _secureHttpClient.PutAsync(ENDPOINT_WRITE + ENDPOINT_JobList, newJobList);
         }
 
-        async public Task<bool> CheckNewConceptsAsync()
+        async public Task<NewConceptsResult> CheckNewConceptsAsync()
         {
             var result = await _secureHttpClient.PostAsync(ENDPOINT_WRITE + ENDPOINT_Concept, new object());
-            return await result.GetValue<bool>();
+            return await result.GetValue<NewConceptsResult>();
         }
     }
 }

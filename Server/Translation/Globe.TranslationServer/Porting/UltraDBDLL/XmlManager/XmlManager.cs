@@ -51,8 +51,9 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
         public List<int> ConceptList { get; set; }
         public List<int> Concept2ContextList { get; set; }
-
         public bool ChangesFound { get; set; }
+        public int InsertedCount { get; set; }
+        public int UpdatedCount { get; set; }
         public LogManager CurrentLogManager { get; set; }
 
         public List<string> XmlProcessed { get; set; }
@@ -723,6 +724,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                 //l'insieme ottenuto va inserito nel db sia nella tabella Concept che in quella Context2Concept (per la parte relativa alle stringhe)
                 var tuplaToInsert = localKeyTuplasForInsert.Except(_dbTuplasForInsert, new TuplaComparerForInsert());
                 ChangesFound = (tuplaToInsert.Count() > 0);
+                InsertedCount = tuplaToInsert.Count();
 
                 ////inserisco nel DB le nuove tuple sia nella Concept che nella Concept2Context
                 foreach (var item in tuplaToInsert)
@@ -748,6 +750,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
                 var tuplaToUpdate = localKeyTuplasForUpdate.Except(dbTuplasForUpdate, new TuplaComparerForUpdate());
                 ChangesFound = ChangesFound || (tuplaToUpdate.Count() > 0);
+                UpdatedCount = tuplaToUpdate.Count();
                 //inserisco nella Concept2Context le stringhe nuove associate a Concept già presenti
                 foreach (var item in tuplaToUpdate)
                 {

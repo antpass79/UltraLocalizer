@@ -10,6 +10,6 @@ namespace Globe.Client.Localizer.Services
         Task<IEnumerable<BindableComponentNamespaceGroup>> GetComponentNamespaceGroupsAsync(Language language);
         Task<IEnumerable<BindableNotTranslatedConceptView>> GetNotTranslatedConceptsAsync(BindableComponentNamespace componentNamespace, BindableInternalNamespace internalNamespace, Language language);
         Task SaveAsync(string jobListName, IEnumerable<BindableNotTranslatedConceptView> notTranslatedConceptViews, ApplicationUser user, Language language);
-        Task<bool> CheckNewConceptsAsync();
+        Task<NewConceptsResult> CheckNewConceptsAsync();
     }
 }
