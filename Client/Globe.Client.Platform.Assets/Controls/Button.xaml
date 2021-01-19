@@ -19,7 +19,7 @@
                                           VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
                             <ContentPresenter.Resources>
                                 <Style TargetType="TextBlock">
-                                    <Setter Property="FontSize" Value="14"></Setter>
+                                    <Setter Property="FontSize" Value="{Binding RelativeSource={RelativeSource AncestorType=Button},Path=FontSize}"></Setter>
                                     <Setter Property="Foreground" Value="{Binding RelativeSource={RelativeSource AncestorType=Button},Path=Foreground}"></Setter>
                                 </Style>
                             </ContentPresenter.Resources>
@@ -33,7 +33,7 @@
         <Setter Property="MinWidth" Value="80" />
         <Setter Property="MinHeight" Value="25" />
         <Setter Property="VerticalContentAlignment" Value="Center" />
-        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontSize" Value="12" />
 
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
@@ -47,13 +47,15 @@
     </Style>
 
     <SolidColorBrush x:Key="BlueButtonBackgroundBrush" Color="#1B6EC2" />
-    <SolidColorBrush x:Key="BlueButtonForegrandBrush" Color="White" />
+    <SolidColorBrush x:Key="BlueButtonForegrandBrush" Color="WhiteSmoke" />
 
-    <Style TargetType="Button" BasedOn="{StaticResource GrayButton}">
+    <Style TargetType="Button" BasedOn="{StaticResource GrayButton}" x:Key="ButtonStyle">
         <Setter Property="Background" Value="{StaticResource BlueButtonBackgroundBrush}" />
         <Setter Property="Foreground" Value="{StaticResource BlueButtonForegrandBrush}" />
     </Style>
 
+    <Style TargetType="Button" BasedOn="{StaticResource ButtonStyle}">
+    </Style>
 
     <Style TargetType="Button" x:Key="LanguageButton">
         <Setter Property="Template">

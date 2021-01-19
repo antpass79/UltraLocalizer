@@ -4,6 +4,7 @@ using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Collections.Concurrent;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,6 +40,8 @@ namespace Globe.TranslationServer.Services.NewServices
 
             var languages = _languageRepository.Get();
 
+            var exceptions = new ConcurrentQueue<Exception>();
+
             Parallel.ForEach(components, (component) =>
             {
                 try
@@ -65,6 +68,7 @@ namespace Globe.TranslationServer.Services.NewServices
                             catch (Exception innerException)
                             {
                                 _logService.Exception(innerException);
+                                exceptions.Enqueue(innerException);
                             }
                         });
                     }
@@ -72,8 +76,12 @@ namespace Globe.TranslationServer.Services.NewServices
                 catch (Exception outerException)
                 {
                     _logService.Exception(outerException);
+                    exceptions.Enqueue(outerException);
                 }
             });
+
+            if (exceptions.Count > 0)
+                throw new AggregateException(exceptions);
 
             await Task.CompletedTask;
         }
