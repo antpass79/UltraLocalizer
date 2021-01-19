@@ -240,7 +240,8 @@ namespace Globe.Client.Localizer.ViewModels
                         StringId = contextView.StringId,
                     }).ToList()))
                 {
-                    MasterTranslatorComment = conceptDetails.MasterTranslatorComment
+                    MasterTranslatorComment = conceptDetails.MasterTranslatorComment,
+                    IgnoreTranslation = conceptDetails.IgnoreTranslation
                 });
                 @params.Add(DialogParams.LANGUAGE, this.SelectedLanguage);
 

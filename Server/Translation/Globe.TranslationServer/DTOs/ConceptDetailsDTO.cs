@@ -6,6 +6,7 @@ namespace Globe.TranslationServer.DTOs
     {
         public string SoftwareDeveloperComment { get; set; }
         public string MasterTranslatorComment { get; set; }
+        public bool IgnoreTranslation { get; set; }
         public IEnumerable<OriginalStringContextValueDTO> OriginalStringContextValues { get; set; }
     }
 
