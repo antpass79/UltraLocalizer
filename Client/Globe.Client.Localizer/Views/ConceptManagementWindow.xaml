@@ -108,15 +108,15 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Concept}" Header="Concept">
+                            <DataGridTextColumn Binding="{Binding Concept}" Header="Concept" MaxWidth="250">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
-                                        <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                        <controls:LocTextBlock TextWrapping="Wrap" Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                          {RelativeSource Mode=TemplatedParent}}"/>
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTemplateColumn IsReadOnly="True" Header="Contexts">
+                            <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="*">
                                 <DataGridTemplateColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="Template">
@@ -126,10 +126,10 @@
                                                         <controls:LocTextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">Contexts</controls:LocTextBlock>
                                                         <controls:LocGrid DockPanel.Dock="Bottom">
                                                             <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition />
-                                                                <ColumnDefinition />
-                                                                <ColumnDefinition />
-                                                                <ColumnDefinition />
+                                                                <ColumnDefinition MinWidth="70"/>
+                                                                <ColumnDefinition MinWidth="70"/>
+                                                                <ColumnDefinition MinWidth="70"/>
+                                                                <ColumnDefinition MinWidth="70"/>
                                                             </Grid.ColumnDefinitions>
                                                             <controls:LocTextBlock Grid.Column="0">Name</controls:LocTextBlock>
                                                             <controls:LocTextBlock Grid.Column="1">Type</controls:LocTextBlock>

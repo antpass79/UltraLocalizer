@@ -24,10 +24,9 @@ namespace Globe.Client.Localizer.Models
         public string ComponentNamespace { get; }
         public string InternalNamespace { get; }
         public string Name { get; }
-        public string SoftwareDeveloperComment { get; }
-        public ObservableCollection<EditableContext> EditableContexts { get; }
-
+        public string SoftwareDeveloperComment { get; }       
         public string MasterTranslatorComment { get; set; }
         public bool IgnoreTranslation { get; set; }
+        public ObservableCollection<EditableContext> EditableContexts { get; }
     }
 }

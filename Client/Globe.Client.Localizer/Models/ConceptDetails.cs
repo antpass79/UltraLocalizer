@@ -6,6 +6,7 @@ namespace Globe.Client.Localizer.Models
     {
         public string SoftwareDeveloperComment { get; set; }
         public string MasterTranslatorComment { get; set; }
+        public bool IgnoreTranslation { get; set; }
         public IEnumerable<OriginalStringContextValue> OriginalStringContextValues { get; set; }
     }
 
