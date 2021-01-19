@@ -2,6 +2,20 @@
 {
     public static class LanguageKeys
     {
+        public readonly static string UltraLocalizer = nameof(UltraLocalizer);
+        public readonly static string Concept = nameof(Concept);
+        public readonly static string ComponentNamespace = nameof(ComponentNamespace);
+        public readonly static string InternalNamespace = nameof(InternalNamespace);
+        public readonly static string Software_developer_comment = nameof(Software_developer_comment);
+        public readonly static string Master_translator_comment = nameof(Master_translator_comment);
+        public readonly static string Ignore_Translation = nameof(Ignore_Translation);
+        public readonly static string Searching_Options_for_selected_String = nameof(Searching_Options_for_selected_String);
+        public readonly static string By_Concept_English_language_only = nameof(By_Concept_English_language_only);
+        public readonly static string By_Value_Current_language_only = nameof(By_Value_Current_language_only);
+        public readonly static string No_Filters = nameof(No_Filters);
+        public readonly static string Filter_by_Context = nameof(Filter_by_Context);
+        public readonly static string Filter_by_String_Type = nameof(Filter_by_String_Type);
+
         public readonly static string English = nameof(English);
         public readonly static string Italian = nameof(Italian);
 
@@ -13,6 +27,7 @@
         public readonly static string Translation = nameof(Translation);
         public readonly static string Load = nameof(Load);
         public readonly static string Save = nameof(Save);
+        public readonly static string Close = nameof(Close);
         public readonly static string AutoMerge = nameof(AutoMerge);
         public readonly static string Cancel = nameof(Cancel);
         public readonly static string UserName = nameof(UserName);
@@ -21,6 +36,7 @@
         public readonly static string Login = nameof(Login);
         public readonly static string Logout = nameof(Logout);
         public readonly static string Search = nameof(Search);
+        public readonly static string NoComponents = nameof(NoComponents);
 
         public readonly static string Page_Home = nameof(Page_Home);
         public readonly static string Page_Joblist_Management = nameof(Page_Joblist_Management);
