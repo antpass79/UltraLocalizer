@@ -14,7 +14,6 @@ namespace Globe.TranslationServer.DTOs
         public string Name { get; set; }
         public string SoftwareDeveloperComment { get; set; }
         public IEnumerable<EditableContextDTO> EditableContexts { get; set; }
-
         public string MasterTranslatorComment { get; set; }
         public bool IgnoreTranslation { get; set; }
     }

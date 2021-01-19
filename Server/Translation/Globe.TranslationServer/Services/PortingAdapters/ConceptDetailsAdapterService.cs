@@ -28,11 +28,13 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
             var currentConcept = _ultraDBConcept.GetConceptbyID(jobListConcept.Id);
             var masterTranslatorComment = currentConcept.Comment;
+            var ignore = currentConcept.Ignore;
 
             var conceptDetails = new ConceptDetailsDTO
             {
                 SoftwareDeveloperComment = softwareDeveloperComment,
                 MasterTranslatorComment = masterTranslatorComment,
+                IgnoreTranslation = ignore,
                 OriginalStringContextValues = jobListConcept.ContextViews.Select(item => new OriginalStringContextValueDTO { ContextName = item.Name, StringValue = _xmlManager.GetUserString(jobListConcept.ComponentNamespace, jobListConcept.InternalNamespace == "null" ? null : jobListConcept.InternalNamespace, jobListConcept.Name, item.Name) })
             };
 
