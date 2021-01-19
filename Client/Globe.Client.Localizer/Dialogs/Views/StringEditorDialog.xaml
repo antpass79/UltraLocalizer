@@ -286,13 +286,12 @@
                     <DataTemplate>
                         <DockPanel HorizontalAlignment="{Binding Path=HorizontalAlignment, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ContentPresenter}}, Mode=OneWayToSource}">
 
-                            <controls:LocTextBlock>
-                                Searching Options for selected String
-                            </controls:LocTextBlock>
+                            <controls:LocTextBlock Text="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[Searching_Options_for_selected_String]}" />
+
                             <!-- Buttons -->
                             <DockPanel DockPanel.Dock="Right" LastChildFill="False">
-                                <Button Foreground="Red" DockPanel.Dock="Right" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.CloseDialogCommand}" CommandParameter="true" Content="{Binding Localize[Close]}" />
-                                <Button DockPanel.Dock="Right" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.SaveCommand}" Content="{Binding Localize[Save]}" />
+                                <Button Style="{StaticResource ButtonStyle}" DockPanel.Dock="Right" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.CloseDialogCommand}" CommandParameter="true" Content="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[Close]}" />
+                                <Button Style="{StaticResource ButtonStyle}" DockPanel.Dock="Right" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.SaveCommand}" Content="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[Save]}" />
                             </DockPanel>
                         </DockPanel>
                     </DataTemplate>
@@ -315,11 +314,14 @@
                                 <RowDefinition Height="auto" />
                             </Grid.RowDefinitions>
 
-                            <controls:LocTextBox Grid.Row="0" Grid.Column="0" Text="{Binding StringValue}" VerticalAlignment="Center" />
+                            <controls:LocTextBox Grid.Row="0" Grid.Column="0" Text="{Binding StringValue, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                                <controls:LocTextBox.InputBindings>
+                                    <KeyBinding Gesture="Return" Command="{Binding SearchConceptsCommand}" />
+                                </controls:LocTextBox.InputBindings>
+                            </controls:LocTextBox>
                             <Button Grid.Row="0" Grid.Column="1" Command="{Binding SearchConceptsCommand}" MinWidth="0">
                                 <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/search.png" />
                             </Button>
-
                         </Grid>
 
                         <Grid Style="{StaticResource SectionPanel}">

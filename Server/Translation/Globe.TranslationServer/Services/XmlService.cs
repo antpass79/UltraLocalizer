@@ -78,6 +78,11 @@ namespace Globe.TranslationServer.Services
             {
                 _dbToXmlService.Generate(outputFolder);
             }
+            catch (AggregateException e)
+            {
+                _logService.Exception(e);
+                throw new InvalidOperationException($"Error during {nameof(GenerateXmlFiles)}", e);
+            }
             catch (Exception e)
             {
                 _logService.Exception(e);

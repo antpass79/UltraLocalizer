@@ -68,12 +68,29 @@ namespace Globe.Client.Platform.Services
 
         private void FillItalianValues()
         {
+            _italian.Add(nameof(LanguageKeys.UltraLocalizer), LanguageKeys.UltraLocalizer);
+
+            _italian.Add(nameof(LanguageKeys.Concept), "Concetto");
+            _italian.Add(nameof(LanguageKeys.ComponentNamespace), "Spazio nomi del componente");
+            _italian.Add(nameof(LanguageKeys.InternalNamespace), "Spazio nomi interno");
+            _italian.Add(nameof(LanguageKeys.Software_developer_comment), "Commento dello sviluppatore");
+            _italian.Add(nameof(LanguageKeys.Master_translator_comment), "Commento del traduttore master");
+            _italian.Add(nameof(LanguageKeys.Ignore_Translation), "Ignora la traduzione");
+            _italian.Add(nameof(LanguageKeys.Searching_Options_for_selected_String), "Opzioni di ricerca per la stringa selezionata");
+            _italian.Add(nameof(LanguageKeys.By_Concept_English_language_only), "Cerca il concetto per Inglese");
+            _italian.Add(nameof(LanguageKeys.By_Value_Current_language_only), "Cerca il valore per linguaggio corrente");
+            _italian.Add(nameof(LanguageKeys.No_Filters), "Nessun filtro");
+            _italian.Add(nameof(LanguageKeys.Filter_by_Context), "Filtro per contesto");
+            _italian.Add(nameof(LanguageKeys.Filter_by_String_Type), "Filtro per contesto");
+            _italian.Add(nameof(LanguageKeys.Get_new_concepts), "Ottieni nuovi concetti");
+            _italian.Add(nameof(LanguageKeys.No_concepts_found), "Filtro per contesto");
+
             _italian.Add(nameof(LanguageKeys.Options), "Opzioni");
-            _italian.Add(nameof(LanguageKeys.Page_Home), LanguageKeys.Page_Home);
             _italian.Add(nameof(LanguageKeys.Translation), "Traduzione");
             _italian.Add(nameof(LanguageKeys.Merge), "Unisci");
             _italian.Add(nameof(LanguageKeys.Load), "Carica");
             _italian.Add(nameof(LanguageKeys.Save), "Salva");
+            _italian.Add(nameof(LanguageKeys.Close), "Chiudi");
             _italian.Add(nameof(LanguageKeys.AutoMerge), "Unisci");
             _italian.Add(nameof(LanguageKeys.Cancel), "Annulla");
             _italian.Add(nameof(LanguageKeys.UserName), "Nome Utente");
@@ -82,9 +99,13 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Login), "Accedi");
             _italian.Add(nameof(LanguageKeys.Logout), "Esci");
             _italian.Add(nameof(LanguageKeys.Search), "Cerca");
+            _italian.Add(nameof(LanguageKeys.NoComponents), "Nessun componente trovato");
 
-            _italian.Add(nameof(LanguageKeys.Page_Joblist_Management), "Gestione JobList");
-            _italian.Add(nameof(LanguageKeys.Page_Current_Job), "Lavoro Corrente");
+            _italian.Add(nameof(LanguageKeys.Page_Home), "Home");
+            _italian.Add(nameof(LanguageKeys.Page_Joblist_Management), "Gestione liste di lavoro");
+            _italian.Add(nameof(LanguageKeys.Page_Current_Job), "Lavoro corrente");
+            _italian.Add(nameof(LanguageKeys.Page_Concept_Management), "Gestione Concetti");
+            _italian.Add(nameof(LanguageKeys.Page_JobList_Status), "Stato delle liste di lavoro");
 
             _italian.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Inserisci i dettagli");
 
@@ -108,12 +129,29 @@ namespace Globe.Client.Platform.Services
 
         private void FillEnglishValues()
         {
+            _english.Add(nameof(LanguageKeys.UltraLocalizer), LanguageKeys.UltraLocalizer);
+
+            _english.Add(nameof(LanguageKeys.Concept), "Concept");
+            _english.Add(nameof(LanguageKeys.ComponentNamespace), "Component Namespace");
+            _english.Add(nameof(LanguageKeys.InternalNamespace), "Internal Namespace");
+            _english.Add(nameof(LanguageKeys.Software_developer_comment), "Software developer comment");
+            _english.Add(nameof(LanguageKeys.Master_translator_comment), "Master translator comment");
+            _english.Add(nameof(LanguageKeys.Ignore_Translation), "Ignore translation");
+            _english.Add(nameof(LanguageKeys.Searching_Options_for_selected_String), "Searching options for selected string");
+            _english.Add(nameof(LanguageKeys.By_Concept_English_language_only), "By Concept English language only");
+            _english.Add(nameof(LanguageKeys.By_Value_Current_language_only), "By Value Current language only");
+            _english.Add(nameof(LanguageKeys.No_Filters), "No Filters");
+            _english.Add(nameof(LanguageKeys.Filter_by_Context), "Filter by Context");
+            _english.Add(nameof(LanguageKeys.Filter_by_String_Type), "Filter by String Type");
+            _english.Add(nameof(LanguageKeys.Get_new_concepts), "Get new concepts");
+            _english.Add(nameof(LanguageKeys.No_concepts_found), "No concepts found");
+
             _english.Add(nameof(LanguageKeys.Options), LanguageKeys.Options);
-            _english.Add(nameof(LanguageKeys.Page_Home), LanguageKeys.Page_Home);
             _english.Add(nameof(LanguageKeys.Translation), LanguageKeys.Translation);
             _english.Add(nameof(LanguageKeys.Merge), LanguageKeys.Merge);
             _english.Add(nameof(LanguageKeys.Load), LanguageKeys.Load);
             _english.Add(nameof(LanguageKeys.Save), LanguageKeys.Save);
+            _english.Add(nameof(LanguageKeys.Close), LanguageKeys.Close);
             _english.Add(nameof(LanguageKeys.AutoMerge), "Auto Merge");
             _english.Add(nameof(LanguageKeys.Cancel), LanguageKeys.Cancel);
             _english.Add(nameof(LanguageKeys.UserName), "User Name");
@@ -122,9 +160,13 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Login), LanguageKeys.Login);
             _english.Add(nameof(LanguageKeys.Logout), LanguageKeys.Logout);
             _english.Add(nameof(LanguageKeys.Search), LanguageKeys.Search);
+            _english.Add(nameof(LanguageKeys.NoComponents), "Any component found");
 
-            _english.Add(nameof(LanguageKeys.Page_Joblist_Management), LanguageKeys.Page_Joblist_Management);
-            _english.Add(nameof(LanguageKeys.Page_Current_Job), LanguageKeys.Page_Current_Job);
+            _english.Add(nameof(LanguageKeys.Page_Home), "Home");
+            _english.Add(nameof(LanguageKeys.Page_Joblist_Management), "Joblist Management");
+            _english.Add(nameof(LanguageKeys.Page_Current_Job), "Current Job");
+            _english.Add(nameof(LanguageKeys.Page_Concept_Management), "Concept Management");
+            _english.Add(nameof(LanguageKeys.Page_JobList_Status), "Joblist Status");
 
             _english.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Please enter your credentials");
 

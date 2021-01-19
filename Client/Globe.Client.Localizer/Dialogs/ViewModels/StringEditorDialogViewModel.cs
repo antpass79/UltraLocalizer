@@ -346,7 +346,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         private bool CanSave()
         {
-            return EditableConcept != null && EditableConcept.EditableContexts.All(item => item.IsPreviewStandardValid && item.IsPreviewOrangeGrayValid && item.IsPreviewStandardV2Valid);
+            return
+                EditableConcept != null &&
+                EditableConcept.EditableContexts.All(item =>
+                    !string.IsNullOrWhiteSpace(item.StringEditableValue) &&
+                    item.IsPreviewStandardValid &&
+                    item.IsPreviewOrangeGrayValid &&
+                    item.IsPreviewStandardV2Valid);
         }
     }
 }
