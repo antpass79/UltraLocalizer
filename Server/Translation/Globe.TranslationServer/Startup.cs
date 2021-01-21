@@ -37,6 +37,7 @@ namespace Globe.TranslationServer
             _configuration = configuration;
         }
 
+
         public void ConfigureServices(IServiceCollection services)
         {
             // Options
