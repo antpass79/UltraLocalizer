@@ -66,8 +66,8 @@ namespace Globe.Client.Platform.Controls
             set { SetValue(TextProperty, value); }
         }
 
-        public TextBox InnerTextBox =>
-           innerTextBox;
+        public TextBlock InnerTextBlock =>
+           innerTextBlock;
 
         #endregion
     }

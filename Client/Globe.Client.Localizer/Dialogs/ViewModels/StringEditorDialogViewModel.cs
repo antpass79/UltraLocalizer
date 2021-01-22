@@ -333,7 +333,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 UnlinkCommand.RaiseCanExecuteChanged();
                 DuplicateCommand.RaiseCanExecuteChanged();
             }
-            if (args.PropertyName == "StringType")
+            if (args.PropertyName == "StringType" || args.PropertyName == "StringEditableValue")
             {
                 SaveCommand.RaiseCanExecuteChanged();
             }
@@ -352,7 +352,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     !string.IsNullOrWhiteSpace(item.StringEditableValue) &&
                     item.IsPreviewStandardValid &&
                     item.IsPreviewOrangeGrayValid &&
-                    item.IsPreviewStandardV2Valid);
+                    item.IsPreviewStandardV2Valid); 
         }
     }
 }

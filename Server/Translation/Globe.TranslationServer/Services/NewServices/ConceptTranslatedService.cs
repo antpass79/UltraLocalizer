@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
-    public class ConceptTranslatedService : IConceptTranslatedService
+    public class ConceptTranslatedService : ITranslatedConceptService
     {
         private readonly IReadRepository<VTranslatedConcept> _repository;
 
@@ -21,7 +21,7 @@ namespace Globe.TranslationServer.Services.NewServices
             _repository = repository;
         }
 
-        async public Task<IEnumerable<ConceptTranslated>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, string context, string concept, string localizedString)
+        async public Task<IEnumerable<TranslatedConcept>> GetAllAsync(string componentNamespace, string internalNamespace, int languageId, string context, string concept, string localizedString)
         {
             try
             {
@@ -54,12 +54,12 @@ namespace Globe.TranslationServer.Services.NewServices
 
                 var result = items
                 .GroupBy(item => item.ConceptToContextId)
-                .Select(group => new ConceptTranslated
+                .Select(group => new TranslatedConcept
                 {
                     ComponentNamespace = group.First().ComponentNamespace,
                     InternalNamespace = group.First().InternalNamespace,
                     Concept = group.First().Concept,                  
-                    ConceptTranslatedGroups = group.Select(item => new ConceptTranslatedGroup
+                    TranslatedConceptDetails = group.Select(item => new TranslatedConceptDetail
                     {
                         StringType = !string.IsNullOrWhiteSpace(item.StringType) ? Enum.Parse<StringType>(item.StringType) : StringType.Label,
                         LocalizedString = item.StringValue,
@@ -76,12 +76,12 @@ namespace Globe.TranslationServer.Services.NewServices
             }
         }
 
-        Task<IEnumerable<ConceptTranslated>> IAsyncReadService<ConceptTranslated, int>.GetAllAsync()
+        Task<IEnumerable<TranslatedConcept>> IAsyncReadService<TranslatedConcept, int>.GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        Task<ConceptTranslated> IAsyncReadService<ConceptTranslated, int>.GetAsync(int key)
+        Task<TranslatedConcept> IAsyncReadService<TranslatedConcept, int>.GetAsync(int key)
         {
             throw new NotImplementedException();
         }

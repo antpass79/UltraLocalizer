@@ -1,6 +1,6 @@
 ﻿namespace Globe.Shared.DTOs
 {
-    public class ConceptTranslatedGroup
+    public class TranslatedConceptDetail
     {
         public string ContextName { get; set; }
         public int Concept2ContextId { get; set; }

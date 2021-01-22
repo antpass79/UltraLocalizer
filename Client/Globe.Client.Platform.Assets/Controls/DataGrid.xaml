@@ -11,7 +11,7 @@
         <Setter Property="AlternatingRowBackground" Value="WhiteSmoke" />
         <Setter Property="ColumnWidth" Value="Auto" />
     </Style>
-    <Style TargetType="{x:Type DataGridRow}">
+    <Style TargetType="{x:Type DataGridRow}" x:Key="DataGridRowStyle">
         <Style.Triggers>
             <Trigger Property="IsSelected"
                         Value="True">
@@ -22,6 +22,8 @@
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="Height" Value="auto"/>
+    </Style>
+    <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
     </Style>
     <Style TargetType="{x:Type DataGridCell}">
         <Setter Property="BorderThickness" Value="0"/>

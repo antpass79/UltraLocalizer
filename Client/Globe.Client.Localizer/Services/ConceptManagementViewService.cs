@@ -20,10 +20,10 @@ namespace Globe.Client.Localizer.Services
             _secureHttpClient.BaseAddress(settingsService.GetLocalizableStringBaseAddressRead());
         }
 
-        async public Task<IEnumerable<ConceptTranslated>> GetConceptViewsAsync(ConceptManagementSearch search)
+        async public Task<IEnumerable<TranslatedConcept>> GetTranslatedConceptSAsync(ConceptManagementSearch search)
         {
             var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_ConceptManagementView, search);
-            return await result.GetValue<IEnumerable<ConceptTranslated>>();
+            return await result.GetValue<IEnumerable<TranslatedConcept>>();
         }
     }
 }
