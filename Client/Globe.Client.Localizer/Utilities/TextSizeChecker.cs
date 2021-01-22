@@ -10,10 +10,10 @@ namespace Globe.Client.Localizer.Utilities
     {
         #region Public Functions
 
-        public bool Check(string text, TextBox textBox, PreviewStyleInfo previewStyleInfo, double pixelPaddingLeft, double pixelPaddingRight, double pixelPaddingTop, double pixelPaddingBottom, CultureInfo cultureInfo)
+        public bool Check(string text, TextBlock textBlock, PreviewStyleInfo previewStyleInfo, double pixelPaddingLeft, double pixelPaddingRight, double pixelPaddingTop, double pixelPaddingBottom, CultureInfo cultureInfo)
         {
-            double textWidth = TextSize(text, textBox, previewStyleInfo, cultureInfo).Width;
-            double textHeight = TextSize(text, textBox, previewStyleInfo, cultureInfo).Height;
+            double textWidth = TextSize(text, textBlock, previewStyleInfo, cultureInfo).Width;
+            double textHeight = TextSize(text, textBlock, previewStyleInfo, cultureInfo).Height;
 
             //-------------- Inizio Test---------------------
 
@@ -37,9 +37,9 @@ namespace Globe.Client.Localizer.Utilities
             TransformPixelsToDIPs(pixelPaddingLeft, pixelPaddingTop, out paddingDIPsXleft, out paddingDIPsYtop);
             TransformPixelsToDIPs(pixelPaddingRight, pixelPaddingBottom, out paddingDIPsXright, out paddingDIPsYbottom);
 
-            if (textBox.ActualWidth > textWidth + paddingDIPsXleft + paddingDIPsXright)
+            if (textBlock.ActualWidth > textWidth + paddingDIPsXleft + paddingDIPsXright)
             {
-                if (textBox.ActualHeight > textHeight + paddingDIPsYtop + paddingDIPsYbottom)
+                if (textBlock.ActualHeight > textHeight + paddingDIPsYtop + paddingDIPsYbottom)
                 {
                     //Tecnicamente starei in una riga sola, percio' se sono o non son multiline, non mi interessa
                     return true;
@@ -50,8 +50,8 @@ namespace Globe.Client.Localizer.Utilities
             else if (previewStyleInfo.Multiline)
             {
                 //Numero di righe che possono essere contenute dall'elemento grafico
-                int numRows = (int)(textBox.ActualWidth / (textHeight + paddingDIPsYtop + paddingDIPsYbottom));
-                if (textBox.ActualWidth > ((textWidth + paddingDIPsXleft + paddingDIPsXright) / numRows))
+                int numRows = (int)(textBlock.ActualWidth / (textHeight + paddingDIPsYtop + paddingDIPsYbottom));
+                if (textBlock.ActualWidth > ((textWidth + paddingDIPsXleft + paddingDIPsXright) / numRows))
                     return true;
                 else
                     return false;
@@ -64,7 +64,7 @@ namespace Globe.Client.Localizer.Utilities
 
         #region Private Functions
 
-        private Size TextSize(string text, TextBox textBox, PreviewStyleInfo previewStyleInfo, CultureInfo cultureInfo)
+        private Size TextSize(string text, TextBlock textBlock, PreviewStyleInfo previewStyleInfo, CultureInfo cultureInfo)
         {
             Typeface typeface = new Typeface(previewStyleInfo.FontFamily.ToString());
 
@@ -75,7 +75,7 @@ namespace Globe.Client.Localizer.Utilities
                 typeface,
                 previewStyleInfo.FontSize,
                 Brushes.Black,
-                VisualTreeHelper.GetDpi(textBox).PixelsPerDip);
+                VisualTreeHelper.GetDpi(textBlock).PixelsPerDip);
 
             return new Size(formattedText.Width, formattedText.Height);
         }

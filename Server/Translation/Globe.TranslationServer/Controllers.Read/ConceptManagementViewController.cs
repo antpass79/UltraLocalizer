@@ -1,5 +1,4 @@
 ﻿using Globe.Shared.DTOs;
-using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -10,23 +9,23 @@ namespace Globe.TranslationServer.Controllers
     [Route("api/read/[controller]")]
     public class ConceptManagementViewController : Controller
     {
-        private readonly IConceptTranslatedService _conceptTranslatedService;
+        private readonly ITranslatedConceptService _translatedConceptService;
 
         public ConceptManagementViewController(
-            IConceptTranslatedService conceptTranslatedService)
+            ITranslatedConceptService translatedConceptService)
         {
-            _conceptTranslatedService = conceptTranslatedService;
+            _translatedConceptService = translatedConceptService;
         }
 
         [HttpGet]
-        async public Task<IEnumerable<ConceptTranslated>> Get([FromBody] ConceptManagementSearch search)
+        async public Task<IEnumerable<TranslatedConcept>> Get([FromBody] ConceptManagementSearch search)
         {
             if (!ModelState.IsValid)
             {
                 throw new System.Exception("search");
             }
             
-            return await _conceptTranslatedService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.LanguageId, search.Context, search.Concept, search.LocalizedString);
+            return await _translatedConceptService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.LanguageId, search.Context, search.Concept, search.LocalizedString);
         }
     }
 }

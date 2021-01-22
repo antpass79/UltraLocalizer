@@ -66,9 +66,8 @@ namespace Globe.Client.Localizer.ViewModels
                 SetProperty(ref _filtersBusy, value);
             }
         }
-
+        
         int _itemCount;
-
         public int ItemCount
         {
             get => _itemCount;
@@ -78,23 +77,23 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        string _stringInserted = string.Empty;
-        public string StringInserted
+        string _insertedString = string.Empty;
+        public string InsertedString
         {
-            get => _stringInserted;
+            get => _insertedString;
             set 
             { 
-                SetProperty(ref _stringInserted, value); 
+                SetProperty(ref _insertedString, value); 
             }
         }
 
-        string _conceptInserted = string.Empty;
-        public string ConceptInserted
+        string _insertedConcept = string.Empty;
+        public string InsertedConcept
         {
-            get => _conceptInserted;
+            get => _insertedConcept;
             set
             {
-                SetProperty(ref _conceptInserted, value);
+                SetProperty(ref _insertedConcept, value);
             }
         }
 
@@ -178,13 +177,13 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        IEnumerable<ConceptTranslated> _conceptViews;
-        public IEnumerable<ConceptTranslated> ConceptViews
+        IEnumerable<TranslatedConcept> _translatedConcepts;
+        public IEnumerable<TranslatedConcept> TranslatedConcepts
         {
-            get => _conceptViews;
+            get => _translatedConcepts;
             set
             {
-                SetProperty(ref _conceptViews, value);
+                SetProperty(ref _translatedConcepts, value);
             }
         }
 
@@ -247,7 +246,7 @@ namespace Globe.Client.Localizer.ViewModels
         private async Task OnSearch()
         {
             GridBusy = true;
-            ConceptViews = null;
+            TranslatedConcepts = null;
             ItemCount = 0;
 
             try
@@ -258,22 +257,22 @@ namespace Globe.Client.Localizer.ViewModels
                     SelectedInternalNamespace == null ||
                     SelectedLanguage == null)
                 {
-                    ConceptViews = null;
+                    TranslatedConcepts = null;
                 }
                 else
                 {
-                    ConceptViews = await _conceptManagementViewService.GetConceptViewsAsync(
+                    TranslatedConcepts = await _conceptManagementViewService.GetTranslatedConceptSAsync(
                         new ConceptManagementSearch
                         {
                             ComponentNamespace = SelectedComponentNamespace.Description,
                             InternalNamespace = SelectedInternalNamespace.Description,
                             LanguageId = SelectedLanguage.Id,
                             Context = SelectedContext.Name,
-                            Concept = ConceptInserted,
-                            LocalizedString = StringInserted
+                            Concept = InsertedConcept,
+                            LocalizedString = InsertedString
                         });
 
-                    ItemCount = ConceptViews.Count();
+                    ItemCount = TranslatedConcepts.Count();
                 }
             }
             catch (Exception exception)
@@ -289,7 +288,7 @@ namespace Globe.Client.Localizer.ViewModels
 
         private void ClearPage()
         {
-            ConceptViews = null;
+            TranslatedConcepts = null;
             ItemCount = 0;
         }
     }

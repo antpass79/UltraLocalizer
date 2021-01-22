@@ -9,6 +9,10 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <platform:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" True="Visible" False="Collapsed" />
+        <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
+            <Setter Property="DetailsVisibility" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGridRow}, Path=DataContext.ShowDetails, Converter={StaticResource BooleanToVisibilityConverter}}"  />
+        </Style>
         <Style TargetType="Panel" x:Key="SectionPanel">
             <Setter Property="Background" Value="WhiteSmoke" />
             <Setter Property="Margin" Value="3" />
@@ -21,9 +25,9 @@
     </UserControl.Resources>
 
     <controls:LocGrid>
-        <controls:LocDockPanel Style="{DynamicResource LocDockPanelStyle}">
+        <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
 
-            <controls:LocDockPanel Style="{DynamicResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
+            <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
                 <controls:LocGrid DockPanel.Dock="Top"  Style="{StaticResource SectionPanel}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -40,15 +44,15 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <controls:LocLabel Style="{DynamicResource LocLabelTitle}" Grid.ColumnSpan="2" Content="{Binding Localize[Filters]}"/>
+                    <controls:LocLabel Style="{StaticResource LocLabelTitle}" Grid.ColumnSpan="2" Content="{Binding Localize[Filters]}"/>
                     <controls:LocTextBlock Grid.Row="1" Grid.Column="0">Translated String</controls:LocTextBlock>
-                    <controls:LocTextBox Grid.Row="1" Grid.Column="1" Text="{Binding StringInserted, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                    <controls:LocTextBox Grid.Row="1" Grid.Column="1" Text="{Binding InsertedString, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
                         <controls:LocTextBox.InputBindings>
                             <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
                         </controls:LocTextBox.InputBindings>
                     </controls:LocTextBox>
                     <controls:LocTextBlock Grid.Row="2" Grid.Column="0">Concept</controls:LocTextBlock>
-                    <controls:LocTextBox  Grid.Row="2" Grid.Column="1" Text="{Binding ConceptInserted, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                    <controls:LocTextBox  Grid.Row="2" Grid.Column="1" Text="{Binding InsertedConcept, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
                         <controls:LocTextBox.InputBindings>
                             <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
                         </controls:LocTextBox.InputBindings>
@@ -59,13 +63,13 @@
                             <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
                         </controls:LocComboBox.InputBindings>
                     </controls:LocComboBox>
-                    <controls:LocTextBlock Grid.Row="4" Grid.Column="0">Component Namespace</controls:LocTextBlock>
+                    <controls:LocTextBlock Grid.Row="4" Grid.Column="0" Text="{Binding Localize[ComponentNamespace]}" />
                     <controls:LocComboBox  Grid.Row="4" Grid.Column="1" ItemsSource="{Binding ComponentNamespaces}" SelectedItem="{Binding SelectedComponentNamespace}" DisplayMemberPath="Description" platform:SelectionChangedBehaviour.Command="{Binding ComponentNamespaceChangeCommand}" ToolTip="{Binding SelectedComponentNamespace.Description}"  ToolTipService.InitialShowDelay="500">
                         <controls:LocComboBox.InputBindings>
                             <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
                         </controls:LocComboBox.InputBindings>
                     </controls:LocComboBox>
-                    <controls:LocTextBlock Grid.Row="5" Grid.Column="0">Internal Namespace</controls:LocTextBlock>
+                    <controls:LocTextBlock Grid.Row="5" Grid.Column="0" Text="{Binding Localize[InternalNamespace]}" /> 
                     <controls:LocComboBox  Grid.Row="5" Grid.Column="1" ItemsSource="{Binding InternalNamespaces}" SelectedItem="{Binding SelectedInternalNamespace}" DisplayMemberPath="Description" ToolTip="{Binding SelectedInternalNamespace.Description}"  ToolTipService.InitialShowDelay="500">
                         <controls:LocComboBox.InputBindings>
                             <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
@@ -90,7 +94,12 @@
                         <RowDefinition Height="95*" />
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <controls:LocDataGrid Grid.Row="0" ItemsSource="{Binding ConceptViews}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                    <controls:LocDataGrid Grid.Row="0" ItemsSource="{Binding TranslatedConcepts}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                        <!--<controls:LocDataGrid.RowHeaderTemplate>
+                            <DataTemplate>
+                                <Expander IsExpanded="{Binding ShowDetails}" />
+                            </DataTemplate>
+                        </controls:LocDataGrid.RowHeaderTemplate>-->
                         <DataGrid.Columns>
                             <DataGridTextColumn Binding="{Binding ComponentNamespace}" Header="Component Namespace">
                                 <DataGridTextColumn.HeaderTemplate>
@@ -116,14 +125,14 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="*">
+                            <DataGridTemplateColumn IsReadOnly="True" Width="*">
                                 <DataGridTemplateColumn.HeaderStyle>
                                     <Style TargetType="{x:Type DataGridColumnHeader}">
                                         <Setter Property="Template">
                                             <Setter.Value>
                                                 <ControlTemplate TargetType="DataGridColumnHeader">
                                                     <controls:LocDockPanel LastChildFill="False" Background="Transparent">
-                                                        <controls:LocTextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">Contexts</controls:LocTextBlock>
+                                                        <controls:LocTextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">Details</controls:LocTextBlock>
                                                         <controls:LocGrid DockPanel.Dock="Bottom">
                                                             <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition MinWidth="70"/>
@@ -149,7 +158,7 @@
                                 </DataGridTemplateColumn.HeaderStyle>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <ItemsControl ItemsSource="{Binding ConceptTranslatedGroups}">
+                                        <ItemsControl ItemsSource="{Binding TranslatedConceptDetails}">
                                             <ItemsControl.ItemsPanel>
                                                 <ItemsPanelTemplate>
                                                     <VirtualizingStackPanel />
@@ -176,6 +185,11 @@
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
                         </DataGrid.Columns>
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <controls:LocTextBlock Text="{Binding Concept}" Margin="10" />
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
                     </controls:LocDataGrid>
 
                     <platform:Spinner Grid.Row="0" Diameter="60" Busy="{Binding GridBusy}" />
