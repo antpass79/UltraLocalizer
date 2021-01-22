@@ -94,7 +94,7 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncInternalNamespaceService, Services.NewServices.InternalNamespaceService>() //.AddScoped<IAsyncInternalConceptsService, InternalConceptsTableAdapterService>()
                 .AddScoped<IAsyncConceptTranslatedComponentNamespaceService, Services.NewServices.ConceptTranslatedComponentNamespaceService>()
                 .AddScoped<IAsyncConceptTranslatedInternalNamespaceService, Services.NewServices.ConceptTranslatedInternalNamespaceService>()
-                .AddScoped<IConceptTranslatedService, Services.NewServices.ConceptTranslatedService>()
+                .AddScoped<ITranslatedConceptService, Services.NewServices.ConceptTranslatedService>()
                 .AddScoped<IAsyncJobItemService, Services.NewServices.JobItemService>() //.AddScoped<IAsyncJobListService, JobListAdapterService>()
                 .AddScoped<IDBToXmlService, Services.NewServices.DBToXmlService>() //.AddScoped<IAsyncJobListService, JobListAdapterService>()
 

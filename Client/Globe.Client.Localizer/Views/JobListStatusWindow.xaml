@@ -21,9 +21,9 @@
     </UserControl.Resources>
 
     <controls:LocGrid>
-        <controls:LocDockPanel Style="{DynamicResource LocDockPanelStyle}">
+        <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
 
-            <controls:LocDockPanel Style="{DynamicResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
+            <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
                 <controls:LocGrid DockPanel.Dock="Top"  Style="{StaticResource SectionPanel}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -37,7 +37,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
 
-                    <controls:LocLabel Style="{DynamicResource LocLabelTitle}" Grid.ColumnSpan="2" Content="{Binding Localize[Filters]}"/>
+                    <controls:LocLabel Style="{StaticResource LocLabelTitle}" Grid.ColumnSpan="2" Content="{Binding Localize[Filters]}"/>
                     <controls:LocTextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Localize[Language]}"/>
                     <controls:LocComboBox  Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description"  ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
                     <controls:LocTextBlock Grid.Row="1" Grid.Column="0">Status</controls:LocTextBlock>

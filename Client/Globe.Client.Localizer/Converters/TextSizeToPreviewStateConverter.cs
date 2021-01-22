@@ -7,7 +7,7 @@ using System.Windows.Data;
 
 namespace Globe.Client.Localizer.Converters
 {
-    class TextSizeToBrushConverter : IMultiValueConverter
+    class TextSizeToPreviewStateConverter : IMultiValueConverter
     {
         TextSizeChecker _textSizeChecker = new TextSizeChecker();
 
@@ -16,7 +16,7 @@ namespace Globe.Client.Localizer.Converters
             var contextName = values[0] as string;
             var previewStyleService = values[1] as IPreviewStyleService;
             var text = values[2] as string;
-            var textBox = (values[3] as PreviewString).InnerTextBox;
+            var textBox = (values[3] as PreviewString).InnerTextBlock;
             var typeName = parameter as string;
 
             var previewStyleInfo = previewStyleService[typeName, contextName];

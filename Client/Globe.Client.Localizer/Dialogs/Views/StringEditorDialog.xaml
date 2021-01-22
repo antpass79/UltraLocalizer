@@ -30,7 +30,7 @@
         <platform:BooleanToVisibilityConverter True="Collapsed" False="Visible" x:Key="LinkToVisibilityConverter" />
         <platform:BooleanConverter True="False" False="True" x:Key="LinkToEnabledConverter" />
         <converters:ContextNameToPreviewStyleInfoConverter x:Key="ContextNameToPreviewStyleInfoConverter" />
-        <converters:TextSizeToBrushConverter x:Key="TextSizeToBrushConverter" />
+        <converters:TextSizeToPreviewStateConverter x:Key="TextSizeToPreviewStateConverter" />
 
         <Style TargetType="controls:LocLabel" x:Key="SectionTitle">
             <Setter Property="Margin" Value="5" />
@@ -149,6 +149,14 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
+                        <DataGridTextColumn Binding="{Binding Name}" Header="Name">
+                            <DataGridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTextColumn.HeaderTemplate>
+                        </DataGridTextColumn>
                         <DataGridTemplateColumn Header="Localized Value" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
@@ -158,26 +166,18 @@
                             </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBox Text="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" platform:TextChangedBehaviour.Command="{Binding Path=DataContext.LocalizeChangeCommand, 
-                                        RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" IsEnabled="{Binding DataContext.Linked, RelativeSource=
-                                             {RelativeSource Mode=TemplatedParent}, Converter={StaticResource LinkToEnabledConverter}}"/>
+                                    <controls:LocTextBox Width="150" TextWrapping="Wrap" Text="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" platform:TextChangedBehaviour.Command="{Binding Path=DataContext.LocalizeChangeCommand, 
+                                        RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" IsEnabled="{Binding DataContext.Linked, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource LinkToEnabledConverter}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <!-- Fixed Rows End -->
 
-                        <DataGridTextColumn Binding="{Binding Name}" Header="Name">
-                            <DataGridTextColumn.HeaderTemplate>
-                                <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                         {RelativeSource Mode=TemplatedParent}}"/>
-                                </DataTemplate>
-                            </DataGridTextColumn.HeaderTemplate>
-                        </DataGridTextColumn>
                         <DataGridTemplateColumn Header="Type">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                    <controls:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
                                              {RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.HeaderTemplate>
@@ -194,13 +194,16 @@
                         <DataGridTemplateColumn Header="Preview Style Standard" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                    <controls:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}"
+                                        Text="{Binding Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <platform:PreviewString Text="{Binding StringEditableValue}" IsValid="{Binding IsPreviewStandardValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                    <platform:PreviewString
+                                        Text="{Binding StringEditableValue}"
+                                        IsValid="{Binding IsPreviewStandardValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                         <platform:PreviewString.PreviewStyleInfo>
                                                 <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="Standard" >
                                                     <Binding Path="Name" />
@@ -208,7 +211,7 @@
                                                 </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
                                         <platform:PreviewString.PreviewState>
-                                            <MultiBinding Converter="{StaticResource TextSizeToBrushConverter}" ConverterParameter="Standard" >
+                                            <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="Standard" >
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 <Binding Path="StringEditableValue"/>
@@ -222,13 +225,16 @@
                         <DataGridTemplateColumn Header="Preview Style Orange grey" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                    <controls:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}"
+                                        Text="{Binding Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <platform:PreviewString Text="{Binding StringEditableValue}" IsValid="{Binding IsPreviewOrangeGrayValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                    <platform:PreviewString
+                                        Text="{Binding StringEditableValue}"
+                                        IsValid="{Binding IsPreviewOrangeGrayValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                         <platform:PreviewString.PreviewStyleInfo>
                                             <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="OrangeGrey" >
                                                 <Binding Path="Name" />
@@ -236,7 +242,7 @@
                                             </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
                                         <platform:PreviewString.PreviewState>
-                                            <MultiBinding Converter="{StaticResource TextSizeToBrushConverter}" ConverterParameter="Standard" >
+                                            <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="Standard" >
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 <Binding Path="StringEditableValue"/>
@@ -250,13 +256,16 @@
                         <DataGridTemplateColumn Header="Preview Style StandardV2" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                    <controls:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}"
+                                        Text="{Binding Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <platform:PreviewString Text="{Binding StringEditableValue}" IsValid="{Binding IsPreviewStandardV2Valid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                    <platform:PreviewString
+                                        Text="{Binding StringEditableValue}"
+                                        IsValid="{Binding IsPreviewStandardV2Valid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                         <platform:PreviewString.PreviewStyleInfo>
                                             <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="StandardV2" >
                                                 <Binding Path="Name" />
@@ -264,7 +273,7 @@
                                             </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
                                       <platform:PreviewString.PreviewState>
-                                            <MultiBinding Converter="{StaticResource TextSizeToBrushConverter}" ConverterParameter="Standard" >
+                                            <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="Standard" >
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 <Binding Path="StringEditableValue"/>
