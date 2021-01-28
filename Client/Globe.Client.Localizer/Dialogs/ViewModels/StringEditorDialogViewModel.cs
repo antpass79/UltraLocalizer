@@ -5,6 +5,7 @@ using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Shared.DTOs;
 using Globe.Shared.Services;
+using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Services.Dialogs;
@@ -12,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Principal;
 
 namespace Globe.Client.Localizer.Dialogs.ViewModels
 {
@@ -24,13 +26,14 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         private readonly INotificationService _notificationService;
 
         public StringEditorDialogViewModel(
+            IIdentityStore identityStore,
             IEditStringService editStringService,
             ILogService logService,
             IPreviewStyleService previewStyleService,
             IEventAggregator eventAggregator,
             ILocalizationAppService localizationAppService,
             INotificationService notificationService)
-            : base(eventAggregator, localizationAppService)
+            : base(identityStore, eventAggregator, localizationAppService)
         {
             _editStringService = editStringService;
             _logService = logService;
@@ -42,6 +45,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public IPreviewStyleService PreviewStyleService
         {
             get { return _previewStyleService; }
+        }
+
+        private bool _isMasterTranslator = false;
+        public bool IsMasterTranslator
+        {
+            get { return _isMasterTranslator; }
+            set { SetProperty(ref _isMasterTranslator, value); }
         }
 
         private bool _savingBusy = false;
@@ -77,6 +87,20 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             get { return _language; }
             set { SetProperty(ref _language, value); }
+        }
+
+        private bool _isEnglish;
+        public bool IsEnglish
+        {
+            get { return _isEnglish; }
+            private set { SetProperty(ref _isEnglish, value); }
+        }
+
+        private bool _isMasterTranslatorCommentEnabled = false;
+        public bool IsMasterTranslatorCommentEnabled
+        {
+            get { return _isMasterTranslatorCommentEnabled; }
+            private set { SetProperty(ref _isMasterTranslatorCommentEnabled, value); }
         }
 
         private EditableConcept _editableConcept;
@@ -232,18 +256,21 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public DelegateCommand<EditableContext> DuplicateCommand =>
             _duplicateCommand ?? (_duplicateCommand = new DelegateCommand<EditableContext>((editableContext) =>
             {
-                //var index = EditableConcept.EditableContexts.IndexOf(editableContext);
-                //EditableConcept.EditableContexts.Remove(editableContext);
-
                 editableContext.StringId = 0;
                 editableContext.StringEditableValue = this.SelectedStringView.Value;
                 editableContext.StringType = this.SelectedStringView.Type;
-
-                //EditableConcept.EditableContexts.Insert(index, editableContext);
             },
             (editableContext) =>
             {
                 return this.SelectedStringView != null;
+            }));
+
+        private DelegateCommand<EditableContext> _keepThisCommand;
+        public DelegateCommand<EditableContext> KeepThisCommand =>
+            _keepThisCommand ?? (_keepThisCommand = new DelegateCommand<EditableContext>((editableContext) =>
+            {
+                UnlinkCommand.Execute(editableContext);
+                editableContext.StringEditableValue = editableContext.StringInEnglish;
             }));
 
         private DelegateCommand<ConceptSearchBy?> _searchByCommand;
@@ -319,8 +346,16 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             Contexts = await _editStringService.GetContextsAsync();
             StringTypes = await _editStringService.GetStringTypesAsync();
             SelectedContext = this.Contexts.ElementAt(0);
+            EditableConcept.EditableContexts.ToList().ForEach(item => item.PropertyChanged += EditableContextPropertyChanged);
 
-            EditableConcept.EditableContexts.ToList().ForEach(item => item.PropertyChanged += EditableContextPropertyChanged);            
+            IsMasterTranslator = UserRoles.Contains(Roles.MasterTranslator);
+            IsEnglish = Language.IsoCoding == SharedConstants.LANGUAGE_EN;
+            IsMasterTranslatorCommentEnabled = IsMasterTranslator && IsEnglish;
+        }
+
+        protected override void OnAuthenticationChanged(IPrincipal principal)
+        {
+            base.OnAuthenticationChanged(principal);
         }
 
         protected override void OnPropertyChanged(PropertyChangedEventArgs args)
@@ -332,6 +367,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 LinkCommand.RaiseCanExecuteChanged();
                 UnlinkCommand.RaiseCanExecuteChanged();
                 DuplicateCommand.RaiseCanExecuteChanged();
+                KeepThisCommand.RaiseCanExecuteChanged();
             }
             if (args.PropertyName == "StringType" || args.PropertyName == "StringEditableValue")
             {

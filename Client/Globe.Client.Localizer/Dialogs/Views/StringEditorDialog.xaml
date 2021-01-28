@@ -25,6 +25,10 @@
         </Style>
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
+        <platform:BooleanToVisibilityConverter x:Key="IsEnglishConverter" />
+        <platform:BooleanToVisibilityConverter x:Key="InvertedIsEnglishConverter" True="Collapsed" False="Visible" />
+        <platform:BooleanConverter x:Key="IsMasterTranslatorCommentConverter" True="False" False="True" />
+        <platform:BooleanConverter x:Key="IsMasterTranslatorConverter" />
         <platform:NullValueToBooleanConverter x:Key="NullValueToBooleanConverter" />
         <platform:BooleanToVisibilityConverter x:Key="UnlinkToVisibilityConverter" />
         <platform:BooleanToVisibilityConverter True="Collapsed" False="Visible" x:Key="LinkToVisibilityConverter" />
@@ -103,11 +107,20 @@
                     <RowDefinition Height="auto" />
                 </Grid.RowDefinitions>
 
-                <controls:LocTextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Localize[Software_developer_comment]}" />
-                <controls:LocTextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding EditableConcept.SoftwareDeveloperComment}"></controls:LocTextBlock>
-                <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Localize[Master_translator_comment]}" />
-                <controls:LocTextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="{Binding EditableConcept.MasterTranslatorComment}"></controls:LocTextBox>
-                <controls:LocCheckBox Grid.Row="2" Grid.ColumnSpan="2" IsChecked="{Binding EditableConcept.IgnoreTranslation}" Content="{Binding Localize[Ignore_Translation]}"></controls:LocCheckBox>
+                <controls:LocTextBlock Grid.Row="0" Grid.Column="0"
+                                       Text="{Binding Localize[Software_developer_comment]}" />
+                <controls:LocTextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2"
+                                       Text="{Binding EditableConcept.SoftwareDeveloperComment}" />
+                <controls:LocTextBlock Grid.Row="1" Grid.Column="0"
+                                       Text="{Binding Localize[Master_translator_comment]}" />
+                <controls:LocTextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                                     Text="{Binding EditableConcept.MasterTranslatorComment}"
+                                     IsReadOnly="{Binding IsMasterTranslatorCommentEnabled, Converter={StaticResource IsMasterTranslatorCommentConverter}}" />
+                <controls:LocCheckBox Grid.Row="2" Grid.ColumnSpan="2"
+                                      Visibility="{Binding IsEnglish, Converter={StaticResource IsEnglishConverter}}"
+                                      IsChecked="{Binding EditableConcept.IgnoreTranslation}"
+                                      Content="{Binding Localize[Ignore_Translation]}"
+                                      IsEnabled="{Binding IsMasterTranslator, Converter={StaticResource IsMasterTranslatorConverter}}" />
             </Grid>
 
             <DockPanel DockPanel.Dock="Top" Margin="10,0,10,5">
@@ -124,6 +137,9 @@
 
                 <!-- EditableContext DataGrid -->
                 <controls:LocDataGrid x:Name="contextGrid" FrozenColumnCount="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                    <controls:LocDataGrid.Resources>
+                        <platform:BindingProxy x:Key="proxy" Data="{Binding}" />
+                    </controls:LocDataGrid.Resources>
                     <DataGrid.Columns>
                         <!-- Fixed Rows Start -->
                         <DataGridTemplateColumn Width="50" CanUserResize="False" IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
@@ -157,6 +173,24 @@
                                 </DataTemplate>
                             </DataGridTextColumn.HeaderTemplate>
                         </DataGridTextColumn>
+                        <DataGridTemplateColumn Header="English Value" Visibility="{Binding Data.IsEnglish, Converter={StaticResource InvertedIsEnglishConverter}, Source={StaticResource proxy}}">
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                             {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <Button DockPanel.Dock="Left" HorizontalAlignment="Center" MinWidth="0" ToolTip="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[KeepThis]}" Command="{Binding ElementName=contextGrid, Path=DataContext.KeepThisCommand}" CommandParameter="{Binding}">
+                                            <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/english.png" />
+                                        </Button>
+                                        <controls:LocTextBlock VerticalAlignment="Center" Width="150" TextWrapping="Wrap" Text="{Binding StringInEnglish}" />
+                                    </DockPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="Localized Value" IsReadOnly="True">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>

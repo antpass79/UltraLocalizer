@@ -15,10 +15,17 @@
         public readonly static string No_Filters = nameof(No_Filters);
         public readonly static string Filter_by_Context = nameof(Filter_by_Context);
         public readonly static string Filter_by_String_Type = nameof(Filter_by_String_Type);
+        public readonly static string Add_selected_item = nameof(Add_selected_item);
+        public readonly static string Add_selected_group = nameof(Add_selected_group);
+        public readonly static string Add_all_items = nameof(Add_all_items);
+        public readonly static string Remove_all_items = nameof(Remove_all_items);
+        public readonly static string Remove_the_selection = nameof(Remove_the_selection);
 
         public readonly static string English = nameof(English);
         public readonly static string Italian = nameof(Italian);
 
+        public readonly static string ShowFilters = nameof(ShowFilters);
+        public readonly static string HideFilters = nameof(HideFilters);
         public readonly static string Error = nameof(Error);
         public readonly static string Warning = nameof(Warning);
         public readonly static string Information = nameof(Information);
@@ -73,5 +80,7 @@
         public readonly static string Check_New_Concepts = nameof(Check_New_Concepts);
         public readonly static string Save_Joblist = nameof(Save_Joblist);
         public readonly static string Export_to_XML = nameof(Export_to_XML);
+        public readonly static string FilterBy = nameof(FilterBy);
+        public readonly static string JobListName = nameof(JobListName);
     }
 }

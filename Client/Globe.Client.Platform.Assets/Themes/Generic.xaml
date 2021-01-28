@@ -3,26 +3,27 @@
 
     <ResourceDictionary.MergedDictionaries>
         <!-- PANELS -->
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/DockPanel.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Grid.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocDockPanel.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocGrid.xaml" />
 
         <!-- CONTROLS -->
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/DataGrid.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Button.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/ToolBarButton.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/ComboBox.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Label.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/TextBlock.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/TextBox.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/RadioButton.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/CheckBox.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Image.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/TreeView.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocDataGrid.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocButton.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocToolBarButton.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocComboBox.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocLabel.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocTextBlock.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocTextBox.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocRadioButton.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocCheckBox.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocImage.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocTreeView.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocToggleSwitch.xaml" />
 
         <!-- COMPONENTS -->
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Header.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/Footer.xaml" />
-        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/SideMenu.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocHeader.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocFooter.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocSideMenu.xaml" />
     </ResourceDictionary.MergedDictionaries>
     
 </ResourceDictionary>

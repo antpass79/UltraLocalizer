@@ -9,9 +9,13 @@
     <platform:ContextToolBar.Resources>
         <Style TargetType="controls:LocButton" BasedOn="{StaticResource ToolBarButton}">
         </Style>
-
     </platform:ContextToolBar.Resources>
-    <DockPanel LastChildFill="False" Background="Transparent">
 
+    <DockPanel LastChildFill="False" Background="Transparent">
+        <controls:LocToggleSwitch
+            IsChecked="{Binding ShowFilters}"
+            CheckedContent="{Binding Localize[HideFilters]}"
+            UncheckedContent="{Binding Localize[ShowFilters]}">
+        </controls:LocToggleSwitch>
     </DockPanel>
 </platform:ContextToolBar>

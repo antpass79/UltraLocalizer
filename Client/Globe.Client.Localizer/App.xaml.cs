@@ -41,6 +41,8 @@ namespace Globe.Client.Localizer
             containerRegistry.RegisterSingleton<IUserService, UserService>();
             containerRegistry.RegisterSingleton<ILocalizationAppService, FakeLocalizationAppService>();
             containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
+            containerRegistry.RegisterSingleton<IVisibilityFiltersService, VisibilityFiltersService>();
+            containerRegistry.RegisterSingleton<IIdentityStore, IdentityStore>();
 
             var unityContainer = containerRegistry.GetContainer();
             unityContainer.RegisterFactory<ICompareVersionService>(container =>

@@ -14,11 +14,12 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly ICompareVersionService _compareVersionService;
 
         public HomeWindowViewModel(
+            IIdentityStore identityStore,
             IEventAggregator eventAggregator,
             ILocalizationAppService localizationAppService,
             ISettingsService settingsService,
             ICompareVersionService compareVersionService)
-            : base(eventAggregator, localizationAppService)
+            : base(identityStore, eventAggregator, localizationAppService)
         {
             _compareVersionService = compareVersionService;
 

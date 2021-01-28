@@ -13,6 +13,7 @@
     <None Remove="Icons\delete.png" />
     <None Remove="Icons\duplicate.png" />
     <None Remove="Icons\edit.png" />
+    <None Remove="Icons\english.png" />
     <None Remove="Icons\error.png" />
     <None Remove="Icons\folder.png" />
     <None Remove="Icons\folder_black.png" />
@@ -30,50 +31,57 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Update="Controls\Footer.xaml">
+    <PackageReference Include="ToggleSwitch" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\LocToggleSwitch.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\LocFooter.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\TreeView.xaml">
+    <Page Update="Controls\LocTreeView.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\ToolBarButton.xaml">
+    <Page Update="Controls\LocToolBarButton.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\CheckBox.xaml">
+    <Page Update="Controls\LocCheckBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\Image.xaml">
+    <Page Update="Controls\LocImage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\RadioButton.xaml">
+    <Page Update="Controls\LocRadioButton.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\TextBlock.xaml">
+    <Page Update="Controls\LocTextBlock.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\ComboBox.xaml">
+    <Page Update="Controls\LocComboBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\DataGrid.xaml">
+    <Page Update="Controls\LocDataGrid.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\Header.xaml">
+    <Page Update="Controls\LocHeader.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\SideMenu.xaml">
+    <Page Update="Controls\LocSideMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\Label.xaml">
+    <Page Update="Controls\LocLabel.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\Grid.xaml">
+    <Page Update="Controls\LocGrid.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\TextBox.xaml">
+    <Page Update="Controls\LocTextBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Controls\DockPanel.xaml">
+    <Page Update="Controls\LocDockPanel.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
@@ -86,6 +94,7 @@
     <Resource Include="Icons\delete.png" />
     <Resource Include="Icons\duplicate.png" />
     <Resource Include="Icons\edit.png" />
+    <Resource Include="Icons\english.png" />
     <Resource Include="Icons\error.png" />
     <Resource Include="Icons\folder.png" />
     <Resource Include="Icons\folder_black.png" />
