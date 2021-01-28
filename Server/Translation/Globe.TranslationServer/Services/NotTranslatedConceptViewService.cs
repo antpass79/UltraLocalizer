@@ -35,7 +35,8 @@ namespace Globe.TranslationServer.Services
                     Concept2ContextId = context.IDConcept2Context,
                     StringId = context.IDString,
                     StringType = string.IsNullOrWhiteSpace(context.StringType) ? default(StringType) : Enum.Parse<StringType>(context.StringType),
-                    StringValue = context.DataString
+                    StringValue = context.DataString,
+                    StringInEnglish = context.StringENG
                 })
             }));
         }

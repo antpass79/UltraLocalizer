@@ -82,9 +82,18 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.No_Filters), "Nessun filtro");
             _italian.Add(nameof(LanguageKeys.Filter_by_Context), "Filtro per contesto");
             _italian.Add(nameof(LanguageKeys.Filter_by_String_Type), "Filtro per contesto");
+
+            _italian.Add(nameof(LanguageKeys.Add_selected_item), "Aggiungi la selezione");
+            _italian.Add(nameof(LanguageKeys.Add_selected_group), "Aggiungi il gruppo");
+            _italian.Add(nameof(LanguageKeys.Add_all_items), "Aggiungi tutto");
+            _italian.Add(nameof(LanguageKeys.Remove_all_items), "Rimuovi tutto");
+            _italian.Add(nameof(LanguageKeys.Remove_the_selection), "Rimuovi la selezione");
+
             _italian.Add(nameof(LanguageKeys.Get_new_concepts), "Ottieni nuovi concetti");
             _italian.Add(nameof(LanguageKeys.No_concepts_found), "Filtro per contesto");
 
+            _italian.Add(nameof(LanguageKeys.ShowFilters), "Mostra Filtri");
+            _italian.Add(nameof(LanguageKeys.HideFilters), "Nascondi Filtri");
             _italian.Add(nameof(LanguageKeys.Options), "Opzioni");
             _italian.Add(nameof(LanguageKeys.Translation), "Traduzione");
             _italian.Add(nameof(LanguageKeys.Merge), "Unisci");
@@ -125,6 +134,8 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Check_New_Concepts), "Cerca Nuovi Concetti");
             _italian.Add(nameof(LanguageKeys.Save_Joblist), "Salva Joblist");
             _italian.Add(nameof(LanguageKeys.Export_to_XML), "Esporta in XML");
+            _italian.Add(nameof(LanguageKeys.FilterBy), "Filtri applicati");
+            _italian.Add(nameof(LanguageKeys.JobListName), "Lista di lavoro");
         }
 
         private void FillEnglishValues()
@@ -143,9 +154,18 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.No_Filters), "No Filters");
             _english.Add(nameof(LanguageKeys.Filter_by_Context), "Filter by Context");
             _english.Add(nameof(LanguageKeys.Filter_by_String_Type), "Filter by String Type");
+
+            _english.Add(nameof(LanguageKeys.Add_selected_item), "Add selected item");
+            _english.Add(nameof(LanguageKeys.Add_selected_group), "Add the group");
+            _english.Add(nameof(LanguageKeys.Add_all_items), "Add all");
+            _english.Add(nameof(LanguageKeys.Remove_all_items), "Remove all");
+            _english.Add(nameof(LanguageKeys.Remove_the_selection), "Remove the selection");
+
             _english.Add(nameof(LanguageKeys.Get_new_concepts), "Get new concepts");
             _english.Add(nameof(LanguageKeys.No_concepts_found), "No concepts found");
 
+            _english.Add(nameof(LanguageKeys.ShowFilters), "Show Filters");
+            _english.Add(nameof(LanguageKeys.HideFilters), "Hide Filters");
             _english.Add(nameof(LanguageKeys.Options), LanguageKeys.Options);
             _english.Add(nameof(LanguageKeys.Translation), LanguageKeys.Translation);
             _english.Add(nameof(LanguageKeys.Merge), LanguageKeys.Merge);
@@ -187,6 +207,8 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Check_New_Concepts), "Check New Concepts");
             _english.Add(nameof(LanguageKeys.Save_Joblist), "Save Joblist");
             _english.Add(nameof(LanguageKeys.Export_to_XML), "Export to XML");
+            _english.Add(nameof(LanguageKeys.FilterBy), "Filter by");
+            _english.Add(nameof(LanguageKeys.JobListName), "Job list");
         }
 
         #endregion

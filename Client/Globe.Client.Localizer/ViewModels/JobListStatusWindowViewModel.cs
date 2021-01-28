@@ -23,13 +23,14 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IJobListStatusViewService _jobListStatusViewService;
 
         public JobListStatusWindowViewModel(
+            IIdentityStore identityStore,
             IEventAggregator eventAggregator,
             ILogService logService,
             INotificationService notificationService,
             IJobListStatusFiltersService jobListStatusFiltersService,
             IJobListStatusViewService jobListStatusViewService,
             ILocalizationAppService localizationAppService)
-            : base(eventAggregator, localizationAppService)
+            : base(identityStore, eventAggregator, localizationAppService)
         {
             _logService = logService;
             _notificationService = notificationService;

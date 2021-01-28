@@ -21,20 +21,24 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly INotificationService _notificationService;
         private readonly IConceptManagementFiltersService _conceptManagementFiltersService;
         private readonly IConceptManagementViewService _conceptManagementViewService;
+        private readonly IVisibilityFiltersService _visibilityFiltersService;
 
         public ConceptManagementWindowViewModel(
+            IIdentityStore identityStore,
             IEventAggregator eventAggregator,
             ILogService logService,
             INotificationService notificationService,
             IConceptManagementFiltersService conceptManagementFiltersService,
             IConceptManagementViewService conceptManagementViewService,
-            ILocalizationAppService localizationAppService)
-            : base(eventAggregator, localizationAppService)
+            ILocalizationAppService localizationAppService,
+            IVisibilityFiltersService visibilityFiltersService)
+            : base(identityStore, eventAggregator, localizationAppService)
         {
             _logService = logService;
             _notificationService = notificationService;
             _conceptManagementFiltersService = conceptManagementFiltersService;
             _conceptManagementViewService = conceptManagementViewService;
+            _visibilityFiltersService = visibilityFiltersService;
         }
 
         bool _conceptDetailsBusy;
@@ -66,7 +70,18 @@ namespace Globe.Client.Localizer.ViewModels
                 SetProperty(ref _filtersBusy, value);
             }
         }
-        
+
+        bool _showFilters = true;
+        public bool ShowFilters
+        {
+            get => _showFilters;
+            set
+            {
+                _visibilityFiltersService.Visible = value;
+                SetProperty(ref _showFilters, value);
+            }
+        }
+
         int _itemCount;
         public int ItemCount
         {
@@ -223,6 +238,8 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {
+                ShowFilters = _visibilityFiltersService.Visible;
+
                 this.Contexts = await _conceptManagementFiltersService.GetContextAsync();
                 this.ComponentNamespaces = await _conceptManagementFiltersService.GetComponentNamespacesAsync();
                 this.InternalNamespaces = await _conceptManagementFiltersService.GetInternalNamespacesAsync(SelectedComponentNamespace != null ? SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);

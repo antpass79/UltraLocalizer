@@ -1,6 +1,6 @@
 ﻿namespace Globe.Shared.Utilities
 {
-    public static class Rules
+    public static class Roles
     {
         public readonly static string All = string.Empty;
         public readonly static string Admin = nameof(Admin);

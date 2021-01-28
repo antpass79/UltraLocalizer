@@ -18,8 +18,13 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IViewNavigationService _viewNavigationService;
         private readonly IAsyncLoginService _loginService;
 
-        public LoginWindowViewModel(IEventAggregator eventAggregator, IViewNavigationService viewNavigationService, IAsyncLoginService loginService, ILocalizationAppService localizationAppService)
-            : base(eventAggregator, localizationAppService)
+        public LoginWindowViewModel(
+            IIdentityStore identityStore,
+            IEventAggregator eventAggregator,
+            IViewNavigationService viewNavigationService,
+            IAsyncLoginService loginService,
+            ILocalizationAppService localizationAppService)
+            : base(identityStore, eventAggregator, localizationAppService)
         {
             _eventAggregator = eventAggregator;
             _viewNavigationService = viewNavigationService;
