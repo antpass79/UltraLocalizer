@@ -382,6 +382,8 @@ namespace Globe.TranslationServer.Entities
 
                 entity.Property(e => e.String).HasMaxLength(255);
 
+                entity.Property(e => e.StringInEnglish).HasMaxLength(255);
+
                 entity.Property(e => e.StringType).HasMaxLength(50);
             });
 

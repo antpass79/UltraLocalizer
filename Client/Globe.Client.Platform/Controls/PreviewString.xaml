@@ -7,18 +7,17 @@
              mc:Ignorable="d"
              Name="control"
              d:DesignHeight="450" d:DesignWidth="800"
-             BorderBrush="Green"
-             BorderThickness="1">
+             BorderBrush="{Binding RelativeSource={RelativeSource Mode=Self}, Path=BorderBrush}"
+             BorderThickness="1"
+             HorizontalAlignment="Left"
+             HorizontalContentAlignment="Left">
     <UserControl.Resources>
         <converters:BooleanConverter x:Key="InvertedBooleanConverter" True="False" False="True" />
         <converters:MultilineToWrapConverter x:Key="MultilineToWrapConverter" />
         <converters:PreviewStateToBorderBrushConverter x:Key="PreviewStateToBorderBrushConverter" />
     </UserControl.Resources>
 
-    <Border
-        BorderBrush="{Binding ElementName=control, Path=BorderBrush}"
-        BorderThickness="{Binding ElementName=control, Path=BorderThickness}">
-        <TextBlock Name="innerTextBlock"
+    <TextBlock Name="innerTextBlock"
         HorizontalAlignment="Left"
         Text="{Binding ElementName=control, Path=Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
         FontSize="{Binding ElementName=control, Path=PreviewStyleInfo.FontSize}"
@@ -27,6 +26,5 @@
         TextWrapping="{Binding ElementName=control, Path=PreviewStyleInfo.Multiline, Converter={StaticResource MultilineToWrapConverter}}"
         Width="{Binding ElementName=control, Path=PreviewStyleInfo.Size.Width}"
         Height="{Binding ElementName=control, Path=PreviewStyleInfo.Size.Height}">
-        </TextBlock>
-    </Border>
+    </TextBlock>
 </UserControl>

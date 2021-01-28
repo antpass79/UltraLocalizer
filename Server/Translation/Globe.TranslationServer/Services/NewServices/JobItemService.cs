@@ -22,24 +22,25 @@ namespace Globe.TranslationServer.Services.NewServices
             throw new System.NotImplementedException();
         }
 
-        async public Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding, bool isMasterTranslator)
+        async public Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding, bool isInAdministratorGroup)
         {      
             var language = ISOCoding.GetLanguage();
             var query = await _repository.QueryAsync();
             var jobs = query
-                .WhereIf(item => item.UserName == userName && item.IdisoCoding == (int)language, !isMasterTranslator)
-                .WhereIf(item => item.IdisoCoding == (int)language, isMasterTranslator)
+                .WhereIf(item => item.UserName == userName && item.IdisoCoding == (int)language, !isInAdministratorGroup)
+                .WhereIf(item => item.IdisoCoding == (int)language, isInAdministratorGroup)
                 .Select(item => new JobItemDTO
                 {
                     Id = item.Id,
-                    Name = isMasterTranslator ? $"{item.UserName} - {item.JobName}" : item.JobName,
+                    Name = isInAdministratorGroup ? $"{item.UserName} - {item.JobName}" : item.JobName,
                     IsoId = (int)language
                 })
                 .AsEnumerable()
                 .OrderBy(item => item.Name)
                 .ToList();
 
-            jobs.Insert(0, new JobItemDTO { Id = 0, IsoId = 0, Name = "all" });
+            if (isInAdministratorGroup && jobs.Count > 0)
+                jobs.Insert(0, new JobItemDTO { Id = 0, IsoId = 0, Name = "all" });
 
             return await Task.FromResult(jobs);
         }

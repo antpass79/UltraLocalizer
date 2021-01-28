@@ -1,5 +1,6 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
 using Prism.Commands;
 using Prism.Events;
@@ -14,8 +15,12 @@ namespace Globe.Client.Localizer.ViewModels
 
         private readonly IAsyncLocalizableStringService _proxyLocalizableStringService;
 
-        public JobsWindowViewModel(IEventAggregator eventAggregator, IProxyLocalizableStringService proxyLocalizableStringService, IStringMergeService stringMergeService)
-            : base(eventAggregator)
+        public JobsWindowViewModel(
+            IIdentityStore identityStore,
+            IEventAggregator eventAggregator,
+            IProxyLocalizableStringService proxyLocalizableStringService,
+            IStringMergeService stringMergeService)
+            : base(identityStore, eventAggregator)
         {
             _proxyLocalizableStringService = proxyLocalizableStringService;
         }

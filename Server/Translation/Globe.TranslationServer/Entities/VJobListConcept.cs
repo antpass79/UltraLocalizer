@@ -23,5 +23,6 @@ namespace Globe.TranslationServer.Entities
         public string JobList { get; set; }
         public string JobListUserName { get; set; }
         public int JobListLanguageId { get; set; }
+        public string StringInEnglish { get; set; }
     }
 }

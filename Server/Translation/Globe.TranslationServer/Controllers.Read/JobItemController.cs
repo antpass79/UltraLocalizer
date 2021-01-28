@@ -27,7 +27,7 @@ namespace Globe.TranslationServer.Controllers
                 throw new System.Exception("search");
             }
 
-            return await _jobItemService.GetAllAsync(search.UserName, search.ISOCoding, this.User.IsMasterTranslator());
+            return await _jobItemService.GetAllAsync(search.UserName, search.ISOCoding, this.User.IsInAdministratorGroup());
         }
 
         [HttpPost]

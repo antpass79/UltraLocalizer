@@ -10,17 +10,24 @@ using Globe.Shared.Services;
 using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
-using Prism.Regions;
 using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.ViewModels
 {
+    class FiltersUsedBySearching
+    {
+        public Language Language { get; set; }
+        public JobItem JobItem { get; set; }
+        public BindableComponentNamespace ComponentNamespace { get; set; }
+        public BindableInternalNamespace InternalNamespace { get; set; }
+    }
+
     internal class CurrentJobWindowViewModel : LocalizeWindowViewModel
     {
         private readonly IDialogService _dialogService;
@@ -29,8 +36,10 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly ICurrentJobFiltersService _currentJobFiltersService;
         private readonly ICurrentJobConceptViewService _currentJobConceptViewService;
         private readonly IXmlService _xmlService;
+        private readonly IVisibilityFiltersService _visibilityFiltersService;
 
         public CurrentJobWindowViewModel(
+            IIdentityStore identityStore,
             IEventAggregator eventAggregator,
             IDialogService dialogService,
             ILogService logService,
@@ -38,8 +47,9 @@ namespace Globe.Client.Localizer.ViewModels
             ICurrentJobFiltersService currentJobFiltersService,
             ICurrentJobConceptViewService currentJobConceptViewService,
             ILocalizationAppService localizationAppService,
-            IXmlService xmlService)
-            : base(eventAggregator, localizationAppService)
+            IXmlService xmlService,
+            IVisibilityFiltersService visibilityFiltersService)
+            : base(identityStore, eventAggregator, localizationAppService)
         {
             _dialogService = dialogService;
             _logService = logService;
@@ -47,6 +57,7 @@ namespace Globe.Client.Localizer.ViewModels
             _currentJobFiltersService = currentJobFiltersService;
             _currentJobConceptViewService = currentJobConceptViewService;
             _xmlService = xmlService;
+            _visibilityFiltersService = visibilityFiltersService;
         }
 
         bool _conceptDetailsBusy;
@@ -80,7 +91,6 @@ namespace Globe.Client.Localizer.ViewModels
         }
 
         int _itemCount;
-
         public int ItemCount
         {
             get => _itemCount;
@@ -90,7 +100,16 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-
+        bool _showFilters = true;
+        public bool ShowFilters
+        {
+            get => _showFilters;
+            set
+            {
+                _visibilityFiltersService.Visible = value;
+                SetProperty(ref _showFilters, value);
+            }
+        }
 
         IEnumerable<JobItem> _jobItems;
         public IEnumerable<JobItem> JobItems
@@ -132,8 +151,8 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        IEnumerable<Globe.Client.Localizer.Models.BindableInternalNamespace> _internalNamespaces;
-        public IEnumerable<Globe.Client.Localizer.Models.BindableInternalNamespace> InternalNamespaces
+        IEnumerable<BindableInternalNamespace> _internalNamespaces;
+        public IEnumerable<BindableInternalNamespace> InternalNamespaces
         {
             get => _internalNamespaces;
             set
@@ -142,8 +161,8 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        Globe.Client.Localizer.Models.BindableInternalNamespace _selectedInternalNamespace;
-        public Globe.Client.Localizer.Models.BindableInternalNamespace SelectedInternalNamespace
+        BindableInternalNamespace _selectedInternalNamespace;
+        public BindableInternalNamespace SelectedInternalNamespace
         {
             get => _selectedInternalNamespace;
             set
@@ -172,6 +191,17 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
+        FiltersUsedBySearching _filtersUsedBySearching = new FiltersUsedBySearching();
+        string _filterBy;
+        public string FilterBy
+        {
+            get => _filterBy;
+            private set
+            {
+                SetProperty(ref _filterBy, value);
+            }
+        }
+
         IEnumerable<JobListConcept> _conceptViews;
         public IEnumerable<JobListConcept> ConceptViews
         {
@@ -196,60 +226,60 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand SearchCommand =>
             _searchCommand ?? (_searchCommand = new DelegateCommand(async () =>
             {
+                UpdateFiltersUsedBySearching();
                 await OnSearch();
-            }));
+            }, () => SelectedJobItem != null));
 
         private DelegateCommand<JobListConcept> _conceptViewEditCommand = null;
         public DelegateCommand<JobListConcept> ConceptViewEditCommand =>
             _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<JobListConcept>(async (conceptView) =>
             {
-                ConceptDetails conceptDetails = new ConceptDetails();
-
                 ConceptDetailsBusy = true;
 
                 try
                 {
-                    conceptDetails = await _currentJobConceptViewService.GetConceptDetailsAsync(conceptView);
+                    var conceptDetails = await _currentJobConceptViewService.GetConceptDetailsAsync(conceptView);
+
+                    var @params = new DialogParameters();
+
+                    @params.Add(DialogParams.EDITABLE_CONCEPT, new EditableConcept(
+                        conceptView.Id,
+                        conceptView.ComponentNamespace,
+                        conceptView.InternalNamespace,
+                        conceptView.Name,
+                        conceptDetails.SoftwareDeveloperComment,
+                        new ObservableCollection<EditableContext>(conceptView.ContextViews.Select(contextView => new EditableContext(conceptDetails.OriginalStringContextValues
+                            .Single(item => item.ContextName == contextView.Name).StringValue, contextView.StringInEnglish, contextView.StringValue, contextView.StringId)
+                        {
+                            ComponentNamespace = conceptView.ComponentNamespace,
+                            InternalNamespace = conceptView.InternalNamespace,
+                            Concept = conceptView.Name,
+                            Name = contextView.Name,
+                            Concept2ContextId = contextView.Concept2ContextId,
+                            StringType = contextView.StringType,
+                            StringId = contextView.StringId,
+                        }).ToList()))
+                    {
+                        MasterTranslatorComment = conceptDetails.MasterTranslatorComment,
+                        IgnoreTranslation = conceptDetails.IgnoreTranslation
+                    });
+                    @params.Add(DialogParams.LANGUAGE, _filtersUsedBySearching.Language);
+
+                    _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, async dialogResult =>
+                    {
+                        if (dialogResult.Result == ButtonResult.OK)
+                            await OnSearch();
+                    });
                 }
                 catch (Exception e)
                 {
                     _logService.Exception(e);
+                    await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Error_during_concepts_request], Platform.Services.Notifications.NotificationLevel.Error);
                 }
                 finally
                 {
                     ConceptDetailsBusy = false;
                 }
-
-                var @params = new DialogParameters();
-
-                @params.Add(DialogParams.EDITABLE_CONCEPT, new EditableConcept(
-                    conceptView.Id,
-                    conceptView.ComponentNamespace,
-                    conceptView.InternalNamespace,
-                    conceptView.Name,
-                    conceptDetails.SoftwareDeveloperComment,
-                    new ObservableCollection<EditableContext>(conceptView.ContextViews.Select(contextView => new EditableContext(conceptDetails.OriginalStringContextValues
-                        .Single(item => item.ContextName == contextView.Name).StringValue, contextView.StringValue, contextView.StringId)
-                    {
-                        ComponentNamespace = conceptView.ComponentNamespace,
-                        InternalNamespace = conceptView.InternalNamespace,
-                        Concept = conceptView.Name,
-                        Name = contextView.Name,
-                        Concept2ContextId = contextView.Concept2ContextId,
-                        StringType = contextView.StringType,
-                        StringId = contextView.StringId,
-                    }).ToList()))
-                {
-                    MasterTranslatorComment = conceptDetails.MasterTranslatorComment,
-                    IgnoreTranslation = conceptDetails.IgnoreTranslation
-                });
-                @params.Add(DialogParams.LANGUAGE, this.SelectedLanguage);
-
-                _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, async dialogResult =>
-                { 
-                    if(dialogResult.Result == ButtonResult.OK)
-                        await OnSearch();
-                });
             }));
 
         private DelegateCommand _exportToXmlCommand = null;
@@ -323,6 +353,8 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {
+                ShowFilters = _visibilityFiltersService.Visible;
+
                 this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
                 this.ComponentNamespaces = await _currentJobFiltersService.GetComponentNamespacesAsync();
                 this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);
@@ -343,6 +375,15 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
+        protected override void OnPropertyChanged(PropertyChangedEventArgs args)
+        {
+            base.OnPropertyChanged(args);
+
+            if (args.PropertyName == nameof(SelectedJobItem))
+            {
+                SearchCommand.RaiseCanExecuteChanged();
+            }
+        }
         private async Task OnSearch()
         {
             GridBusy = true;
@@ -351,27 +392,16 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {
-                if (
-                    SelectedJobItem == null ||
-                    SelectedComponentNamespace == null ||
-                    SelectedInternalNamespace == null ||
-                    SelectedLanguage == null)
-                {
-                    ConceptViews = null;
-                }
-                else
-                {
-                    ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
-                        new JobListConceptSearch
-                        {
-                            ComponentNamespace = SelectedComponentNamespace.Description,
-                            InternalNamespace = SelectedInternalNamespace.Description,
-                            LanguageId = SelectedLanguage.Id,
-                            JobListId = SelectedJobItem.Id
-                        });
+                ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
+                    new JobListConceptSearch
+                    {
+                        ComponentNamespace = _filtersUsedBySearching.ComponentNamespace.Description,
+                        InternalNamespace = _filtersUsedBySearching.InternalNamespace.Description,
+                        LanguageId = _filtersUsedBySearching.Language.Id,
+                        JobListId = _filtersUsedBySearching.JobItem.Id
+                    });
 
-                    ItemCount = ConceptViews.Count();
-                }
+                ItemCount = ConceptViews.Count();
             }
             catch (OperationCanceledException exception)
             {
@@ -405,6 +435,16 @@ namespace Globe.Client.Localizer.ViewModels
                 return null;
 
             return saveDialog.FileName;
+        }
+
+        private void UpdateFiltersUsedBySearching()
+        {
+            _filtersUsedBySearching.Language = SelectedLanguage;
+            _filtersUsedBySearching.JobItem = SelectedJobItem;
+            _filtersUsedBySearching.ComponentNamespace = SelectedComponentNamespace;
+            _filtersUsedBySearching.InternalNamespace = SelectedInternalNamespace;
+
+            FilterBy = $"{Localize["FilterBy"]} {_filtersUsedBySearching?.Language?.Name}, {Localize["JobListName"]}: {_filtersUsedBySearching?.JobItem?.Name}";
         }
     }
 }

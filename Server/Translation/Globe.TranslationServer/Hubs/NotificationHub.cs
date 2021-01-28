@@ -16,8 +16,8 @@ namespace Globe.TranslationServer.Hubs
     {
         public async override Task OnConnectedAsync()
         {
-            var masterTranslator = Context.User.IsMasterTranslator();
-            if (masterTranslator)
+            var isInAdministratorGroup = Context.User.IsInAdministratorGroup();
+            if (isInAdministratorGroup)
                 await Groups.AddToGroupAsync(Context.ConnectionId, SharedConstants.GROUP_MASTER_TRANSLATOR);
 
             await base.OnConnectedAsync();
@@ -25,8 +25,8 @@ namespace Globe.TranslationServer.Hubs
 
         public async override Task OnDisconnectedAsync(Exception exception)
         {
-            var masterTranslator = Context.User.IsMasterTranslator();
-            if (masterTranslator)
+            var isInAdministratorGroup = Context.User.IsInAdministratorGroup();
+            if (isInAdministratorGroup)
                 await Groups.RemoveFromGroupAsync(Context.ConnectionId, SharedConstants.GROUP_MASTER_TRANSLATOR);
 
             await base.OnDisconnectedAsync(exception);

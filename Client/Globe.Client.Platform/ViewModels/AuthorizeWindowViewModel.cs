@@ -1,8 +1,6 @@
-﻿using Globe.Client.Platform.Extensions;
-using Globe.Client.Platform.Identity;
+﻿using Globe.Client.Platform.Services;
 using Globe.Client.Platofrm.Events;
 using Prism.Events;
-using Prism.Mvvm;
 using System.Collections.Generic;
 using System.Security.Principal;
 
@@ -10,10 +8,14 @@ namespace Globe.Client.Platform.ViewModels
 {
     public abstract class AuthorizeWindowViewModel : LifecycleWindowViewModel, IAuthorizeWindowViewModel
     {
+        private readonly IIdentityStore _identityStore;
         protected IEventAggregator EventAggregator { get; private set; }
 
-        protected AuthorizeWindowViewModel(IEventAggregator eventAggregator)
+        protected AuthorizeWindowViewModel(
+            IIdentityStore identityStore,
+            IEventAggregator eventAggregator)
         {
+            _identityStore = identityStore;
             EventAggregator = eventAggregator;
 
             EventAggregator.GetEvent<PrincipalChangedEvent>()
@@ -23,52 +25,33 @@ namespace Globe.Client.Platform.ViewModels
                 });
         }
 
-        IPrincipal _principal = new AnonymousPrincipal();
         public IPrincipal Principal
         {
-            get => _principal;
-            private set
-            {
-                SetProperty<IPrincipal>(ref _principal, value ?? new AnonymousPrincipal());
-            }
+            get => _identityStore.Principal;
         }
 
-        IIdentity _identity = new AnonymousIdentity();
         public IIdentity Identity
         {
-            get => _identity;
-            private set
-            {
-                SetProperty<IIdentity>(ref _identity, value ?? new AnonymousIdentity());
-            }
+            get => _identityStore.Identity;
         }
 
-        bool _isAuthenticated = false;
         public bool IsAuthenticated
         {
-            get => _isAuthenticated;
-            private set
-            {
-                SetProperty<bool>(ref _isAuthenticated, value);
-            }
+            get => _identityStore.IsAuthenticated;
         }
 
-        IEnumerable<string> _userRoles;
         public IEnumerable<string> UserRoles
         {
-            get => _userRoles;
-            private set
-            {
-                SetProperty<IEnumerable<string>>(ref _userRoles, value);
-            }
+            get => _identityStore.UserRoles;
         }
 
         virtual protected void OnAuthenticationChanged(IPrincipal principal)
         {
-            this.Principal = principal;
-            this.Identity = principal.Identity;
-            this.IsAuthenticated = principal.Identity.IsAuthenticated;
-            this.UserRoles = principal.Identity.GetRoles();
+            _identityStore.Store(principal);
+            OnPropertyChanged(new System.ComponentModel.PropertyChangedEventArgs(nameof(Principal)));
+            OnPropertyChanged(new System.ComponentModel.PropertyChangedEventArgs(nameof(Identity)));
+            OnPropertyChanged(new System.ComponentModel.PropertyChangedEventArgs(nameof(IsAuthenticated)));
+            OnPropertyChanged(new System.ComponentModel.PropertyChangedEventArgs(nameof(UserRoles)));
         }
     }
 }

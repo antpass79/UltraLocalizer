@@ -31,6 +31,7 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly ISettingsService _settingsService;
 
         public MainWindowViewModel(
+            IIdentityStore identityStore,
             IViewNavigationService viewNavigationService,
             IEventAggregator eventAggregator,
             IAsyncLoginService loginService,
@@ -38,7 +39,7 @@ namespace Globe.Client.Localizer.ViewModels
             ILocalizationAppService localizationAppService,
             INotificationService notificationService,
             ISettingsService settingsService)
-            : base(eventAggregator, localizationAppService)
+            : base(identityStore, eventAggregator, localizationAppService)
         {
             _viewNavigationService = viewNavigationService;
             _loginService = loginService;
@@ -92,7 +93,7 @@ namespace Globe.Client.Localizer.ViewModels
                     TitleKey = LanguageKeys.Page_Home,
                     IconName = "home",
                     IsSelected = true,
-                    Roles = Rules.All,
+                    Roles = Roles.All,
                     AlwaysVisible = true,
                     ViewName = ViewNames.HOME_VIEW
                 },
@@ -102,7 +103,7 @@ namespace Globe.Client.Localizer.ViewModels
                     TitleKey = LanguageKeys.Page_Joblist_Management,
                     IconName = "management",
                     IsSelected = false,
-                    Roles = Rules.Group_Administrators,
+                    Roles = Roles.Group_Administrators,
                     AlwaysVisible = false,
                     ViewName = ViewNames.JOBLIST_MANAGEMENT_VIEW
                 },
@@ -112,7 +113,7 @@ namespace Globe.Client.Localizer.ViewModels
                     TitleKey = LanguageKeys.Page_Current_Job,
                     IconName = "current_job",
                     IsSelected = false,
-                    Roles = Rules.Group_All,
+                    Roles = Roles.Group_All,
                     AlwaysVisible = false,
                     ViewName = ViewNames.CURRENT_JOB_VIEW
                 },
@@ -122,7 +123,7 @@ namespace Globe.Client.Localizer.ViewModels
                     TitleKey = LanguageKeys.Page_Concept_Management,
                     IconName = "translation",
                     IsSelected = false,
-                    Roles = Rules.Group_All,
+                    Roles = Roles.Group_All,
                     AlwaysVisible = false,
                     ViewName = ViewNames.CONCEPT_MANAGEMENT_VIEW
                 },

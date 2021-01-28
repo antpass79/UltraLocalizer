@@ -29,7 +29,7 @@ namespace Globe.TranslationServer.Services.NewServices
                     .Where(item =>
                         item.JobListLanguageId == languageId)
                     .WhereIf(item =>
-                        item.JobListId == jobListId, jobListId != 0)
+                        item.JobListId == jobListId, jobListId != 0) // != all
                     .WhereIf(item =>
                         item.ConceptComponentNamespace == componentNamespace, componentNamespace != SharedConstants.COMPONENT_NAMESPACE_ALL)
                     .WhereIf(item =>
@@ -45,7 +45,8 @@ namespace Globe.TranslationServer.Services.NewServices
                         ConceptToContextId = item.ConceptToContextId,
                         StringType = item.StringType,
                         StringValue = item.String,
-                        StringId = item.StringId
+                        StringId = item.StringId,
+                        StringInEnglish = item.StringInEnglish
                     })
                     .ToList();
 
@@ -62,6 +63,7 @@ namespace Globe.TranslationServer.Services.NewServices
                         StringId = item.StringId.HasValue ? item.StringId.Value : 0,
                         StringType = !string.IsNullOrWhiteSpace(item.StringType) ? Enum.Parse<StringType>(item.StringType) : StringType.Label,
                         StringValue = item.StringValue,
+                        StringInEnglish = item.StringInEnglish,
                         Name = item.ContextName,
                         Concept2ContextId = item.ConceptToContextId
                     }).ToList()

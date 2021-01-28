@@ -23,13 +23,14 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly INotificationService _notificationService;
 
         public MergeWindowViewModel(
+            IIdentityStore identityStore,
             IEventAggregator eventAggregator,
             IFileSystemLocalizableStringService fileSystemLocalizableStringService,
             IHttpLocalizableStringService httpLocalizableStringService,
             IStringMergeService stringMergeService,
             ILocalizationAppService localizationAppService,
             INotificationService notificationService)
-            : base(eventAggregator)
+            : base(identityStore, eventAggregator)
         {
             _eventAggregator = eventAggregator;
             _fileSystemLocalizableStringService = fileSystemLocalizableStringService;

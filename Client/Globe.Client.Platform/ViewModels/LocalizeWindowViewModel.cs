@@ -10,9 +10,10 @@ namespace Globe.Client.Platform.ViewModels
     public abstract class LocalizeWindowViewModel : AuthorizeWindowViewModel
     {
         protected LocalizeWindowViewModel(
+            IIdentityStore identityStore,
             IEventAggregator eventAggregator,
             ILocalizationAppService localizationAppService)
-            : base(eventAggregator)
+            : base(identityStore, eventAggregator)
         {
             LocalizationAppService = localizationAppService;
 

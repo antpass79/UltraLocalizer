@@ -28,23 +28,26 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IJobListManagementFiltersService _jobListManagementFiltersService;
         private readonly IJobListManagementService _jobListManagementService;
         private readonly INotificationService _notificationService;
+        private readonly IVisibilityFiltersService _visibilityFiltersService;
 
         public JobListManagementWindowViewModel(
+            IIdentityStore identityStore,
             IEventAggregator eventAggregator,
             ILogService logService,
             IDialogService dialogService,
             IJobListManagementFiltersService jobListManagementFiltersService,
             IJobListManagementService jobListManagementService,
             ILocalizationAppService localizationAppService,
-            INotificationService notificationService
-            )
-            : base(eventAggregator, localizationAppService)
+            INotificationService notificationService,
+            IVisibilityFiltersService visibilityFiltersService)
+            : base(identityStore, eventAggregator, localizationAppService)
         {
             _logService = logService;
             _dialogService = dialogService;
             _jobListManagementFiltersService = jobListManagementFiltersService;
             _jobListManagementService = jobListManagementService;
             _notificationService = notificationService;
+            _visibilityFiltersService = visibilityFiltersService;
         }
 
         bool _componentsVisible;
@@ -64,6 +67,17 @@ namespace Globe.Client.Localizer.ViewModels
             set
             {
                 SetProperty(ref _ItemCount, value);
+            }
+        }
+
+        bool _showFilters = true;
+        public bool ShowFilters
+        {
+            get => _showFilters;
+            set
+            {
+                _visibilityFiltersService.Visible = value;
+                SetProperty(ref _showFilters, value);
             }
         }
 
@@ -427,9 +441,11 @@ namespace Globe.Client.Localizer.ViewModels
 
         async private Task InitializeFilters()
         {
+            FiltersBusy = true;
+
             try
             {
-                FiltersBusy = true;
+                ShowFilters = _visibilityFiltersService.Visible;
                 Languages = await _jobListManagementFiltersService.GetLanguagesAsync();
                 SelectedLanguage = Languages.FirstOrDefault(item => item.IsoCoding == SharedConstants.LANGUAGE_EN);
             }

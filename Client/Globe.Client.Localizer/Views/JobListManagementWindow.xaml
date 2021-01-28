@@ -42,7 +42,7 @@
     </UserControl.Resources>
 
     <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
-        <controls:LocGrid DockPanel.Dock="Left" Width="350" Style="{StaticResource SectionPanel}">
+        <controls:LocGrid DockPanel.Dock="Left" Width="350" Style="{StaticResource SectionPanel}" Visibility="{Binding ShowFilters, Converter={StaticResource BooleanToVisibilityConverter}}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
@@ -61,11 +61,11 @@
                 <controls:LocTextBlock Text="{Binding Localize[Components]}" HorizontalAlignment="Left" />
                 <DockPanel HorizontalAlignment="Right" Margin="3,3,4,0">
                     <controls:LocButton Content="&lt;&lt;" Style="{StaticResource treeViewItemButton}"
-                                                Command="{Binding RemoveCommand}" />
+                                                Command="{Binding RemoveCommand}" ToolTip="{Binding Localize[Remove_the_selection]}" />
                     <controls:LocButton Content="-" Style="{StaticResource treeViewItemButton}"
-                                                Command="{Binding RemoveAllCommand}" />
+                                                Command="{Binding RemoveAllCommand}" ToolTip="{Binding Localize[Remove_all_items]}" />
                     <controls:LocButton Content="+" Style="{StaticResource treeViewItemButton}"
-                                                Command="{Binding AddAllCommand}" />
+                                                Command="{Binding AddAllCommand}" ToolTip="{Binding Localize[Add_all_items]}" />
                 </DockPanel>
             </DockPanel>
             <ScrollViewer Grid.Row="3" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Auto">
@@ -95,6 +95,7 @@
                                             HorizontalAlignment="Right"
                                             Visibility="{Binding ElementName=rootItem, Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"
                                             Content="+"
+                                            ToolTip="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[Add_selected_group]}"
                                             Style="{StaticResource treeViewItemButton}"
                                             Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.AddComponentNamespaceGroupCommand}"
                                             CommandParameter="{Binding}" />
@@ -105,7 +106,10 @@
                                     <controls:LocTextBlock Text="{Binding Description}" />
                                     <controls:LocButton
                                                 HorizontalAlignment="Right"
-                                                Visibility="{Binding ElementName=leafItem, Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"                                                Content="+" Style="{StaticResource treeViewItemButton}"
+                                                Visibility="{Binding ElementName=leafItem, Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                Content="+"
+                                                ToolTip="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[Add_selected_item]}"
+                                                Style="{StaticResource treeViewItemButton}"
                                                 Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.AddInternalNamespaceCommand}"
                                                 CommandParameter="{Binding}"/>
                                 </DockPanel>

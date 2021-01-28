@@ -26,9 +26,8 @@
 
     <controls:LocGrid>
         <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
-
-            <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
-                <controls:LocGrid DockPanel.Dock="Top"  Style="{StaticResource SectionPanel}">
+            <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}" DockPanel.Dock="Left">
+                <controls:LocGrid DockPanel.Dock="Top" Style="{StaticResource SectionPanel}" Width="350" Visibility="{Binding ShowFilters, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />

@@ -12,6 +12,11 @@
 
     </platform:ContextToolBar.Resources>
     <DockPanel LastChildFill="False" Background="Transparent">
+        <controls:LocToggleSwitch
+            IsChecked="{Binding ShowFilters}"
+            CheckedContent="{Binding Localize[HideFilters]}"
+            UncheckedContent="{Binding Localize[ShowFilters]}">
+        </controls:LocToggleSwitch>
         <controls:LocButton Command="{Binding CheckNewConceptsCommand}" Content="{Binding Localize[Check_New_Concepts]}"/>
         <controls:LocButton Command="{Binding SaveJoblistCommand}" Content="{Binding Localize[Save_Joblist]}"/>
     </DockPanel>
