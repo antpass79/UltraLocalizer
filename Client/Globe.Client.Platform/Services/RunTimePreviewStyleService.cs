@@ -15,21 +15,18 @@ namespace Globe.Client.Platform.Services
     {
         #region Data Members
 
-        string PATH_DEFAULT_BASIC_STYLE = string.Empty;
-        string ROOT_PATH_CUSTOM_STYLE = string.Empty;
-        string PATH_COMMON_CONTROL_STYLE = @"/StyleManager;component/CommonControlsStyle.xaml";
-
-        string[] _customFileNames = new string[]
+        readonly string PATH_DEFAULT_BASIC_STYLE = string.Empty;
+        readonly string ROOT_PATH_CUSTOM_STYLE = string.Empty;
+        readonly string PATH_COMMON_CONTROL_STYLE = @"/StyleManager;component/CommonControlsStyle.xaml";
+        readonly string[] _customFileNames = new string[]
             {
                 "Veterinary_Custom.xaml",
                 "Standard_Custom.xaml",
                 "StandardV2_Custom.xaml",
                 "OrangeGrey_Custom.xaml"
             };
-
-        ResourceDictionary _commonResourceDictionary = new ResourceDictionary();
-
-        Dictionary<string, int> _typeNameToMergedDictionaryIndexMapping = new Dictionary<string, int>();
+        readonly ResourceDictionary _commonResourceDictionary = new ResourceDictionary();
+        readonly Dictionary<string, int> _typeNameToMergedDictionaryIndexMapping = new Dictionary<string, int>();
 
         #endregion
 
@@ -172,13 +169,13 @@ namespace Globe.Client.Platform.Services
             LoadCustomizableStyles(Application.Current.Resources.MergedDictionaries);
         }
 
-        private ResourceDictionary LoadSkin(string FilePath)
+        private static ResourceDictionary LoadSkin(string FilePath)
         {   
             using var XmlRead = XmlReader.Create(FilePath);
             return XamlReader.Load(XmlRead) as ResourceDictionary;
         }
 
-        private void LoadStyles(Collection<ResourceDictionary> targetResources, string path, bool embedded = false)
+        private static void LoadStyles(Collection<ResourceDictionary> targetResources, string path, bool embedded = false)
         {
             ResourceDictionary resourceDictionary;
             if (embedded)

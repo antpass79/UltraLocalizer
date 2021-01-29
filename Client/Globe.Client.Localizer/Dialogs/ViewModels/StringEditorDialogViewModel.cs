@@ -22,7 +22,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         private readonly IEditStringService _editStringService;
         private readonly ILogService _logService;
         private readonly IPreviewStyleService _previewStyleService;
-        private readonly IEventAggregator _eventAggregator;
         private readonly INotificationService _notificationService;
 
         public StringEditorDialogViewModel(
@@ -38,7 +37,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             _editStringService = editStringService;
             _logService = logService;
             _previewStyleService = previewStyleService;
-            _eventAggregator = eventAggregator;
             _notificationService = notificationService;
         }
 
@@ -181,7 +179,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         private DelegateCommand<string> _closeDialogCommand;
         public DelegateCommand<string> CloseDialogCommand =>
-            _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand<string>(parameter =>
+            _closeDialogCommand ??= new DelegateCommand<string>(parameter =>
             {
                 ButtonResult result = ButtonResult.None;
 
@@ -191,11 +189,11 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     result = ButtonResult.Cancel;
 
                 RaiseRequestClose(new DialogResult(result));
-            }));
+            });
 
         private DelegateCommand _saveCommand;
         public DelegateCommand SaveCommand =>
-            _saveCommand ?? (_saveCommand = new DelegateCommand(async () =>
+            _saveCommand ??= new DelegateCommand(async () =>
             {
                 SavingBusy = true;
 
@@ -224,11 +222,11 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 {
                     SavingBusy = false;
                 }
-            }, () => CanSave()));
+            }, () => CanSave());
 
         private DelegateCommand<EditableContext> _linkCommand;
         public DelegateCommand<EditableContext> LinkCommand =>
-            _linkCommand ?? (_linkCommand = new DelegateCommand<EditableContext>((editableContext) =>
+            _linkCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
             {
                 editableContext.StringId = this.SelectedStringView.Id;
                 editableContext.StringEditableValue = this.SelectedStringView.Value;
@@ -237,11 +235,11 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             (editableContext) =>
             {
                 return this.SelectedStringView != null;
-            }));
+            });
 
         private DelegateCommand<EditableContext> _unlinkCommand;
         public DelegateCommand<EditableContext> UnlinkCommand =>
-            _unlinkCommand ?? (_unlinkCommand = new DelegateCommand<EditableContext>((editableContext) =>
+            _unlinkCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
             {
                 editableContext.StringId = 0;
                 editableContext.StringEditableValue = null;
@@ -250,11 +248,11 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             (editableContext) =>
             {
                 return true;
-            }));
+            });
 
         private DelegateCommand<EditableContext> _duplicateCommand;
         public DelegateCommand<EditableContext> DuplicateCommand =>
-            _duplicateCommand ?? (_duplicateCommand = new DelegateCommand<EditableContext>((editableContext) =>
+            _duplicateCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
             {
                 editableContext.StringId = 0;
                 editableContext.StringEditableValue = this.SelectedStringView.Value;
@@ -263,33 +261,33 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             (editableContext) =>
             {
                 return this.SelectedStringView != null;
-            }));
+            });
 
         private DelegateCommand<EditableContext> _keepThisCommand;
         public DelegateCommand<EditableContext> KeepThisCommand =>
-            _keepThisCommand ?? (_keepThisCommand = new DelegateCommand<EditableContext>((editableContext) =>
+            _keepThisCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
             {
                 UnlinkCommand.Execute(editableContext);
                 editableContext.StringEditableValue = editableContext.StringInEnglish;
-            }));
+            });
 
         private DelegateCommand<ConceptSearchBy?> _searchByCommand;
         public DelegateCommand<ConceptSearchBy?> SearchByCommand =>
-            _searchByCommand ?? (_searchByCommand = new DelegateCommand<ConceptSearchBy?>((searchBy) =>
+            _searchByCommand ??= new DelegateCommand<ConceptSearchBy?>((searchBy) =>
             {
                 this.SearchBy = searchBy.Value;
-            }));
+            });
 
         private DelegateCommand<ConceptFilterBy?> _filterByCommand;
         public DelegateCommand<ConceptFilterBy?> FilterByCommand =>
-            _filterByCommand ?? (_filterByCommand = new DelegateCommand<ConceptFilterBy?>((filterBy) =>
+            _filterByCommand ??= new DelegateCommand<ConceptFilterBy?>((filterBy) =>
             {
                 this.FilterBy = filterBy.Value;
-            }));
+            });
 
         private DelegateCommand _searchConceptsCommand;
         public DelegateCommand SearchConceptsCommand =>
-            _searchConceptsCommand ?? (_searchConceptsCommand = new DelegateCommand(async () =>
+            _searchConceptsCommand ??= new DelegateCommand(async () =>
             {
                 this.SearchingBusy = true;
 
@@ -313,14 +311,14 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 {
                     this.SearchingBusy = false;
                 }
-            }));
+            });
 
         private DelegateCommand _localizeChangeCommand;
         public DelegateCommand LocalizeChangeCommand =>
-            _localizeChangeCommand ?? (_localizeChangeCommand = new DelegateCommand(() =>
+            _localizeChangeCommand ??= new DelegateCommand(() =>
             {
                SaveCommand.RaiseCanExecuteChanged();
-            }));
+            });
 
         public event Action<IDialogResult> RequestClose;
 

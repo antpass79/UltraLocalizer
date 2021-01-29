@@ -82,5 +82,6 @@
         public readonly static string Export_to_XML = nameof(Export_to_XML);
         public readonly static string FilterBy = nameof(FilterBy);
         public readonly static string JobListName = nameof(JobListName);
+        public readonly static string KeepThis = nameof(KeepThis);
     }
 }

@@ -78,7 +78,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         private DelegateCommand _saveCommand;
         public DelegateCommand SaveCommand =>
-            _saveCommand ?? (_saveCommand = new DelegateCommand(async () =>
+            _saveCommand ??= new DelegateCommand(async () =>
             {
                 try
                 {
@@ -106,14 +106,14 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 {
                     _eventAggregator.GetEvent<BusyChangedEvent>().Publish(false);
                 }
-            }, () => !string.IsNullOrWhiteSpace(JobListName)));
+            }, () => !string.IsNullOrWhiteSpace(JobListName));
 
         private DelegateCommand _closeDialogCommand;
         public DelegateCommand CloseDialogCommand =>
-            _closeDialogCommand ?? (_closeDialogCommand = new DelegateCommand(() =>
+            _closeDialogCommand ??= new DelegateCommand(() =>
             {
                 RaiseRequestClose(new DialogResult(ButtonResult.Cancel));
-            }));
+            });
 
         public event Action<IDialogResult> RequestClose;
         public virtual void RaiseRequestClose(IDialogResult dialogResult)

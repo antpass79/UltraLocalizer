@@ -54,16 +54,14 @@ namespace Globe.TranslationServer.Services.NewServices
                         {
                             try
                             {
-                                using (var scope = _serviceScopeFactory.CreateScope())
-                                {
-                                    var localizationResource = scope.ServiceProvider.GetRequiredService<ILocalizationResourceBuilder>()
-                                        .Component(component)
-                                        .Language(language)
-                                        .DebugMode(debugMode)
-                                        .Build();
+                                using var scope = _serviceScopeFactory.CreateScope();
+                                var localizationResource = scope.ServiceProvider.GetRequiredService<ILocalizationResourceBuilder>()
+                                    .Component(component)
+                                    .Language(language)
+                                    .DebugMode(debugMode)
+                                    .Build();
 
-                                    localizationResource.Save(Path.Combine(outputFolder, $"{localizationResource.ComponentNamespace}.{localizationResource.Language}.xml"));
-                                }
+                                localizationResource.Save(Path.Combine(outputFolder, $"{localizationResource.ComponentNamespace}.{localizationResource.Language}.xml"));
                             }
                             catch (Exception innerException)
                             {
@@ -80,7 +78,7 @@ namespace Globe.TranslationServer.Services.NewServices
                 }
             });
 
-            if (exceptions.Count > 0)
+            if (!exceptions.IsEmpty)
                 throw new AggregateException(exceptions);
 
             await Task.CompletedTask;
