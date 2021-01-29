@@ -236,6 +236,7 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <platform:PreviewString
+                                        Identifier="PreviewStandard"
                                         Text="{Binding StringEditableValue}"
                                         IsValid="{Binding IsPreviewStandardValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                         <platform:PreviewString.PreviewStyleInfo>
@@ -267,16 +268,17 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <platform:PreviewString
+                                        Identifier="PreviewOrangeGray"
                                         Text="{Binding StringEditableValue}"
                                         IsValid="{Binding IsPreviewOrangeGrayValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                         <platform:PreviewString.PreviewStyleInfo>
-                                            <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="OrangeGrey" >
+                                            <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="OrangeGrey">
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                             </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
                                         <platform:PreviewString.PreviewState>
-                                            <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="Standard" >
+                                            <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="OrangeGrey">
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 <Binding Path="StringEditableValue"/>
@@ -298,16 +300,17 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <platform:PreviewString
+                                        Identifier="PreviewStandardV2"
                                         Text="{Binding StringEditableValue}"
                                         IsValid="{Binding IsPreviewStandardV2Valid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                                         <platform:PreviewString.PreviewStyleInfo>
-                                            <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="StandardV2" >
+                                            <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="StandardV2">
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                             </MultiBinding>
                                         </platform:PreviewString.PreviewStyleInfo>
                                       <platform:PreviewString.PreviewState>
-                                            <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="Standard" >
+                                            <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="StandardV2">
                                                 <Binding Path="Name" />
                                                 <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
                                                 <Binding Path="StringEditableValue"/>

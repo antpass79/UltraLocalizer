@@ -11,10 +11,9 @@ namespace Globe.Client.Platform.Services
 
         private readonly string LANGUAGE_EN = "en";
         private readonly string LANGUAGE_IT = "it";
-
-        LocalizedDictionary _english = new LocalizedDictionary();
-        LocalizedDictionary _italian = new LocalizedDictionary();
-        Dictionary<string, LocalizedDictionary> _languages = new Dictionary<string, LocalizedDictionary>();
+        readonly LocalizedDictionary _english = new LocalizedDictionary();
+        readonly LocalizedDictionary _italian = new LocalizedDictionary();
+        readonly Dictionary<string, LocalizedDictionary> _languages = new Dictionary<string, LocalizedDictionary>();
 
         LocalizedDictionary _current;
 
@@ -136,6 +135,7 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Export_to_XML), "Esporta in XML");
             _italian.Add(nameof(LanguageKeys.FilterBy), "Filtri applicati");
             _italian.Add(nameof(LanguageKeys.JobListName), "Lista di lavoro");
+            _italian.Add(nameof(LanguageKeys.KeepThis), "Prendi questo");
         }
 
         private void FillEnglishValues()
@@ -209,6 +209,7 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Export_to_XML), "Export to XML");
             _english.Add(nameof(LanguageKeys.FilterBy), "Filter by");
             _english.Add(nameof(LanguageKeys.JobListName), "Job list");
+            _english.Add(nameof(LanguageKeys.KeepThis), "Keep this");
         }
 
         #endregion

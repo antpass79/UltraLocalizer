@@ -13,10 +13,8 @@ namespace Globe.Client.Platform.Services
         private readonly IStyleService _styleService;
         private readonly ICompareVersionService _compareVersionService;
         private readonly IPreviewStyleService _runTimePreviewStyleService;
-
-        string PATH_DEFAULT_BASIC_STYLE = $"{AppDomain.CurrentDomain.BaseDirectory}/Styles/";
-
-        string[] _stylePaths = new string[]
+        readonly string PATH_DEFAULT_BASIC_STYLE = $"{AppDomain.CurrentDomain.BaseDirectory}/Styles/";
+        readonly string[] _stylePaths = new string[]
             {
                 "CustomStyles/Veterinary_Custom.xaml",
                 "CustomStyles/Standard_Custom.xaml",

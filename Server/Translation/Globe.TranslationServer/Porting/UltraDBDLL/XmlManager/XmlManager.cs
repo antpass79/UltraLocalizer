@@ -14,12 +14,12 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
     {
         #region Data Members
 
-        private object _xmlProcessedLock = new object();
-        private object _xmlProcessingLock = new object();
-        private object _errorsNoticeLock = new object();
-        private object _keyTuplasLock = new object();
-        private object _keyCommentsLock = new object();
-        private object _xmlDataLock = new object();
+        private readonly object _xmlProcessedLock = new object();
+        private readonly object _xmlProcessingLock = new object();
+        private readonly object _errorsNoticeLock = new object();
+        private readonly object _keyTuplasLock = new object();
+        private readonly object _keyCommentsLock = new object();
+        private readonly object _xmlDataLock = new object();
 
         private string _directory = string.Empty;
         private string _extension = ".definition.xml";
@@ -140,7 +140,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                     from b in a.String
                     where b.Context == queryContext
                     select b.TypedValue;
-            if (z.Count() > 0)
+            if (z.Any())
             {
                 string s = z.FirstOrDefault().ToString();
                 return s;
@@ -180,7 +180,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
         public void FillDB(Dictionary<string, IEnumerable<string>> keyTuplas)
         {
-            if (keyTuplas == null || keyTuplas.Count() == 0)
+            if (keyTuplas == null || !keyTuplas.Any())
                 return;
             Completed.Reset();
 
@@ -244,33 +244,24 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
             UltraDBConcept.UltraDBConcept concept = new UltraDBConcept.UltraDBConcept(context);
             //leggo dal db tutte le tuple della Concept
 
-            UltraDBConcept2Context conceptToContext = new UltraDBConcept2Context(context);
             //eseguo le query
             _dbTuplasForInsert = concept.GetAllConcepts();
-
-
-            DateTime timeStart = DateTime.Now;
 
             files = Directory.GetFiles(_directory, "*" + _extension);
             _xmlFound = files.Length;
             CurrentLogManager.Log(string.Format("{0} xml files found", _xmlFound));
-
         }
 
         #region GetXmlEDB
 
         private void GetXml()
         {
-            string[] files;
-            Initialize(out files);
+            Initialize(out string[] files);
             if (files == null || files.Length == 0)
             {
                 //rilascio
                 Completed.Set();
-                if (OnCompleted != null)
-                {
-                    OnCompleted(this, null);
-                }
+                OnCompleted?.Invoke(this, null);
 
                 return;
             }
@@ -287,25 +278,18 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
 
             Completed.Set();
-            if (OnCompleted != null)
-            {
-                OnCompleted(this, null);
-            }
+            OnCompleted?.Invoke(this, null);
 
         }
 
         private void GetXml(object state)
         {
-            string[] files;
-            Initialize(out files);
+            Initialize(out string[] files);
             if (files == null || files.Length == 0)
             {
                 //rilascio
                 Completed.Set();
-                if (OnCompleted != null)
-                {
-                    OnCompleted(this, null);
-                }
+                OnCompleted?.Invoke(this, null);
 
                 return;
             }
@@ -328,10 +312,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
             }
 
             Completed.Set();
-            if (OnCompleted != null)
-            {
-                OnCompleted(this, null);
-            }
+            OnCompleted?.Invoke(this, null);
 
         }
 
@@ -371,7 +352,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                     }
 
                     //leggo i campi dell'xml
-                    var DBData = res.LocalizationSection.Select(r => new { ComponentNamespace = res.ComponentNamespace, InternalNamespace = r.InternalNamespace, ConceptID = r.Concept.Select(t => new { Id = t.Id, Comments = t.Comments, str = t.String.Select(st => st.Context) }) });
+                    var DBData = res.LocalizationSection.Select(r => new { res.ComponentNamespace, r.InternalNamespace, ConceptID = r.Concept.Select(t => new { t.Id, t.Comments, str = t.String.Select(st => st.Context) }) });
 
                     //Preparo la struttura letta da xml per effettuare le operazioni insiemistiche con le strutture lette da DB
                     foreach (var item in DBData)
@@ -506,16 +487,12 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
         private void GetXmlOnly()
         {
-            string[] files;
-            Initialize(out files);
+            Initialize(out string[] files);
             if (files == null || files.Length == 0)
             {
                 //rilascio
                 Completed.Set();
-                if (OnCompleted != null)
-                {
-                    OnCompleted(this, null);
-                }
+                OnCompleted?.Invoke(this, null);
 
                 return;
             }
@@ -530,24 +507,17 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
             }
 
             Completed.Set();
-            if (OnCompleted != null)
-            {
-                OnCompleted(this, null);
-            }
+            OnCompleted?.Invoke(this, null);
         }
 
         private void GetXmlOnly(object state)
         {
-            string[] files;
-            Initialize(out files);
+            Initialize(out string[] files);
             if (files == null || files.Length == 0)
             {
                 //rilascio
                 Completed.Set();
-                if (OnCompleted != null)
-                {
-                    OnCompleted(this, null);
-                }
+                OnCompleted?.Invoke(this, null);
 
                 return;
             }
@@ -577,10 +547,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
             }
 
             Completed.Set();
-            if (OnCompleted != null)
-            {
-                OnCompleted(this, null);
-            }
+            OnCompleted?.Invoke(this, null);
 
         }
 
@@ -612,7 +579,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                     }
 
                     //leggo i campi dell'xml
-                    var DBData = res.LocalizationSection.Select(r => new { ComponentNamespace = res.ComponentNamespace, InternalNamespace = r.InternalNamespace, ConceptID = r.Concept.Select(t => new { Id = t.Id, Comments = t.Comments, str = t.String.Select(st => st.Context) }) });
+                    var DBData = res.LocalizationSection.Select(r => new { res.ComponentNamespace, r.InternalNamespace, ConceptID = r.Concept.Select(t => new { t.Id, t.Comments, str = t.String.Select(st => st.Context) }) });
 
                     //Preparo la struttura letta da xml per effettuare le operazioni insiemistiche con le strutture lette da DB
                     foreach (var item in DBData)
@@ -723,7 +690,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                 //eseguo la differenza tra le triple lette nell'xml e quelle presenti nel DB. 
                 //l'insieme ottenuto va inserito nel db sia nella tabella Concept che in quella Context2Concept (per la parte relativa alle stringhe)
                 var tuplaToInsert = localKeyTuplasForInsert.Except(_dbTuplasForInsert, new TuplaComparerForInsert());
-                ChangesFound = (tuplaToInsert.Count() > 0);
+                ChangesFound = tuplaToInsert.Any();
                 InsertedCount = tuplaToInsert.Count();
 
                 ////inserisco nel DB le nuove tuple sia nella Concept che nella Concept2Context
@@ -749,7 +716,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                 dbTuplasForUpdate = concept.GetAllConceptsAndContext();
 
                 var tuplaToUpdate = localKeyTuplasForUpdate.Except(dbTuplasForUpdate, new TuplaComparerForUpdate());
-                ChangesFound = ChangesFound || (tuplaToUpdate.Count() > 0);
+                ChangesFound = ChangesFound || tuplaToUpdate.Any();
                 UpdatedCount = tuplaToUpdate.Count();
                 //inserisco nella Concept2Context le stringhe nuove associate a Concept già presenti
                 foreach (var item in tuplaToUpdate)
@@ -789,10 +756,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
             {
                 //rilascio
                 Completed.Set();
-                if (OnCompleted != null)
-                {
-                    OnCompleted(this, null);
-                }
+                OnCompleted?.Invoke(this, null);
             }
         }
 
@@ -837,10 +801,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
             {
                 //rilascio
                 CompletedLists.Set();
-                if (OnCompleted != null)
-                {
-                    OnCompleted(this, null);
-                }
+                OnCompleted?.Invoke(this, null);
 
                 return;
             }
@@ -897,10 +858,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
 
             CompletedLists.Set();
-            if (OnCompletedLists != null)
-            {
-                OnCompletedLists(this, null);
-            }
+            OnCompletedLists?.Invoke(this, null);
 
             return;
         }
@@ -929,7 +887,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
 
                     //leggo i campi dell'xml
-                    var DBData = res.LocalizationSection.Select(r => new { ComponentNamespace = res.ComponentNamespace, InternalNamespace = r.InternalNamespace, ConceptID = r.Concept.Select(t => new { Id = t.Id, Comments = t.Comments, str = t.String.Select(st => st.Context) }) });
+                    var DBData = res.LocalizationSection.Select(r => new { res.ComponentNamespace, r.InternalNamespace, ConceptID = r.Concept.Select(t => new { t.Id, t.Comments, str = t.String.Select(st => st.Context) }) });
 
                     //Preparo la struttura letta da xml per effettuare le operazioni insiemistiche con le strutture lette da DB
                     foreach (var item in DBData)

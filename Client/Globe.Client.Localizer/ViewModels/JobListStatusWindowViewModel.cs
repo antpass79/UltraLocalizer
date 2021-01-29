@@ -191,14 +191,14 @@ namespace Globe.Client.Localizer.ViewModels
 
         private DelegateCommand _searchCommand = null;
         public DelegateCommand SearchCommand =>
-            _searchCommand ?? (_searchCommand = new DelegateCommand(async () =>
+            _searchCommand ??= new DelegateCommand(async () =>
             {
                 await OnSearch();
-            }));
+            });
 
         private DelegateCommand _userNameChangeCommand = null;
         public DelegateCommand UserNameChangeCommand =>
-            _userNameChangeCommand ?? (_userNameChangeCommand = new DelegateCommand(async () =>
+            _userNameChangeCommand ??= new DelegateCommand(async () =>
             {
                 this.FiltersBusy = true;
 
@@ -206,7 +206,7 @@ namespace Globe.Client.Localizer.ViewModels
                 this.SelectedJobList = this.JobLists.FirstOrDefault();
 
                 this.FiltersBusy = false;
-            }));
+            });
 
         async protected override Task OnLoad()
         {

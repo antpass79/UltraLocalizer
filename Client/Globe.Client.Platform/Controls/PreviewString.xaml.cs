@@ -28,6 +28,14 @@ namespace Globe.Client.Platform.Controls
 
         #region Dependency Properties
 
+        public static readonly DependencyProperty IdentifierProperty =
+            DependencyProperty.Register("Identifier", typeof(string), typeof(PreviewString), new PropertyMetadata(string.Empty));
+        public string Identifier
+        {
+            get { return (string)GetValue(IdentifierProperty); }
+            set { SetValue(IdentifierProperty, value); }
+        }
+
         public static readonly DependencyProperty IsValidProperty =
             DependencyProperty.Register("IsValid", typeof(bool), typeof(PreviewString), new PropertyMetadata(true));
         public bool IsValid
@@ -47,7 +55,7 @@ namespace Globe.Client.Platform.Controls
         {
             var previewString = (PreviewString)d;
             previewString.BorderBrush = previewString.PreviewState == PreviewState.Valid ? Brushes.Green : Brushes.Red;
-            previewString.IsValid = previewString.PreviewState == PreviewState.Valid ? true : false;
+            previewString.IsValid = previewString.PreviewState == PreviewState.Valid;
         }
 
         public static readonly DependencyProperty PreviewStyleInfoProperty =
