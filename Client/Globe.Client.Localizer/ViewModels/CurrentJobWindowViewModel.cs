@@ -191,7 +191,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        FiltersUsedBySearching _filtersUsedBySearching = new FiltersUsedBySearching();
+        readonly FiltersUsedBySearching _filtersUsedBySearching = new FiltersUsedBySearching();
         string _filterBy;
         public string FilterBy
         {
@@ -224,15 +224,15 @@ namespace Globe.Client.Localizer.ViewModels
 
         private DelegateCommand _searchCommand = null;
         public DelegateCommand SearchCommand =>
-            _searchCommand ?? (_searchCommand = new DelegateCommand(async () =>
+            _searchCommand ??= new DelegateCommand(async () =>
             {
                 UpdateFiltersUsedBySearching();
                 await OnSearch();
-            }, () => SelectedJobItem != null));
+            }, () => SelectedJobItem != null);
 
         private DelegateCommand<JobListConcept> _conceptViewEditCommand = null;
         public DelegateCommand<JobListConcept> ConceptViewEditCommand =>
-            _conceptViewEditCommand ?? (_conceptViewEditCommand = new DelegateCommand<JobListConcept>(async (conceptView) =>
+            _conceptViewEditCommand ??= new DelegateCommand<JobListConcept>(async (conceptView) =>
             {
                 ConceptDetailsBusy = true;
 
@@ -240,9 +240,11 @@ namespace Globe.Client.Localizer.ViewModels
                 {
                     var conceptDetails = await _currentJobConceptViewService.GetConceptDetailsAsync(conceptView);
 
-                    var @params = new DialogParameters();
-
-                    @params.Add(DialogParams.EDITABLE_CONCEPT, new EditableConcept(
+                    var @params = new DialogParameters
+                    {
+                        {
+                            DialogParams.EDITABLE_CONCEPT,
+                            new EditableConcept(
                         conceptView.Id,
                         conceptView.ComponentNamespace,
                         conceptView.InternalNamespace,
@@ -259,11 +261,13 @@ namespace Globe.Client.Localizer.ViewModels
                             StringType = contextView.StringType,
                             StringId = contextView.StringId,
                         }).ToList()))
-                    {
-                        MasterTranslatorComment = conceptDetails.MasterTranslatorComment,
-                        IgnoreTranslation = conceptDetails.IgnoreTranslation
-                    });
-                    @params.Add(DialogParams.LANGUAGE, _filtersUsedBySearching.Language);
+                            {
+                                MasterTranslatorComment = conceptDetails.MasterTranslatorComment,
+                                IgnoreTranslation = conceptDetails.IgnoreTranslation
+                            }
+                        },
+                        { DialogParams.LANGUAGE, _filtersUsedBySearching.Language }
+                    };
 
                     _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, async dialogResult =>
                     {
@@ -280,11 +284,11 @@ namespace Globe.Client.Localizer.ViewModels
                 {
                     ConceptDetailsBusy = false;
                 }
-            }));
+            });
 
         private DelegateCommand _exportToXmlCommand = null;
         public DelegateCommand ExportToXmlCommand =>
-            _exportToXmlCommand ?? (_exportToXmlCommand = new DelegateCommand(async () =>
+            _exportToXmlCommand ??= new DelegateCommand(async () =>
             {
                 var downloadPath = ChooseFilePathToDownloadXml();
                 if (string.IsNullOrWhiteSpace(downloadPath))
@@ -310,11 +314,11 @@ namespace Globe.Client.Localizer.ViewModels
                     .GetEvent<BackgroundBusyChangedEvent>()
                     .Publish(false);
                 }
-            }));
+            });
 
         private DelegateCommand _componentNamespaceChangeCommand = null;
         public DelegateCommand ComponentNamespaceChangeCommand =>
-            _componentNamespaceChangeCommand ?? (_componentNamespaceChangeCommand = new DelegateCommand(async () =>
+            _componentNamespaceChangeCommand ??= new DelegateCommand(async () =>
             {
                 this.FiltersBusy = true;
 
@@ -322,11 +326,11 @@ namespace Globe.Client.Localizer.ViewModels
                 this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
 
                 this.FiltersBusy = false;
-            }));
+            });
 
         private DelegateCommand _languageChangeCommand = null;
         public DelegateCommand LanguageChangeCommand =>
-            _languageChangeCommand ?? (_languageChangeCommand = new DelegateCommand(async () =>
+            _languageChangeCommand ??= new DelegateCommand(async () =>
             {
                 this.FiltersBusy = true;
 
@@ -334,7 +338,7 @@ namespace Globe.Client.Localizer.ViewModels
                 this.SelectedJobItem = this.JobItems.FirstOrDefault();
 
                 this.FiltersBusy = false;
-            }));
+            });
 
         async protected override Task OnLoad()
         {
@@ -424,12 +428,14 @@ namespace Globe.Client.Localizer.ViewModels
             ItemCount = 0;
         }
 
-        private string ChooseFilePathToDownloadXml()
+        private static string ChooseFilePathToDownloadXml()
         {
-            Microsoft.Win32.SaveFileDialog saveDialog = new Microsoft.Win32.SaveFileDialog();
-            saveDialog.FileName = "xml";
-            saveDialog.DefaultExt = ".zip";
-            saveDialog.Filter = "Zip documents (.zip)|*.zip";
+            Microsoft.Win32.SaveFileDialog saveDialog = new Microsoft.Win32.SaveFileDialog
+            {
+                FileName = "xml",
+                DefaultExt = ".zip",
+                Filter = "Zip documents (.zip)|*.zip"
+            };
 
             if (saveDialog.ShowDialog() != true)
                 return null;

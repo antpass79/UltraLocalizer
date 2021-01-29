@@ -13,13 +13,11 @@ namespace Globe.Client.Platform.Services
     public class SecureHttpClient : IAsyncSecureHttpClient
     {
         private readonly HttpClient _httpClient;
-        IEventAggregator _eventAggregator;
         private readonly IGlobeDataStorage _globeDataStorage;
 
-        public SecureHttpClient(HttpClient httpClient, IEventAggregator eventAggregator, IGlobeDataStorage globeDataStorage)
+        public SecureHttpClient(HttpClient httpClient, IGlobeDataStorage globeDataStorage)
         {
             _httpClient = httpClient;
-            _eventAggregator = eventAggregator;
             _globeDataStorage = globeDataStorage;
         }
 

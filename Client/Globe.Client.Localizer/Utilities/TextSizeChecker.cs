@@ -64,7 +64,7 @@ namespace Globe.Client.Localizer.Utilities
 
         #region Private Functions
 
-        private Size TextSize(string text, TextBlock textBlock, PreviewStyleInfo previewStyleInfo, CultureInfo cultureInfo)
+        private static Size TextSize(string text, TextBlock textBlock, PreviewStyleInfo previewStyleInfo, CultureInfo cultureInfo)
         {
             Typeface typeface = new Typeface(previewStyleInfo.FontFamily.ToString());
 
@@ -83,7 +83,7 @@ namespace Globe.Client.Localizer.Utilities
         /// <summary>
         /// Transforms pixels to device independent units (1/96 of an inch)
         /// </summary>
-        private void TransformPixelsToDIPs(double pixelX,
+        private static void TransformPixelsToDIPs(double pixelX,
                                           double pixelY,
                                           out double unitX,
                                           out double unitY)
