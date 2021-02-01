@@ -9,8 +9,6 @@ namespace Globe.Client.Localizer.Converters
 {
     class TextSizeToPreviewStateConverter : IMultiValueConverter
     {
-        readonly TextSizeChecker _textSizeChecker = new TextSizeChecker();
-
         public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
             var contextName = values[0] as string;
@@ -23,7 +21,7 @@ namespace Globe.Client.Localizer.Converters
 
             text = string.IsNullOrEmpty(text) ? string.Empty : text;
 
-            bool isValid = _textSizeChecker.Check(text, textBlock, previewStyleInfo, textBlock.Padding.Left, textBlock.Padding.Right, textBlock.Padding.Top, textBlock.Padding.Bottom, culture);
+            bool isValid = TextSizeChecker.Check(text, textBlock, previewStyleInfo, textBlock.Padding.Left, textBlock.Padding.Right, textBlock.Padding.Top, textBlock.Padding.Bottom, culture);
 
             if (isValid)
                 return PreviewState.Valid;
