@@ -12,16 +12,12 @@ namespace Globe.Client.Platform.Converters
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
             NotificationLevel level = (NotificationLevel)value;
-            switch (level)
+            return level switch
             {
-                case NotificationLevel.Error:
-                    return new SolidColorBrush(Colors.Red);
-                case NotificationLevel.Warning:
-                    return new SolidColorBrush(Colors.Orange);
-                case NotificationLevel.Info:
-                default:
-                    return new SolidColorBrush(Colors.Green);
-            }
+                NotificationLevel.Error => new SolidColorBrush(Colors.Red),
+                NotificationLevel.Warning => new SolidColorBrush(Colors.Orange),
+                _ => new SolidColorBrush(Colors.Green),
+            };
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
