@@ -242,8 +242,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             _unlinkCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
             {
                 editableContext.StringId = 0;
-                editableContext.StringEditableValue = null;
-                editableContext.StringType = StringType.String;
+                //editableContext.StringEditableValue = null;
+                //editableContext.StringType = StringType.String;
             },
             (editableContext) =>
             {
@@ -267,7 +267,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public DelegateCommand<EditableContext> KeepThisCommand =>
             _keepThisCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
             {
-                UnlinkCommand.Execute(editableContext);
+                editableContext.StringId = 0;
                 editableContext.StringEditableValue = editableContext.StringInEnglish;
             });
 
