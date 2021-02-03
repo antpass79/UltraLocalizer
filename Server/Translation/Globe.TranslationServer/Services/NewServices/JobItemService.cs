@@ -2,6 +2,7 @@
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -45,9 +46,36 @@ namespace Globe.TranslationServer.Services.NewServices
             return await Task.FromResult(jobs);
         }
 
-        public Task<IEnumerable<JobItemDTO>> GetAllAsync()
-        {
-            throw new System.NotImplementedException();
+        //Bisognerebbe utilizzare JobList invece che JobItemDTO
+        public async Task<IEnumerable<JobItemDTO>> GetAllAsync()
+        {           
+            try
+            {
+                var items = await _repository.QueryAsync();
+
+                //Se utilizzassi il joblistConcept sarebbe sbagliato. in pratica e' un concept
+                //invece io devo utilizzare un altro servizio, che mi ritorna una joblist
+
+                var result = items
+                    .Select(entity => new JobItemDTO
+                    {
+                        Id = entity.Id,
+                        Name = entity.JobName,
+                        //LanguageId = entity.JobListLanguageId,
+                        //OwnerUserName = entity.JobListUserName
+                    })
+                    .Distinct()
+                    .ToList();
+
+                var result2 = items.GroupBy(item => new { item.JobName }).Select(x => x.First()).ToList();
+
+                return await Task.FromResult(result);
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException($"Error during JobItemService.GetAllNamesAsync(), {e.Message}");
+            }
+            
         }
 
         public Task<JobItemDTO> GetAsync(int key)

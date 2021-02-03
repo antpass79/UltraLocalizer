@@ -1,6 +1,7 @@
 ﻿using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -18,6 +19,7 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpPut]
+        [AllowAnonymous]
         async public Task Put([FromBody] NewJobList newJobList)
         {
             if (!ModelState.IsValid)

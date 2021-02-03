@@ -1,6 +1,7 @@
 ﻿using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,7 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpPut]
+        [AllowAnonymous]
         async public Task Put([FromBody] SavableConceptModelDTO savableConceptModel)
         {
             if (!ModelState.IsValid)
@@ -31,6 +33,7 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         async public Task<NewConceptsResult> Post()
         {
             return await _conceptService.CheckNewConceptsAsync();
