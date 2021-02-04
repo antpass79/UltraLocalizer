@@ -91,12 +91,6 @@ namespace Globe.TranslationServer.Services.PortingAdapters
                 UltraDBExtendedStrings.Languages language = UltraDBExtendedStrings.ParseFromString(savableConceptModel.Language.IsoCoding);
                 foreach (var context in savableConceptModel.Concept.EditableContexts)
                 {
-                    // Nothing happens
-                    if (context.OldStringId != 0 && context.StringDefaultValue == context.StringEditableValue)
-                    {
-                        continue;
-                    }
-
                     if (context.OldStringId != 0)
                     {
                         _localizationContext.DeletebyIDStringIDConcept2Context(context.OldStringId, context.Concept2ContextId);

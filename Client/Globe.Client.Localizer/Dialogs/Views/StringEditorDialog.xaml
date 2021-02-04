@@ -11,7 +11,7 @@
              xmlns:dto="clr-namespace:Globe.Shared.DTOs;assembly=Globe.Shared"
              prism:ViewModelLocator.AutoWireViewModel="True"
              BorderThickness="5" BorderBrush="#05163D"
-             MaxWidth="1000"
+             MaxWidth="1600"
              MaxHeight="1200"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -27,6 +27,7 @@
     <UserControl.Resources>
         <platform:BooleanToVisibilityConverter x:Key="IsEnglishConverter" />
         <platform:BooleanToVisibilityConverter x:Key="InvertedIsEnglishConverter" True="Collapsed" False="Visible" />
+        <platform:BooleanToVisibilityConverter x:Key="IsDevelopperStringVisibleConverter" True="Visible" False="Collapsed" />
         <platform:BooleanConverter x:Key="IsMasterTranslatorCommentConverter" True="False" False="True" />
         <platform:BooleanConverter x:Key="IsMasterTranslatorConverter" />
         <platform:NullValueToBooleanConverter x:Key="NullValueToBooleanConverter" />
@@ -166,6 +167,14 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTextColumn Binding="{Binding Name}" Header="Name">
+                            <DataGridTextColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                </DataTemplate>
+                            </DataGridTextColumn.HeaderTemplate>
+                        </DataGridTextColumn>
+                        <DataGridTextColumn Binding="{Binding StringDefaultValue}" Header="Developer String" Visibility="{Binding Data.IsMasterTranslatorCommentEnabled, Converter={StaticResource IsDevelopperStringVisibleConverter}, Source={StaticResource proxy}}">
                             <DataGridTextColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
