@@ -39,9 +39,6 @@ namespace Globe.TranslationServer.Services.NewServices
                 .OrderBy(item => item.Name)
                 .ToList();
 
-            if (isInAdministratorGroup && jobs.Count > 0)
-                jobs.Insert(0, new JobItemDTO { Id = 0, IsoId = 0, Name = "all" });
-
             return await Task.FromResult(jobs);
         }
 
