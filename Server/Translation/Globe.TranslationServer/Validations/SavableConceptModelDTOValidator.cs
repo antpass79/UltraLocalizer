@@ -12,8 +12,8 @@ namespace Globe.TranslationServer.Validations
                 .NotEmpty();
             RuleFor(model => model.Concept.EditableContexts)
                 .NotEmpty();
-            RuleFor(model => model.Concept.EditableContexts
-                .All(localizeString => !string.IsNullOrEmpty(localizeString.StringEditableValue)));              
+            RuleForEach(model => model.Concept.EditableContexts)
+                .Must(editableContext => !string.IsNullOrEmpty(editableContext.StringEditableValue));
             RuleFor(model => model.Language)
                 .NotEmpty();
         }

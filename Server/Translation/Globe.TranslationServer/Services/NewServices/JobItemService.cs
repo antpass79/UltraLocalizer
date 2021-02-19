@@ -43,28 +43,20 @@ namespace Globe.TranslationServer.Services.NewServices
             return await Task.FromResult(jobs);
         }
 
-        //Bisognerebbe utilizzare JobList invece che JobItemDTO
         public async Task<IEnumerable<JobItemDTO>> GetAllAsync()
         {           
             try
             {
                 var items = await _repository.QueryAsync();
 
-                //Se utilizzassi il joblistConcept sarebbe sbagliato. in pratica e' un concept
-                //invece io devo utilizzare un altro servizio, che mi ritorna una joblist
-
                 var result = items
                     .Select(entity => new JobItemDTO
                     {
                         Id = entity.Id,
-                        Name = entity.JobName,
-                        //LanguageId = entity.JobListLanguageId,
-                        //OwnerUserName = entity.JobListUserName
+                        Name = entity.JobName
                     })
                     .Distinct()
                     .ToList();
-
-                var result2 = items.GroupBy(item => new { item.JobName }).Select(x => x.First()).ToList();
 
                 return await Task.FromResult(result);
             }

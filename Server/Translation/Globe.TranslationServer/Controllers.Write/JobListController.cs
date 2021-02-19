@@ -19,7 +19,6 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpPut]
-        [AllowAnonymous]
         async public Task Put([FromBody] NewJobList newJobList)
         {
             if (!ModelState.IsValid)

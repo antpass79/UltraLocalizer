@@ -21,7 +21,6 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpPut]
-        [AllowAnonymous]
         async public Task Put([FromBody] SavableConceptModelDTO savableConceptModel)
         {
             if (!ModelState.IsValid)
@@ -33,7 +32,6 @@ namespace Globe.TranslationServer.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
         async public Task<NewConceptsResult> Post()
         {
             return await _conceptService.CheckNewConceptsAsync();
