@@ -36,6 +36,8 @@
         <platform:BooleanConverter True="False" False="True" x:Key="LinkToEnabledConverter" />
         <converters:ContextNameToPreviewStyleInfoConverter x:Key="ContextNameToPreviewStyleInfoConverter" />
         <converters:TextSizeToPreviewStateConverter x:Key="TextSizeToPreviewStateConverter" />
+        <converters:IsEnglishLinkEnableConverter x:Key="IsEnglishLinkEnableConverter" />
+        <converters:IsEnglishLinkEditStringEnableConverter x:Key="IsEnglishLinkEditStringEnableConverter" />
 
         <Style TargetType="controls:LocLabel" x:Key="SectionTitle">
             <Setter Property="Margin" Value="5" />
@@ -143,7 +145,10 @@
                     </controls:LocDataGrid.Resources>
                     <DataGrid.Columns>
                         <!-- Fixed Rows Start -->
-                        <DataGridTemplateColumn Width="50" CanUserResize="False" IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
+                        <DataGridTemplateColumn Width="50" 
+                                                CanUserResize="False"
+                                                Visibility="{Binding Data.IsEnglish, Converter={StaticResource IsEnglishConverter}, Source={StaticResource proxy}}"
+                                                IsReadOnly="{Binding SelectedStringView, Converter={StaticResource NullValueToBooleanConverter}}">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Grid HorizontalAlignment="Center">
@@ -209,8 +214,18 @@
                             </DataGridTemplateColumn.HeaderTemplate>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <controls:LocTextBox Width="150" TextWrapping="Wrap" Text="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" platform:TextChangedBehaviour.Command="{Binding Path=DataContext.LocalizeChangeCommand, 
-                                        RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}" IsEnabled="{Binding DataContext.Linked, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource LinkToEnabledConverter}}"/>
+                                    <controls:LocTextBox 
+                                        Width="150" 
+                                        TextWrapping="Wrap" 
+                                        Text="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" 
+                                        platform:TextChangedBehaviour.Command="{Binding Path=DataContext.LocalizeChangeCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}"> 
+                                        <controls:LocTextBox.IsEnabled>
+                                            <MultiBinding Converter="{StaticResource IsEnglishLinkEditStringEnableConverter}">
+                                                <Binding Path="Linked" />
+                                                <Binding Path="DataContext.IsEnglish" RelativeSource="{RelativeSource AncestorType=UserControl}"/>
+                                            </MultiBinding>
+                                        </controls:LocTextBox.IsEnabled>
+                                    </controls:LocTextBox>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -227,8 +242,14 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <controls:LocComboBox ItemsSource="{Binding Source={StaticResource stringTypes}}" 
-                                                          SelectedValue="{Binding DataContext.StringType, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
-                                                          IsEnabled="{Binding DataContext.Linked, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource LinkToEnabledConverter}}"/>
+                                                          SelectedValue="{Binding DataContext.StringType, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        <controls:LocComboBox.IsEnabled>
+                                            <MultiBinding Converter="{StaticResource IsEnglishLinkEditStringEnableConverter}">
+                                                <Binding Path="Linked" />
+                                                <Binding Path="DataContext.IsEnglish" RelativeSource="{RelativeSource AncestorType=UserControl}"/>
+                                            </MultiBinding>
+                                        </controls:LocComboBox.IsEnabled>
+                                    </controls:LocComboBox>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
