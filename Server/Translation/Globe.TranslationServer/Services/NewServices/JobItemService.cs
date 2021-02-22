@@ -2,6 +2,7 @@
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -39,15 +40,31 @@ namespace Globe.TranslationServer.Services.NewServices
                 .OrderBy(item => item.Name)
                 .ToList();
 
-            if (isInAdministratorGroup && jobs.Count > 0)
-                jobs.Insert(0, new JobItemDTO { Id = 0, IsoId = 0, Name = "all" });
-
             return await Task.FromResult(jobs);
         }
 
-        public Task<IEnumerable<JobItemDTO>> GetAllAsync()
-        {
-            throw new System.NotImplementedException();
+        public async Task<IEnumerable<JobItemDTO>> GetAllAsync()
+        {           
+            try
+            {
+                var items = await _repository.QueryAsync();
+
+                var result = items
+                    .Select(entity => new JobItemDTO
+                    {
+                        Id = entity.Id,
+                        Name = entity.JobName
+                    })
+                    .Distinct()
+                    .ToList();
+
+                return await Task.FromResult(result);
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException($"Error during JobItemService.GetAllNamesAsync(), {e.Message}");
+            }
+            
         }
 
         public Task<JobItemDTO> GetAsync(int key)
