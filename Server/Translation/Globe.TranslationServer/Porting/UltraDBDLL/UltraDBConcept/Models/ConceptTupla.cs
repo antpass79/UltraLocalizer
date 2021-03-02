@@ -12,5 +12,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models
         public string ContextId { get; set; }
         public string Comments { get; set; }
         public IEnumerable<string> Strings { get; set; }
+        public string FileName { get; set; }
     }
 }

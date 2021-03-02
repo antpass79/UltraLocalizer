@@ -21,6 +21,7 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly INotificationService _notificationService;
         private readonly IJobListStatusFiltersService _jobListStatusFiltersService;
         private readonly IJobListStatusViewService _jobListStatusViewService;
+        private readonly IVisibilityFiltersService _visibilityFiltersService;
 
         public JobListStatusWindowViewModel(
             IIdentityStore identityStore,
@@ -29,13 +30,15 @@ namespace Globe.Client.Localizer.ViewModels
             INotificationService notificationService,
             IJobListStatusFiltersService jobListStatusFiltersService,
             IJobListStatusViewService jobListStatusViewService,
-            ILocalizationAppService localizationAppService)
+            ILocalizationAppService localizationAppService,
+            IVisibilityFiltersService visibilityFiltersService)
             : base(identityStore, eventAggregator, localizationAppService)
         {
             _logService = logService;
             _notificationService = notificationService;
             _jobListStatusFiltersService = jobListStatusFiltersService;
             _jobListStatusViewService = jobListStatusViewService;
+            _visibilityFiltersService = visibilityFiltersService;
         }
 
         bool _conceptDetailsBusy;
@@ -79,6 +82,17 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
+        bool _showFilters = true;
+        public bool ShowFilters
+        {
+            get => _showFilters;
+            set
+            {
+                _visibilityFiltersService.Visible = value;
+                SetProperty(ref _showFilters, value);
+            }
+        }
+
         string _stringInserted = string.Empty;
         public string StringInserted
         {
@@ -96,26 +110,6 @@ namespace Globe.Client.Localizer.ViewModels
             set
             {
                 SetProperty(ref _conceptInserted, value);
-            }
-        }
-
-        IEnumerable<JobItem> _jobLists;
-        public IEnumerable<JobItem> JobLists
-        {
-            get => _jobLists;
-            set
-            {
-                SetProperty(ref _jobLists, value);
-            }
-        }
-
-        JobItem _selectedJobList;
-        public JobItem SelectedJobList
-        {
-            get => _selectedJobList;
-            set
-            {
-                SetProperty(ref _selectedJobList, value);
             }
         }
 
@@ -196,18 +190,6 @@ namespace Globe.Client.Localizer.ViewModels
                 await OnSearch();
             });
 
-        private DelegateCommand _userNameChangeCommand = null;
-        public DelegateCommand UserNameChangeCommand =>
-            _userNameChangeCommand ??= new DelegateCommand(async () =>
-            {
-                this.FiltersBusy = true;
-
-                this.JobLists = await _jobListStatusFiltersService.GetJobListsAsync(this.SelectedApplicationUser != null ? this.SelectedApplicationUser.UserName : SharedConstants.USER_NAME_ALL);
-                this.SelectedJobList = this.JobLists.FirstOrDefault();
-
-                this.FiltersBusy = false;
-            });
-
         async protected override Task OnLoad()
         {
             await InitializeFilters();
@@ -225,15 +207,15 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {
+                ShowFilters = _visibilityFiltersService.Visible;
+
                 JobListStatuses = await _jobListStatusFiltersService.GetJobListStatusesAsync();
-                ApplicationUsers = await _jobListStatusFiltersService.GetApplicationUsersAsync();
-                JobLists = await _jobListStatusFiltersService.GetJobListsAsync(SelectedApplicationUser != null ? SelectedApplicationUser.UserName : SharedConstants.USER_NAME_ALL);
+                ApplicationUsers = await _jobListStatusFiltersService.GetApplicationUsersAsync(Identity.Name);
                 Languages = await _jobListStatusFiltersService.GetLanguagesAsync();
 
-                SelectedJobListStatus = this.JobListStatuses.FirstOrDefault();
-                SelectedApplicationUser = this.ApplicationUsers.FirstOrDefault();
-                SelectedJobList = this.JobLists.FirstOrDefault();
                 SelectedLanguage = this.Languages.FirstOrDefault();
+                SelectedJobListStatus = this.JobListStatuses.FirstOrDefault();
+                SelectedApplicationUser = this.ApplicationUsers.Where(item => item.UserName == Identity.Name).FirstOrDefault();
             }
             catch (Exception e)
             {
@@ -252,11 +234,10 @@ namespace Globe.Client.Localizer.ViewModels
             JobListViews = null;
 
             try
-            {
+            {   
                 if (
                     SelectedJobListStatus == null ||
                     SelectedApplicationUser == null ||
-                    SelectedJobList == null ||
                     SelectedLanguage == null)
                 {
                     JobListViews = null;
@@ -266,9 +247,8 @@ namespace Globe.Client.Localizer.ViewModels
                     JobListViews = await _jobListStatusViewService.GetJobListViewsAsync(
                         new JobListSearch
                         {   
-                            //Forse il BindableJobListStatus non ha senso di esistere?
                             LanguageId = SelectedLanguage.Id,
-                            JobListName = SelectedJobList.Name,
+                            JobListStatus = SelectedJobListStatus.Description,
                             //JobListStatusId = string.IsNullOrWhiteSpace(SelectedJobListStatus) ? default(JobListStatus) : Enum.Parse<JobListStatus>(SelectedJobListStatus),
                             UserName = SelectedApplicationUser.UserName
                         });

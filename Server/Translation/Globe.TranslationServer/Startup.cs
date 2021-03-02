@@ -23,6 +23,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using System;
 using System.Reflection;
 using System.Threading.Tasks;
 
@@ -52,7 +53,9 @@ namespace Globe.TranslationServer
                 {
                     if (!options.IsConfigured)
                     {
-                        options.UseSqlServer(_configuration.GetConnectionString(Constants.DEFAULT_CONNECTION_STRING));
+                        options.UseSqlServer(
+                            _configuration.GetConnectionString(Constants.DEFAULT_CONNECTION_STRING),
+                            options => options.CommandTimeout((int)TimeSpan.FromMinutes(3).TotalSeconds));
                     }
                 });
 
@@ -78,8 +81,7 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncReadRepository<LocJobList>, AsyncGenericRepository<LocalizationContext, LocJobList>>();
 
             // Services
-            services
-                .AddScoped<XmlManager, XmlManager>()
+            services 
                 .AddScoped<UltraDBEditConcept, UltraDBEditConcept>()
                 .AddScoped<UltraDBConcept, UltraDBConcept>()
                 .AddScoped<UltraDBGlobal, UltraDBGlobal>()
@@ -88,6 +90,7 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>()
                 .AddScoped<IUltraDBJobGlobal, UltraDBJobGlobal>();
             services
+                .AddScoped<IXmlService, XmlService>()
                 .AddScoped<ILocalizationResourceBuilder, Services.NewServices.ScopedLocalizationResourceBuilder>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncLanguageService, Services.NewServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IComponentNamespaceService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()
@@ -109,7 +112,7 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncNotTranslatedConceptViewService, Services.NewServices.NotTranslatedConceptViewService>() //.AddScoped<IAsyncNotTranslatedConceptViewService, NotTranslatedConceptViewService>()
                 .AddScoped<IComponentNamespaceGroupService, Services.NewServices.ComponentNamespaceGroupService>() //.AddScoped<IComponentNamespaceGroupService, ComponentNamespaceGroupService>()
                 .AddScoped<IAsyncJobListService, JobListService>()
-                .AddScoped<IAsyncXmlService, XmlService>()
+                .AddScoped<IAsyncXmlZipService, XmlZipService>()
 
                 .AddScoped<ILogService, ConsoleLogService>();
 

@@ -3,6 +3,7 @@ using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
 using Globe.Shared.DTOs;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -23,16 +24,59 @@ namespace Globe.Client.Localizer.Services
         async public Task<IEnumerable<JobList>> GetJobListViewsAsync(JobListSearch search)
         {
             //var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_JobListView, search);
-            var result = new List<JobList>();
+            var joblists = new List<JobList>();
 
-            result.Add(new JobList { Id = 213, LanguageId = 1, Name = "MockJobList1", OwnerUserName = "anto", Status = JobListStatus.DRAFT });
-            result.Add(new JobList { Id = 31321, LanguageId = 4, Name = "MockJobList4", OwnerUserName = "anto", Status = JobListStatus.SAVED });
-            result.Add(new JobList { Id = 1233, LanguageId = 3, Name = "MockJobList3", OwnerUserName = "anto", Status = JobListStatus.ASSIGNED });
-            result.Add(new JobList { Id = 645, LanguageId = 1, Name = "MockJobListTest", OwnerUserName = "laura.bigi", Status = JobListStatus.TO_BE_REVISE });
+            joblists.Add(new JobList 
+            { 
+                Id = 213, 
+                LanguageId = 1, 
+                Name = "MockJobList1", 
+                OwnerUserName = "anto", 
+                Status = new JobListStatus { Description = "Assigned" },//Status = JobListStatus.Assigned,
+                TotalConcepts = 1612,
+                NumberTranslations = 0,
+                NumberTranslationsDraft = 0              
+            });
+            joblists.Add(new JobList
+            {
+                Id = 31321,
+                LanguageId = 4,
+                Name = "MockJobList2",
+                OwnerUserName = "anto",
+                Status = new JobListStatus { Description = "Saved" }, //JobListStatus.Saved,
+                TotalConcepts = 3320,
+                NumberTranslations = 3320,
+                NumberTranslationsDraft = 0
+            });
+            joblists.Add(new JobList
+            {
+                Id = 1233,
+                LanguageId = 3,
+                Name = "MockJobList3",
+                OwnerUserName = "anto",
+                Status = new JobListStatus { Description = "ToBeRevised" },//JobListStatus.ToBeRevised,
+                TotalConcepts = 80,
+                NumberTranslations = 0,
+                NumberTranslationsDraft = 80
+            });
+            joblists.Add(new JobList
+            {
+                Id = 645,
+                LanguageId = 1,
+                Name = "MockJobList4",
+                OwnerUserName = "laura.bigi",
+                Status = new JobListStatus { Description = "Closed" },//JobListStatus.Closed,
+                TotalConcepts = 250,
+                NumberTranslations = 250,
+                NumberTranslationsDraft = 0
+            });
+
+            //questa where lo fara' il servizio sul Server, passadogli la search
+            //var result = joblists.Where(item => item.Status.Description == search.JobListStatus && item.OwnerUserName == search.UserName && item.LanguageId == search.LanguageId);
 
             //return await result.GetValue<IEnumerable<JobList>>();
 
-            return await Task.FromResult(result);
+            return await Task.FromResult(joblists);
         }
     }
 }

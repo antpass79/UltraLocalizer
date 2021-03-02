@@ -9,6 +9,7 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <platform:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" True="Visible" False="Collapsed" />
         <Style TargetType="Panel" x:Key="SectionPanel">
             <Setter Property="Background" Value="WhiteSmoke" />
             <Setter Property="Margin" Value="3" />
@@ -22,9 +23,8 @@
 
     <controls:LocGrid>
         <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
-
-            <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}" DockPanel.Dock="Left" Width="350">
-                <controls:LocGrid DockPanel.Dock="Top"  Style="{StaticResource SectionPanel}">
+            <controls:LocDockPanel Style="{StaticResource LocDockPanelStyle}" DockPanel.Dock="Left">
+                <controls:LocGrid DockPanel.Dock="Top"  Style="{StaticResource SectionPanel}"  Width="350" Visibility="{Binding ShowFilters, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
@@ -38,15 +38,13 @@
                     </Grid.ColumnDefinitions>
 
                     <controls:LocLabel Style="{StaticResource LocLabelTitle}" Grid.ColumnSpan="2" Content="{Binding Localize[Filters]}"/>
-                    <controls:LocTextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Localize[Language]}"/>
-                    <controls:LocComboBox  Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description"  ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
-                    <controls:LocTextBlock Grid.Row="1" Grid.Column="0">Status</controls:LocTextBlock>
-                    <controls:LocComboBox  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding JobListStatuses}" SelectedItem="{Binding SelectedJobListStatus}" DisplayMemberPath="Description" ToolTip="{Binding SelectedJobListStatus.Name}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
-                    <controls:LocTextBlock Grid.Row="2" Grid.Column="0">User Name</controls:LocTextBlock>
-                    <controls:LocComboBox  Grid.Row="2" Grid.Column="1" ItemsSource="{Binding ApplicationUsers}" SelectedItem="{Binding SelectedApplicationUser}" DisplayMemberPath="UserName" platform:SelectionChangedBehaviour.Command="{Binding UserNameChangeCommand}" ToolTip="{Binding SelectedApplicationUser.UserName}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
-                    <controls:LocTextBlock Grid.Row="3" Grid.Column="0">Job List Name</controls:LocTextBlock>
-                    <controls:LocComboBox  Grid.Row="3" Grid.Column="1" ItemsSource="{Binding JobLists}" SelectedItem="{Binding SelectedJobList}" DisplayMemberPath="Name" ToolTip="{Binding SelectedJobList.Name}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
-                    
+                    <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Localize[Language]}"/>
+                    <controls:LocComboBox  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description"  ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
+                    <controls:LocTextBlock Grid.Row="2" Grid.Column="0">Status</controls:LocTextBlock>
+                    <controls:LocComboBox  Grid.Row="2" Grid.Column="1" ItemsSource="{Binding JobListStatuses}" SelectedItem="{Binding SelectedJobListStatus}" DisplayMemberPath="Description" ToolTip="{Binding SelectedJobListStatus.Description}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
+                    <controls:LocTextBlock Grid.Row="3" Grid.Column="0">User Name</controls:LocTextBlock>
+                    <controls:LocComboBox  Grid.Row="3" Grid.Column="1" ItemsSource="{Binding ApplicationUsers}" SelectedItem="{Binding SelectedApplicationUser}" DisplayMemberPath="UserName" ToolTip="{Binding SelectedApplicationUser.UserName}"  ToolTipService.InitialShowDelay="500"></controls:LocComboBox>
+                  
                     <Button Grid.Row="4" Grid.Column="1" Command="{Binding SearchCommand}" Content="{Binding Localize[Search]}"/>
 
                     <platform:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
@@ -85,7 +83,7 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Status}" Header="Status">
+                            <DataGridTextColumn Binding="{Binding Status.Description}" Header="Status">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
@@ -93,7 +91,7 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Concept}" Header="Concept Localized">
+                            <DataGridTextColumn Binding="{Binding TotalConcepts}" Header="Total Concepts">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
@@ -101,7 +99,15 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Concept}" Header="%">
+                            <DataGridTextColumn Binding="{Binding NumberTranslationsDraft}" Header="Drafted">
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding NumberTranslations}" Header="Translated">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=

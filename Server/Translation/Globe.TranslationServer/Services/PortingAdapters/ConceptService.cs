@@ -1,11 +1,9 @@
-﻿using DocumentFormat.OpenXml.InkML;
-using Globe.Shared.DTOs;
+﻿using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
-using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Utilities;
 using System;
 using System.IO;
@@ -25,7 +23,7 @@ namespace Globe.TranslationServer.Services.PortingAdapters
         private readonly UltraDBStrings _ultraDBStrings;
         private readonly UltraDBStrings2Context _ultraDBStrings2Context;
         private readonly UltraDBConcept _ultraDBConcept;
-        private readonly XmlManager _xmlManager;
+        private readonly IXmlService _xmlService;
         
         public ConceptService(
             IAsyncNotificationService notificationService,
@@ -33,14 +31,14 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             UltraDBStrings ultraDBStrings,
             UltraDBStrings2Context ultraDBStrings2Context,
             UltraDBConcept ultraDBConcept,
-            XmlManager xmlManager)
+            IXmlService xmlService)
         {
             _notificationService = notificationService;
             _localizationContext = localizationContext;
             _ultraDBStrings = ultraDBStrings;
             _ultraDBStrings2Context = ultraDBStrings2Context;
             _ultraDBConcept = ultraDBConcept;
-            _xmlManager = xmlManager;
+            _xmlService = xmlService;
         }
 
         async public Task SaveAsync(SavableConceptModelDTO savableConceptModel)
@@ -113,22 +111,17 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
         async public Task<NewConceptsResult> CheckNewConceptsAsync()
         {
-            var xmlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), Constants.XML_FOLDER);
-            _xmlManager.XmlDirectory = xmlFilePath;
-            _xmlManager.LoadXmlOnly();
-            _xmlManager.Completed.WaitOne();
-            _xmlManager.ChangesFound = false;
-            _xmlManager.InsertedCount = 0;
-            _xmlManager.UpdatedCount = 0;
-            _xmlManager.FillDB(_xmlManager.KeyTuplas);
+            //_xmlService.LoadXml();
+            //_xmlService.FillDB();
+            await _xmlService.UpdateDatabaseAsync();
 
             var result = new NewConceptsResult
             {
-                InsertedCount = _xmlManager.InsertedCount,
-                UpdatedCount = _xmlManager.UpdatedCount,
+                InsertedCount = _xmlService.InsertedCount,
+                UpdatedCount = _xmlService.UpdatedCount,
                 IsNotified = true
             };
-            if(_xmlManager.ChangesFound)
+            if(_xmlService.ChangesFound)
             {
                 result.IsNotified = false;
                 await _notificationService.ConceptsChanged(result);
