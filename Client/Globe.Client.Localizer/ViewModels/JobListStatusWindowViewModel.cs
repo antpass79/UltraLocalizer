@@ -1,5 +1,6 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform;
 using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
@@ -22,6 +23,7 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IJobListStatusFiltersService _jobListStatusFiltersService;
         private readonly IJobListStatusViewService _jobListStatusViewService;
         private readonly IVisibilityFiltersService _visibilityFiltersService;
+        private readonly IViewNavigationService _viewNavigationService;
 
         public JobListStatusWindowViewModel(
             IIdentityStore identityStore,
@@ -31,7 +33,8 @@ namespace Globe.Client.Localizer.ViewModels
             IJobListStatusFiltersService jobListStatusFiltersService,
             IJobListStatusViewService jobListStatusViewService,
             ILocalizationAppService localizationAppService,
-            IVisibilityFiltersService visibilityFiltersService)
+            IVisibilityFiltersService visibilityFiltersService,
+            IViewNavigationService viewNavigationService)
             : base(identityStore, eventAggregator, localizationAppService)
         {
             _logService = logService;
@@ -39,6 +42,7 @@ namespace Globe.Client.Localizer.ViewModels
             _jobListStatusFiltersService = jobListStatusFiltersService;
             _jobListStatusViewService = jobListStatusViewService;
             _visibilityFiltersService = visibilityFiltersService;
+            _viewNavigationService = viewNavigationService;
         }
 
         bool _conceptDetailsBusy;
@@ -93,24 +97,21 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        string _stringInserted = string.Empty;
-        public string StringInserted
+        float _completationPercentage = 0.0F;
+        public float CompletationPercentage
         {
-            get => _stringInserted;
+            get => _completationPercentage;
             set 
             { 
-                SetProperty(ref _stringInserted, value); 
+                SetProperty(ref _completationPercentage, value); 
             }
         }
 
-        string _conceptInserted = string.Empty;
-        public string ConceptInserted
+        private bool _isMasterTranslator = false;
+        public bool IsMasterTranslator
         {
-            get => _conceptInserted;
-            set
-            {
-                SetProperty(ref _conceptInserted, value);
-            }
+            get { return _isMasterTranslator; }
+            set { SetProperty(ref _isMasterTranslator, value); }
         }
 
         IEnumerable<BindableJobListStatus> _jobListStatuses;
@@ -190,6 +191,15 @@ namespace Globe.Client.Localizer.ViewModels
                 await OnSearch();
             });
 
+        private DelegateCommand<JobList> _goToJobListCommand = null;
+        public DelegateCommand<JobList> GoToJobListCommand =>
+            _goToJobListCommand ??= new DelegateCommand<JobList>((jobList) =>
+            {
+                //TODO: come faccio ad aprire gia' sulla joblist corretta? Search con parametri che recupero da parameter?
+                //Lancio un OnChangePage?
+                _viewNavigationService.NavigateTo(ViewNames.CURRENT_JOB_VIEW);
+            });
+
         async protected override Task OnLoad()
         {
             await InitializeFilters();
@@ -215,7 +225,9 @@ namespace Globe.Client.Localizer.ViewModels
 
                 SelectedLanguage = this.Languages.FirstOrDefault();
                 SelectedJobListStatus = this.JobListStatuses.FirstOrDefault();
-                SelectedApplicationUser = this.ApplicationUsers.Where(item => item.UserName == Identity.Name).FirstOrDefault();
+                SelectedApplicationUser = this.ApplicationUsers.FirstOrDefault();
+                //SelectedApplicationUser = this.ApplicationUsers.Where(item => item.UserName == Identity.Name).FirstOrDefault();
+                IsMasterTranslator = UserRoles.Contains(Roles.MasterTranslator);
             }
             catch (Exception e)
             {

@@ -29,7 +29,8 @@ namespace Globe.Client.Localizer.Services
             joblists.Add(new JobList 
             { 
                 Id = 213, 
-                LanguageId = 1, 
+                LanguageId = 1,
+                Language = "English",
                 Name = "MockJobList1", 
                 OwnerUserName = "anto", 
                 Status = new JobListStatus { Description = "Assigned" },//Status = JobListStatus.Assigned,
@@ -41,9 +42,10 @@ namespace Globe.Client.Localizer.Services
             {
                 Id = 31321,
                 LanguageId = 4,
+                Language = "English",
                 Name = "MockJobList2",
                 OwnerUserName = "anto",
-                Status = new JobListStatus { Description = "Saved" }, //JobListStatus.Saved,
+                Status = new JobListStatus { Description = "Saved" },
                 TotalConcepts = 3320,
                 NumberTranslations = 3320,
                 NumberTranslationsDraft = 0
@@ -52,9 +54,10 @@ namespace Globe.Client.Localizer.Services
             {
                 Id = 1233,
                 LanguageId = 3,
+                Language = "Italian",
                 Name = "MockJobList3",
                 OwnerUserName = "anto",
-                Status = new JobListStatus { Description = "ToBeRevised" },//JobListStatus.ToBeRevised,
+                Status = new JobListStatus { Description = "ToBeRevised" },
                 TotalConcepts = 80,
                 NumberTranslations = 0,
                 NumberTranslationsDraft = 80
@@ -62,13 +65,38 @@ namespace Globe.Client.Localizer.Services
             joblists.Add(new JobList
             {
                 Id = 645,
-                LanguageId = 1,
+                LanguageId = 5,
+                Language = "Russian",
                 Name = "MockJobList4",
                 OwnerUserName = "laura.bigi",
-                Status = new JobListStatus { Description = "Closed" },//JobListStatus.Closed,
+                Status = new JobListStatus { Description = "Closed" },
                 TotalConcepts = 250,
                 NumberTranslations = 250,
                 NumberTranslationsDraft = 0
+            });
+            joblists.Add(new JobList
+            {
+                Id = 234,
+                LanguageId = 1,
+                Language = "French",
+                Name = "MockJobList5",
+                OwnerUserName = "laura.bigi",
+                Status = new JobListStatus { Description = "Assigned" },
+                TotalConcepts = 370,
+                NumberTranslations = 0,
+                NumberTranslationsDraft = 27
+            });
+            joblists.Add(new JobList
+            {
+                Id = 777,
+                LanguageId = 5,
+                Language = "Russian",
+                Name = "Delitto_e_castigo",
+                OwnerUserName = "fedor.dostoevskij",
+                Status = new JobListStatus { Description = "Assigned" },
+                TotalConcepts = 1111,
+                NumberTranslations = 0,
+                NumberTranslationsDraft = 1111
             });
 
             //questa where lo fara' il servizio sul Server, passadogli la search
