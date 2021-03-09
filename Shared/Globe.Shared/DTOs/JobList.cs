@@ -9,7 +9,8 @@ namespace Globe.Shared.DTOs
         public string Language { get; set; }
         public string OwnerUserName { get; set; }
         public string Name { get; set; }
-        public JobListStatus Status { get; set; }    
+        public JobListStatus Status { get; set; }  
+        public JobListStatus NextStatus { get; set; }
         public int TotalConcepts { get; set; }
         public int NumberTranslationsDraft { get; set; }
         public int NumberTranslations { get; set; }

@@ -72,7 +72,7 @@
                             <DataGridTemplateColumn Width="100" CanUserResize="False">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <Button HorizontalAlignment="Center" MinWidth="50" Command="{Binding ElementName=jobListGrid, Path=DataContext.GoToJobListCommand}" CommandParameter="{Binding}" Content="{Binding Localize[Open]}"/>
+                                        <Button HorizontalAlignment="Center" MinWidth="50" Command="{Binding ElementName=jobListGrid, Path=DataContext.GoToJobListCommand}" CommandParameter="{Binding}" Content="Open"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
@@ -166,7 +166,7 @@
                                                     MinWidth="0" 
                                                     Width="120" 
                                                     ToolTip="Promote to Closed" 
-                                                    Command="{Binding FromAssignedToClosedCommand}" 
+                                                    Command="{Binding ElementName=jobListGrid, Path=DataContext.FromAssignedToClosedCommand}" 
                                                     CommandParameter="{Binding}" 
                                                     Content="Promoted To Closed" 
                                                     IsEnabled="{Binding IsCompleted, Converter={StaticResource IsCompletedToEnableConverter}}" >
@@ -183,8 +183,8 @@
                                                     MinWidth="0" 
                                                     Width="120" 
                                                     ToolTip="Promote to Closed" 
-                                                    Command="{Binding FromToBeRevisedToClosedCommand}" 
-                                                    CommandParameter="{Binding}" Content="Promoted To Closed"
+                                                    Command="{Binding ElementName=jobListGrid, Path=DataContext.FromToBeRevisedToClosedCommand}" 
+                                                    CommandParameter="{Binding}" 
                                                     IsEnabled="{Binding IsCompleted, Converter={StaticResource IsCompletedToEnableConverter}}">
                                                 <Button.Visibility>
                                                     <MultiBinding Converter="{StaticResource FromToBeRevisedToClosedVisibilityConverter}">
@@ -199,7 +199,7 @@
                                                     MinWidth="0" 
                                                     Width="120" 
                                                     ToolTip="Promote to Closed" 
-                                                    Command="{Binding FromClosedToSavedCommand}" 
+                                                    Command="{Binding ElementName=jobListGrid, Path=DataContext.FromClosedToSavedCommand}" 
                                                     CommandParameter="{Binding}" 
                                                     Content="Promoted To Saved" >
                                                 <Button.Visibility>
@@ -215,7 +215,7 @@
                                                     MinWidth="0" 
                                                     Width="120" 
                                                     ToolTip="Put in To Be Revised" 
-                                                    Command="{Binding FromClosedToToBeRevisedCommand}" 
+                                                    Command="{Binding ElementName=jobListGrid, Path=DataContext.FromClosedToToBeRevisedCommand}" 
                                                     CommandParameter="{Binding}" 
                                                     Content="Put in To Be Revised" >
                                                 <Button.Visibility>
@@ -231,7 +231,7 @@
                                                     MinWidth="0" 
                                                     Width="120" 
                                                     ToolTip="Logical Delete" 
-                                                    Command="{Binding FromSavedToDeletedCommand}" 
+                                                    Command="{Binding ElementName=jobListGrid, Path=DataContext.FromSavedToDeletedCommand}" 
                                                     CommandParameter="{Binding}" 
                                                     Content="Logical Delete" >
                                                 <Button.Visibility>

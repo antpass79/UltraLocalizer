@@ -13,6 +13,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Globe.Client.Localizer.ViewModels
 {
@@ -22,6 +23,7 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly INotificationService _notificationService;
         private readonly IJobListStatusFiltersService _jobListStatusFiltersService;
         private readonly IJobListStatusViewService _jobListStatusViewService;
+        private readonly IJobListStatusChangeService _jobListStatusChangeService;
         private readonly IVisibilityFiltersService _visibilityFiltersService;
         private readonly IViewNavigationService _viewNavigationService;
 
@@ -32,6 +34,7 @@ namespace Globe.Client.Localizer.ViewModels
             INotificationService notificationService,
             IJobListStatusFiltersService jobListStatusFiltersService,
             IJobListStatusViewService jobListStatusViewService,
+            IJobListStatusChangeService jobListStatusChangeService,
             ILocalizationAppService localizationAppService,
             IVisibilityFiltersService visibilityFiltersService,
             IViewNavigationService viewNavigationService)
@@ -41,6 +44,7 @@ namespace Globe.Client.Localizer.ViewModels
             _notificationService = notificationService;
             _jobListStatusFiltersService = jobListStatusFiltersService;
             _jobListStatusViewService = jobListStatusViewService;
+            _jobListStatusChangeService = jobListStatusChangeService;
             _visibilityFiltersService = visibilityFiltersService;
             _viewNavigationService = viewNavigationService;
         }
@@ -101,9 +105,9 @@ namespace Globe.Client.Localizer.ViewModels
         public float CompletationPercentage
         {
             get => _completationPercentage;
-            set 
-            { 
-                SetProperty(ref _completationPercentage, value); 
+            set
+            {
+                SetProperty(ref _completationPercentage, value);
             }
         }
 
@@ -195,12 +199,66 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand<JobList> GoToJobListCommand =>
             _goToJobListCommand ??= new DelegateCommand<JobList>((jobList) =>
             {
-                //TODO: come faccio ad aprire gia' sulla joblist corretta? Search con parametri che recupero da parameter?
-                //Lancio un OnChangePage?
-                _viewNavigationService.NavigateTo(ViewNames.CURRENT_JOB_VIEW);
+                var jobListSearch = new JobListConceptSearch
+                {
+                    JobListId = jobList.Id,
+                    LanguageId = jobList.LanguageId
+                };
+                _viewNavigationService.NavigateTo(ViewNames.CURRENT_JOB_VIEW, jobListSearch);
             });
 
-        async protected override Task OnLoad()
+        private DelegateCommand<JobList> _fromAssignedToClosedCommand = null;
+        public DelegateCommand<JobList> FromAssignedToClosedCommand =>
+            _fromAssignedToClosedCommand ??= new DelegateCommand<JobList>((jobList) =>
+            {
+                var result = MessageBox.Show("Are you Sure?\nJoblist status will change from Assigned To Closed", "UltraLocalizer", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    jobList.NextStatus.Description = "Closed";
+                    _jobListStatusChangeService.SaveAsync(jobList);
+                }
+
+            });
+
+        private DelegateCommand<JobList> _fromToBeRevisedToClosedCommand = null;
+        public DelegateCommand<JobList> FromToBeRevisedToClosedCommand =>
+            _fromToBeRevisedToClosedCommand ??= new DelegateCommand<JobList>((jobList) =>
+            {
+                var result = MessageBox.Show("Are you Sure?\nJoblist status will change from ToBeRevised To Closed", "UltraLocalizer", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    jobList.NextStatus.Description = "Closed";
+                    _jobListStatusChangeService.SaveAsync(jobList);
+                }
+            });
+
+        private DelegateCommand<JobList> _fromClosedToSavedCommand = null;
+        public DelegateCommand<JobList> FromClosedToSavedCommand =>
+            _fromClosedToSavedCommand ??= new DelegateCommand<JobList>((jobList) =>
+            {
+                var result = MessageBox.Show("Are you Sure?\nJoblist status will change from ToBeRevised To Closed", "UltraLocalizer", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    jobList.NextStatus.Description = "Closed";
+                    _jobListStatusChangeService.SaveAsync(jobList);
+                }
+            });
+
+        private DelegateCommand<JobList> _fromClosedToToBeRevisedCommand = null;
+        public DelegateCommand<JobList> FromClosedToToBeRevisedCommand =>
+            _fromClosedToToBeRevisedCommand ??= new DelegateCommand<JobList>((jobList) =>
+            {
+
+            });
+
+        private DelegateCommand<JobList> _fromSavedToDeletedCommand = null;
+        public DelegateCommand<JobList> FromSavedToDeletedCommand =>
+            _fromSavedToDeletedCommand ??= new DelegateCommand<JobList>((jobList) =>
+            {
+
+            });
+
+        async protected override Task OnLoad(object data = null)
         {
             await InitializeFilters();
         }
@@ -246,7 +304,7 @@ namespace Globe.Client.Localizer.ViewModels
             JobListViews = null;
 
             try
-            {   
+            {
                 if (
                     SelectedJobListStatus == null ||
                     SelectedApplicationUser == null ||
@@ -258,7 +316,7 @@ namespace Globe.Client.Localizer.ViewModels
                 {
                     JobListViews = await _jobListStatusViewService.GetJobListViewsAsync(
                         new JobListSearch
-                        {   
+                        {
                             LanguageId = SelectedLanguage.Id,
                             JobListStatus = SelectedJobListStatus.Description,
                             //JobListStatusId = string.IsNullOrWhiteSpace(SelectedJobListStatus) ? default(JobListStatus) : Enum.Parse<JobListStatus>(SelectedJobListStatus),

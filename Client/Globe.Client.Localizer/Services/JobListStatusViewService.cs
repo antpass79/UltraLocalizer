@@ -68,7 +68,7 @@ namespace Globe.Client.Localizer.Services
                 LanguageId = 5,
                 Language = "Russian",
                 Name = "MockJobList4",
-                OwnerUserName = "laura.bigi",
+                OwnerUserName = "matteo",
                 Status = new JobListStatus { Description = "Closed" },
                 TotalConcepts = 250,
                 NumberTranslations = 250,
@@ -80,7 +80,7 @@ namespace Globe.Client.Localizer.Services
                 LanguageId = 1,
                 Language = "French",
                 Name = "MockJobList5",
-                OwnerUserName = "laura.bigi",
+                OwnerUserName = "matteo",
                 Status = new JobListStatus { Description = "Assigned" },
                 TotalConcepts = 370,
                 NumberTranslations = 0,
@@ -97,6 +97,18 @@ namespace Globe.Client.Localizer.Services
                 TotalConcepts = 1111,
                 NumberTranslations = 0,
                 NumberTranslationsDraft = 1111
+            });
+            joblists.Add(new JobList
+            {
+                Id = 3394,
+                LanguageId = 5,
+                Language = "Spanish",
+                Name = "Breast",
+                OwnerUserName = "laura.bigi",
+                Status = new JobListStatus { Description = "Assigned" },
+                TotalConcepts = 15,
+                NumberTranslations = 0,
+                NumberTranslationsDraft = 8
             });
 
             //questa where lo fara' il servizio sul Server, passadogli la search
