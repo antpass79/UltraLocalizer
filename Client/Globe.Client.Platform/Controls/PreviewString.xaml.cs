@@ -22,6 +22,7 @@ namespace Globe.Client.Platform.Controls
         public PreviewString()
         {
             InitializeComponent();
+            this.BorderBrush = this.PreviewState == PreviewState.Valid ? Brushes.Green : Brushes.Red;
         }
 
         #endregion

@@ -236,10 +236,10 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand<JobList> FromClosedToSavedCommand =>
             _fromClosedToSavedCommand ??= new DelegateCommand<JobList>((jobList) =>
             {
-                var result = MessageBox.Show("Are you Sure?\nJoblist status will change from ToBeRevised To Closed", "UltraLocalizer", MessageBoxButton.YesNo);
+                var result = MessageBox.Show("Are you Sure?\nJoblist status will change from Closed To Saved", "UltraLocalizer", MessageBoxButton.YesNo);
                 if (result == MessageBoxResult.Yes)
                 {
-                    jobList.NextStatus.Description = "Closed";
+                    jobList.NextStatus.Description = "Saved";
                     _jobListStatusChangeService.SaveAsync(jobList);
                 }
             });
@@ -248,14 +248,24 @@ namespace Globe.Client.Localizer.ViewModels
         public DelegateCommand<JobList> FromClosedToToBeRevisedCommand =>
             _fromClosedToToBeRevisedCommand ??= new DelegateCommand<JobList>((jobList) =>
             {
-
+                var result = MessageBox.Show("Are you Sure?\nJoblist status will change from Closed To ToBeRevised", "UltraLocalizer", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    jobList.NextStatus.Description = "ToBeRevised";
+                    _jobListStatusChangeService.SaveAsync(jobList);
+                }
             });
 
         private DelegateCommand<JobList> _fromSavedToDeletedCommand = null;
         public DelegateCommand<JobList> FromSavedToDeletedCommand =>
             _fromSavedToDeletedCommand ??= new DelegateCommand<JobList>((jobList) =>
             {
-
+                var result = MessageBox.Show("Are you Sure?\nJoblist status will change from Saved To Deleted", "UltraLocalizer", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    jobList.NextStatus.Description = "Deleted";
+                    _jobListStatusChangeService.SaveAsync(jobList);
+                }
             });
 
         async protected override Task OnLoad(object data = null)

@@ -14,7 +14,6 @@
     <UserControl.Resources>
         <converters:BooleanConverter x:Key="InvertedBooleanConverter" True="False" False="True" />
         <converters:MultilineToWrapConverter x:Key="MultilineToWrapConverter" />
-        <converters:PreviewStateToBorderBrushConverter x:Key="PreviewStateToBorderBrushConverter" />
     </UserControl.Resources>
 
     <TextBlock Name="innerTextBlock"
