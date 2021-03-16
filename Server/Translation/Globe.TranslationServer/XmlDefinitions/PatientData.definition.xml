@@ -139,6 +139,14 @@
     <Concept Id="FEMALE" >
       <String Context="Generic_Short" >F</String>
     </Concept >
+    <Concept Id="MALE_VET" >
+      <Comments>Male label for vet env [Defect 49248]</Comments>
+      <String Context="Generic_Short" >M</String>
+    </Concept >
+    <Concept Id="FEMALE_VET" >
+      <Comments>Female label for vet env [Defect 49248]</Comments>
+      <String Context="Generic_Short" >F</String>
+    </Concept >
     <Concept Id="OTHER" >
       <String Context="Generic_Long" >O</String>
     </Concept >
@@ -538,6 +546,30 @@
     <Concept Id="ANONYMIZE CONFIRM">
       <Comments>Message shown to ask user to confirm [Story 36886]</Comments>
       <String Context="Generic_Warning">All the information concerning the Patient will be removed: are you sure ?</String>
+    </Concept>
+    <Concept Id="REPRODUCTION">
+      <Comments>Tab title for reproduction more data [Story 43183]</Comments>
+      <String Context="Generic_Long">REPRODUCTION</String>
+    </Concept>
+    <Concept Id="ANIMAL_SIZE">
+      <Comments>Label for dog size [Story 43183]</Comments>
+      <String Context="Generic_Long">SIZE</String>
+    </Concept>
+    <Concept Id="ANIMAL_SMALL">
+      <Comments>Dog size item [Story 43183]</Comments>
+      <String Context="Generic_Long">SMALL</String>
+    </Concept>
+    <Concept Id="ANIMAL_MEDIUM">
+      <Comments>Dog size item [Story 43183]</Comments>
+      <String Context="Generic_Long">MEDIUM</String>
+    </Concept>
+    <Concept Id="ANIMAL_LARGE">
+      <Comments>Dog size item [Story 43183]</Comments>
+      <String Context="Generic_Long">LARGE</String>
+    </Concept>
+    <Concept Id="ANIMAL_GIANT">
+      <Comments>Dog size item [Story 43183]</Comments>
+      <String Context="Generic_Long">GIANT</String>
     </Concept>
   </LocalizationSection>
 </LocalizationResource>

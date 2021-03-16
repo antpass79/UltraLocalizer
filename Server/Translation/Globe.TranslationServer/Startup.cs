@@ -55,7 +55,8 @@ namespace Globe.TranslationServer
                     {
                         options.UseSqlServer(
                             _configuration.GetConnectionString(Constants.DEFAULT_CONNECTION_STRING),
-                            options => options.CommandTimeout((int)TimeSpan.FromMinutes(3).TotalSeconds));
+                            options => options.CommandTimeout((int)TimeSpan.FromMinutes(3).TotalSeconds))
+                        .EnableSensitiveDataLogging();
                     }
                 });
 
@@ -91,6 +92,9 @@ namespace Globe.TranslationServer
                 .AddScoped<IUltraDBJobGlobal, UltraDBJobGlobal>();
             services
                 .AddScoped<IXmlService, XmlService>()
+                .AddScoped<IXmlToDbInsertableService, XmlToDbInsertableService>()
+                .AddScoped<IXmlToDbUpdatableService, XmlToDbUpdatableService>()
+                .AddScoped<IXmlToDbMergeService, XmlToDbMergeService>()               
                 .AddScoped<ILocalizationResourceBuilder, Services.NewServices.ScopedLocalizationResourceBuilder>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncLanguageService, Services.NewServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IComponentNamespaceService, Services.NewServices.ComponentNamespaceService>() //.AddScoped<IAsyncComponentConceptsService, ComponentConceptsTableAdapterService>()

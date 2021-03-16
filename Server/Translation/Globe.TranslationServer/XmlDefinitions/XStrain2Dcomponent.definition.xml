@@ -52,17 +52,29 @@
     <Concept Id="ShearRate">
       <String Context="Generic_Medium">SHEAR RATE</String>
     </Concept>
+	 <Concept Id="EndoLongPeakStrain">
+      <String Context="Generic_Long">Endo Longitudinal Peak Strain</String>
+    </Concept>
+	 <Concept Id="EpiLongPeakStrain">
+      <String Context="Generic_Long">Epi Longitudinal Peak Strain</String>
+    </Concept>
+	<Concept Id="EndoLongTimeToPeakStrain">
+      <String Context="Generic_Long">Endo Longitudinal Time To Peak Strain</String>
+    </Concept>
+	 <Concept Id="EpiLongTimeToPeakStrain">
+      <String Context="Generic_Long">Epi Longitudinal Time To Peak Strain</String>
+    </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="COMMANDS">
     <Concept Id="ShowValues">
-      <Comment>Enable/Disabled the hoovering/peak moving on RCA Graph</Comment>
+      <Comments>Enable/Disabled the hoovering/peak moving on RCA Graph</Comments>
       <String Context="TS_AButton">SHOW VALUES</String>
     </Concept>
 	<Concept Id="PaletteType">
       <String Context="TS_AButton">Palette Type</String>
     </Concept>
     <Concept Id="BULLEYE">
-      <Comment>Enter BullEye form</Comment>
+      <Comments>Enter BullEye form</Comments>
       <String Context="TS_AButton">BULL'S EYE</String>
     </Concept>
     <Concept Id="CLEAR_POINTS">
@@ -82,6 +94,7 @@
     </Concept>
     <Concept Id="GRAPHS_TAB">
       <String Context="TS_TabName">Graphs Review</String>
+	  <String Context="Generic_Medium">Graphs Review</String>
     </Concept>
     <Concept Id="MAPS_TAB">
       <String Context="TS_TabName">CR-M Mode</String>
@@ -90,8 +103,11 @@
       <String Context="TS_TabName">Regional Analysis</String>
     </Concept>
     <Concept Id="SUMMARY_TAB">
-      <Comment>this is a hidden tab, not used at the moment</Comment>
+      <Comments>this is a hidden tab, not used at the moment</Comments>
       <String Context="TS_TabName">Summary</String>
+    </Concept>
+	<Concept Id="BULLEYES_TAB">
+      <String Context="Generic_Medium">BullEyes Review</String>
     </Concept>
     <Concept Id="EXIT_XSTRAIN2D_CMD">
       <String Context="TS_AButton">EXIT</String>
@@ -276,6 +292,12 @@
     <Concept Id="CHANGE_VALUETIME">
       <String Context="TS_TButton">VALUE/TIME</String>
     </Concept>
+	 <Concept Id="GRAPHS_TAB_TS">
+      <String Context="TS_TButton">GRAPHS TAB</String>
+    </Concept>
+	 <Concept Id="BULLEYES_TAB_TS">
+      <String Context="TS_TButton">BULLEYES TAB</String>
+    </Concept>
     <Concept Id="VALUE_VALUETIME">
       <String Context="TS_TButton">VALUE</String>
     </Concept>
@@ -316,22 +338,22 @@
       <String Context="TS_TButton">TIME</String>
     </Concept>
     <Concept Id="CHANGE_PAE">
-      <Comment>toggle button to scroll among peak type : P = main Peak, A = A-wave, E = E-wave</Comment>
+      <Comments>toggle button to scroll among peak type : P = main Peak, A = A-wave, E = E-wave</Comments>
       <String Context="TS_TButton">PAE</String>
     </Concept>
     <Concept Id="CHANGE_CYCLE">
       <String Context="TS_TButton">CYCLE</String>
     </Concept>
     <Concept Id="PEAKS_MAINPEAK">
-      <Comment>peak type enum localization : P = main Peak, A = A-wave, E = E-wave</Comment>
+      <Comments>peak type enum localization : P = main Peak, A = A-wave, E = E-wave</Comments>
       <String Context="TS_TButton">MAIN</String>
     </Concept>
     <Concept Id="PEAKS_A">
-      <Comment>peak type enum localization : P = main Peak, A = A-wave, E = E-wave</Comment>
+      <Comments>peak type enum localization : P = main Peak, A = A-wave, E = E-wave</Comments>
       <String Context="TS_TButton">A WAVE</String>
     </Concept>
     <Concept Id="PEAKS_E">
-      <Comment>peak type enum localization : P = main Peak, A = A-wave, E = E-wave</Comment>
+      <Comments>peak type enum localization : P = main Peak, A = A-wave, E = E-wave</Comments>
       <String Context="TS_TButton">E WAVE</String>
     </Concept>
     <Concept Id="ATTACH">
@@ -414,6 +436,12 @@
     </Concept>
     <Concept Id="NOT_HIGHFRAMERATE">
       <String Context="Generic_Warning">low frame rate</String>
+    </Concept>
+	  <Concept Id="NON_PHASEARRAY">
+      <String Context="Generic_Warning">not phasearray probe</String>
+    </Concept>
+	<Concept Id="OVERHIGHFRAMERATE">
+      <String Context="Generic_Warning">overhigh frame rate</String>
     </Concept>
     <Concept Id="NON_NATIVE">
       <String Context="Generic_Warning">not native image</String>

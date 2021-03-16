@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="ManualsManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection InternalNamespace="GENERIC">
+    <Concept Id="DISTRIBUTION INVALID">
+      <Comments>This message appears as first row of errors when importing a new digital user manuals' distribution [Story 30231]</Comments>
+      <String Context="Generic_Warning">Manuals' package invalid.</String>
+    </Concept>
+    <Concept Id="NO MANUAL INDEX">
+      <Comments>This message appears for its error when importing a new digital user manuals' distribution [Story 30231]</Comments>
+      <String Context="Generic_Warning">No manual index file found in directory selected. [1]</String>
+    </Concept>
+    <Concept Id="TOO MANY MANUAL INDEXES">
+      <Comments>This message appears for its error when importing a new digital user manuals' distribution [Story 30231]</Comments>
+      <String Context="Generic_Warning">More than one index file found in directory selected. [2]</String>
+    </Concept>
+    <Concept Id="INCOMPATIBLE VERSION">
+      <Comments>This message appears for its error when importing a new digital user manuals' distribution [Story 30231]</Comments>
+      <String Context="Generic_Warning">Manuals'package incompatible with current sw version. [3]</String>
+    </Concept>
+    <Concept Id="NO MD5">
+      <Comments>This message appears for its error when importing a new digital user manuals' distribution [Story 30231]</Comments>
+      <String Context="Generic_Warning">Manuals.md5 file not found in directory selected. [4]</String>
+    </Concept>
+    <Concept Id="NO ZIP">
+      <Comments>This message appears for its error when importing a new digital user manuals' distribution [Story 30231]</Comments>
+      <String Context="Generic_Warning">Manuals.zip file not found in directory selected. [5]</String>
+    </Concept>
+    <Concept Id="DISTRIBUTION CORRUPTED">
+      <Comments>This message appears on when importing a new digital user manuals' distribution [Story 30231]</Comments>
+      <String Context="Generic_Warning">Manuals' package corrupted. [6]</String>
+    </Concept>
+    <Concept Id="ERROR IN UNCOMP">
+      <Comments>This message appears for its error when importing a new digital user manuals' distribution [Story 30231]</Comments>
+      <String Context="Generic_Warning">Failed to uncompress package. [7]</String>
+    </Concept>
+    <Concept Id="WARNING">
+      <Comments>First line of message asking user to update manuals' package [Story 30231]</Comments>
+      <String Context="Generic_Warning">WARNING</String>
+    </Concept>
+    <Concept Id="MANUALS INCOMPATIBLE">
+      <Comments>Second line of message asking user to update manuals' package [Story 30231]</Comments>
+      <String Context="Generic_Warning">User manuals not compatible with current software version.</String>
+    </Concept>
+    <Concept Id="MANUALS INSTALL">
+      <Comments>Third line of message asking user to update manuals' package [Story 30231]</Comments>
+      <String Context="Generic_Warning">To install the correct version click Yes.</String>
+    </Concept>
+    <Concept Id="UPDATE SUCCESSFUL">
+      <Comments>Message informing user that user manuals have been correctly updated [Story 30231]</Comments>
+      <String Context="Generic_Warning">User manuals correctly updated.</String>
+    </Concept>
+    <Concept Id="UPDATING MANUALS">
+      <Comments>Title of waiting window while updating user manuals [Story 30231]</Comments>
+      <String Context="Generic_Long">UPDATING USER MANUALS</String>
+    </Concept>
+    <Concept Id="USER MANUALS IMPORT">
+      <Comments>Title of window where user is asked to select dir/disk/usb from where to import user manuals [Story 30231]</Comments>
+      <String Context="Generic_Long">USER DIGITAL MANUALS IMPORTING</String>
+    </Concept>
+    <Concept Id="USER MANUALS SOURCE SELECT">
+      <Comments>Text to ask user to select dir/disk/usb from where to import user manuals [Story 30231]</Comments>
+      <String Context="Generic_Warning">Please, select drive or directory where user digital manuals' package is available.</String>
+    </Concept>
+    <Concept Id="MANUALS VERSION">
+      <Comments>Manuals' compatibility version to be shown [Story 30231]</Comments>
+      <String Context="Generic_Short">Version</String>
+    </Concept>
+    <Concept Id="MANUALS REVISION">
+      <Comments>Manuals' revision [Story 30231]</Comments>
+      <String Context="Generic_Short">Revision</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>

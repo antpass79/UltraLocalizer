@@ -113,15 +113,14 @@ namespace Globe.TranslationServer.Services.PortingAdapters
         {
             //_xmlService.LoadXml();
             //_xmlService.FillDB();
-            await _xmlService.UpdateDatabaseAsync();
+            var statistics = await _xmlService.UpdateDatabaseAsync();
 
             var result = new NewConceptsResult
             {
-                InsertedCount = _xmlService.InsertedCount,
-                UpdatedCount = _xmlService.UpdatedCount,
-                IsNotified = true
+                IsNotified = true, 
+                Statistics = statistics
             };
-            if(_xmlService.ChangesFound)
+            if(statistics.ChangesFound)
             {
                 result.IsNotified = false;
                 await _notificationService.ConceptsChanged(result);

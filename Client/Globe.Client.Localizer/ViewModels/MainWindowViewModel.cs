@@ -412,7 +412,7 @@ namespace Globe.Client.Localizer.ViewModels
 
             connection.On<NewConceptsResult>(EventNames.ConceptsChanged, async (result) =>
             {
-                var message = $"{Localize["Inserted_concepts"]} {result.InsertedCount}, {Localize["Updated_concepts"]} {result.UpdatedCount}";
+                var message = $"{Localize["Inserted_concepts"]} {result.Statistics.InsertedCount}, {Localize["Updated_concepts"]} {result.Statistics.UpdatedCount}";
                 var notification = new ConceptsChangedNotification { Message = message};
                 await NotificationService.NotifyAsync(notification);
             });

@@ -166,17 +166,78 @@
       <Comments>In DICOM servers configuration, DICOM server info dialog</Comments>
       <String Context="Generic_Medium" >ENABLED</String>
     </Concept>
+    <Concept Id="TLS_ENABLED" >
+      <Comments>In DICOM servers configuration, DICOM server support for TLS/SSL dialog</Comments>
+      <String Context="Generic_Medium" >TLS ENABLED</String>
+      <String Context="Generic_Short" >TLS ENABLED</String>
+    </Concept>
+    <Concept Id="TLS_CONFIGURE" >
+      <Comments>In DICOM servers configuration, DICOM server configuration button for TLS/SSL dialog</Comments>
+      <String Context="Generic_Medium" >Configure...</String>
+    </Concept>
+    <Concept Id="TLS_WRONG_CERTIFICATE" >
+      <Comments>In DICOM servers configuration TLS/SSL dialog the provided file is not a valid certificate</Comments>
+      <String Context="Generic_Medium" >Wrong Certificate</String>
+    </Concept>
+    <Concept Id="TLS_WRONG_SERVER_CERTIFICATE" >
+      <Comments>In DICOM servers configuration TLS/SSL dialog the provided file is not a valid server certificate</Comments>
+      <String Context="Generic_Medium" >Wrong Server Certificate</String>
+    </Concept>
+    <Concept Id="TLS_WRONG_PRIVATE_KEY" >
+      <Comments>In DICOM servers configuration TLS/SSL dialog the provided file is not a valid private key</Comments>
+      <String Context="Generic_Medium" >Wrong Private key</String>
+    </Concept>
+    <Concept Id="TLS_EXPIRED_CERTIFICATE" >
+      <Comments>In DICOM servers configuration TLS/SSL dialog the provided certificate is expired</Comments>
+      <String Context="Generic_Medium" >Expired Certificate</String>
+    </Concept>
+    <Concept Id="TLS_IMPORT_CERTIFICATE_FAILED" >
+      <Comments>In DICOM servers configuration TLS/SSL dialog the import of the certificate failed </Comments>
+      <String Context="Generic_Medium" >Import failed</String>
+    </Concept>
+    <Concept Id="TLS_CERTIFICATE" >
+      <Comments>In DICOM tls server configuration, DICOM tls server info dialog, the Certificate label</Comments>
+      <String Context="Generic_Medium" >CERTIFICATE</String>
+    </Concept>
+    <Concept Id="TLS_SERVER_CERTIFICATE" >
+      <Comments>In DICOM tls server configuration, DICOM tls server info dialog, the Certificate label</Comments>
+      <String Context="Generic_Medium" >SERVER CERTIFICATE</String>
+    </Concept>
+    <Concept Id="TLS_PRIVATE_KEY" >
+      <Comments>In DICOM tls server configuration, DICOM tls server info dialog, the private key label</Comments>
+      <String Context="Generic_Medium" >PRIVATE KEY</String>
+    </Concept>
+    <Concept Id="TLS_PASSWORD" >
+      <Comments>In DICOM tls server configuration, DICOM tls server info dialog, the password label</Comments>
+      <String Context="Generic_Medium" >PASSWORD</String>
+    </Concept>
+    <Concept Id="AE_TITLE_EMPTY" >
+      <Comments>In DICOM server configuration, DICOM server info dialog, it is visualized if the AE title is not inserted</Comments>
+      <String Context="Generic_Warning" >AE TITLE NOT INSERTED</String>
+    </Concept>
+    <Concept Id="SERVER_NAME_EMPTY" >
+      <Comments>In DICOM server configuration, DICOM server info dialog, it is visualized if the Server name is not inserted</Comments>
+      <String Context="Generic_Warning" >SERVER NAME NOT INSERTED</String>
+    </Concept>
+    <Concept Id="SERVER_PORT_INVALID" >
+      <Comments>In DICOM server configuration, DICOM server info dialog, it is visualized if the Server port is not valid</Comments>
+      <String Context="Generic_Warning" >SERVER PORT NOT VALID</String>
+    </Concept>
+    <Concept Id="SERVER_NAME_INVALID" >
+      <Comments>In DICOM server configuration, DICOM server info dialog, it is visualized if the Server name is not valid</Comments>
+      <String Context="Generic_Warning" >SERVER NAME NOT VALID</String>
+    </Concept>
     <Concept Id="SEND_IMAGE" >
       <Comments>Generic_Long : in DICOM storage servers tab, add/edit dialog, checkbox to set if sending image as acquired - Generic_Short : In DICOM storage servers tab, column description of storage server list</Comments>
       <String Context="Generic_Long" >SEND IMAGE AS ACQUIRED</String>
       <String Context="Generic_Short" >SEND IMAGE</String>
     </Concept>
     <Concept Id="MODIFICATIONS_ACTIVE_MESSAGE">
-      <Comment>Message shown on saving a configuration, when at least one Send image as acquired property is changed</Comment>
+			<Comments>Message shown on saving a configuration, when at least one Send image as acquired property is changed</Comments>
       <String Context="Generic_Warning">At least one Send image as acquired property is changed. Modifications will be available after starting a new exam</String>
     </Concept>
     <Concept Id="DICOM_CONFIGURATION_CHANGED_MESSAGE">
-      <Comment>Message shown on saving a configuration, only shown on us machine (not in desktop mode) when a new exam is started</Comment>
+			<Comments>Message shown on saving a configuration, only shown on us machine (not in desktop mode) when a new exam is started</Comments>
       <String Context="Generic_Warning">Dicom configuration is changed. Modifications will be available after starting a new exam</String>
     </Concept>
     <Concept Id="TCPLISTENPORT" >
@@ -203,7 +264,6 @@
       <Comments>Dicom preset editor, Printers tab, profile dialog, label COPIES NUMBER</Comments>
       <String Context="Generic_Medium" >COPIES NUMBER</String>
     </Concept>
-    
     <Concept Id="MAXIMIZE_MEASURE" >
       <Comments>Dicom preset editor, Printers tab, profile dialog, label MAXIMIZE MEASURE</Comments>
       <String Context="Generic_Medium" >MAXIMIZE MEASURE</String>
@@ -261,6 +321,11 @@
     <Concept Id="SelectExam" >
       <Comments>In WORKLIST query environment, title of Select Exam command</Comments>
       <String Context="Generic_Medium" >Select Exam</String>
+    </Concept>
+    <Concept Id="SelectExamAndRetrieve" >
+      <Comments>In WORKLIST query environment, title of command used to select the exam and execute Q/R [Story 38282]</Comments>
+      <String Context="Generic_Medium" >Select exam and retrieve</String>
+      <String Context="TS_AButton" >Select exam and retrieve</String>
     </Concept>
     <Concept Id="CANCEL" >
       <Comments>In WORKLIST query environment, title of CANCEL command</Comments>
@@ -388,12 +453,17 @@
       <Comments>In DICOM server configuration, QUALITY tab</Comments>
       <String Context="Generic_Long" >ADD PIXEL SPACING</String>
     </Concept>
-    <Concept Id="IMAGE_HEADER">      <Comments>In DICOM server configuration, QUALITY tab</Comments>
+		<Concept Id="IMAGE_HEADER">
+			<Comments>In DICOM server configuration, QUALITY tab</Comments>
       <String Context="Generic_Long" >IMAGE HEADER</String>
     </Concept>
     <Concept Id="EXAM_INFO_IN_HEADER" >
       <Comments>In DICOM server configuration, QUALITY tab</Comments>
       <String Context="Generic_Long" >Add header with patient data</String>
+    </Concept>
+    <Concept Id="ADD_RAW_DATA_IN_FILES">
+      <Comments>In DICOM server configuration, QUALITY tab [Story 44619]</Comments>
+      <String Context="Generic_Long" >Include raw data in images and clips</String>
     </Concept>
     <Concept Id="CD_DVD" >
       <Comments>destination CD/DVD</Comments>
@@ -415,7 +485,6 @@
       <Comments>measure unit in storage commitment server dialog</Comments>
       <String Context="Generic_Medium" >MINUTES</String>
     </Concept >
-    
     <Concept Id="MSG_CLIP_MAXIMUM" >
       <Comments>warning near maximun option, quality tab</Comments>
       <String Context="Generic_Warning" >Warning: this option should be used just in case  of compatibility problems. Please note  that it heavily affects the converted clips size and the conversion time.</String>
@@ -428,7 +497,6 @@
       <Comments>in quality tab, warning under skip option (if present)</Comments>
       <String Context="Generic_Warning" >Warning: this option will disable DICOM export of the clips</String>
     </Concept >
-    
     <Concept Id="ReasonToStopShutdown" >
       <Comments>used when framework ask to DICOMManager if it is possible to perform shutdown</Comments>
       <String Context="Generic_Warning" >THE DICOM EXPORT OPERATIONS IN PROGRESS ARE</String>
@@ -452,6 +520,10 @@
     <Concept Id="STOREIMAGE" >
       <Comments>In print configuration: checkBox title</Comments>
       <String Context="Generic_Long" >STORE IMAGE PRINTING</String>
+    </Concept>
+    <Concept Id="PREVIEWBEFOREPRINTING" >
+      <Comments>In print configuration: checkBox title</Comments>
+      <String Context="Generic_Long" >PREVIEW BEFORE PRINTING</String>
     </Concept>
     <Concept Id="ROWS" >
       <Comments>In dicom printers configuration, profile dialog, label of layout rows</Comments>
@@ -478,8 +550,6 @@
       <Comments>In print configuration: label about button 4 section </Comments>
       <String Context="Generic_Medium" >BUTTON 4</String>
     </Concept>
-    
-      
     <Concept Id="ASSOCIATION_OPENED">
       <Comments>message used in the dicom server verification, in the first part of verification, usually some seconds before the message VERIFICATION_SUCCESSFULLY_COMPLETED</Comments>
       <String Context="Generic_Warning">ASSOCIATION OPENED</String>
@@ -500,6 +570,10 @@
       <Comments>In tab General, the button to erase all files received by SCP server [Story 23580]</Comments>
       <String Context="Generic_Medium" >EMPTY TEMPORARY AREA</String>
     </Concept >
+	<Concept Id="LogAnonymization">
+      <Comments>Active/Disable the anonymization of the log file</Comments>
+      <String Context="Generic_Medium" >LOG ANONYMIZATION</String>
+    </Concept>  
   </LocalizationSection> 
    <LocalizationSection InternalNamespace="Worklist">
      <Concept Id="QueryInBackgroundInfosLabel" >
@@ -679,91 +753,91 @@
        <Comments>label in worklist waiting control to indicate returned records</Comments>
        <String Context="Generic_Medium" >RETURNED RECORDS</String>
      </Concept >
-    <Concept Id="PatientsName" Ignore="true">
+		<Concept Id="PatientsName" >
       <Comments>PatientsName label in details record worklist</Comments>
       <String Context="Generic_Medium" >NAME:</String>
     </Concept >
-     <Concept Id="AnimalName" Ignore="true">
+		<Concept Id="AnimalName" >
        <Comments>AnimalName label in details record worklist</Comments>
        <String Context="Generic_Medium" >ANIMALNAME:</String>
      </Concept >
-    <Concept Id="OwnersName" Ignore="true">
+		<Concept Id="OwnersName" >
       <Comments>OwnersName label in details record worklist (VET environment)</Comments>
       <String Context="Generic_Medium" >OWNERNAME:</String>
     </Concept >     
-    <Concept Id="PatientsSex" Ignore="true">
+		<Concept Id="PatientsSex" >
       <Comments>PatientsSex label in details record worklist</Comments>
       <String Context="Generic_Medium" >GENDER:</String>
     </Concept >
-    <Concept Id="PatientBirthDate" Ignore="true">
+		<Concept Id="PatientBirthDate" >
       <Comments>PatientBirthDate label in details record worklist</Comments>
       <String Context="Generic_Medium" >BIRTH DATE:</String>
     </Concept >
-    <Concept Id="ScheduledPerformingPhysicianName" Ignore="true">
+		<Concept Id="ScheduledPerformingPhysicianName" >
       <Comments>ScheduledPerformingPhysicianName label in details record worklist</Comments>
       <String Context="Generic_Medium" >SCHEDULATED PERFORMING PHYSICIAN:</String>
     </Concept >
-    <Concept Id="ReferringPhysicianName" Ignore="true">
+		<Concept Id="ReferringPhysicianName" >
       <Comments>ReferringPhysicianName label in details record worklist</Comments>
       <String Context="Generic_Medium" >REFERRING PHYSICIAN:</String>
     </Concept >
-    <Concept Id="ScheduledProcedureStepDate" Ignore="true">
+		<Concept Id="ScheduledProcedureStepDate" >
       <Comments>ScheduledProcedureStepDate label in details record worklist</Comments>
       <String Context="Generic_Medium" >SCHEDULED PROCEDURE STEP START DATE:</String>
     </Concept >
-     <Concept Id="ScheduledProcedureStepTIME" Ignore="true">
+		<Concept Id="ScheduledProcedureStepTIME" >
        <Comments>ScheduledProcedureStepDate label in details record worklist</Comments>
        <String Context="Generic_Medium" >SCHEDULED PROCEDURE STEP START TIME:</String>
      </Concept >
-    <Concept Id="ScheduledStationAETitle" Ignore="true">
+		<Concept Id="ScheduledStationAETitle" >
       <Comments>ScheduledStationAETitle label in details record worklist</Comments>
       <String Context="Generic_Medium" >AE TITLE:</String>
     </Concept >
-    <Concept Id="ScheduledProcedureStepID" Ignore="true">
+		<Concept Id="ScheduledProcedureStepID" >
       <Comments>ScheduledProcedureStepID label in details record worklist</Comments>
       <String Context="Generic_Medium" >SCHEDULED PROCEDURE STEP ID:</String>
     </Concept >
-    <Concept Id="ScheduledProcedureStepDescription" Ignore="true">
+		<Concept Id="ScheduledProcedureStepDescription" >
       <Comments>ScheduledProcedureStepDescription label in details record worklist</Comments>
       <String Context="Generic_Medium" >SCHEDULED PROCEDURE STEP DESCRIPTION:</String>
     </Concept >
-     <Concept Id="ScheduledProtocolCodeSequence" Ignore="true">
+		<Concept Id="ScheduledProtocolCodeSequence" >
        <Comments>ScheduledProtocolCodeSequence label in details record worklist</Comments>
        <String Context="Generic_Medium" >SCHEDULED PROTOCOL CODE SEQUENCE</String>
      </Concept >
-     <Concept Id="VALUE" Ignore="true">
+		<Concept Id="VALUE" >
        <Comments>ScheduledProtocolCodeSequence label in details record worklist</Comments>
        <String Context="Generic_Medium" >VALUE</String>
      </Concept >
-     <Concept Id="MEANING" Ignore="true">
+		<Concept Id="MEANING" >
        <Comments>ScheduledProtocolCodeSequence label in details record worklist</Comments>
        <String Context="Generic_Medium" >MEANING</String>
      </Concept >
-     <Concept Id="DESIGNATOR" Ignore="true">
+		<Concept Id="DESIGNATOR" >
        <Comments>ScheduledProtocolCodeSequence label in details record worklist</Comments>
        <String Context="Generic_Medium" >DESIGNATOR</String>
      </Concept >
-     <Concept Id="VERSION" Ignore="true">
+		<Concept Id="VERSION" >
        <Comments>ScheduledProtocolCodeSequence label in details record worklist</Comments>
        <String Context="Generic_Medium" >VERSION</String>
      </Concept >
-     <Concept Id="RequestedProcedureCodeSequence" Ignore="true">
+		<Concept Id="RequestedProcedureCodeSequence" >
        <Comments>ScheduledProtocolCodeSequence label in details record worklist</Comments>
        <String Context="Generic_Medium" >REQUESTED PROCEDURE CODE SEQUENCE:</String>
      </Concept >
-     <Concept Id="PatientID" Ignore="true">
+		<Concept Id="PatientID" >
       <Comments>PatientID label in details record worklist</Comments>
       <String Context="Generic_Medium" >ID:</String>
     </Concept >
-    <Concept Id="PatientComments" Ignore="true">
+		<Concept Id="PatientComments" >
       <Comments>PatientComments label in details record worklist</Comments>
       <String Context="Generic_Medium" >COMMENTS:</String>
     </Concept >
-    <Concept Id="PatientState" Ignore="true">
+		<Concept Id="PatientState" >
       <Comments>PatientState label in details record worklist</Comments>
       <String Context="Generic_Medium" >STATE:</String>
     </Concept >
-    <Concept Id="PatientSpecialNeeds" Ignore="true">
+		<Concept Id="PatientSpecialNeeds" >
       <Comments>PatientSpecialNeeds label in details record worklist</Comments>
       <String Context="Generic_Medium" >SPECIAL NEEDS:</String>
     </Concept >
@@ -771,99 +845,99 @@
        <Comments>Reason For Failure label in details record worklist</Comments>
        <String Context="Generic_Medium" >REASON:</String>
      </Concept >
-     <Concept Id="CurrentPatientLocation" Ignore="true">
+		<Concept Id="CurrentPatientLocation" >
       <Comments>CurrentPatientLocation label in details record worklist</Comments>
       <String Context="Generic_Medium" >CURRENT LOCATION:</String>
     </Concept >
-    <Concept Id="RequestingPhysician" Ignore="true">
+		<Concept Id="RequestingPhysician" >
       <Comments>RequestingPhysician label in details record worklist</Comments>
       <String Context="Generic_Medium" >REQUESTING PHYSICIAN:</String>
     </Concept >
-    <Concept Id="AdditionalPatientHistory" Ignore="true">
+		<Concept Id="AdditionalPatientHistory" >
       <Comments>AdditionalPatientHistory label in details record worklist</Comments>
       <String Context="Generic_Medium" >ADDITIONAL HISTORY:</String>
     </Concept >
-    <Concept Id="AdmissionID" Ignore="true">
+		<Concept Id="AdmissionID" >
       <Comments>AdmissionID label in details record worklist</Comments>
       <String Context="Generic_Medium" >ADMISSION ID:</String>
     </Concept >
-    <Concept Id="PregnancyStatus" Ignore="true">
+		<Concept Id="PregnancyStatus" >
       <Comments>PregnancyStatus label in details record worklist</Comments>
       <String Context="Generic_Medium" >PREGNANCY STATUS:</String>
     </Concept >
-    <Concept Id="PatientWeight" Ignore="true">
+		<Concept Id="PatientWeight" >
       <Comments>PatientWeight label in details record worklist</Comments>
       <String Context="Generic_Medium" >WEIGHT:</String>
     </Concept >
-     <Concept Id="PatientSize" Ignore="true">
+		<Concept Id="PatientSize" >
        <Comments>Patient Size label in details record worklist</Comments>
        <String Context="Generic_Medium" >SIZE:</String>
      </Concept >
-     <Concept Id="SpeciesDescription" Ignore="true">
+		<Concept Id="SpeciesDescription" >
        <Comments>Species Description in details record worklist. Veterinary Environment</Comments>
        <String Context="Generic_Medium" >SPECIES DESCRIPTION:</String>
      </Concept >
-     <Concept Id="BreedDescription" Ignore="true">
+		<Concept Id="BreedDescription" >
        <Comments>Breed Description in details record worklist. Veterinary Environment</Comments>
        <String Context="Generic_Medium" >BREED DESCRIPTION:</String>
      </Concept >
-     <Concept Id="ResponsiblePerson" Ignore="true">
+		<Concept Id="ResponsiblePerson" >
        <Comments>Responsible Person in details record worklist. Veterinary Environment</Comments>
        <String Context="Generic_Medium" >RESPONSIBLE PERSON:</String>
      </Concept >
-     <Concept Id="ResponsiblePersonRole" Ignore="true">
+		<Concept Id="ResponsiblePersonRole" >
        <Comments>Responsible Person Role in details record worklist. Veterinary Environment</Comments>
        <String Context="Generic_Medium" >RESPONSIBLE PERSON ROLE:</String>
      </Concept >
-     <Concept Id="ResponsibleOrganization" Ignore="true">
+		<Concept Id="ResponsibleOrganization" >
        <Comments>Responsible Organization in details record worklist. Veterinary Environment</Comments>
        <String Context="Generic_Medium" >RESPONSIBLE ORGANIZATION:</String>
      </Concept >
-     <Concept Id="PatientSexNeutered" Ignore="true">
+		<Concept Id="PatientSexNeutered" >
        <Comments>Patient Sex Neutered in details record worklist. Veterinary Environment</Comments>
        <String Context="Generic_Medium" >SEX NEUTERED:</String>
      </Concept >     
-     <Concept Id="MedicalAlertslabel" Ignore="true">
+		<Concept Id="MedicalAlertslabel" >
       <Comments>MedicalAlertslabel label in details record worklist</Comments>
       <String Context="Generic_Medium" >MEDICAL ALERTS:</String>
     </Concept >
-    <Concept Id="ContrastAllergiesLabel" Ignore="true">
+		<Concept Id="ContrastAllergiesLabel" >
       <Comments>ContrastAllergiesLabel label in details record worklist</Comments>
       <String Context="Generic_Medium" >ALLERGIES:</String>
     </Concept >
-    <Concept Id="AccessionNumber" Ignore="true">
+		<Concept Id="AccessionNumber" >
       <Comments>AccessionNumber label in details record worklist</Comments>
       <String Context="Generic_Medium" >ACCESSION NUMBER:</String>
     </Concept >
-     <Concept Id="RequestedProcedureID" Ignore="true">
+		<Concept Id="RequestedProcedureID" >
        <Comments>RequestedProcedureID label in details record worklist</Comments>
        <String Context="Generic_Medium" >REQUESTED PROCEDURE ID:</String>
      </Concept >
-     <Concept Id="RequestedProcedureDescription" Ignore="true">
+		<Concept Id="RequestedProcedureDescription" >
       <Comments>RequestedProcedureDescription label in details record worklist</Comments>
       <String Context="Generic_Medium" >REQUESTED PROCEDURE DESCRIPTION:</String>
     </Concept >
-    <Concept Id="StudyInstanceUID" Ignore="true" >
+		<Concept Id="StudyInstanceUID" >
       <Comments>StudyInstanceUID label in details record worklist</Comments>
       <String Context="Generic_Medium" >StudyInstanceUID</String>
     </Concept >
-    <Concept Id="ModalityDetails" Ignore="true">
+		<Concept Id="ModalityDetails" >
       <Comments>Modality label in details record worklist</Comments>
       <String Context="Generic_Medium" >MODALITY:</String>
     </Concept >
-    <Concept Id="ReferencedSOPClassUID" Ignore="true">
+		<Concept Id="ReferencedSOPClassUID" >
       <Comments>ReferencedSOPClassUID label in details record worklist</Comments>
       <String Context="Generic_Medium" >Referenced SOPClassUID</String>
     </Concept >
-    <Concept Id="ReferencedSOPInstanceUID" Ignore="true">
+		<Concept Id="ReferencedSOPInstanceUID" >
       <Comments>ReferencedSOPInstanceUID label in details record worklist</Comments>
       <String Context="Generic_Medium" >Referenced SOPInstanceUID</String>
     </Concept >
-    <Concept Id="AdmittingDiagnosesDescriptionLabel" Ignore="true">
+		<Concept Id="AdmittingDiagnosesDescriptionLabel" >
       <Comments>AdmittingDiagnosesDescriptionLabel label in details record worklist</Comments>
       <String Context="Generic_Medium" >ADMITTING DIAGNOSES DESCRIPTION:</String>
     </Concept >
-    <Concept Id="ReasonForFailure" Ignore="true">
+		<Concept Id="ReasonForFailure" >
       <Comments>ReasonForFailure label in details record worklist</Comments>
       <String Context="Generic_Medium" >Reason For Failure</String>
     </Concept >
@@ -878,7 +952,7 @@
       <String Context="Generic_Medium">Modality Not Supported</String>
     </Concept> 	
     <Concept Id="IMPORTDICOM">
-      <Comments></Comments>
+			<Comments/>
       <String Context="TS_AButton">IMPORT DICOM</String>
       <String Context="Generic_Long">IMPORT DICOM</String>
     </Concept>
@@ -888,6 +962,10 @@
     </Concept>    
     <Concept Id="SelectDICOMDb">
       <String Context="Generic_Warning">Please select the DICOM DB</String>
+    </Concept>
+    <Concept Id="SelectServer">
+      <Comments>Message to ask to select a single server in a list [Story 38282]</Comments>
+      <String Context="Generic_Warning">Please select the query retrieve server</String>
     </Concept>
     <Concept Id="DICOMWRONGSIZE">
       <Comments>A dicom image cannot be imported because has a wrong size</Comments>
@@ -922,11 +1000,11 @@
       <String Context="Generic_Warning">NATIVE STUDY PRESENT</String>
     </Concept>
     <Concept Id="UNKNOWNIMPORTDICOMERROR">
-      <Comments></Comments>
+			<Comments/>
       <String Context="Generic_Warning">UNKNOWN ERROR</String>
     </Concept>
     <Concept Id="NODICOMARCHIVE">
-      <Comments></Comments>
+			<Comments/>
       <String Context="Generic_Long">NO DICOM ARCHIVE</String>
     </Concept>
     <Concept Id="ERRORIMPORTDICOM">
@@ -963,97 +1041,97 @@
     </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="DICOMImportLabels">
-    <Concept Id="Modality" Ignore="true">
+		<Concept Id="Modality" >
       <Comments>Modality label in import dicom details </Comments>
       <String Context="Generic_Medium" >Modality:</String>
     </Concept>
-    <Concept Id="SeriesNumber" Ignore="true">
+		<Concept Id="SeriesNumber" >
       <Comments>SeriesNumber label in import dicom details  </Comments>
       <String Context="Generic_Medium" >Series number:</String>
     </Concept>
-	<Concept Id="SeriesDate" Ignore="true">
+		<Concept Id="SeriesDate" >
       <Comments>SeriesDate label in import dicom details (Story #2421)</Comments>
       <String Context="Generic_Medium" >SeriesDate:</String>
     </Concept>
-    <Concept Id="SeriesTime" Ignore="true">
+		<Concept Id="SeriesTime" >
       <Comments>SeriesTime label in import dicom details (Story #2421)</Comments>
       <String Context="Generic_Medium" >SeriesTime:</String>
     </Concept>
-    <Concept Id="NumberOfSeriesRelatedInstances" Ignore="true">
+		<Concept Id="NumberOfSeriesRelatedInstances" >
       <Comments>NumberOfSeriesRelatedInstances label in import dicom details (Story #2421)</Comments>
       <String Context="Generic_Medium" >Instances:</String>
       <String Context="Generic_Short" >Inst.:</String>
     </Concept>
-    <Concept Id="SeriesDescription" Ignore="true">
+		<Concept Id="SeriesDescription" >
       <Comments>SeriesDescription label in import dicom details (Story #2421)</Comments>
       <String Context="Generic_Medium" >SeriesDescription:</String>
     <String Context="Generic_Short">SerDesc.:</String>
     </Concept>
-    <Concept Id="SeriesInstanceUID" Ignore="true">
+		<Concept Id="SeriesInstanceUID" >
       <Comments>SeriesInstanceUID label in import dicom details </Comments>
       <String Context="Generic_Medium" >SeriesInstanceUID:</String>
     </Concept>
-    <Concept Id="ReqProcID" Ignore="true">
+		<Concept Id="ReqProcID" >
       <Comments>ReqProcID label in import dicom details </Comments>
       <String Context="Generic_Medium" >Req. Proc. ID:</String>
     </Concept>
-    <Concept Id="SchedProcStepID" Ignore="true">
+		<Concept Id="SchedProcStepID" >
       <Comments>SchedProcStepID label in import dicom details </Comments>
       <String Context="Generic_Medium" >Sched. Proc. step ID:</String>
     </Concept>
-    <Concept Id="PerfProcStepStartDate" Ignore="true">
+		<Concept Id="PerfProcStepStartDate" >
       <Comments>PerfProcStepStartDate label in import dicom details </Comments>
       <String Context="Generic_Medium" >Perf. Proc. step start date:</String>
     </Concept>
-    <Concept Id="PerfProcStepStartTime" Ignore="true">
+		<Concept Id="PerfProcStepStartTime" >
       <Comments>PerfProcStepStartTime label in import dicom details </Comments>
       <String Context="Generic_Medium" >Perf. Proc. step start time:</String>
     </Concept>
-    <Concept Id="StudyInstanceUID" Ignore="true">
+		<Concept Id="StudyInstanceUID" >
       <Comments>StudyInstanceUID label in import dicom details </Comments>
       <String Context="Generic_Medium" >StudyInstanceUID:</String>
     </Concept>
-    <Concept Id="StudyDescription" Ignore="true">
+		<Concept Id="StudyDescription" >
       <Comments>StudyDescription label in import dicom details (Story #2421)</Comments>
       <String Context="Generic_Medium" >StudyDescription:</String>
     </Concept>
-    <Concept Id="PatientName" Ignore="true">
+		<Concept Id="PatientName" >
       <Comments>PatientName label in import dicom details </Comments>
       <String Context="Generic_Medium" >Patient name:</String>
     </Concept>
-    <Concept Id="PatientId" Ignore="true">
+		<Concept Id="PatientId" >
       <Comments>PatientId label in import dicom details </Comments>
       <String Context="Generic_Medium" >Patient Id:</String>
     </Concept>
-    <Concept Id="PatientSex" Ignore="true">
+		<Concept Id="PatientSex" >
       <Comments>PatientSex label in import dicom details </Comments>
       <String Context="Generic_Medium" >Patient sex:</String>
     </Concept>
-    <Concept Id="PatientBirthDate" Ignore="true">
+		<Concept Id="PatientBirthDate" >
       <Comments>PatientBirthDate label in import dicom details </Comments>
       <String Context="Generic_Medium" >Patient birthdate:</String>
     </Concept>
-    <Concept Id="ReferringPhysicianName" Ignore="true">
+		<Concept Id="ReferringPhysicianName" >
       <Comments>ReferringPhysicianName label in import dicom details </Comments>
       <String Context="Generic_Medium" >Referring Physician Name:</String>
     </Concept>
-    <Concept Id="StudyDate" Ignore="true">
+		<Concept Id="StudyDate" >
       <Comments>StudyDate label in import dicom details </Comments>
       <String Context="Generic_Medium" >Study Date:</String>
     </Concept>
-    <Concept Id="StudyTime" Ignore="true">
+		<Concept Id="StudyTime" >
       <Comments>StudyTime label in import dicom details </Comments>
       <String Context="Generic_Medium" >Study Time:</String>
     </Concept>
-    <Concept Id="Modalities" Ignore="true">
+		<Concept Id="Modalities" >
       <Comments>Modalities label in import dicom details </Comments>
       <String Context="Generic_Medium" >Modalities:</String>
     </Concept>
-    <Concept Id="AccessionNumber" Ignore="true">
+		<Concept Id="AccessionNumber" >
       <Comments>AccessionNumber label in import dicom details </Comments>
       <String Context="Generic_Medium" >Accession Number:</String>
     </Concept>
-    <Concept Id="StudyId" Ignore="true">
+		<Concept Id="StudyId" >
       <Comments>StudyId label in import dicom details </Comments>
       <String Context="Generic_Medium" >Study Id:</String>
     </Concept>
@@ -1186,6 +1264,6 @@
     <Concept Id="IMPORTDICOM">
       <Comments>Label in import dicom progress bar</Comments>
       <String Context="Generic_Medium" >IMPORTING DICOM FILES</String>
-    </Concept>    
+    </Concept>      
   </LocalizationSection>
 </LocalizationResource>

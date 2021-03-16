@@ -112,18 +112,15 @@
       <String Context="TS_SButton" >STEP SF</String>
     </Concept >
     <Concept Id="STEPSENSITIVITY" >
-      <Comments>[StoryID: 11291] Button for AUTONT binarization</Comments>
-      <Comments>Generic measure: change sensitivity</Comments>
+			<Comments>[StoryID: 11291] Button for AUTONT binarization Generic measure: change sensitivity</Comments>
       <String Context="TS_SButton" >SENSIT</String>
     </Concept >
     <Concept Id="AUTOMODE" >
-      <Comments>[StoryID: 12755] Button for AUTONT automatic mode</Comments>
-      <Comments>Generic measure: change from manual to auto mode</Comments>
+			<Comments>[StoryID: 12755] Button for AUTONT automatic mode Generic measure: change from manual to auto mode</Comments>
       <String Context="TS_SButton" >AUTO</String>
     </Concept >
     <Concept Id="MANUALMODE" >
-      <Comments>[StoryID: 12755] Button for AUTONT manual mode</Comments>
-      <Comments>Generic measure: change from auto to manual mode</Comments>
+			<Comments>[StoryID: 12755] Button for AUTONT manual mode Generic measure: change from auto to manual mode</Comments>
       <String Context="TS_SButton" >MANUAL</String>
     </Concept >
     <Concept Id="EXPAND" >
@@ -217,6 +214,10 @@
     <Concept Id="CLIPPING" >
       <Comments>Label for the encoder that selects the active profile between full/positive/negative</Comments>
       <String Context="TS_TButton" >CLIPPING</String>
+    </Concept >
+    <Concept Id="CYCLES" >
+      <Comments>Label for the encoder that selects the number of active ADM cycles</Comments>
+      <String Context="TS_TButton" >CYCLES</String>
     </Concept >
     <Concept Id="PROFILE" >
       <Comments>Label for the encoder that selects the active profile between peak/mean/mode</Comments>
@@ -343,15 +344,6 @@
       <String Context="TS_SButton">STOP</String>
     </Concept>
     <Concept Id="AUTOEF contours detection failed">
-      <Comments>[StoryID: 8597] Message when Tomtec AutoEF fails</Comments>
-      <String Context="Generic_Warning" >AUTOEF: contours detection failed.</String>
-    </Concept >
-	<Concept Id="deno0710">
-      <Comments>[StoryID: 8597] Message when Tomtec AutoEF fails</Comments>
-		<String Context="TS_SButton">Pulmonary demo</String>
-		<String Context="Generic_Short">Pul</String>
-    </Concept >
-	<Concept Id="demo07102">
       <Comments>[StoryID: 8597] Message when Tomtec AutoEF fails</Comments>
       <String Context="Generic_Warning" >AUTOEF: contours detection failed.</String>
     </Concept >

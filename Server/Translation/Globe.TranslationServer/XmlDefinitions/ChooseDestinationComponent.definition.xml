@@ -45,6 +45,14 @@
       <Comments>Label for confirm password text box</Comments>
       <String Context="Generic_Medium" >CONFIRM PASSWORD</String>
     </Concept >
+    <Concept Id="BAD_PASSWORD_TOO_LONG" >
+      <Comments>Info text to inform the user the choosen password is too long</Comments>
+      <String Context="Generic_Long">The password can contain up to 48 characters</String>
+    </Concept >
+    <Concept Id="BAD_PASSWORD_NON_ASCII" >
+      <Comments>Info text to inform the user the choosen password is syntattically wrong as it can contain only ascii character </Comments>
+      <String Context="Generic_Long">char not allowed: </String>
+    </Concept >
     <Concept Id="TIME_ESTIMATION" >
       <Comments>export dialog: used to ask a confirmation to user when he selects one CD\DVD destination</Comments>
       <String Context="Generic_Long" >TIME ESTIMATION</String>

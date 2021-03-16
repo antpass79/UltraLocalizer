@@ -86,6 +86,10 @@
       <Comments>Default Depth</Comments>
       <String Context="Generic_Long">Default Depth</String>
     </Concept>	
+	<Concept Id="BothMeasureUnitsLabel">
+      <Comments>Show KPa and m/s on report</Comments>
+      <String Context="Generic_Long">Show KPa and m/s on report</String>
+    </Concept>
 	<Concept Id="SDMeasureUnitLabel">
       <Comments>Standard deviation measure unit</Comments>
       <String Context="Generic_Long">SD measure unit</String>

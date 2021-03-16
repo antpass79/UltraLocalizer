@@ -469,6 +469,50 @@
       <Comments>Navigator license for MR Breast [Story 36740]</Comments>
       <String Context="Generic_Medium">MR BREAST</String>
     </Concept>
+    <Concept Id="E_CHINESE_OPTION">
+      <Comments>License to enable chinese input and language [Story 41370]</Comments>
+      <String Context="Generic_Medium">Chinese Language</String>
+    </Concept>
+    <Concept Id="E_BREAST_CALCIFICATION">
+      <Comments>License for Breast Calcification [Story 38733]</Comments>
+      <String Context="Generic_Medium">Breast Calcification</String>
+    </Concept>
+    <Concept Id="E_PLA_OPTION">
+      <Comments>License for EcoLaser [Defect 41882]</Comments>
+      <String Context="Generic_Medium">Percutaneous Laser Ablation</String>
+    </Concept>
+    <Concept Id="E_URO_FUSION_NAVIGATOR">
+      <Comments>License for Uro Fusion [Story 39475]</Comments>
+      <String Context="Generic_Medium">UroFusion</String>
+    </Concept>
+    <Concept Id="E_CHINA_RESEARCH_OPTION">
+      <Comments>License for chinese research [Story 45716]</Comments>
+      <String Context="Generic_Medium">Chinese Research</String>
+    </Concept>
+   <Concept Id="E_2DSWECONVEX_OPTION">
+      <Comments>License for QElaxto 2D Convex only [Story 47219]</Comments>
+      <String Context="Generic_Medium">QElaXto 2D Convex</String>
+    </Concept>
+    <Concept Id="E_PLA_ADV_THYROID_OPTION">
+      <Comments>License for Pla Advanced Thyroid [Story 48162]</Comments>
+      <String Context="Generic_Medium">PLA Advanced Thyroid</String>
+    </Concept>
+    <Concept Id="E_PLA_ADV_PROSTATE_OPTION">
+      <Comments>License for Pla Advanced Prostate [Story 48162]</Comments>
+      <String Context="Generic_Medium">PLA Advanced Prostate</String>
+    </Concept>
+    <Concept Id="E_EDAP_OPTION">
+      <Comments>License for EDAP Lithotripter [Story 48300]</Comments>
+      <String Context="Generic_Long">EDAP Communication Protocol</String>
+    </Concept>
+    <Concept Id="E_LUNG_US_PROTOCOL_OPTION">
+      <Comments>License for Lung US Protocol [Story 51115]</Comments>
+      <String Context="Generic_Medium">Lung Ultrasound</String>
+    </Concept>
+    <Concept Id="E_XSTRAIN_EVO_OPTION">
+      <Comments>License for XStrain Evolution [Story 50011]</Comments>
+      <String Context="Generic_Medium">XStrain Evolution</String>
+    </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="Models">
     <Concept Id="E_UNKNOWN_MODEL">
@@ -527,14 +571,6 @@
       <Comments>Equipment's model</Comments>
       <String Context="Generic_Long">MYLAB GAMMA VET</String>
     </Concept >
-	<Concept Id="E_MYLAB_GAMMA_EHD">
-      <Comments>Equipment's model</Comments>
-      <String Context="Generic_Long">MYLAB GAMMA EHD</String>
-    </Concept >
-	<Concept Id="E_MYLAB_GAMMA_EXP">
-      <Comments>Equipment's model</Comments>
-      <String Context="Generic_Long">MYLAB GAMMA EXP</String>
-    </Concept >	
     <Concept Id="E_MYLAB_SHARK">
       <Comments>Equipment's model</Comments>
       <String Context="Generic_Long">MYLAB SHARK</String>
@@ -663,10 +699,18 @@
       <Comments>Equipment's model [Task: 25367 ]</Comments>
       <String Context="Generic_Long">MyLab Sigma VET</String>
     </Concept >
-    <Concept Id="E_MYLAB_DELTA">
-      <Comments>Equipment's model [Task: 25835 ]</Comments>
-      <String Context="Generic_Long">MyLab Delta</String>
+    <Concept Id="E_SIGMA_X_LM">
+      <Comments>Equipment's model [Story 46784 ]</Comments>
+      <String Context="Generic_Long">百胜 Sigma X</String>
     </Concept >
+    <Concept Id="E_IP30X_LB">
+      <Comments>Equipment's model [Story 46784 ]</Comments>
+      <String Context="Generic_Long">万东百胜 iP30X</String>
+    </Concept >
+    <Concept Id="E_MYLAB_OMEGA_ZH">
+      <Comments>Equipment's model [Story 46784 ]</Comments>
+      <String Context="Generic_Long">Omega (China)</String>
+    </Concept >		
     <Concept Id="E_MYLAB_DELTA_VET">
       <Comments>Equipment's model [Task: 25835 ]</Comments>
       <String Context="Generic_Long">MyLab Delta VET</String>
@@ -687,29 +731,13 @@
       <Comments>Equipment's model [Story 31721]</Comments>
       <String Context="Generic_Long">MyLab X7 eHD</String>
     </Concept >
-    <Concept Id="E_MYLAB_X6_EXP_ZH">
-      <Comments>Equipment's model [Story 31721]</Comments>
-      <String Context="Generic_Long">MyLab X6 eXP</String>
+    <Concept Id="E_W80_PRO_LM">
+      <Comments>Equipment's model [Story 46783]</Comments>
+      <String Context="Generic_Long">W80 Pro</String>
     </Concept >
-    <Concept Id="E_MYLAB_X6_EHD_ZH">
-      <Comments>Equipment's model [Story 31721]</Comments>
-      <String Context="Generic_Long">MyLab X6 eHD</String>
-    </Concept >
-    <Concept Id="E_MYLAB_X5_ZH">
-      <Comments>Equipment's model [Story 31721]</Comments>
-      <String Context="Generic_Long">MyLab X5</String>
-    </Concept >
-    <Concept Id="E_MYLAB_X5_EXP">
-      <Comments>Equipment's model [Story 31721]</Comments>
-      <String Context="Generic_Long">MyLab X5 eXP</String>
-    </Concept >
-    <Concept Id="E_MYLAB_X5_EHD">
-      <Comments>Equipment's model [Story 31721]</Comments>
-      <String Context="Generic_Long">MyLab X5 eHD</String>
-    </Concept >
-    <Concept Id="E_MYLAB_X6_ZH">
-      <Comments>Equipment's model [Story 31721]</Comments>
-      <String Context="Generic_Long">MyLab X6</String>
+    <Concept Id="E_X8_PRO_LM">
+      <Comments>Equipment's model [Story 46783]</Comments>
+      <String Context="Generic_Long">X8 Pro</String>
     </Concept >
     <Concept Id="E_MYLAB_X7_ZH">
       <Comments>Equipment's model [Story 31721]</Comments>
@@ -846,6 +874,114 @@
     <Concept Id="E_XPRO80">
       <Comments>Equipment's model [Story 36638]</Comments>
       <String Context="Generic_Long">ML Xpro80</String>
+    </Concept >
+    <Concept Id="E_MYLAB_NINE_EXP_ZH">
+      <Comments>Equipment's model [StoryID: 31640]</Comments>
+      <String Context="Generic_Long">MyLab 9 eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_NINE_EHD_ZH">
+      <Comments>Equipment's model [StoryID: 31640]</Comments>
+      <String Context="Generic_Long">MyLab 9 eHD</String>
+    </Concept >
+    <Concept Id="E_X5_VET">
+      <Comments>Equipment's model [Story 42213]</Comments>
+      <String Context="Generic_Long">百胜X5VET</String>
+    </Concept >
+    <Concept Id="E_I50_VET">
+      <Comments>Equipment's model [Story 42213]</Comments>
+      <String Context="Generic_Long">万东百胜i50VET</String>
+    </Concept >
+    <Concept Id="E_SIGMA_VET">
+      <Comments>Equipment's model [Story 42213]</Comments>
+      <String Context="Generic_Long">百胜SigmaVET</String>
+    </Concept >
+    <Concept Id="E_IP30_VET">
+      <Comments>Equipment's model [Story 42213]</Comments>
+      <String Context="Generic_Long">万东百胜 iP30VET</String>
+    </Concept >
+    <Concept Id="E_X8_LM">
+      <Comments>Equipment's model [Story 42211]</Comments>
+      <String Context="Generic_Long">X8</String>
+    </Concept >
+    <Concept Id="E_W80_LM">
+      <Comments>Equipment's model [Story 42211]</Comments>
+      <String Context="Generic_Long">W80</String>
+    </Concept >
+    <Concept Id="E_MYLAB_SIGMA_ELITE">
+      <Comments>Equipment's model [Defect 45538]</Comments>
+      <String Context="Generic_Long">MyLabSigma elite</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X9_PRO_ZH">
+      <Comments>Equipment's model [Story 46784]</Comments>
+      <String Context="Generic_Long">MyLab X9 Pro</String>
+    </Concept >
+    <Concept Id="E_MYLAB_OMEGA_X_ZH">
+      <Comments>Equipment's model [Story 46784]</Comments>
+      <String Context="Generic_Long">MyLabOmega X</String>
+    </Concept >
+    <Concept Id="E_IP50_LB">
+      <Comments>Equipment's model [Story 46784]</Comments>
+      <String Context="Generic_Long">万东百胜 iP50</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X9_ZH">
+      <Comments>Equipment's model [Story 46784]</Comments>
+      <String Context="Generic_Long">MYLAB X9</String>
+    </Concept >
+    <Concept Id="E_IP50X_LB">
+      <Comments>Equipment's model [Story 46784]</Comments>
+      <String Context="Generic_Long">万东百胜 iP50X</String>
+    </Concept >	
+    <Concept Id="E_IP50D_LB">
+      <Comments>Equipment's model [Story 46784]</Comments>
+      <String Context="Generic_Long">万东百胜 iP50D</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X9_ELITE_ZH">
+      <Comments>Equipment's model [Story 46784]</Comments>
+      <String Context="Generic_Long">MyLab X9 Elite</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X9_PLUS_ZH">
+      <Comments>Equipment's model [Story 46784]</Comments>
+      <String Context="Generic_Long">MyLab X9 Plus</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X75">
+      <Comments>Equipment's model [Story 44501]</Comments>
+      <String Context="Generic_Long">MyLabX75</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X75_EXP">
+      <Comments>Equipment's model [Story 44501]</Comments>
+      <String Context="Generic_Long">MyLabX75 eXP</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X75_EHD">
+      <Comments>Equipment's model [Story 44501]</Comments>
+      <String Context="Generic_Long">MyLabX75 eHD</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X75_VET">
+      <Comments>Equipment's model [Story 44501]</Comments>
+      <String Context="Generic_Long">MyLabX75VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_XPRO75">
+      <Comments>Equipment's model [Story 44501]</Comments>
+      <String Context="Generic_Long">MyLab XPro75</String>
+    </Concept >
+    <Concept Id="E_W70VET_LB">
+      <Comments>Equipment's model [Story 49107]</Comments>
+      <String Context="Generic_Long">W70VET</String>
+    </Concept >
+    <Concept Id="E_W50VET_LB">
+      <Comments>Equipment's model [Story 49107]</Comments>
+      <String Context="Generic_Long">W50VET</String>
+    </Concept >
+    <Concept Id="E_MYLAB_NINE_ELITE_ZH">
+      <Comments>Equipment's model [Story 49108]</Comments>
+      <String Context="Generic_Long">MyLab 9 Elite (China)</String>
+    </Concept >
+    <Concept Id="E_MYLAB_NINE_PRO_ZH">
+      <Comments>Equipment's model [Story 49108]</Comments>
+      <String Context="Generic_Long">MyLab 9 Pro (China)</String>
+    </Concept >
+    <Concept Id="E_MYLAB_X9">
+      <Comments>Equipment's model [Story 49781]</Comments>
+      <String Context="Generic_Long">MyLabX9</String>
     </Concept >
   </LocalizationSection>
 </LocalizationResource>

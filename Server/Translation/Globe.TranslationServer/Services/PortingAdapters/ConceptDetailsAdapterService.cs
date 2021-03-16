@@ -16,7 +16,6 @@ namespace Globe.TranslationServer.Services.PortingAdapters
         public ConceptDetailsAdapterService(IXmlService xmlService, UltraDBConcept ultraDBConcept, ILogService logService)
         {
             _xmlService = xmlService;
-            _xmlService.LoadXml();
             _ultraDBConcept = ultraDBConcept;
             _logService = logService;
         }

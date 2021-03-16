@@ -1,7 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="WebServicesComponent" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <LocalizationSection>
-      <Concept Id="Address" >
+    <Concept Id="Audio">
+      <String Context="TS_AButton">Audio</String>
+    </Concept>
+    <Concept Id="BackHome">
+      <String Context="TS_AButton">Back Home</String>
+    </Concept>
+    <Concept Id="Camera">
+      <String Context="TS_AButton">Camera stream</String>
+    </Concept>
+    <Concept Id="Clip">
+      <String Context="TS_AButton">Clip</String>
+    </Concept>
+    <Concept Id="HideCamera">
+      <String Context="TS_AButton">Camera PiP</String>
+    </Concept>
+    <Concept Id="Image">
+      <String Context="TS_AButton">Image</String>
+    </Concept>
+    <Concept Id="Mic">
+      <String Context="TS_AButton">Mic</String>
+    </Concept>
+    <Concept Id="Move">
+      <String Context="TS_AButton">Move</String>
+    </Concept>
+    <Concept Id="Pip">
+      <String Context="TS_AButton">Pip</String>
+    </Concept>
+    <Concept Id="PipSize">
+      <String Context="TS_AButton">Pip Size</String>
+    </Concept>
+    <Concept Id="Stream">
+      <String Context="TS_TabName">Stream</String>
+    </Concept>
+    <Concept Id="SetHome">
+      <String Context="TS_AButton">Set Home</String>
+    </Concept>
+    <Concept Id="ShowInfo">
+      <String Context="TS_AButton">Show Info</String>
+    </Concept>
+    <Concept Id="Address" >
           <Comments>IP Address</Comments>
           <String Context="Generic_Medium" >Address:</String>
       </Concept >
@@ -25,7 +64,6 @@
       <Comments></Comments>
       <String Context="Generic_Medium" >MyLab Remote</String>
     </Concept >
-
     <Concept Id="EnforcePrivacy" >
           <Comments></Comments>
           <String Context="Generic_Medium" >Enforce Privacy:</String>
@@ -69,6 +107,7 @@
       <Concept Id="FullScreen" >
           <Comments></Comments>
           <String Context="Generic_Medium" >Fullscreen streaming:</String>
+        <String Context="TS_AButton">Fullscreen</String>
       </Concept >
       <Concept Id="StreamingDisclaimer" >
           <Comments></Comments>
@@ -90,5 +129,8 @@
           <Comments></Comments>
           <String Context="MD_RT13HelpLine" >Fullscreen and UsRegion disabled is not a valid configuration!</String>
       </Concept >
+    <Concept Id ="ActivateCameraLabel">
+      <String Context="Generic_Medium">Activate camera</String>
+    </Concept>
   </LocalizationSection>
 </LocalizationResource>

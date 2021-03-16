@@ -106,6 +106,10 @@
       <Comments>Item used on preset dialog</Comments>
       <String Context="Generic_Medium">Continuous Capture</String>
   </Concept> 
+  <Concept Id="ALL PROTOCOLS">
+      <Comments>Item used on preset dialog [Story 44523]</Comments>
+      <String Context="Generic_Medium">All protocols</String>
+  </Concept>
   <Concept Id="FACTORY_SETTINGS">
     <Comments>Button to set factory data on the fields</Comments>
       <String Context="Generic_Medium">FACTORY SETTINGS</String>

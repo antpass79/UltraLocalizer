@@ -334,7 +334,7 @@ namespace Globe.Client.Localizer.ViewModels
                         await _notificationService.NotifyAsync(new Notification
                         {
                             Title = Localize[LanguageKeys.Get_new_concepts],
-                            Message = result.ChangesFound ? Localize[LanguageKeys.New_concepts_found] : Localize[LanguageKeys.No_concepts_found],
+                            Message = result.Statistics.ChangesFound ? Localize[LanguageKeys.New_concepts_found] : Localize[LanguageKeys.No_concepts_found],
                             Level = NotificationLevel.Info
                         });
                     }

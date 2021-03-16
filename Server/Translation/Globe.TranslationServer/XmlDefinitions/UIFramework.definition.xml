@@ -96,6 +96,10 @@
       <String Context="TS_AButton">WAIT</String>
       <String Context="Generic_Long">WAIT</String>
     </Concept>
+    <Concept Id="FORCE_SHUTDOWN">
+      <Comments>Force the application to perform shutdown aborting the wait for all in-progress processes </Comments>
+      <String Context="TS_AButton">FORCE SHUT DOWN</String>
+    </Concept>
     <Concept Id="CANCEL">
       <Comments></Comments>
       <String Context="TS_AButton">CANCEL</String>
@@ -129,6 +133,18 @@
     <Concept Id="SYSTEMINTERNALERROR">
       <Comments>This message appears on all system errors</Comments>
       <String Context="Generic_Long">SYSTEM INTERNAL ERROR</String>
+    </Concept>
+    <Concept Id="SYSTEM_ERROR_OCCURRED">
+      <Comments>This message appears on all system errors</Comments>
+      <String Context="Generic_Warning">An error occurred!</String>
+    </Concept>
+    <Concept Id="COLLECTING_DEBUG_INFO">
+      <Comments>This message appears on all system errors</Comments>
+      <String Context="Generic_Warning">Please, wait while collecting debug information.</String>
+    </Concept>
+    <Concept Id="DONT_TURN_OFF">
+      <Comments>This message appears on all system errors</Comments>
+      <String Context="Generic_Warning">DO NOT TURN OFF THE UNIT</String>
     </Concept>
     <Concept Id="EXPORTING">
       <Comments>Title of waiting dialog while exporting</Comments>
@@ -181,6 +197,10 @@
     <Concept Id="BRIGHT_ROOM">
       <Comments>Monitor lighting settings preset for a bright room [massimiliano.omero@esaote.com]</Comments>
       <String Context="TS_AButton">Bright Room</String>
+    </Concept>
+    <Concept Id="ULTRA_BRIGHT_ROOM">
+      <Comments>Monitor lighting settings preset for an ultra bright room [massimiliano.omero@esaote.com]</Comments>
+      <String Context="TS_AButton">Ultra Bright Room</String>
     </Concept>
     <Concept Id="USER_DEFINED">
       <Comments>User defined monitor lighting settings (brigthness, contrast, color temperature) [massimiliano.omero@esaote.com]</Comments>
@@ -337,6 +357,10 @@
     <Concept Id="HARDWARE_ID">
       <Comments>Equipment's numeric unique identifier</Comments>
       <String Context="Generic_Long">HARDWARE ID</String>
+    </Concept>
+    <Concept Id="VORTEX_ID">
+      <Comments>Equipment's unique identifier for Vortex license [Story 37635]</Comments>
+      <String Context="Generic_Long">HyperDoppler ID</String>
     </Concept>
     <Concept Id="VERIFY_ON">
       <Comments>Verification of key's validity end with success</Comments>

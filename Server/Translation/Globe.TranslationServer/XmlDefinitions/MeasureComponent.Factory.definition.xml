@@ -230,18 +230,13 @@
 			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
 			<String Context="TS_SButton">Mitral Valve</String>
 		</Concept>
-		<Concept Id="Pulmonary Vein">
-			<Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
-			<String Context="TS_SButton">Pulmonary Vein</String>
-		</Concept>	
-		<Concept Id="PulmTest1">
-			<Comments>demo1</Comments>
-			<String Context="TS_SButton">Pulmonary demo</String>
-			<String Context="Generic_Short">Pul</String>
-		</Concept>	
-		<Concept Id="PulmTest2">
-			<Comments>demo1</Comments>
-			<String Context="Generic_Warning">Pulmonary test</String>
-		</Concept>			
-	</LocalizationSection>
+    <Concept Id="Pulmonary Vein">
+      <Comments>NEW HUMAN cardio GROUP [RTC: 14124]</Comments>
+      <String Context="TS_SButton">Pulmonary Vein</String>
+    </Concept>
+    <Concept Id="Routine">
+      <Comments>NEW HUMAN cardio GROUP [RTC: 42122]</Comments>
+      <String Context="TS_SButton">Routine</String>
+    </Concept>
+  </LocalizationSection>
 </LocalizationResource>

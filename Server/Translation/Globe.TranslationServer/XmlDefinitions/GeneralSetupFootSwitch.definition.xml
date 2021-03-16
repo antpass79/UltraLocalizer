@@ -156,6 +156,11 @@
 			<String Context="Generic_Medium">ElstDual from RT</String>
 			<String Context="MD_RT17Label">ElstDual</String>
 		</Concept>
+		<Concept Id="DualCFM^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
+			<String Context="Generic_Medium">CfmDual from RT</String>
+			<String Context="MD_RT17Label">CfmDual</String>
+		</Concept>
 		<Concept Id="SendLeftQIMT^RT">
 		    <Comments>Labels used in GeneralSetup menu (Generic_Medium) and RT Area 17 on MainScreen (MD_RT11MeasName)</Comments>
 			<String Context="Generic_Medium">SendLeftQIMT from RT</String>
