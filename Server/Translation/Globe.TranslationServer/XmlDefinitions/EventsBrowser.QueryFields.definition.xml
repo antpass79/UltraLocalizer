@@ -68,16 +68,6 @@
       <Comments>Age label in query mask</Comments>
       <String Context="Generic_Short">AGE</String>
     </Concept>
-    <Concept Id="MALE">
-      <Comments>Male label in query mask</Comments>
-      <String Context="Generic_Medium">MALE</String>
-      <String Context="Generic_Short">M</String>
-    </Concept>
-    <Concept Id="FEMALE">
-      <Comments>Female label in query mask</Comments>
-      <String Context="Generic_Medium">FEMALE</String>
-      <String Context="Generic_Short">F</String>
-    </Concept>
     <Concept Id="Years">
       <Comments>Years label in query mask</Comments>
       <String Context="Generic_Medium">YEARS</String>
@@ -241,6 +231,10 @@
     <Concept Id="Unspecified">
       <Comments>Device unspecified</Comments>
       <String Context="Generic_Long"></String>
+    </Concept>
+    <Concept Id="ClinicalEventDatabaseCreated">
+      <Comments>Event added when previous clinical database was corrupted [Defect 41709]</Comments>
+      <String Context="Generic_Long">Event database created</String>
     </Concept>
   </LocalizationSection> 
 </LocalizationResource>

@@ -63,13 +63,13 @@ namespace Globe.TranslationServer.Entities
                     .WithMany(p => p.LocConcept2Contexts)
                     .HasForeignKey(d => d.Idconcept)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ConceptToContext_Concept");
+                    .HasConstraintName("Concept2Context$ConceptsTableConcept2Context");
 
                 entity.HasOne(d => d.IdcontextNavigation)
                     .WithMany(p => p.LocConcept2Contexts)
                     .HasForeignKey(d => d.Idcontext)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_ConceptToContext_Context");
+                    .HasConstraintName("Concept2Context$CONTEXTSConcept2Context");
             });
 
             modelBuilder.Entity<LocConceptsTable>(entity =>
@@ -218,6 +218,10 @@ namespace Globe.TranslationServer.Entities
 
                 entity.HasIndex(e => e.Idtype, "STRINGS$IDType");
 
+                entity.HasIndex(e => e.Idlanguage, "STRINGS$LanguagesSTRINGS");
+
+                entity.HasIndex(e => e.Idtype, "STRINGS$StringTypesSTRINGS");
+
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Idlanguage).HasColumnName("IDLanguage");
@@ -256,9 +260,13 @@ namespace Globe.TranslationServer.Entities
             {
                 entity.ToTable("LOC_Strings2Context");
 
+                entity.HasIndex(e => e.Idconcept2Context, "Strings2Context$Concept2ContextStrings2Context");
+
                 entity.HasIndex(e => e.Idconcept2Context, "Strings2Context$IDConcept2Context");
 
                 entity.HasIndex(e => e.Idstring, "Strings2Context$IDString");
+
+                entity.HasIndex(e => e.Idstring, "Strings2Context$STRINGSStrings2Context");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 
@@ -285,6 +293,8 @@ namespace Globe.TranslationServer.Entities
 
                 entity.HasIndex(e => e.Idstring, "STRINGS2Translate$IDString");
 
+                entity.HasIndex(e => e.Idstring, "STRINGS2Translate$STRINGSSTRINGS2Translate");
+
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Idstring).HasColumnName("IDString");
@@ -310,6 +320,8 @@ namespace Globe.TranslationServer.Entities
                 entity.ToTable("LOC_STRINGSLocked");
 
                 entity.HasIndex(e => e.Idstring, "STRINGSLocked$IDString");
+
+                entity.HasIndex(e => e.Idstring, "STRINGSLocked$STRINGSSTRINGSLocked");
 
                 entity.Property(e => e.Id).HasColumnName("ID");
 

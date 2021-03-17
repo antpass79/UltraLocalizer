@@ -34,6 +34,7 @@
         public readonly static string Translation = nameof(Translation);
         public readonly static string Load = nameof(Load);
         public readonly static string Save = nameof(Save);
+        public readonly static string Open = nameof(Open);
         public readonly static string Close = nameof(Close);
         public readonly static string AutoMerge = nameof(AutoMerge);
         public readonly static string Cancel = nameof(Cancel);

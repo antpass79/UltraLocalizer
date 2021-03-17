@@ -2,17 +2,17 @@
 <LocalizationResource ComponentNamespace="ETouchComponent" Language="Definition" Version="1">
   <LocalizationSection InternalNamespace="Factory">
     <Concept Id="Default">
-      <Comment>Name of a configuration in the E-Touch configuration editor's list</Comment>
+      <Comments>Name of a configuration in the E-Touch configuration editor's list</Comments>
       <String Context="Generic_Medium">Default</String>
     </Concept>
     <Concept Id="EXAMPLE">
-      <Comment>Name of a configuration in the E-Touch configuration editor's list</Comment>
+      <Comments>Name of a configuration in the E-Touch configuration editor's list</Comments>
       <String Context="Generic_Medium">Example</String>
     </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="EDITOR">
     <Concept Id="EDITOR_NAME">
-      <Comment>Name of the e-touch configuration editor in the preset menu list</Comment>
+      <Comments>Name of the e-touch configuration editor in the preset menu list</Comments>
       <String Context="Generic_Medium">E-Touch</String>
     </Concept>
     <Concept Id="RECORDHEADER_LBL">
@@ -52,23 +52,23 @@
       <String Context="Generic_Warning">To add a new sequence, the selected tab must have an empty button. Select another tab or move/delete an existing sequence before recording a new one.</String>
     </Concept>
     <Concept Id="EMPTYLABEL_WARNING">
-      <Comment>Error when trying to set an empty label on a button</Comment>
+      <Comments>Error when trying to set an empty label on a button</Comments>
       <String Context="Generic_Warning">Cannot have empty label</String>
     </Concept>
     <Concept Id="TABLABELTOOLONG_WARNING">
-      <Comment>Error when trying to set a tab label too long to fit in the touchscreen</Comment>
+      <Comments>Error when trying to set a tab label too long to fit in the touchscreen</Comments>
       <String Context="Generic_Warning">Tab label too long (must be 15 characters or less)</String>
     </Concept>
     <Concept Id="DUPLICATE_TAB_LABEL_WARNING">
-      <Comment>Error when trying to save a configuration where 2 or more tabs have the same name. List o duplicate labels follows the ":"</Comment>
+      <Comments>Error when trying to save a configuration where 2 or more tabs have the same name. List o duplicate labels follows the ":"</Comments>
       <String Context="Generic_Warning">Duplicate tab label(s) found:</String>
     </Concept>
     <Concept Id="DUPLICATE_BUTTON_LABEL_WARNING">
-      <Comment>Error when trying to save a configuration where 2 or more buttons have the same name. List o duplicate labels follows the ":"</Comment>
+      <Comments>Error when trying to save a configuration where 2 or more buttons have the same name. List o duplicate labels follows the ":"</Comments>
       <String Context="Generic_Warning">Duplicate button label(s) found:</String>
     </Concept>
     <Concept Id="ETOUCH_TABCOMMAND">
-      <Comment>Default name of a new tab</Comment>
+      <Comments>Default name of a new tab</Comments>
       <String Context="TS_TabName">eTouch</String>
     </Concept>
     <Concept Id="RESERVED_BUTTON">
@@ -78,15 +78,15 @@
       <String Context="Generic_Long">Select destination button</String>
     </Concept>
     <Concept Id="LOAD_CONFSET_FAILED">
-      <Comment>Warning message when a corrupted file is found</Comment>
+      <Comments>Warning message when a corrupted file is found</Comments>
       <String Context="Generic_Long">Loading failed - corrupted configuration</String>
     </Concept>
     <Concept Id="LOAD_CONFSET_FAILED_LOAD_FACTORY">
-      <Comment>Warning message when a corrupted file is found and the corresponding factory is loaded</Comment>
+      <Comments>Warning message when a corrupted file is found and the corresponding factory is loaded</Comments>
       <String Context="Generic_Warning">Loading failed - corrupted configuration. The corresponding Factory has been loaded.</String>
     </Concept>
     <Concept Id="MODIFICATIONS_ACTIVE_MESSAGE">
-      <Comment>Message shown on saving a configuration</Comment>
+      <Comments>Message shown on saving a configuration</Comments>
       <String Context="Generic_Warning">Modifications will be available after starting a new exam</String>
     </Concept>
   </LocalizationSection>

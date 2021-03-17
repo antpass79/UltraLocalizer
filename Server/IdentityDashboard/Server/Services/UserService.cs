@@ -108,6 +108,43 @@ namespace Globe.Identity.AdministrativeDashboard.Server.Services
             return await Task.FromResult(users);
         }
 
+        async public Task<IEnumerable<ApplicationUserDTO>> FindByUserPermissionAsync(string userName)
+        {
+            List<ApplicationUserDTO> users = new List<ApplicationUserDTO>();
+            var allUsers = await _userUnitOfWork.UserRepository.GetAsync();
+            var userHimself = await _userManager.FindByNameAsync(userName);
+
+            if (await _userManager.IsInRoleAsync(userHimself, "MasterTranslator") ||
+                    await _userManager.IsInRoleAsync(userHimself, "Admin"))
+            {
+                foreach (var user in allUsers)
+                {
+                    users.Add(new ApplicationUserDTO
+                    {
+                        Id = user.Id,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        UserName = user.UserName,
+                        Email = user.Email
+                    });
+                }
+            }
+            else
+            {
+                users.Add(new ApplicationUserDTO
+                {
+                    Id = userHimself.Id,
+                    FirstName = userHimself.FirstName,
+                    LastName = userHimself.LastName,
+                    UserName = userHimself.UserName,
+                    Email = userHimself.Email
+                });
+
+            }
+
+            return await Task.FromResult(users);
+        }
+
         async public Task<IEnumerable<ApplicationUserDTO>> GetAsync(Expression<Func<ApplicationUserDTO, bool>> filter = null, Func<IQueryable<ApplicationUserDTO>, IOrderedQueryable<ApplicationUserDTO>> orderBy = null)
         {
             return _mapper.Map<IEnumerable<ApplicationUserDTO>>(await _userUnitOfWork.UserRepository.GetAsync());

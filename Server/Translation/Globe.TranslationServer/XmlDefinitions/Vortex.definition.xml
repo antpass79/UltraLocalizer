@@ -1,0 +1,348 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LocalizationResource ComponentNamespace="VortexComponent" Language="Definition" Version="1">
+  <LocalizationSection InternalNamespace="Commands">
+  <Concept Id="Confirm">
+      <String Context="TS_SButton">Confirm</String>
+    </Concept>
+	<Concept Id="Exit">
+      <String Context="TS_SButton">Exit</String>
+    </Concept>
+	<Concept Id="NewTrace">
+      <String Context="TS_SButton">New Border</String>
+    </Concept>
+	<Concept Id="Vortex">
+      <String Context="TS_TabName">HyperDoppler</String>
+    </Concept>
+	<Concept Id="ExportVortex">
+      <String Context="TS_SButton">Save Vtx Data Clip</String>
+    </Concept>
+	<Concept Id="DisplayArrows">
+      <String Context="TS_SButton">Show Arrows</String>
+    </Concept>
+	<Concept Id="MapSelection">
+      <String Context="TS_SButton">Map Selection</String>
+    </Concept>
+	<Concept Id="Density">
+      <String Context="TS_SButton">Density</String>
+    </Concept>
+	<Concept Id="Attach2Report">
+      <String Context="TS_SButton">Attach to Report</String>
+    </Concept>
+	<Concept Id="FrameCommand">
+      <String Context="TS_SButton">Frame</String>
+    </Concept>
+	<Concept Id="ArrowLenght">
+      <String Context="TS_SButton">Arrow Lenght</String>
+    </Concept>
+	<Concept Id="MapTransparency">
+      <String Context="TS_SButton">Transparency</String>
+    </Concept>
+	<Concept Id="DustModeOn">
+      <String Context="TS_SButton">Dust Mode On</String>
+    </Concept>
+	<Concept Id="DustModeOff">
+      <String Context="TS_SButton">Dust Mode Off</String>
+    </Concept>
+	<Concept Id="DisplayPressureGradientImage">
+      <String Context="TS_SButton">Pressure Gradient Image</String>
+    </Concept>
+	<Concept Id="DisplayCenterImage">
+      <String Context="TS_SButton">Center Image</String>
+    </Concept>
+	<Concept Id="DisplaySteadyStreamImage">
+      <String Context="TS_SButton">Steady Stream Image </String>
+    </Concept>
+	<Concept Id="VortexSteady">
+      <String Context="TS_SButton">Vortex Steady</String>
+    </Concept>
+	<Concept Id="VorticitySteady">
+      <String Context="TS_SButton">Vorticity Steady</String>
+    </Concept>
+	<Concept Id="StreamSteady">
+      <String Context="TS_SButton">Stream Steady</String>
+    </Concept>
+	<Concept Id="ArrowsRejection">
+	<Comments>Filter</Comments>
+      <String Context="TS_SButton">Filter</String>
+    </Concept>
+	<Concept Id="DissipationSteady">
+      <String Context="TS_SButton">Dissip. Steady</String>
+    </Concept>
+	<Concept Id="PreassureSteady">
+      <String Context="TS_SButton">Press. Steady</String>
+    </Concept>
+	<Concept Id="VortexSteadyWM">
+		<String Context="TS_SButton">Steady Stream Map W</String>
+		</Concept>
+	<Concept Id="VorticitySteadyPSIM">
+		<String Context="TS_SButton">Steady Stream Map PSI</String>
+	</Concept>
+	<Concept Id="StreamSteadyDISSM">
+		<String Context="TS_SButton">Steady Stream Map DISS</String>
+	</Concept>
+	<Concept Id="DissipationSteadyPRESM">
+		<String Context="TS_SButton">Steady Stream Map PRES</String>
+	</Concept>
+	<Concept Id="PreassureSteadyEKM">
+		<String Context="TS_SButton">Steady Stream Map EK</String>
+	</Concept>
+	<Concept Id="MapSelectionW">
+		<String Context="TS_SButton">US Image Map W</String>
+	</Concept>
+	<Concept Id="MapSelectionPSI">
+      <String Context="TS_SButton">US Image Map PSI</String>
+    </Concept>
+	<Concept Id="MapSelectionDISS">
+      <String Context="TS_SButton">US Image Map DISS</String>
+    </Concept>
+	<Concept Id="MapSelectionPRES">
+      <String Context="TS_SButton">US Image Map PRES</String>
+    </Concept>
+	<Concept Id="MapSelectionEK">
+      <String Context="TS_SButton">US Image Map EK</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Measures">
+	<Concept Id="VortexArea">
+	<Comments>Vortex Area</Comments>
+      <String Context="Generic_Short">Vort Area</String>
+    </Concept>
+	<Concept Id="VortexIntensity">
+	  <Comments>Vortex Intensity</Comments>
+      <String Context="Generic_Short">Vort Int</String>
+    </Concept>
+	<Concept Id="VortexDepth">
+	  <Comments>Vortex Depth</Comments>
+      <String Context="Generic_Short">Vort Dep</String>
+    </Concept>
+	<Concept Id="VortexLenght">
+	  <Comments>Vortex Lenght</Comments>
+      <String Context="Generic_Short">Vort Len</String>
+    </Concept>
+	<Concept Id="EnergyDissipation">
+	 <Comments>Energy Dissipation</Comments>
+	 <String Context="Generic_Short">Energy Diss</String>
+    </Concept>
+	<Concept Id="VorticityFluctuation">
+	<Comments>Vorticity Fluctuation</Comments>
+      <String Context="Generic_Short">Vort Fluct</String>
+    </Concept>
+	<Concept Id="KineticEnergyFluctuation">
+	<Comments>Kinetic Energy Fluctuation</Comments>
+      <String Context="Generic_Short">Kin Ener Fluct</String>
+    </Concept>
+	<Concept Id="ShearStressFluctuation">
+	<Comments>Shear Stress Fluctuation</Comments>
+      <String Context="Generic_Short">Sh St Fluct</String>
+    </Concept>
+	<Concept Id="FlowForceParameter">
+	<Comments>Flow Force Parameter</Comments>
+      <String Context="Generic_Short">FForce Param</String>
+    </Concept>
+	<Concept Id="FlowForceAngle">
+	<Comments>Flow Force Angle</Comments>
+      <String Context="Generic_Short">FForce Angle</String>
+    </Concept>
+  </LocalizationSection>
+    <LocalizationSection InternalNamespace="Alerts">
+	<Concept Id="UNDEFINED">
+	<Comments>Error on Vortex Calculation</Comments>
+      <String Context="Generic_Long">Generic Error on Vortex Calculation</String>
+    </Concept>
+	<Concept Id="TIMEOUT">
+	<Comments>Timeout on Vortex Calculation</Comments>
+      <String Context="Generic_Long">Timout Error on Vortex Calculation</String>
+    </Concept>
+	<Concept Id="FAILED_TIMESTAMP_NOT_FOUND">
+	<Comments>Timestamp error on Vortex Calculation</Comments>
+      <String Context="Generic_Long">Timestamp Not Found on Vortex Calculation</String>
+    </Concept>
+	<Concept Id="FAILED_SECTIONS_CHANGED">
+	<Comments>Section error on Vortex Calculation</Comments>
+      <String Context="Generic_Long">Not Valid Cycle, Please select another one</String>
+    </Concept>
+	<Concept Id="FAILED_TIMESTAMPS_NON_MONOTONIC">
+	<Comments>Timestamp not monotonic error on Vortex Calculation</Comments>
+      <String Context="Generic_Long">Timestamp Error on Vortex Calculation</String>
+    </Concept>
+	<Concept Id="FAILED_ERROR_AMID_LIBRARY">
+	<Comments>Amid error on Vortex Calculation</Comments>
+      <String Context="Generic_Long">External Library Throw an Error </String>
+    </Concept>
+	<Concept Id="FAILED_LOAD_AMID_LIBRARY">
+	<Comments>Amid error on Vortex Calculation</Comments>
+      <String Context="Generic_Long">External Library Throw an Error </String>
+    </Concept>
+	<Concept Id="FAILED_ERROR_AMID_LICENSE">
+	<Comments>Amid license error on Vortex Calculation</Comments>
+      <String Context="Generic_Long"> Invalid License </String>
+    </Concept>
+	<Concept Id="FAILED_LOW_FRAME_RATE">
+      <String Context="Generic_Long"> Low Frame Rate </String>
+    </Concept>
+	<Concept Id="FAILED_NUMBER_OF_FRAMES">
+	<Comments>Ecceduto massimo numero di frame di un ciclo cardiaco</Comments>
+      <String Context="Generic_Long">Max Number of Frames Exceeded </String>
+    </Concept>
+	<Concept Id="FAILED_ZONE_TOO_LONG">
+	<Comments>Zona (durata del ciclo cardiaco) troppo lunga</Comments>
+      <String Context="Generic_Long">Cardiac Cycle Too Long </String>
+    </Concept>
+	<Concept Id="FAILED_BAD_MEMORY_ACCESS">
+	<Comments>Errore di accesso in memoria</Comments>
+      <String Context="Generic_Warning">Detection Failed: try to change the point positioning </String>
+    </Concept>
+	<Concept Id="FAILED_BAD_TEXTURE_DIMENSIONS">
+	<Comments>Errore nelle dimensioni della texture</Comments>
+      <String Context="Generic_Warning">Detection Failed: try to change the point positioning </String>
+    </Concept>
+	<Concept Id="IDLE">
+	<Comments>Idle on Vortex Calculation</Comments>
+      <String Context="Generic_Long">Vortex Calculation is Idle for unknown reason </String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Report">
+  <Concept Id="Header">
+	<Comments>Vortex Section Header</Comments>
+      <String Context="Generic_Long">Vortex Section</String>
+    </Concept>
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Configuration">
+   <Concept Id="FactoryName">
+	<Comments>Factory Configuration</Comments>
+      <String Context="Generic_Medium">Default</String>
+    </Concept>
+	 <Concept Id="ConfigurationName">
+	<Comments>Configuration Name</Comments>
+      <String Context="Generic_Medium">HyperDoppler</String>
+    </Concept>
+	 <Concept Id="showarrows">
+	<Comments></Comments>
+      <String Context="Generic_Medium">Show Arrows</String>
+    </Concept>
+	 <Concept Id="borderinsertion">
+	<Comments></Comments>
+      <String Context="Generic_Medium">Border Insertion</String>
+    </Concept>
+	 <Concept Id="compatibility">
+	<Comments></Comments>
+      <String Context="Generic_Medium">Compatibility Mode</String>
+    </Concept>
+	<Concept Id="velocityfilter">
+	<Comments></Comments>
+      <String Context="Generic_Medium">Velocity Filter</String>
+    </Concept>
+	<Concept Id="newmeasures">
+	<Comments></Comments>
+      <String Context="Generic_Medium">New Measurement</String>
+    </Concept>
+		<Concept Id="VortexArea">
+	<Comments>Vortex Area</Comments>
+      <String Context="Generic_Medium">Vort Area</String>
+    </Concept>
+	<Concept Id="VortexIntensity">
+	  <Comments>Vortex Intensity</Comments>
+      <String Context="Generic_Medium">Vort Int</String>
+    </Concept>
+	<Concept Id="VortexDepth">
+	  <Comments>Vortex Depth</Comments>
+      <String Context="Generic_Medium">Vort Dep</String>
+    </Concept>
+	<Concept Id="VortexLenght">
+	  <Comments>Vortex Lenght</Comments>
+      <String Context="Generic_Medium">Vort Len</String>
+    </Concept>
+	<Concept Id="EnergyDissipation">
+	 <Comments>Energy Dissipation</Comments>
+	 <String Context="Generic_Medium">Energy Diss</String>
+    </Concept>
+	<Concept Id="VorticityFluctuation">
+	<Comments>Vorticity Fluctuation</Comments>
+      <String Context="Generic_Medium">Vort Fluct</String>
+    </Concept>
+	<Concept Id="KineticEnergyFluctuation">
+	<Comments>Kinetic Energy Fluctuation</Comments>
+      <String Context="Generic_Medium">Kin Ener Fluct</String>
+    </Concept>
+	<Concept Id="ShearStressFluctuation">
+	<Comments>Shear Stress Fluctuation</Comments>
+      <String Context="Generic_Medium">Sh St Fluct</String>
+    </Concept>
+	<Concept Id="FlowForceParameter">
+	<Comments>Flow Force Parameter</Comments>
+      <String Context="Generic_Medium">FForce Param</String>
+    </Concept>
+	<Concept Id="FlowForceAngle">
+	<Comments>Flow Force Angle</Comments>
+      <String Context="Generic_Medium">FForce Angle</String>
+    </Concept>
+	<Concept Id="MeasureHeader">
+	<Comments>Measure List</Comments>
+      <String Context="Generic_Medium">Measure List</String>
+    </Concept>
+	<Concept Id="MapsSelection">
+	<Comments>Maps Selection</Comments>
+      <String Context="Generic_Medium">Map Selection</String>
+    </Concept>
+	<Concept Id="ArrowsRejection">
+	<Comments>Filter</Comments>
+      <String Context="Generic_Medium">Filter</String>
+    </Concept>
+	<Concept Id="USMap">
+	<Comments>US Map</Comments>
+      <String Context="Generic_Medium">Ultrasound Map</String>
+    </Concept>
+	<Concept Id="SteadyMap">
+	<Comments>Steady Map</Comments>
+      <String Context="Generic_Medium">Steady Stream Map</String>
+    </Concept>
+	<Concept Id="Parameters">
+	<Comments>Parameters</Comments>
+      <String Context="Generic_Medium">Parameters</String>
+    </Concept>
+	<Concept Id="CompatibilityCheck">
+	<Comments>CompatibilityCheck</Comments>
+      <String Context="Generic_Medium">Compatibility Check</String>
+    </Concept>
+	<Concept Id="VortexSteadyWM">
+		<String Context="Generic_Medium">Steady Stream Map W</String>
+		</Concept>
+	<Concept Id="VorticitySteadyPSIM">
+		<String Context="Generic_Medium">Steady Stream Map PSI</String>
+	</Concept>
+	<Concept Id="StreamSteadyDISSM">
+		<String Context="Generic_Medium">Steady Stream Map DISS</String>
+	</Concept>
+	<Concept Id="DissipationSteadyPRESM">
+		<String Context="Generic_Medium">Steady Stream Map PRES</String>
+	</Concept>
+	<Concept Id="PreassureSteadyEKM">
+		<String Context="Generic_Medium">Steady Stream Map EK</String>
+	</Concept>
+	<Concept Id="MapSelectionW">
+		<String Context="Generic_Medium">US Image Map W</String>
+	</Concept>
+	<Concept Id="MapSelectionPSI">
+      <String Context="Generic_Medium">US Image Map PSI</String>
+    </Concept>
+	<Concept Id="MapSelectionDISS">
+      <String Context="Generic_Medium">US Image Map DISS</String>
+    </Concept>
+	<Concept Id="MapSelectionPRES">
+      <String Context="Generic_Medium">US Image Map PRES</String>
+    </Concept>
+	<Concept Id="MapSelectionEK">
+      <String Context="Generic_Medium">US Image Map WK</String>
+    </Concept>
+	<Concept Id="Density">
+      <String Context="Generic_Medium">Density</String>
+    </Concept>
+	<Concept Id="ArrowLenght">
+      <String Context="Generic_Medium">Arrow Lenght</String>
+    </Concept>
+	<Concept Id="MapTransparency">
+      <String Context="Generic_Medium">Transparency</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>
+   

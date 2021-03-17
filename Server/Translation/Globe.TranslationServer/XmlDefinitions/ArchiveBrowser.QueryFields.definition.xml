@@ -66,6 +66,16 @@
       <String Context="Generic_Medium">FEMALE</String>
       <String Context="Generic_Short">F</String>
     </Concept>
+    <Concept Id="MALE_VET">
+      <Comments>Male label in query mask for vet env [Defect 49248]</Comments>
+      <String Context="Generic_Medium">MALE</String>
+      <String Context="Generic_Short">M</String>
+    </Concept>
+    <Concept Id="FEMALE_VET">
+      <Comments>Female label in query mask for vet env [Defect 49248]</Comments>
+      <String Context="Generic_Medium">FEMALE</String>
+      <String Context="Generic_Short">F</String>
+    </Concept>
     <Concept Id="OTHER">
       <Comments>Other sex label in query mask</Comments>
       <String Context="Generic_Medium">OTHER</String>

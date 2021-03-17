@@ -64,6 +64,14 @@
       <Comments>Header of column Average ultrasound age (12W0D) in worksheet; keep short</Comments>
       <String Context="Generic_Medium">AUA</String>
     </Concept>
+    <Concept Id="AVERAGE">
+      <Comments>Header of column Average enabled(12W0D) in worksheet; keep short 43183</Comments>
+      <String Context="Generic_Medium">AV</String>
+    </Concept>
+    <Concept Id="DBP">
+      <Comments>Header of column measure value Days Before Parturition(12W0D) in worksheet; keep short 43183</Comments>
+      <String Context="Generic_Medium">DBP</String>
+    </Concept>
     <Concept Id="GA">
       <Comments>Header of column measure value gestational age (12W0D) in worksheet; keep short</Comments>
       <String Context="Generic_Medium">GA</String>
@@ -107,6 +115,14 @@
     <Concept Id="GA(Range)">
       <Comments>Header of column measure value gestational age range(12W0D-18W2D) in worksheet; keep short</Comments>
       <String Context="Generic_Medium">GA(Range)</String>
+    </Concept>
+    <Concept Id="DBP(Range)">
+      <Comments>Header of column measure value days before parturition range(12W0D-18W2D) in worksheet; keep short 43183</Comments>
+      <String Context="Generic_Medium">DBP(Range)</String>
+    </Concept>
+    <Concept Id="Range">
+      <Comments>Header of column measure value  range(100-120) in worksheet; keep short</Comments>
+      <String Context="Generic_Medium">Range</String>
     </Concept>
     <Concept Id="Author">
       <Comments>Header of column measure value for biometric study's author in worksheet; keep short</Comments>
@@ -337,23 +353,59 @@
       <Comments>Tab Header - SCORING</Comments>
 	    <String Context="TS_TButton">Scoring</String>
     </Concept>
-	<Concept Id="COMPOSITION">
+	  <Concept Id="COMPOSITION">
       <Comments>Tab Header - COMPOSITION</Comments>
 	    <String Context="TS_TButton">Composition</String>
     </Concept>
-	<Concept Id="ECHOGENITY">
+	  <Concept Id="ECHOGENITY">
       <Comments>Tab Header - ECHOGENITY</Comments>
 	    <String Context="TS_TButton">Echogenity</String>
     </Concept>
-	<Concept Id="SHAPE">
+  	<Concept Id="SHAPE">
       <Comments>Tab Header - SHAPE</Comments>
 	    <String Context="TS_TButton">Shape</String>
     </Concept>
-	<Concept Id="MARGINS">
-      <Comments>Tab Header - MARGINS</Comments>
-	    <String Context="TS_TButton">Margins</String>
-      <String Context="TS_SButton">Margins</String>
-      <String Context="Generic_Long">Margins</String>
-  </Concept>
+	  <Concept Id="MARGINS">
+        <Comments>Tab Header - MARGINS</Comments>
+	      <String Context="TS_TButton">Margins</String>
+        <String Context="TS_SButton">Margins</String>
+        <String Context="Generic_Long">Margins</String>
+    </Concept>
+    <Concept Id="URETHRA">
+        <Comments>Tab Header - URETHRA</Comments>
+        <String Context="TS_TButton">Urethra</String>
+    </Concept>
+    <Concept Id="SEMINALVESCICLE">
+        <Comments>Tab Header - SEMINAL VESCICLE</Comments>
+        <String Context="TS_TButton">Seminal vescicle</String>
+    </Concept>
+    <Concept Id="CAPSULE">
+        <Comments>Tab Header - CAPSULE</Comments>
+        <String Context="TS_TButton">Capsule</String>
+        <String Context="TS_SButton">Capsule</String>
+        <String Context="Generic_Long">Capsule</String>
+    </Concept>
+    <Concept Id="BLADDER">
+        <Comments>Tab Header - BLADDER</Comments>
+        <String Context="TS_TButton">Bladder</String>
+    </Concept>
+    <Concept Id="CYSTIC">
+      <Comments>Tab Header - CYSTIC</Comments>
+      <String Context="TS_TButton">Cystic</String>
+    </Concept>
+    <Concept Id="SOLID">
+      <Comments>Tab Header - SOLID</Comments>
+      <String Context="TS_TButton">Solid</String>
+      <String Context="TS_SButton">SOLID</String>
+      <String Context="Generic_Long">SOLID</String>
+    </Concept>
+    <Concept Id="SOLID2">
+      <Comments>Tab Header - SOLID2</Comments>
+      <String Context="TS_TButton">Solid2</String>
+    </Concept>
+    <Concept Id="HYPERPLASIA">
+      <Comments>Tab Header - HYPERPLASIA</Comments>
+      <String Context="TS_TButton">Hyperplasia</String>
+    </Concept>
   </LocalizationSection> 
 </LocalizationResource>

@@ -77,6 +77,21 @@
       <Comments>Label of the Report print option combobox in low level editor</Comments>
       <String Context="Generic_Medium">Report Print Option</String>
     </Concept >
+    <Concept Id="Label font size B">
+      <Comments>Label of the font size for B mode combobox in low level editor</Comments>
+      <String Context="Generic_Medium">Label font size B</String>
+      <String Context="Generic_Long">Font size for B-MODE labels</String>
+    </Concept >
+    <Concept Id="Label font size M">
+      <Comments>Label of the font size for M mode combobox in low level editor</Comments>
+      <String Context="Generic_Medium">Label font size M</String>
+      <String Context="Generic_Long">Font size for M-MODE labels</String>
+    </Concept >
+    <Concept Id="Label font size PW">
+      <Comments>Label of the font size for doppler mode combobox in low level editor</Comments>
+      <String Context="Generic_Medium">Label font size PW/CW</String>
+      <String Context="Generic_Long">Font size for PW/CW labels</String>
+    </Concept >
     <Concept Id="Cannot mix velocity in hz and other doppler measure">
       <Comments>Message to the user when a measure use a hz velocity and other doppler measures</Comments>
       <String Context="Generic_Warning">Cannot mix velocity in hz and other doppler measure.</String>
@@ -365,6 +380,18 @@
       <Comments>Label of the groupbox Cursor in low level units editor</Comments>
       <String Context="Generic_Long">CURSOR</String>
     </Concept >
+    <Concept Id="VTI Start Mode">
+      <Comments>Label of the groupbox VTI start mode in low level units editor</Comments>
+      <String Context="Generic_Long">VTI start mode</String>
+    </Concept >
+    <Concept Id="Manual">
+      <Comments>Label of the radio VTI start mode MANUAL in low level units editor</Comments>
+      <String Context="Generic_Long">Manual</String>
+    </Concept >
+    <Concept Id="Automatic">
+      <Comments>Label of the radio VTI start mode AUTOMATIC in low level units editor</Comments>
+      <String Context="Generic_Long">Automatic</String>
+    </Concept >
     <Concept Id="DOPPLER CURSOR SHAPE">
       <Comments>Label of the groupbox Cursor for doppler in low level units editor</Comments>
       <String Context="Generic_Long">DOPPLER CURSOR SHAPE</String>
@@ -373,9 +400,25 @@
       <Comments>Label of the groupbox Cursor for M-Mode in low level units editor</Comments>
       <String Context="Generic_Long">M-MODE CURSOR SHAPE</String>
     </Concept >
+    <Concept Id="2D-MODE CURSOR SIZE">
+      <Comments>Label of the groupbox Cursor for 2D-Mode in low level units editor</Comments>
+      <String Context="Generic_Long">2D-MODE cursor size</String>
+    </Concept >
+    <Concept Id="CURSOR SIZE">
+      <Comments>Label of the groupbox Cursor in low level units editor</Comments>
+      <String Context="Generic_Long">Cursor size</String>
+    </Concept >
     <Concept Id="Standard">
       <Comments>Label of the radiobutton Standard Cursor in low level units editor</Comments>
       <String Context="Generic_Long">Standard</String>
+    </Concept >
+    <Concept Id="Small">
+      <Comments>Label of the radiobutton always small Cursor in low level units editor</Comments>
+      <String Context="Generic_Long">Small</String>
+    </Concept >
+    <Concept Id="MediumSmall">
+      <Comments>Label of the radiobutton medium-small Cursor in low level units editor</Comments>
+      <String Context="Generic_Long">Medium-Small</String>
     </Concept >
     <Concept Id="Cross screen">
       <Comments>Label of the radiobutton Cross Screen cursor in low level units editor</Comments>
@@ -400,6 +443,10 @@
     <Concept Id="Enable measure mirroring">
       <Comments>Label of the Enable measure mirroring checkbox in low level editor</Comments>
       <String Context="Generic_Long">Enable measure mirroring</String>
+    </Concept >
+    <Concept Id="Enable 3 distances measure">
+      <Comments>Label of the Enable measure GS 3 diameters checkbox in low level editor</Comments>
+      <String Context="Generic_Long">Enable 3 diameters measure</String>
     </Concept >
     <Concept Id="UNSUPPORTED_CONFIGURATIONFILE_VERSION">
       <Comments>Message to the user when try to load a configuration file with version greater than max supported</Comments>

@@ -2,41 +2,41 @@
 <LocalizationResource ComponentNamespace="StyleEditor" Language="Definition" Version="1">
   <LocalizationSection InternalNamespace="FACTORY">
     <Concept Id="CONFIGURATION_EDITOR_NAME">
-      <Comment>Editor name in the presets configuration menu</Comment>
+      <Comments>Editor name in the presets configuration menu</Comments>
       <String Context="Generic_Medium">Style Configuration</String>
     </Concept>
     <Concept Id="Standard">
-      <Comment>Name of a configuration in the style editor's list</Comment>
+      <Comments>Name of a configuration in the style editor's list</Comments>
       <String Context="Generic_Medium">Standard</String>
     </Concept>
     <Concept Id="Defaults">
-      <Comment>Name of a configuration in the style editor's list</Comment>
+      <Comments>Name of a configuration in the style editor's list</Comments>
       <String Context="Generic_Medium">Defaults</String>
     </Concept>
     <Concept Id="Veterinary">
-      <Comment>Name of a configuration in the style editor's list</Comment>
+      <Comments>Name of a configuration in the style editor's list</Comments>
       <String Context="Generic_Medium">Veterinary</String>
     </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="MESSAGES">
     <Concept Id="LOAD_CONFSET_FAILED">
-      <Comment>Warning message when a corrupted file is found</Comment>
+      <Comments>Warning message when a corrupted file is found</Comments>
       <String Context="Generic_Long">Loading failed - corrupted configuration</String>
     </Concept>
     <Concept Id="EMPTYFONTSIZE_WARNING">
-      <Comment>tooltip message on editor if user sets an empty value for font size</Comment>
+      <Comments>tooltip message on editor if user sets an empty value for font size</Comments>
       <String Context="Generic_Warning">Empty Fontsize not admitted</String>
     </Concept>
     <Concept Id="NOTNUMERICFONTSIZE_WARNING">
-      <Comment>tooltip message on editor if user sets a non-numeric value for font size (use "." for decimal separator)</Comment>
+      <Comments>tooltip message on editor if user sets a non-numeric value for font size (use "." for decimal separator)</Comments>
       <String Context="Generic_Warning">Fontsize must be a number</String>
     </Concept>
     <Concept Id="TOOLARGEFONTSIZE_WARNING">
-      <Comment>tooltip message on editor if user sets a font size too large</Comment>
+      <Comments>tooltip message on editor if user sets a font size too large</Comments>
       <String Context="Generic_Warning">Fontsize must be less than 35791</String>
     </Concept>
     <Concept Id="TOOSMALLFONTSIZE_WARNING">
-      <Comment>tooltip message on editor if user sets a font size too small</Comment>
+      <Comments>tooltip message on editor if user sets a font size too small</Comments>
       <String Context="Generic_Warning">Fontsize must be greater than 0.001</String>
     </Concept>
   </LocalizationSection>

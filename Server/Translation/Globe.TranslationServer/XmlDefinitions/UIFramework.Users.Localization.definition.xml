@@ -211,6 +211,14 @@
       <Comments>Is Enabled Label in Add User Dialog</Comments>
       <String Context="Generic_Medium">Is Enabled</String>
     </Concept>
+    <Concept Id="IsLocalLabel">
+      <Comments>Is Local Label in Add User Dialog</Comments>
+      <String Context="Generic_Medium">Is Local</String>
+    </Concept>
+    <Concept Id="DomainNameLabel">
+      <Comments>Domain Controller name in Add User Dialog</Comments>
+      <String Context="Generic_Medium">Domain Name</String>
+    </Concept>
     <Concept Id="OKBUtton">
       <Comments>OK Button Label in Add User Dialog</Comments>
       <String Context="Generic_Medium">OK</String>
@@ -298,8 +306,12 @@
       <String Context="Generic_Medium">FullName</String>
     </Concept>
     <Concept Id="Enabled">
-      <Comments>"Enabled" Label in Users Editor HEadre List</Comments>
+      <Comments>"Enabled" Label in Users Editor  List</Comments>
       <String Context="Generic_Medium">Enabled</String>
+    </Concept>
+    <Concept Id="LocalUser">
+      <Comments>"LocalUser" Label in Users Editor Header List</Comments>
+      <String Context="Generic_Medium">Local</String>
     </Concept>
     <Concept Id="Type">
       <Comments>"Type" Label in Users Editor HEadre List</Comments>
@@ -328,6 +340,18 @@
     <Concept Id="ChangePasswordMessage">
       <Comments>the password has to be canghed</Comments>
       <String Context="Generic_Long"> Please change your password</String>
-    </Concept> 
+    </Concept>
+    <Concept Id="AccessControlDisabled">
+      <Comments>The access control is disabled</Comments>
+      <String Context="Generic_Warning">To assure the security and privacy of the system please configure and enable the security options</String>
+    </Concept>
+    <Concept Id="AccessControlAndDataEncryptionDisabled">
+      <Comments>The access control and the data encryption are disabled</Comments>
+      <String Context="Generic_Warning">To assure the security and privacy of the system please configure and enable the security options and the encryption of the local database</String>
+    </Concept>
+    <Concept Id="NeverShowAgain">
+      <Comments>Do not show this again</Comments>
+      <String Context="Generic_Warning">Do not show this message again</String>
+    </Concept>
   </LocalizationSection>
 </LocalizationResource>

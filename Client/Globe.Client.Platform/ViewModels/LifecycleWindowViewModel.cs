@@ -44,14 +44,15 @@ namespace Globe.Client.Platform.ViewModels
 
             IsInitialized = true;
 
-            OnLoad();
+            var data = navigationContext.Parameters.ContainsKey("data") ? navigationContext.Parameters["data"] : null;
+            OnLoad(data);
         }
 
         #endregion
 
         #region Protected Functions
 
-        virtual protected Task OnLoad()
+        virtual protected Task OnLoad(object data = null)
         {
             return Task.CompletedTask;
         }

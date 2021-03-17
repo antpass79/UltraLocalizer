@@ -4,8 +4,9 @@ using System.Runtime.CompilerServices;
 
 namespace Globe.Client.Localizer.Models
 {
-    public class BindableJobListStatus : INotifyPropertyChanged
+    public class BindableJobListStatus : JobListStatus, INotifyPropertyChanged
     {
+        //TODO: JobListStatus sara' il caso di fare un Enum?
         bool _isSelected;
         public bool IsSelected
         {

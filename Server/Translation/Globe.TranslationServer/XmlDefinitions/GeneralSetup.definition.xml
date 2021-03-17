@@ -11,7 +11,59 @@
     </Concept>
     <Concept Id="TIME_GROUP_TITLE">
       <Comments>Title of time group box, in Date/Time tab, in general setup preset</Comments>
-      <String Context="Generic_Medium">TIME</String>  
+      <String Context="Generic_Medium">TIME</String>
+    </Concept>
+    <Concept Id="SYNC_TIME_NOW">
+      <Comments>Name of time synchronization button</Comments>
+      <String Context="Generic_Medium">SYNC TIME NOW</String>
+    </Concept>
+    <Concept Id="CURRRENT_DATE_AND_TIME">
+      <Comments>Label of current date and time</Comments>
+      <String Context="Generic_Medium">CURRRENT DATE AND TIME</String>
+    </Concept>
+    <Concept Id="SET_DATE_AND_TIME_AUTOMATICALLY">
+      <Comments>Label of automatic date and time flag</Comments>
+      <String Context="Generic_Long">SET DATE AND TIME AUTOMATICALLY</String>
+    </Concept>
+    <Concept Id="NTP_SERVER">
+      <Comments>Label of NTP (Network Time Protocol) Server</Comments>
+      <String Context="Generic_Medium">NTP SERVER</String>
+    </Concept>
+    <Concept Id="SET_TIME_ZONE">
+      <Comments>Label to set UTC Time Zone</Comments>
+      <String Context="Generic_Medium">SET TIME ZONE</String>
+    </Concept>
+    <Concept Id="TIME_ZONE">
+      <Comments>Label to text UTC Time Zone</Comments>
+      <String Context="Generic_Medium">TIME ZONE</String>
+    </Concept>
+    <Concept Id="SET_ADTS_AUTOMATICALLY">
+      <Comments>Label of Automatic Daylight Time Saving flag</Comments>
+      <String Context="Generic_Long">SET ADTS AUTOMATICALLY</String>
+    </Concept>
+    <Concept Id="ADD">
+      <Comments>Add a Ntp Server to the list</Comments>
+      <String Context="Generic_Medium">ADD</String>
+    </Concept>
+    <Concept Id="REMOVE">
+      <Comments>Remove a Ntp Server from the list</Comments>
+      <String Context="Generic_Medium">REMOVE</String>
+    </Concept>
+    <Concept Id="SYNC_ERROR">
+      <Comments>Message to indicare an error of synchronization</Comments>
+      <String Context="Generic_Medium">SYNC ERROR</String>
+    </Concept>
+    <Concept Id="SYNC_OK">
+      <Comments>Message to indicare a successful synchronization</Comments>
+      <String Context="Generic_Medium">SYNC OK</String>
+    </Concept>
+    <Concept Id="SERVER_ADDED">
+      <Comments>Succesfully added a Ntp Server to the list</Comments>
+      <String Context="Generic_Medium">SERVER ADDED</String>
+    </Concept>
+    <Concept Id="SERVER_REMOVED">
+      <Comments>Succesfully removed a Ntp Server from the list</Comments>
+      <String Context="Generic_Medium">SERVER REMOVED</String>
     </Concept>
     <Concept Id="DATE_TIME_TAB_LABEL">
       <Comments>label in title of datetime tab</Comments>
@@ -26,6 +78,12 @@
     </Concept>
     <Concept Id="ProbeButtonsTab">
       <String Context="Generic_Long">PROBE BUTTONS</String>
+    </Concept>
+    <Concept Id="ToolButtonsTab">
+      <String Context="Generic_Long">TOOL BUTTONS</String>
+    </Concept>
+    <Concept Id="ToolLabel">
+      <String Context="Generic_Medium">TOOL</String>
     </Concept>
     <Concept Id="SET_DATE">
       <Comments>label about setting date control</Comments>
@@ -151,7 +209,7 @@
       <Comments>item in height/weight combo, in measure unit tab</Comments>
       <String Context="Generic_Short">ft/lb</String>
     </Concept>
-    
+
     <Concept Id="Human">
       <Comments>item in system environment combo</Comments>
       <String Context="Generic_Medium">HUMAN</String>
@@ -203,7 +261,7 @@
     <Concept Id="BeepVolumeLabel">
       <Comments>label in control panel tab, beep volume</Comments>
       <String Context="Generic_Medium">BEEP VOLUME</String>
-     </Concept>
+    </Concept>
     <Concept Id="LeftClickLabel">
       <Comments>label in control panel tab, left click</Comments>
       <String Context="Generic_Medium">LEFT CLICK</String>
@@ -240,47 +298,47 @@
       <Comments>in control panel tab, item of left click combo</Comments>
       <String Context="Generic_Medium">UNDO</String>
     </Concept>
-		<Concept Id="ETOUCHBUTTONBEHAVIOR">
-			<Comments>in control panel tab, title of Esaote button</Comments>
-			<String Context="Generic_Medium">ETOUCH BUTTON BEHAVIOUR</String>
-		</Concept>
-		<Concept Id="DEPTHINC">
-			<Comments>in control panel tab, title of Depth rotation option (clockwise, counterclockwise)</Comments>
-			<String Context="Generic_Medium">DEPTH INCREASE</String>
-		</Concept>
-		<Concept Id="DEPTHCLOCKWISE">
-			<Comments>set of Depth rotation: clockwise</Comments>
-			<String Context="Generic_Medium">CLOCKWISE</String>
-		</Concept>
-		<Concept Id="DEPTHCOUNTERCLOCKWISE">
-			<Comments>set of Depth rotation: counterclockwise</Comments>
-			<String Context="Generic_Medium">COUNTERCLOCKWISE</String>
-		</Concept>
-		<Concept Id="STANDBYATPOWERFAIL">
-			<Comments>This checkbox is to force a standby when the power cord is detach and the system runs on battery</Comments>
-			<String Context="Generic_Long">STAND BY AT POWER FAIL</String>
-		</Concept>
-		<Concept Id="SHUTDOWNTYPE">
-			<Comments>in control panel tab, item of Esaote button type combo</Comments>
-			<String Context="Generic_Medium">SHUTDOWN TYPE</String>
-		</Concept>
+    <Concept Id="ETOUCHBUTTONBEHAVIOR">
+      <Comments>in control panel tab, title of Esaote button</Comments>
+      <String Context="Generic_Medium">ETOUCH BUTTON BEHAVIOUR</String>
+    </Concept>
+    <Concept Id="DEPTHINC">
+      <Comments>in control panel tab, title of Depth rotation option (clockwise, counterclockwise)</Comments>
+      <String Context="Generic_Medium">DEPTH INCREASE</String>
+    </Concept>
+    <Concept Id="DEPTHCLOCKWISE">
+      <Comments>set of Depth rotation: clockwise</Comments>
+      <String Context="Generic_Medium">CLOCKWISE</String>
+    </Concept>
+    <Concept Id="DEPTHCOUNTERCLOCKWISE">
+      <Comments>set of Depth rotation: counterclockwise</Comments>
+      <String Context="Generic_Medium">COUNTERCLOCKWISE</String>
+    </Concept>
+    <Concept Id="STANDBYATPOWERFAIL">
+      <Comments>This checkbox is to force a standby when the power cord is detach and the system runs on battery</Comments>
+      <String Context="Generic_Long">STAND BY AT POWER FAIL</String>
+    </Concept>
+    <Concept Id="SHUTDOWNTYPE">
+      <Comments>in control panel tab, item of Esaote button type combo</Comments>
+      <String Context="Generic_Medium">SHUTDOWN TYPE</String>
+    </Concept>
     <Concept Id="CLEARMEMORY">
       <Comments>label of a checkbox to force memory clear when resuming from standby</Comments>
       <String Context="Generic_Medium">CLEAR MEMORY</String>
     </Concept>
     <Concept Id="ETOUCHBEHAVIOR">
-			<Comments>in control panel tab, item of Esaote button type combo</Comments>
-			<String Context="Generic_Medium">ETOUCH</String>
-		</Concept>
+      <Comments>in control panel tab, item of Esaote button type combo</Comments>
+      <String Context="Generic_Medium">ETOUCH</String>
+    </Concept>
     <Concept Id="PROTOCOLBUTTONBEHAVIOR">
       <Comments>in control panel tab, title of shutdown type combo</Comments>
       <String Context="Generic_Medium">PROTOCOLS	</String>
     </Concept>
-	<Concept Id="EASYTUNINGBUTTONBEHAVIOR">
+    <Concept Id="EASYTUNINGBUTTONBEHAVIOR">
       <Comments>[StoryID: 21884] in control panel tab, item of Esaote button type combo</Comments>
       <String Context="Generic_Medium">EASYTUNING</String>
     </Concept>
-	<Concept Id="TsNotifyGrid">
+    <Concept Id="TsNotifyGrid">
       <Comments>in control panel tab, item of Esaote button type combo</Comments>
       <String Context="Generic_Medium">US Touchscreen Panel</String>
     </Concept>
@@ -351,7 +409,31 @@
     <Concept Id="ZOOM_MARKER_LABEL">
       <Comments>Zoom reference in application settings tab</Comments>
       <String Context="Generic_Long">Show zoom reference window</String>
-    </Concept>    
+    </Concept>
+    <Concept Id="FOCUS_REMOVAL_LABEL">
+      <Comments>Selection of option Avf (Adaptative virtual focusing)</Comments>
+      <String Context="Generic_Long">Adaptative virtual focusing Enabled</String>
+    </Concept>
+    <Concept Id="ONE_CLICK_MODE_LABEL">
+      <Comments>One click changeover (for PW, CW, M modes)</Comments>
+      <String Context="Generic_Long">One click changeover for PW,CW,M modes Enabled</String>
+    </Concept>
+    <Concept Id="MAX_DENSITY_HDZ_LABEL">
+      <Comments>HD Zoom Density</Comments>
+      <String Context="Generic_Long">HD Zoom Density</String>
+    </Concept>
+    <Concept Id="CFM DOPPLER SCALE INVERSION">
+      <Comments>General Setup, Cfm Doppler Scale Inversion</Comments>
+      <String Context="Generic_Long">Invert CFM and Doppler Scale</String>
+    </Concept>
+    <Concept Id="DUAL_CFM_REFERENCE_LABEL">
+      <Comments> Use Reference Box on Dual Color Doppler</Comments>
+      <String Context="Generic_Long">Use Reference Box on Dual Color Doppler</String>
+    </Concept>
+    <Concept Id="DUAL_ELAXTO_REFERENCE_LABEL">
+      <Comments> Use Reference Box on Dual ElaXto</Comments>
+      <String Context="Generic_Long">Use Reference Box on Dual ElaXto</String>
+    </Concept>
     <Concept Id="ADA_GROUPBOX_LABEL">
       <Comments>label in title of "Automatic Doppler steering and Angle correction positioning (ADA)" settings groupbox. Please ask to @claudio.fertino for information about this feature</Comments>
       <String Context="Generic_Long">ADA SETTINGS</String>
@@ -544,11 +626,11 @@
       <Comments>in control panel tab, name of Auto Start Exam checkbox</Comments>
       <String Context="Generic_Long">AUTOMATIC START EXAM</String>
     </Concept>
-	  <Concept Id="VISIBILITY_AREA17">
+    <Concept Id="VISIBILITY_AREA17">
       <Comments>in control panel tab, name of Visibility Area 17 checkbox</Comments>
       <String Context="Generic_Long">VISIBILITY AREA 17</String>
     </Concept>
-	 <Concept Id="DIRECTPROBE">
+    <Concept Id="DIRECTPROBE">
       <Comments>in control panel tab, name of Probe selection direct from exam management bar checkbox</Comments>
       <String Context="Generic_Long">Direct Probe Selection</String>
     </Concept>
@@ -613,7 +695,7 @@
       <String Context="Generic_Warning">To activate your modifications, please restart the unit.</String>
     </Concept>
     <Concept Id="ACTIVE_ON_NEXT_EXAM">
-      <Comment>Message shown on saving a configuration</Comment>
+			<Comments>Message shown on saving a configuration</Comments>
       <String Context="Generic_Warning">Modifications will be available after starting a new exam</String>
     </Concept>
     <Concept Id="SHUTDOWN_ON_SAVE">
@@ -782,7 +864,7 @@
     </Concept>
     <Concept Id="BAD_MACHINE_RESOLUTION">
       <Comments>Occurs when machine resolution is different from preset resolution, for example when user connect a monitor with low resolution to the 7400 machine</Comments>
-.      <String Context="Generic_Warning">The system has detected a graphic low resolution. The system will be automatically switched off. Check if a low resolution device is connected to the HDMI connector</String>
+			<String Context="Generic_Warning">The system has detected a graphic low resolution. The system will be automatically switched off. Check if a low resolution device is connected to the HDMI connector</String>
     </Concept>
     <Concept Id="RESOLUTIOS_ARE_DIFFERENT_ECOUSER">
       <Comments>without hardware key, this message occurs when machine resolution is different from preset resolution, for example when user connect a monitor with low resolution to the machine</Comments>
@@ -808,10 +890,26 @@
       <Comments>Occurs when the inserted Date is not valid </Comments>
       <String Context="Generic_Warning">INSERTED DATE IS NOT ADMITTED</String>
     </Concept>
-	  <Concept Id="CURRENT_EXAM_IS_OPEN">
+    <Concept Id="CURRENT_EXAM_IS_OPEN">
       <Comments>Occurs when user change date-time and current exam is open</Comments>
       <String Context="Generic_Warning">CURRENT EXAM IS OPEN:IT IS NOT POSSIBLE TO CHANGE THE DATE-TIME</String>
     </Concept>
+    <Concept Id="ERROR_IN_SETTING_TIME_ZONE">
+      <Comments>Occurs when the system fails to set the UTC Time Zone</Comments>
+      <String Context="Generic_Warning">ERROR IN SETTING TIME ZONE</String>
+    </Concept>
+    <Concept Id="ERROR_IN_SETTING_AUTO_DATE_AND_TIME">
+      <Comments>Occurs when the system fails to set the Date and Time automatically</Comments>
+      <String Context="Generic_Warning">ERROR IN SETTING AUTOMATIC DATE AND TIME</String>
+    </Concept>
+    <Concept Id="NTP_SERVER_INVALID">
+      <Comments>Occurs when the system cannot reach the NTP Server because of bad connection or wrong server name</Comments>
+      <String Context="Generic_Warning">INVALID NTP SERVER NAME OR BAD CONNECTION</String>
+    </Concept>
+	  <Concept Id="ERROR_IN_SETTING_NTP_SERVER">
+		<Comments>Occurs when the system fails to set the NTP Server</Comments>
+		<String Context="Generic_Warning">ERROR IN SETTING NTP SERVER</String>
+	  </Concept>
     <Concept Id="KEYBOARD_BUTTON1">
       <Comments>in control panel tab, keyboard association of button1 of Shark/Lion [@andrea.anzalone@esaote.com]</Comments>
       <String Context="Generic_Long">KEYBOARD BUTTON 1</String>
@@ -847,6 +945,106 @@
     <Concept Id="KEYBOARD_BUTTONS_TAB_TITLE">
       <Comments>Title of KEYBOARD BUTTONS TAB unit tab</Comments>
       <String Context="Generic_Medium">KEYBOARD BUTTONS</String>
+    </Concept>
+    <Concept Id="SECURITY_TAB_LABEL">
+      <Comments>Title of SECURITY tab</Comments>
+      <String Context="Generic_Medium">SECURITY</String>
+    </Concept>
+    <Concept Id="BITLOCKER_TAB_HEADER">
+      <Comments>BitLocker TAB header</Comments>
+      <String Context="TS_TabName">Encryption</String>
+    </Concept>
+    <Concept Id="BITLOCKER_SCAN_BUTTON">
+      <Comments>BitLocker SCAN Button</Comments>
+      <String Context="TS_AButton">Show</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITIONS_VERSION">
+      <Comments>Label to track the virus definitions version installed on the machine</Comments>
+      <String Context="Generic_Long">Definitions Version</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITION_CONFIRMATION">
+      <Comments>Popup to confirm or refuse the virus definition update from file</Comments>
+      <String Context="Generic_Warning">Do you want to perform the following update ?</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITION_FROM_WEB_CONFIRMATION">
+      <Comments>Popup to confirm or refuse the virus definition update from web</Comments>
+      <String Context="Generic_Warning">Do you want to perform the update from web ?</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITION_ALREADY_UPDATED">
+      <Comments>Antivirus definition already updated message popup</Comments>
+      <String Context="Generic_Warning">Antivirus definition already updated to latest version</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITION_OLDER">
+      <Comments>Antivirus definition older than the current one message popup</Comments>
+      <String Context="Generic_Warning">Antivirus definition older than the current one!</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_TAB_HEADER">
+      <Comments>Antivirus TAB header</Comments>
+      <String Context="TS_TabName">Antivirus</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_SCAN_BUTTON">
+      <Comments>Antivirus SCAN Button</Comments>
+      <String Context="TS_AButton">SCAN</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_UPDATE_BUTTON">
+      <Comments>Antivirus UPDATE from file Button</Comments>
+      <String Context="TS_AButton">UPDATE FROM FILE</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_UPDATE_FROM_WEB_BUTTON">
+      <Comments>Antivirus UPDATE from Web Button</Comments>
+      <String Context="TS_AButton">UPDATE FROM WEB</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_SCAN">
+      <Comments>Antivirus scan waiting message popup</Comments>
+      <String Context="Generic_Long">Scan starting...</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_FOUND_THREATS_SYSTEM_DRIVE">
+      <Comments>Antivirus found threats on system drive message popup.</Comments>
+      <String Context="Generic_Long">Antivirus found threats on system drive.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_FOUND_THREATS_REMOVABLE_DRIVE">
+      <Comments>Antivirus found threats on removable drive message popup.</Comments>
+      <String Context="Generic_Long">Antivirus found threats on removable drive.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_NO_THREATS_FOUND">
+      <Comments>Antivirus No threats found message popup.</Comments>
+      <String Context="Generic_Long">Antivirus No threats found.</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_UPDATE">
+      <Comments>Antivirus update waiting message popup</Comments>
+      <String Context="Generic_Long">UPDATE</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_UPDATE_SUCCESSFUL">
+      <Comments>Antivirus updated succesfully</Comments>
+      <String Context="Generic_Long">SUCCESS</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_UPDATE_FAILED">
+      <Comments>Antivirus update failed</Comments>
+      <String Context="Generic_Long">FAILURE</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_DEFINITION_NOT_VALID">
+      <Comments>Antivirus definition not valid message popup</Comments>
+      <String Context="Generic_Long">Antivirus definition not valid!</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_ERROR">
+      <Comments>Antivirus error popup</Comments>
+      <String Context="Generic_Long">Antivirus error! Please retry.</String>
+    </Concept>
+    <Concept Id="SirmButtonBehavior">
+      <Comments>in control panel tab, title of Esaote button [Story 50165]</Comments>
+      <String Context="Generic_Long">SIRM BUTTON BEHAVIOUR</String>
+    </Concept>
+     <Concept Id="LibraryOnTouch">
+      <Comments>in control panel tab, option to use libraries on touchscreen [Story 43805]</Comments>
+      <String Context="Generic_Long">Libraries on touchscreen</String>
+    </Concept>
+    <Concept Id="SirmProject">
+      <Comments>in control panel tab, option to enable SIRM protocol [Story 50165]</Comments>
+      <String Context="Generic_Long">SIRM Protocol</String>
+    </Concept>
+    <Concept Id="LungProtocol">
+      <Comments>in control panel tab, option to enable Lung US protocol [Story 51115]</Comments>
+      <String Context="Generic_Long">Lung Ultrasound</String>
     </Concept>
   </LocalizationSection>
 </LocalizationResource>

@@ -25,18 +25,6 @@
       <Comments>[DefectID: 26992]Warning Message: Closing the exam the fusion data shall be deleted. Do you want to continue?</Comments>
       <String Context="Generic_Warning">Closing the exam the fusion data shall be deleted. Do you want to continue?</String>
     </Concept >
-	<Concept Id="StarWars">
-      <Comments>Empire strikes back</Comments>
-      <String Context="Generic_Warning">No, I am your father</String>
-    </Concept >
-	<Concept Id="StarWars_Second">
-      <Comments>A new Hope</Comments>
-      <String Context="Generic_Warning">No, Try Not!</String>
-    </Concept >
-	<Concept Id="StarWars_Third">
-      <Comments>A new Hope</Comments>
-      <String Context="Generic_Short">No!</String>
-    </Concept >
 	
   </LocalizationSection>
 </LocalizationResource>

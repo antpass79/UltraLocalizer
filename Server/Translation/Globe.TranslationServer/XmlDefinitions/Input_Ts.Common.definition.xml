@@ -285,5 +285,9 @@
 			<Comments>tab on the touchscreen for the qwerty dedicated to Hungary</Comments>
 			<String Context="TS_TabName">HUNGARIAN</String>
 		</Concept>
+		<Concept Id="Chinese">
+			<Comments>tab on the touchscreen for the qwerty dedicated to China [Defect 41419]</Comments>
+			<String Context="TS_TabName">CHINESE</String>
+		</Concept>
 	</LocalizationSection>
 </LocalizationResource>

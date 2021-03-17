@@ -8,7 +8,7 @@ using System.Reflection;
 
 namespace Globe.TranslationServer.Services
 {
-    public class XmlService : IAsyncXmlService
+    public class XmlZipService : IAsyncXmlZipService
     {
         #region Data Members
 
@@ -21,7 +21,7 @@ namespace Globe.TranslationServer.Services
 
         #region Constructors
 
-        public XmlService(
+        public XmlZipService(
             IDBToXmlService dbToXmlService,
             ILogService logService)
         {

@@ -33,7 +33,6 @@
         <platform:NullValueToBooleanConverter x:Key="NullValueToBooleanConverter" />
         <platform:BooleanToVisibilityConverter x:Key="UnlinkToVisibilityConverter" />
         <platform:BooleanToVisibilityConverter True="Collapsed" False="Visible" x:Key="LinkToVisibilityConverter" />
-        <platform:BooleanConverter True="False" False="True" x:Key="LinkToEnabledConverter" />
         <converters:ContextNameToPreviewStyleInfoConverter x:Key="ContextNameToPreviewStyleInfoConverter" />
         <converters:TextSizeToPreviewStateConverter x:Key="TextSizeToPreviewStateConverter" />
         <converters:IsEnglishLinkEnableConverter x:Key="IsEnglishLinkEnableConverter" />

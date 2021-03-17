@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="GeneralSetup" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<LocalizationSection InternalNamespace="ToolCommands">
+		<Concept Id="EnterEasyTuning^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">easyMode</String>
+		</Concept>	
+		<Concept Id="VisualComparison^UafViewer">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Compare</String>
+		</Concept>
+		<Concept Id="VCRT^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button, NB: VCRT = VisualComparison RT</Comments>
+			<String Context="Generic_Medium">Follow Up</String>
+		</Concept>
+		<Concept Id="FullScreenF9^UIFrameworkComponent">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Full screen</String>
+		</Concept>
+		<Concept Id="EnterVortex^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Vortex</String>
+		</Concept>
+		<Concept Id="Start3DTS^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">3D/4D</String>
+		</Concept>
+		<Concept Id="EnterVirtualNavigator^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">VNav</String>
+		</Concept>
+		<Concept Id="EnterVirtualBiopsy^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Virtual Biopsy</String>
+		</Concept>
+		<Concept Id="EnterBodyMap^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">BodyMap</String>
+		</Concept>
+		<Concept Id="Enter3DPan^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">3D Pan</String>
+		</Concept>
+		<Concept Id="EnterBreastNav^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Breast Nav</String>
+		</Concept>
+		<Concept Id="EnterMRBreastNav^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">MR Breast Nav</String>
+		</Concept>
+		<Concept Id="EnterUroNav^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Uro Fusion</String>
+		</Concept>
+		<Concept Id="EnterQElaxto^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">QElaxto</String>
+		</Concept>
+		<Concept Id="EnterQElaxto2D^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">QElaxto 2D</String>
+		</Concept>
+		<Concept Id="EnterFlowQuantification^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">QPack</String>
+		</Concept>
+		<Concept Id="EnterVPAN^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">VPan</String>
+		</Concept>
+		<Concept Id="EnterSTRESS^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Stress Echo</String>
+		</Concept>
+		<Concept Id="EnterXStrain^XStrain2DComponent">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">XStrain Archive</String>
+		</Concept>
+		<Concept Id="EnterXStrain^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">XStrain Review</String>
+		</Concept>
+		<Concept Id="Run4DXStrain^XStrain.XStrain4D">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">XStrain 4D</String>
+		</Concept>
+		<Concept Id="GoToTorsionClipSelection^TorsionComponent">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Torsion</String>
+		</Concept>
+		<Concept Id="EnterAutoEF^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">AutoEF Review</String>
+		</Concept>
+		<Concept Id="EnterAutoEF^AutoEF_Amid_Component">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">AutoEF Archive</String>
+		</Concept>
+		<Concept Id="EnterLibrary^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">MyLibrary</String>
+		</Concept>
+		<Concept Id="EnterQIMT^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">QIMT</String>
+		</Concept>
+		<Concept Id="EnterQAS^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">QAS</String>
+		</Concept>
+		<Concept Id="MidScreenF9^UIFrameworkComponent">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Mid screen</String>
+		</Concept>
+		<Concept Id="EnableDisableAcquisition^WebServicesComponent">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Stream</String>
+		</Concept>
+		<Concept Id="EnableDisableRemote^WebServicesComponent">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Remote</String>
+		</Concept>
+		<Concept Id="EnterIALT^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">Fiber Guidance</String>
+		</Concept>
+		<Concept Id="EnterRFViewer^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">RF Viewer</String>
+		</Concept>
+				<Concept Id="EnterRFLAB^RT">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">RF Lab</String>
+		</Concept>
+		<Concept Id="Null">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), same of button</Comments>
+			<String Context="Generic_Medium">None</String>
+		</Concept>
+		<Concept Id="AvailableToolButtonList">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), title of left listbox</Comments>
+			<String Context="Generic_Long">Available Tool Button List</String>
+		</Concept>
+		<Concept Id="DisplayedToolButtonList">
+		    <Comments>Labels used in GeneralSetup menu (Generic_Medium), title of right listbox</Comments>
+			<String Context="Generic_Long">Displayed Tool Button List</String>
+		</Concept>
+	</LocalizationSection>
+</LocalizationResource>

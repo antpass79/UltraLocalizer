@@ -237,6 +237,10 @@
       <Comments>Automatically repeat the measure</Comments>
       <String Context="Generic_Long">Auto Repeat</String>
     </Concept>
+	<Concept Id="BothMeasureUnitsLabel">
+      <Comments>Show KPa and m/s on report</Comments>
+      <String Context="Generic_Long">Show KPa and m/s on report</String>
+    </Concept>
 	<Concept Id="DefaultDepthLabel">
       <Comments>Set Default Depth</Comments>
       <String Context="Generic_Long">Default Depth</String>
@@ -356,7 +360,7 @@
     </Concept>
     <Concept Id="AbdominalEquine">
       <Comments>AbdominalEquine Application</Comments>
-      <String Context="Generic_Long">ABDOMINALEQUINE</String>>
+			<String Context="Generic_Long">ABDOMINALEQUINE</String>
     </Concept>
     <Concept Id="ReproductionCanine">
       <Comments>ReproductionCanine Application</Comments>
@@ -509,4 +513,4 @@
       <String Context="Generic_Long">ROIs Median Ratio</String>
     </Concept>
   </LocalizationSection>
-  </LocalizationResource>
+</LocalizationResource>

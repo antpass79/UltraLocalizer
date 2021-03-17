@@ -2,7 +2,7 @@
 
 namespace Globe.TranslationServer.Services
 {
-    public interface IAsyncXmlService
+    public interface IAsyncXmlZipService
     {
         Stream Zip();
     }

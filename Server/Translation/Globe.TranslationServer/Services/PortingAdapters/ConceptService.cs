@@ -1,15 +1,11 @@
-﻿using DocumentFormat.OpenXml.InkML;
-using Globe.Shared.DTOs;
+﻿using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
-using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
-using Globe.TranslationServer.Utilities;
 using System;
-using System.IO;
-using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.PortingAdapters
@@ -17,15 +13,14 @@ namespace Globe.TranslationServer.Services.PortingAdapters
     public class ConceptService : IAsyncConceptService
     {
         const bool IS_MASTER = true;
-        const string ISO_CODING_EN = "en";     
-
+ 
         private readonly IAsyncNotificationService _notificationService;
         
         private readonly LocalizationContext _localizationContext;
         private readonly UltraDBStrings _ultraDBStrings;
         private readonly UltraDBStrings2Context _ultraDBStrings2Context;
         private readonly UltraDBConcept _ultraDBConcept;
-        private readonly XmlManager _xmlManager;
+        private readonly IXmlToDBService _xmlToDBService;
         
         public ConceptService(
             IAsyncNotificationService notificationService,
@@ -33,19 +28,19 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             UltraDBStrings ultraDBStrings,
             UltraDBStrings2Context ultraDBStrings2Context,
             UltraDBConcept ultraDBConcept,
-            XmlManager xmlManager)
+            IXmlToDBService xmlToDBService)
         {
             _notificationService = notificationService;
             _localizationContext = localizationContext;
             _ultraDBStrings = ultraDBStrings;
             _ultraDBStrings2Context = ultraDBStrings2Context;
             _ultraDBConcept = ultraDBConcept;
-            _xmlManager = xmlManager;
+            _xmlToDBService = xmlToDBService;
         }
 
         async public Task SaveAsync(SavableConceptModelDTO savableConceptModel)
         {
-            if (savableConceptModel.Language.IsoCoding == ISO_CODING_EN)
+            if (savableConceptModel.Language.IsoCoding == SharedConstants.LANGUAGE_EN)
             {
                 foreach (var context in savableConceptModel.Concept.EditableContexts)
                 {
@@ -113,22 +108,16 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
         async public Task<NewConceptsResult> CheckNewConceptsAsync()
         {
-            var xmlFilePath = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), Constants.XML_FOLDER);
-            _xmlManager.XmlDirectory = xmlFilePath;
-            _xmlManager.LoadXmlOnly();
-            _xmlManager.Completed.WaitOne();
-            _xmlManager.ChangesFound = false;
-            _xmlManager.InsertedCount = 0;
-            _xmlManager.UpdatedCount = 0;
-            _xmlManager.FillDB(_xmlManager.KeyTuplas);
+            //_xmlService.LoadXml();
+            //_xmlService.FillDB();
+            var statistics = await _xmlToDBService.UpdateDatabaseAsync();
 
             var result = new NewConceptsResult
             {
-                InsertedCount = _xmlManager.InsertedCount,
-                UpdatedCount = _xmlManager.UpdatedCount,
-                IsNotified = true
+                IsNotified = true, 
+                Statistics = statistics
             };
-            if(_xmlManager.ChangesFound)
+            if(statistics.ChangesFound)
             {
                 result.IsNotified = false;
                 await _notificationService.ConceptsChanged(result);

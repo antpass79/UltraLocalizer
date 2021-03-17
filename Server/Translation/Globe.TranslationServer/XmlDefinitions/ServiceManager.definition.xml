@@ -48,6 +48,18 @@
       <Comments>Label for combo used to change system's language</Comments>
       <String Context="Generic_Long">SYSTEM LANGUAGE</String>
     </Concept>
+    <Concept Id="MANUALS_LANGUAGE">
+      <Comments>Label for combo used to change manuals' language</Comments>
+      <String Context="Generic_Long">LANGUAGE</String>
+    </Concept>
+    <Concept Id="MANUALS_HEADER">
+      <Comments>Label for manuals' group</Comments>
+      <String Context="Generic_Long">User Manuals</String>
+    </Concept>
+    <Concept Id="MANUALS_UPDATE_BUTTON">
+      <Comments>Manuals UPDATE Button</Comments>
+      <String Context="TS_AButton">UPDATE MANUALS</String>
+    </Concept>
     <Concept Id="MONITOR">
       <Comments>Label for combo used to change system's monitor</Comments>
       <String Context="Generic_Long">MONITOR</String>
@@ -152,6 +164,14 @@
       <Comments>Antivirus update waiting message popup</Comments>
       <String Context="Generic_Long">UPDATE</String>
     </Concept>
+    <Concept Id="ANTIVIRUS_UPDATE_SUCCESSFUL">
+      <Comments>Antivirus updated succesfully</Comments>
+      <String Context="Generic_Long">SUCCESS</String>
+    </Concept>
+    <Concept Id="ANTIVIRUS_UPDATE_FAILED">
+      <Comments>Antivirus update failed</Comments>
+      <String Context="Generic_Long">FAILURE</String>
+    </Concept>
     <Concept Id="ANTIVIRUS_DEFINITION_NOT_VALID">
       <Comments>Antivirus definition not valid message popup</Comments>
       <String Context="Generic_Long">Antivirus definition not valid!</String>
@@ -199,6 +219,18 @@
     <Concept Id="ANTIVIRUS_DEFINITION_OLDER">
       <Comments>Antivirus definition older than the current one message popup</Comments>
       <String Context="Generic_Long">Antivirus definition older than the curren tone!</String>
+    </Concept>
+    <Concept Id="MAX CHECK">
+      <Comments>Enable max file check page on screen and debug options (only with Service key)</Comments>
+      <String Context="Generic_Long">MAX CHECK</String>
+    </Concept>
+    <Concept Id="ENCRYPTION_OPERATION_CURRENTLY_RUNNING">
+      <Comments>This message appears when turning off the system if a encryption/decryption operation is in progress</Comments>
+      <String Context="Generic_Warning">An encryption/decryption operation is currently running</String>
+    </Concept>
+    <Concept Id="ENCRYPTION_OPERATION_CURRENTLY_RUNNING_SYSTEM_SLOWER">
+      <Comments>This message appears when turning on the system if a encryption/decryption operation is in progress</Comments>
+      <String Context="Generic_Warning">An encryption/decryption operation is currently running, the system might be slower</String>
     </Concept>
   </LocalizationSection>
 </LocalizationResource>

@@ -2,9 +2,7 @@
 {
     public class NewConceptsResult
     {
-        public int UpdatedCount { get; set; }
-        public int InsertedCount { get; set; }
-        public bool ChangesFound => UpdatedCount > 0 || InsertedCount > 0;
-        public bool IsNotified { get; set; }
+        public XmlServiceStatistics Statistics { get; set; }
+        public bool IsNotified { get; set; }       
     }
 }

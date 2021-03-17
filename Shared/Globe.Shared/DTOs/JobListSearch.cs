@@ -3,8 +3,7 @@
     public class JobListSearch
     {     
         public int LanguageId { get; set; }
-        public int JobListStatusId { get; set; }
-        public string JobListName { get; set; }
+        public string JobListStatus { get; set; }
         public string UserName { get; set; }
     }
 }

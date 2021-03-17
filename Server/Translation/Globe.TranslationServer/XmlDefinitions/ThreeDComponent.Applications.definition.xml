@@ -24,6 +24,11 @@
       <Comments>This name is valid only for OB-Fetal application in 3d Preset Menu</Comments>
       <String Context="Generic_Medium">BABY FACE</String>
     </Concept>
+	
+	<Concept Id="BABY FACE EVO">
+      <Comments>This name is valid only for OB-Fetal application in 3d Preset Menu</Comments>
+      <String Context="Generic_Medium">BABY FACE EVO</String>
+    </Concept>
 
     <Concept Id="SPINE">
       <Comments>This name is valid only for OB-Fetal application in 3d Preset Menu</Comments>
