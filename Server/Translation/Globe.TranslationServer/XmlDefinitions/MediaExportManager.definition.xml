@@ -13,6 +13,10 @@
       <Comments>Multimedia export configuration</Comments>
       <String Context="Generic_Long" >MS-MPEG4 V2 CODEC (BEST QUALITY/COMPRESSION RATIO, MICROSOFT COMPATIBILITY)</String>
     </Concept >
+    <Concept Id="MPEG4_AVC" >
+      <Comments>Multimedia export configuration</Comments>
+      <String Context="Generic_Long" >MS-MPEG4 AVC H.264 CODEC (BEST QUALITY/COMPRESSION RATIO, MICROSOFT COMPATIBILITY)</String>
+    </Concept >
     <Concept Id="MS_VIDEO1" >
       <Comments>Multimedia export configuration</Comments>
       <String Context="Generic_Long" >MS-VIDEO1 CODEC (MAC OS COMPATIBILITY)</String>

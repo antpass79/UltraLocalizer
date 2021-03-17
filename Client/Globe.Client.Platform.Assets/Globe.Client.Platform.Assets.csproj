@@ -11,6 +11,8 @@
     <None Remove="Icons\check.png" />
     <None Remove="Icons\current_job.png" />
     <None Remove="Icons\delete.png" />
+    <None Remove="Icons\done.png" />
+    <None Remove="Icons\draft.png" />
     <None Remove="Icons\duplicate.png" />
     <None Remove="Icons\edit.png" />
     <None Remove="Icons\english.png" />
@@ -92,6 +94,8 @@
     <Resource Include="Icons\check.png" />
     <Resource Include="Icons\current_job.png" />
     <Resource Include="Icons\delete.png" />
+    <Resource Include="Icons\done.png" />
+    <Resource Include="Icons\draft.png" />
     <Resource Include="Icons\duplicate.png" />
     <Resource Include="Icons\edit.png" />
     <Resource Include="Icons\english.png" />

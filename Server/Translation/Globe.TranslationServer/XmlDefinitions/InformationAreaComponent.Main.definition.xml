@@ -21,50 +21,86 @@
       <String Context="TS_AButton">DETAILS</String>
       <String Context="Generic_Long">DETAILS</String>
     </Concept>
-    <Concept Id="Gamma">
-      <Comments>Label of gamma slider when page preview is open</Comments>
-      <String Context="Generic_Medium">GAMMA</String>
-    </Concept>
-    <Concept Id="Contrast">
-      <Comments>Label of contrast slider when page preview is open</Comments>
-      <String Context="Generic_Medium">CONTRAST</String>
-    </Concept>
-    <Concept Id="Brightness">
-      <Comments>Label of Brightness slider when page preview is open</Comments>
-      <String Context="Generic_Medium">BRIGHTNESS</String>
-    </Concept>
-    <Concept Id="MoveUpImage">
-      <Comments>Command when page preview is open</Comments>
-      <String Context="TS_AButton">UP</String>
-      <String Context="Generic_Medium">UP</String>
-    </Concept>
-    <Concept Id="MoveDownImage">
-      <Comments>Command when page preview is open</Comments>
-      <String Context="TS_AButton">DOWN</String>
-      <String Context="Generic_Medium">DOWN</String>
-    </Concept>
-    <Concept Id="RemoveImage">
-      <Comments>Command when page preview is open</Comments>
-      <String Context="TS_AButton">REMOVE</String>
-      <String Context="Generic_Medium">REMOVE</String>
-    </Concept>
-    <Concept Id="ResetSliders">
-      <Comments>Command when page preview is open</Comments>
-      <String Context="TS_AButton">RESET</String>
-      <String Context="Generic_Medium">RESET</String>
-    </Concept>
-    <Concept Id="OK_PagePreview_Str" >
-      <Comments>OK button on page preview dialog</Comments>
-      <String Context="TS_AButton" >OK</String>
-    </Concept >
-    <Concept Id="CANCEL_PagePreview_Str" >
-      <Comments>CANCEL button on page preview dialog</Comments>
-      <String Context="TS_AButton" >CANCEL</String>
-    </Concept >
-    <Concept Id="PRINT_PagePreview_Str" >
-      <Comments>$$RC task PRINT button on page preview dialog</Comments>
-      <String Context="TS_AButton" >PRINT NOW</String>
-    </Concept >
+	  <Concept Id="OK_PagePreview_Str" >
+		  <Comments>OK button on page preview dialog</Comments>
+		  <String Context="TS_AButton" >OK</String>
+	  </Concept >
+	  <Concept Id="CANCEL_PagePreview_Str" >
+		  <Comments>CANCEL button on page preview dialog</Comments>
+		  <String Context="TS_AButton" >CANCEL</String>
+	  </Concept >
+	  <Concept Id="PRINT_PagePreview_Str" >
+		  <Comments>PRINT button on page preview dialog</Comments>
+		  <String Context="TS_AButton" >PRINT NOW</String>
+	  </Concept >
+	  <Concept Id="AddImage_PagePreview_Str" >
+		  <Comments>ADD IMAGE ts button in print preview</Comments>
+		  <String Context="TS_AButton" >ADD IMAGE</String>
+	  </Concept >
+	  <Concept Id="RemoveImage_PagePreview_Str" >
+		  <Comments>REMOVE IMAGE ts button in print preview</Comments>
+		  <String Context="TS_AButton" >REMOVE IMAGE</String>
+	  </Concept >
+	  <Concept Id="AddPage_PagePreview_Str" >
+		  <Comments>ADD PAGE ts button in print preview</Comments>
+		  <String Context="TS_AButton" >ADD PAGE</String>
+	  </Concept >
+	  <Concept Id="RemovePage_PagePreview_Str" >
+		  <Comments>REMOVE PAGE ts button in print preview</Comments>
+		  <String Context="TS_AButton" >REMOVE PAGE</String>
+	  </Concept >
+	  <Concept Id="MoveUpImage_PagePreview_Str" >
+		  <Comments>MOVE UP IMAGE ts button in print preview</Comments>
+		  <String Context="TS_AButton" >MOVE UP IMAGE</String>
+	  </Concept >
+	  <Concept Id="MoveDownImage_PagePreview_Str" >
+		  <Comments>MOVE DOWN IMAGE ts button in print preview</Comments>
+		  <String Context="TS_AButton" >MOVE DOWN IMAGE</String>
+	  </Concept >
+	  <Concept Id="AutoFillPages_PagePreview_Str" >
+		  <Comments>AUTO FILL PAGES ts button in print preview</Comments>
+		  <String Context="TS_AButton" >AUTO FILL PAGES</String>
+	  </Concept >
+	  <Concept Id="ClearAllPages_PagePreview_Str" >
+		  <Comments>CLEAR ALL PAGES ts button in print preview</Comments>
+		  <String Context="TS_AButton" >CLEAR ALL PAGES</String>
+	  </Concept >
+	  <Concept Id="Reset_PagePreview_Str" >
+		  <Comments>RESET ts button in print preview</Comments>
+		  <String Context="TS_AButton" >RESET</String>
+	  </Concept >
+	  <Concept Id="PrinterPlus_PagePreview_Str" >
+		  <Comments>PRINTER PLUS ts button in print preview</Comments>
+		  <String Context="TS_AButton" >PRINTER PLUS</String>
+	  </Concept >
+	  <Concept Id="PrinterMinus_PagePreview_Str" >
+		  <Comments>PRINTER MINUS ts button in print preview</Comments>
+		  <String Context="TS_AButton" >PRINTER MINUS</String>
+	  </Concept >
+	  <Concept Id="ScrollImages_PagePreview_Str" >
+		  <Comments>SCROLL IMAGE encoder in print preview</Comments>
+		  <String Context="TS_AButton" >IMAGE</String>
+	  </Concept >
+	  <Concept Id="ScrollPages_PagePreview_Str" >
+		  <Comments>SCROLL PAGE encoder in print preview</Comments>
+		  <String Context="TS_AButton" >PAGE</String>
+	  </Concept >
+	  <Concept Id="SetLayout_PagePreview_Str" >
+		  <Comments>SET LAYOUT encoder in print preview</Comments>
+		  <String Context="TS_AButton" >LAYOUT</String>
+	  </Concept >
+	  <Concept Id="SetGamma_PagePreview_Str" >
+		  <Comments>SET GAMMA encoder in print preview</Comments>
+		  <String Context="TS_AButton" >GAMMA</String>
+	  </Concept >
+	  <Concept Id="SetContrast_PagePreview_Str" >
+		  <Comments>SET CONTRAST encoder in print preview</Comments>
+		  <String Context="TS_AButton" >CONTRAST</String>
+	  </Concept >
+	  <Concept Id="SetBrightness_PagePreview_Str" >
+		  <Comments>SET BRIGHTNESS encoder in print preview</Comments>
+		  <String Context="TS_AButton" >BRIGHTNESS</String>
+	  </Concept >
     <Concept Id="ALL">
       <Comments>View All Operations</Comments>
       <String Context="TS_AButton">ALL</String>
@@ -242,6 +278,10 @@
     <Concept Id="DICOM PREPARE ISO">
       <Comments></Comments>
       <String Context="Generic_Long">Prepare file system</String>
+    </Concept>
+    <Concept Id="Generate pdf">
+      <Comments></Comments>
+      <String Context="Generic_Long">Generate pdf</String>
     </Concept>
     <Concept Id="PrintSCU">
       <Comments></Comments>
@@ -477,9 +517,21 @@
       <Comments>"Ip address dialog (it can be opened from hd context menu), dhcp enabled status</Comments>
       <String Context="Generic_Long">NO</String>
     </Concept>
+    <Concept Id="UP">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), interface operational status</Comments>
+      <String Context="Generic_Long">UP</String>
+    </Concept>
+    <Concept Id="DOWN">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), interface operational status</Comments>
+      <String Context="Generic_Long">DOWN</String>
+    </Concept>
     <Concept Id="DHCP_ENABLED">
       <Comments>"Ip address dialog (it can be opened from hd context menu), dhcp enabled status</Comments>
       <String Context="Generic_Long">DHCP ENABLED</String>
+    </Concept>
+    <Concept Id="MAC">
+      <Comments>"Ip address dialog (it can be opened from hd context menu), MAC address</Comments>
+      <String Context="Generic_Long">MAC</String>
     </Concept>
     <Concept Id="IP">
       <Comments>"Ip address dialog (it can be opened from hd context menu), IP address</Comments>

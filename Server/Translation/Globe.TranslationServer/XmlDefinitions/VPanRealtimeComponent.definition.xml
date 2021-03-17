@@ -3,23 +3,23 @@
 
   <!--TS COMMANDS - START-->
   <LocalizationSection InternalNamespace="Commands">
-    <Concept Id="OFFLINE" Ignore="false">
+    <Concept Id="OFFLINE" >
       <Comments>TS command for selecting offline VPAN acquisition</Comments>
       <String Context="TS_TButton">OFFLINE</String>
     </Concept>
-    <Concept Id="CENTERED" Ignore="false">
+    <Concept Id="CENTERED" >
       <Comments>TS command for selecting CENTERED VPAN acquisition</Comments>
       <String Context="TS_TButton">CENTERED</String>
     </Concept>
-    <Concept Id="CURVED" Ignore="false">
+    <Concept Id="CURVED" >
       <Comments>TS command for selecting CURVED VPAN acquisition</Comments>
       <String Context="TS_TButton">CURVED</String>
     </Concept>
-    <Concept Id="FITSCREEN" Ignore="false">
+    <Concept Id="FITSCREEN" >
       <Comments>TS command for selecting FITSCREEN VPAN acquisition</Comments>
       <String Context="TS_TButton">FITSCREEN</String>
     </Concept>
-    <Concept Id="OPEN FILE" Ignore="false">
+    <Concept Id="OPEN FILE" >
       <Comments>Open a file</Comments>
       <String Context="TS_TButton">OPEN FILE</String>
     </Concept>

@@ -54,27 +54,27 @@
       <String Context="Generic_Warning">Exam not available, operation not performed</String>
     </Concept>
     <Concept Id="EMPTYFONTSIZE_WARNING">
-      <Comment>tooltip message on editor if user sets an empty value for font size</Comment>
+      <Comments>tooltip message on editor if user sets an empty value for font size</Comments>
       <String Context="Generic_Warning">Empty Fontsize not admitted</String>
     </Concept>
     <Concept Id="NOTNUMERICFONTSIZE_WARNING">
-      <Comment>tooltip message on editor if user sets a non-numeric value for font size (use "." for decimal separator)</Comment>
+      <Comments>tooltip message on editor if user sets a non-numeric value for font size (use "." for decimal separator)</Comments>
       <String Context="Generic_Warning">Fontsize must be a number</String>
     </Concept>
     <Concept Id="TOOLARGEFONTSIZE_WARNING">
-      <Comment>tooltip message on editor if user sets a font size too large</Comment>
+      <Comments>tooltip message on editor if user sets a font size too large</Comments>
       <String Context="Generic_Warning">Fontsize must be less than 100</String>
     </Concept>
     <Concept Id="TOOSMALLFONTSIZE_WARNING">
-      <Comment>tooltip message on editor if user sets a font size too small</Comment>
+      <Comments>tooltip message on editor if user sets a font size too small</Comments>
       <String Context="Generic_Warning">Fontsize must be greater than 5</String>
     </Concept>
 	<Concept Id="SAVEISSUE_WARNING">
-      <Comment>An error occurred during saving a report section.</Comment>
+      <Comments>An error occurred during saving a report section.</Comments>
       <String Context="Generic_Warning">Some Data might not be saved correctly. Please contact the service department.</String>
     </Concept>
 	<Concept Id="SAVEISSUE_ERROR">
-      <Comment>An error occurred during saving a report section. A shutdown is required.</Comment>
+      <Comments>An error occurred during saving a report section. A shutdown is required.</Comments>
       <String Context="Generic_Warning">Some Data might not be saved correctly. Exam will be recovered at next startup.</String>
     </Concept>
   </LocalizationSection>
@@ -86,12 +86,16 @@
       <String Context="Generic_Long">Report</String>
     </Concept>
     <Concept Id="GrayTheme">
-      <Comment>Gray theme for report [Defect 34386]</Comment>
+      <Comments>Gray theme for report [Defect 34386]</Comments>
       <String Context="Generic_Long">Gray Theme</String>
     </Concept>
     <Concept Id="BlueTheme">
-      <Comment>Blue theme for report [Defect 34386]</Comment>
+      <Comments>Blue theme for report [Defect 34386]</Comments>
       <String Context="Generic_Long">Blue Theme</String>
+    </Concept>
+    <Concept Id="SmallTheme">
+      <Comments>Small theme for report [Story 44613]</Comments>
+      <String Context="Generic_Long">Small Theme</String>
     </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="EditorUI">
@@ -187,7 +191,7 @@
       <String Context="Generic_Long">STATUS</String>
     </Concept>
     <Concept Id="OPEN">
-      <Comment>OPEN stays for report status as an "opened report"</Comment>
+      <Comments>OPEN stays for report status as an "opened report"</Comments>
       <String Context="Generic_Long">OPEN</String>
     </Concept>
     <Concept Id="CLOSED">

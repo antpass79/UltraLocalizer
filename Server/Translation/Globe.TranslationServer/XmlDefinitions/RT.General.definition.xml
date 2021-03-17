@@ -165,6 +165,10 @@
       <Comments>Tab QIMT</Comments>
       <String Context="TS_TabName">QIMT</String>
     </Concept>
+    <Concept Id="ATTENUATION TAB">
+      <Comments>Tab QAI</Comments>
+      <String Context="TS_TabName">QAI</String>
+    </Concept>
     <Concept Id="QAS TAB">
       <Comments>Tab QAS</Comments>
       <String Context="TS_TabName">QAS</String>
@@ -220,6 +224,10 @@
     <Concept Id="QAS DIALOG TAB">
       <Comments>Distension Dialog Tab</Comments>
       <String Context="TS_TabName">DISTENSION DIALOG</String>
+    </Concept>
+    <Concept Id="MAXCHECK TAB">
+      <Comments>Tab user control for chinese compliance</Comments>
+      <String Context="TS_TabName">MAX CHECK</String>
     </Concept>
     <Concept Id="MODE B LABEL">
       <Comments>Info area Mode B</Comments>
@@ -409,6 +417,10 @@
       <Comments>Warning to be displayed when anomalies on impulse voltage occurred</Comments>
       <String Context="Generic_Warning">Error with impulse voltage (#8)</String>
     </Concept>
+    <Concept Id="PROBE_NO_AVAILABLE">
+      <Comments>Warning to be displayed when the probe is not compatible con the software release</Comments>
+      <String Context="Generic_Warning">The Probe is not compatible with software release.</String>
+    </Concept>
     <Concept Id="QELAXTO FIRST ALARM">
       <Comments>Warning to be displayed when anomalies on impulse voltage occurred</Comments>
       <String Context="Generic_Warning">Error with impulse voltage (#9).Repeat an acquisition in the air. If the problem persists, the tool will be disabled.</String>
@@ -420,6 +432,10 @@
     <Concept Id="QELAXTO IAT ALARM">
       <Comments>Warning to be displayed when anomalies on impulse voltage occurred</Comments>
       <String Context="Generic_Warning">Error with impulse voltage (#12).The tool will be disabled.</String>
+    </Concept>
+    <Concept Id="BATTERY OVER CURRENT ALARM">
+      <Comments>Warning to be displayed when batteries' current is over maximum allowed</Comments>
+      <String Context="Generic_Warning">"Error #13. Low battery performances. The system will automatically switch off. Please contact Service for replacement"</String>
     </Concept>
     <Concept Id="CAPACITOR ALARM">
       <Comments>Warning to be displayed when anomalies on power supply</Comments>
@@ -670,18 +686,29 @@
       <Comments>Low Frame Rate</Comments>
       <String Context="MD_RT13HelpLine">Please, increase Frame rate</String>
     </Concept>
-	<Concept Id="GENERIC OPERATION ERROR">
+    <Concept Id="GENERIC OPERATION ERROR">
       <Comments>Generic Error</Comments>
       <String Context="Generic_Warning">An error was detected during the operation. Please try again</String>
     </Concept>
-	<Concept Id="STIC LOW DEMO RATE">
-      <Comments>DEMO1</Comments>
-      <String Context="TS_SButton">Please, increase Frame rate</String>
-	  <String Context="MD_RT13HelpLine">Please, increase Frame rate</String>
+    <Concept Id="PLA_CALIPER_ERROR">
+      <Comments>Region of treatment is unpredictable. Place caliper again</Comments>
+      <String Context="Generic_Warning">The position of the needles is wrong: please, reposition your calipers.</String>
     </Concept>
-	<Concept Id="GENERIC DEMO ERROR">
-      <Comments>Demo 2</Comments>
-      <String Context="Generic_Warning">An error was detected during the operation. Please try again</String>
+    <Concept Id="PLA_FIRST_POINT_FIBER1">
+      <Comments>First fiber: Place the first caliper on the tip of the needle</Comments>
+      <String Context="Generic_Warning">First needle: place the first caliper on the tip of the needle.</String>
+    </Concept>
+    <Concept Id="PLA_SECOND_POINT_FIBER1">
+      <Comments>First fiber: Place the second caliper along the needle</Comments>
+      <String Context="Generic_Warning">First needle: place the second caliper on the canula.</String>
+    </Concept>
+    <Concept Id="PLA_FIRST_POINT_FIBER2">
+      <Comments>Second fiber: Place the first caliper on the tip of the needle</Comments>
+      <String Context="Generic_Warning">Second needle: place the first caliper on the tip of the needle.</String>
+    </Concept>
+    <Concept Id="PLA_SECOND_POINT_FIBER2">
+      <Comments>Second fiber: Place the second caliper along the needle</Comments>
+      <String Context="Generic_Warning">Second needle: place the second caliper on the canula.</String>
     </Concept>
   </LocalizationSection> 
   <LocalizationSection InternalNamespace="Error_Messages">
@@ -691,6 +718,9 @@
     <Concept Id="NOT_HIGHFRAMERATE">
 	<Comments>XStrain 2D from RT/Exam Review: the frame rate is too low</Comments>
      <String Context="Generic_Warning">low frame rate</String>
+    </Concept>
+	<Concept Id="OVERHIGHFRAMERATE">
+      <String Context="Generic_Warning">overhigh frame rate</String>
     </Concept>
 	 <Concept Id="NON_CALIBRATIONREGIONSHOMOGENEOUS">
 	  <Comments>XStrain 2D from RT/Exam Review: A change of sections occured</Comments>

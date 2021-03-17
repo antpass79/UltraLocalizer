@@ -98,6 +98,7 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Merge), "Unisci");
             _italian.Add(nameof(LanguageKeys.Load), "Carica");
             _italian.Add(nameof(LanguageKeys.Save), "Salva");
+            _italian.Add(nameof(LanguageKeys.Open), "Apri");
             _italian.Add(nameof(LanguageKeys.Close), "Chiudi");
             _italian.Add(nameof(LanguageKeys.AutoMerge), "Unisci");
             _italian.Add(nameof(LanguageKeys.Cancel), "Annulla");
@@ -171,6 +172,7 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Merge), LanguageKeys.Merge);
             _english.Add(nameof(LanguageKeys.Load), LanguageKeys.Load);
             _english.Add(nameof(LanguageKeys.Save), LanguageKeys.Save);
+            _english.Add(nameof(LanguageKeys.Open), LanguageKeys.Open);
             _english.Add(nameof(LanguageKeys.Close), LanguageKeys.Close);
             _english.Add(nameof(LanguageKeys.AutoMerge), "Auto Merge");
             _english.Add(nameof(LanguageKeys.Cancel), LanguageKeys.Cancel);

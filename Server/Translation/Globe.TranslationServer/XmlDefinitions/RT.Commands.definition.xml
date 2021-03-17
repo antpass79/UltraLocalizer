@@ -37,6 +37,14 @@
       <Comments>Value for each button set to OFF status</Comments>
       <String Context="TS_AButton">OFF</String>
     </Concept>
+    <Concept Id="BUTTON_HIGH">
+      <Comments>Value for each button set to HIGH status</Comments>
+      <String Context="TS_AButton">HIGH</String>
+    </Concept>
+    <Concept Id="BUTTON_LOW">
+      <Comments>Value for each button set to LOW status</Comments>
+      <String Context="TS_AButton">LOW</String>
+    </Concept>
     <Concept Id="EASYTUNING">
       <Comments>Button used to turn on/off easy tuning controls</Comments>
       <String Context="TS_BButton">EASY TUNING</String>
@@ -106,6 +114,14 @@
       <Comments>Label related to slider control 3 for CFM easy tuning (upper value)</Comments>
       <String Context="TS_TButton">HIGH FLOW</String>
     </Concept>
+    <Concept Id="EASYTUNING_RESET">
+      <Comments>Button in EasyTuning page, used to reset ET initial status</Comments>
+      <String Context="TS_AButton">RESET</String>
+    </Concept>
+    <Concept Id="EASYTUNING_RECALIBRATE">
+      <Comments>Button in EasyTuning page, used to recalibrate ET sliders</Comments>
+      <String Context="TS_AButton">RECALIBRATE</String>
+    </Concept>
   	<Concept Id="PLEX">
       <Comments>Enable/disable duplex simultaneous acquisition</Comments>
       <String Context="TS_AButton">PLEX</String>
@@ -157,6 +173,10 @@
     <Concept Id="PHYSIO_ECG">
       <Comments>Allow to enable/disable ECG</Comments>
       <String Context="TS_AButton">ECG</String>
+    </Concept>
+    <Concept Id="ECG_SENSITIVITY">
+      <Comments>Used to change sensitivity for ECG trace</Comments>
+      <String Context="TS_AButton">SENSITIVITY</String>
     </Concept>
     <Concept Id="PHYSIO_EDR">
       <Comments>Allow to enable/disable EDR (Breathing Curve)</Comments>
@@ -250,6 +270,14 @@
       <Comments>Display value when the size of 2D ref is MEDIUM</Comments>
       <String Context="TS_AButton">MEDIUM</String>
     </Concept>
+    <Concept Id="FORMAT_LARGE_VALUE">
+      <Comments>Display value when the size of 2D ref is LARGE</Comments>
+      <String Context="TS_AButton">LARGE</String>
+    </Concept>
+    <Concept Id="FORMAT_DUAL_VALUE">
+      <Comments>Display value when the size of 2D ref is DUAL</Comments>
+      <String Context="TS_AButton">DUAL</String>
+    </Concept>
 	 <Concept Id="FORMAT_FULL_VALUE">
       <Comments>Display value when the size of 2D ref is FULL</Comments>
       <String Context="TS_AButton">FULL</String>
@@ -261,14 +289,6 @@
     <Concept Id="DYN_IMG">
       <Comments>Set the dynamic imaging selector</Comments>
       <String Context="TS_TButton">DYN-IMG</String>
-    </Concept>
-    <Concept Id="FORMAT_LARGE_VALUE">
-      <Comments>Display value when the size of 2D ref is LARGE</Comments>
-      <String Context="TS_AButton">LARGE</String>
-    </Concept>
-    <Concept Id="FORMAT_DUAL_VALUE">
-      <Comments>Display value when the size of 2D ref is DUAL</Comments>
-      <String Context="TS_AButton">DUAL</String>
     </Concept>
     <Concept Id="DUAL_CFM">
       <Comments>Set the CFM dual representation</Comments>
@@ -687,7 +707,11 @@
       <Comments>Let to set the threshold of the ADM data</Comments>
       <String Context="TS_TButton">THRESHOLD</String>
     </Concept>
-     <Concept Id="ADM_ADD_TO_REPORT">
+    <Concept Id="ADM_CYCLE_AVERAGE">
+      <Comments>Allows you to set the number of cycles for the average of the measurements.</Comments>
+      <String Context="TS_TButton">CYCLES</String>
+    </Concept>
+    <Concept Id="ADM_ADD_TO_REPORT">
       <Comments>Button used to send the Adm measures to the report</Comments>
       <String Context="TS_AButton">ADD TO REPORT</String>
     </Concept>    
@@ -712,6 +736,10 @@
       <String Context="TS_AButton">HD-ZOOM</String>
       <String Context="MD_RT17LabelJoyPush">HD-ZOOM</String>
 	  <String Context="MD_RT17LabelJoyEnc">HD-ZOOM</String>
+    </Concept>
+    <Concept Id="TRIGGER">
+      <Comments>Used to turn on/off Trigger generation</Comments>
+      <String Context="TS_AButton">TRIGGER</String>
     </Concept>
     <Concept Id="LVO">
       <Comments>Used to turn on/off Left Ventricle Opacification</Comments>
@@ -762,6 +790,14 @@
     <Concept Id="FOCUS_NUM">
       <Comments>Add or remove TX foci</Comments>
       <String Context="TS_TButton">FOCUS</String>
+    </Concept>
+    <Concept Id="FOCAL_ZONE">
+      <Comments>Add or remove a Focal Zone</Comments>
+      <String Context="TS_TButton">REGIONS</String>
+    </Concept>
+    <Concept Id="FOCUS_EXTENDED">
+      <Comments>Allow to enable/disable extended focus (8 focus)</Comments>
+      <String Context="TS_AButton">FOCUS</String>
     </Concept>
     <Concept Id="SIZE_FOV">
       <Comments>Allow to change the Field Of View</Comments>
@@ -835,6 +871,10 @@
     </Concept>
     <Concept Id="CLIP_INFINITE">
       <Comments>It is used to display the label for clip of very long duration</Comments>
+      <String Context="TS_TButton">UNLIMITED</String>
+    </Concept>
+    <Concept Id="CLIP_UNLIMITED">
+      <Comments>It is used to display the label for clip unlimited</Comments>
       <String Context="TS_TButton">UNLIMITED</String>
     </Concept>
     <Concept Id="CYCLE">
@@ -1127,6 +1167,16 @@
       <String Context="MD_RT17LabelJoyPush">PRF</String>
 	  <String Context="MD_RT17LabelJoyEnc">PRF</String>
     </Concept>
+    <Concept Id="BW_PRF">
+      <Comments>Used to change PRF for BW</Comments>
+      <String Context="TS_TButton">PRF</String>
+      <String Context="MD_RT17LabelJoyPush">PRF</String>
+	  <String Context="MD_RT17LabelJoyEnc">PRF</String>
+    </Concept>
+    <Concept Id="BW_PRF_LIM">
+      <Comments>Used to indicate that there is a limitation of the PRF BW</Comments>
+      <String Context="TS_TButton">LIM</String>
+    </Concept>
     <Concept Id="CFM_FREQUENCY">
       <Comments>It drives frequency for CFM</Comments>
       <String Context="TS_TButton">FREQUENCY</String>
@@ -1194,6 +1244,10 @@
     <Concept Id="MCV">
       <Comments>Enter in MicroV modality. Keep this string in translations, since MicroV can be considered a trade mark name</Comments>
       <String Context="TS_AButton">MICROV</String>
+    </Concept>
+    <Concept Id="CEA">
+      <Comments>Enter in MicroE modality. Keep this string in translations, since MicroE can be considered a trade mark name</Comments>
+      <String Context="TS_AButton">MicroE</String>
     </Concept>
     <Concept Id="CFM_MOT_COMP">
       <Comments>Enable Motion Compensation when CFM mode is active</Comments>
@@ -1431,6 +1485,10 @@
       <Comments>Tool QIMT</Comments>
       <String Context="TS_BButton">QIMT</String>
     </Concept>
+    <Concept Id="QAI">
+      <Comments>Tool QAI</Comments>
+      <String Context="TS_BButton">QAI</String>
+    </Concept>
     <Concept Id="QAS">
       <Comments>Tool QAS</Comments>
       <String Context="TS_BButton">QAS</String>
@@ -1445,7 +1503,43 @@
     </Concept>
     <Concept Id="CENTRAL">
       <Comments>Show all lines</Comments>
-      <String Context="TS_BButton">CENTRAL</String>
+      <String Context="TS_TButton">CENTRAL</String>
+    </Concept>
+    <Concept Id="ALL LINES">
+      <Comments>Show all lines</Comments>
+      <String Context="TS_TButton">ALL</String>
+    </Concept>
+    <Concept Id="PLA_FIBER_NUM">
+      <Comments>Number of fibers</Comments>
+      <String Context="TS_TButton">FIBERS</String>
+    </Concept>
+    <Concept Id="PLA_FIBER_LINKED">
+      <Comments>Fibers linked</Comments>
+      <String Context="TS_AButton">LINKED</String>
+    </Concept>
+    <Concept Id="PLA_NUM_PULL_BACK">
+      <Comments>Pull back number</Comments>
+      <String Context="TS_TButton">PULL BACK NUMBER</String>
+    </Concept>
+    <Concept Id="PLA_PULL_BACK">
+      <Comments>Distance of pull back</Comments>
+      <String Context="TS_TButton">PULL BACK</String>
+    </Concept>
+    <Concept Id="PLA_SIZE1">
+      <Comments>Size of first fiber</Comments>
+      <String Context="TS_TButton">SIZE</String>
+    </Concept>
+    <Concept Id="PLA_PLANNING">
+      <Comments>Planning mode</Comments>
+      <String Context="TS_AButton">PLANNING</String>
+    </Concept>
+    <Concept Id="PLA_VERIFY">
+      <Comments>Verify mode</Comments>
+      <String Context="TS_AButton">VERIFY</String>
+    </Concept>
+    <Concept Id="PLA FIBER CHECK">
+      <Comments>Verify mode</Comments>
+      <String Context="TS_AButton">Fiber-Check</String>
     </Concept>
     <Concept Id="XSTRAIN2D">
       <Comments>Tool XSTRAIN2D</Comments>
@@ -1454,6 +1548,10 @@
 	<Concept Id="FlowQuantification">
       <Comments>Tool "Flow Quantification"</Comments>
       <String Context="TS_BButton">QPack</String>
+    </Concept>
+	<Concept Id="Vortex">
+      <Comments>Tool "HyperDoppler"</Comments>
+      <String Context="TS_BButton">HyperDoppler</String>
     </Concept>
     <Concept Id="PROSPECTIVE_CLIP">
       <Comments>Prospective Clip</Comments>
@@ -1695,6 +1793,14 @@
       <Comments>Tool BreastNav</Comments>
       <String Context="TS_AButton">BREAST NAV</String>
     </Concept>
+	<Concept Id="EnterUroNav">
+      <Comments>Tool UroFusion</Comments>
+      <String Context="TS_AButton">URO FUSION</String>
+    </Concept>
+    <Concept Id="EnterMRBreastNav">
+      <Comments>Tool MRBreastNav</Comments>
+      <String Context="TS_AButton">MR BREAST NAV</String>
+    </Concept>
     <Concept Id="PHYSIO_LEADSEL">
       <Comments>Lead</Comments>
       <String Context="TS_TButton">LEAD</String>
@@ -1782,6 +1888,14 @@
     <Concept Id="AVF">
       <Comments>Selection of option Avf (Adaptative virtual focusing)</Comments>
       <String Context="TS_AButton">AVF</String>
+    </Concept>
+    <Concept Id="SET_MAX_CONFIGURATION">
+      <Comments>Lead</Comments>
+      <String Context="TS_AButton">SET MAX CONF</String>
+    </Concept>
+	<Concept Id="SELECT_ODS_INDEX">
+      <Comments>Resize viewer for flow quantification</Comments>
+      <String Context="TS_TButton">ODS INDEX</String>
     </Concept>
   </LocalizationSection>
 </LocalizationResource>

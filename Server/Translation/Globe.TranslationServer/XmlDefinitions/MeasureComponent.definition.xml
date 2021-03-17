@@ -1348,6 +1348,11 @@
       <String Context="MD_RT11MeasHeader">AO DIST D</String>
       <String Context="MD_RT11MeasName">ADD</String>
     </Concept>
+    <Concept Id="AO MID DIAM">
+      <String Context="TS_SButton">AO MID DIAM</String>
+      <String Context="MD_RT11MeasHeader">AO MID D</String>
+      <String Context="MD_RT11MeasName">AMD</String>
+    </Concept>
     <Concept Id="PP CELIAC">
       <String Context="TS_SButton">POST PRANDIAL CELIAC</String>
       <String Context="MD_RT11MeasHeader">PP CELIAC</String>
@@ -4580,6 +4585,16 @@
       <String Context="MD_RT11MeasHeader">AO DIDD</String>
       <String Context="MD_RT11MeasName">ADDD</String>
     </Concept>
+    <Concept Id="AO MID SYS DIAM">
+      <String Context="TS_SButton">AO MID SYS DIAM</String>
+      <String Context="MD_RT11MeasHeader">AO MISD</String>
+      <String Context="MD_RT11MeasName">AMSD</String>
+    </Concept>
+    <Concept Id="AO MID DIAST DIAM">
+      <String Context="TS_SButton">AO MID DIAST DIAM</String>
+      <String Context="MD_RT11MeasHeader">AO MIDD</String>
+      <String Context="MD_RT11MeasName">AMDD</String>
+    </Concept>
     <Concept Id="AO DIL SEGM LENGTH">
       <String Context="TS_SButton">AO DIL SEGM LENGTH</String>
       <String Context="MD_RT11MeasHeader">AO DS L</String>
@@ -7510,9 +7525,16 @@
     </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="OBSTETRICS">
+    <Concept Id="INFORMATION ON SCREEN CAPTION">
+      <String Context="TS_SButton">Info on screen caption</String>
+    </Concept>
     <Concept Id="MULTIPLE FETUSES SETTINGS">
       <Comments>Comparative settings for OB multi fetus</Comments>
       <String Context="TS_SButton">MULTIPLE FETUSES SETTINGS</String>
+    </Concept>
+    <Concept Id="SINGLE FETUS SETTINGS">
+      <Comments>Settings for OB single fetus</Comments>
+      <String Context="TS_SButton">SINGLE FETUS SETTINGS</String>
     </Concept>
     <Concept Id="INCLUDE 2D SECTION">
       <Comments>Comparative settings for OB multi fetus</Comments>
@@ -7610,6 +7632,18 @@
       <String Context="TS_SButton">DAYS BEF PARTURITION</String>
       <String Context="MD_RT11MeasHeader">D B PART</String>
       <String Context="MD_RT11MeasName">DBP</String>
+    </Concept>
+    <Concept Id="DAYS BEFORE PARTURITION RANGE">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">DAYS BEF PARTURITION RANGE</String>
+      <String Context="MD_RT11MeasHeader">DBP Range</String>
+      <String Context="MD_RT11MeasName">DBP Range</String>
+    </Concept>
+    <Concept Id="DAYS BEFORE PARTURITION AVERAGE">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">DAYS BEF PARTURITION(AV) </String>
+      <String Context="MD_RT11MeasHeader">DBP(AV)</String>
+      <String Context="MD_RT11MeasName">DBP(AV)</String>
     </Concept>
     <Concept Id="COMPARATIVE SECTION">
       <String Context="TS_SButton">COMPARATIVE SECTION</String>
@@ -9097,6 +9131,21 @@
       <String Context="MD_RT11MeasHeader">EL</String>
       <String Context="MD_RT11MeasName">EL</String>
     </Concept>
+    <Concept Id="DIAMETER1">
+      <String Context="TS_SButton">DIAMETER1</String>
+      <String Context="MD_RT11MeasHeader">DIAMETER1</String>
+      <String Context="MD_RT11MeasName">Diam1</String>
+    </Concept>
+    <Concept Id="DIAMETER2">
+      <String Context="TS_SButton">DIAMETER2</String>
+      <String Context="MD_RT11MeasHeader">DIAMETER2</String>
+      <String Context="MD_RT11MeasName">Diam2</String>
+    </Concept>
+    <Concept Id="DIAMETER3">
+      <String Context="TS_SButton">DIAMETER3</String>
+      <String Context="MD_RT11MeasHeader">DIAMETER3</String>
+      <String Context="MD_RT11MeasName">Diam3</String>
+    </Concept>
     <Concept Id="BIPARIETAL DIAMETER">
       <String Context="TS_SButton">BIPARIETAL DIAMETER</String>
       <String Context="MD_RT11MeasHeader">BPD</String>
@@ -9192,6 +9241,11 @@
       <String Context="MD_RT11MeasHeader">OFD</String>
       <String Context="MD_RT11MeasName">OFD</String>
     </Concept>
+    <Concept Id="OFD FROM HC">
+      <String Context="TS_SButton">OFD(HC)</String>
+      <String Context="MD_RT11MeasHeader">OFD(HC)</String>
+      <String Context="MD_RT11MeasName">OFD(HC)</String>
+    </Concept>
     <Concept Id="GESTATIONAL SAC DIAM">
       <String Context="TS_SButton">GEST SAC DIAM</String>
       <String Context="MD_RT11MeasHeader">GS</String>
@@ -9236,6 +9290,18 @@
       <String Context="TS_SButton">HEAD DIAMETER</String>
       <String Context="MD_RT11MeasHeader">HEAD DIAM</String>
       <String Context="MD_RT11MeasName">HD</String>
+    </Concept>
+    <Concept Id="DOG BIPARIETAL DIAMETER">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">BIPARIETAL DIAM</String>
+      <String Context="MD_RT11MeasHeader">BP</String>
+      <String Context="MD_RT11MeasName">BP</String>
+    </Concept>
+    <Concept Id="INNER CHORIONIC CAVITY">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">INNER CHORIONIC CAVITY</String>
+      <String Context="MD_RT11MeasHeader">ICC</String>
+      <String Context="MD_RT11MeasName">ICC</String>
     </Concept>
     <Concept Id="BODY DIAMETER">
       <String Context="TS_SButton">BODY DIAMETER</String>
@@ -9381,6 +9447,10 @@
     <Concept Id="Gestational Age(by AUA)">
       <Comments>Is the header in OB report of the homonymous section</Comments>
       <String Context="Generic_Long">Gestational Age(by AUA)</String>
+    </Concept>
+    <Concept Id="Gestational Age(AV)">
+      <Comments>Is the header in OB report of the homonymous section 43183</Comments>
+      <String Context="Generic_Long">Gestational Age(AV)</String>
     </Concept>
     <Concept Id="2D Measurements">
       <Comments>Is the header in OB report of the homonymous section</Comments>
@@ -9711,6 +9781,12 @@
       <String Context="MD_RT11MeasHeader">AUA</String>
       <String Context="MD_RT11MeasName">AUA</String>
     </Concept>
+    <Concept Id="AVERAGE">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="Generic_Long">AVERAGE</String>
+      <String Context="MD_RT11MeasHeader">AV</String>
+      <String Context="MD_RT11MeasName">AV</String>
+    </Concept>
     <Concept Id="AUTHOR">
       <String Context="TS_SButton">AUTHOR</String>
     </Concept>
@@ -9722,6 +9798,9 @@
     </Concept>
     <Concept Id="GA EXPIRED">
       <String Context="TS_SButton">GA EXPIRED</String>
+    </Concept>
+    <Concept Id="LUVONI">
+      <String Context="TS_SButton">LUVONI</String>
     </Concept>
     <Concept Id="NYLAND">
       <String Context="TS_SButton">MATTOON</String>
@@ -9749,6 +9828,9 @@
     </Concept>
     <Concept Id="HADLOCK84">
       <String Context="TS_SButton">HADLOCK84</String>
+    </Concept>
+    <Concept Id="INTERGROWTH21">
+      <String Context="TS_SButton">Intergrowth-21</String>
     </Concept>
     <Concept Id="HADLOCK82">
       <String Context="TS_SButton">HADLOCK82</String>
@@ -9885,6 +9967,10 @@
     <Concept Id="EDD(AUA)">
       <String Context="TS_SButton">EDD(AUA)</String>
     </Concept>
+    <Concept Id="EDD(AV)">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">EDD(AV)</String>
+    </Concept>
     <Concept Id="GRAPH PAGE">
       <String Context="TS_SButton">GRAPHICS</String>
     </Concept>
@@ -10009,8 +10095,18 @@
     <Concept Id="ENABLE DERIVED HC">
       <String Context="TS_SButton">ENABLE DERIVED HC</String>
     </Concept>
+    <Concept Id="ENABLE DERIVED OFD">
+      <String Context="TS_SButton">ENABLE DERIVED OFD</String>
+    </Concept>
+    <Concept Id="ENABLE EDD IN PANEL">
+      <String Context="TS_SButton">ENABLE EDD IN PANEL</String>
+    </Concept>
     <Concept Id="ENABLE RADS">
       <String Context="TS_SButton">ENABLE RADS</String>
+    </Concept>
+    <Concept Id="ENABLE DBP MODE">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">Enable DBP mode</String>
     </Concept>
     <Concept Id="ENABLE DERIVED AC">
       <String Context="TS_SButton">ENABLE DERIVED AC</String>
@@ -10278,6 +10374,183 @@
     <Concept Id="CUST B-MODE LEFT">
       <String Context="TS_SButton">CUST L B-MODE</String>
     </Concept>
+    <Concept Id="YES">
+      <String Context="TS_SButton">YES</String>
+    </Concept>
+    <Concept Id="NO">
+      <String Context="TS_SButton">NO</String>
+    </Concept>
+    <Concept Id="RIGHT">
+      <String Context="TS_SButton">RIGHT</String>
+    </Concept>
+    <Concept Id="LEFT">
+      <String Context="TS_SButton">LEFT</String>
+    </Concept>
+    <Concept Id="Prostate Nodule_Location">
+      <String Context="TS_SButton">LOCATION</String>
+      <String Context="TS_TabName">LOCATION</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Location Side">
+      <String Context="TS_SButton">SIDE</String>
+      <String Context="TS_TabName">SIDE</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Location Zone">
+      <String Context="TS_SButton">ZONE</String>
+      <String Context="TS_TabName">ZONE</String>
+    </Concept>
+    <Concept Id="Peripheral">
+      <String Context="TS_SButton">PERIPHERAL</String>
+      <String Context="Generic_Long">Peripheral</String>
+    </Concept>
+    <Concept Id="Transitional">
+      <String Context="TS_SButton">TRANSITIONAL</String>
+      <String Context="Generic_Long">Transitional</String>
+    </Concept>
+    <Concept Id="Central">
+      <String Context="TS_SButton">CENTRAL</String>
+      <String Context="Generic_Long">Central</String>
+    </Concept>
+    <Concept Id="Anterior fibromuscular stroma">
+      <String Context="TS_SButton">ANTERIOR FIBROMUSCULAR STROMA</String>
+      <String Context="Generic_Long">Anterior fibromuscular stroma</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Location Sector">
+      <String Context="TS_SButton">SECTOR</String>
+      <String Context="TS_TabName">SECTOR</String>
+    </Concept>
+    <Concept Id="Base">
+      <String Context="TS_SButton">BASE</String>
+      <String Context="Generic_Long">Base</String>
+    </Concept>
+    <Concept Id="Midgland">
+      <String Context="TS_SButton">MIDGLAND</String>
+      <String Context="Generic_Long">Midgland</String>
+    </Concept>
+    <Concept Id="Apex">
+      <String Context="TS_SButton">APEX</String>
+      <String Context="Generic_Long">Apex</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Location Region">
+      <String Context="TS_SButton">REGION</String>
+      <String Context="TS_TabName">REGION</String>
+    </Concept>
+    <Concept Id="Region Anterior">
+      <String Context="TS_SButton">ANTERIOR</String>
+      <String Context="Generic_Long">Anterior</String>
+    </Concept>
+    <Concept Id="Region Posterior">
+      <String Context="TS_SButton">POSTERIOR</String>
+      <String Context="Generic_Long">Posterior</String>
+    </Concept>
+    <Concept Id="Region Medial posterior">
+      <String Context="TS_SButton">MEDIAL POSTERIOR</String>
+      <String Context="Generic_Long">Medial posterior</String>
+    </Concept>
+    <Concept Id="Region Lateral posterior">
+      <String Context="TS_SButton">LATERAL POSTERIOR</String>
+      <String Context="Generic_Long">Lateral posterior</String>
+    </Concept>
+    <Concept Id="PROSTATE NODULE CYSTIC">
+      <String Context="TS_SButton">CYSTIC</String>
+      <String Context="TS_TabName">CYSTIC</String>
+    </Concept>
+    <Concept Id="PROSTATE NODULE SOLID">
+      <String Context="TS_SButton">SOLID1</String>
+      <String Context="TS_TabName">SOLID1</String>
+    </Concept>
+    <Concept Id="PROSTATE NODULE SOLID2">
+      <String Context="TS_SButton">SOLID2</String>
+      <String Context="TS_TabName">SOLID2</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Simple Cyst">
+      <String Context="TS_SButton">SIMPLE CYST</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Multiple Cyst">
+      <String Context="TS_SButton">MULTIPLE CYST</String>
+    </Concept>
+   <Concept Id="PROSTATE NODULE SHAPE">
+      <String Context="TS_SButton">SHAPE</String>
+      <String Context="TS_TabName">SHAPE</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Shape Round">
+      <String Context="TS_SButton">ROUND</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Shape Oval">
+      <String Context="TS_SButton">OVAL</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Shape Lenticular">
+      <String Context="TS_SButton">LENTICULAR</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Shape Lobulated">
+      <String Context="TS_SButton">LOBULATED</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Shape Irregular">
+      <String Context="TS_SButton">IRREGULAR</String>
+    </Concept>
+   <Concept Id="PROSTATE NODULE MARGINS">
+      <String Context="TS_SButton">MARGINS</String>
+      <String Context="TS_TabName">MARGINS</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Margins Regular">
+      <String Context="TS_SButton">REGULAR</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Margins Irregular">
+      <String Context="TS_SButton">IRREGULAR</String>
+    </Concept>
+   <Concept Id="PROSTATE NODULE ECHOGENICITY">
+      <String Context="TS_SButton">ECHOGENICITY</String>
+      <String Context="TS_TabName">ECHOGENICITY</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Echogenicity Isoechogenic">
+      <String Context="TS_SButton">ISOECHOGENIC</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Echogenicity Hypoechogenic">
+      <String Context="TS_SButton">HYPOECHOGENIC</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Echogenicity Hyperechogenic">
+      <String Context="TS_SButton">HYPERECHOGENIC</String>
+    </Concept>
+   <Concept Id="PROSTATE NODULE ECHOTEXTURE">
+      <String Context="TS_SButton">ECHOTEXTURE</String>
+      <String Context="TS_TabName">ECHOTEXTURE</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Echotexture Homogeneous">
+      <String Context="TS_SButton">HOMOGENEOUS</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Echotexture Heterogeneous">
+      <String Context="TS_SButton">HETEROGENEOUS</String>
+    </Concept>
+   <Concept Id="PROSTATE NODULE CALCIFICATION">
+      <String Context="TS_SButton">CALCIFICATION</String>
+      <String Context="TS_TabName">CALCIFICATION</String>
+    </Concept>
+   <Concept Id="PROSTATE NODULE VASCULARITY">
+      <String Context="TS_SButton">VASCULARITY</String>
+      <String Context="TS_TabName">VASCULARITY</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Vascularity Intralesion">
+      <String Context="TS_SButton">INTRALESION</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Vascularity Perilesion">
+      <String Context="TS_SButton">PERILESION</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Vascularity Both">
+      <String Context="TS_SButton">BOTH</String>
+    </Concept>
+   <Concept Id="PROSTATE NODULE CONTOURBULGING">
+      <String Context="TS_SButton">CONTOUR BULGING</String>
+      <String Context="TS_TabName">CONTOUR BULGING</String>
+    </Concept>
+   <Concept Id="PROSTATE NODULE ELASTICITY">
+      <String Context="TS_SButton">ELASTICITY</String>
+      <String Context="TS_TabName">ELASTICITY</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Elasticity Soft">
+      <String Context="TS_SButton">SOFT</String>
+    </Concept>
+    <Concept Id="Prostate Nodule Elasticity Hard">
+      <String Context="TS_SButton">HARD</String>
+    </Concept>
     <Concept Id="RENAL">
       <Comments>Worksheet tab for UROLOGY</Comments>
       <String Context="TS_SButton">RENAL</String>
@@ -10524,6 +10797,58 @@
       <Comments>Worksheet tab for UROLOGY</Comments>
       <String Context="TS_SButton">PROSTATE AND BLADDER</String>
     </Concept>
+    <Concept Id="PROSTATE">
+      <Comments>Worksheet tab for UROLOGY</Comments>
+      <String Context="TS_SButton">PROSTATE</String>
+      <String Context="MD_RT11MeasHeader">PROST</String>
+      <String Context="MD_RT11MeasName">PR</String>
+    </Concept>
+    <Concept Id="Prostate Nodule 1">
+      <String Context="TS_SButton">FOCAL LESION 1</String>
+      <String Context="MD_RT11MeasHeader">FL 1</String>
+      <String Context="MD_RT11MeasName">FL1</String>
+    </Concept>
+    <Concept Id="Prostate Nodule 2">
+      <String Context="TS_SButton">FOCAL LESION 2</String>
+      <String Context="MD_RT11MeasHeader">FL 2</String>
+      <String Context="MD_RT11MeasName">FL2</String>
+    </Concept>
+    <Concept Id="Prostate Nodule 3">
+      <String Context="TS_SButton">FOCAL LESION 3</String>
+      <String Context="MD_RT11MeasHeader">FL 3</String>
+      <String Context="MD_RT11MeasName">FL3</String>
+    </Concept>
+    <Concept Id="Prostate Nodule 4">
+      <String Context="TS_SButton">FOCAL LESION 4</String>
+      <String Context="MD_RT11MeasHeader">FL 4</String>
+      <String Context="MD_RT11MeasName">FL4</String>
+    </Concept>
+    <Concept Id="Prostate Nodule 5">
+      <String Context="TS_SButton">FOCAL LESION 5</String>
+      <String Context="MD_RT11MeasHeader">FL 5</String>
+      <String Context="MD_RT11MeasName">FL5</String>
+    </Concept>
+    <Concept Id="Prostate Nodule 6">
+      <String Context="TS_SButton">FOCAL LESION 6</String>
+      <String Context="MD_RT11MeasHeader">FL 6</String>
+      <String Context="MD_RT11MeasName">FL6</String>
+    </Concept>
+    <Concept Id="URETHRA">
+      <Comments>New measure for UROLOGY</Comments>
+      <String Context="TS_SButton">URETHRA</String>
+      <String Context="MD_RT11MeasHeader">URET</String>
+      <String Context="MD_RT11MeasName">UR</String>
+    </Concept>
+    <Concept Id="SEMINAL VESCICLE">
+      <Comments>New measure for UROLOGY</Comments>
+      <String Context="TS_SButton">SEMINAL VESCICLE</String>
+      <String Context="MD_RT11MeasHeader">SEMVES</String>
+      <String Context="MD_RT11MeasName">SV</String>
+    </Concept>
+    <Concept Id="BLADDER">
+      <Comments>Worksheet tab for UROLOGY</Comments>
+      <String Context="TS_SButton">BLADDER</String>
+    </Concept>
     <Concept Id="WHOLE GLAND VOLUME">
       <String Context="TS_SButton">WHOLE GLAND VOLUME</String>
       <String Context="MD_RT11MeasHeader">WHG VOL</String>
@@ -10583,6 +10908,130 @@
       <String Context="TS_SButton">BLADDER DIAM 3</String>
       <String Context="MD_RT11MeasHeader">BL DIAM3</String>
       <String Context="MD_RT11MeasName">BD3</String>
+    </Concept>
+    <Concept Id="URINARY BLADDER WALL">
+      <String Context="TS_SButton">URINARY BLADDER WALL</String>
+      <String Context="MD_RT11MeasHeader">U BLAD W</String>
+      <String Context="MD_RT11MeasName">UBW</String>
+    </Concept>
+    <Concept Id="THICKNESS">
+      <String Context="TS_SButton">THICKNESS</String>
+      <String Context="MD_RT11MeasHeader">THICKNESS</String>
+      <String Context="MD_RT11MeasName">TH</String>
+    </Concept>
+    <Concept Id="Bladder_Wall_Normal">
+      <String Context="TS_SButton">NORMAL</String>
+    </Concept>
+    <Concept Id="Bladder_Wall_Abnormal">
+      <String Context="TS_SButton">ABNORMAL</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring">
+      <String Context="TS_SButton">HYPERPLASIA</String>
+      <String Context="TS_TabName">HYPERPLASIA</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_0">
+      <String Context="TS_SButton">0 - LITTLE OR NO ZONAL ENLARGEMENT</String>
+      <String Context="Generic_Long">Category 0: less or equal to 25 cm3 showing little or no zonal enlargement</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_1">
+      <String Context="TS_SButton">1 - BILATERAL LATERAL ZONE ENLARGEMENT</String>
+      <String Context="Generic_Long">Category 1: bilateral lateral zone enlargement</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_2">
+      <String Context="TS_SButton">2 - RETRO URETHRAL ENLARGEMENT</String>
+      <String Context="Generic_Long">Category 2: retro urethral (median) enlargement</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_2a">
+      <String Context="TS_SButton">2A - MILD ENLARGEMENT WITHOUT HERNIATION</String>
+      <String Context="Generic_Long">Category 2A: mild enlargement without herniation through bladder neck or trigonal elevation</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_2b">
+      <String Context="TS_SButton">2B - GREATER ENLARGEMENT, ELEVATION OF THE TRIGONE WITHOUT ADENOMA HERNIATION</String>
+      <String Context="Generic_Long">Category 2B: greater enlargement, elevation of the trigone without adenoma herniation, without trapping of adenoma or anterior displacement of urethra</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_2c">
+      <String Context="TS_SButton">2C - ENLARGEMENT, ELEVATION OF THE TRIGONE WITH TRAPPING OF ADENOMA</String>
+      <String Context="Generic_Long">Category 2C: enlargement, elevation of the trigone with trapping of adenoma with or without anterior displacement of urethra</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_2d">
+      <String Context="TS_SButton">2D - GREATER ENLARGEMENT WITH ADENOMA HERNIATION</String>
+      <String Context="Generic_Long">Category 2D: greater enlargement with adenoma herniation through bladder neck and further trigonal elevation</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_2e">
+      <String Context="TS_SButton">2E - MILD ENLARGEMENT PRODUCING POSTERIOR BLADDER LIP</String>
+      <String Context="Generic_Long">Category 2E: mild enlargement without herniation, stimulating muscular hypertrophy and producing prominent posterior bladder lip</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_3">
+      <String Context="TS_SButton">3 - BILATERAL AND RETRO URETHRAL ENLARGEMENT</String>
+      <String Context="Generic_Long">Category 3: bilateral and retro urethral enlargement</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_4">
+      <String Context="TS_SButton">4 - PEDUNCULATED</String>
+      <String Context="Generic_Long">Category 4: pedunculated</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_5">
+      <String Context="TS_SButton">5 - BILATERAL AND PEDUNCULATED</String>
+      <String Context="Generic_Long">Category 5: bilateral and pedunculated</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_6">
+      <String Context="TS_SButton">6 - SUB TRIGONAL</String>
+      <String Context="Generic_Long">Category 6: sub trigonal</String>
+    </Concept>
+    <Concept Id="Prostate_Scoring_7">
+      <String Context="TS_SButton">7 - OTHER COMBINATIONS</String>
+      <String Context="Generic_Long">Category 7: other combinations</String>
+    </Concept>
+    <Concept Id="Prostate Capsule">
+      <String Context="TS_SButton">CAPSULE</String>
+      <String Context="TS_TabName">CAPSULE</String>
+    </Concept>
+    <Concept Id="Prostate Capsule Continuity">
+      <String Context="TS_SButton">CONTINUITY</String>
+      <String Context="TS_TabName">CONTINUITY</String>
+    </Concept>
+    <Concept Id="Urologic Continuous">
+      <String Context="TS_SButton">CONTINUOUS</String>
+      <String Context="Generic_Long">Continuous</String>
+    </Concept>
+    <Concept Id="Urologic Discontinuous">
+      <String Context="TS_SButton">DISCONTINUOUS</String>
+      <String Context="Generic_Long">Discontinuous</String>
+    </Concept>
+    <Concept Id="Urologic Swollen">
+      <String Context="TS_SButton">DISCONTINUOUS SWOLLEN</String>
+      <String Context="TS_TabName">SWOLLEN</String>
+    </Concept>
+    <Concept Id="Prostate Capsule ExtraInvasion">
+      <String Context="TS_SButton">DISCONTINUOUS EXTRA INVASION</String>
+      <String Context="TS_TabName">EXTRA INVASION</String>
+    </Concept>
+    <Concept Id="Prostate Capsule HyperdenseEchos">
+      <String Context="TS_SButton">DISCONTINUOUS HYPERDENSE ECHOS</String>
+      <String Context="TS_TabName">HYPERDENSE ECHOS</String>
+    </Concept>
+    <Concept Id="Urethra Morphology">
+      <String Context="TS_SButton">MORPHOLOGY</String>
+      <String Context="TS_TabName">MORPHOLOGY</String>
+    </Concept>
+    <Concept Id="Seminal Vescicle Characteristics">
+      <String Context="TS_SButton">CHARACTERISTICS</String>
+      <String Context="TS_TabName">CHARACTERISTICS</String>
+    </Concept>
+    <Concept Id="Urologic Solid">
+      <String Context="TS_SButton">SOLID</String>
+      <String Context="Generic_Long">Solid</String>
+    </Concept>
+    <Concept Id="Urologic Liquid">
+      <String Context="TS_SButton">LIQUID</String>
+      <String Context="Generic_Long">Liquid</String>
+    </Concept>
+    <Concept Id="Urologic Disomogeneous">
+      <String Context="TS_SButton">DISOMOGENEOUS</String>
+      <String Context="Generic_Long">Disomogeneous</String>
+    </Concept>
+    <Concept Id="Urologic Invasion">
+      <String Context="TS_SButton">INVASION</String>
+      <String Context="Generic_Long">Invasion</String>
     </Concept>
     <Concept Id="PSA">
       <Comments>Worksheet tab for UROLOGY</Comments>
@@ -11209,6 +11658,10 @@
     </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="CARDIAC">
+    <Concept Id="ENABLE LINKED LEFT VENTRICLE">
+      <Comments>The checkbox enables the multisegment mode of LV measure </Comments>
+      <String Context="TS_SButton">Enable B-LV measure linked mode</String>
+    </Concept>
     <Concept Id="CUST M-MODE UNI">
       <String Context="TS_SButton">CUST M-MODE</String>
     </Concept>
@@ -11459,6 +11912,48 @@
       <String Context="MD_RT11MeasHeader">A'm</String>
       <String Context="MD_RT11MeasName">A'm</String>
       <String Context="MD_RT11ExtLabel">A'm</String>
+    </Concept>
+    <Concept Id="MIT TDI AVERAGED S'">
+      <Comments>RTC 46866 ask claudio.fertino@esaote.com </Comments>
+      <String Context="TS_SButton">MIT TDI AVERAGED S'</String>
+      <String Context="MD_RT11MeasHeader">S'm</String>
+      <String Context="MD_RT11MeasName">S'm</String>
+      <String Context="MD_RT11ExtLabel">S'm</String>
+    </Concept>
+    <Concept Id="RELATIVE WALL THICKNESS">
+      <Comments>RTC 47021 ask claudio.fertino@esaote.com </Comments>
+      <String Context="TS_SButton">Relative wall thick</String>
+      <String Context="MD_RT11MeasHeader">RWT</String>
+      <String Context="MD_RT11MeasName">RWT</String>
+      <String Context="MD_RT11ExtLabel">RWT</String>
+    </Concept>
+    <Concept Id="LEFT ATRIUM BIPLANE MOD">
+      <Comments>RTC 47021 ask claudio.fertino@esaote.com </Comments>
+      <String Context="TS_SButton">LA Volume MOD BP</String>
+      <String Context="MD_RT11MeasHeader">LAV BP</String>
+      <String Context="MD_RT11MeasName">LAVbp</String>
+      <String Context="MD_RT11ExtLabel">LAVbp</String>
+    </Concept>
+    <Concept Id="LEFT ATRIUM BIPLANE Volume Area-Length">
+      <Comments>RTC 47021 ask claudio.fertino@esaote.com </Comments>
+      <String Context="TS_SButton">LA Vol BP (A-L)</String>
+      <String Context="MD_RT11MeasHeader">LA Vol BP AL</String>
+      <String Context="MD_RT11MeasName">LA Vol BP AL</String>
+      <String Context="MD_RT11ExtLabel">LA Vol BP A-L</String>
+    </Concept>
+    <Concept Id="LEFT ATRIUM BIPLANE Volume Area-Length Index">
+      <Comments>RTC 47021 ask claudio.fertino@esaote.com </Comments>
+      <String Context="TS_SButton">LA Vol index BP (A-L)</String>
+      <String Context="MD_RT11MeasHeader">LA Vol index BP (A-L)</String>
+      <String Context="MD_RT11MeasName">LA Vol i AL</String>
+      <String Context="MD_RT11ExtLabel">LA Vol i BP A-L</String>
+    </Concept>
+    <Concept Id="PULMUNARY CAPILLARY WEDGE PRESSURE">
+      <Comments>RTC 46873 ask claudio.fertino@esaote.com </Comments>
+      <String Context="TS_SButton">Pulmunary Capillary Wedge Pressure</String>
+      <String Context="MD_RT11MeasHeader">PCWP</String>
+      <String Context="MD_RT11MeasName">PCWP</String>
+      <String Context="MD_RT11ExtLabel">PCWP</String>
     </Concept>
     <Concept Id="MIT TDI E'm/A'm RATIO">
       <Comments>IPP0001001_06_001_RQ_03_001 ask stefano.pedri@esaote.com </Comments>
@@ -12608,6 +13103,62 @@
       <String Context="MD_RT11MeasName">LVAd sax Epi</String>
       <String Context="MD_RT11ExtLabel">LVAd sax Epi</String>
     </Concept>
+    <Concept Id="LA 4C AREA INDEX">
+      <Comments>measures label for cardiac [RTC:47164]</Comments>
+      <String Context="TS_SButton">LA Area index A4C</String>
+      <String Context="MD_RT11MeasHeader">LA Area index A4C</String>
+      <String Context="MD_RT11MeasName">LA i 4C</String>
+      <String Context="MD_RT11ExtLabel">LA i A4C</String>
+    </Concept>
+    <Concept Id="LA 2C AREA INDEX">
+      <Comments>measures label for cardiac [RTC:47164]</Comments>
+      <String Context="TS_SButton">LA Area index A2C</String>
+      <String Context="MD_RT11MeasHeader">LA Area index A2C</String>
+      <String Context="MD_RT11MeasName">LA i 2C</String>
+      <String Context="MD_RT11ExtLabel">LA i A2C</String>
+    </Concept>
+    <Concept Id="LA VOLUME MONOPLANE 4C">
+      <Comments>measures label for cardiac [RTC:47164]</Comments>
+      <String Context="TS_SButton">LA Vol (MOD A4C)</String>
+      <String Context="MD_RT11MeasHeader">LA Vol (MOD A4C)</String>
+      <String Context="MD_RT11MeasName">LAV4c</String>
+      <String Context="MD_RT11ExtLabel">LA Vol 4C</String>
+    </Concept>
+    <Concept Id="LA VOLUME MONOPLANE 2C">
+      <Comments>measures label for cardiac [RTC:47164]</Comments>
+      <String Context="TS_SButton">LA Vol (MOD A2C)</String>
+      <String Context="MD_RT11MeasHeader">LA Vol (MOD A2C)</String>
+      <String Context="MD_RT11MeasName">LAV2c</String>
+      <String Context="MD_RT11ExtLabel">LA Vol 2C</String>
+    </Concept>
+    <Concept Id="LA VOLUME BIPLANE">
+      <Comments>measures label for cardiac [RTC:47164]</Comments>
+      <String Context="TS_SButton">LA Vol (MOD BP)</String>
+      <String Context="MD_RT11MeasHeader">LA Vol (MOD BP)</String>
+      <String Context="MD_RT11MeasName">LAVBP</String>
+      <String Context="MD_RT11ExtLabel">LA Vol BP</String>
+    </Concept>
+    <Concept Id="LA VOLUME BIPLANE INDEX">
+      <Comments>measures label for cardiac [RTC:47164]</Comments>
+      <String Context="TS_SButton">LA Vol index (MOD BP)</String>
+      <String Context="MD_RT11MeasHeader">LA Vol index (MOD BP)</String>
+      <String Context="MD_RT11MeasName">LAVi b</String>
+      <String Context="MD_RT11ExtLabel">LA Vol i BP</String>
+    </Concept>
+    <Concept Id="LA VOLUME 4C INDEX">
+      <Comments>measures label for cardiac [RTC:47164]</Comments>
+      <String Context="TS_SButton">LA Vol index (MOD 4C)</String>
+      <String Context="MD_RT11MeasHeader">LA Vol index (MOD 4C)</String>
+      <String Context="MD_RT11MeasName">LAVi4C</String>
+      <String Context="MD_RT11ExtLabel">LA Vol i 4C</String>
+    </Concept>
+    <Concept Id="LA VOLUME 2C INDEX">
+      <Comments>measures label for cardiac [RTC:47164]</Comments>
+      <String Context="TS_SButton">LA Vol index (MOD 2C)</String>
+      <String Context="MD_RT11MeasHeader">LA Vol index (MOD 2C)</String>
+      <String Context="MD_RT11MeasName">LAVi2C</String>
+      <String Context="MD_RT11ExtLabel">LA Vol i 2C</String>
+    </Concept>
     <Concept Id="LVAD SAX ENDO">
       <Comments>measures label for cardiac [RTC:16521]</Comments>
       <String Context="TS_SButton">Left Ventricle Area diastole short axis Endocardio</String>
@@ -13052,6 +13603,27 @@
       <String Context="MD_RT11MeasName">IVRTtdi</String>
       <String Context="MD_RT11ExtLabel">IVRT_tdi</String>
     </Concept>
+    <Concept Id="MIT E PEAK/ISOV RELAX TIME">
+      <Comments>Cardiac strings task 43742</Comments>
+      <String Context="TS_SButton">E/IVRT</String>
+      <String Context="MD_RT11MeasHeader">E/IVRT</String>
+      <String Context="MD_RT11MeasName">E/IVRT</String>
+      <String Context="MD_RT11ExtLabel">E/IVRT</String>
+    </Concept>
+    <Concept Id="LEFT VENTRICLE INTERNAL DIAMETER DIASTOLE NORMALIZED">
+      <Comments>Cardiac strings task 43742</Comments>
+      <String Context="TS_SButton">LVIDDN</String>
+      <String Context="MD_RT11MeasHeader">LVIDDN</String>
+      <String Context="MD_RT11MeasName">LVIDDN</String>
+      <String Context="MD_RT11ExtLabel">LVIDDN</String>
+    </Concept>
+    <Concept Id="LEFT VENTRICLE INTERNAL DIAMETER SYSTOLE NORMALIZED">
+      <Comments>Cardiac strings task 43742</Comments>
+      <String Context="TS_SButton">LVIDSN</String>
+      <String Context="MD_RT11MeasHeader">LVIDSN</String>
+      <String Context="MD_RT11MeasName">LVIDSN</String>
+      <String Context="MD_RT11ExtLabel">LVIDSN</String>
+    </Concept>
     <Concept Id="MYOCARDIAL PERFORMANCE INDEX TDI">
       <Comments>Cardiac strings task 27114</Comments>
       <String Context="TS_SButton">LIMP_tdi</String>
@@ -13092,6 +13664,13 @@
       <String Context="MD_RT11MeasHeader">M ISOVCTR</String>
       <String Context="MD_RT11MeasName">MICT</String>
       <String Context="MD_RT11ExtLabel">M ISOVCTR</String>
+    </Concept>
+    <Concept Id="TRICUSPID ISOVOL. CONTRACT. TIME">
+      <Comments>Cardiac strings task 48881</Comments>
+      <String Context="TS_SButton">TV IVCT</String>
+      <String Context="MD_RT11MeasHeader">TV IVCT</String>
+      <String Context="MD_RT11MeasName">TV ICT</String>
+      <String Context="MD_RT11ExtLabel">TV IVCT</String>
     </Concept>
     <Concept Id="SEPTUM TO POST WALL DELAY">
       <String Context="TS_SButton">SEPT TO PW DELAY</String>
@@ -13591,12 +14170,68 @@
       <String Context="MD_RT11MeasName">LVVsiSP</String>
       <String Context="MD_RT11ExtLabel">LVESVi sp</String>
     </Concept>
+    <Concept Id="SPHERICITY INDEX">
+      <Comments>Task 45417</Comments>
+      <String Context="TS_SButton">Sphericity Index</String>
+      <String Context="MD_RT11MeasHeader">Sphericity Index</String>
+      <String Context="MD_RT11MeasName">SPHERi</String>
+      <String Context="MD_RT11ExtLabel">SPHERi</String>
+    </Concept>
+    <Concept Id="RPAD INDEX">
+      <Comments>Task 45419</Comments>
+      <String Context="TS_SButton">RPAD Index</String>
+      <String Context="MD_RT11MeasHeader">RPAD Index</String>
+      <String Context="MD_RT11MeasName">RPADi</String>
+      <String Context="MD_RT11ExtLabel">RPADi</String>
+    </Concept>
+    <Concept Id="RIGHT PULMONARY ARTERY SYSTOLIC DIAMETER">
+      <Comments>Task 45419</Comments>
+      <String Context="TS_SButton">RPAs</String>
+      <String Context="MD_RT11MeasHeader">RPAs</String>
+      <String Context="MD_RT11MeasName">RPAs</String>
+      <String Context="MD_RT11ExtLabel">RPAs</String>
+    </Concept>
+    <Concept Id="RIGHT PULMONARY ARTERY DIASTOLIC DIAMETER">
+      <Comments>Task 45419</Comments>
+      <String Context="TS_SButton">RPAd</String>
+      <String Context="MD_RT11MeasHeader">RPAd</String>
+      <String Context="MD_RT11MeasName">RPAd</String>
+      <String Context="MD_RT11ExtLabel">RPAd</String>
+    </Concept>
+    <Concept Id="R PULM VEIN / R PULM ARTERY RATIO">
+      <Comments>Task 45418</Comments>
+      <String Context="TS_SButton">RPV/RPA</String>
+      <String Context="MD_RT11MeasHeader">RPV/RPA</String>
+      <String Context="MD_RT11MeasName">RPV/RPA</String>
+      <String Context="MD_RT11ExtLabel">RPV/RPA</String>
+    </Concept>
+    <Concept Id="RIGHT PULMONARY ARTERY">
+      <Comments>Task 45418</Comments>
+      <String Context="TS_SButton">RPA</String>
+      <String Context="MD_RT11MeasHeader">RPA</String>
+      <String Context="MD_RT11MeasName">RPA</String>
+      <String Context="MD_RT11ExtLabel">RPA</String>
+    </Concept>
+    <Concept Id="RIGHT OSTIUM OF PULMONARY VEIN">
+      <Comments>Task 45418</Comments>
+      <String Context="TS_SButton">RPV</String>
+      <String Context="MD_RT11MeasHeader">RPV</String>
+      <String Context="MD_RT11MeasName">RPV</String>
+      <String Context="MD_RT11ExtLabel">RPV</String>
+    </Concept>
     <Concept Id="LV SYS VOL MONO 4C INDEX">
       <Comments>Task 27701:differentiate cardiac labels</Comments>
       <String Context="TS_SButton">LVESV index (MOD A4C)</String>
       <String Context="MD_RT11MeasHeader">LVESV index (MOD A4C)</String>
       <String Context="MD_RT11MeasName">LVVsi 4</String>
       <String Context="MD_RT11ExtLabel">LVESV i 4C</String>
+    </Concept>
+    <Concept Id="LV SYS VOL MONO BP INDEX">
+      <Comments>Task 46336</Comments>
+      <String Context="TS_SButton">LVESV index (MOD BP)</String>
+      <String Context="MD_RT11MeasHeader">LVESV index (MOD BP)</String>
+      <String Context="MD_RT11MeasName">LVVsiBP </String>
+      <String Context="MD_RT11ExtLabel">LVESVi BP</String>
     </Concept>
     <Concept Id="EJECTION FRACTION A-L">
       <Comments>Task 27701:differentiate cardiac labels</Comments>
@@ -14152,6 +14787,33 @@
     </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="BREAST">
+    <Concept Id="CUST M-MODE UNI">
+      <String Context="TS_SButton">CUST M-MODE</String>
+    </Concept>
+    <Concept Id="CUST M-MODE RIGHT">
+      <String Context="TS_SButton">CUST R M-MODE</String>
+    </Concept>
+    <Concept Id="CUST M-MODE LEFT">
+      <String Context="TS_SButton">CUST L M-MODE</String>
+    </Concept>
+    <Concept Id="CUST D-MODE UNI">
+      <String Context="TS_SButton">CUST D-MODE</String>
+    </Concept>
+    <Concept Id="CUST D-MODE RIGHT">
+      <String Context="TS_SButton">CUST R D-MODE</String>
+    </Concept>
+    <Concept Id="CUST D-MODE LEFT">
+      <String Context="TS_SButton">CUST L D-MODE</String>
+    </Concept>
+    <Concept Id="CUST B-MODE UNI">
+      <String Context="TS_SButton">CUST B-MODE</String>
+    </Concept>
+    <Concept Id="CUST B-MODE RIGHT">
+      <String Context="TS_SButton">CUST R B-MODE</String>
+    </Concept>
+    <Concept Id="CUST B-MODE LEFT">
+      <String Context="TS_SButton">CUST L B-MODE</String>
+    </Concept>
     <Concept Id="L LESION">
       <Comments>lesion left worksheet page [RTC: 11405]</Comments>
       <String Context="TS_SButton">L LESION</String>
@@ -14674,6 +15336,10 @@
     </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="VETERINARY">
+    <Concept Id="LUNGPROTOCOL">
+      <Comments>[RTC 51200] lung protocol</Comments>
+      <String Context="Generic_Long">Lung Protocol</String>
+    </Concept>
     <Concept Id="CUST M-MODE UNI">
       <String Context="TS_SButton">CUST M-MODE</String>
     </Concept>
@@ -15133,10 +15799,34 @@
       <String Context="MD_RT11MeasHeader">R ADR CRAN POLE</String>
       <String Context="MD_RT11MeasName">RADP</String>
     </Concept>
+    <Concept Id="ADRENAL GLAND DIMENSION LEFT">
+      <Comments>New abdo measure [RTC:45416]</Comments>
+      <String Context="TS_SButton">LEFT ADRENAL GLAND DIMENSION</String>
+      <String Context="MD_RT11MeasHeader">L ADRENAL GLAND DIM</String>
+      <String Context="MD_RT11MeasName">LAGD</String>
+    </Concept>
+    <Concept Id="ADRENAL GLAND DIMENSION RIGHT">
+      <Comments>New abdo measure [RTC:45416]</Comments>
+      <String Context="TS_SButton">RIGHT ADRENAL GLAND DIMENSION</String>
+      <String Context="MD_RT11MeasHeader">R ADRENAL GLAND DIM</String>
+      <String Context="MD_RT11MeasName">RAGD</String>
+    </Concept>
     <Concept Id="DAYS BEFORE PARTURITION">
       <String Context="TS_SButton">DAYS BEF PARTURITION</String>
       <String Context="MD_RT11MeasHeader">D B PART</String>
       <String Context="MD_RT11MeasName">DBP</String>
+    </Concept>
+    <Concept Id="DAYS BEFORE PARTURITION RANGE">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">DAYS BEF PARTURITION RANGE</String>
+      <String Context="MD_RT11MeasHeader">DBP Range</String>
+      <String Context="MD_RT11MeasName">DBP Range</String>
+    </Concept>
+    <Concept Id="DAYS BEFORE PARTURITION AVERAGE">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">DAYS BEF PARTURITION(AV) </String>
+      <String Context="MD_RT11MeasHeader">DBP(AV)</String>
+      <String Context="MD_RT11MeasName">DBP(AV)</String>
     </Concept>
     <Concept Id="HEAD DIAMETER">
       <String Context="TS_SButton">HEAD DIAMETER</String>
@@ -15147,6 +15837,18 @@
       <String Context="TS_SButton">BODY DIAMETER</String>
       <String Context="MD_RT11MeasHeader">BODY DIAM</String>
       <String Context="MD_RT11MeasName">BD</String>
+    </Concept>
+    <Concept Id="DOG BIPARIETAL DIAMETER">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">BIPARIETAL DIAM</String>
+      <String Context="MD_RT11MeasHeader">BP</String>
+      <String Context="MD_RT11MeasName">BP</String>
+    </Concept>
+    <Concept Id="INNER CHORIONIC CAVITY">
+      <Comments>New repro measure [RTC:43183]</Comments>
+      <String Context="TS_SButton">INNER CHORIONIC CAVITY</String>
+      <String Context="MD_RT11MeasHeader">ICC</String>
+      <String Context="MD_RT11MeasName">ICC</String>
     </Concept>
     <Concept Id="EQUINE RUMP DIAMETER">
       <String Context="TS_SButton">EQUINE RUMP DIAM</String>
@@ -17827,6 +18529,10 @@
     </Concept>
   </LocalizationSection>
   <LocalizationSection InternalNamespace="MESSAGES">
+    <Concept Id="SUBCOSTAL VIEW">
+      <Comments>PDF_Cardiac_MA_Rev.I: used in help string composition</Comments>
+      <String Context="MD_RT13HelpLine">SUBCOSTAL VIEW</String>
+    </Concept>
     <Concept Id="LAX Aortic M-Mode">
       <String Context="MD_RT13HelpLine">LAX AORTIC M-MODE</String>
     </Concept>

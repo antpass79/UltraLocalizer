@@ -390,9 +390,11 @@
       <Comments>The button used to show the window that permit to activate the remote assistance</Comments>
       <String Context="Generic_Medium">REMOTE SAT</String>
     </Concept>
+    <Concept Id="MANUALSMANAGER">
+      <Comments>The button used to show the window that permit to activate the user manuals component</Comments>
+      <String Context="Generic_Medium">MANUALS MANAGER</String>
+    </Concept>
   </LocalizationSection>
-
-
   <LocalizationSection InternalNamespace="ERRORS">
     <Concept Id="WRITEERROR">
       <Comments>Input / output error during copy operation</Comments>
@@ -477,6 +479,14 @@
       <Comments>System Info dialog</Comments>
       <String Context="Generic_Long">FRONTEND 2 C.I.</String>
     </Concept>
+    <Concept Id="FrontEnd_Compat_Rev">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">FRONTEND C.I.</String>
+    </Concept>
+    <Concept Id="QElaxto_Compat_Rev">
+      <Comments>System Info dialog</Comments>
+      <String Context="Generic_Long">QELAXTO C.I.</String>
+    </Concept>
     <Concept Id="KeyBoard_Compat_Rev">
       <Comments>System Info dialog</Comments>
       <String Context="Generic_Long">KEYBOARD C.I.</String>
@@ -495,7 +505,7 @@
     </Concept>
     <Concept Id="Power_Supplier">
       <Comments>System Info dialog</Comments>
-      <String Context="Generic_Long">POWER SUPPLIER</String>
+      <String Context="Generic_Long">POWER SUPPLY</String>
     </Concept>
     <Concept Id="Host_Processor_Module">
       <Comments>System Info dialog</Comments>
@@ -532,6 +542,10 @@
     <Concept Id="HardwareId">
       <Comments>System Info dialog</Comments>
       <String Context="Generic_Long">Hardware ID</String>
+    </Concept>
+	<Concept Id="ApplicationArchitecture">
+      <Comments>Displays the application architecture (32 bits / 64 bits)</Comments>
+      <String Context="Generic_Medium">APPLICATION ARCHITECTURE</String>
     </Concept>
     <Concept Id="BOARDS">
       <Comments>System Info dialog</Comments>

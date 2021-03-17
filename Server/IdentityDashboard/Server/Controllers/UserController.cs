@@ -39,6 +39,14 @@ namespace Globe.Identity.AdministrativeDashboard.Server.Controllers
             return await _userService.FindByLanguageAsync(language);
         }
 
+        [HttpGet]
+        [Authorize]
+        [Route("GetUserByPermission")]
+        async public Task<IEnumerable<ApplicationUserDTO>> GetUserByPermission([FromBody] string userName)
+        {
+            return await _userService.FindByUserPermissionAsync(userName);
+        }
+
         [HttpPost]
         [Authorize(Roles = "Admin, UserManager")]
         async public Task Post([FromBody] UserWithRoles userWithRoles)

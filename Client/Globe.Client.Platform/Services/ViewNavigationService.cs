@@ -22,5 +22,15 @@ namespace Globe.Client.Platform.Services
 
             _eventAggregator.GetEvent<ViewNavigationChangedEvent>().Publish(new ViewNavigation(toView));
         }
+
+        public void NavigateTo<T>(string toView, T data) where T : class, new()
+        {
+            var navigationParameters = new NavigationParameters();
+            navigationParameters.Add("data", data);
+            _regionManager.RequestNavigate(RegionNames.MAIN_REGION, toView, navigationParameters);
+            _regionManager.RequestNavigate(RegionNames.TOOLBAR_REGION, toView + ViewNames.TOOLBAR, navigationParameters);
+
+            _eventAggregator.GetEvent<ViewNavigationChangedEvent>().Publish(new ViewNavigation(toView));
+        }
     }
 }

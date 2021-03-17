@@ -49,6 +49,7 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IConceptManagementViewService, ConceptManagementViewService>();
             containerRegistry.Register<IJobListStatusFiltersService, JobListStatusFiltersService>();
             containerRegistry.Register<IJobListStatusViewService, JobListStatusViewService>();
+            containerRegistry.Register<IJobListStatusChangeService, JobListStatusChangeService>();
             containerRegistry.Register<IEditStringService, EditStringService>();
             containerRegistry.Register<IStringMergeService, StringsMergeService>();
             containerRegistry.Register<IJobListManagementFiltersService, JobListManagementFiltersService>();

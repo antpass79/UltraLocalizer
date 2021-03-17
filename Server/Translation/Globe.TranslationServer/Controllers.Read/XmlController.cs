@@ -1,25 +1,22 @@
 ﻿using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
-using System.IO.Compression;
-using System.Text.Unicode;
-using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers
 {
     [Route("api/read/[controller]")]
     public class XmlController : Controller
     {
-        private readonly IAsyncXmlService _xmlService;
-        public XmlController(IAsyncXmlService xmlService)
+        private readonly IAsyncXmlZipService _xmlZipService;
+        public XmlController(IAsyncXmlZipService xmlZipService)
         {
-            _xmlService = xmlService;
+            _xmlZipService = xmlZipService;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            var zip = _xmlService.Zip();
+            var zip = _xmlZipService.Zip();
             return File((zip as MemoryStream).ToArray(), "application/zip", "xml.zip");
         }
     }

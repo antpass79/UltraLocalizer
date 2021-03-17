@@ -340,9 +340,9 @@ namespace Globe.Client.Localizer.ViewModels
                 this.FiltersBusy = false;
             });
 
-        async protected override Task OnLoad()
+        async protected override Task OnLoad(object data = null)
         {
-            await InitializeFilters();
+            await InitializeFilters(data);
         }
 
         protected override Task OnUnload()
@@ -351,23 +351,42 @@ namespace Globe.Client.Localizer.ViewModels
             return Task.CompletedTask;
         }
 
-        async private Task InitializeFilters()
+        async private Task InitializeFilters(object data = null)
         {
             this.FiltersBusy = true;
 
             try
-            {
-                ShowFilters = _visibilityFiltersService.Visible;
-
+            {           
                 this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
                 this.ComponentNamespaces = await _currentJobFiltersService.GetComponentNamespacesAsync();
                 this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);
                 this.Languages = await _currentJobFiltersService.GetLanguagesAsync();
 
-                this.SelectedJobItem = this.JobItems.FirstOrDefault();
-                this.SelectedComponentNamespace = this.ComponentNamespaces.FirstOrDefault();
-                this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
-                this.SelectedLanguage = this.Languages.FirstOrDefault(item => item.IsoCoding == SharedConstants.LANGUAGE_EN);
+                if(data == null)
+                {
+                    ShowFilters = _visibilityFiltersService.Visible;
+
+                    this.SelectedJobItem = this.JobItems.FirstOrDefault();
+                    this.SelectedComponentNamespace = this.ComponentNamespaces.FirstOrDefault();
+                    this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
+                    this.SelectedLanguage = this.Languages.FirstOrDefault(item => item.IsoCoding == SharedConstants.LANGUAGE_EN);
+                }
+                else
+                {
+                    var jobListConceptSearch = (JobListConceptSearch)data;
+
+                    ShowFilters = false;
+
+                    this.SelectedComponentNamespace = this.ComponentNamespaces.FirstOrDefault();
+                    this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
+
+                    this.SelectedLanguage = this.Languages.Where(item => item.Id == jobListConceptSearch.LanguageId).FirstOrDefault();
+                    this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage.IsoCoding);
+                    this.SelectedJobItem = this.JobItems.Where(item => item.Id == jobListConceptSearch.JobListId).FirstOrDefault();
+
+                    this.SearchCommand.Execute();
+                }
+
             }
             catch (Exception e)
             {

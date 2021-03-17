@@ -1,6 +1,7 @@
 ﻿using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
+using Globe.TranslationServer.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -98,7 +99,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
             set { _extension = value; }
         }
 
-        public AutoResetEvent Completed;
+        public AutoResetEvent Completed { get; set; }
         public AutoResetEvent CompletedLists;
         #endregion
 
@@ -352,14 +353,14 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                     }
 
                     //leggo i campi dell'xml
-                    var DBData = res.LocalizationSection.Select(r => new { res.ComponentNamespace, r.InternalNamespace, ConceptID = r.Concept.Select(t => new { t.Id, t.Comments, str = t.String.Select(st => st.Context) }) });
+                    var DBData = res.LocalizationSection.Select(r => new { res.ComponentNamespace, r.InternalNamespace, ConceptIds = r.Concept.Select(t => new { t.Id, t.Comments, Contexts = t.String.Select(st => st.Context) }) });
 
                     //Preparo la struttura letta da xml per effettuare le operazioni insiemistiche con le strutture lette da DB
                     foreach (var item in DBData)
                     {
                         //tmpInternalNamespace = (item.InternalNamespace == null) ? DBNull.Value.ToString() : item.InternalNamespace;
 
-                        foreach (var element in item.ConceptID)
+                        foreach (var element in item.ConceptIds)
                         {
                             string tmp = GetKey(item.ComponentNamespace, item.InternalNamespace, element.Id);
                             string com = null;
@@ -370,7 +371,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                                 //inserisco la tupla nell'elenco globale di tutti gli xml letti
                                 lock (_keyTuplasLock)
                                 {
-                                    KeyTuplas.Add(tmp, element.str);
+                                    KeyTuplas.Add(tmp, element.Contexts);
                                 }
 
                                 lock (_keyCommentsLock)
@@ -396,9 +397,9 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                                 try
                                 {
                                     //riempo la struttura per l'insert
-                                    localKeyTuplasForInsert.Add(new ConceptTupla { ComponentNamespace = item.ComponentNamespace, InternalNamespace = item.InternalNamespace, ConceptId = element.Id, Strings = element.str });
+                                    localKeyTuplasForInsert.Add(new ConceptTupla { ComponentNamespace = item.ComponentNamespace, InternalNamespace = item.InternalNamespace, ConceptId = element.Id, Strings = element.Contexts });
                                     //riempo la struttura per l'update
-                                    foreach (string s in element.str)
+                                    foreach (string s in element.Contexts)
                                     {
                                         localKeyTuplasForUpdate.Add(new ConceptTupla { ComponentNamespace = item.ComponentNamespace, InternalNamespace = item.InternalNamespace, ConceptId = element.Id, ContextId = UltraDBGlobal.UltraDBGlobal.GetContextId(s.Trim()).ToString() });
                                     }
@@ -579,14 +580,14 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                     }
 
                     //leggo i campi dell'xml
-                    var DBData = res.LocalizationSection.Select(r => new { res.ComponentNamespace, r.InternalNamespace, ConceptID = r.Concept.Select(t => new { t.Id, t.Comments, str = t.String.Select(st => st.Context) }) });
+                    var DBData = res.LocalizationSection.Select(r => new { res.ComponentNamespace, r.InternalNamespace, ConceptIds = r.Concept.Select(t => new { t.Id, t.Comments, Contexts = t.String.Select(st => st.Context) }) });
 
                     //Preparo la struttura letta da xml per effettuare le operazioni insiemistiche con le strutture lette da DB
                     foreach (var item in DBData)
                     {
 
 
-                        foreach (var element in item.ConceptID)
+                        foreach (var element in item.ConceptIds)
                         {
                             string tmp = GetKey(item.ComponentNamespace, item.InternalNamespace, element.Id);
                             string com = null;
@@ -597,7 +598,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                                 //inserisco la tupla nell'elenco globale di tutti gli xml letti
                                 lock (_keyTuplasLock)
                                 {
-                                    KeyTuplas.Add(tmp, element.str);
+                                    KeyTuplas.Add(tmp, element.Contexts);
                                 }
 
                                 lock (_keyCommentsLock)
@@ -887,20 +888,20 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
 
                     //leggo i campi dell'xml
-                    var DBData = res.LocalizationSection.Select(r => new { res.ComponentNamespace, r.InternalNamespace, ConceptID = r.Concept.Select(t => new { t.Id, t.Comments, str = t.String.Select(st => st.Context) }) });
+                    var DBData = res.LocalizationSection.Select(r => new { res.ComponentNamespace, r.InternalNamespace, ConceptIds = r.Concept.Select(t => new { t.Id, t.Comments, Contexts = t.String.Select(st => st.Context) }) });
 
                     //Preparo la struttura letta da xml per effettuare le operazioni insiemistiche con le strutture lette da DB
                     foreach (var item in DBData)
                     {
 
-                        foreach (var element in item.ConceptID)
+                        foreach (var element in item.ConceptIds)
                         {
                             try
                             {
                                 //riempo la struttura per l'insert
-                                localKeyTuplasForInsert.Add(new ConceptTupla { ComponentNamespace = item.ComponentNamespace, InternalNamespace = item.InternalNamespace, ConceptId = element.Id, Strings = element.str });
+                                localKeyTuplasForInsert.Add(new ConceptTupla { ComponentNamespace = item.ComponentNamespace, InternalNamespace = item.InternalNamespace, ConceptId = element.Id, Strings = element.Contexts });
                                 //riempo la struttura per l'update
-                                foreach (string s in element.str)
+                                foreach (string s in element.Contexts)
                                 {
                                     localKeyTuplasForUpdate.Add(new ConceptTupla { ComponentNamespace = item.ComponentNamespace, InternalNamespace = item.InternalNamespace, ConceptId = element.Id, ContextId = UltraDBGlobal.UltraDBGlobal.GetContextId(s.Trim()).ToString() });
                                 }

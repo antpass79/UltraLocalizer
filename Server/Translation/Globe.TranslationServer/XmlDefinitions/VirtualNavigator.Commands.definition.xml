@@ -25,6 +25,14 @@
       <Comments>Virtual Navigator tab label</Comments>
       <String Context="TS_TabName">BreastNav</String>
     </Concept >
+    <Concept Id="MRBreastNavTab">
+      <Comments>Virtual Navigator tab label</Comments>
+      <String Context="TS_TabName">MRBreastNav</String>
+    </Concept >
+    <Concept Id="UroNavTab">
+      <Comments>Virtual Navigator tab label</Comments>
+      <String Context="TS_TabName">UroFusion</String>
+    </Concept >
 	<Concept Id="Abort">
       <Comments>Abort NaviSuite.exe running computations</Comments>
       <String Context="TS_TabName">Abort</String>
@@ -48,8 +56,16 @@
 	<Concept Id="ApplicationFamily">
       <Comments>GroupBox to identify the Exe family</Comments>
       <String Context="Generic_Long">ApplicationFamily</String>
-    </Concept>	
-	<Concept Id="FusionNav">
+    </Concept>
+    <Concept Id="AddUroBiopsySampleReportImageSelection">
+      <Comments>BiopsySampleReportImage</Comments>
+      <String Context="Generic_Long">Attach Uro Biopsy Sample images to the Report </String>
+    </Concept>
+	 <Concept Id="AddUroBiopsy3DSummaryReportImageSelection">
+      <Comments>BiopsySampleReportImage</Comments>
+      <String Context="Generic_Long">Attach target 3D image to the Report </String>
+    </Concept>
+    <Concept Id="FusionNav">
       <Comments>Navisuite executable tools</Comments>
       <String Context="Generic_Long">FusionNav</String>
     </Concept>	
@@ -64,5 +80,39 @@
       <Comments>Fusion tab label</Comments>
       <String Context="TS_TabName">Fusion</String>
     </Concept >
+  </LocalizationSection>
+  <LocalizationSection InternalNamespace="Report">
+	<Concept Id="Fusion section Header">
+	<Comments>Fusion section Header</Comments>
+      <String Context="Generic_Long">Fusion Section</String>
+    </Concept>
+	<Concept Id="Target section">
+	<Comments>Target section</Comments>
+      <String Context="Generic_Long">MR Target Measurements</String>
+    </Concept>
+	<Concept Id="BiopsySection">
+	<Comments>Biopsy sample Section</Comments>
+      <String Context="Generic_Long">Biopsy Section</String>
+    </Concept>
+	<Concept Id="SAMPLE_INDEX">
+	<Comments>Sample Index</Comments>
+      <String Context="Generic_Long">Sample</String>
+    </Concept>
+	<Concept Id="TARGET_SAMPLE_TYPE">
+	  <Comments>Target_Sample Type:</Comments>
+      <String Context="Generic_Long">Type</String>
+    </Concept>
+	<Concept Id="SAMPLE_OBSERVATION">
+	  <Comments>Sample user comments:</Comments>
+      <String Context="Generic_Long">Observations</String>
+    </Concept>
+	<Concept Id="TARGET_NAME">
+	<Comments>Target Name</Comments>
+      <String Context="Generic_Long">Name</String>
+    </Concept>
+    <Concept Id="SAMPLE_LOCATION">
+      <Comments>Sample location:</Comments>
+      <String Context="Generic_Long">Location</String>
+    </Concept>
   </LocalizationSection>
 </LocalizationResource>

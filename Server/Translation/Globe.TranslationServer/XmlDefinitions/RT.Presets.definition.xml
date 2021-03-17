@@ -397,6 +397,18 @@
       <String Context="MD_RT910">NEUROSURGERY</String>
       <String Context="Generic_Medium">NEUROSURGERY</String>
     </Concept>
+    <Concept Id="HIGH CONTRAST">
+      <Comments></Comments>
+      <String Context="TS_AButton">HIGH CONTRAST</String>
+      <String Context="MD_RT910">HIGH CONTRAST</String>
+      <String Context="Generic_Medium">HIGH CONTRAST</String>
+    </Concept>
+    <Concept Id="FACTORY TEST">
+      <Comments></Comments>
+      <String Context="TS_AButton">FACTORY TEST</String>
+      <String Context="MD_RT910">FACTORY TEST</String>
+      <String Context="Generic_Medium">FACTORY TEST</String>
+    </Concept>
     <Concept Id="SEC-THIRD TRIM">
       <Comments>OB TRIM preset for 6440 [StoryID: 1690]</Comments>
       <String Context="TS_AButton">2-3 TRIM</String>

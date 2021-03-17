@@ -127,16 +127,16 @@ namespace Globe.Client.Localizer.ViewModels
                     AlwaysVisible = false,
                     ViewName = ViewNames.CONCEPT_MANAGEMENT_VIEW
                 },
-                //new MenuOption
-                //{
-                //    Title = Localize[LanguageKeys.Page_JobList_Status],
-                //    TitleKey = LanguageKeys.Page_JobList_Status,
-                //    IconName = "joblist_status",
-                //    IsSelected = false,
-                //    Roles = Rules.Group_All,
-                //    AlwaysVisible = false,
-                //    ViewName = ViewNames.JOBLIST_STATUS_VIEW
-                //}
+                new MenuOption
+                {
+                    Title = Localize[LanguageKeys.Page_JobList_Status],
+                    TitleKey = LanguageKeys.Page_JobList_Status,
+                    IconName = "joblist_status",
+                    IsSelected = false,
+                    Roles = Roles.Group_All,
+                    AlwaysVisible = false,
+                    ViewName = ViewNames.JOBLIST_STATUS_VIEW
+                }
                 //new MenuOption
                 //{
                 //    Title = Localize[LanguageKeys.Translation],
@@ -412,7 +412,7 @@ namespace Globe.Client.Localizer.ViewModels
 
             connection.On<NewConceptsResult>(EventNames.ConceptsChanged, async (result) =>
             {
-                var message = $"{Localize["Inserted_concepts"]} {result.InsertedCount}, {Localize["Updated_concepts"]} {result.UpdatedCount}";
+                var message = $"{Localize["Inserted_concepts"]} {result.Statistics.InsertedCount}, {Localize["Updated_concepts"]} {result.Statistics.UpdatedCount}";
                 var notification = new ConceptsChangedNotification { Message = message};
                 await NotificationService.NotifyAsync(notification);
             });

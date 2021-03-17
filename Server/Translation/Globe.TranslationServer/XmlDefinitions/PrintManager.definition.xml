@@ -100,6 +100,10 @@
       <Comments>In print configuration, profile dialog, MARGINS item and unit of measure</Comments>
       <String Context="Generic_Medium" >MARGINS (mm)</String>
     </Concept>
+    <Concept Id="INCLUDE_CENTER_ID" >
+      <Comments>In print configuration, profile dialog</Comments>
+      <String Context="Generic_Medium" >INCLUDE CENTER ID</String>
+    </Concept>
     <Concept Id="INCLUDE_LOGO" >
       <Comments>In print configuration, profile dialog</Comments>
       <String Context="Generic_Medium" >INCLUDE LOGO</String>
@@ -109,7 +113,7 @@
       <String Context="Generic_Medium" >Maximize measurement</String>
     </Concept>
     <Concept Id="BACKGROUNDCOLOR" >
-      <Comments> Task 2711 In print configuration, profile dialog</Comments>s
+      <Comments> Task 2711 In print configuration, profile dialog</Comments>
       <String Context="Generic_Medium" >BACKGROUNDCOLOR</String>
     </Concept>
     <Concept Id="ADDPRINTER_BUTTON">
@@ -348,6 +352,10 @@
       <Comments>In print configuration: checkBox title </Comments>
       <String Context="Generic_Long" >AUTO ADJUST PRINT LAYOUT OF ACQUIRED IMAGES</String>
     </Concept>
+    <Concept Id="PREVIEW_BEFORE_PRINTING" >
+      <Comments>In print configuration: checkBox title </Comments>
+      <String Context="Generic_Long" >PREVIEW BEFORE PRINTING</String>
+    </Concept>
     <Concept Id="NO_MODEL_OR_PROFILE_SELECTED_IN_BUTTON" >
       <Comments>warning on savig printers presets</Comments>
       <String Context="Generic_Warning" >WARNING: NO PROFILE OR PRINTER MODEL SELECTED IN BUTTON</String>
@@ -375,6 +383,14 @@
     <Concept Id="DESCRIPTION_ALREADY_PRESENT" >
       <Comments>In network dir configuration, network info dialog, it is visualized if description is already used</Comments>
       <String Context="Generic_Warning" >DESCRIPTION ALREADY PRESENT IN LIST</String>
+    </Concept>
+    <Concept Id="ROLL_PAPER" >
+      <Comments>In print configuration, profile dialog [Defect 42235]</Comments>
+      <String Context="Generic_Medium" >ROLL PAPER</String>
+    </Concept>
+    <Concept Id="REVERSE ORIENTATION" >
+      <Comments>In print configuration, profile dialog [Defect 47205]</Comments>
+      <String Context="Generic_Long" >Printing in reverse orientation</String>
     </Concept>
   </LocalizationSection>
 </LocalizationResource>

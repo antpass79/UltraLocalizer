@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LocalizationResource Language="Definition" Version="1.0" ComponentNamespace="LungProtocolManager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <LocalizationSection>
+	<Concept Id="LUNGSEVALUATION">
+      <String Context="Generic_Long">Lungs Evaluation</String>
+    </Concept>
+	<Concept Id="LANDMARK">
+      <String Context="Generic_Medium">Landmark</String>
+    </Concept>
+	<Concept Id="SCORE">
+      <String Context="Generic_Medium">Score</String>
+      <String Context="TS_TButton">Score</String>
+    </Concept>
+	<Concept Id="TOTALSCORE">
+      <String Context="Generic_Medium">Total Score</String>
+    </Concept>
+  </LocalizationSection>
+</LocalizationResource>
