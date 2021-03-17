@@ -9,11 +9,11 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 {
     public class ConceptDetailsAdapterService : IAsyncConceptDetailsService
     {
-        private readonly IXmlService _xmlService;
+        private readonly IXmlToDBService _xmlService;
         private readonly UltraDBConcept _ultraDBConcept;
         private readonly ILogService _logService;
 
-        public ConceptDetailsAdapterService(IXmlService xmlService, UltraDBConcept ultraDBConcept, ILogService logService)
+        public ConceptDetailsAdapterService(IXmlToDBService xmlService, UltraDBConcept ultraDBConcept, ILogService logService)
         {
             _xmlService = xmlService;
             _ultraDBConcept = ultraDBConcept;

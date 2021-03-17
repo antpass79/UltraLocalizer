@@ -49,6 +49,7 @@ namespace Globe.TranslationServer.Services
                         InternalNamespace = pair.Value.InternalNamespace,
                         Concept = pair.Value.ConceptId,
                         Context = context
+                        //DeveloperComment = pair.Value.DeveloperComment//TODO: quando sara' il momento di metterlo su DB
                     });
                 }
             }
@@ -84,6 +85,7 @@ namespace Globe.TranslationServer.Services
                     .Any())
                 {
                     entry.ActionType = ConceptTuplaActionType.ToUpdate;
+                    entry.ConceptId = filteredDbEntries.FirstOrDefault().ConceptId;                  
                     mergiableEntries.Add(entry);
                 }
             }
@@ -99,6 +101,7 @@ namespace Globe.TranslationServer.Services
                 item.ComponentNamespace,
                 item.InternalNamespace,
                 item.Concept,
+                //item.DeveloperComment,
                 item.ActionType
             });
 
@@ -109,8 +112,9 @@ namespace Globe.TranslationServer.Services
                     ComponentNamespace = group.Key.ComponentNamespace,
                     InternalNamespace = group.Key.InternalNamespace,
                     LocalizationId = group.Key.Concept,
-                    Ignore = false,
-                    Comment = null
+                    Comment = string.Empty,//Il vecchio se non c'e' nulla lo inizializza cosi' //Comment = group.Key.DeveloperComment,
+                    Ignore = false   
+                    //TODO DEVO AGGIUNGERE IL CONCEPT ID. DEvo prendermelo dal DB ed inserirlo nel DB se esiste!!!
                 };
 
                 if (group.Key.ActionType == ConceptTuplaActionType.ToInsert)

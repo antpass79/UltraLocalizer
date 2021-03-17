@@ -8,6 +8,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models
         public string Concept { get; set; }
         public string ComponentNamespace { get; set; }
         public string InternalNamespace { get; set; }     
+        public string DeveloperComment { get; set; }
         public string Context { get; set; }
         public ConceptTuplaActionType ActionType { get; set; }
     }

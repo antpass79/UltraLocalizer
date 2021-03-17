@@ -1,13 +1,11 @@
 ﻿using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
-using Globe.TranslationServer.Utilities;
 using System;
-using System.IO;
-using System.Reflection;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.PortingAdapters
@@ -15,15 +13,14 @@ namespace Globe.TranslationServer.Services.PortingAdapters
     public class ConceptService : IAsyncConceptService
     {
         const bool IS_MASTER = true;
-        const string ISO_CODING_EN = "en";     
-
+ 
         private readonly IAsyncNotificationService _notificationService;
         
         private readonly LocalizationContext _localizationContext;
         private readonly UltraDBStrings _ultraDBStrings;
         private readonly UltraDBStrings2Context _ultraDBStrings2Context;
         private readonly UltraDBConcept _ultraDBConcept;
-        private readonly IXmlService _xmlService;
+        private readonly IXmlToDBService _xmlToDBService;
         
         public ConceptService(
             IAsyncNotificationService notificationService,
@@ -31,19 +28,19 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             UltraDBStrings ultraDBStrings,
             UltraDBStrings2Context ultraDBStrings2Context,
             UltraDBConcept ultraDBConcept,
-            IXmlService xmlService)
+            IXmlToDBService xmlToDBService)
         {
             _notificationService = notificationService;
             _localizationContext = localizationContext;
             _ultraDBStrings = ultraDBStrings;
             _ultraDBStrings2Context = ultraDBStrings2Context;
             _ultraDBConcept = ultraDBConcept;
-            _xmlService = xmlService;
+            _xmlToDBService = xmlToDBService;
         }
 
         async public Task SaveAsync(SavableConceptModelDTO savableConceptModel)
         {
-            if (savableConceptModel.Language.IsoCoding == ISO_CODING_EN)
+            if (savableConceptModel.Language.IsoCoding == SharedConstants.LANGUAGE_EN)
             {
                 foreach (var context in savableConceptModel.Concept.EditableContexts)
                 {
@@ -113,7 +110,7 @@ namespace Globe.TranslationServer.Services.PortingAdapters
         {
             //_xmlService.LoadXml();
             //_xmlService.FillDB();
-            var statistics = await _xmlService.UpdateDatabaseAsync();
+            var statistics = await _xmlToDBService.UpdateDatabaseAsync();
 
             var result = new NewConceptsResult
             {

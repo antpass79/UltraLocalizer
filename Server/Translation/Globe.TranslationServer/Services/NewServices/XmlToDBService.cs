@@ -3,7 +3,7 @@ using Globe.Shared.Services;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Models;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
-using Globe.TranslationServer.Services;
+using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Utilities;
 using System;
 using System.Collections.Generic;
@@ -12,16 +12,14 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
+namespace Globe.TranslationServer.Services.NewServices
 {
-    public class XmlService : IXmlService
+    public class XmlToDBService : IXmlToDBService
     {
         #region Data Members
 
         private readonly LocalizationContext context;
         private readonly ILogService _logService;
-        private readonly IXmlToDbInsertableService _xmlToDbInsertableService;
-        private readonly IXmlToDbUpdatableService _xmlToDbUpdatableService;
         private readonly IXmlToDbMergeService _xmlToDbMergeService;
 
         string _xmlDirectory = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), Constants.XML_FOLDER);
@@ -34,17 +32,13 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
         #region Constructors
 
-        public XmlService(
+        public XmlToDBService(
             LocalizationContext context, 
             ILogService logService,
-            IXmlToDbInsertableService xmlToDbInsertableService,
-            IXmlToDbUpdatableService xmlToDbUpdatableService,
             IXmlToDbMergeService xmlToDbMergeService)
         {
             this.context = context;
             _logService = logService;
-            _xmlToDbInsertableService = xmlToDbInsertableService;
-            _xmlToDbUpdatableService = xmlToDbUpdatableService;
             _xmlToDbMergeService = xmlToDbMergeService;
 
             LoadXml();
@@ -122,7 +116,7 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
                         Fields = section.Concept.Select(concept => new LocalizationSectionSubset
                         {
                             ComponentNamespace = localizationResource.ComponentNamespace,
-                            InternalNamespace = section.InternalNamespace,
+                            InternalNamespace = String.IsNullOrWhiteSpace(section.InternalNamespace)? null : section.InternalNamespace,
                             ConceptId = concept.Id,
                             DeveloperComment = concept.Comments?.TypedValue,
                             Contexts = concept.String.Select(conceptString => conceptString.Context),
@@ -161,13 +155,9 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
 
         private async Task<XmlServiceStatistics> UpdateDatabaseFromLocalizationSectionSubsets(Dictionary<string, LocalizationSectionSubset> keyLocalizationSectionSubsetPairs)
         {
-            
-            //var insertableEntries = await _xmlToDbInsertableService.InsertFilteredEntriesIntoDatabaseAsync(keyLocalizationSectionSubsetPairs);
-            //var updatableEntries = await _xmlToDbUpdatableService.UpdateFilteredEntriesIntoDatabaseAsync(keyLocalizationSectionSubsetPairs);
             var mergiableEntries = await _xmlToDbMergeService.MergeFilteredEntriesIntoDatabaseAsync(keyLocalizationSectionSubsetPairs);
 
             var statistics = BuildStatistics(mergiableEntries);
-            //var statistics = BuildStatistics(insertableEntries, updatableEntries);
 
             try 
             {

@@ -10,7 +10,6 @@ using Globe.TranslationServer.Hubs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
-using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Repositories;
 using Globe.TranslationServer.Services;
 using Globe.TranslationServer.Services.PortingAdapters;
@@ -91,9 +90,7 @@ namespace Globe.TranslationServer
                 .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>()
                 .AddScoped<IUltraDBJobGlobal, UltraDBJobGlobal>();
             services
-                .AddScoped<IXmlService, XmlService>()
-                .AddScoped<IXmlToDbInsertableService, XmlToDbInsertableService>()
-                .AddScoped<IXmlToDbUpdatableService, XmlToDbUpdatableService>()
+                .AddScoped<IXmlToDBService, Services.NewServices.XmlToDBService>()
                 .AddScoped<IXmlToDbMergeService, XmlToDbMergeService>()               
                 .AddScoped<ILocalizationResourceBuilder, Services.NewServices.ScopedLocalizationResourceBuilder>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
                 .AddScoped<IAsyncLanguageService, Services.NewServices.LanguageService>() //.AddScoped<IAsyncLanguageService, LanguageAdapterService>()
