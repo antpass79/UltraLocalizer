@@ -63,6 +63,25 @@ namespace Globe.TranslationServer.Services.NewServices
             };
 
             IEnumerable<VTranslatedConcept> translatedConcepts = GetTranslatedConcepts(_component.ConceptComponentNamespace, _language.Isocoding);
+            
+            if(_language.Isocoding != SharedConstants.LANGUAGE_EN)
+            {
+                IEnumerable<VStringsToContext> englishTranslatedConcepts = GetEnglishTranslatedConceptsForOtherLanguage(_component.ConceptComponentNamespace, _language.Isocoding);
+
+                if(englishTranslatedConcepts.Count() > 0)
+                {
+                    translatedConcepts = translatedConcepts.Union(englishTranslatedConcepts.Select(item => new VTranslatedConcept
+                                    {
+                                        Concept = item.LocalizationId,
+                                        ConceptComponentNamespace = item.ComponentNamespace,
+                                        ConceptInternalNamespace = item.InternalNamespace,
+                                        Context = item.ContextName,
+                                        LanguageIsoCode = _language.Isocoding,
+                                        String = item.String
+                                    }));
+                }                         
+            }
+            
             var internalNamespaceSectionGroups = from translatedConcept in translatedConcepts
                                                  group translatedConcept by translatedConcept.ConceptInternalNamespace;
 
@@ -191,6 +210,31 @@ namespace Globe.TranslationServer.Services.NewServices
             //        }
             //    }
             //}
+        }
+
+        IEnumerable<VStringsToContext> GetEnglishTranslatedConceptsForOtherLanguage(string conceptComponentNamespace, string isocoding)
+        {
+            using var localContext = new LocalizationContext(_dbContextOptions);
+
+            var subQuery = localContext.VStringsToContexts
+                .Where(item =>
+                    item.Isocoding == isocoding &&
+                    item.ComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD &&
+                    item.ComponentNamespace == conceptComponentNamespace)
+                .Select(item => item.Id);
+
+            var items = localContext.VStringsToContexts
+                .Where(item =>
+                    item.Ignore.HasValue &&
+                    !item.Ignore.Value &&
+                    item.Isocoding == SharedConstants.LANGUAGE_EN &&
+                    item.ComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD &&
+                    item.ComponentNamespace == conceptComponentNamespace &&
+                    !subQuery.Contains(item.Id))
+                .AsNoTracking()
+                .ToList();
+
+            return items;
         }
 
         #endregion
