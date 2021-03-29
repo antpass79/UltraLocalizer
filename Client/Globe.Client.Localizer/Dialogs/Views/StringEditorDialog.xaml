@@ -178,14 +178,29 @@
                                 </DataTemplate>
                             </DataGridTextColumn.HeaderTemplate>
                         </DataGridTextColumn>
-                        <DataGridTextColumn Binding="{Binding StringDefaultValue}" Header="Developer String" Visibility="{Binding Data.IsMasterTranslatorCommentEnabled, Converter={StaticResource IsDevelopperStringVisibleConverter}, Source={StaticResource proxy}}">
-                            <DataGridTextColumn.HeaderTemplate>
+                        <DataGridTemplateColumn Header="Developer String" Visibility="{Binding Data.IsMasterTranslatorCommentEnabled, Converter={StaticResource IsDevelopperStringVisibleConverter}, Source={StaticResource proxy}}">
+                            <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>
                                     <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                             {RelativeSource Mode=TemplatedParent}}"/>
                                 </DataTemplate>
-                            </DataGridTextColumn.HeaderTemplate>
-                        </DataGridTextColumn>
+                            </DataGridTemplateColumn.HeaderTemplate>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <controls:LocTextBox 
+                                            VerticalAlignment="Center" 
+                                            Width="150" 
+                                            TextWrapping="Wrap"
+                                            Background="Transparent"
+                                            BorderThickness="0"
+                                            IsReadOnly="True"
+                                            Text="{Binding StringDefaultValue, Mode=OneWay}"/>
+                                    </DockPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
                         <DataGridTemplateColumn Header="English Value" Visibility="{Binding Data.IsEnglish, Converter={StaticResource InvertedIsEnglishConverter}, Source={StaticResource proxy}}">
                             <DataGridTemplateColumn.HeaderTemplate>
                                 <DataTemplate>

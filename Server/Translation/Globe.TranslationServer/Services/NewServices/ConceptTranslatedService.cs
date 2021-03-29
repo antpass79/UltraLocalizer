@@ -25,6 +25,9 @@ namespace Globe.TranslationServer.Services.NewServices
         {
             try
             {
+                var conceptTrimmed = concept.Trim('%');
+                var localizedStringTrimmed = localizedString.Trim('%');
+
                 var items = _repository.Query()
                     .WhereIf(item =>
                         item.LanguageId == languageId, languageId != 0)
@@ -35,9 +38,21 @@ namespace Globe.TranslationServer.Services.NewServices
                     .WhereIf(item =>
                         item.Context == context, context != SharedConstants.CONTEXT_ALL)
                     .WhereIf(item =>
-                        item.Concept.Contains(concept), !string.IsNullOrEmpty(concept))
+                        item.Concept == concept, (!string.IsNullOrEmpty(concept) && !concept.Contains('%')))
                     .WhereIf(item =>
-                        item.String.Contains(localizedString), !string.IsNullOrEmpty(localizedString))
+                        item.Concept.Contains(conceptTrimmed), (!string.IsNullOrEmpty(concept) && concept.StartsWith('%') && concept.EndsWith('%')))
+                    .WhereIf(item =>
+                        item.Concept.EndsWith(conceptTrimmed), (!string.IsNullOrEmpty(concept) && !concept.StartsWith('%') && concept.EndsWith('%')))
+                    .WhereIf(item =>
+                        item.Concept.StartsWith(conceptTrimmed), (!string.IsNullOrEmpty(concept) && concept.StartsWith('%') && !concept.EndsWith('%')))
+                    .WhereIf(item =>
+                        item.String == localizedString, (!string.IsNullOrEmpty(localizedString) && !localizedString.Contains('%')))
+                    .WhereIf(item =>
+                        item.String.Contains(localizedStringTrimmed), (!string.IsNullOrEmpty(localizedString) && localizedString.StartsWith('%') && localizedString.EndsWith('%')))
+                    .WhereIf(item =>
+                        item.String.EndsWith(localizedStringTrimmed), (!string.IsNullOrEmpty(localizedString) && !localizedString.StartsWith('%') && localizedString.EndsWith('%')))
+                    .WhereIf(item =>
+                        item.String.StartsWith(localizedStringTrimmed), (!string.IsNullOrEmpty(localizedString) && localizedString.StartsWith('%') && !localizedString.EndsWith('%')))
                     .ToList()
                     .Select(item => new
                     {                       
