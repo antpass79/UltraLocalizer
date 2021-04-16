@@ -45,11 +45,12 @@ namespace Globe.Client.Localizer
             containerRegistry.RegisterSingleton<IIdentityStore, IdentityStore>();
 
             var unityContainer = containerRegistry.GetContainer();
-            unityContainer.RegisterFactory<ICompareVersionService>(container =>
-            {
-                return new CompareVersionService(container.Resolve<IVersionService>("RemoteVersionService"), container.Resolve<IVersionService>("LocalVersionService"));
-            },
-            FactoryLifetime.Singleton);
+            //TODOclickOnce
+            //unityContainer.RegisterFactory<ICompareVersionService>(container =>
+            //{
+            //    return new CompareVersionService(container.Resolve<IVersionService>("RemoteVersionService"), container.Resolve<IVersionService>("LocalVersionService"));
+            //},
+            //FactoryLifetime.Singleton);
             unityContainer.RegisterFactory<HttpClient>(container =>
             {
                 var byPassCertificateHandler = new HttpClientHandler()

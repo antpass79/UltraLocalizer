@@ -19,6 +19,7 @@ namespace Globe.Client.Localizer
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(HomeWindow));
             regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(HomeWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(LoginWindow));
+            regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(LoginWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(JobListManagementWindow));
             regionManager.RegisterViewWithRegion(RegionNames.TOOLBAR_REGION, typeof(JobListManagementWindowToolBar));
             regionManager.RegisterViewWithRegion(RegionNames.MAIN_REGION, typeof(CurrentJobWindow));
