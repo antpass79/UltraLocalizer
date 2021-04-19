@@ -15,52 +15,10 @@
         <controls:LocPageTitleTextBlock DockPanel.Dock="Top" Text="{Binding Localize[UltraLocalizer]}"></controls:LocPageTitleTextBlock>
 
         <controls:LocPageSubTitleTextBlock DockPanel.Dock="Top" Text="{Binding Localize[HomeIntro_1]}"></controls:LocPageSubTitleTextBlock>
-        <!--<controls:LocLabel DockPanel.Dock="Top" Content="{Binding Localize[HomeIntro_2]}"></controls:LocLabel>-->
         <Separator DockPanel.Dock="Top" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
         <controls:LocPageSubTitleTextBlock DockPanel.Dock="Top" Text="{Binding Localize[Download]}"></controls:LocPageSubTitleTextBlock>
 
         <Grid DockPanel.Dock="Top">
-            <Grid.RowDefinitions>
-                <!--<RowDefinition />-->
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-                <ColumnDefinition Width="auto" />
-            </Grid.ColumnDefinitions>
-            <!--<TextBlock>
-                Current Style Version
-            </TextBlock>
-            <TextBlock Grid.Column="1" Text="{Binding CurrentVersion.StyleVersion}" />
-            <TextBlock Grid.Column="2">
-                Available Style Version
-            </TextBlock>
-            <TextBlock Grid.Column="3" Text="{Binding AvailableVersion.StyleVersion}" />
-            <TextBlock Grid.Column="4" Visibility="{Binding NewStyleAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Hyperlink Command="{Binding DownloadStyleCommand}">
-                    Download the last version of style
-                </Hyperlink>
-            </TextBlock>-->
-            <controls:LocTextBlock Grid.Row="1">
-                Current Application Version
-            </controls:LocTextBlock>
-            <controls:LocTextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentVersion.ApplicationVersion}" />
-            <controls:LocTextBlock Grid.Row="1" Grid.Column="2" Text="=>" />
-            <controls:LocTextBlock Grid.Row="1" Grid.Column="3">
-                Available Application Version
-            </controls:LocTextBlock>
-            <controls:LocTextBlock Grid.Row="1" Grid.Column="4" Text="{Binding AvailableVersion.ApplicationVersion}" />
-            <controls:LocTextBlock Grid.Row="1" Grid.Column="5" Text="=>" Visibility="{Binding NewApplicationAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
-            <controls:LocTextBlock Grid.Row="2" Grid.Column="6" Visibility="{Binding NewApplicationAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Hyperlink Command="{Binding DownloadApplicationCommand}">
-                    Download the last version of application
-                </Hyperlink>
-            </controls:LocTextBlock>
         </Grid>
     </DockPanel>
 </UserControl>
