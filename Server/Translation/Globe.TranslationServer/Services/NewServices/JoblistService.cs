@@ -61,7 +61,7 @@ namespace Globe.TranslationServer.Services.NewServices
                     ContextViews = group.Select(item => new JobListContext
                     {
                         StringId = item.StringId.HasValue ? item.StringId.Value : 0,
-                        StringType = !string.IsNullOrWhiteSpace(item.StringType) ? Enum.Parse<StringType>(item.StringType) : StringType.Label,
+                        StringType = !string.IsNullOrWhiteSpace(item.StringType) ? Enum.Parse<StringType>(item.StringType) : StringType.String,
                         StringValue = item.StringValue,
                         StringInEnglish = item.StringInEnglish,
                         Name = item.ContextName,
