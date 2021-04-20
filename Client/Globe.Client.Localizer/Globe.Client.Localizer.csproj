@@ -59,6 +59,10 @@
     <Page Update="Dialogs\Views\MessageDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\LoginWindowToolBar.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\JobListStatusWindowToolBar.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
