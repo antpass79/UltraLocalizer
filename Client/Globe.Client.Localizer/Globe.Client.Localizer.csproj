@@ -9,6 +9,8 @@
   <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <StartupObject>Globe.Client.Localizer.App</StartupObject>
+    <ApplicationIcon>Localizator.ico</ApplicationIcon>
+    <Product>Localizer</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
