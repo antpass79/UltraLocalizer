@@ -1,4 +1,4 @@
-﻿using Globe.Shared.DTOs;
+﻿using Globe.Client.Localizer.Models;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.Services

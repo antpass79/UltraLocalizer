@@ -26,7 +26,9 @@ namespace Globe.Client.Localizer.Services
             //var result = await _secureHttpClient.SendAsync(HttpMethod.Get, ENDPOINT_JobListView, search);
             var joblists = new List<JobList>();
 
-            joblists.Add(new JobList 
+            //RICORDA nuova Lista da utilizzare sara vJobList (con tutti i conteggi necessari)!
+
+            joblists.Add(new JobList
             { 
                 Id = 213, 
                 LanguageId = 1,

@@ -1,5 +1,4 @@
 ﻿using Globe.Shared.DTOs;
-using Globe.TranslationServer.DTOs;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;

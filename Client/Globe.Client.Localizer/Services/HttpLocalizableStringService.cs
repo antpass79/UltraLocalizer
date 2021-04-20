@@ -1,7 +1,6 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Platform.Services;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.Services

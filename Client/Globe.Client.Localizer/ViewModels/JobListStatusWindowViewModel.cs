@@ -101,16 +101,6 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        float _completationPercentage = 0.0F;
-        public float CompletationPercentage
-        {
-            get => _completationPercentage;
-            set
-            {
-                SetProperty(ref _completationPercentage, value);
-            }
-        }
-
         private bool _isMasterTranslator = false;
         public bool IsMasterTranslator
         {

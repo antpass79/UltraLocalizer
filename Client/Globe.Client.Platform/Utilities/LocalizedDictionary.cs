@@ -20,7 +20,7 @@ namespace Globe.Client.Platform.Utilities
             get
             {
                 if (!_dictionary.ContainsKey(key))
-                    return $"### {key} ###";
+                    return $"*{key}";
 
                 return _dictionary[key];
             }
