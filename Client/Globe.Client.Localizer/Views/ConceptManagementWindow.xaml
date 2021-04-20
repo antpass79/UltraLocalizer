@@ -111,7 +111,7 @@
                                     </DataTemplate>
                                 </DataGridTextColumn.HeaderTemplate>
                             </DataGridTextColumn>
-                            <DataGridTextColumn Binding="{Binding Concept}" Header="Concept" MaxWidth="250" Width="25*">
+                            <DataGridTextColumn Binding="{Binding Concept}" Header="Concept" Width="25*">
                                 <DataGridTextColumn.HeaderTemplate>
                                     <DataTemplate>
                                         <controls:LocTextBlock TextWrapping="Wrap" Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
