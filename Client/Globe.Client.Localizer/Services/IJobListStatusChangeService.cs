@@ -1,4 +1,5 @@
-﻿using Globe.Shared.DTOs;
+﻿using Globe.Client.Localizer.Models;
+using Globe.Shared.DTOs;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.Services
