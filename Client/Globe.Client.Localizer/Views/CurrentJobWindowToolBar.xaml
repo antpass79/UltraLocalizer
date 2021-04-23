@@ -17,6 +17,5 @@
             CheckedContent="{Binding Localize[HideFilters]}"
             UncheckedContent="{Binding Localize[ShowFilters]}">
         </controls:LocToggleSwitch>
-        <controls:LocButton Command="{Binding ExportToXmlCommand}" Content="{Binding Localize[Export_to_XML]}" />
     </DockPanel>
 </platform:ContextToolBar>

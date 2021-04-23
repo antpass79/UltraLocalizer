@@ -4,7 +4,6 @@ using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
-using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
 using Globe.Shared.Services;
 using Globe.Shared.Utilities;
@@ -35,7 +34,6 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly INotificationService _notificationService;
         private readonly ICurrentJobFiltersService _currentJobFiltersService;
         private readonly ICurrentJobConceptViewService _currentJobConceptViewService;
-        private readonly IXmlService _xmlService;
         private readonly IVisibilityFiltersService _visibilityFiltersService;
 
         public CurrentJobWindowViewModel(
@@ -47,7 +45,6 @@ namespace Globe.Client.Localizer.ViewModels
             ICurrentJobFiltersService currentJobFiltersService,
             ICurrentJobConceptViewService currentJobConceptViewService,
             ILocalizationAppService localizationAppService,
-            IXmlService xmlService,
             IVisibilityFiltersService visibilityFiltersService)
             : base(identityStore, eventAggregator, localizationAppService)
         {
@@ -56,7 +53,6 @@ namespace Globe.Client.Localizer.ViewModels
             _notificationService = notificationService;
             _currentJobFiltersService = currentJobFiltersService;
             _currentJobConceptViewService = currentJobConceptViewService;
-            _xmlService = xmlService;
             _visibilityFiltersService = visibilityFiltersService;
         }
 
@@ -286,36 +282,6 @@ namespace Globe.Client.Localizer.ViewModels
                 }
             });
 
-        private DelegateCommand _exportToXmlCommand = null;
-        public DelegateCommand ExportToXmlCommand =>
-            _exportToXmlCommand ??= new DelegateCommand(async () =>
-            {
-                var downloadPath = ChooseFilePathToDownloadXml();
-                if (string.IsNullOrWhiteSpace(downloadPath))
-                    return;
-
-                EventAggregator
-                .GetEvent<BackgroundBusyChangedEvent>()
-                .Publish(true);
-
-                try
-                {
-                    await _xmlService.Download(downloadPath);
-                    await _notificationService.NotifyAsync(Localize[LanguageKeys.Information], Localize[LanguageKeys.Download_completed], Platform.Services.Notifications.NotificationLevel.Info);
-                }
-                catch (Exception e)
-                {
-                    _logService.Exception(e);
-                    await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Download_error], Platform.Services.Notifications.NotificationLevel.Error);
-                }
-                finally
-                {
-                    EventAggregator
-                    .GetEvent<BackgroundBusyChangedEvent>()
-                    .Publish(false);
-                }
-            });
-
         private DelegateCommand _componentNamespaceChangeCommand = null;
         public DelegateCommand ComponentNamespaceChangeCommand =>
             _componentNamespaceChangeCommand ??= new DelegateCommand(async () =>
@@ -445,21 +411,6 @@ namespace Globe.Client.Localizer.ViewModels
         {
             ConceptViews = null;
             ItemCount = 0;
-        }
-
-        private static string ChooseFilePathToDownloadXml()
-        {
-            Microsoft.Win32.SaveFileDialog saveDialog = new Microsoft.Win32.SaveFileDialog
-            {
-                FileName = "xml",
-                DefaultExt = ".zip",
-                Filter = "Zip documents (.zip)|*.zip"
-            };
-
-            if (saveDialog.ShowDialog() != true)
-                return null;
-
-            return saveDialog.FileName;
         }
 
         private void UpdateFiltersUsedBySearching()

@@ -42,17 +42,17 @@ namespace Globe.TranslationServer.Services.NewServices
                     .WhereIf(item =>
                         item.Concept.Contains(conceptTrimmed), (!string.IsNullOrEmpty(concept) && concept.StartsWith('%') && concept.EndsWith('%')))
                     .WhereIf(item =>
-                        item.Concept.EndsWith(conceptTrimmed), (!string.IsNullOrEmpty(concept) && !concept.StartsWith('%') && concept.EndsWith('%')))
+                        item.Concept.EndsWith(conceptTrimmed), (!string.IsNullOrEmpty(concept) && concept.StartsWith('%') && !concept.EndsWith('%')))
                     .WhereIf(item =>
-                        item.Concept.StartsWith(conceptTrimmed), (!string.IsNullOrEmpty(concept) && concept.StartsWith('%') && !concept.EndsWith('%')))
+                        item.Concept.StartsWith(conceptTrimmed), (!string.IsNullOrEmpty(concept) && !concept.StartsWith('%') && concept.EndsWith('%')))
                     .WhereIf(item =>
                         item.String == localizedString, (!string.IsNullOrEmpty(localizedString) && !localizedString.Contains('%')))
                     .WhereIf(item =>
                         item.String.Contains(localizedStringTrimmed), (!string.IsNullOrEmpty(localizedString) && localizedString.StartsWith('%') && localizedString.EndsWith('%')))
                     .WhereIf(item =>
-                        item.String.EndsWith(localizedStringTrimmed), (!string.IsNullOrEmpty(localizedString) && !localizedString.StartsWith('%') && localizedString.EndsWith('%')))
+                        item.String.EndsWith(localizedStringTrimmed), (!string.IsNullOrEmpty(localizedString) && localizedString.StartsWith('%') && !localizedString.EndsWith('%')))
                     .WhereIf(item =>
-                        item.String.StartsWith(localizedStringTrimmed), (!string.IsNullOrEmpty(localizedString) && localizedString.StartsWith('%') && !localizedString.EndsWith('%')))
+                        item.String.StartsWith(localizedStringTrimmed), (!string.IsNullOrEmpty(localizedString) && !localizedString.StartsWith('%') && localizedString.EndsWith('%')))
                     .ToList()
                     .Select(item => new
                     {                       

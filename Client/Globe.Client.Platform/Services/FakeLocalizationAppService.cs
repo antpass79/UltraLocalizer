@@ -76,6 +76,8 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Master_translator_comment), "Commento del traduttore master");
             _italian.Add(nameof(LanguageKeys.Ignore_Translation), "Ignora la traduzione");
             _italian.Add(nameof(LanguageKeys.Searching_Options_for_selected_String), "Opzioni di ricerca per la stringa selezionata");
+            _italian.Add(nameof(LanguageKeys.Show_Custom_Filters), "Mostra filtri per esportazione Custom");
+            _italian.Add(nameof(LanguageKeys.Choose_Exportation_Mode), "Selezionare la modalitá di esportazione:");
             _italian.Add(nameof(LanguageKeys.By_Concept_English_language_only), "Cerca il concetto per Inglese");
             _italian.Add(nameof(LanguageKeys.By_Value_Current_language_only), "Cerca il valore per linguaggio corrente");
             _italian.Add(nameof(LanguageKeys.No_Filters), "Nessun filtro");
@@ -137,6 +139,18 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.FilterBy), "Filtri applicati");
             _italian.Add(nameof(LanguageKeys.JobListName), "Lista di lavoro");
             _italian.Add(nameof(LanguageKeys.KeepThis), "Prendi questo");
+            _italian.Add(nameof(LanguageKeys.Full), "Standard");
+            _italian.Add(nameof(LanguageKeys.Custom), "Personalizzata");
+            _italian.Add(nameof(LanguageKeys.Export), "Esporta");
+
+            _italian.Add(nameof(LanguageKeys.English), "Inglese");
+            _italian.Add(nameof(LanguageKeys.French), "Francese");
+            _italian.Add(nameof(LanguageKeys.Italian), "Italiano");
+            _italian.Add(nameof(LanguageKeys.German), "Tedesco");
+            _italian.Add(nameof(LanguageKeys.Spanish), "Spagnolo");
+            _italian.Add(nameof(LanguageKeys.Chinese), "Cinese");
+            _italian.Add(nameof(LanguageKeys.Russian), "Russo");
+            _italian.Add(nameof(LanguageKeys.Portuguese), "Portoghese");
         }
 
         private void FillEnglishValues()
@@ -150,6 +164,8 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Master_translator_comment), "Master translator comment");
             _english.Add(nameof(LanguageKeys.Ignore_Translation), "Ignore translation");
             _english.Add(nameof(LanguageKeys.Searching_Options_for_selected_String), "Searching options for selected string");
+            _english.Add(nameof(LanguageKeys.Show_Custom_Filters), "Show filters of custom exportation");
+            _english.Add(nameof(LanguageKeys.Choose_Exportation_Mode), "Choose exportation mode:");
             _english.Add(nameof(LanguageKeys.By_Concept_English_language_only), "By Concept English language only");
             _english.Add(nameof(LanguageKeys.By_Value_Current_language_only), "By Value Current language only");
             _english.Add(nameof(LanguageKeys.No_Filters), "No Filters");
@@ -212,6 +228,18 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.FilterBy), "Filter by");
             _english.Add(nameof(LanguageKeys.JobListName), "Job list");
             _english.Add(nameof(LanguageKeys.KeepThis), "Keep this");
+            _english.Add(nameof(LanguageKeys.Full), "Full");
+            _english.Add(nameof(LanguageKeys.Custom), "Custom");
+            _english.Add(nameof(LanguageKeys.Export), "Export");
+
+            _english.Add(nameof(LanguageKeys.English), "English");
+            _english.Add(nameof(LanguageKeys.French), "French");
+            _english.Add(nameof(LanguageKeys.Italian), "Italian");
+            _english.Add(nameof(LanguageKeys.German), "German");
+            _english.Add(nameof(LanguageKeys.Spanish), "Spanish");
+            _english.Add(nameof(LanguageKeys.Chinese), "Chinese");
+            _english.Add(nameof(LanguageKeys.Russian), "Russian");
+            _english.Add(nameof(LanguageKeys.Portuguese), "Portuguese");
         }
 
         #endregion
