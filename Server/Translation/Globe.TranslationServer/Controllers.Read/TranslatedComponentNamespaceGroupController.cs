@@ -8,24 +8,19 @@ using System.Threading.Tasks;
 namespace Globe.TranslationServer.Controllers
 {
     [Route("api/read/[controller]")]
-    public class ComponentNamespaceGroupController : Controller
+    public class TranslatedComponentNamespaceGroupController : Controller
     {
         private readonly IComponentNamespaceGroupService _componentNamespaceGroupService;
 
-        public ComponentNamespaceGroupController(IComponentNamespaceGroupService componentNamespaceGroupService)
+        public TranslatedComponentNamespaceGroupController(IComponentNamespaceGroupService componentNamespaceGroupService)
         {
             _componentNamespaceGroupService = componentNamespaceGroupService;
         }
 
         [HttpGet]
-        async public Task<IEnumerable<ComponentNamespaceGroup>> Get([FromBody] Language language)
+        async public Task<IEnumerable<ComponentNamespaceGroup>> Get()
         {
-            if (!ModelState.IsValid)
-            {
-                throw new Exception("search");
-            }
-            
-            return await _componentNamespaceGroupService.GetAllAsync(language);
+            return await _componentNamespaceGroupService.GetAllAsync();
         }
     }
 }

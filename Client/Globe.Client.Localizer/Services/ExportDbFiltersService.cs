@@ -1,8 +1,6 @@
 ﻿using Globe.Client.Localizer.Models;
-using Globe.Client.Platform.Extensions;
 using Globe.Client.Platform.Services;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.Services
@@ -11,7 +9,7 @@ namespace Globe.Client.Localizer.Services
     {
         private const string ENDPOINT_READ = "read/";
 
-        private const string ENDPOINT_ComponentNamespaceGroup = "ComponentNamespaceGroup";
+        private const string ENDPOINT_ComponentNamespaceGroup = "TranslatedComponentNamespaceGroup";
 
         private readonly IAsyncSecureHttpClient _secureHttpClient;
 
@@ -23,8 +21,7 @@ namespace Globe.Client.Localizer.Services
 
         async public Task<IEnumerable<BindableComponentNamespaceGroup>> GetAllComponentNamespaceGroupsAsync()
         {
-            var result = await _secureHttpClient.SendAsync<object>(HttpMethod.Get, ENDPOINT_READ + ENDPOINT_ComponentNamespaceGroup, null);
-            return await result.GetValue<IEnumerable<BindableComponentNamespaceGroup>>();
+            return await _secureHttpClient.GetAsync<IEnumerable<BindableComponentNamespaceGroup>>(ENDPOINT_READ + ENDPOINT_ComponentNamespaceGroup);
         }
     }
 }

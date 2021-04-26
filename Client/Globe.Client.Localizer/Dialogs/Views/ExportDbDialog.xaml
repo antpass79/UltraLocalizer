@@ -11,6 +11,7 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              BorderThickness="5" BorderBrush="#05163D"
              MinWidth="500"
+             MaxHeight="500"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <prism:Dialog.WindowStyle>
@@ -18,8 +19,8 @@
             <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
             <Setter Property="SizeToContent" Value="WidthAndHeight" />
             <Setter Property="WindowStyle" Value="None" />
-            <Setter Property="ResizeMode" Value="CanResize"/>
-            <Setter Property="ShowInTaskbar" Value="False"/>
+            <Setter Property="ResizeMode" Value="CanResizeWithGrip"/>
+            <Setter Property="ShowInTaskbar" Value="True"/>
         </Style>
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
@@ -37,45 +38,40 @@
             
             <Grid Margin="10">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="6*" />
+                    <RowDefinition Height="8*" />
+                    <RowDefinition Height="8*" />
+                    <RowDefinition Height="60*" />
+                    <RowDefinition Height="15*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <controls:LocTextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="16" Text="{Binding Localize[Choose_Exportation_Mode]}"/>
-                <controls:LocRadioButton Margin="10" Grid.Row="1" GroupName="ExportMode" IsChecked="True" Content="{Binding Localize[Full]}" Command="{Binding ExportDbFilters.ExportDbMode}" CommandParameter="{x:Static dto:ExportDbMode.Full}" />
-                <controls:LocRadioButton Margin="10" Grid.Row="2" GroupName="ExportMode" IsChecked="{Binding ShowFilters}" Content="{Binding Localize[Custom]}" Command="{Binding ExportDbFilters.ExportDbMode}" CommandParameter="{x:Static dto:ExportDbMode.Custom}"/>
+                <controls:LocTextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="14" Text="{Binding Localize[Choose_Exportation_Mode]}"/>
+                <controls:LocRadioButton Margin="5" Grid.Row="1" GroupName="ExportMode" IsChecked="{Binding IsExportModeFull}" Content="{Binding Localize[Full]}"/>
+                <controls:LocRadioButton Margin="5" Grid.Row="2" GroupName="ExportMode" IsChecked="{Binding ShowFilters}" Content="{Binding Localize[Custom]}"/>
                              
-                <controls:LocGrid Grid.Row="3" Grid.ColumnSpan="2" DockPanel.Dock="Top" Margin="5,0,5,0" Style="{StaticResource SectionPanel}" Visibility="{Binding ShowFilters, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <controls:LocGrid MaxHeight="500" Grid.Row="3" Grid.ColumnSpan="2" DockPanel.Dock="Top" Margin="5,0,5,0" Style="{StaticResource SectionPanel}" Visibility="{Binding ShowFilters, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="20*"/>
                         <ColumnDefinition Width="80*"/>
                     </Grid.ColumnDefinitions>
-                    <controls:LocCheckBox x:Name="English" Grid.Row="0" Grid.Column="0" Content="{Binding Localize[English]}" IsChecked="False"/>
-                    <controls:LocCheckBox x:Name="French" Grid.Row="1" Grid.Column="0" Content="{Binding Localize[French]}" IsChecked="False"/>
-                    <controls:LocCheckBox x:Name="Italian" Grid.Row="2" Grid.Column="0" Content="{Binding Localize[Italian]}" IsChecked="False"/>
-                    <controls:LocCheckBox x:Name="German" Grid.Row="3" Grid.Column="0" Content="{Binding Localize[German]}" IsChecked="False"/>
-                    <controls:LocCheckBox x:Name="Spanish" Grid.Row="4" Grid.Column="0" Content="{Binding Localize[Spanish]}" IsChecked="False"/>
-                    <controls:LocCheckBox x:Name="Chinese" Grid.Row="5" Grid.Column="0" Content="{Binding Localize[Chinese]}" IsChecked="False"/>
-                    <controls:LocCheckBox x:Name="Russian" Grid.Row="6" Grid.Column="0" Content="{Binding Localize[Russian]}" IsChecked="False"/>
-                    <controls:LocCheckBox x:Name="Portuguese" Grid.Row="7" Grid.Column="0" Content="{Binding Localize[Portuguese]}" IsChecked="False"/>
-                                      
-                    <controls:LocTreeView Grid.RowSpan="8" Grid.Column="1" Grid.Row="0" ItemsSource="{Binding ComponentNamespaceGroups}" HorizontalContentAlignment="Stretch" BorderThickness="0">
+                    <StackPanel Grid.Row="0" Grid.Column="0" Background="Transparent">
+                        <controls:LocCheckBox x:Name="en" Content="{Binding Localize[English]}" IsChecked="False"/>
+                        <controls:LocCheckBox x:Name="fr" Content="{Binding Localize[French]}" IsChecked="False"/>
+                        <controls:LocCheckBox x:Name="it" Content="{Binding Localize[Italian]}" IsChecked="False"/>
+                        <controls:LocCheckBox x:Name="de" Content="{Binding Localize[German]}" IsChecked="False"/>
+                        <controls:LocCheckBox x:Name="es" Content="{Binding Localize[Spanish]}" IsChecked="False"/>
+                        <controls:LocCheckBox x:Name="zh" Content="{Binding Localize[Chinese]}" IsChecked="False"/>
+                        <controls:LocCheckBox x:Name="ru" Content="{Binding Localize[Russian]}" IsChecked="False"/>
+                        <controls:LocCheckBox x:Name="pt" Grid.Row="7" Grid.Column="0" Content="{Binding Localize[Portuguese]}" IsChecked="False"/>
+                    </StackPanel>
+
+                    <controls:LocTreeView Grid.Column="1" Grid.Row="0" ItemsSource="{Binding ComponentNamespaceGroups}" HorizontalContentAlignment="Stretch" BorderThickness="0">
                         <controls:LocTreeView.ItemContainerStyle>
                             <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource StretchedTreeViewItem}">
                                 <Setter Property="IsSelected" Value="{Binding IsSelected}" />
@@ -96,27 +92,13 @@
                                     <controls:LocTextBlock Text="[" Foreground="Blue" />
                                     <controls:LocTextBlock Text="{Binding Count}" Foreground="Blue" />
                                     <controls:LocTextBlock Text="]" Foreground="Blue" />
-                                    <controls:LocButton
-                                            HorizontalAlignment="Right"
-                                            Visibility="{Binding ElementName=rootItem, Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                            Content="+"
-                                            ToolTip="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[Add_selected_group]}"
-                                            Style="{StaticResource treeViewItemButton}"
-                                            Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.AddComponentNamespaceGroupCommand}"
-                                            CommandParameter="{Binding}" />
+                                    <controls:LocCheckBox Name="rootCheckBox" VerticalAlignment="Center" ToolTip ="Check if have to be included in export"/>
                                 </DockPanel>
                             </HierarchicalDataTemplate>
                             <DataTemplate DataType="{x:Type models:BindableInternalNamespace}">
                                 <DockPanel Name="leafItem" Background="Transparent">
                                     <controls:LocTextBlock Text="{Binding Description}" />
-                                    <controls:LocButton
-                                                HorizontalAlignment="Right"
-                                                Visibility="{Binding ElementName=leafItem, Path=IsMouseOver, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                                Content="+"
-                                                ToolTip="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[Add_selected_item]}"
-                                                Style="{StaticResource treeViewItemButton}"
-                                                Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.AddInternalNamespaceCommand}"
-                                                CommandParameter="{Binding}"/>
+                                    <controls:LocCheckBox Name="leafCheckBox" VerticalAlignment="Center" ToolTip ="Check if have to be included in export"/>
                                 </DockPanel>
                             </DataTemplate>
                         </controls:LocTreeView.Resources>

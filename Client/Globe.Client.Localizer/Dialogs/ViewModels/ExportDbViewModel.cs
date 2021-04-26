@@ -2,6 +2,7 @@
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
@@ -18,9 +19,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
     class ExportDbViewModel : LocalizeWindowViewModel, IDialogAware
     {
         private readonly ILogService _logService;
-        private readonly IEventAggregator _eventAggregator;
         private readonly INotificationService _notificationService;
-        private readonly IVisibilityFiltersService _visibilityFiltersService;
+        private readonly IExportDbFiltersService _exportDbFiltersService;
         private readonly IXmlService _xmlService;
 
         public ExportDbViewModel(
@@ -29,14 +29,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             IIdentityStore identityStore,
             ILocalizationAppService localizationAppService,
             INotificationService notificationService,
-            IVisibilityFiltersService visibilityFiltersService,
+            IExportDbFiltersService exportDbFiltersService,
             IXmlService xmlService)
             : base(identityStore, eventAggregator, localizationAppService)
         {
             _logService = logService;
-            _eventAggregator = eventAggregator;
             _notificationService = notificationService;
-            _visibilityFiltersService = visibilityFiltersService;
+            _exportDbFiltersService = exportDbFiltersService;
             _xmlService = xmlService;
         }
 
@@ -61,6 +60,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _showFilters, value); }
         }
 
+        bool _isExportModeFull= true;
+        public bool IsExportModeFull
+        {
+            get => _isExportModeFull;
+            set { SetProperty(ref _isExportModeFull, value); }
+        }
+
         IEnumerable<BindableComponentNamespaceGroup> _componentNamespaceGroups;
         public IEnumerable<BindableComponentNamespaceGroup> ComponentNamespaceGroups
         {
@@ -73,7 +79,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         public IEnumerable<BindableComponentNamespaceGroup> SelectedComponentNamespaceGroups
         {
-            //Check. TODO
             get
             {
                 if (SelectedInternalNamespace == null)
@@ -108,6 +113,18 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public DelegateCommand<ExportDbFilters> ExportToXmlCommand =>
             _exportToXmlCommand ??= new DelegateCommand<ExportDbFilters>(async (exportDbFilters) =>
             {
+                //In caso di esportazione Custom, creo oggetto da spedire al server con i filtri da applicare, altrimenti di default abbiamo esportazione Full
+                if(!IsExportModeFull)
+                {
+                    exportDbFilters = new ExportDbFilters
+                    {
+                        ExportDbMode = ExportDbMode.Custom,
+                        LanguageIds = null,//
+                        ComponentNamespaces = SelectedComponentNamespaceGroups.Select(item => item.ComponentNamespace.Description).ToList(),
+                        InternalNamespaces = null//mmm cercare di capire cosa mi serve
+                    };
+                }
+
                 var downloadPath = ChooseFilePathToDownloadXml();
                 if (string.IsNullOrWhiteSpace(downloadPath))
                     return;
@@ -161,14 +178,19 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             try
             {
                 Busy = true;
-
-                //TODO.
-                //Get All Data -> Languages, component, internalNamespaces
+                ComponentNamespaceGroups = await _exportDbFiltersService.GetAllComponentNamespaceGroupsAsync();            
             }
             catch (Exception e)
             {
-                _logService.Exception(e);
-                //Put all data = null
+                _logService.Exception(e);              
+                ComponentNamespaceGroups = null;
+
+                await _notificationService.NotifyAsync(new Notification
+                {
+                    Title = Localize[LanguageKeys.Error],
+                    Message = Localize[LanguageKeys.Error_during_building_groups],
+                    Level = NotificationLevel.Error
+                });
             }
             finally
             {
