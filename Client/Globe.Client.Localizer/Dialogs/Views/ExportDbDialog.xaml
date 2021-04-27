@@ -61,14 +61,14 @@
                         <ColumnDefinition Width="80*"/>
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Row="0" Grid.Column="0" Background="Transparent">
-                        <controls:LocCheckBox x:Name="en" Content="{Binding Localize[English]}" IsChecked="False"/>
-                        <controls:LocCheckBox x:Name="fr" Content="{Binding Localize[French]}" IsChecked="False"/>
-                        <controls:LocCheckBox x:Name="it" Content="{Binding Localize[Italian]}" IsChecked="False"/>
-                        <controls:LocCheckBox x:Name="de" Content="{Binding Localize[German]}" IsChecked="False"/>
-                        <controls:LocCheckBox x:Name="es" Content="{Binding Localize[Spanish]}" IsChecked="False"/>
-                        <controls:LocCheckBox x:Name="zh" Content="{Binding Localize[Chinese]}" IsChecked="False"/>
-                        <controls:LocCheckBox x:Name="ru" Content="{Binding Localize[Russian]}" IsChecked="False"/>
-                        <controls:LocCheckBox x:Name="pt" Grid.Row="7" Grid.Column="0" Content="{Binding Localize[Portuguese]}" IsChecked="False"/>
+                        <controls:LocCheckBox x:Name="en" Content="{Binding Localize[English]}" IsChecked="{Binding IsEnglishChecked}"/>
+                        <controls:LocCheckBox x:Name="fr" Content="{Binding Localize[French]}" IsChecked="{Binding IsFrenchChecked}"/>
+                        <controls:LocCheckBox x:Name="it" Content="{Binding Localize[Italian]}" IsChecked="{Binding IsItalianChecked}"/>
+                        <controls:LocCheckBox x:Name="de" Content="{Binding Localize[German]}" IsChecked="{Binding IsGermanChecked}"/>
+                        <controls:LocCheckBox x:Name="es" Content="{Binding Localize[Spanish]}" IsChecked="{Binding IsSpanishChecked}"/>
+                        <controls:LocCheckBox x:Name="zh" Content="{Binding Localize[Chinese]}" IsChecked="{Binding IsChineseChecked}"/>
+                        <controls:LocCheckBox x:Name="ru" Content="{Binding Localize[Russian]}" IsChecked="{Binding IsRussianChecked}"/>
+                        <controls:LocCheckBox x:Name="pt" Content="{Binding Localize[Portuguese]}" IsChecked="{Binding IsPortugueseChecked}"/>
                     </StackPanel>
 
                     <controls:LocTreeView Grid.Column="1" Grid.Row="0" ItemsSource="{Binding ComponentNamespaceGroups}" HorizontalContentAlignment="Stretch" BorderThickness="0">
@@ -92,13 +92,18 @@
                                     <controls:LocTextBlock Text="[" Foreground="Blue" />
                                     <controls:LocTextBlock Text="{Binding Count}" Foreground="Blue" />
                                     <controls:LocTextBlock Text="]" Foreground="Blue" />
-                                    <controls:LocCheckBox Name="rootCheckBox" VerticalAlignment="Center" ToolTip ="Check if have to be included in export"/>
+                                    <controls:LocCheckBox Name="rootCheckBox" 
+                                                          VerticalAlignment="Center" 
+                                                          ToolTip ="Check if have to be included in export"
+                                                          IsChecked="{Binding IsSelected}"/>
                                 </DockPanel>
                             </HierarchicalDataTemplate>
                             <DataTemplate DataType="{x:Type models:BindableInternalNamespace}">
                                 <DockPanel Name="leafItem" Background="Transparent">
                                     <controls:LocTextBlock Text="{Binding Description}" />
-                                    <controls:LocCheckBox Name="leafCheckBox" VerticalAlignment="Center" ToolTip ="Check if have to be included in export"/>
+                                    <controls:LocCheckBox Name="leafCheckBox" 
+                                                          VerticalAlignment="Center" 
+                                                          ToolTip ="Check if have to be included in export"/>
                                 </DockPanel>
                             </DataTemplate>
                         </controls:LocTreeView.Resources>

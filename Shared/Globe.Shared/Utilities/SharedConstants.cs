@@ -6,6 +6,12 @@
 
         public const string LANGUAGE_EN = "en";
         public const string LANGUAGE_IT = "it";
+        public const string LANGUAGE_FR = "fr";
+        public const string LANGUAGE_DE = "de";
+        public const string LANGUAGE_ES = "es";
+        public const string LANGUAGE_ZH = "zh";
+        public const string LANGUAGE_RU = "ru";
+        public const string LANGUAGE_PT = "pt";
         public const string LANGUAGE_ALL = "all";
 
         public const string COMPONENT_NAMESPACE_ALL = "all";

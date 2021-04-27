@@ -3,10 +3,12 @@ using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
+using Globe.Client.Platform.Utilities;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
 using Globe.Shared.Services;
+using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Services.Dialogs;
@@ -67,6 +69,62 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _isExportModeFull, value); }
         }
 
+        bool _isEnglishChecked = false;
+        public bool IsEnglishChecked
+        {
+            get => _isEnglishChecked;
+            set { SetProperty(ref _isEnglishChecked, value); }
+        }
+
+        bool _isFrenchChecked = false;
+        public bool IsFrenchChecked
+        {
+            get => _isFrenchChecked;
+            set { SetProperty(ref _isFrenchChecked, value); }
+        }
+
+        bool _isItalianChecked = false;
+        public bool IsItalianChecked
+        {
+            get => _isItalianChecked;
+            set { SetProperty(ref _isItalianChecked, value); }
+        }
+
+        bool _isGermanChecked = false;
+        public bool IsGermanChecked
+        {
+            get => _isGermanChecked;
+            set { SetProperty(ref _isGermanChecked, value); }
+        }
+
+        bool _isSpanishChecked = false;
+        public bool IsSpanishChecked
+        {
+            get => _isSpanishChecked;
+            set { SetProperty(ref _isSpanishChecked, value); }
+        }
+
+        bool _isChineseChecked = false;
+        public bool IsChineseChecked
+        {
+            get => _isChineseChecked;
+            set { SetProperty(ref _isChineseChecked, value); }
+        }
+
+        bool _isRussianChecked = false;
+        public bool IsRussianChecked
+        {
+            get => _isRussianChecked;
+            set { SetProperty(ref _isRussianChecked, value); }
+        }
+
+        bool _isPortugueseChecked = false;
+        public bool IsPortugueseChecked
+        {
+            get => _isPortugueseChecked;
+            set { SetProperty(ref _isPortugueseChecked, value); }
+        }
+
         IEnumerable<BindableComponentNamespaceGroup> _componentNamespaceGroups;
         public IEnumerable<BindableComponentNamespaceGroup> ComponentNamespaceGroups
         {
@@ -76,31 +134,31 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 SetProperty(ref _componentNamespaceGroups, value);
             }
         }
-
-        public IEnumerable<BindableComponentNamespaceGroup> SelectedComponentNamespaceGroups
+        //Inserire vincolo che quando si seleziona la root, tutti i figli vengono selezionati
+        public IEnumerable<BindableComponentNamespaceGroup> CheckedComponentNamespaceGroups
         {
             get
             {
-                if (SelectedInternalNamespace == null)
-                    return ComponentNamespaceGroups.Where(item => item.IsSelected);
+                return ComponentNamespaceGroups.Where(item => item.IsSelected);
 
-                return ComponentNamespaceGroups
-                    .Where(item => item.InternalNamespaces.Contains(SelectedInternalNamespace));
+                //return ComponentNamespaceGroups
+                //    .Where(item => item.InternalNamespaces.Any(internalNamespace => internalNamespace.IsSelected));
             }
         }
 
-        public BindableInternalNamespace SelectedInternalNamespace
-        {
-            get
-            {
-                if (ComponentNamespaceGroups == null)
-                    return null;
+        //public IEnumerable<BindableInternalNamespace> CheckedInternalNamespaces
+        //{
+        //    get
+        //    {
+        //        if (ComponentNamespaceGroups == null)
+        //            return null;
 
-                return ComponentNamespaceGroups
-                    .SelectMany(item => item.InternalNamespaces)
-                    .SingleOrDefault(item => item.IsSelected);
-            }
-        }
+        //        return ComponentNamespaceGroups
+        //            .SelectMany(item => item.InternalNamespaces)
+        //            .Where(item => item.IsSelected);
+               
+        //    }
+        //}
 
         private ExportDbFilters _exportDbFilters;
         public ExportDbFilters ExportDbFilters
@@ -119,9 +177,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     exportDbFilters = new ExportDbFilters
                     {
                         ExportDbMode = ExportDbMode.Custom,
-                        LanguageIds = null,//
-                        ComponentNamespaces = SelectedComponentNamespaceGroups.Select(item => item.ComponentNamespace.Description).ToList(),
-                        InternalNamespaces = null//mmm cercare di capire cosa mi serve
+                        IsoCodeLanguages = GetSelectedLanguages(),
+                        ComponentNamespaces = CheckedComponentNamespaceGroups.Select(item => item.ComponentNamespace.Description).ToList()
+                        //InternalNamespaces = CheckedInternalNamespaces.Select(item => item.Description).ToList()
                     };
                 }
 
@@ -198,16 +256,29 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             }
         }
 
-        //TODO probabilmente non c'e' bisogno di alzare manualmente onProperty change. Indagare
-        //protected override void OnPropertyChanged(PropertyChangedEventArgs args)
-        //{
-        //    base.OnPropertyChanged(args);
+        private List<string> GetSelectedLanguages()
+        {
+            var languages = new List<string>();
 
-        //    if (args.PropertyName == nameof(JobListName))
-        //    {
-        //        ExportToXmlCommand.RaiseCanExecuteChanged();           
-        //    }
-        //}
+            if (IsEnglishChecked)
+                languages.Add(SharedConstants.LANGUAGE_EN);
+            if (IsFrenchChecked)
+                languages.Add(SharedConstants.LANGUAGE_FR);
+            if (IsItalianChecked)
+                languages.Add(SharedConstants.LANGUAGE_IT);
+            if (IsGermanChecked)
+                languages.Add(SharedConstants.LANGUAGE_DE);
+            if (IsSpanishChecked)
+                languages.Add(SharedConstants.LANGUAGE_ES);
+            if (IsChineseChecked)
+                languages.Add(SharedConstants.LANGUAGE_ZH);
+            if (IsRussianChecked)
+                languages.Add(SharedConstants.LANGUAGE_RU);
+            if (IsPortugueseChecked)
+                languages.Add(SharedConstants.LANGUAGE_PT);
+
+            return languages;
+        }
 
         private static string ChooseFilePathToDownloadXml()
         {

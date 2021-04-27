@@ -11,7 +11,7 @@ namespace Globe.Shared.DTOs
     public class ExportDbFilters
     {
         public ExportDbMode ExportDbMode { get; set; }
-        public IList<int> LanguageIds { get; set; }
+        public IList<string> IsoCodeLanguages { get; set; }
         public IList<string> ComponentNamespaces { get; set; }
         public IList<string> InternalNamespaces { get; set; }
     }
