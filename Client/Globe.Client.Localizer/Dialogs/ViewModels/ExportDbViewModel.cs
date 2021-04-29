@@ -3,27 +3,32 @@ using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
-using Globe.Client.Platform.Utilities;
 using Globe.Client.Platform.ViewModels;
 using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
 using Globe.Shared.Services;
-using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 
 namespace Globe.Client.Localizer.Dialogs.ViewModels
 {
     class ExportDbViewModel : LocalizeWindowViewModel, IDialogAware
     {
+        #region Data Members
+
         private readonly ILogService _logService;
         private readonly INotificationService _notificationService;
         private readonly IExportDbFiltersService _exportDbFiltersService;
         private readonly IXmlService _xmlService;
+
+        #endregion
+
+        #region Constructors
 
         public ExportDbViewModel(
             ILogService logService,
@@ -40,6 +45,10 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             _exportDbFiltersService = exportDbFiltersService;
             _xmlService = xmlService;
         }
+
+        #endregion
+
+        #region Properties
 
         private string _title = DialogNames.EXPORT_DB;
         public string Title
@@ -139,26 +148,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             get
             {
+                if (ComponentNamespaceGroups == null)
+                    return null;
+
                 return ComponentNamespaceGroups.Where(item => item.IsSelected);
 
-                //return ComponentNamespaceGroups
-                //    .Where(item => item.InternalNamespaces.Any(internalNamespace => internalNamespace.IsSelected));
             }
         }
-
-        //public IEnumerable<BindableInternalNamespace> CheckedInternalNamespaces
-        //{
-        //    get
-        //    {
-        //        if (ComponentNamespaceGroups == null)
-        //            return null;
-
-        //        return ComponentNamespaceGroups
-        //            .SelectMany(item => item.InternalNamespaces)
-        //            .Where(item => item.IsSelected);
-               
-        //    }
-        //}
 
         private ExportDbFilters _exportDbFilters;
         public ExportDbFilters ExportDbFilters
@@ -167,19 +163,29 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _exportDbFilters, value); }
         }
 
-        private DelegateCommand<ExportDbFilters> _exportToXmlCommand = null;
-        public DelegateCommand<ExportDbFilters> ExportToXmlCommand =>
-            _exportToXmlCommand ??= new DelegateCommand<ExportDbFilters>(async (exportDbFilters) =>
+        #endregion
+
+        #region Commands
+
+        private DelegateCommand _exportToXmlCommand = null;
+        public DelegateCommand ExportToXmlCommand =>
+            _exportToXmlCommand ??= new DelegateCommand(async () =>
             {
-                //In caso di esportazione Custom, creo oggetto da spedire al server con i filtri da applicare, altrimenti di default abbiamo esportazione Full
                 if(!IsExportModeFull)
                 {
-                    exportDbFilters = new ExportDbFilters
-                    {
-                        ExportDbMode = ExportDbMode.Custom,
-                        IsoCodeLanguages = GetSelectedLanguages(),
-                        ComponentNamespaces = CheckedComponentNamespaceGroups.Select(item => item.ComponentNamespace.Description).ToList()
-                        //InternalNamespaces = CheckedInternalNamespaces.Select(item => item.Description).ToList()
+                    ExportDbFilters = new ExportDbFilters
+                    {                      
+                        Languages = GetSelectedLanguages(),//TODO
+                        ComponentNamespaceGroups = CheckedComponentNamespaceGroups.Select(componentNamespace => new ComponentNamespaceGroup<ComponentNamespace, InternalNamespace>
+                        {
+                            ComponentNamespace = new ComponentNamespace { Description = componentNamespace.ComponentNamespace.Description },
+                            InternalNamespaces = componentNamespace.InternalNamespaces
+                            .Where(internalNamespaceGrouped => internalNamespaceGrouped.IsSelected)
+                            .Select(internalNamespace => new InternalNamespace
+                            {
+                                Description = internalNamespace.Description
+                            })
+                        })
                     };
                 }
 
@@ -191,9 +197,11 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 .GetEvent<BackgroundBusyChangedEvent>()
                 .Publish(true);
 
+                RaiseRequestClose(new DialogResult(ButtonResult.OK));
+
                 try
                 {
-                    await _xmlService.Download(exportDbFilters, downloadPath);
+                    await _xmlService.Download(ExportDbFilters, downloadPath);
                     await _notificationService.NotifyAsync(Localize[LanguageKeys.Information], Localize[LanguageKeys.Download_completed], Platform.Services.Notifications.NotificationLevel.Info);
                 }
                 catch (Exception e)
@@ -207,7 +215,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     .GetEvent<BackgroundBusyChangedEvent>()
                     .Publish(false);
                 }
-            });
+               
+            }, () => CanExport());
 
         private DelegateCommand _closeDialogCommand;
         public DelegateCommand CloseDialogCommand =>
@@ -215,6 +224,10 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             {
                 RaiseRequestClose(new DialogResult(ButtonResult.Cancel));
             });
+
+        #endregion
+
+        #region IDialogAware Interface
 
         public event Action<IDialogResult> RequestClose;
         public virtual void RaiseRequestClose(IDialogResult dialogResult)
@@ -236,7 +249,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             try
             {
                 Busy = true;
-                ComponentNamespaceGroups = await _exportDbFiltersService.GetAllComponentNamespaceGroupsAsync();            
+                ComponentNamespaceGroups = await _exportDbFiltersService.GetAllComponentNamespaceGroupsAsync();
             }
             catch (Exception e)
             {
@@ -256,26 +269,46 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             }
         }
 
-        private List<string> GetSelectedLanguages()
-        {
-            var languages = new List<string>();
+        #endregion
 
-            if (IsEnglishChecked)
-                languages.Add(SharedConstants.LANGUAGE_EN);
-            if (IsFrenchChecked)
-                languages.Add(SharedConstants.LANGUAGE_FR);
-            if (IsItalianChecked)
-                languages.Add(SharedConstants.LANGUAGE_IT);
-            if (IsGermanChecked)
-                languages.Add(SharedConstants.LANGUAGE_DE);
-            if (IsSpanishChecked)
-                languages.Add(SharedConstants.LANGUAGE_ES);
-            if (IsChineseChecked)
-                languages.Add(SharedConstants.LANGUAGE_ZH);
-            if (IsRussianChecked)
-                languages.Add(SharedConstants.LANGUAGE_RU);
-            if (IsPortugueseChecked)
-                languages.Add(SharedConstants.LANGUAGE_PT);
+        #region Protected functions
+
+        protected override void OnPropertyChanged(PropertyChangedEventArgs args)
+        {
+            base.OnPropertyChanged(args);
+
+            if (args.PropertyName == nameof(IsExportModeFull) || args.PropertyName == nameof(ExportDbFilters))
+            {
+                ExportToXmlCommand.RaiseCanExecuteChanged();
+            }
+        }
+
+        #endregion
+
+        #region Private Functions
+        //TODO: Lista linguaggi con Binding
+        private List<Language> GetSelectedLanguages()
+        {
+            var languages = new List<Language>();
+
+            //if (IsEnglishChecked)
+            //    languages.Add(SharedConstants.LANGUAGE_EN);
+            //if (IsFrenchChecked)
+            //    languages.Add(SharedConstants.LANGUAGE_FR);
+            //if (IsItalianChecked)
+            //    languages.Add(SharedConstants.LANGUAGE_IT);
+            //if (IsGermanChecked)
+            //    languages.Add(SharedConstants.LANGUAGE_DE);
+            //if (IsSpanishChecked)
+            //    languages.Add(SharedConstants.LANGUAGE_ES);
+            //if (IsChineseChecked)
+            //    languages.Add(SharedConstants.LANGUAGE_ZH);
+            //if (IsRussianChecked)
+            //    languages.Add(SharedConstants.LANGUAGE_RU);
+            //if (IsPortugueseChecked)
+            //    languages.Add(SharedConstants.LANGUAGE_PT);
+
+            languages.Add(new Language { Description = "English", IsoCoding = "en" });
 
             return languages;
         }
@@ -294,5 +327,15 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
             return saveDialog.FileName;
         }
+
+        private bool CanExport()
+        {
+            if (IsExportModeFull || ExportDbFilters == null)
+                return true;
+            else
+                return (ExportDbFilters.Languages.Count() > 0 && ExportDbFilters.ComponentNamespaceGroups.Count() > 0);
+        }
+
+        #endregion
     }
 }

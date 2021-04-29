@@ -25,9 +25,6 @@
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
         <platform:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" True="Visible" False="Collapsed" />
-        <Style TargetType="{x:Type DataGridRow}" BasedOn="{StaticResource DataGridRowStyle}">
-            <Setter Property="DetailsVisibility" Value="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=DataGridRow}, Path=DataContext.ShowDetails, Converter={StaticResource BooleanToVisibilityConverter}}"  />
-        </Style>
         <Style TargetType="Panel" x:Key="SectionPanel">
             <Setter Property="Background" Value="WhiteSmoke" />
             <Setter Property="Margin" Value="3" />
@@ -74,11 +71,7 @@
                     <controls:LocTreeView Grid.Column="1" Grid.Row="0" ItemsSource="{Binding ComponentNamespaceGroups}" HorizontalContentAlignment="Stretch" BorderThickness="0">
                         <controls:LocTreeView.ItemContainerStyle>
                             <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource StretchedTreeViewItem}">
-                                <Setter Property="IsSelected" Value="{Binding IsSelected}" />
                                 <Style.Triggers>
-                                    <Trigger Property="IsSelected" Value="True">
-                                        <Setter Property="Background" Value="LightBlue" />
-                                    </Trigger>
                                     <Trigger Property="IsMouseOver" Value="True">
                                         <Setter Property="Background" Value="LightBlue" />
                                     </Trigger>
@@ -92,18 +85,15 @@
                                     <controls:LocTextBlock Text="[" Foreground="Blue" />
                                     <controls:LocTextBlock Text="{Binding Count}" Foreground="Blue" />
                                     <controls:LocTextBlock Text="]" Foreground="Blue" />
-                                    <controls:LocCheckBox Name="rootCheckBox" 
-                                                          VerticalAlignment="Center" 
-                                                          ToolTip ="Check if have to be included in export"
+                                    <controls:LocCheckBox VerticalAlignment="Center" 
                                                           IsChecked="{Binding IsSelected}"/>
                                 </DockPanel>
                             </HierarchicalDataTemplate>
                             <DataTemplate DataType="{x:Type models:BindableInternalNamespace}">
                                 <DockPanel Name="leafItem" Background="Transparent">
                                     <controls:LocTextBlock Text="{Binding Description}" />
-                                    <controls:LocCheckBox Name="leafCheckBox" 
-                                                          VerticalAlignment="Center" 
-                                                          ToolTip ="Check if have to be included in export"/>
+                                    <controls:LocCheckBox VerticalAlignment="Center"
+                                                          IsChecked="{Binding IsSelected}"/>
                                 </DockPanel>
                             </DataTemplate>
                         </controls:LocTreeView.Resources>

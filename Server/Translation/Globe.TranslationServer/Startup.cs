@@ -114,6 +114,7 @@ namespace Globe.TranslationServer
                 .AddScoped<IComponentNamespaceGroupService, Services.NewServices.ComponentNamespaceGroupService>()
                 .AddScoped<IAsyncJobListService, JobListService>()
                 .AddScoped<IAsyncXmlZipService, XmlZipService>()
+                .AddScoped<IExportDbFilterService, Services.NewServices.ExportDbFilterService>()
 
                 .AddScoped<ILogService, ConsoleLogService>();
 

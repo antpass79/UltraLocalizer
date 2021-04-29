@@ -1,5 +1,4 @@
-﻿using Globe.Shared.DTOs;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Globe.Shared.DTOs
 {

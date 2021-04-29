@@ -1,4 +1,5 @@
-﻿using Globe.Shared.Services;
+﻿using Globe.Shared.DTOs;
+using Globe.Shared.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -33,16 +34,19 @@ namespace Globe.TranslationServer.Services
 
         #region Public Functions
 
-        public Stream Zip()
+        public Stream Zip(ExportDbFilters exportDbFilters)
         {
             lock (_lock)
             {
                 string outputFolder = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Zip");
+                outputFolder = Path.Combine(outputFolder, Guid.NewGuid().ToString());
+                _logService.Info($"XmlZipService.Zip - Output folder {outputFolder}");
 
-                CleanOutputFolder(outputFolder);
-                GenerateXmlFiles(outputFolder);
+                CreateOutputFolder(outputFolder);
+                GenerateXmlFiles(outputFolder, exportDbFilters);
                 var inMemoryFiles = LoadInMemoryFiles(outputFolder);
-
+                CleanOutputFolder(outputFolder);
+                
                 return Zip(inMemoryFiles);
             }
         }
@@ -50,6 +54,19 @@ namespace Globe.TranslationServer.Services
         #endregion
 
         #region Private Functions
+        private void CreateOutputFolder(string outputFolder)
+        {
+            try
+            {
+                CleanOutputFolder(outputFolder);
+                Directory.CreateDirectory(outputFolder);
+            }
+            catch (Exception e)
+            {
+                _logService.Exception(e);
+                throw new InvalidOperationException($"Error during {nameof(CreateOutputFolder)}", e);
+            }
+        }
 
         private void CleanOutputFolder(string outputFolder)
         {
@@ -63,7 +80,6 @@ namespace Globe.TranslationServer.Services
                         .ForEach(file => File.Delete(file));
                     Directory.Delete(outputFolder);
                 }
-                Directory.CreateDirectory(outputFolder);
             }
             catch(Exception e)
             {
@@ -72,11 +88,11 @@ namespace Globe.TranslationServer.Services
             }
         }
 
-        private void GenerateXmlFiles(string outputFolder)
+        private void GenerateXmlFiles(string outputFolder, ExportDbFilters exportDbFilters)
         {
             try
             {
-                _dbToXmlService.Generate(outputFolder);
+                _dbToXmlService.Generate(outputFolder, exportDbFilters);
             }
             catch (AggregateException e)
             {

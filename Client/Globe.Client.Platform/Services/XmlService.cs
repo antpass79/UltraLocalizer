@@ -24,10 +24,7 @@ namespace Globe.Client.Platform.Services
         }
 
         public async Task Download(ExportDbFilters exportDbFilters, string downloadPath = default(string))
-        {
-            if(exportDbFilters == null)
-                exportDbFilters = new ExportDbFilters { ExportDbMode = ExportDbMode.Full };
-            
+        {        
             downloadPath = !string.IsNullOrWhiteSpace(downloadPath) ? downloadPath : Path.Combine($"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}", "xml.zip");
             var result = await _secureHttpClient.SendAsync<ExportDbFilters>(HttpMethod.Get, ENDPOINT_Xml, exportDbFilters);
             var bytes = await result.Content.ReadAsByteArrayAsync();
