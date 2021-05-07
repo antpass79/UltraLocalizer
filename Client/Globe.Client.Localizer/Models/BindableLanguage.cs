@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Globe.Client.Localizer.Models
 {
-    public class BindableInternalNamespace : InternalNamespace, INotifyPropertyChanged
+    public class BindableLanguage : Language, INotifyPropertyChanged
     {
         bool _isSelected;
         public bool IsSelected
@@ -12,9 +12,6 @@ namespace Globe.Client.Localizer.Models
             get => _isSelected;
             set
             {
-                if (_isSelected == value)
-                    return;
-
                 _isSelected = value;
                 OnPropertyChanged();
             }

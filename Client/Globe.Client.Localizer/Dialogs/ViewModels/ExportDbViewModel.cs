@@ -12,6 +12,7 @@ using Prism.Events;
 using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
@@ -78,60 +79,39 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _isExportModeFull, value); }
         }
 
-        bool _isEnglishChecked = false;
-        public bool IsEnglishChecked
+        bool _isSelectAllLanguagesChecked = false;
+        public bool IsSelectAllLanguagesChecked
         {
-            get => _isEnglishChecked;
-            set { SetProperty(ref _isEnglishChecked, value); }
+            get => _isSelectAllLanguagesChecked;
+            set { SetProperty(ref _isSelectAllLanguagesChecked, value); }
         }
 
-        bool _isFrenchChecked = false;
-        public bool IsFrenchChecked
+        bool _isSelectAllComponentsChecked = false;
+        public bool IsSelectAllComponentsChecked
         {
-            get => _isFrenchChecked;
-            set { SetProperty(ref _isFrenchChecked, value); }
+            get => _isSelectAllComponentsChecked;
+            set { SetProperty(ref _isSelectAllComponentsChecked, value); }
         }
 
-        bool _isItalianChecked = false;
-        public bool IsItalianChecked
+        IEnumerable<BindableLanguage> _languages;
+        public IEnumerable<BindableLanguage> Languages
         {
-            get => _isItalianChecked;
-            set { SetProperty(ref _isItalianChecked, value); }
+            get => _languages;
+            set
+            {
+                SetProperty(ref _languages, value);
+            }
         }
 
-        bool _isGermanChecked = false;
-        public bool IsGermanChecked
+        public IEnumerable<BindableLanguage> CheckedLanguages
         {
-            get => _isGermanChecked;
-            set { SetProperty(ref _isGermanChecked, value); }
-        }
+            get
+            {
+                if (Languages == null)
+                    return null;
 
-        bool _isSpanishChecked = false;
-        public bool IsSpanishChecked
-        {
-            get => _isSpanishChecked;
-            set { SetProperty(ref _isSpanishChecked, value); }
-        }
-
-        bool _isChineseChecked = false;
-        public bool IsChineseChecked
-        {
-            get => _isChineseChecked;
-            set { SetProperty(ref _isChineseChecked, value); }
-        }
-
-        bool _isRussianChecked = false;
-        public bool IsRussianChecked
-        {
-            get => _isRussianChecked;
-            set { SetProperty(ref _isRussianChecked, value); }
-        }
-
-        bool _isPortugueseChecked = false;
-        public bool IsPortugueseChecked
-        {
-            get => _isPortugueseChecked;
-            set { SetProperty(ref _isPortugueseChecked, value); }
+                return Languages.Where(item => item.IsSelected);
+            }
         }
 
         IEnumerable<BindableComponentNamespaceGroup> _componentNamespaceGroups;
@@ -143,7 +123,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 SetProperty(ref _componentNamespaceGroups, value);
             }
         }
-        //Inserire vincolo che quando si seleziona la root, tutti i figli vengono selezionati
+
         public IEnumerable<BindableComponentNamespaceGroup> CheckedComponentNamespaceGroups
         {
             get
@@ -151,7 +131,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 if (ComponentNamespaceGroups == null)
                     return null;
 
-                return ComponentNamespaceGroups.Where(item => item.IsSelected);
+                return ComponentNamespaceGroups.Where(item => !item.IsSelected.HasValue && item.IsSelected == true);
 
             }
         }
@@ -174,8 +154,14 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 if(!IsExportModeFull)
                 {
                     ExportDbFilters = new ExportDbFilters
-                    {                      
-                        Languages = GetSelectedLanguages(),//TODO
+                    {
+                        Languages = CheckedLanguages.Select( bindablelanguage => new Language
+                        {
+                            Name = bindablelanguage.Name,
+                            Description = bindablelanguage.Description,
+                            Id = bindablelanguage.Id,
+                            IsoCoding = bindablelanguage.IsoCoding
+                        }),
                         ComponentNamespaceGroups = CheckedComponentNamespaceGroups.Select(componentNamespace => new ComponentNamespaceGroup<ComponentNamespace, InternalNamespace>
                         {
                             ComponentNamespace = new ComponentNamespace { Description = componentNamespace.ComponentNamespace.Description },
@@ -225,6 +211,26 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 RaiseRequestClose(new DialogResult(ButtonResult.Cancel));
             });
 
+        private DelegateCommand _selectAllComponentsCommand;
+        public DelegateCommand SelectAllComponentsCommand =>
+            _selectAllComponentsCommand ??= new DelegateCommand(() =>
+           {
+               foreach (BindableComponentNamespaceGroup bindableComponentNamespaceGroup in ComponentNamespaceGroups)
+               {
+                   bindableComponentNamespaceGroup.IsSelected = IsSelectAllComponentsChecked;
+               }
+           });
+
+        private DelegateCommand _selectAllLanguagesCommand;
+        public DelegateCommand SelectAllLanguagesCommand =>
+            _selectAllLanguagesCommand ??= new DelegateCommand(() =>
+            {
+                foreach (BindableLanguage bindableLanguage in Languages)
+                {
+                    bindableLanguage.IsSelected = IsSelectAllLanguagesChecked;
+                }
+            });
+
         #endregion
 
         #region IDialogAware Interface
@@ -249,7 +255,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             try
             {
                 Busy = true;
-                ComponentNamespaceGroups = await _exportDbFiltersService.GetAllComponentNamespaceGroupsAsync();
+                ComponentNamespaceGroups = new ObservableCollection<BindableComponentNamespaceGroup>(await _exportDbFiltersService.GetAllComponentNamespaceGroupsAsync());
+                Languages = await _exportDbFiltersService.GetLanguagesAsync();
             }
             catch (Exception e)
             {
@@ -286,32 +293,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         #endregion
 
         #region Private Functions
-        //TODO: Lista linguaggi con Binding
-        private List<Language> GetSelectedLanguages()
-        {
-            var languages = new List<Language>();
-
-            //if (IsEnglishChecked)
-            //    languages.Add(SharedConstants.LANGUAGE_EN);
-            //if (IsFrenchChecked)
-            //    languages.Add(SharedConstants.LANGUAGE_FR);
-            //if (IsItalianChecked)
-            //    languages.Add(SharedConstants.LANGUAGE_IT);
-            //if (IsGermanChecked)
-            //    languages.Add(SharedConstants.LANGUAGE_DE);
-            //if (IsSpanishChecked)
-            //    languages.Add(SharedConstants.LANGUAGE_ES);
-            //if (IsChineseChecked)
-            //    languages.Add(SharedConstants.LANGUAGE_ZH);
-            //if (IsRussianChecked)
-            //    languages.Add(SharedConstants.LANGUAGE_RU);
-            //if (IsPortugueseChecked)
-            //    languages.Add(SharedConstants.LANGUAGE_PT);
-
-            languages.Add(new Language { Description = "English", IsoCoding = "en" });
-
-            return languages;
-        }
 
         private static string ChooseFilePathToDownloadXml()
         {
@@ -328,7 +309,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             return saveDialog.FileName;
         }
 
-        private bool CanExport()
+        private bool CanExport()//TODO
         {
             if (IsExportModeFull || ExportDbFilters == null)
                 return true;

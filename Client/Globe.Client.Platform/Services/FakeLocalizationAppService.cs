@@ -83,6 +83,8 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.No_Filters), "Nessun filtro");
             _italian.Add(nameof(LanguageKeys.Filter_by_Context), "Filtro per contesto");
             _italian.Add(nameof(LanguageKeys.Filter_by_String_Type), "Filtro per contesto");
+            _italian.Add(nameof(LanguageKeys.Select_all_languages), "Seleziona tutte le lingue");
+            _italian.Add(nameof(LanguageKeys.Select_all_components), "Seleziona tutti i componenti");
 
             _italian.Add(nameof(LanguageKeys.Add_selected_item), "Aggiungi la selezione");
             _italian.Add(nameof(LanguageKeys.Add_selected_group), "Aggiungi il gruppo");
@@ -171,6 +173,8 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.No_Filters), "No Filters");
             _english.Add(nameof(LanguageKeys.Filter_by_Context), "Filter by Context");
             _english.Add(nameof(LanguageKeys.Filter_by_String_Type), "Filter by String Type");
+            _english.Add(nameof(LanguageKeys.Select_all_languages), "Select all languages");
+            _english.Add(nameof(LanguageKeys.Select_all_components), "Select all components");
 
             _english.Add(nameof(LanguageKeys.Add_selected_item), "Add selected item");
             _english.Add(nameof(LanguageKeys.Add_selected_group), "Add the group");

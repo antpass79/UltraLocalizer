@@ -22,6 +22,8 @@
         public readonly static string Add_all_items = nameof(Add_all_items);
         public readonly static string Remove_all_items = nameof(Remove_all_items);
         public readonly static string Remove_the_selection = nameof(Remove_the_selection);
+        public readonly static string Select_all_languages = nameof(Select_all_languages);
+        public readonly static string Select_all_components = nameof(Select_all_components);
 
         public readonly static string English = nameof(English);
         public readonly static string French = nameof(French);

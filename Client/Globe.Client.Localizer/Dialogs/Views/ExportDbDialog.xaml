@@ -51,24 +51,51 @@
                              
                 <controls:LocGrid MaxHeight="500" Grid.Row="3" Grid.ColumnSpan="2" DockPanel.Dock="Top" Margin="5,0,5,0" Style="{StaticResource SectionPanel}" Visibility="{Binding ShowFilters, Converter={StaticResource BooleanToVisibilityConverter}}">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="8*"/>
+                        <RowDefinition Height="92*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="20*"/>
                         <ColumnDefinition Width="80*"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="0" Grid.Column="0" Background="Transparent">
-                        <controls:LocCheckBox x:Name="en" Content="{Binding Localize[English]}" IsChecked="{Binding IsEnglishChecked}"/>
-                        <controls:LocCheckBox x:Name="fr" Content="{Binding Localize[French]}" IsChecked="{Binding IsFrenchChecked}"/>
-                        <controls:LocCheckBox x:Name="it" Content="{Binding Localize[Italian]}" IsChecked="{Binding IsItalianChecked}"/>
-                        <controls:LocCheckBox x:Name="de" Content="{Binding Localize[German]}" IsChecked="{Binding IsGermanChecked}"/>
-                        <controls:LocCheckBox x:Name="es" Content="{Binding Localize[Spanish]}" IsChecked="{Binding IsSpanishChecked}"/>
-                        <controls:LocCheckBox x:Name="zh" Content="{Binding Localize[Chinese]}" IsChecked="{Binding IsChineseChecked}"/>
-                        <controls:LocCheckBox x:Name="ru" Content="{Binding Localize[Russian]}" IsChecked="{Binding IsRussianChecked}"/>
-                        <controls:LocCheckBox x:Name="pt" Content="{Binding Localize[Portuguese]}" IsChecked="{Binding IsPortugueseChecked}"/>
-                    </StackPanel>
 
-                    <controls:LocTreeView Grid.Column="1" Grid.Row="0" ItemsSource="{Binding ComponentNamespaceGroups}" HorizontalContentAlignment="Stretch" BorderThickness="0">
+                    <controls:LocCheckBox Grid.Row="0"
+                                          Grid.Column="0"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Right"
+                                          IsThreeState="false"
+                                          Content="{Binding Localize[Select_all_languages]}"
+                                          IsChecked="{Binding IsSelectAllLanguagesChecked}"
+                                          Command="{Binding SelectAllLanguagesCommand}"/>
+
+                    <controls:LocCheckBox Grid.Row="0"
+                                          Grid.Column="1"
+                                          VerticalAlignment="Center"
+                                          HorizontalAlignment="Right"
+                                          IsThreeState="false"
+                                          Content="{Binding Localize[Select_all_components]}"
+                                          IsChecked="{Binding IsSelectAllComponentsChecked}"
+                                          Command="{Binding SelectAllComponentsCommand}"/>
+
+
+                    <ListBox Grid.Row="1" Grid.Column="0" ItemsSource="{Binding Languages}"
+                             SelectionMode="Multiple"
+                             Background="Transparent">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Vertical" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <CheckBox Content="{Binding Name}"
+                                          Margin="3"
+                                          IsChecked="{Binding IsSelected}"/>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ListBox>
+
+                    <controls:LocTreeView Grid.Column="1" Grid.Row="1" ItemsSource="{Binding ComponentNamespaceGroups}" HorizontalContentAlignment="Stretch" BorderThickness="0,1,1,1">
                         <controls:LocTreeView.ItemContainerStyle>
                             <Style TargetType="{x:Type TreeViewItem}" BasedOn="{StaticResource StretchedTreeViewItem}">
                                 <Style.Triggers>
@@ -86,6 +113,7 @@
                                     <controls:LocTextBlock Text="{Binding Count}" Foreground="Blue" />
                                     <controls:LocTextBlock Text="]" Foreground="Blue" />
                                     <controls:LocCheckBox VerticalAlignment="Center" 
+                                                          IsThreeState="true"
                                                           IsChecked="{Binding IsSelected}"/>
                                 </DockPanel>
                             </HierarchicalDataTemplate>
@@ -93,6 +121,7 @@
                                 <DockPanel Name="leafItem" Background="Transparent">
                                     <controls:LocTextBlock Text="{Binding Description}" />
                                     <controls:LocCheckBox VerticalAlignment="Center"
+                                                          IsThreeState="true"
                                                           IsChecked="{Binding IsSelected}"/>
                                 </DockPanel>
                             </DataTemplate>

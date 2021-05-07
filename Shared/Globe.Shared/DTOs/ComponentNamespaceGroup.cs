@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Globe.Shared.DTOs
 {
@@ -8,7 +9,20 @@ namespace Globe.Shared.DTOs
     {
         public TComponent ComponentNamespace { get; set; }
 
-        public IEnumerable<TInternal> InternalNamespaces { get; set; }
+        IEnumerable<TInternal> _internalNamespaces;
+        public IEnumerable<TInternal> InternalNamespaces 
+        {
+            get { return _internalNamespaces; }
+            set 
+            {
+                _internalNamespaces = CreateInternalNamespacesEnumerable(value); 
+            } 
+        }
+
+        virtual protected IEnumerable<TInternal> CreateInternalNamespacesEnumerable(IEnumerable<TInternal> internalNamespaces)
+        {
+            return internalNamespaces;
+        }
     }
     public class ComponentNamespaceGroup : ComponentNamespaceGroup<ComponentNamespace, InternalNamespace>
     {

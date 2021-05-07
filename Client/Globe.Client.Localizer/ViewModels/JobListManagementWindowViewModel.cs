@@ -149,7 +149,7 @@ namespace Globe.Client.Localizer.ViewModels
             get
             {
                 if (SelectedInternalNamespace == null)
-                    return ComponentNamespaceGroups.SingleOrDefault(item => item.IsSelected);
+                    return ComponentNamespaceGroups.SingleOrDefault(item => item.IsSelected == true);
 
                 return ComponentNamespaceGroups
                     .SingleOrDefault(item => item.InternalNamespaces.Contains(SelectedInternalNamespace));
