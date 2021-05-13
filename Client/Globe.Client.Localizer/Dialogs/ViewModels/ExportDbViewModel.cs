@@ -131,7 +131,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 if (ComponentNamespaceGroups == null)
                     return null;
 
-                return ComponentNamespaceGroups.Where(item => !item.IsSelected.HasValue && item.IsSelected == true);
+                return ComponentNamespaceGroups.Where(item => !item.IsSelected.HasValue || item.IsSelected == true);
 
             }
         }
