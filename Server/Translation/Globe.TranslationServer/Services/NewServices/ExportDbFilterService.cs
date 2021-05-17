@@ -1,6 +1,9 @@
 ﻿using Globe.BusinessLogic.Repositories;
 using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,12 +11,12 @@ namespace Globe.TranslationServer.Services.NewServices
 {
     public class ExportDbFilterService : IExportDbFilterService
     {
-        private readonly IReadRepository<VLocalization> _localizationViewRepository;
+        private readonly IReadRepository<VConceptStringToContext> _conceptStringToContextRepository;
         private readonly IReadRepository<LocLanguage> _languageRepository;
 
-        public ExportDbFilterService(IReadRepository<VLocalization> localizationViewRepository, IReadRepository<LocLanguage> languageRepository)
+        public ExportDbFilterService(IReadRepository<VConceptStringToContext> conceptStringToContextRepository, IReadRepository<LocLanguage> languageRepository)
         {
-            _localizationViewRepository = localizationViewRepository;
+            _conceptStringToContextRepository = conceptStringToContextRepository;
             _languageRepository = languageRepository;
         }
 
@@ -23,24 +26,43 @@ namespace Globe.TranslationServer.Services.NewServices
 
             if(exportDbFilters == null)
             {
-                componentNamespaceGroups = _localizationViewRepository
-                .Get()
-                .GroupBy(item => item.ConceptComponentNamespace)
-                .Select(group => new ComponentNamespaceGroup 
-                { 
-                    ComponentNamespace = new ComponentNamespace
-                    {
-                        Description = group.Key
-                    },
-                    InternalNamespaces = group.Select(item => new InternalNamespace
-                    {
-                        Description = item.ConceptInternalNamespace
-                    })
-                });               
+                var items = _conceptStringToContextRepository
+                .Query(item =>
+                    item.StringId != null &&
+                    item.ComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD)
+                .AsNoTracking()
+                .ToList()
+                .Select(item =>
+                    new Tuple<string, string>(item.ComponentNamespace, item.InternalNamespace));
+
+                componentNamespaceGroups = BuildGroups(items);
             }
             else
             {
                 componentNamespaceGroups = exportDbFilters.ComponentNamespaceGroups;
+            }
+
+            return componentNamespaceGroups;
+        }
+
+        private IEnumerable<ComponentNamespaceGroup<ComponentNamespace, InternalNamespace>> BuildGroups(IEnumerable<Tuple<string, string>> items)
+        {
+            var componentNamespaceGroups = new List<ComponentNamespaceGroup<ComponentNamespace, InternalNamespace>>();
+
+            var groups = items
+                .GroupBy(item => item.Item1)
+                .OrderBy(item => item.Key);
+
+            foreach (var group in groups)
+            {
+                componentNamespaceGroups.Add(new ComponentNamespaceGroup<ComponentNamespace, InternalNamespace>
+                {
+                    ComponentNamespace = new ComponentNamespace { Description = group.Key },
+                    InternalNamespaces = group
+                    .GroupBy(item => item.Item2)
+                    .Select(item => new InternalNamespace { Description = item.Key })
+                    .OrderBy(item => item.Description)
+                });
             }
 
             return componentNamespaceGroups;

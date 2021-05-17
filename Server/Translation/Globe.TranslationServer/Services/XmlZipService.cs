@@ -70,6 +70,7 @@ namespace Globe.TranslationServer.Services
 
         private void CleanOutputFolder(string outputFolder)
         {
+            //TODO: If timeout of HttpRequest occurs, Directory never be cancelled
             try
             {
                 if (Directory.Exists(outputFolder))
