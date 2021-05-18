@@ -7,5 +7,6 @@ namespace Globe.TranslationServer.Services
     public interface IComponentNamespaceGroupService
     {
         Task<IEnumerable<ComponentNamespaceGroup>> GetAllAsync(Language language);
+        Task<IEnumerable<ComponentNamespaceGroup>> GetAllAsync();
     }
 }

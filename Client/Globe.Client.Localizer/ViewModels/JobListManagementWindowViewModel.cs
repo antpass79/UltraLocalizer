@@ -149,7 +149,7 @@ namespace Globe.Client.Localizer.ViewModels
             get
             {
                 if (SelectedInternalNamespace == null)
-                    return ComponentNamespaceGroups.SingleOrDefault(item => item.IsSelected);
+                    return ComponentNamespaceGroups.SingleOrDefault(item => item.IsSelected == true);
 
                 return ComponentNamespaceGroups
                     .SingleOrDefault(item => item.InternalNamespaces.Contains(SelectedInternalNamespace));
@@ -356,7 +356,7 @@ namespace Globe.Client.Localizer.ViewModels
                 }
             });
 
-        async protected override Task OnLoad(object data = null)
+        async protected override Task OnLoad(string fromView, object data)
         {
             await InitializeFilters();
         }

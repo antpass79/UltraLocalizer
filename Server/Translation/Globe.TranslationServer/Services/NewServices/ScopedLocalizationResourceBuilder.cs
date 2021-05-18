@@ -1,4 +1,5 @@
-﻿using Globe.Shared.Utilities;
+﻿using Globe.Shared.DTOs;
+using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Utilities;
@@ -15,8 +16,8 @@ namespace Globe.TranslationServer.Services.NewServices
 
         private readonly DbContextOptions<LocalizationContext> _dbContextOptions;
 
-        VLocalization _component;
-        LocLanguage _language;
+        ComponentNamespaceGroup<ComponentNamespace, InternalNamespace> _componentNamespaceGroup;
+        Language _language;
         bool _debugMode = true;
 
         #endregion
@@ -35,13 +36,13 @@ namespace Globe.TranslationServer.Services.NewServices
 
         #region Public Functions
 
-        public ILocalizationResourceBuilder Component(VLocalization component)
+        public ILocalizationResourceBuilder ComponentNamespaceGroup(ComponentNamespaceGroup<ComponentNamespace,InternalNamespace> componentNamespaceGroup)
         {
-            _component = component;
+            _componentNamespaceGroup = componentNamespaceGroup;
             return this;
         }
 
-        public ILocalizationResourceBuilder Language(LocLanguage language)
+        public ILocalizationResourceBuilder Language(Language language)
         {
             _language = language;
             return this;
@@ -57,16 +58,16 @@ namespace Globe.TranslationServer.Services.NewServices
         {
             LocalizationResource localizationResource = new LocalizationResource
             {
-                ComponentNamespace = _component.ConceptComponentNamespace,
-                Language = _language.Isocoding,
+                ComponentNamespace = _componentNamespaceGroup.ComponentNamespace.Description,
+                Language = _language.IsoCoding,
                 Version = (decimal)1.0
             };
 
-            IEnumerable<VTranslatedConcept> translatedConcepts = GetTranslatedConcepts(_component.ConceptComponentNamespace, _language.Isocoding);
+            IEnumerable<VTranslatedConcept> translatedConcepts = GetTranslatedConcepts(_componentNamespaceGroup, _language);
             
-            if(_language.Isocoding != SharedConstants.LANGUAGE_EN)
+            if(_language.IsoCoding != SharedConstants.LANGUAGE_EN)
             {
-                IEnumerable<VStringsToContext> englishTranslatedConcepts = GetEnglishTranslatedConceptsForOtherLanguage(_component.ConceptComponentNamespace, _language.Isocoding);
+                IEnumerable<VStringsToContext> englishTranslatedConcepts = GetEnglishTranslatedConceptsForOtherLanguage(_componentNamespaceGroup.ComponentNamespace.Description, _language.IsoCoding);
 
                 if(englishTranslatedConcepts.Count() > 0)
                 {
@@ -76,7 +77,7 @@ namespace Globe.TranslationServer.Services.NewServices
                                         ConceptComponentNamespace = item.ComponentNamespace,
                                         ConceptInternalNamespace = item.InternalNamespace,
                                         Context = item.ContextName,
-                                        LanguageIsoCode = _language.Isocoding,
+                                        LanguageIsoCode = _language.IsoCoding,
                                         String = item.String
                                     }));
                 }                         
@@ -133,49 +134,43 @@ namespace Globe.TranslationServer.Services.NewServices
             return concept;
         }
 
-        IEnumerable<VTranslatedConcept> GetTranslatedConcepts(string componentName, string isoCoding)
+        IEnumerable<VTranslatedConcept> GetTranslatedConcepts(ComponentNamespaceGroup<ComponentNamespace, InternalNamespace> componentNamespaceGroup, Language language)
         {
             using var localContext = new LocalizationContext(_dbContextOptions);
-            IEnumerable<VTranslatedConcept> translatedConcepts;
+            IEnumerable<VTranslatedConcept> translatedConcepts = new List<VTranslatedConcept>();
 
-            if (isoCoding == SharedConstants.LANGUAGE_EN)
+            if (language.IsoCoding == SharedConstants.LANGUAGE_EN)
             {
-                translatedConcepts = localContext.VTranslatedConcepts
+                foreach(InternalNamespace internalNamespace in componentNamespaceGroup.InternalNamespaces)
+                {
+                    translatedConcepts = translatedConcepts.Union(localContext.VTranslatedConcepts
                     .Where(item =>
-                        item.ConceptComponentNamespace == componentName &&
-                        item.LanguageIsoCode == SharedConstants.LANGUAGE_EN);
+                        item.ConceptComponentNamespace == componentNamespaceGroup.ComponentNamespace.Description &&
+                        item.ConceptInternalNamespace == internalNamespace.Description && 
+                        item.LanguageIsoCode == SharedConstants.LANGUAGE_EN));
+                }
             }
             else
             {
-                translatedConcepts = localContext.VTranslatedConcepts
+                foreach (InternalNamespace internalNamespace in componentNamespaceGroup.InternalNamespaces)
+                {
+                    translatedConcepts = translatedConcepts.Union(localContext.VTranslatedConcepts
                     .Where(item =>
-                        item.ConceptComponentNamespace == componentName &&
-                        item.LanguageIsoCode == isoCoding &&
+                        item.ConceptComponentNamespace == componentNamespaceGroup.ComponentNamespace.Description &&
+                        item.ConceptInternalNamespace == internalNamespace.Description &&
+                        item.LanguageIsoCode == language.IsoCoding &&
                         (!item.ConceptIgnore.HasValue || !item.ConceptIgnore.Value))
                     .Union(localContext.VTranslatedConcepts
                             .Where(item =>
-                                item.ConceptComponentNamespace == componentName &&
+                                item.ConceptComponentNamespace == componentNamespaceGroup.ComponentNamespace.Description &&
+                                item.ConceptInternalNamespace == internalNamespace.Description &&
                                 item.LanguageIsoCode == SharedConstants.LANGUAGE_EN &&
                                 item.ConceptIgnore.HasValue && item.ConceptIgnore.Value)
-                            );
+                            ));
+                }
             }
 
-            return translatedConcepts
-                //.Select(concept => new DBGlobal
-                //{
-                //    ComponentNamespace = concept.ConceptComponentNamespace,
-                //    ContextName = concept.Context,
-                //    DataString = concept.String,
-                //    InternalNamespace = concept.ConceptInternalNamespace,
-                //    ISOCoding = isoCoding,
-                //    LocalizationID = concept.Concept,
-                //    DatabaseID = concept.StringId,
-                //    //item.IsAcceptable = concept.ConceptAcceptable;
-                //    Concept2ContextID = concept.ConceptId,
-                //    IsToIgnore = concept.ConceptIgnore.HasValue && concept.ConceptIgnore.Value
-                //})
-                .ToList();
-
+            return translatedConcepts.ToList();
 
             // ASK TO LAURA BIGI
             // Replace all localized strings

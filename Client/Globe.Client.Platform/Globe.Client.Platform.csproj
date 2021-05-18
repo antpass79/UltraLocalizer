@@ -22,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Globe.Shared\Globe.Shared.csproj" />
     <ProjectReference Include="..\Globe.Client.Platform.Assets\Globe.Client.Platform.Assets.csproj" />
   </ItemGroup>
 

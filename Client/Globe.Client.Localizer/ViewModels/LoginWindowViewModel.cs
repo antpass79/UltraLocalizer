@@ -79,7 +79,7 @@ namespace Globe.Client.Localizer.ViewModels
                     ClearFields();
                     if (LoginResult.Successful)
                     {
-                        _viewNavigationService.NavigateTo(ViewNames.HOME_VIEW);
+                        _viewNavigationService.NavigateTo(ViewNames.JOBLIST_STATUS_VIEW, ViewNames.LOGIN_VIEW);
                     }
                 }
                 catch(Exception e)

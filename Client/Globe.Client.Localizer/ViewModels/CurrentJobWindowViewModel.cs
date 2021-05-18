@@ -4,7 +4,6 @@ using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.ViewModels;
-using Globe.Client.Platofrm.Events;
 using Globe.Shared.DTOs;
 using Globe.Shared.Services;
 using Globe.Shared.Utilities;
@@ -20,14 +19,6 @@ using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.ViewModels
 {
-    class FiltersUsedBySearching
-    {
-        public Language Language { get; set; }
-        public JobItem JobItem { get; set; }
-        public BindableComponentNamespace ComponentNamespace { get; set; }
-        public BindableInternalNamespace InternalNamespace { get; set; }
-    }
-
     internal class CurrentJobWindowViewModel : LocalizeWindowViewModel
     {
         private readonly IDialogService _dialogService;
@@ -35,7 +26,6 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly INotificationService _notificationService;
         private readonly ICurrentJobFiltersService _currentJobFiltersService;
         private readonly ICurrentJobConceptViewService _currentJobConceptViewService;
-        private readonly IXmlService _xmlService;
         private readonly IVisibilityFiltersService _visibilityFiltersService;
 
         public CurrentJobWindowViewModel(
@@ -47,7 +37,6 @@ namespace Globe.Client.Localizer.ViewModels
             ICurrentJobFiltersService currentJobFiltersService,
             ICurrentJobConceptViewService currentJobConceptViewService,
             ILocalizationAppService localizationAppService,
-            IXmlService xmlService,
             IVisibilityFiltersService visibilityFiltersService)
             : base(identityStore, eventAggregator, localizationAppService)
         {
@@ -56,7 +45,6 @@ namespace Globe.Client.Localizer.ViewModels
             _notificationService = notificationService;
             _currentJobFiltersService = currentJobFiltersService;
             _currentJobConceptViewService = currentJobConceptViewService;
-            _xmlService = xmlService;
             _visibilityFiltersService = visibilityFiltersService;
         }
 
@@ -191,7 +179,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        readonly FiltersUsedBySearching _filtersUsedBySearching = new FiltersUsedBySearching();
+        readonly UsedFiltersBySearching _usedFiltersBySearching = new UsedFiltersBySearching();
         string _filterBy;
         public string FilterBy
         {
@@ -266,7 +254,7 @@ namespace Globe.Client.Localizer.ViewModels
                                 IgnoreTranslation = conceptDetails.IgnoreTranslation
                             }
                         },
-                        { DialogParams.LANGUAGE, _filtersUsedBySearching.Language }
+                        { DialogParams.LANGUAGE, _usedFiltersBySearching.Language }
                     };
 
                     _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, async dialogResult =>
@@ -283,36 +271,6 @@ namespace Globe.Client.Localizer.ViewModels
                 finally
                 {
                     ConceptDetailsBusy = false;
-                }
-            });
-
-        private DelegateCommand _exportToXmlCommand = null;
-        public DelegateCommand ExportToXmlCommand =>
-            _exportToXmlCommand ??= new DelegateCommand(async () =>
-            {
-                var downloadPath = ChooseFilePathToDownloadXml();
-                if (string.IsNullOrWhiteSpace(downloadPath))
-                    return;
-
-                EventAggregator
-                .GetEvent<BackgroundBusyChangedEvent>()
-                .Publish(true);
-
-                try
-                {
-                    await _xmlService.Download(downloadPath);
-                    await _notificationService.NotifyAsync(Localize[LanguageKeys.Information], Localize[LanguageKeys.Download_completed], Platform.Services.Notifications.NotificationLevel.Info);
-                }
-                catch (Exception e)
-                {
-                    _logService.Exception(e);
-                    await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Download_error], Platform.Services.Notifications.NotificationLevel.Error);
-                }
-                finally
-                {
-                    EventAggregator
-                    .GetEvent<BackgroundBusyChangedEvent>()
-                    .Publish(false);
                 }
             });
 
@@ -340,7 +298,7 @@ namespace Globe.Client.Localizer.ViewModels
                 this.FiltersBusy = false;
             });
 
-        async protected override Task OnLoad(object data = null)
+        async protected override Task OnLoad(string fromView, object data)
         {
             await InitializeFilters(data);
         }
@@ -351,7 +309,7 @@ namespace Globe.Client.Localizer.ViewModels
             return Task.CompletedTask;
         }
 
-        async private Task InitializeFilters(object data = null)
+        async private Task InitializeFilters(object data)
         {
             this.FiltersBusy = true;
 
@@ -418,10 +376,10 @@ namespace Globe.Client.Localizer.ViewModels
                 ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
                     new JobListConceptSearch
                     {
-                        ComponentNamespace = _filtersUsedBySearching.ComponentNamespace.Description,
-                        InternalNamespace = _filtersUsedBySearching.InternalNamespace.Description,
-                        LanguageId = _filtersUsedBySearching.Language.Id,
-                        JobListId = _filtersUsedBySearching.JobItem.Id
+                        ComponentNamespace = _usedFiltersBySearching.ComponentNamespace.Description,
+                        InternalNamespace = _usedFiltersBySearching.InternalNamespace.Description,
+                        LanguageId = _usedFiltersBySearching.Language.Id,
+                        JobListId = _usedFiltersBySearching.JobItem.Id
                     });
 
                 ItemCount = ConceptViews.Count();
@@ -447,29 +405,14 @@ namespace Globe.Client.Localizer.ViewModels
             ItemCount = 0;
         }
 
-        private static string ChooseFilePathToDownloadXml()
-        {
-            Microsoft.Win32.SaveFileDialog saveDialog = new Microsoft.Win32.SaveFileDialog
-            {
-                FileName = "xml",
-                DefaultExt = ".zip",
-                Filter = "Zip documents (.zip)|*.zip"
-            };
-
-            if (saveDialog.ShowDialog() != true)
-                return null;
-
-            return saveDialog.FileName;
-        }
-
         private void UpdateFiltersUsedBySearching()
         {
-            _filtersUsedBySearching.Language = SelectedLanguage;
-            _filtersUsedBySearching.JobItem = SelectedJobItem;
-            _filtersUsedBySearching.ComponentNamespace = SelectedComponentNamespace;
-            _filtersUsedBySearching.InternalNamespace = SelectedInternalNamespace;
+            _usedFiltersBySearching.Language = SelectedLanguage;
+            _usedFiltersBySearching.JobItem = SelectedJobItem;
+            _usedFiltersBySearching.ComponentNamespace = SelectedComponentNamespace;
+            _usedFiltersBySearching.InternalNamespace = SelectedInternalNamespace;
 
-            FilterBy = $"{Localize["FilterBy"]} {_filtersUsedBySearching?.Language?.Name}, {Localize["JobListName"]}: {_filtersUsedBySearching?.JobItem?.Name}";
+            FilterBy = $"{Localize["FilterBy"]} {_usedFiltersBySearching?.Language?.Name}, {Localize["JobListName"]}: {_usedFiltersBySearching?.JobItem?.Name}";
         }
     }
 }
