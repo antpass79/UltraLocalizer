@@ -9,6 +9,7 @@
   <PropertyGroup>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <StartupObject>Globe.Client.Localizer.App</StartupObject>
+    <ApplicationIcon>Localizator.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -58,6 +59,9 @@
     </Page>
     <Page Update="Dialogs\Views\MessageDialog.xaml">
       <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\Views\ExportDbDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
     <Page Update="Views\LoginWindowToolBar.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>

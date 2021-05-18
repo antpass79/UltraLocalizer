@@ -1,12 +1,12 @@
-﻿using Globe.TranslationServer.Entities;
+﻿using Globe.Shared.DTOs;
 using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 
 namespace Globe.TranslationServer.Services
 {
     public interface ILocalizationResourceBuilder
     {
-        ILocalizationResourceBuilder Component(VLocalization component);
-        ILocalizationResourceBuilder Language(LocLanguage language);
+        ILocalizationResourceBuilder ComponentNamespaceGroup(ComponentNamespaceGroup<ComponentNamespace,InternalNamespace> componentNamespaceGroup);
+        ILocalizationResourceBuilder Language(Language language);
         ILocalizationResourceBuilder DebugMode(bool debugMode);
 
         LocalizationResource Build();

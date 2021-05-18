@@ -1,54 +1,44 @@
-﻿using Globe.BusinessLogic.Repositories;
+﻿using Globe.Shared.DTOs;
 using Globe.Shared.Services;
 using Globe.Shared.Utilities;
-using Globe.TranslationServer.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Concurrent;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
     public class DBToXmlService : IDBToXmlService
     {
-        private readonly IReadRepository<VLocalization> _localizationViewRepository;
-        private readonly IReadRepository<LocLanguage> _languageRepository;
+        private readonly IExportDbFilterService _exportDbFilterService;
         private readonly IServiceScopeFactory _serviceScopeFactory;
         private readonly ILogService _logService;
 
         public DBToXmlService(
-            IReadRepository<VLocalization> localizationViewRepository,
-            IReadRepository<LocLanguage> languageRepository,
+            IExportDbFilterService exportDbFilterService,
             IServiceScopeFactory serviceScopeFactory,
             ILogService logService)
         {
-            _localizationViewRepository = localizationViewRepository;
-            _languageRepository = languageRepository;
+            _exportDbFilterService = exportDbFilterService;
             _serviceScopeFactory = serviceScopeFactory;
             _logService = logService;
         }
 
-        async public Task Generate(string outputFolder, bool debugMode = true)
+        async public Task Generate(string outputFolder, ExportDbFilters exportDbFilters, bool debugMode = true)
         {
-            var components = _localizationViewRepository
-                .Get()
-                .GroupBy(item => item.ConceptComponentNamespace)
-                .Select(item => item.First())
-                .OrderBy(item => item.ConceptComponentNamespace);
-
-            var languages = _languageRepository.Get();
+            var componentNamespaceGroups = _exportDbFilterService.GetComponentNamespaceGroups(exportDbFilters);
+            var languages = _exportDbFilterService.GetLanguages(exportDbFilters);
 
             var exceptions = new ConcurrentQueue<Exception>();
 
-            Parallel.ForEach(components, (component) =>
+            Parallel.ForEach(componentNamespaceGroups, (componentNamespaceGroup) =>
             {
                 try
                 {
                     if (
-                    component.ConceptComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_ALL &&
-                    component.ConceptComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD)
+                    componentNamespaceGroup.ComponentNamespace.Description != SharedConstants.COMPONENT_NAMESPACE_ALL &&
+                    componentNamespaceGroup.ComponentNamespace.Description != SharedConstants.COMPONENT_NAMESPACE_OLD)
                     {
                         Parallel.ForEach(languages, (language) =>
                         {
@@ -56,7 +46,7 @@ namespace Globe.TranslationServer.Services.NewServices
                             {
                                 using var scope = _serviceScopeFactory.CreateScope();
                                 var localizationResource = scope.ServiceProvider.GetRequiredService<ILocalizationResourceBuilder>()
-                                    .Component(component)
+                                    .ComponentNamespaceGroup(componentNamespaceGroup)
                                     .Language(language)
                                     .DebugMode(debugMode)
                                     .Build();

@@ -1,9 +1,10 @@
-﻿using System.Threading.Tasks;
+﻿using Globe.Shared.DTOs;
+using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services
 {
     public interface IDBToXmlService
     {
-        Task Generate(string outputFolder, bool debugMode = true);
+        Task Generate(string outputFolder, ExportDbFilters exportDbFilters, bool debugMode = true);
     }
 }

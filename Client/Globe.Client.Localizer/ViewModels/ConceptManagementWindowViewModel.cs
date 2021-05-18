@@ -1,4 +1,5 @@
-﻿using Globe.Client.Localizer.Models;
+﻿using Globe.Client.Localizer.Dialogs;
+using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
 using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
@@ -8,6 +9,7 @@ using Globe.Shared.Services;
 using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
+using Prism.Services.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +24,7 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly IConceptManagementFiltersService _conceptManagementFiltersService;
         private readonly IConceptManagementViewService _conceptManagementViewService;
         private readonly IVisibilityFiltersService _visibilityFiltersService;
+        private readonly IDialogService _dialogService;
 
         public ConceptManagementWindowViewModel(
             IIdentityStore identityStore,
@@ -31,7 +34,8 @@ namespace Globe.Client.Localizer.ViewModels
             IConceptManagementFiltersService conceptManagementFiltersService,
             IConceptManagementViewService conceptManagementViewService,
             ILocalizationAppService localizationAppService,
-            IVisibilityFiltersService visibilityFiltersService)
+            IVisibilityFiltersService visibilityFiltersService,
+            IDialogService dialogService)
             : base(identityStore, eventAggregator, localizationAppService)
         {
             _logService = logService;
@@ -39,6 +43,7 @@ namespace Globe.Client.Localizer.ViewModels
             _conceptManagementFiltersService = conceptManagementFiltersService;
             _conceptManagementViewService = conceptManagementViewService;
             _visibilityFiltersService = visibilityFiltersService;
+            _dialogService = dialogService;
         }
 
         bool _conceptDetailsBusy;
@@ -202,6 +207,13 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
+        private DelegateCommand _exportToXmlCommand = null;
+        public DelegateCommand ExportToXmlCommand =>
+            _exportToXmlCommand ??= new DelegateCommand(() =>
+            {
+                _dialogService.ShowDialog(DialogNames.EXPORT_DB);          
+            });
+
         private DelegateCommand _searchCommand = null;
         public DelegateCommand SearchCommand =>
             _searchCommand ?? (_searchCommand = new DelegateCommand(async () =>
@@ -221,7 +233,7 @@ namespace Globe.Client.Localizer.ViewModels
                 this.FiltersBusy = false;
             }));
 
-        async protected override Task OnLoad(object data = null)
+        async protected override Task OnLoad(string fromView, object data)
         {
             await InitializeFilters();
         }

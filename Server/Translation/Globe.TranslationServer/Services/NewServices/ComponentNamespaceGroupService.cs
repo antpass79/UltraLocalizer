@@ -2,7 +2,6 @@
 using Globe.Shared.DTOs;
 using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -52,6 +51,20 @@ namespace Globe.TranslationServer.Services.NewServices
             }
         }
 
+        async public Task<IEnumerable<ComponentNamespaceGroup>> GetAllAsync()
+        {
+            try
+            {
+                var result = GetAllGroups();
+                    
+                return await Task.FromResult(result);
+            }
+            catch (Exception e)
+            {
+                throw new InvalidOperationException($"Error during ComponentNamespaceGroupService.GetAllAsync(), {e.Message}");
+            }
+        }
+
         #endregion
 
         #region Private Functions
@@ -91,6 +104,22 @@ namespace Globe.TranslationServer.Services.NewServices
                 .ToList()
                 .Select(item =>
                     new Tuple<string, string>(item.ComponentNamespace, item.InternalNamespace));
+
+            return BuildGroups(items);
+        }
+
+        IEnumerable<ComponentNamespaceGroup> GetAllGroups()
+        {
+            var items = _conceptStringToContextRepository
+                .Query(item =>
+                    item.StringId != null &&
+                    item.ComponentNamespace != null &&
+                    item.ComponentNamespace != SharedConstants.COMPONENT_NAMESPACE_OLD)
+                .AsNoTracking()
+                .Select(item =>
+                    new Tuple<string, string>(item.ComponentNamespace, item.InternalNamespace))
+                .Distinct()
+                .ToList();
 
             return BuildGroups(items);
         }

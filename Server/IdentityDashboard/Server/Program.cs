@@ -31,13 +31,16 @@ namespace Globe.Identity.AdministrativeDashboard.Server
                 {
                     webBuilder
                     .UseStartup<Startup>()
-                    .UseKestrel(options =>
+                    .UseKestrel((context, options) =>
                     {
-                        options.Listen(IPAddress.Any, 6001, listenOptions =>
-                        {
-                            var folder = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Certificate");
-                            listenOptions.UseHttps(Path.Combine(folder, "identity.pfx"), "identity");
-                        });
+                        options
+                        .Configure(context.Configuration.GetSection("Kestrel"))
+                        .Endpoint("https", listenOptions => listenOptions.HttpsOptions.SslProtocols = System.Security.Authentication.SslProtocols.Tls12);
+                        //options.Listen(IPAddress.Any, 6001, listenOptions =>
+                        //{
+                        //    var folder = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Certificate");
+                        //    listenOptions.UseHttps(Path.Combine(folder, "identity.pfx"), "identity");
+                        //});
                     });
                 });
     }

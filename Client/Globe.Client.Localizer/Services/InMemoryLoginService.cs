@@ -53,7 +53,6 @@ namespace Globe.Client.Localizer.Services
                     Error = "Invalid Credentials",
                     Token = string.Empty
                 });
-
             }
 
             await _globeDataStorage.StoreAsync(new GlobeLocalStorageData

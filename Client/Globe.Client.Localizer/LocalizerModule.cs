@@ -1,7 +1,6 @@
 ﻿using Globe.Client.Localizer.Dialogs.ViewModels;
 using Globe.Client.Localizer.Dialogs.Views;
 using Globe.Client.Localizer.Services;
-using Globe.Client.Localizer.ViewModels;
 using Globe.Client.Localizer.Views;
 using Globe.Client.Platform;
 using Globe.Client.Platform.Services;
@@ -56,9 +55,11 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IJobListManagementFiltersService, JobListManagementFiltersService>();
             containerRegistry.Register<IJobListManagementService, JobListManagementService>();
             containerRegistry.RegisterSingleton<IPreviewStyleService, RemotePreviewStyleService>();
+            containerRegistry.Register<IExportDbFiltersService, ExportDbFiltersService>();
 
             containerRegistry.RegisterDialog<StringEditorDialog, StringEditorDialogViewModel>();
             containerRegistry.RegisterDialog<SaveJoblistDialog, SaveJoblistViewModel>();
+            containerRegistry.RegisterDialog<ExportDbDialog, ExportDbViewModel>();
             containerRegistry.RegisterDialog<MessageDialog, MessageDialogViewModel>();
         }
 
