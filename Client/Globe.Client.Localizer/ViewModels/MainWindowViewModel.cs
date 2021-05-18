@@ -89,13 +89,13 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 new MenuOption
                 {
-                    Title = Localize[LanguageKeys.Page_Home],
-                    TitleKey = LanguageKeys.Page_Home,
-                    IconName = "home",
-                    IsSelected = true,
-                    Roles = Roles.All,
-                    AlwaysVisible = true,
-                    ViewName = ViewNames.HOME_VIEW
+                    Title = Localize[LanguageKeys.Page_JobList_Status],
+                    TitleKey = LanguageKeys.Page_JobList_Status,
+                    IconName = "joblist_status",
+                    IsSelected = false,
+                    Roles = Roles.Group_All,
+                    AlwaysVisible = false,
+                    ViewName = ViewNames.JOBLIST_STATUS_VIEW
                 },
                 new MenuOption
                 {
@@ -126,16 +126,6 @@ namespace Globe.Client.Localizer.ViewModels
                     Roles = Roles.Group_All,
                     AlwaysVisible = false,
                     ViewName = ViewNames.CONCEPT_MANAGEMENT_VIEW
-                },
-                new MenuOption
-                {
-                    Title = Localize[LanguageKeys.Page_JobList_Status],
-                    TitleKey = LanguageKeys.Page_JobList_Status,
-                    IconName = "joblist_status",
-                    IsSelected = false,
-                    Roles = Roles.Group_All,
-                    AlwaysVisible = false,
-                    ViewName = ViewNames.JOBLIST_STATUS_VIEW
                 }
                 //new MenuOption
                 //{

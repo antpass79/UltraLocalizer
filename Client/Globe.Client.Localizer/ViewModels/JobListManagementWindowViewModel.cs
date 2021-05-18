@@ -356,7 +356,7 @@ namespace Globe.Client.Localizer.ViewModels
                 }
             });
 
-        async protected override Task OnLoad(object data = null)
+        async protected override Task OnLoad(string fromView, object data)
         {
             await InitializeFilters();
         }

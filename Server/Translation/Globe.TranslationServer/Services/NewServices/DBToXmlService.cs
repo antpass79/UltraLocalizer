@@ -1,34 +1,25 @@
-﻿using Globe.BusinessLogic.Repositories;
-using Globe.Shared.DTOs;
+﻿using Globe.Shared.DTOs;
 using Globe.Shared.Services;
 using Globe.Shared.Utilities;
-using Globe.TranslationServer.Entities;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Concurrent;
 using System.IO;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Services.NewServices
 {
     public class DBToXmlService : IDBToXmlService
     {
-        private readonly IReadRepository<VLocalization> _localizationViewRepository;
-        private readonly IReadRepository<LocLanguage> _languageRepository;
         private readonly IExportDbFilterService _exportDbFilterService;
         private readonly IServiceScopeFactory _serviceScopeFactory;
         private readonly ILogService _logService;
 
         public DBToXmlService(
-            IReadRepository<VLocalization> localizationViewRepository,
-            IReadRepository<LocLanguage> languageRepository,
             IExportDbFilterService exportDbFilterService,
             IServiceScopeFactory serviceScopeFactory,
             ILogService logService)
         {
-            _localizationViewRepository = localizationViewRepository;
-            _languageRepository = languageRepository;
             _exportDbFilterService = exportDbFilterService;
             _serviceScopeFactory = serviceScopeFactory;
             _logService = logService;

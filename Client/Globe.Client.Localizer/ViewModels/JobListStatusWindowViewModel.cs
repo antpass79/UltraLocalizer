@@ -258,9 +258,9 @@ namespace Globe.Client.Localizer.ViewModels
                 }
             });
 
-        async protected override Task OnLoad(object data = null)
+        async protected override Task OnLoad(string fromView, object data)
         {
-            await InitializeFilters();
+            await InitializeFilters(fromView, data);
         }
 
         protected override Task OnUnload()
@@ -269,7 +269,7 @@ namespace Globe.Client.Localizer.ViewModels
             return Task.CompletedTask;
         }
 
-        async private Task InitializeFilters()
+        async private Task InitializeFilters(string fromView, object data)
         {
             this.FiltersBusy = true;
 
@@ -286,6 +286,12 @@ namespace Globe.Client.Localizer.ViewModels
                 SelectedApplicationUser = this.ApplicationUsers.FirstOrDefault();
                 //SelectedApplicationUser = this.ApplicationUsers.Where(item => item.UserName == Identity.Name).FirstOrDefault();
                 IsMasterTranslator = UserRoles.Contains(Roles.MasterTranslator);
+
+                if(fromView == ViewNames.LOGIN_VIEW)
+                {
+                    ShowFilters = false;
+                    this.SearchCommand.Execute();
+                }
             }
             catch (Exception e)
             {

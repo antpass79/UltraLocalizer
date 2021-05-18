@@ -33,20 +33,8 @@
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
-            <!--<TextBlock>
-                Current Style Version
-            </TextBlock>
-            <TextBlock Grid.Column="1" Text="{Binding CurrentVersion.StyleVersion}" />
-            <TextBlock Grid.Column="2">
-                Available Style Version
-            </TextBlock>
-            <TextBlock Grid.Column="3" Text="{Binding AvailableVersion.StyleVersion}" />
-            <TextBlock Grid.Column="4" Visibility="{Binding NewStyleAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
-                <Hyperlink Command="{Binding DownloadStyleCommand}">
-                    Download the last version of style
-                </Hyperlink>
-            </TextBlock>-->
-            <controls:LocTextBlock Grid.Row="1">
+                    
+            <!--<controls:LocTextBlock Grid.Row="1">
                 Current Application Version
             </controls:LocTextBlock>
             <controls:LocTextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentVersion.ApplicationVersion}" />
@@ -60,7 +48,7 @@
                 <Hyperlink Command="{Binding DownloadApplicationCommand}">
                     Download the last version of application
                 </Hyperlink>
-            </controls:LocTextBlock>
+            </controls:LocTextBlock>-->
         </Grid>
     </DockPanel>
 </UserControl>

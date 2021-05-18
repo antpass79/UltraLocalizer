@@ -19,14 +19,6 @@ using System.Threading.Tasks;
 
 namespace Globe.Client.Localizer.ViewModels
 {
-    class FiltersUsedBySearching
-    {
-        public Language Language { get; set; }
-        public JobItem JobItem { get; set; }
-        public BindableComponentNamespace ComponentNamespace { get; set; }
-        public BindableInternalNamespace InternalNamespace { get; set; }
-    }
-
     internal class CurrentJobWindowViewModel : LocalizeWindowViewModel
     {
         private readonly IDialogService _dialogService;
@@ -187,7 +179,7 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        readonly FiltersUsedBySearching _filtersUsedBySearching = new FiltersUsedBySearching();
+        readonly UsedFiltersBySearching _usedFiltersBySearching = new UsedFiltersBySearching();
         string _filterBy;
         public string FilterBy
         {
@@ -262,7 +254,7 @@ namespace Globe.Client.Localizer.ViewModels
                                 IgnoreTranslation = conceptDetails.IgnoreTranslation
                             }
                         },
-                        { DialogParams.LANGUAGE, _filtersUsedBySearching.Language }
+                        { DialogParams.LANGUAGE, _usedFiltersBySearching.Language }
                     };
 
                     _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, async dialogResult =>
@@ -306,7 +298,7 @@ namespace Globe.Client.Localizer.ViewModels
                 this.FiltersBusy = false;
             });
 
-        async protected override Task OnLoad(object data = null)
+        async protected override Task OnLoad(string fromView, object data)
         {
             await InitializeFilters(data);
         }
@@ -317,7 +309,7 @@ namespace Globe.Client.Localizer.ViewModels
             return Task.CompletedTask;
         }
 
-        async private Task InitializeFilters(object data = null)
+        async private Task InitializeFilters(object data)
         {
             this.FiltersBusy = true;
 
@@ -384,10 +376,10 @@ namespace Globe.Client.Localizer.ViewModels
                 ConceptViews = await _currentJobConceptViewService.GetConceptViewsAsync(
                     new JobListConceptSearch
                     {
-                        ComponentNamespace = _filtersUsedBySearching.ComponentNamespace.Description,
-                        InternalNamespace = _filtersUsedBySearching.InternalNamespace.Description,
-                        LanguageId = _filtersUsedBySearching.Language.Id,
-                        JobListId = _filtersUsedBySearching.JobItem.Id
+                        ComponentNamespace = _usedFiltersBySearching.ComponentNamespace.Description,
+                        InternalNamespace = _usedFiltersBySearching.InternalNamespace.Description,
+                        LanguageId = _usedFiltersBySearching.Language.Id,
+                        JobListId = _usedFiltersBySearching.JobItem.Id
                     });
 
                 ItemCount = ConceptViews.Count();
@@ -415,12 +407,12 @@ namespace Globe.Client.Localizer.ViewModels
 
         private void UpdateFiltersUsedBySearching()
         {
-            _filtersUsedBySearching.Language = SelectedLanguage;
-            _filtersUsedBySearching.JobItem = SelectedJobItem;
-            _filtersUsedBySearching.ComponentNamespace = SelectedComponentNamespace;
-            _filtersUsedBySearching.InternalNamespace = SelectedInternalNamespace;
+            _usedFiltersBySearching.Language = SelectedLanguage;
+            _usedFiltersBySearching.JobItem = SelectedJobItem;
+            _usedFiltersBySearching.ComponentNamespace = SelectedComponentNamespace;
+            _usedFiltersBySearching.InternalNamespace = SelectedInternalNamespace;
 
-            FilterBy = $"{Localize["FilterBy"]} {_filtersUsedBySearching?.Language?.Name}, {Localize["JobListName"]}: {_filtersUsedBySearching?.JobItem?.Name}";
+            FilterBy = $"{Localize["FilterBy"]} {_usedFiltersBySearching?.Language?.Name}, {Localize["JobListName"]}: {_usedFiltersBySearching?.JobItem?.Name}";
         }
     }
 }
