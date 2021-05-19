@@ -12,11 +12,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
             this.context = context;
         }
 
-        public void DeletebyIDStringIDConcept2Context(int idString, int idConcept2Context)
-        {
-            context.DeletebyIDStringIDConcept2Context(idString, idConcept2Context);
-        }
-
         public void InsertNewStrings2Context(int IDString, int IDConcept2Context)
         {
             context.InsertNewStrings2Context(IDString, IDConcept2Context);

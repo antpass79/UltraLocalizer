@@ -79,6 +79,9 @@
         public readonly static string No_concepts_found = nameof(No_concepts_found);
         public readonly static string Error_during_searching_new_concepts = nameof(Error_during_searching_new_concepts);
         public readonly static string Error_during_building_groups = nameof(Error_during_building_groups);
+        public readonly static string Error_during_filters_initialization = nameof(Error_during_filters_initialization);
+        public readonly static string Error_during_dialog_opening = nameof(Error_during_dialog_opening);
+        public readonly static string Error_performing_search_action = nameof(Error_performing_search_action);
 
         public readonly static string HomeIntro_1 = nameof(HomeIntro_1);
         public readonly static string HomeIntro_2 = nameof(HomeIntro_2);

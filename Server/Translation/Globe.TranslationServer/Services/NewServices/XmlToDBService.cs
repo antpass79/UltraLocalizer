@@ -67,6 +67,7 @@ namespace Globe.TranslationServer.Services.NewServices
             }
             catch (Exception e)
             {
+                //TODO: Da segnalare all'utente che il software development e' vuoto?
                 _logService.Exception(e);
                 softwareDeveloperComment = "No comment Found";
             }

@@ -7,24 +7,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 {
     public static class ConceptsTableTableAdapter
     {
-        public static int InsertNewConcept(this LocalizationContext context, string ComponentNamespace, string InternalNamespace, string LocalizationID, bool Ignore, string Comment)
-        {
-            var item = new LocConceptsTable
-            {
-                ComponentNamespace = ComponentNamespace,
-                InternalNamespace = InternalNamespace,
-                LocalizationId = LocalizationID,
-                Ignore = Ignore,
-                Comment = Comment
-            };
-
-            context.LocConceptsTables.Add(item);
-
-            context.SaveChanges();
-
-            return item.Id;
-        }
-
         public static void UpdateConcept(this LocalizationContext context, int ID, bool Ignore, string Comment)
         {
             var concept = context.LocConceptsTables.Find(ID);

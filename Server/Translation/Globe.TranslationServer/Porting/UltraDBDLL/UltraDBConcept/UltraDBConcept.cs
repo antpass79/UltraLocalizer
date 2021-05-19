@@ -1,6 +1,5 @@
 ﻿using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
-using Globe.TranslationServer.Porting.UltraDBDLL.DataTables;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -16,11 +15,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
         public UltraDBConcept(LocalizationContext context)
         {
             this.dbContext = context;
-        }
-
-        public int InsertNewConcept(string ComponentNamespace, string InternalNamespace, string LocalizationID, bool Ignore, string Comment)
-        {
-            return dbContext.InsertNewConcept(ComponentNamespace, InternalNamespace, LocalizationID, Ignore, Comment);
         }
 
         public void UpdateConcept(int ID, bool Ignore, string Comment)
