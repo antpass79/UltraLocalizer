@@ -8,6 +8,7 @@ using Globe.Shared.Services;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Hubs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
+using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
 using Globe.TranslationServer.Repositories;
 using Globe.TranslationServer.Services;
 using Globe.TranslationServer.Services.PortingAdapters;
@@ -80,7 +81,10 @@ namespace Globe.TranslationServer
 
             // Services
             services
-                .AddScoped<UltraDBConcept, UltraDBConcept>();
+                .AddScoped<UltraDBConcept, UltraDBConcept>()
+                .AddScoped<UltraDBStrings, UltraDBStrings>()
+                .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>();
+
             services
                 .AddScoped<IXmlToDBService, Services.NewServices.XmlToDBService>()
                 .AddScoped<IXmlToDbMergeService, XmlToDbMergeService>()               

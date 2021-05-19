@@ -28,8 +28,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept
             dbContext.UpdateConcept(ID, Ignore, Comment);
         }
 
-        
-
         public DBConcept GetConceptbyID(int ConceptID)
         {
             var item = dbContext.GetDataByID(ConceptID);
