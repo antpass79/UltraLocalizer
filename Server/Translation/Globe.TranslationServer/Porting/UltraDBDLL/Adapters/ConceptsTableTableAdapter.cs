@@ -39,25 +39,6 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.Adapters
 
         //        SELECT LOC_ConceptsTable.*
         //FROM LOC_ConceptsTable
-        public static IQueryable<ConceptsTable> GetData(this LocalizationContext context)
-        {
-            var result = (from entity in context.LocConceptsTables
-                          select new ConceptsTable
-                          {
-                              ID = entity.Id,
-                              ComponentNamespace = entity.ComponentNamespace,
-                              InternalNamespace = entity.InternalNamespace,
-                              LocalizationID = entity.LocalizationId,
-                              Ignore = entity.Ignore.HasValue ? entity.Ignore.Value : false,
-                              Comment = entity.Comment,
-                              SSMA_TimeStamp = entity.SsmaTimeStamp                             
-                          });
-
-            return result;
-        }
-
-        //        SELECT LOC_ConceptsTable.*
-        //FROM LOC_ConceptsTable
         //where LOC_ConceptsTable.ID = @ID
         public static ConceptsTable GetDataByID(this LocalizationContext context, int id)
         {
