@@ -11,13 +11,11 @@ namespace Globe.TranslationServer.Services.PortingAdapters
     {
         private readonly IXmlToDBService _xmlService;
         private readonly UltraDBConcept _ultraDBConcept;
-        private readonly ILogService _logService;
 
-        public ConceptDetailsAdapterService(IXmlToDBService xmlService, UltraDBConcept ultraDBConcept, ILogService logService)
+        public ConceptDetailsAdapterService(IXmlToDBService xmlService, UltraDBConcept ultraDBConcept)
         {
             _xmlService = xmlService;
             _ultraDBConcept = ultraDBConcept;
-            _logService = logService;
         }
 
         async public Task<ConceptDetailsDTO> GetAsync(JobListConcept jobListConcept)

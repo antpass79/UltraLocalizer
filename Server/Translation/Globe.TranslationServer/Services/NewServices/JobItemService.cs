@@ -12,10 +12,14 @@ namespace Globe.TranslationServer.Services.NewServices
     public class JobItemService : IAsyncJobItemService
     {
         private readonly IAsyncReadRepository<LocJobList> _repository;
+        private readonly IReadRepository<LocLanguage> _languageRepository;
 
-        public JobItemService(IAsyncReadRepository<LocJobList> repository)
+        public JobItemService(
+            IAsyncReadRepository<LocJobList> repository, 
+            IReadRepository<LocLanguage> languageRepository)
         {
             _repository = repository;
+            _languageRepository = languageRepository;
         }
 
         public Task DeleteAsync(JobItemDTO jobItem)
@@ -24,17 +28,18 @@ namespace Globe.TranslationServer.Services.NewServices
         }
 
         async public Task<IEnumerable<JobItemDTO>> GetAllAsync(string userName, string ISOCoding, bool isInAdministratorGroup)
-        {      
-            var language = ISOCoding.GetLanguage();
+        {
+            //var language = ISOCoding.GetLanguage();
+            var languageId = GetLanguageId(ISOCoding);
             var query = await _repository.QueryAsync();
             var jobs = query
-                .WhereIf(item => item.UserName == userName && item.IdisoCoding == (int)language, !isInAdministratorGroup)
-                .WhereIf(item => item.IdisoCoding == (int)language, isInAdministratorGroup)
+                .WhereIf(item => item.UserName == userName && item.IdisoCoding == languageId, !isInAdministratorGroup)
+                .WhereIf(item => item.IdisoCoding == languageId, isInAdministratorGroup)
                 .Select(item => new JobItemDTO
                 {
                     Id = item.Id,
                     Name = isInAdministratorGroup ? $"{item.UserName} - {item.JobName}" : item.JobName,
-                    IsoId = (int)language
+                    IsoId = languageId
                 })
                 .AsEnumerable()
                 .OrderBy(item => item.Name)
@@ -80,6 +85,17 @@ namespace Globe.TranslationServer.Services.NewServices
         public Task UpdateAsync(JobItemDTO jobItem)
         {
             throw new System.NotImplementedException();
+        }
+
+        private int GetLanguageId(string isoCoding)
+        {
+            var query = _languageRepository
+                .Get()
+                .Where(item => item.Isocoding == isoCoding)
+                .Single().Id;
+
+
+            return query;         
         }
     }
 }

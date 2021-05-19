@@ -3,8 +3,6 @@ using Globe.TranslationServer.Extensions;
 using Globe.TranslationServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Globe.TranslationServer.Controllers

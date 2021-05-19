@@ -188,15 +188,6 @@ namespace Globe.TranslationServer.Services.NewServices
             };
         }
 
-        private XmlServiceStatistics BuildStatistics(IEnumerable<ConceptTupla> insertableEntries, IEnumerable<ConceptTupla> updatableEntries)
-        {
-            return new XmlServiceStatistics
-            {
-                InsertedCount = insertableEntries.Count(),
-                UpdatedCount = updatableEntries.Count()
-            };
-        }
-
         private string BuildKey(string ComponentNamespace, string InternalNamespace, string ConceptID)
         {
             return string.Format("{0}|{1}|{2}", ComponentNamespace, InternalNamespace, ConceptID);

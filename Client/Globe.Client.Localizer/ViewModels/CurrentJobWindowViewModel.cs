@@ -292,7 +292,7 @@ namespace Globe.Client.Localizer.ViewModels
             {
                 this.FiltersBusy = true;
 
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
+                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_EN);
                 this.SelectedJobItem = this.JobItems.FirstOrDefault();
 
                 this.FiltersBusy = false;
@@ -315,7 +315,7 @@ namespace Globe.Client.Localizer.ViewModels
 
             try
             {           
-                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_ALL);
+                this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_EN);
                 this.ComponentNamespaces = await _currentJobFiltersService.GetComponentNamespacesAsync();
                 this.InternalNamespaces = await _currentJobFiltersService.GetInternalNamespacesAsync(this.SelectedComponentNamespace != null ? this.SelectedComponentNamespace.Description : SharedConstants.COMPONENT_NAMESPACE_ALL);
                 this.Languages = await _currentJobFiltersService.GetLanguagesAsync();
@@ -337,9 +337,9 @@ namespace Globe.Client.Localizer.ViewModels
 
                     this.SelectedComponentNamespace = this.ComponentNamespaces.FirstOrDefault();
                     this.SelectedInternalNamespace = this.InternalNamespaces.FirstOrDefault();
-
+                    
                     this.SelectedLanguage = this.Languages.Where(item => item.Id == jobListConceptSearch.LanguageId).FirstOrDefault();
-                    this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage.IsoCoding);
+                    this.JobItems = await _currentJobFiltersService.GetJobItemsAsync(this.Identity.Name, this.SelectedLanguage != null ? this.SelectedLanguage.IsoCoding : SharedConstants.LANGUAGE_EN);
                     this.SelectedJobItem = this.JobItems.Where(item => item.Id == jobListConceptSearch.JobListId).FirstOrDefault();
 
                     this.SearchCommand.Execute();

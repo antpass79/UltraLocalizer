@@ -15,7 +15,6 @@ namespace Globe.Client.Localizer.Services
     class JobListStatusFiltersService : IJobListStatusFiltersService
     {
         private const string ENDPOINT_Language = "Language";
-        private const string ENDPOINT_JobItem = "JobItem";
 
         private readonly IAsyncSecureHttpClient _secureHttpClient;
         private readonly IUserService _userService;

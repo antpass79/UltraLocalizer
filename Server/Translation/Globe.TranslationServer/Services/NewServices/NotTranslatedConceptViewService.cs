@@ -2,7 +2,6 @@
 using Globe.Shared.DTOs;
 using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -15,17 +14,13 @@ namespace Globe.TranslationServer.Services.NewServices
     {
         private readonly IReadRepository<VConceptStringToContext> _conceptStringToContextRepository;
         private readonly IReadRepository<VStringsToContext> _stringsToContextRepository;
-        private readonly IUltraDBJobGlobal _ultraDBJobGlobal;
 
         public NotTranslatedConceptViewService(
             IReadRepository<VConceptStringToContext> conceptStringToContextRepository,
-            IReadRepository<VStringsToContext> stringsToContextRepository,            
-            IUltraDBJobGlobal ultraDBJobGlobal)
+            IReadRepository<VStringsToContext> stringsToContextRepository)
         {
             _conceptStringToContextRepository = conceptStringToContextRepository;
             _stringsToContextRepository = stringsToContextRepository;
-
-            _ultraDBJobGlobal = ultraDBJobGlobal;
         }
 
         async public Task<IEnumerable<NotTranslatedConceptView>> GetAllAsync(NotTranslatedConceptViewSearch search)
