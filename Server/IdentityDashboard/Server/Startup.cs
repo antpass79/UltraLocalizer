@@ -74,7 +74,6 @@ namespace Globe.Identity.AdministrativeDashboard.Server
 
             // Application
             services
-                .AddScoped<IAsyncVersionService, VersionService>()
                 .AddScoped<IAsyncStyleService, StyleService>()
                 .AddScoped<IAsyncApplicationService, ApplicationService>();
 

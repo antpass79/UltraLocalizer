@@ -35,6 +35,7 @@ namespace Globe.TranslationServer.Entities
         public virtual DbSet<VJobListConcept> VJobListConcepts { get; set; }
         public virtual DbSet<VLocalization> VLocalizations { get; set; }
         public virtual DbSet<VStringsToContext> VStringsToContexts { get; set; }
+        public virtual DbSet<VStrings> VStrings { get; set; }
         public virtual DbSet<VTranslatedConcept> VTranslatedConcepts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -473,6 +474,27 @@ namespace Globe.TranslationServer.Entities
                 entity.Property(e => e.Type)
                     .IsRequired()
                     .HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<VStrings>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("vStrings");
+
+                entity.Property(e => e.Id).HasColumnName("Id");
+
+                entity.Property(e => e.LanguageId).HasColumnName("LanguageId");
+
+                entity.Property(e => e.StringTypeId).HasColumnName("StringTypeId");
+
+                entity.Property(e => e.String)
+                    .IsRequired()
+                    .HasMaxLength(255);
+
+                entity.Property(e => e.ConceptToContextId).HasColumnName("ConceptToContextId");
+
+                entity.Property(e => e.ConceptToContextId).HasColumnName("StringToContextId");                
             });
 
             modelBuilder.Entity<VTranslatedConcept>(entity =>

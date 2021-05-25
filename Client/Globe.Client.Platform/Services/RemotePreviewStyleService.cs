@@ -11,7 +11,6 @@ namespace Globe.Client.Platform.Services
         #region Data Members
 
         private readonly IStyleService _styleService;
-        private readonly ICompareVersionService _compareVersionService;
         private readonly IPreviewStyleService _runTimePreviewStyleService;
         readonly string PATH_DEFAULT_BASIC_STYLE = $"{AppDomain.CurrentDomain.BaseDirectory}/Styles/";
         readonly string[] _stylePaths = new string[]
@@ -27,10 +26,9 @@ namespace Globe.Client.Platform.Services
 
         #region Constructors
 
-        public RemotePreviewStyleService(IStyleService styleService, ICompareVersionService compareVersionService)
+        public RemotePreviewStyleService(IStyleService styleService)
         {
             _styleService = styleService;
-            _compareVersionService = compareVersionService;
 
             bool exist = Directory.Exists(PATH_DEFAULT_BASIC_STYLE);
             if (!exist)
@@ -39,7 +37,7 @@ namespace Globe.Client.Platform.Services
                 Directory.CreateDirectory(Path.Combine(PATH_DEFAULT_BASIC_STYLE, "DefaultStyles"));
             }
 
-            if (!exist || _compareVersionService.NewStyleVersionAvailable())
+            if (!exist)
             {
                 foreach (var stylePath in _stylePaths)
                 {

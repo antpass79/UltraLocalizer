@@ -320,42 +320,6 @@ namespace Globe.Client.Localizer.ViewModels
                 });
             }, () => NotTranslatedConceptViews != null && NotTranslatedConceptViews.Any());
 
-        private DelegateCommand _checkNewConceptsCommand = null;
-        public DelegateCommand CheckNewConceptsCommand =>
-            _checkNewConceptsCommand ??= new DelegateCommand(async () =>
-            {
-                try
-                {
-                    EventAggregator.GetEvent<BusyChangedEvent>().Publish(true);
-                    var result = await _jobListManagementService.CheckNewConceptsAsync();
-
-                    if(result.IsNotified)
-                    { 
-                        await _notificationService.NotifyAsync(new Notification
-                        {
-                            Title = Localize[LanguageKeys.Get_new_concepts],
-                            Message = result.Statistics.ChangesFound ? Localize[LanguageKeys.New_concepts_found] : Localize[LanguageKeys.No_concepts_found],
-                            Level = NotificationLevel.Info
-                        });
-                    }
-                    await OnLanguageChange();
-                }
-                catch (Exception e)
-                {
-                    _logService.Exception(e);
-                    await _notificationService.NotifyAsync(new Notification
-                    {
-                        Title = Localize[LanguageKeys.Error],
-                        Message = Localize[LanguageKeys.Error_during_searching_new_concepts],
-                        Level = NotificationLevel.Error
-                    });
-                }
-                finally
-                {
-                    EventAggregator.GetEvent<BusyChangedEvent>().Publish(false);
-                }
-            });
-
         async protected override Task OnLoad(string fromView, object data)
         {
             await InitializeFilters();
