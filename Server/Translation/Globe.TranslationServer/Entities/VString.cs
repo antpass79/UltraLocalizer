@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Globe.TranslationServer.Entities
 {
-    public partial class VStrings
+    public partial class VString
     {
         public int Id { get; set; }
         public int LanguageId { get; set; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.ValueGeneration;
 
 #nullable disable
 
@@ -34,8 +35,8 @@ namespace Globe.TranslationServer.Entities
         public virtual DbSet<VConceptStringToContext> VConceptStringToContexts { get; set; }
         public virtual DbSet<VJobListConcept> VJobListConcepts { get; set; }
         public virtual DbSet<VLocalization> VLocalizations { get; set; }
+        public virtual DbSet<VString> VStrings { get; set; }
         public virtual DbSet<VStringsToContext> VStringsToContexts { get; set; }
-        public virtual DbSet<VStrings> VStrings { get; set; }
         public virtual DbSet<VTranslatedConcept> VTranslatedConcepts { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -219,11 +220,8 @@ namespace Globe.TranslationServer.Entities
 
                 entity.HasIndex(e => e.Idtype, "STRINGS$IDType");
 
-                entity.HasIndex(e => e.Idlanguage, "STRINGS$LanguagesSTRINGS");
-
-                entity.HasIndex(e => e.Idtype, "STRINGS$StringTypesSTRINGS");
-
-                entity.Property(e => e.Id).HasColumnName("ID");
+                entity.Property(e => e.Id)
+                .HasColumnName("ID");
 
                 entity.Property(e => e.Idlanguage).HasColumnName("IDLanguage");
 
@@ -433,6 +431,17 @@ namespace Globe.TranslationServer.Entities
                 entity.Property(e => e.StringType).HasMaxLength(50);
             });
 
+            modelBuilder.Entity<VString>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("vStrings");
+
+                entity.Property(e => e.String)
+                    .IsRequired()
+                    .HasMaxLength(255);
+            });
+
             modelBuilder.Entity<VStringsToContext>(entity =>
             {
                 entity.HasNoKey();
@@ -474,27 +483,6 @@ namespace Globe.TranslationServer.Entities
                 entity.Property(e => e.Type)
                     .IsRequired()
                     .HasMaxLength(50);
-            });
-
-            modelBuilder.Entity<VStrings>(entity =>
-            {
-                entity.HasNoKey();
-
-                entity.ToView("vStrings");
-
-                entity.Property(e => e.Id).HasColumnName("Id");
-
-                entity.Property(e => e.LanguageId).HasColumnName("LanguageId");
-
-                entity.Property(e => e.StringTypeId).HasColumnName("StringTypeId");
-
-                entity.Property(e => e.String)
-                    .IsRequired()
-                    .HasMaxLength(255);
-
-                entity.Property(e => e.ConceptToContextId).HasColumnName("ConceptToContextId");
-
-                entity.Property(e => e.ConceptToContextId).HasColumnName("StringToContextId");                
             });
 
             modelBuilder.Entity<VTranslatedConcept>(entity =>

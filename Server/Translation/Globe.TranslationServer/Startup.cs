@@ -8,7 +8,6 @@ using Globe.Shared.Services;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Hubs;
 using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBStrings;
 using Globe.TranslationServer.Repositories;
 using Globe.TranslationServer.Services;
 using Globe.TranslationServer.Services.PortingAdapters;
@@ -74,7 +73,7 @@ namespace Globe.TranslationServer
                 .AddScoped<IReadRepository<VLocalization>, GenericRepository<LocalizationContext, VLocalization>>()
                 .AddScoped<IReadRepository<VConceptStringToContext>, GenericRepository<LocalizationContext, VConceptStringToContext>>()
                 .AddScoped<IReadRepository<VStringsToContext>, GenericRepository<LocalizationContext, VStringsToContext>>()
-                .AddScoped<IReadRepository<VStrings>, GenericRepository<LocalizationContext, VStrings>>()
+                .AddScoped<IReadRepository<VString>, GenericRepository<LocalizationContext, VString>>()
                 .AddScoped<IReadRepository<VJobListConcept>, GenericRepository<LocalizationContext, VJobListConcept>>()
                 .AddScoped<IReadRepository<VTranslatedConcept>, GenericRepository<LocalizationContext, VTranslatedConcept>>()
                 .AddScoped<IAsyncReadRepository<LocConceptsTable>, AsyncGenericRepository<LocalizationContext, LocConceptsTable>>()
@@ -82,9 +81,7 @@ namespace Globe.TranslationServer
 
             // Services
             services
-                .AddScoped<UltraDBConcept, UltraDBConcept>()
-                .AddScoped<UltraDBStrings, UltraDBStrings>()
-                .AddScoped<UltraDBStrings2Context, UltraDBStrings2Context>();
+                .AddScoped<UltraDBConcept, UltraDBConcept>();
 
             services
                 .AddScoped<IXmlToDBService, Services.NewServices.XmlToDBService>()
