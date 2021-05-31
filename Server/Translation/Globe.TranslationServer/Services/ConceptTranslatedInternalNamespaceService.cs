@@ -3,19 +3,18 @@ using Globe.Shared.DTOs;
 using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Extensions;
-using Globe.TranslationServer.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Services.NewServices
+namespace Globe.TranslationServer.Services
 {
-    public class InternalNamespaceService : IAsyncInternalNamespaceService
+    public class ConceptTranslatedInternalNamespaceService : IAsyncConceptTranslatedInternalNamespaceService
     {
-        private readonly IReadRepository<VJobListConcept> _repository;
+        private readonly IReadRepository<VTranslatedConcept> _repository;
 
-        public InternalNamespaceService(IReadRepository<VJobListConcept> repository)
+        public ConceptTranslatedInternalNamespaceService(IReadRepository<VTranslatedConcept> repository)
         {
             _repository = repository;
         }

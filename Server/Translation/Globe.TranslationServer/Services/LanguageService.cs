@@ -1,13 +1,12 @@
 ﻿using Globe.BusinessLogic.Repositories;
+using Globe.Shared.DTOs;
 using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Globe.Shared.DTOs;
 
-namespace Globe.TranslationServer.Services.NewServices
+namespace Globe.TranslationServer.Services
 {
     public class LanguageService : IAsyncLanguageService
     {

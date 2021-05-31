@@ -8,13 +8,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Services.NewServices
+namespace Globe.TranslationServer.Services
 {
-    public class ConceptTranslatedInternalNamespaceService : IAsyncConceptTranslatedInternalNamespaceService
+    public class InternalNamespaceService : IAsyncInternalNamespaceService
     {
-        private readonly IReadRepository<VTranslatedConcept> _repository;
+        private readonly IReadRepository<VJobListConcept> _repository;
 
-        public ConceptTranslatedInternalNamespaceService(IReadRepository<VTranslatedConcept> repository)
+        public InternalNamespaceService(IReadRepository<VJobListConcept> repository)
         {
             _repository = repository;
         }

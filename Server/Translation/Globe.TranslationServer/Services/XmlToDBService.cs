@@ -10,7 +10,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Services.NewServices
+namespace Globe.TranslationServer.Services
 {
     public class XmlToDBService : IXmlToDBService
     {

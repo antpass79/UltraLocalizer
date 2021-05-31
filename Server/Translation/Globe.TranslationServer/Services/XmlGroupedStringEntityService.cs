@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Services.NewServices
+namespace Globe.TranslationServer.Services
 {
     public class XmlGroupedStringEntityService : IAsyncXmlGroupedStringEntityService
     {

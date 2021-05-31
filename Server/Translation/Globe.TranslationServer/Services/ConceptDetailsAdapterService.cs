@@ -3,7 +3,7 @@ using Globe.TranslationServer.DTOs;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Services.PortingAdapters
+namespace Globe.TranslationServer.Services
 {
     public class ConceptDetailsAdapterService : IAsyncConceptDetailsService
     {

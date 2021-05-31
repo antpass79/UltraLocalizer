@@ -9,7 +9,6 @@ using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Hubs;
 using Globe.TranslationServer.Repositories;
 using Globe.TranslationServer.Services;
-using Globe.TranslationServer.Services.PortingAdapters;
 using Globe.TranslationServer.Utilities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -80,32 +79,32 @@ namespace Globe.TranslationServer
 
             // Services
             services
-                .AddScoped<IXmlToDBService, Services.NewServices.XmlToDBService>()
+                .AddScoped<IXmlToDBService, XmlToDBService>()
                 .AddScoped<IXmlToDbMergeService, XmlToDbMergeService>()               
-                .AddScoped<ILocalizationResourceBuilder, Services.NewServices.ScopedLocalizationResourceBuilder>()
-                .AddScoped<IAsyncLanguageService, Services.NewServices.LanguageService>()
-                .AddScoped<IComponentNamespaceService, Services.NewServices.ComponentNamespaceService>()
-                .AddScoped<IAsyncInternalNamespaceService, Services.NewServices.InternalNamespaceService>()
-                .AddScoped<IAsyncConceptTranslatedComponentNamespaceService, Services.NewServices.ConceptTranslatedComponentNamespaceService>()
-                .AddScoped<IAsyncConceptTranslatedInternalNamespaceService, Services.NewServices.ConceptTranslatedInternalNamespaceService>()
-                .AddScoped<ITranslatedConceptService, Services.NewServices.ConceptTranslatedService>()
-                .AddScoped<IAsyncJobItemService, Services.NewServices.JobItemService>()
-                .AddScoped<IDBToXmlService, Services.NewServices.DBToXmlService>()
+                .AddScoped<ILocalizationResourceBuilder, ScopedLocalizationResourceBuilder>()
+                .AddScoped<IAsyncLanguageService, LanguageService>()
+                .AddScoped<IComponentNamespaceService, ComponentNamespaceService>()
+                .AddScoped<IAsyncInternalNamespaceService, InternalNamespaceService>()
+                .AddScoped<IAsyncConceptTranslatedComponentNamespaceService, ConceptTranslatedComponentNamespaceService>()
+                .AddScoped<IAsyncConceptTranslatedInternalNamespaceService, ConceptTranslatedInternalNamespaceService>()
+                .AddScoped<ITranslatedConceptService, ConceptTranslatedService>()
+                .AddScoped<IAsyncJobItemService, JobItemService>()
+                .AddScoped<IDBToXmlService, DBToXmlService>()
 
                 .AddScoped<IAsyncConceptSearchService, ConceptSearchService>()
                 .AddScoped<IAsyncContextService, ContextService>()
                 .AddScoped<IAsyncStringTypeService, StringTypeService>()
                 .AddScoped<IAsyncStringViewProxyService, StringViewProxyService>()
-                .AddScoped<IJobListService, Services.NewServices.JobListService>()
-                .AddScoped<IAsyncXmlGroupedStringEntityService, Services.NewServices.XmlGroupedStringEntityService>()
+                .AddScoped<IJobListService, Services.NewServices.JobListService>()//TODO
+                .AddScoped<IAsyncXmlGroupedStringEntityService, XmlGroupedStringEntityService>()
                 .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()
                 .AddScoped<IAsyncConceptDetailsService, ConceptDetailsAdapterService>()
                 .AddScoped<IAsyncConceptService, ConceptService>()
-                .AddScoped<IAsyncNotTranslatedConceptViewService, Services.NewServices.NotTranslatedConceptViewService>()
-                .AddScoped<IComponentNamespaceGroupService, Services.NewServices.ComponentNamespaceGroupService>()
+                .AddScoped<IAsyncNotTranslatedConceptViewService, NotTranslatedConceptViewService>()
+                .AddScoped<IComponentNamespaceGroupService, ComponentNamespaceGroupService>()
                 .AddScoped<IAsyncJobListService, JobListService>()
                 .AddScoped<IAsyncXmlZipService, XmlZipService>()
-                .AddScoped<IExportDbFilterService, Services.NewServices.ExportDbFilterService>()
+                .AddScoped<IExportDbFilterService, ExportDbFilterService>()
 
                 .AddScoped<ILogService, ConsoleLogService>();
 

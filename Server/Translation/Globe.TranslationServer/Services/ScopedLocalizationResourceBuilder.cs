@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Globe.TranslationServer.Services.NewServices
+namespace Globe.TranslationServer.Services
 {
     class ScopedLocalizationResourceBuilder : ILocalizationResourceBuilder
     {

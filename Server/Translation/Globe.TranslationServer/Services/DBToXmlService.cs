@@ -7,7 +7,7 @@ using System.Collections.Concurrent;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace Globe.TranslationServer.Services.NewServices
+namespace Globe.TranslationServer.Services
 {
     public class DBToXmlService : IDBToXmlService
     {
