@@ -1,7 +1,6 @@
 ﻿using Globe.Shared.Services;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Models;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

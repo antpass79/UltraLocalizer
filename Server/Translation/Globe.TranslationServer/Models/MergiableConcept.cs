@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models
+﻿namespace Globe.TranslationServer.Models
 {
     public class MergiableConcept
     {

@@ -27,6 +27,20 @@ namespace Globe.TranslationServer.Services.PortingAdapters
             _xmlToDBService = xmlToDBService;
         }
 
+        async public Task<ConceptDTO> GetConceptAsync(int id)
+        {
+            var entity = await _localizationContext.LocConceptsTables.FindAsync(id);
+            return new ConceptDTO
+            {
+                Id = entity.Id,
+                Value = entity.LocalizationId,
+                ComponentNamespace = entity.ComponentNamespace,
+                InternalNamespace = entity.InternalNamespace,
+                Comment = entity.Comment,
+                Ignore = entity.Ignore.HasValue && entity.Ignore.Value
+            };
+        }
+
         async public Task SaveAsync(SavableConceptModelDTO savableConceptModel)
         {
             if (savableConceptModel.Language.IsoCoding == SharedConstants.LANGUAGE_EN)
@@ -51,8 +65,6 @@ namespace Globe.TranslationServer.Services.PortingAdapters
 
                     if (context.StringId == 0)
                     {
-                        //var stringId = InsertNewString_NEW(1, (int)context.StringType, context.StringEditableValue);
-                        //InsertNewStrings2Context_NEW(stringId, context.Concept2ContextId);
                         InsertNewStringAndNewStringToContext(1, (int)context.StringType, context.StringEditableValue, context.Concept2ContextId);
                         Console.WriteLine($"New string {context.StringEditableValue} has been inserted with type ID = {context.StringType}");
                     }
@@ -130,22 +142,6 @@ namespace Globe.TranslationServer.Services.PortingAdapters
                 .Single();
             _localizationContext.LocStrings2Contexts.Remove(itemToRemove);
         }
-
-        //int InsertNewString_NEW(int IDLanguage, int IDType, string DataString)
-        //{
-        //    var item = new LocString
-        //    {
-        //        Idlanguage = IDLanguage,
-        //        Idtype = IDType,
-        //        String = DataString
-        //    };
-
-        //    _localizationContext.LocStrings.Add(item);
-
-        //    //_localizationContext.SaveChanges();
-        //    //TODO. Ritorno id inserita
-        //    return item.Id;
-        //}
 
         void InsertNewStringAndNewStringToContext(int IDLanguage, int IDType, string DataString, int conceptToContextId)
         {

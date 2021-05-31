@@ -1,7 +1,6 @@
 ﻿using Globe.Shared.DTOs;
 using Globe.Shared.Utilities;
 using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
 using Globe.TranslationServer.Utilities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

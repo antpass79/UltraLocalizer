@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
+namespace Globe.TranslationServer.Utilities
 {
     // ANTO fake, see NewXmlFormat for the auto generated
     // Additional Information, the structure is based on:

@@ -1,6 +1,5 @@
 ﻿using Globe.Shared.DTOs;
 using Globe.TranslationServer.DTOs;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,18 +8,18 @@ namespace Globe.TranslationServer.Services.PortingAdapters
     public class ConceptDetailsAdapterService : IAsyncConceptDetailsService
     {
         private readonly IXmlToDBService _xmlService;
-        private readonly UltraDBConcept _ultraDBConcept;
+        private readonly IAsyncConceptService _conceptService;
 
-        public ConceptDetailsAdapterService(IXmlToDBService xmlService, UltraDBConcept ultraDBConcept)
+        public ConceptDetailsAdapterService(IXmlToDBService xmlService, IAsyncConceptService conceptService)
         {
             _xmlService = xmlService;
-            _ultraDBConcept = ultraDBConcept;
+            _conceptService = conceptService;
         }
 
         async public Task<ConceptDetailsDTO> GetAsync(JobListConcept jobListConcept)
         {         
             var softwareDeveloperComment = _xmlService.GetSoftwareDeveloperComment(jobListConcept.ComponentNamespace, jobListConcept.InternalNamespace, jobListConcept.Name);
-            var currentConcept = _ultraDBConcept.GetConceptbyID(jobListConcept.Id);
+            var currentConcept = await _conceptService.GetConceptAsync(jobListConcept.Id);
             var masterTranslatorComment = currentConcept.Comment;
             var ignore = currentConcept.Ignore;
 

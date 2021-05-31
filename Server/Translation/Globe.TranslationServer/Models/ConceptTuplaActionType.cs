@@ -1,4 +1,4 @@
-﻿namespace Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models
+﻿namespace Globe.TranslationServer.Models
 {
     public enum ConceptTuplaActionType
     {

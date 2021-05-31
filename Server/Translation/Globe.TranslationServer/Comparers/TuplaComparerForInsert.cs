@@ -1,10 +1,10 @@
-﻿using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
+﻿using Globe.TranslationServer.Models;
 using System;
 using System.Collections.Generic;
 
-namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
+namespace Globe.TranslationServer.Comparers
 {
-    public class TuplaComparerForUpdate : IEqualityComparer<ConceptTupla>
+    public class TuplaComparerForInsert : IEqualityComparer<ConceptTupla>
     {
         // Products are equal if their names and product numbers are equal.
         public bool Equals(ConceptTupla x, ConceptTupla y)
@@ -16,9 +16,10 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
             if (Object.ReferenceEquals(x, null) || Object.ReferenceEquals(y, null))
                 return false;
 
-            return x.ComponentNamespace == y.ComponentNamespace && x.InternalNamespace == y.InternalNamespace && x.ConceptId == y.ConceptId && x.ContextId == y.ContextId;
-
+            //Check whether the products' properties are equal.
+            return x.ComponentNamespace == y.ComponentNamespace && x.InternalNamespace == y.InternalNamespace && x.ConceptId == y.ConceptId;
         }
+
 
         // If Equals() returns true for a pair of objects 
         // then GetHashCode() must return the same value for these objects.
@@ -33,14 +34,13 @@ namespace Globe.TranslationServer.Porting.UltraDBDLL.XmlManager
             //Get hash code for the  field if it is not null.
             int hashInternalNamespace = tupla.InternalNamespace == null ? 0 : tupla.InternalNamespace.GetHashCode();
 
+
             //Get hash code for the  field if it is not null.
             int hashConceptId = tupla.ConceptId == null ? 0 : tupla.ConceptId.GetHashCode();
 
-            //Get hash code for the  field if it is not null.
-            int hashContextId = tupla.ContextId == null ? 0 : tupla.ContextId.GetHashCode();
-
             //Calculate the hash code for the product.
-            return hashComponentNamespace ^ hashInternalNamespace ^ hashConceptId ^ hashContextId;
+            return hashComponentNamespace ^ hashInternalNamespace ^ hashConceptId;
         }
+
     }
 }

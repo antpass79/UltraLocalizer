@@ -58,6 +58,7 @@ namespace Globe.Client.Localizer
             containerRegistry.Register<IExportDbFiltersService, ExportDbFiltersService>();
 
             containerRegistry.RegisterDialog<StringEditorDialog, StringEditorDialogViewModel>();
+            containerRegistry.RegisterDialog<EditTranslatedStringDialog, EditTranslatedStringDialogViewModel>();
             containerRegistry.RegisterDialog<SaveJoblistDialog, SaveJoblistViewModel>();
             containerRegistry.RegisterDialog<ExportDbDialog, ExportDbViewModel>();
             containerRegistry.RegisterDialog<MessageDialog, MessageDialogViewModel>();
