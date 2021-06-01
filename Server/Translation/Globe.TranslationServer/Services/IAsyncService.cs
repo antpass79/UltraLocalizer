@@ -7,4 +7,8 @@
     public interface IAsyncService<T> : IAsyncReadService<T, int>, IAsyncWriteService<T>
     {
     }
+
+    public interface IAsyncService<TRead, TWrite, TKey> : IAsyncReadService<TRead, TKey>, IAsyncWriteService<TWrite>
+    {
+    }
 }

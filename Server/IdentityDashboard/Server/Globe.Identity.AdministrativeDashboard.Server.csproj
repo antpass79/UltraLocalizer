@@ -9,16 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="version.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="version.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.1" />

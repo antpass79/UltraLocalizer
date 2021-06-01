@@ -1,7 +1,6 @@
 ﻿using Globe.Shared.Services;
 using Globe.TranslationServer.Entities;
 using Globe.TranslationServer.Models;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBConcept.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -114,7 +113,7 @@ namespace Globe.TranslationServer.Services
                     LocalizationId = group.Key.Concept,
                     Comment = string.Empty,//Il vecchio se non c'e' nulla lo inizializza cosi' //Comment = group.Key.DeveloperComment,
                     Ignore = false   
-                    //TODO DEVO AGGIUNGERE IL CONCEPT ID. DEvo prendermelo dal DB ed inserirlo nel DB se esiste!!!
+                    //ConceptId, essendo PK della tabella, viene determinato automaticamente da EF
                 };
 
                 if (group.Key.ActionType == ConceptTuplaActionType.ToInsert)

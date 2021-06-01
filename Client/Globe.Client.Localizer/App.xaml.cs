@@ -31,8 +31,6 @@ namespace Globe.Client.Localizer
         {
             containerRegistry.Register<IStyleService, StyleService>();
             containerRegistry.Register<IXmlService, XmlService>();
-            containerRegistry.Register<IVersionService, RemoteVersionService>("RemoteVersionService");
-            containerRegistry.Register<IVersionService, LocalVersionService>("LocalVersionService");
             containerRegistry.Register<IViewNavigationService, ViewNavigationService>();
             containerRegistry.RegisterSingleton<IGlobeDataStorage, GlobeInMemoryStorage>();
             containerRegistry.RegisterSingleton<IAsyncLoginService, HttpLoginService>();
@@ -45,11 +43,11 @@ namespace Globe.Client.Localizer
             containerRegistry.RegisterSingleton<IIdentityStore, IdentityStore>();
 
             var unityContainer = containerRegistry.GetContainer();
-            unityContainer.RegisterFactory<ICompareVersionService>(container =>
-            {
-                return new CompareVersionService(container.Resolve<IVersionService>("RemoteVersionService"), container.Resolve<IVersionService>("LocalVersionService"));
-            },
-            FactoryLifetime.Singleton);
+            //unityContainer.RegisterFactory<ICompareVersionService>(container =>
+            //{
+            //    return new CompareVersionService(container.Resolve<IVersionService>("RemoteVersionService"), container.Resolve<IVersionService>("LocalVersionService"));
+            //},
+            //FactoryLifetime.Singleton);
             unityContainer.RegisterFactory<HttpClient>(container =>
             {
                 var byPassCertificateHandler = new HttpClientHandler()

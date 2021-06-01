@@ -3,6 +3,7 @@ using Globe.Client.Localizer.Services;
 using Globe.Client.Platform;
 using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
+using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Shared.DTOs;
 using Globe.Shared.Services;
@@ -296,6 +297,12 @@ namespace Globe.Client.Localizer.ViewModels
             catch (Exception e)
             {
                 _logService.Exception(e);
+                await _notificationService.NotifyAsync(new Notification
+                {
+                    Title = Localize[LanguageKeys.Error],
+                    Message = Localize[LanguageKeys.Error_during_filters_initialization],
+                    Level = NotificationLevel.Error
+                });
             }
             finally
             {
