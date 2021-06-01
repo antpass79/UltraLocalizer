@@ -1,5 +1,5 @@
 ﻿using Globe.Shared.DTOs;
-using Globe.TranslationServer.Porting.UltraDBDLL.XmlManager;
+using Globe.TranslationServer.Utilities;
 
 namespace Globe.TranslationServer.Services
 {

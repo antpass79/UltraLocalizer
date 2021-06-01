@@ -266,7 +266,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 await _notificationService.NotifyAsync(new Notification
                 {
                     Title = Localize[LanguageKeys.Error],
-                    Message = Localize[LanguageKeys.Error_during_building_groups],
+                    Message = Localize[LanguageKeys.Error_during_dialog_opening],
                     Level = NotificationLevel.Error
                 });
             }

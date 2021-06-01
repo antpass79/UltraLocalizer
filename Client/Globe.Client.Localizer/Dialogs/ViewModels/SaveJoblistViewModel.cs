@@ -1,5 +1,6 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platofrm.Events;
@@ -152,6 +153,14 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 _logService.Exception(e);
                 Users = null;
                 _notTranslatedConceptViews = null;
+
+                await _notificationService.NotifyAsync(new Notification
+                {
+                    Title = "Error",
+                    Message = "Error during dialog opening",
+                    Level = NotificationLevel.Error
+                });
+
             }
             finally
             {

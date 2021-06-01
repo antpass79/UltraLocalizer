@@ -153,6 +153,12 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Chinese), "Cinese");
             _italian.Add(nameof(LanguageKeys.Russian), "Russo");
             _italian.Add(nameof(LanguageKeys.Portuguese), "Portoghese");
+
+            _italian.Add(nameof(LanguageKeys.Error_during_searching_new_concepts), "Errore durante la ricerca di nuovi Concepts");
+            _italian.Add(nameof(LanguageKeys.Error_during_building_groups), "Errore durante la costruzione della struttura ad albero dei concetti non tradotti");
+            _italian.Add(nameof(LanguageKeys.Error_during_filters_initialization), "Errore durante inizializzazione dei filtri");
+            _italian.Add(nameof(LanguageKeys.Error_during_dialog_opening), "Errore durante apertura della nuova finestra");
+            _italian.Add(nameof(LanguageKeys.Error_performing_search_action), "Errore durante l'azione di Cerca");
         }
 
         private void FillEnglishValues()
@@ -244,6 +250,12 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Chinese), "Chinese");
             _english.Add(nameof(LanguageKeys.Russian), "Russian");
             _english.Add(nameof(LanguageKeys.Portuguese), "Portuguese");
+
+            _english.Add(nameof(LanguageKeys.Error_during_searching_new_concepts), "Error during searching new concepts");
+            _english.Add(nameof(LanguageKeys.Error_during_building_groups), "Error during building groups");
+            _english.Add(nameof(LanguageKeys.Error_during_filters_initialization), "Error during filters initialization");
+            _english.Add(nameof(LanguageKeys.Error_during_dialog_opening), "Error during dialog opening");
+            _english.Add(nameof(LanguageKeys.Error_performing_search_action), "Error performing search action");
         }
 
         #endregion
