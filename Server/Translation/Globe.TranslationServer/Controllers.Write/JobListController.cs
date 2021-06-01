@@ -8,10 +8,10 @@ namespace Globe.TranslationServer.Controllers
     [Route("api/write/[controller]")]
     public class JobListController : Controller
     {
-        private readonly IAsyncJobListService _jobListService;
+        private readonly IJobListService _jobListService;
 
         public JobListController(
-            IAsyncJobListService jobListService)
+            IJobListService jobListService)
         {
             _jobListService = jobListService;
         }

@@ -95,14 +95,12 @@ namespace Globe.TranslationServer
                 .AddScoped<IAsyncContextService, ContextService>()
                 .AddScoped<IAsyncStringTypeService, StringTypeService>()
                 .AddScoped<IAsyncStringViewProxyService, StringViewProxyService>()
-                .AddScoped<IJobListService, Services.NewServices.JobListService>()//TODO
-                .AddScoped<IAsyncXmlGroupedStringEntityService, XmlGroupedStringEntityService>()
+                .AddScoped<IJobListService, JobListService>()
                 .AddScoped<IAsyncXmlDefinitionReaderService, XmlDefinitionReaderService>()
                 .AddScoped<IAsyncConceptDetailsService, ConceptDetailsAdapterService>()
                 .AddScoped<IAsyncConceptService, ConceptService>()
                 .AddScoped<IAsyncNotTranslatedConceptViewService, NotTranslatedConceptViewService>()
                 .AddScoped<IComponentNamespaceGroupService, ComponentNamespaceGroupService>()
-                .AddScoped<IAsyncJobListService, JobListService>()
                 .AddScoped<IAsyncXmlZipService, XmlZipService>()
                 .AddScoped<IExportDbFilterService, ExportDbFilterService>()
 
