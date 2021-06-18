@@ -67,7 +67,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _searchingBusy, value); }
         }
 
-        private string _title = DialogNames.STRING_EDITOR;
+        private string _title = DialogNames.EDIT_TRANSLATED_STRING;
         public string Title
         {
             get { return _title; }
@@ -86,20 +86,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             get { return _language; }
             set { SetProperty(ref _language, value); }
-        }
-
-        private bool _isEnglish;
-        public bool IsEnglish
-        {
-            get { return _isEnglish; }
-            private set { SetProperty(ref _isEnglish, value); }
-        }
-
-        private bool _isMasterTranslatorCommentEnabled = false;
-        public bool IsMasterTranslatorCommentEnabled
-        {
-            get { return _isMasterTranslatorCommentEnabled; }
-            private set { SetProperty(ref _isMasterTranslatorCommentEnabled, value); }
         }
 
         private EditableConcept _editableConcept;
@@ -128,20 +114,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             get { return _filterBy; }
             set { SetProperty(ref _filterBy, value); }
-        }
-
-        private IEnumerable<Context> _contexts;
-        public IEnumerable<Context> Contexts
-        {
-            get { return _contexts; }
-            private set { SetProperty(ref _contexts, value); }
-        }
-
-        private Context _selectedContext;
-        public Context SelectedContext
-        {
-            get { return _selectedContext; }
-            set { SetProperty(ref _selectedContext, value); }
         }
 
         private IEnumerable<StringView> _stringViews;
@@ -200,6 +172,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
                 try
                 {
+                    //TODO: cambiare il servizio cercare di capire se modificare EditableConcept/EditableContext
                     await _editStringService.SaveAsync(new SavableConceptModel(Language, EditableConcept));
                     await _notificationService.NotifyAsync(new Notification
                     {
@@ -224,45 +197,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     SavingBusy = false;
                 }
             }, () => CanSave());
-
-        private DelegateCommand<EditableContext> _linkCommand;
-        public DelegateCommand<EditableContext> LinkCommand =>
-            _linkCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
-            {
-                editableContext.StringId = this.SelectedStringView.Id;
-                editableContext.StringEditableValue = this.SelectedStringView.Value;
-                editableContext.StringType = this.SelectedStringView.Type;
-            },
-            (editableContext) =>
-            {
-                return this.SelectedStringView != null;
-            });
-
-        private DelegateCommand<EditableContext> _unlinkCommand;
-        public DelegateCommand<EditableContext> UnlinkCommand =>
-            _unlinkCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
-            {
-                editableContext.StringId = 0;
-                //editableContext.StringEditableValue = null;
-                //editableContext.StringType = StringType.String;
-            },
-            (editableContext) =>
-            {
-                return true;
-            });
-
-        private DelegateCommand<EditableContext> _duplicateCommand;
-        public DelegateCommand<EditableContext> DuplicateCommand =>
-            _duplicateCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
-            {
-                editableContext.StringId = 0;
-                editableContext.StringEditableValue = this.SelectedStringView.Value;
-                editableContext.StringType = this.SelectedStringView.Type;
-            },
-            (editableContext) =>
-            {
-                return this.SelectedStringView != null;
-            });
 
         private DelegateCommand<EditableContext> _keepThisCommand;
         public DelegateCommand<EditableContext> KeepThisCommand =>
@@ -300,14 +234,10 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             EditableConcept = parameters.GetValue<EditableConcept>(DialogParams.EDITABLE_CONCEPT);
             Language = parameters.GetValue<Language>(DialogParams.LANGUAGE);
-            Contexts = await _editStringService.GetContextsAsync();
             StringTypes = await _editStringService.GetStringTypesAsync();
-            SelectedContext = this.Contexts.ElementAt(0);
             EditableConcept.EditableContexts.ToList().ForEach(item => item.PropertyChanged += EditableContextPropertyChanged);
 
             IsMasterTranslator = UserRoles.Contains(Roles.MasterTranslator);
-            IsEnglish = Language.IsoCoding == SharedConstants.LANGUAGE_EN;
-            IsMasterTranslatorCommentEnabled = IsMasterTranslator && IsEnglish;
         }
 
         protected override void OnAuthenticationChanged(IPrincipal principal)
@@ -321,9 +251,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
             if (args.PropertyName == nameof(SelectedStringView))
             {
-                LinkCommand.RaiseCanExecuteChanged();
-                UnlinkCommand.RaiseCanExecuteChanged();
-                DuplicateCommand.RaiseCanExecuteChanged();
                 KeepThisCommand.RaiseCanExecuteChanged();
             }
             if (args.PropertyName == "StringType" || args.PropertyName == "StringEditableValue")

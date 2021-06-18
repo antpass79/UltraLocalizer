@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace Globe.Client.Localizer.Models
 {
@@ -18,6 +19,7 @@ namespace Globe.Client.Localizer.Models
             Name = name;
             SoftwareDeveloperComment = softwareDeveloperComment;
             EditableContexts = editableContexts;
+            EditStringValueGrouped = editableContexts.First().StringEditableValue;
         }
 
         public int Id { get; }
@@ -27,6 +29,7 @@ namespace Globe.Client.Localizer.Models
         public string SoftwareDeveloperComment { get; }       
         public string MasterTranslatorComment { get; set; }
         public bool IgnoreTranslation { get; set; }
+        public string EditStringValueGrouped { get; set; }
         public ObservableCollection<EditableContext> EditableContexts { get; }
     }
 }

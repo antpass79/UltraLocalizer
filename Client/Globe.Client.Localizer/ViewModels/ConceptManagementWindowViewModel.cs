@@ -24,8 +24,7 @@ namespace Globe.Client.Localizer.ViewModels
         private readonly ILogService _logService;
         private readonly INotificationService _notificationService;
         private readonly IConceptManagementFiltersService _conceptManagementFiltersService;
-        private readonly IConceptManagementViewService _conceptManagementViewService;
-        private readonly ICurrentJobConceptViewService _currentJobConceptViewService;
+        private readonly IConceptManagementViewService _conceptManagementViewService;  
         private readonly IVisibilityFiltersService _visibilityFiltersService;
         private readonly IDialogService _dialogService;
 
@@ -46,7 +45,6 @@ namespace Globe.Client.Localizer.ViewModels
             _notificationService = notificationService;
             _conceptManagementFiltersService = conceptManagementFiltersService;
             _conceptManagementViewService = conceptManagementViewService;
-            _currentJobConceptViewService = currentJobConceptViewService;
             _visibilityFiltersService = visibilityFiltersService;
             _dialogService = dialogService;
         }
@@ -237,69 +235,6 @@ namespace Globe.Client.Localizer.ViewModels
 
                 this.FiltersBusy = false;
             }));
-
-        private DelegateCommand<TranslatedConcept> _translatedConceptViewEditCommand = null;
-        //public DelegateCommand<TranslatedConcept> TranslatedConceptViewEditCommand =>
-        //    _translatedConceptViewEditCommand ??= new DelegateCommand<TranslatedConcept>(async (translatedConceptView) =>
-        //    {
-        //        ConceptDetailsBusy = true;
-
-        //        try
-        //        {
-        //            var conceptView = new JobListConcept()
-        //            {
-        //                ComponentNamespace = translatedConceptView.ComponentNamespace,
-        //                InternalNamespace = translatedConceptView.InternalNamespace,
-        //                Name = translatedConceptView.Concept,
-        //                Id = 32132
-        //            };
-        //            var conceptDetails = await _currentJobConceptViewService.GetConceptDetailsAsync(conceptView);
-
-        //            var @params = new DialogParameters
-        //            {
-        //                {
-        //                    DialogParams.EDITABLE_CONCEPT,
-        //                    new EditableConcept(
-        //                32132,//translatedConceptView.Id,
-        //                translatedConceptView.ComponentNamespace,
-        //                translatedConceptView.InternalNamespace,
-        //                translatedConceptView.Concept,
-        //                string.Empty,//conceptDetails.SoftwareDeveloperComment,
-        //                new ObservableCollection<EditableContext>(translatedConceptView.TranslatedConceptDetails.Select(contextView => new EditableContext(conceptDetails.OriginalStringContextValues
-        //                    .Single(item => item.ContextName == contextView.ContextName).StringValue, contextView.StringInEnglish, contextView.StringValue, contextView.StringId)
-        //                {
-        //                    ComponentNamespace = translatedConceptView.ComponentNamespace,
-        //                    InternalNamespace = translatedConceptView.InternalNamespace,
-        //                    Concept = translatedConceptView.Concept,
-        //                    Name = contextView.ContextName,
-        //                    Concept2ContextId = contextView.Concept2ContextId,
-        //                    StringType = contextView.StringType,
-        //                    StringId = 32132,//contextView.StringId,
-        //                }).ToList()))
-        //                    {
-        //                        MasterTranslatorComment = string.Empty,//conceptDetails.MasterTranslatorComment,
-        //                        IgnoreTranslation = false//conceptDetails.IgnoreTranslation
-        //                    }
-        //                },
-        //                { DialogParams.LANGUAGE, new Language() }
-        //            };
-
-        //            _dialogService.ShowDialog(DialogNames.STRING_EDITOR, @params, async dialogResult =>
-        //            {
-        //                if (dialogResult.Result == ButtonResult.OK)
-        //                    await OnSearch();
-        //            });
-        //        }
-        //        catch (Exception e)
-        //        {
-        //            _logService.Exception(e);
-        //            await _notificationService.NotifyAsync(Localize[LanguageKeys.Error], Localize[LanguageKeys.Error_during_concepts_request], Platform.Services.Notifications.NotificationLevel.Error);
-        //        }
-        //        finally
-        //        {
-        //            ConceptDetailsBusy = false;
-        //        }
-        //    });
 
         async protected override Task OnLoad(string fromView, object data)
         {
