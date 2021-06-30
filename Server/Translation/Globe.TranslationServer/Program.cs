@@ -3,10 +3,13 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.AzureAppServices;
 using System;
 using System.IO;
 using System.Net;
 using System.Reflection;
+using System.Security.Authentication;
 
 namespace Globe.TranslationServer
 {
@@ -29,20 +32,49 @@ namespace Globe.TranslationServer
                         .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
                         .AddJsonFile($"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true, reloadOnChange: true)
                         .AddEnvironmentVariables();
-                        //.AddUserSecrets("bf78c344-a2b0-4f2f-aa96-41bb0828bc8b");
+                    //.AddUserSecrets("bf78c344-a2b0-4f2f-aa96-41bb0828bc8b");
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder
-                        .UseStartup<Startup>()
-                    .UseKestrel(options =>
+                    var defaultWebBuilder = webBuilder
+                    .ConfigureLogging((context, configureLogging) =>
                     {
-                        options.Listen(IPAddress.Any, 5001, listenOptions =>
-                        {
-                            var folder = Path.Combine(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location), "Certificate");
-                            listenOptions.UseHttps(Path.Combine(folder, "identity.pfx"), "identity");
-                        });
-                    });
+                        configureLogging.AddConfiguration(context.Configuration.GetSection("Logging"));
+
+                        configureLogging.ClearProviders();
+                        configureLogging.AddConsole();
+                        configureLogging.AddDebug();
+                        configureLogging.AddAzureWebAppDiagnostics();
+                    })
+                    .ConfigureServices(services =>
+                    {
+                        services
+                            .Configure<AzureFileLoggerOptions>(options =>
+                            {
+                                options.FileName = "azure-diagnostics-";
+                                options.FileSizeLimit = 50 * 1024;
+                                options.RetainedFileCountLimit = 5;
+                            })
+                            .Configure<AzureBlobLoggerOptions>(options =>
+                            {
+                                options.BlobName = "log.txt";
+                            });
+                    })
+                        .UseStartup<Startup>();
+
+                    var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+                    if (string.Compare(environmentName, "Development", true) == 0)
+                    {
+                        defaultWebBuilder
+                            .UseKestrel((context, serverOptions) =>
+                            {
+                                serverOptions.Configure(context.Configuration.GetSection("Kestrel"))
+                                .Endpoint("HTTPS", listenOptions =>
+                                {
+                                    listenOptions.HttpsOptions.SslProtocols = SslProtocols.Tls12;
+                                });
+                            });
+                    }
                 })
                 .ConfigureServices((hostContext, services) =>
                 {

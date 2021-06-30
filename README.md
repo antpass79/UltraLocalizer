@@ -117,3 +117,11 @@ Is Context that contains Concept or the contrary?
 
 - <https://asp.net-hacker.rocks/2019/01/15/unit-testing-data-access-dotnetcore.html>
 - <https://www.easeus.com/sql-database-recovery/export-ms-sql-server-to-csv.html>
+
+### Azure Sql Database
+
+- <https://www.sqlshack.com/migrate-an-on-premises-sql-server-database-to-the-azure-sql-database/>
+- <https://www.sqlcoffee.com/Troubleshooting137.htm>
+- <https://www.mssqltips.com/sqlservertip/2624/script-to-find-and-drop-all-orphaned-users-in-all-sql-server-databases/>
+- <https://docs.microsoft.com/en-us/sql/sql-server/failover-clusters/troubleshoot-orphaned-users-sql-server?redirectedfrom=MSDN&view=sql-server-ver15>
+- <https://www.sqlshack.com/importing-a-bacpac-file-for-a-sql-database-using-ssms/>
