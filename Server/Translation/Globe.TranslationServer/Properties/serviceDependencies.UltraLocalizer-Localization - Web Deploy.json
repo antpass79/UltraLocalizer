@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/localizationdbserver/databases/Localization",
+      "type": "mssql.azure",
+      "connectionId": "DefaultSqlServerConnection",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}
