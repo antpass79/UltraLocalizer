@@ -12,3 +12,5 @@ bin
 
 *appsettings.*
 *App.config*
+
+**/Client/wwwroot/publish
