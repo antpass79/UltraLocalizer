@@ -1,13 +1,12 @@
 ﻿<UserControl x:Class="Globe.Client.Localizer.Dialogs.Views.EditTranslatedStringDialog"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:models="clr-namespace:Globe.Client.Localizer.Models"
+             xmlns:controls="http://schemas.controls.com/"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:converters="clr-namespace:Globe.Client.Localizer.Converters"
              xmlns:platform="http://schemas.platform.com/"
-             xmlns:controls="http://schemas.controls.com/"
+             xmlns:converters="clr-namespace:Globe.Client.Localizer.Converters"
              xmlns:dto="clr-namespace:Globe.Shared.DTOs;assembly=Globe.Shared"
              prism:ViewModelLocator.AutoWireViewModel="True"
              BorderThickness="5" BorderBrush="#05163D"
@@ -26,11 +25,6 @@
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
         <platform:BooleanToVisibilityConverter x:Key="IsDevelopperStringVisibleConverter" True="Visible" False="Collapsed" />
-        <platform:BooleanConverter x:Key="IsMasterTranslatorCommentConverter" True="False" False="True" />
-        <platform:BooleanConverter x:Key="IsMasterTranslatorConverter" />
-        <platform:NullValueToBooleanConverter x:Key="NullValueToBooleanConverter" />
-        <platform:BooleanToVisibilityConverter x:Key="UnlinkToVisibilityConverter" />
-        <platform:BooleanToVisibilityConverter True="Collapsed" False="Visible" x:Key="LinkToVisibilityConverter" />
         <converters:ContextNameToPreviewStyleInfoConverter x:Key="ContextNameToPreviewStyleInfoConverter" />
         <converters:TextSizeToPreviewStateConverter x:Key="TextSizeToPreviewStateConverter" />
 
@@ -73,57 +67,14 @@
 
                 <controls:LocTextBlock Grid.Row="0" Grid.Column="0"
                                        Text="Localize String" />
+                <!--Top Editable String-->
                 <controls:LocTextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" 
                                         TextWrapping="Wrap" 
-                                        Text="{Binding EditableConcept.EditStringValueGrouped, UpdateSourceTrigger=PropertyChanged}" 
-                                        platform:TextChangedBehaviour.Command="{Binding Path=DataContext.LocalizeChangeCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}">
+                                        Text="{Binding UniqueStringEditable, UpdateSourceTrigger=PropertyChanged}" 
+                                        platform:TextChangedBehaviour.Command="{Binding Path=DataContext.UniqueStringChangeCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}">
                 </controls:LocTextBox>
             </Grid>
 
-            <!-- Header -->
-            <!--<Grid DockPanel.Dock="Top" Style="{StaticResource MenuPanel}">
-                <Grid.Resources>
-                    <Style TargetType="{x:Type controls:LocTextBlock}">
-                        <Setter Property="Foreground" Value="White" />
-                        <Setter Property="HorizontalAlignment" Value="Center" />
-                        <Setter Property="FontSize" Value="15" />
-                        <Setter Property="FontWeight" Value="DemiBold" />
-                        <Setter Property="HorizontalAlignment" Value="Center" />
-                        <Setter Property="Margin" Value="3" />
-                    </Style>
-                </Grid.Resources>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-
-                <controls:LocTextBlock Grid.Column="0" Text="{Binding Localize[Concept]}" />
-                <controls:LocTextBlock Grid.Column="1" Text="{Binding Localize[ComponentNamespace]}" />
-                <controls:LocTextBlock Grid.Column="2" Text="{Binding Localize[InternalNamespace]}" />
-                <controls:LocTextBlock Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.Name}" />
-                <controls:LocTextBlock Grid.Row="1" Grid.Column="1" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.ComponentNamespace}" />
-                <controls:LocTextBlock Grid.Row="1" Grid.Column="2" Foreground="White" FontSize="12" FontStyle="Italic" Text="{Binding EditableConcept.InternalNamespace}" />
-            </Grid>-->
-            
-            <!--<Grid DockPanel.Dock="Top" Margin="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-
-                <controls:LocCheckBox Grid.Row="2" Grid.ColumnSpan="2"
-                                      Visibility="{Binding IsEnglish, Converter={StaticResource IsEnglishConverter}}"
-                                      IsChecked="{Binding EditableConcept.IgnoreTranslation}"
-                                      Content="{Binding Localize[Ignore_Translation]}"
-                                      IsEnabled="{Binding IsMasterTranslator, Converter={StaticResource IsMasterTranslatorConverter}}" />
-            </Grid>-->
             <Grid DockPanel.Dock="Bottom" Margin="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="80*" />
@@ -141,40 +92,13 @@
                         </Style>
                     </DockPanel.Resources>
 
-                    <!-- EditableContext DataGrid -->
-                    <controls:LocDataGrid x:Name="contextGrid" FrozenColumnCount="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding EditableConcept.EditableContexts}" SelectedItem="{Binding SelectedEditableContext}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                    <!-- Editable DataGrid -->
+                    <controls:LocDataGrid x:Name="contextGrid" FrozenColumnCount="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding EditableConcept.EditableContexts}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
                         <controls:LocDataGrid.Resources>
                             <platform:BindingProxy x:Key="proxy" Data="{Binding}" />
                         </controls:LocDataGrid.Resources>
                         <DataGrid.Columns>
-                            <!-- Questa e' da "tirare fuori" dalla griglia. E fare in modo che TUTTI ci puntino. Bisogna farla Sopra? Forse si guadagna piu' spazio possibile -->
-                            <DataGridTemplateColumn Header="Localized Value" IsReadOnly="True">
-                                <DataGridTemplateColumn.HeaderTemplate>
-                                    <DataTemplate>
-                                        <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                             {RelativeSource Mode=TemplatedParent}}"/>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.HeaderTemplate>
-                                <DataGridTemplateColumn.CellTemplate>
-                                    <DataTemplate>
-                                        <controls:LocTextBox 
-                                        Width="150" 
-                                        TextWrapping="Wrap" 
-                                        Text="{Binding StringEditableValue, UpdateSourceTrigger=PropertyChanged}" 
-                                        platform:TextChangedBehaviour.Command="{Binding Path=DataContext.LocalizeChangeCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}">
-                                        </controls:LocTextBox>
-                                    </DataTemplate>
-                                </DataGridTemplateColumn.CellTemplate>
-                            </DataGridTemplateColumn>
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Name">
-                                <DataGridTextColumn.HeaderTemplate>
-                                    <DataTemplate>
-                                        <controls:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
-                                         {RelativeSource Mode=TemplatedParent}}"/>
-                                    </DataTemplate>
-                                </DataGridTextColumn.HeaderTemplate>
-                            </DataGridTextColumn>
-
+                            <!-- String Type -->
                             <DataGridTemplateColumn Header="Type">
                                 <DataGridTemplateColumn.HeaderTemplate>
                                     <DataTemplate>
@@ -185,9 +109,22 @@
                                 </DataGridTemplateColumn.HeaderTemplate>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
-                                        <controls:LocComboBox ItemsSource="{Binding Source={StaticResource stringTypes}}" 
-                                                          SelectedValue="{Binding DataContext.StringType, RelativeSource={RelativeSource Mode=TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-                                        </controls:LocComboBox>
+                                        <controls:LocTextBlock Text="{Binding StringType}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <!-- Context -->
+                            <DataGridTemplateColumn Header="Context">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <controls:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                             {RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <controls:LocTextBlock Text="{Binding Name}"/>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>

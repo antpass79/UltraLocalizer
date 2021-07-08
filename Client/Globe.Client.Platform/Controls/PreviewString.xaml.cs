@@ -1,5 +1,4 @@
 ﻿using Globe.Client.Platform.Models;
-using Globe.Client.Platform.Services;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;

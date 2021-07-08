@@ -1,6 +1,5 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
-using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
@@ -11,7 +10,6 @@ using Prism.Commands;
 using Prism.Events;
 using Prism.Services.Dialogs;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Security.Principal;
@@ -74,20 +72,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             private set { SetProperty(ref _title, value); }
         }
 
-        private string _stringValue = string.Empty;
-        public string StringValue
-        {
-            get { return _stringValue; }
-            set { SetProperty(ref _stringValue, value); }
-        }
-
-        private Language _language;
-        public Language Language
-        {
-            get { return _language; }
-            set { SetProperty(ref _language, value); }
-        }
-
         private EditableConcept _editableConcept;
         public EditableConcept EditableConcept
         {
@@ -95,59 +79,11 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             private set { SetProperty(ref _editableConcept, value); }
         }
 
-        private EditableContext _selectedEditableContext;
-        public EditableContext SelectedEditableContext
+        private string _uniqueStringEditable;
+        public string UniqueStringEditable
         {
-            get { return _selectedEditableContext; }
-            set { SetProperty(ref _selectedEditableContext, value); }
-        }
-
-        private ConceptSearchBy _searchBy = ConceptSearchBy.Concept;
-        public ConceptSearchBy SearchBy
-        {
-            get { return _searchBy; }
-            set { SetProperty(ref _searchBy, value); }
-        }
-
-        private ConceptFilterBy _filterBy = ConceptFilterBy.None;
-        public ConceptFilterBy FilterBy
-        {
-            get { return _filterBy; }
-            set { SetProperty(ref _filterBy, value); }
-        }
-
-        private IEnumerable<StringView> _stringViews;
-        public IEnumerable<StringView> StringViews
-        {
-            get { return _stringViews; }
-            set { SetProperty(ref _stringViews, value); }
-        }
-
-        private StringView _selectedStringView;
-        public StringView SelectedStringView
-        {
-            get { return _selectedStringView; }
-            set { SetProperty(ref _selectedStringView, value); }
-        }
-
-        IEnumerable<StringType> _stringTypes;
-        public IEnumerable<StringType> StringTypes
-        {
-            get => _stringTypes;
-            private set
-            {
-                SetProperty(ref _stringTypes, value);
-            }
-        }
-
-        StringType _selectedStringType = StringType.String;
-        public StringType SelectedStringType
-        {
-            get => _selectedStringType;
-            set
-            {
-                SetProperty(ref _selectedStringType, value);
-            }
+            get { return _uniqueStringEditable; }
+            set { SetProperty(ref _uniqueStringEditable, value); }
         }
 
         private DelegateCommand<string> _closeDialogCommand;
@@ -172,8 +108,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
                 try
                 {
-                    //TODO: cambiare il servizio cercare di capire se modificare EditableConcept/EditableContext
-                    await _editStringService.SaveAsync(new SavableConceptModel(Language, EditableConcept));
+                    var id = EditableConcept.EditableContexts.First().OldStringId;
+      
+                    await _editStringService.UpdateAsync(new TranslatedString { Id = id, Value = UniqueStringEditable });
                     await _notificationService.NotifyAsync(new Notification
                     {
                         Title = "Information",
@@ -188,7 +125,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     await _notificationService.NotifyAsync(new Notification
                     {
                         Title = "Error!",
-                        Message = "String not saved",
+                        Message = "String not updated",
                         Level = NotificationLevel.Error
                     });
                 }
@@ -196,21 +133,14 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 {
                     SavingBusy = false;
                 }
-            }, () => CanSave());
+            }, () => CanSave());//TODO
 
-        private DelegateCommand<EditableContext> _keepThisCommand;
-        public DelegateCommand<EditableContext> KeepThisCommand =>
-            _keepThisCommand ??= new DelegateCommand<EditableContext>((editableContext) =>
+        private DelegateCommand _uniqueStringChangeCommand;
+        public DelegateCommand UniqueStringChangeCommand =>
+            _uniqueStringChangeCommand ??= new DelegateCommand(() =>
             {
-                editableContext.StringId = 0;
-                editableContext.StringEditableValue = editableContext.StringInEnglish;
-            });
-
-        private DelegateCommand _localizeChangeCommand;
-        public DelegateCommand LocalizeChangeCommand =>
-            _localizeChangeCommand ??= new DelegateCommand(() =>
-            {
-               SaveCommand.RaiseCanExecuteChanged();
+                EditableConcept.EditableContexts.ToList().ForEach(item => item.StringEditableValue = UniqueStringEditable);
+                SaveCommand.RaiseCanExecuteChanged();
             });
 
         public event Action<IDialogResult> RequestClose;
@@ -230,12 +160,12 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             EditableConcept.EditableContexts.ToList().ForEach(item => item.PropertyChanged -= EditableContextPropertyChanged);
         }
 
-        async public virtual void OnDialogOpened(IDialogParameters parameters)
+        public virtual void OnDialogOpened(IDialogParameters parameters)
         {
             EditableConcept = parameters.GetValue<EditableConcept>(DialogParams.EDITABLE_CONCEPT);
-            Language = parameters.GetValue<Language>(DialogParams.LANGUAGE);
-            StringTypes = await _editStringService.GetStringTypesAsync();
+ 
             EditableConcept.EditableContexts.ToList().ForEach(item => item.PropertyChanged += EditableContextPropertyChanged);
+            UniqueStringEditable = EditableConcept.EditableContexts.First().StringEditableValue;
 
             IsMasterTranslator = UserRoles.Contains(Roles.MasterTranslator);
         }
@@ -249,11 +179,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             base.OnPropertyChanged(args);
 
-            if (args.PropertyName == nameof(SelectedStringView))
-            {
-                KeepThisCommand.RaiseCanExecuteChanged();
-            }
-            if (args.PropertyName == "StringType" || args.PropertyName == "StringEditableValue")
+            if (args.PropertyName == "StringEditableValue")
             {
                 SaveCommand.RaiseCanExecuteChanged();
             }
@@ -263,7 +189,7 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         {
             OnPropertyChanged(args);
         }
-
+        //TODO: non deve scattare a inizializzazione
         private bool CanSave()
         {
             return

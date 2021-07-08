@@ -8,6 +8,7 @@ namespace Globe.TranslationServer.Services
     {
         Task<ConceptDTO> GetConceptAsync(int id);
         Task SaveAsync(SavableConceptModelDTO savableConceptModel);
+        Task UpdateAsync(TranslatedString translatedString);
         Task<NewConceptsResult> CheckNewConceptsAsync();
     }
 }

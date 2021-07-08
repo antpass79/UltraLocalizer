@@ -200,13 +200,14 @@ namespace Globe.Client.Localizer.ViewModels
                     var @params = new DialogParameters
                     {
                         {
+                            //TODO: parametri vuoti
                             DialogParams.EDITABLE_CONCEPT,
                             new EditableConcept(
                                 localizeStringView.StringId,
                                 string.Empty,
                                 string.Empty,
                                 string.Empty,
-                                string.Empty,//conceptDetails.SoftwareDeveloperComment,
+                                string.Empty,
                                 new ObservableCollection<EditableContext>(localizeStringView.LocalizeStringDetails
                                 .Select(details => new EditableContext(string.Empty,string.Empty, localizeStringView.Value, localizeStringView.StringId)
                         {
@@ -223,7 +224,7 @@ namespace Globe.Client.Localizer.ViewModels
                                 IgnoreTranslation = false//details.Ignore
                             }
                         },
-                        { DialogParams.LANGUAGE, new Language() }
+                        { DialogParams.LANGUAGE, SelectedLanguage }
                     };
 
                     _dialogService.ShowDialog(DialogNames.EDIT_TRANSLATED_STRING, @params, async dialogResult =>

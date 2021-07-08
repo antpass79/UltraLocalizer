@@ -41,6 +41,15 @@ namespace Globe.TranslationServer.Services
             };
         }
 
+        async public Task UpdateAsync(TranslatedString translatedString)
+        {
+            var localizeString = _localizationContext.LocStrings.Find(translatedString.Id);
+
+            localizeString.String = translatedString.Value; //this is the new Value
+            
+            await _localizationContext.SaveChangesAsync();
+        }
+
         async public Task SaveAsync(SavableConceptModelDTO savableConceptModel)
         {
             if (savableConceptModel.Language.IsoCoding == SharedConstants.LANGUAGE_EN)
@@ -109,8 +118,6 @@ namespace Globe.TranslationServer.Services
 
         async public Task<NewConceptsResult> CheckNewConceptsAsync()
         {
-            //_xmlService.LoadXml();
-            //_xmlService.FillDB();
             var statistics = await _xmlToDBService.UpdateDatabaseAsync();
 
             var result = new NewConceptsResult
@@ -143,13 +150,13 @@ namespace Globe.TranslationServer.Services
             _localizationContext.LocStrings2Contexts.Remove(itemToRemove);
         }
 
-        void InsertNewStringAndNewStringToContext(int IDLanguage, int IDType, string DataString, int conceptToContextId)
+        void InsertNewStringAndNewStringToContext(int idLanguage, int idType, string dataString, int conceptToContextId)
         {
             var newString = new LocString
             {
-                Idlanguage = IDLanguage,
-                Idtype = IDType,
-                String = DataString
+                Idlanguage = idLanguage,
+                Idtype = idType,
+                String = dataString
             };
 
             _localizationContext.LocStrings.Add(newString);
@@ -162,19 +169,19 @@ namespace Globe.TranslationServer.Services
             newString.LocStrings2Contexts.Add(newStringToContext);
         }
 
-        void InsertNewStrings2Context(int IDString, int IDConcept2Context)
+        void InsertNewStrings2Context(int idString, int idConcept2Context)
         {
             _localizationContext.LocStrings2Contexts.Add(new LocStrings2Context
             {
-                Idstring = IDString,
-                Idconcept2Context = IDConcept2Context
+                Idstring = idString,
+                Idconcept2Context = idConcept2Context
             });
         }
 
-        List<int> GetConceptContextEquivalentStrings(int StringId)
+        List<int> GetConceptContextEquivalentStrings(int stringId)
         {
             var calculatedStringToContextId = _localizationContext.LocStrings2Contexts
-                .Where(item => item.Idstring == StringId)
+                .Where(item => item.Idstring == stringId)
                 .Select(item => item.Idconcept2Context)
                 .Single();
 
@@ -186,11 +193,11 @@ namespace Globe.TranslationServer.Services
             return results;
         }
 
-        void UpdateConcept(int Id, bool Ignore, string Comment)
+        void UpdateConcept(int id, bool ignore, string comment)
         {
-            var concept = _localizationContext.LocConceptsTables.Find(Id);
-            concept.Ignore = Ignore;
-            concept.Comment = Comment;
+            var concept = _localizationContext.LocConceptsTables.Find(id);
+            concept.Ignore = ignore;
+            concept.Comment = comment;
         }
     }
 }
