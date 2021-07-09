@@ -15,6 +15,7 @@
     <None Remove="Icons\draft.png" />
     <None Remove="Icons\duplicate.png" />
     <None Remove="Icons\edit.png" />
+    <None Remove="Icons\edit_page.png" />
     <None Remove="Icons\english.png" />
     <None Remove="Icons\error.png" />
     <None Remove="Icons\folder.png" />
@@ -98,6 +99,7 @@
     <Resource Include="Icons\draft.png" />
     <Resource Include="Icons\duplicate.png" />
     <Resource Include="Icons\edit.png" />
+    <Resource Include="Icons\edit_page.png" />
     <Resource Include="Icons\english.png" />
     <Resource Include="Icons\error.png" />
     <Resource Include="Icons\folder.png" />

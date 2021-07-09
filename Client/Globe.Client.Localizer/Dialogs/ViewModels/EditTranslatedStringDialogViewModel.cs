@@ -5,12 +5,10 @@ using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
 using Globe.Shared.DTOs;
 using Globe.Shared.Services;
-using Globe.Shared.Utilities;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Services.Dialogs;
 using System;
-using System.ComponentModel;
 using System.Linq;
 using System.Security.Principal;
 
@@ -42,13 +40,6 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
         public IPreviewStyleService PreviewStyleService
         {
             get { return _previewStyleService; }
-        }
-
-        private bool _isMasterTranslator = false;
-        public bool IsMasterTranslator
-        {
-            get { return _isMasterTranslator; }
-            set { SetProperty(ref _isMasterTranslator, value); }
         }
 
         private bool _savingBusy = false;
@@ -86,6 +77,13 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _uniqueStringEditable, value); }
         }
 
+        private bool _uniqueStringEditableChanged = false;
+        public bool UniqueStringEditableChanged
+        {
+            get { return _uniqueStringEditableChanged; }
+            set { SetProperty(ref _uniqueStringEditableChanged, value); }
+        }
+
         private DelegateCommand<string> _closeDialogCommand;
         public DelegateCommand<string> CloseDialogCommand =>
             _closeDialogCommand ??= new DelegateCommand<string>(parameter =>
@@ -111,6 +109,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     var id = EditableConcept.EditableContexts.First().OldStringId;
       
                     await _editStringService.UpdateAsync(new TranslatedString { Id = id, Value = UniqueStringEditable });
+                    UniqueStringEditableChanged = false;
+
                     await _notificationService.NotifyAsync(new Notification
                     {
                         Title = "Information",
@@ -133,13 +133,14 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                 {
                     SavingBusy = false;
                 }
-            }, () => CanSave());//TODO
+            }, () => CanSave());
 
         private DelegateCommand _uniqueStringChangeCommand;
         public DelegateCommand UniqueStringChangeCommand =>
             _uniqueStringChangeCommand ??= new DelegateCommand(() =>
             {
                 EditableConcept.EditableContexts.ToList().ForEach(item => item.StringEditableValue = UniqueStringEditable);
+                UniqueStringEditableChanged = true;
                 SaveCommand.RaiseCanExecuteChanged();
             });
 
@@ -157,17 +158,12 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         public virtual void OnDialogClosed()
         {
-            EditableConcept.EditableContexts.ToList().ForEach(item => item.PropertyChanged -= EditableContextPropertyChanged);
         }
 
         public virtual void OnDialogOpened(IDialogParameters parameters)
         {
             EditableConcept = parameters.GetValue<EditableConcept>(DialogParams.EDITABLE_CONCEPT);
- 
-            EditableConcept.EditableContexts.ToList().ForEach(item => item.PropertyChanged += EditableContextPropertyChanged);
             UniqueStringEditable = EditableConcept.EditableContexts.First().StringEditableValue;
-
-            IsMasterTranslator = UserRoles.Contains(Roles.MasterTranslator);
         }
 
         protected override void OnAuthenticationChanged(IPrincipal principal)
@@ -175,24 +171,10 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             base.OnAuthenticationChanged(principal);
         }
 
-        protected override void OnPropertyChanged(PropertyChangedEventArgs args)
-        {
-            base.OnPropertyChanged(args);
-
-            if (args.PropertyName == "StringEditableValue")
-            {
-                SaveCommand.RaiseCanExecuteChanged();
-            }
-        }
-
-        private void EditableContextPropertyChanged(object sender, PropertyChangedEventArgs args)
-        {
-            OnPropertyChanged(args);
-        }
-        //TODO: non deve scattare a inizializzazione
         private bool CanSave()
         {
             return
+                !String.IsNullOrWhiteSpace(UniqueStringEditable) && UniqueStringEditableChanged &&
                 EditableConcept != null &&
                 EditableConcept.EditableContexts.All(item =>
                     !string.IsNullOrWhiteSpace(item.StringEditableValue) &&

@@ -131,9 +131,9 @@ namespace Globe.Client.Localizer.ViewModels
                 {
                     Title = Localize[LanguageKeys.Page_Edit_String],
                     TitleKey = LanguageKeys.Page_Edit_String,
-                    IconName = "translation",
+                    IconName = "edit_page",
                     IsSelected = false,
-                    Roles = Roles.Group_All,
+                    Roles = Roles.Group_Administrators,
                     AlwaysVisible = false,
                     ViewName = ViewNames.JOBLIST_EDIT_STRING_VIEW
                 }

@@ -119,6 +119,7 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Page_Current_Job), "Lavoro corrente");
             _italian.Add(nameof(LanguageKeys.Page_Concept_Management), "Gestione Concetti");
             _italian.Add(nameof(LanguageKeys.Page_JobList_Status), "Stato delle liste di lavoro");
+            _italian.Add(nameof(LanguageKeys.Page_Edit_String), "Modifica stringa");
 
             _italian.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Inserisci i dettagli");
 
@@ -215,6 +216,7 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Page_Current_Job), "Current Job");
             _english.Add(nameof(LanguageKeys.Page_Concept_Management), "Concept Management");
             _english.Add(nameof(LanguageKeys.Page_JobList_Status), "Joblist Status");
+            _english.Add(nameof(LanguageKeys.Page_Edit_String), "Edit String");
 
             _english.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Please enter your credentials");
 

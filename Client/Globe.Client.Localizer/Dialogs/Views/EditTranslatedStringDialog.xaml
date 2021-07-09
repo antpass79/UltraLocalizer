@@ -7,7 +7,6 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:platform="http://schemas.platform.com/"
              xmlns:converters="clr-namespace:Globe.Client.Localizer.Converters"
-             xmlns:dto="clr-namespace:Globe.Shared.DTOs;assembly=Globe.Shared"
              prism:ViewModelLocator.AutoWireViewModel="True"
              BorderThickness="5" BorderBrush="#05163D"
              MaxWidth="1600"
@@ -24,7 +23,6 @@
         </Style>
     </prism:Dialog.WindowStyle>
     <UserControl.Resources>
-        <platform:BooleanToVisibilityConverter x:Key="IsDevelopperStringVisibleConverter" True="Visible" False="Collapsed" />
         <converters:ContextNameToPreviewStyleInfoConverter x:Key="ContextNameToPreviewStyleInfoConverter" />
         <converters:TextSizeToPreviewStateConverter x:Key="TextSizeToPreviewStateConverter" />
 
@@ -45,12 +43,6 @@
             <Setter Property="FontSize" Value="15"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
         </Style>
-
-        <ObjectDataProvider x:Key="stringTypes" MethodName="GetValues" ObjectType="{x:Type dto:StringType}">
-            <ObjectDataProvider.MethodParameters>
-                <x:Type Type="dto:StringType"/>
-            </ObjectDataProvider.MethodParameters>
-        </ObjectDataProvider>
     </UserControl.Resources>
 
     <Grid>

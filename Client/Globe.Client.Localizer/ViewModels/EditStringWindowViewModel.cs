@@ -170,16 +170,6 @@ namespace Globe.Client.Localizer.ViewModels
             }
         }
 
-        LocalizeString _selectedTranslatedConcept;
-        public LocalizeString SelectedTranslatedConcept
-        {
-            get => _selectedTranslatedConcept;
-            set
-            {
-                SetProperty(ref _selectedTranslatedConcept, value);
-            }
-        }
-
         private DelegateCommand _searchCommand = null;
         public DelegateCommand SearchCommand =>
             _searchCommand ??= new DelegateCommand(async () =>
@@ -196,11 +186,9 @@ namespace Globe.Client.Localizer.ViewModels
 
                 try
                 {
-
                     var @params = new DialogParameters
                     {
                         {
-                            //TODO: parametri vuoti
                             DialogParams.EDITABLE_CONCEPT,
                             new EditableConcept(
                                 localizeStringView.StringId,
@@ -219,12 +207,7 @@ namespace Globe.Client.Localizer.ViewModels
                             StringType = !string.IsNullOrWhiteSpace(localizeStringView.StringType) ? Enum.Parse<StringType>(localizeStringView.StringType) : StringType.Label,
                             StringId = localizeStringView.StringId,
                         }).ToList()))
-                            {
-                                MasterTranslatorComment = string.Empty,//conceptDetails.MasterTranslatorComment,
-                                IgnoreTranslation = false//details.Ignore
-                            }
-                        },
-                        { DialogParams.LANGUAGE, SelectedLanguage }
+                        }
                     };
 
                     _dialogService.ShowDialog(DialogNames.EDIT_TRANSLATED_STRING, @params, async dialogResult =>
@@ -264,7 +247,6 @@ namespace Globe.Client.Localizer.ViewModels
                 this.Languages = await _editStringFiltersService.GetLanguagesAsync();
 
                 this.SelectedLanguage = this.Languages.FirstOrDefault(item => item.IsoCoding == SharedConstants.LANGUAGE_EN);
-
             }
             catch (Exception e)
             {
@@ -327,7 +309,11 @@ namespace Globe.Client.Localizer.ViewModels
         {
             _usedFiltersBySearching.Language = SelectedLanguage;
 
-            FilterBy = $"{Localize["FilterBy"]} {_usedFiltersBySearching?.Language?.Name}";//TODO: Guarda se aggiungere qualche altra info
+            var stringId = InsertedStringId != SharedConstants.ID_TO_IGNORE ? $", String Id: {InsertedStringId.ToString()}" : String.Empty;
+            var stringValue = InsertedString != string.Empty ? $", String: {InsertedString}" : String.Empty;
+            var concept = InsertedConcept != string.Empty ? $", Concept: {InsertedConcept}" : String.Empty;
+
+            FilterBy = $"{Localize["FilterBy"]} {_usedFiltersBySearching?.Language?.Name}{stringId}{stringValue}{concept}";
         }
     }
 }
