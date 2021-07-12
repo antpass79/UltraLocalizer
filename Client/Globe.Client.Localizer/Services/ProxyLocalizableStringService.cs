@@ -56,7 +56,7 @@ namespace Globe.Client.Localizer.Services
                         Console.WriteLine(e.Message);
                         await _notificationService.NotifyAsync(new Notification
                         {
-                            Title = "Error!",
+                            Title = _localizationAppService.Resolve("Error"),
                             Message = _localizationAppService.Resolve("Error_during_server_communication"),
                             Level = NotificationLevel.Error
                         });
@@ -67,7 +67,7 @@ namespace Globe.Client.Localizer.Services
 
                             await _notificationService.NotifyAsync(new Notification
                             {
-                                Title = "Warning",
+                                Title = _localizationAppService.Resolve("Warning"),
                                 Message = _localizationAppService.Resolve("Strings_from_file_system"),
                                 Level = NotificationLevel.Warning
                             });
@@ -77,7 +77,7 @@ namespace Globe.Client.Localizer.Services
                             Console.WriteLine(innerException.Message);
                             await _notificationService.NotifyAsync(new Notification
                             {
-                                Title = "Error!",
+                                Title = _localizationAppService.Resolve("Error"),
                                 Message = _localizationAppService.Resolve("Impossible_to_retrieve_strings"),
                                 Level = NotificationLevel.Error
                             });
@@ -109,7 +109,7 @@ namespace Globe.Client.Localizer.Services
 
                         await _notificationService.NotifyAsync(new Notification
                         {
-                            Title = "Information",
+                            Title = _localizationAppService.Resolve("Information"),
                             Message = _localizationAppService.Resolve("Operation_successfully_completed"),
                             Level = NotificationLevel.Info
                         });
@@ -119,7 +119,7 @@ namespace Globe.Client.Localizer.Services
                         Console.WriteLine(e.Message);
                         await _notificationService.NotifyAsync(new Notification
                         {
-                            Title = "Error",
+                            Title = _localizationAppService.Resolve("Error"),
                             Message = _localizationAppService.Resolve("Error_during_server_communication"),
                             Level = NotificationLevel.Error
                         });
@@ -130,8 +130,8 @@ namespace Globe.Client.Localizer.Services
                            
                             await _notificationService.NotifyAsync(new Notification
                             {
-                                Title = "Warning",
-                                Message = _localizationAppService.Resolve("Strings_saved_in_file_system"),
+                                Title = _localizationAppService.Resolve("Warning"),
+                                Message = _localizationAppService.Resolve("Strings_saved"),
                                 Level = NotificationLevel.Warning
                             });
                         }
@@ -140,7 +140,7 @@ namespace Globe.Client.Localizer.Services
                             Console.WriteLine(innerException.Message);
                             await _notificationService.NotifyAsync(new Notification
                             {
-                                Title = "Error",
+                                Title = _localizationAppService.Resolve("Error"),
                                 Message = _localizationAppService.Resolve("Impossible_to_save_strings"),
                                 Level = NotificationLevel.Error
                             });
@@ -153,8 +153,8 @@ namespace Globe.Client.Localizer.Services
 
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = "Warning",
-                        Message = _localizationAppService.Resolve("Strings_saved_in_file_system"),
+                        Title = _localizationAppService.Resolve("Warning"),
+                        Message = _localizationAppService.Resolve("Strings_saved"),
                         Level = NotificationLevel.Warning
                     });
                 }

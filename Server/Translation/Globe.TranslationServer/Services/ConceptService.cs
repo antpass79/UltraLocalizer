@@ -45,7 +45,7 @@ namespace Globe.TranslationServer.Services
         {
             var localizeString = _localizationContext.LocStrings.Find(translatedString.Id);
 
-            localizeString.String = translatedString.Value; //this is the new Value
+            localizeString.String = translatedString.Value;
             
             await _localizationContext.SaveChangesAsync();
         }

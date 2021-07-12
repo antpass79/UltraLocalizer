@@ -1,5 +1,6 @@
 ﻿using Globe.Client.Localizer.Models;
 using Globe.Client.Localizer.Services;
+using Globe.Client.Platform.Assets.Localization;
 using Globe.Client.Platform.Services;
 using Globe.Client.Platform.Services.Notifications;
 using Globe.Client.Platform.ViewModels;
@@ -55,12 +56,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             get { return _searchingBusy; }
             set { SetProperty(ref _searchingBusy, value); }
         }
-
-        private string _title = DialogNames.EDIT_TRANSLATED_STRING;
         public string Title
         {
-            get { return _title; }
-            private set { SetProperty(ref _title, value); }
+            get { return DialogNames.EDIT_TRANSLATED_STRING; }
         }
 
         private EditableConcept _editableConcept;
@@ -113,8 +111,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = "Information",
-                        Message = "String updated",
+                        Title = Localize[LanguageKeys.Information],
+                        Message = Localize[LanguageKeys.Strings_updated],
                         Level = NotificationLevel.Info
                     });
                 }
@@ -124,8 +122,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     Console.WriteLine(e.Message);                
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = "Error!",
-                        Message = "String not updated",
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Strings_not_updated],
                         Level = NotificationLevel.Error
                     });
                 }

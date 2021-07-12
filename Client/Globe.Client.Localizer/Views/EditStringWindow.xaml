@@ -47,11 +47,11 @@
                         </controls:LocComboBox.InputBindings>
                     </controls:LocComboBox>
                     <controls:LocTextBlock Grid.Row="2" Grid.Column="0">String Id</controls:LocTextBlock>
-                    <controls:LocTextBox Grid.Row="2" Grid.Column="1" PreviewTextInput="LocTextBox_PreviewTextInput" Text="{Binding InsertedStringId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
-                        <controls:LocTextBox.InputBindings>
+                    <controls:LocNumericTextBox Grid.Row="2" Grid.Column="1" Text="{Binding InsertedStringId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                        <controls:LocNumericTextBox.InputBindings>
                             <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
-                        </controls:LocTextBox.InputBindings>
-                    </controls:LocTextBox>
+                        </controls:LocNumericTextBox.InputBindings>
+                    </controls:LocNumericTextBox>
                     <controls:LocTextBlock Grid.Row="3" Grid.Column="0">Translated String</controls:LocTextBlock>
                     <controls:LocTextBox Grid.Row="3" Grid.Column="1" Text="{Binding InsertedString, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
                         <controls:LocTextBox.InputBindings>
