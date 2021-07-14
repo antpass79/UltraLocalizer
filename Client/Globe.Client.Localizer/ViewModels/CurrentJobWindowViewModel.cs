@@ -416,6 +416,8 @@ namespace Globe.Client.Localizer.ViewModels
         {
             _usedFiltersBySearching.Language = SelectedLanguage;
             _usedFiltersBySearching.JobItem = SelectedJobItem;
+            _usedFiltersBySearching.ComponentNamespace = SelectedComponentNamespace;
+            _usedFiltersBySearching.InternalNamespace = SelectedInternalNamespace;
 
             FilterBy = $"{Localize["FilterBy"]} {_usedFiltersBySearching?.Language?.Name}, {Localize["JobListName"]}: {_usedFiltersBySearching?.JobItem?.Name}";
         }
