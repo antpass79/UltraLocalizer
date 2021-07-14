@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace Globe.Client.Platform.Assets.Controls
 {
-    public class LocNumericTextBox : TextBox
+    public class LocNumericTextBox : LocTextBox
     {
         private static readonly Regex regex = new Regex("^[0-9]*$");
 
