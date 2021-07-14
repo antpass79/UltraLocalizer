@@ -10,6 +10,7 @@
         public static readonly string CURRENT_JOB_VIEW = "CurrentJobWindow";
         public static readonly string CONCEPT_MANAGEMENT_VIEW = "ConceptManagementWindow";
         public static readonly string JOBLIST_STATUS_VIEW = "JobListStatusWindow";
+        public static readonly string JOBLIST_EDIT_STRING_VIEW = "EditStringWindow";
         public static readonly string JOBS_VIEW = "JobsWindow";
         public static readonly string HOME_VIEW = "HomeWindow";
         public static readonly string MERGE_VIEW = "MergeWindow";
