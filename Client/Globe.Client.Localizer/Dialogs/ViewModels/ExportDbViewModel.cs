@@ -51,11 +51,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
 
         #region Properties
 
-        private string _title = DialogNames.EXPORT_DB;
         public string Title
         {
-            get { return _title; }
-            private set { SetProperty(ref _title, value); }
+            get { return DialogNames.EXPORT_DB; }
         }
 
         private bool _busy;

@@ -97,6 +97,9 @@ namespace Globe.Client.Platform.Services
 
             _italian.Add(nameof(LanguageKeys.ShowFilters), "Mostra Filtri");
             _italian.Add(nameof(LanguageKeys.HideFilters), "Nascondi Filtri");
+            _italian.Add(nameof(LanguageKeys.Error), "Errore");
+            _italian.Add(nameof(LanguageKeys.Warning), "Attenzione");
+            _italian.Add(nameof(LanguageKeys.Information), "Informazione");
             _italian.Add(nameof(LanguageKeys.Options), "Opzioni");
             _italian.Add(nameof(LanguageKeys.Translation), "Traduzione");
             _italian.Add(nameof(LanguageKeys.Merge), "Unisci");
@@ -119,6 +122,7 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Page_Current_Job), "Lavoro corrente");
             _italian.Add(nameof(LanguageKeys.Page_Concept_Management), "Gestione Concetti");
             _italian.Add(nameof(LanguageKeys.Page_JobList_Status), "Stato delle liste di lavoro");
+            _italian.Add(nameof(LanguageKeys.Page_Edit_String), "Modifica stringa");
 
             _italian.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Inserisci i dettagli");
 
@@ -126,8 +130,10 @@ namespace Globe.Client.Platform.Services
             _italian.Add(nameof(LanguageKeys.Error_during_server_communication), "Errore durante la comunicazione con il server");
             _italian.Add(nameof(LanguageKeys.Strings_from_file_system), "Stringhe caricate da file system");
             _italian.Add(nameof(LanguageKeys.Impossible_to_retrieve_strings), "Impossibile recuperare le stringhe");
-            _italian.Add(nameof(LanguageKeys.Strings_saved_in_file_system), "Stringhe salvate nel file siystem");
+            _italian.Add(nameof(LanguageKeys.Strings_saved), "Stringhe salvate");
             _italian.Add(nameof(LanguageKeys.Impossible_to_save_strings), "Impossibile salvare le stringhe");
+            _italian.Add(nameof(LanguageKeys.Strings_updated), "Stringhe aggiornate");
+            _italian.Add(nameof(LanguageKeys.Strings_not_updated), "Stringhe non aggiornate!");
             _italian.Add(nameof(LanguageKeys.HomeIntro_1), "Il Localizzatore fornisce una interfaccia utente per tradurre tutte le parole in linguaggi differenti");
             _italian.Add(nameof(LanguageKeys.HomeIntro_2), "Il traduttore puo' lavorare offline");
             _italian.Add(nameof(LanguageKeys.Is_logged), "è connesso");
@@ -193,6 +199,9 @@ namespace Globe.Client.Platform.Services
 
             _english.Add(nameof(LanguageKeys.ShowFilters), "Show Filters");
             _english.Add(nameof(LanguageKeys.HideFilters), "Hide Filters");
+            _english.Add(nameof(LanguageKeys.Error), "Error");
+            _english.Add(nameof(LanguageKeys.Warning), "Warning");
+            _english.Add(nameof(LanguageKeys.Information), "Information");
             _english.Add(nameof(LanguageKeys.Options), LanguageKeys.Options);
             _english.Add(nameof(LanguageKeys.Translation), LanguageKeys.Translation);
             _english.Add(nameof(LanguageKeys.Merge), LanguageKeys.Merge);
@@ -215,6 +224,7 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Page_Current_Job), "Current Job");
             _english.Add(nameof(LanguageKeys.Page_Concept_Management), "Concept Management");
             _english.Add(nameof(LanguageKeys.Page_JobList_Status), "Joblist Status");
+            _english.Add(nameof(LanguageKeys.Page_Edit_String), "Edit String");
 
             _english.Add(nameof(LanguageKeys.Please_enter_your_credentials), "Please enter your credentials");
 
@@ -222,8 +232,10 @@ namespace Globe.Client.Platform.Services
             _english.Add(nameof(LanguageKeys.Error_during_server_communication), "Error during server communication");
             _english.Add(nameof(LanguageKeys.Strings_from_file_system), "Strings from file system");
             _english.Add(nameof(LanguageKeys.Impossible_to_retrieve_strings), "Impossible to retrieve strings");
-            _english.Add(nameof(LanguageKeys.Strings_saved_in_file_system), "Strings saved in file system");
+            _english.Add(nameof(LanguageKeys.Strings_saved), "Strings saved");
             _english.Add(nameof(LanguageKeys.Impossible_to_save_strings), "Impossible to save strings");
+            _english.Add(nameof(LanguageKeys.Strings_updated), "Strings updated");
+            _english.Add(nameof(LanguageKeys.Strings_not_updated), "Strings not updated!");
             _english.Add(nameof(LanguageKeys.HomeIntro_1), "The Ultra Localizer provides an User Interface to translate all strings in different languages.");
             _english.Add(nameof(LanguageKeys.HomeIntro_2), "The translator can work without network connection, thanks to the offline mode.");
             _english.Add(nameof(LanguageKeys.Download), "Check the last available application version.");

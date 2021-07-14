@@ -14,6 +14,7 @@
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocLabel.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocTextBlock.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocTextBox.xaml" />
+        <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocNumericTextBox.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocRadioButton.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocCheckBox.xaml" />
         <ResourceDictionary Source="/Globe.Client.Platform.Assets;component/Controls/LocImage.xaml" />

@@ -8,25 +8,25 @@ using System.Threading.Tasks;
 namespace Globe.TranslationServer.Controllers
 {
     [Route("api/read/[controller]")]
-    public class ConceptManagementViewController : Controller
+    public class EditStringViewController : Controller
     {
         private readonly ITranslatedConceptService _translatedConceptService;
 
-        public ConceptManagementViewController(
+        public EditStringViewController(
             ITranslatedConceptService translatedConceptService)
         {
             _translatedConceptService = translatedConceptService;
         }
 
         [HttpGet]
-        async public Task<IEnumerable<TranslatedConcept>> Get([FromBody] ConceptManagementSearch search)
+        async public Task<IEnumerable<LocalizeString>> Get([FromBody] EditStringSearch search)
         {
             if (!ModelState.IsValid)
             {
                 throw new System.Exception("search");
             }
             
-            return await _translatedConceptService.GetAllAsync(search.ComponentNamespace, search.InternalNamespace, search.LanguageId, search.Context, search.Concept, search.LocalizedString, SharedConstants.ID_TO_IGNORE);
+            return await _translatedConceptService.GetAllStringsAsync(SharedConstants.COMPONENT_NAMESPACE_ALL, SharedConstants.INTERNAL_NAMESPACE_ALL, search.LanguageId, SharedConstants.CONTEXT_ALL, search.Concept, search.LocalizedString, search.StringId);
         }
     }
 }

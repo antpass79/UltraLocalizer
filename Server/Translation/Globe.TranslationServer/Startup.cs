@@ -90,6 +90,7 @@ namespace Globe.TranslationServer
                 .AddScoped<ITranslatedConceptService, ConceptTranslatedService>()
                 .AddScoped<IAsyncJobItemService, JobItemService>()
                 .AddScoped<IDBToXmlService, DBToXmlService>()
+                .AddScoped<IAsyncJobListStatusService, JobListStatusService>()
 
                 .AddScoped<IAsyncConceptSearchService, ConceptSearchService>()
                 .AddScoped<IAsyncContextService, ContextService>()

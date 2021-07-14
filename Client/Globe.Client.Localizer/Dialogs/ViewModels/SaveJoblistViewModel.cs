@@ -42,11 +42,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             _notificationService = notificationService;
         }
 
-        private string _title = DialogNames.SAVE_JOBLIST;
         public string Title
         {
-            get { return _title; }
-            private set { SetProperty(ref _title, value); }
+            get { return DialogNames.SAVE_JOBLIST; }
         }
 
         private bool _busy;

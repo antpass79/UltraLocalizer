@@ -61,6 +61,7 @@
         public readonly static string Page_Current_Job = nameof(Page_Current_Job);
         public readonly static string Page_Concept_Management = nameof(Page_Concept_Management);
         public readonly static string Page_JobList_Status = nameof(Page_JobList_Status);
+        public readonly static string Page_Edit_String = nameof(Page_Edit_String);
 
         public readonly static string Please_enter_your_credentials = nameof(Please_enter_your_credentials);
 
@@ -68,7 +69,9 @@
         public readonly static string Error_during_server_communication = nameof(Error_during_server_communication);
         public readonly static string Strings_from_file_system = nameof(Strings_from_file_system);
         public readonly static string Impossible_to_retrieve_strings = nameof(Impossible_to_retrieve_strings);
-        public readonly static string Strings_saved_in_file_system = nameof(Strings_saved_in_file_system);
+        public readonly static string Strings_saved= nameof(Strings_saved);
+        public readonly static string Strings_updated = nameof(Strings_updated);
+        public readonly static string Strings_not_updated = nameof(Strings_not_updated);
         public readonly static string Impossible_to_save_strings = nameof(Impossible_to_save_strings);
         public readonly static string Error_during_concepts_request = nameof(Error_during_concepts_request);
         public readonly static string Download_completed = nameof(Download_completed);
