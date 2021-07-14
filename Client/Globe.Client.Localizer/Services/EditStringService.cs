@@ -17,7 +17,8 @@ namespace Globe.Client.Localizer.Services
         private const string ENDPOINT_Context = "Context";
         private const string ENDPOINT_StringType = "StringType";
         private const string ENDPOINT_Concept = "Concept";
-        
+        private const string ENDPOINT_String = "String";
+
         private readonly IAsyncSecureHttpClient _secureHttpClient;
 
         public EditStringService(IAsyncSecureHttpClient secureHttpClient, ISettingsService settingsService)
@@ -45,6 +46,11 @@ namespace Globe.Client.Localizer.Services
         async public Task SaveAsync(SavableConceptModel savableConceptModel)
         {
             await _secureHttpClient.PutAsync(ENDPOINT_WRITE + ENDPOINT_Concept, savableConceptModel);
+        }
+
+        async public Task UpdateAsync(TranslatedString translatedString)
+        {
+            await _secureHttpClient.PutAsync(ENDPOINT_WRITE + ENDPOINT_String, translatedString);
         }
 
     }

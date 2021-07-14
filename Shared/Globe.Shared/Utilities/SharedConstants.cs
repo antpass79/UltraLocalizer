@@ -17,5 +17,7 @@
 
         public const string USER_NAME_ALL = "all";
         public const string CONTEXT_ALL = "all";
+
+        public const int ID_TO_IGNORE = 0;
     }
 }

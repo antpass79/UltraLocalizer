@@ -67,11 +67,9 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
             set { SetProperty(ref _searchingBusy, value); }
         }
 
-        private string _title = DialogNames.STRING_EDITOR;
         public string Title
         {
-            get { return _title; }
-            private set { SetProperty(ref _title, value); }
+            get { return DialogNames.STRING_EDITOR; }
         }
 
         private string _stringValue = string.Empty;
@@ -203,8 +201,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     await _editStringService.SaveAsync(new SavableConceptModel(Language, EditableConcept));
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = "Information",
-                        Message = "String saved",
+                        Title = Localize[LanguageKeys.Information],
+                        Message = Localize[LanguageKeys.Strings_saved],
                         Level = NotificationLevel.Info
                     });
                 }
@@ -214,8 +212,8 @@ namespace Globe.Client.Localizer.Dialogs.ViewModels
                     Console.WriteLine(e.Message);                
                     await _notificationService.NotifyAsync(new Notification
                     {
-                        Title = "Error!",
-                        Message = "String not saved",
+                        Title = Localize[LanguageKeys.Error],
+                        Message = Localize[LanguageKeys.Impossible_to_save_strings],
                         Level = NotificationLevel.Error
                     });
                 }

@@ -126,6 +126,16 @@ namespace Globe.Client.Localizer.ViewModels
                     Roles = Roles.Group_All,
                     AlwaysVisible = false,
                     ViewName = ViewNames.CONCEPT_MANAGEMENT_VIEW
+                },
+                new MenuOption
+                {
+                    Title = Localize[LanguageKeys.Page_Edit_String],
+                    TitleKey = LanguageKeys.Page_Edit_String,
+                    IconName = "edit_page",
+                    IsSelected = false,
+                    Roles = Roles.Group_Administrators,
+                    AlwaysVisible = false,
+                    ViewName = ViewNames.JOBLIST_EDIT_STRING_VIEW
                 }
                 //new MenuOption
                 //{

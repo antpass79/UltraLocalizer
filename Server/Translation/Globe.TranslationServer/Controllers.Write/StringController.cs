@@ -7,31 +7,26 @@ using System.Threading.Tasks;
 namespace Globe.TranslationServer.Controllers
 {
     [Route("api/write/[controller]")]
-    public class ConceptController : Controller
+    public class StringController : Controller
     {
         private readonly IAsyncConceptService _conceptService;
 
-        public ConceptController(
+        public StringController(
             IAsyncConceptService conceptService)
         {
             _conceptService = conceptService;
         }
 
         [HttpPut]
-        async public Task Put([FromBody] SavableConceptModelDTO savableConceptModel)
+        async public Task Put([FromBody] TranslatedString translatedString)
         {
             if (!ModelState.IsValid)
             {
-                throw new System.Exception("savableModel");
+                throw new System.Exception("translatedString");
             }
-            
-            await _conceptService.SaveAsync(savableConceptModel);
+
+            await _conceptService.UpdateAsync(translatedString);
         }
 
-        [HttpPost]
-        async public Task<NewConceptsResult> Post()
-        {
-            return await _conceptService.CheckNewConceptsAsync();
-        }
     }
 }

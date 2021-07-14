@@ -11,5 +11,6 @@ namespace Globe.Client.Localizer.Services
         Task<IEnumerable<Context>> GetContextsAsync();
         Task<IEnumerable<StringType>> GetStringTypesAsync();
         Task SaveAsync(SavableConceptModel savableConceptModel);
+        Task UpdateAsync(TranslatedString translatedString);
     }
 }
