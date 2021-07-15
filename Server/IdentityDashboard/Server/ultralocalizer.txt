@@ -1,6 +1,6 @@
 2020-04-09 13:05:26.926 +02:00 [ERR] Unhandled exception inside the server
 System.Exception: TEST
-   at Globe.Identity.AdministrativeDashboard.Server.Controllers.LoginController..ctor(IAsyncLoginService loginService, IMapper mapper) in D:\Works\ESAOTE\OAuth\AspNetCoreIdentityFramework\Globe.Identity.AdministrativeDashboard\Server\Controllers\LoginController.cs:line 18
+   at MyLabLocalizer.IdentityDashboard.Server.Controllers.LoginController..ctor(IAsyncLoginService loginService, IMapper mapper) in D:\Works\ESAOTE\OAuth\AspNetCoreIdentityFramework\MyLabLocalizer.IdentityDashboard\Server\Controllers\LoginController.cs:line 18
    at lambda_method(Closure , IServiceProvider , Object[] )
    at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass4_0.<CreateActivator>b__0(ControllerContext controllerContext)
    at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass5_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)

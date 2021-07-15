@@ -1,4 +1,4 @@
-﻿namespace Globe.Identity.AdministrativeDashboard.Shared.DTOs
+﻿namespace MyLabLocalizer.IdentityDashboard.Shared.DTOs
 {
     public class CredentialsDTO
     {

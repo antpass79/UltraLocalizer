@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Globe.Identity.AdministrativeDashboard.Server.Data;
-using Globe.Identity.AdministrativeDashboard.Server.Models;
-using Globe.Identity.AdministrativeDashboard.Server.Options;
-using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+using MyLabLocalizer.IdentityDashboard.Server.Data;
+using MyLabLocalizer.IdentityDashboard.Server.Models;
+using MyLabLocalizer.IdentityDashboard.Server.Options;
+using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using Globe.Identity.Models;
 using Globe.Identity.Services;
 using Microsoft.AspNetCore.Authorization;
@@ -16,7 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Controllers
+namespace MyLabLocalizer.IdentityDashboard.Server.Controllers
 {
     [Route("api/[controller]")]
     public class LoginController : Controller

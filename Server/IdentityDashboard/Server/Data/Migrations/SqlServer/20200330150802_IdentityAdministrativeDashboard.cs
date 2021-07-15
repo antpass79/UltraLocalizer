@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Data.Migrations.SqlServer
+namespace MyLabLocalizer.IdentityDashboard.Server.Data.Migrations.SqlServer
 {
     public partial class IdentityAdministrativeDashboard : Migration
     {

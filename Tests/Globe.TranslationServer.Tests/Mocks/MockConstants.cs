@@ -1,4 +1,4 @@
-﻿namespace Globe.TranslationServer.Tests.Mocks
+﻿namespace MyLabLocalizer.LocalizationService.Tests.Mocks
 {
     public static class MockConstants
     {

@@ -1,5 +1,5 @@
-﻿using Globe.Identity.AdministrativeDashboard.Client.Providers;
-using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+﻿using MyLabLocalizer.IdentityDashboard.Client.Providers;
+using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using System;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Services
+namespace MyLabLocalizer.IdentityDashboard.Client.Services
 {
     public class AuthService : IAuthService
     {

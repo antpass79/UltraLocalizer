@@ -1,7 +1,7 @@
 ﻿using Globe.BusinessLogic.Repositories;
-using Globe.Identity.AdministrativeDashboard.Server.Models;
+using MyLabLocalizer.IdentityDashboard.Server.Models;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Repositories
+namespace MyLabLocalizer.IdentityDashboard.Server.Repositories
 {
     public interface IAsyncRoleRepository : IAsyncRepository<ApplicationRole, string>
     {

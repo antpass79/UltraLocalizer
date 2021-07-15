@@ -1,9 +1,9 @@
 ﻿using Globe.BusinessLogic.Repositories;
-using Globe.Identity.AdministrativeDashboard.Server.Models;
+using MyLabLocalizer.IdentityDashboard.Server.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Repositories
+namespace MyLabLocalizer.IdentityDashboard.Server.Repositories
 {
     public interface IAsyncUserRepository : IAsyncRepository<ApplicationUser, string>
     {

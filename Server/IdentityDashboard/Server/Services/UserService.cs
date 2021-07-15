@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Globe.Identity.AdministrativeDashboard.Server.Models;
-using Globe.Identity.AdministrativeDashboard.Server.Repositories;
-using Globe.Identity.AdministrativeDashboard.Server.UnitOfWorks;
-using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+using MyLabLocalizer.IdentityDashboard.Server.Models;
+using MyLabLocalizer.IdentityDashboard.Server.Repositories;
+using MyLabLocalizer.IdentityDashboard.Server.UnitOfWorks;
+using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Services
+namespace MyLabLocalizer.IdentityDashboard.Server.Services
 {
     public class UserService : IAsyncUserService
     {

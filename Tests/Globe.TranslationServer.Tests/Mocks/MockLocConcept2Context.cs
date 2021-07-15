@@ -1,12 +1,12 @@
-﻿using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Tests.Csv;
+﻿using MyLabLocalizer.LocalizationService.Entities;
+using MyLabLocalizer.LocalizationService.Tests.Csv;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace Globe.TranslationServer.Tests.Mocks
+namespace MyLabLocalizer.LocalizationService.Tests.Mocks
 {
     class MockLocConcept2Context
     {

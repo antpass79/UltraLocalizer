@@ -1,12 +1,12 @@
-﻿using Globe.Identity.AdministrativeDashboard.Server.Models;
-using Globe.Identity.AdministrativeDashboard.Server.Options;
+﻿using MyLabLocalizer.IdentityDashboard.Server.Models;
+using MyLabLocalizer.IdentityDashboard.Server.Options;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using System;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Extensions
+namespace MyLabLocalizer.IdentityDashboard.Server.Extensions
 {
     public static class IServiceProviderExtensions
     {

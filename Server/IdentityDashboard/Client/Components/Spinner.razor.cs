@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using System;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Components
+namespace MyLabLocalizer.IdentityDashboard.Client.Components
 {
 	public class SpinnerService
 	{

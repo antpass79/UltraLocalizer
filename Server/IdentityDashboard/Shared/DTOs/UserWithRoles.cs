@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Globe.Identity.AdministrativeDashboard.Shared.DTOs
+namespace MyLabLocalizer.IdentityDashboard.Shared.DTOs
 {
     public class UserWithRoles
     {

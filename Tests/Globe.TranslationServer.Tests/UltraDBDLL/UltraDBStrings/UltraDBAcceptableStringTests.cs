@@ -1,10 +1,10 @@
-﻿using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Tests.Mocks;
-using Globe.TranslationServer.Tests.UltraDBDLL.Adapters;
+﻿using MyLabLocalizer.LocalizationService.Entities;
+using MyLabLocalizer.LocalizationService.Tests.Mocks;
+using MyLabLocalizer.LocalizationService.Tests.UltraDBDLL.Adapters;
 using System.Linq;
 using Xunit;
 
-namespace Globe.TranslationServer.Tests.UltraDBDLL.UltraDBStrings
+namespace MyLabLocalizer.LocalizationService.Tests.UltraDBDLL.UltraDBStrings
 {
     [Trait(nameof(UltraDBAcceptableStringTests), "Tested all methods")]
     public class UltraDBAcceptableStringTests : AdapterTestsWithSqlCommand

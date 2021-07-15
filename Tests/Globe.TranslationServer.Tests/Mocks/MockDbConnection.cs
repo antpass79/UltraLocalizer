@@ -1,7 +1,7 @@
 ﻿using Moq;
 using System.Data.Common;
 
-namespace Globe.TranslationServer.Tests.Mocks
+namespace MyLabLocalizer.LocalizationService.Tests.Mocks
 {
     class MockDbConnection
     {

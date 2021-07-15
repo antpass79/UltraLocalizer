@@ -1,8 +1,8 @@
 using Blazored.LocalStorage;
-using Globe.Identity.AdministrativeDashboard.Client.Components;
-using Globe.Identity.AdministrativeDashboard.Client.Handlers;
-using Globe.Identity.AdministrativeDashboard.Client.Providers;
-using Globe.Identity.AdministrativeDashboard.Client.Services;
+using MyLabLocalizer.IdentityDashboard.Client.Components;
+using MyLabLocalizer.IdentityDashboard.Client.Handlers;
+using MyLabLocalizer.IdentityDashboard.Client.Providers;
+using MyLabLocalizer.IdentityDashboard.Client.Services;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
@@ -13,7 +13,7 @@ using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client
+namespace MyLabLocalizer.IdentityDashboard.Client
 {
     public class Program
     {

@@ -3,7 +3,7 @@ using System.IO;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Services
+namespace MyLabLocalizer.IdentityDashboard.Server.Services
 {
     public class StyleService : IAsyncStyleService
     {

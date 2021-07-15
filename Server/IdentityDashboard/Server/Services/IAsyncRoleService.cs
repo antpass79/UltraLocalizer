@@ -1,11 +1,11 @@
-﻿using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+﻿using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Services
+namespace MyLabLocalizer.IdentityDashboard.Server.Services
 {
     public interface IAsyncRoleService
     {

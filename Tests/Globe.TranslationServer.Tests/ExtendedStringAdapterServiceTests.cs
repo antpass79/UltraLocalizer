@@ -1,13 +1,13 @@
-using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Porting.UltraDBDLL.UltraDBGlobal;
-using Globe.TranslationServer.Services;
-using Globe.TranslationServer.Tests.Mocks;
+using MyLabLocalizer.LocalizationService.Entities;
+using MyLabLocalizer.LocalizationService.Porting.UltraDBDLL.UltraDBGlobal;
+using MyLabLocalizer.LocalizationService.Services;
+using MyLabLocalizer.LocalizationService.Tests.Mocks;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Globe.TranslationServer.Tests
+namespace MyLabLocalizer.LocalizationService.Tests
 {
     [Trait(nameof(ExtendedStringAdapterServiceTests), "NOT Tested all methods")]
     public class ExtendedStringAdapterServiceTests

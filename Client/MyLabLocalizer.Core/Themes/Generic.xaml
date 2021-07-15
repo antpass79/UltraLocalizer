@@ -1,0 +1,30 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!-- PANELS -->
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocDockPanel.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocGrid.xaml" />
+
+        <!-- CONTROLS -->
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocDataGrid.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocButton.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocToolBarButton.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocComboBox.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocLabel.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocTextBlock.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocTextBox.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocNumericTextBox.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocRadioButton.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocCheckBox.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocImage.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocTreeView.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocToggleSwitch.xaml" />
+
+        <!-- COMPONENTS -->
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocHeader.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocFooter.xaml" />
+        <ResourceDictionary Source="/MyLabLocalizer.Core;component/Controls/LocSideMenu.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

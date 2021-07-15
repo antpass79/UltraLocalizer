@@ -1,8 +1,8 @@
-﻿using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Tests.Mocks;
+﻿using MyLabLocalizer.LocalizationService.Entities;
+using MyLabLocalizer.LocalizationService.Tests.Mocks;
 using Microsoft.EntityFrameworkCore;
 
-namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
+namespace MyLabLocalizer.LocalizationService.Tests.UltraDBDLL.Adapters
 {
     public abstract class AdapterTestsWithSqlCommand
     {

@@ -1,11 +1,11 @@
-﻿using Globe.Identity.AdministrativeDashboard.Server.Data;
+﻿using MyLabLocalizer.IdentityDashboard.Server.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Extensions
+namespace MyLabLocalizer.IdentityDashboard.Server.Extensions
 {
     public static class IApplicationBuilderExtensions
     {

@@ -1,7 +1,7 @@
-﻿using Globe.TranslationServer.Entities;
+﻿using MyLabLocalizer.LocalizationService.Entities;
 using Moq;
 
-namespace Globe.TranslationServer.Tests.Mocks
+namespace MyLabLocalizer.LocalizationService.Tests.Mocks
 {
     public class MockLocalizationContext
     {

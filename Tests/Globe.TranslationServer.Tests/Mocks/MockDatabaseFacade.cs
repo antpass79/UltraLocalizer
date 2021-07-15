@@ -1,10 +1,10 @@
-﻿using Globe.TranslationServer.Entities;
+﻿using MyLabLocalizer.LocalizationService.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Moq;
 using System.Data.Common;
 
-namespace Globe.TranslationServer.Tests.Mocks
+namespace MyLabLocalizer.LocalizationService.Tests.Mocks
 {
     public class ExtensionDatabaseFacade : DatabaseFacade
     {

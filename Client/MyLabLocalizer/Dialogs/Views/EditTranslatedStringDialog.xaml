@@ -1,0 +1,233 @@
+﻿<UserControl x:Class="MyLabLocalizer.Dialogs.Views.EditTranslatedStringDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mylablocalizer="http://schemas.mylablocalizer.com/"
+             xmlns:converters="clr-namespace:MyLabLocalizer.Converters"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             BorderThickness="5" BorderBrush="#05163D"
+             MaxWidth="1600"
+             MaxHeight="1200"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+            <Setter Property="SizeToContent" Value="WidthAndHeight" />
+            <Setter Property="WindowStyle" Value="None" />
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="ShowInTaskbar" Value="False"/>
+        </Style>
+    </prism:Dialog.WindowStyle>
+    <UserControl.Resources>
+        <converters:ContextNameToPreviewStyleInfoConverter x:Key="ContextNameToPreviewStyleInfoConverter" />
+        <converters:TextSizeToPreviewStateConverter x:Key="TextSizeToPreviewStateConverter" />
+
+        <Style TargetType="mylablocalizer:LocLabel" x:Key="SectionTitle">
+            <Setter Property="Margin" Value="5" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="FontWeight" Value="DemiBold" />
+        </Style>
+        <Style TargetType="Panel" x:Key="SectionPanel">
+            <Setter Property="Background" Value="WhiteSmoke" />
+            <Setter Property="Margin" Value="3" />
+            <Setter Property="DockPanel.Dock" Value="Top" />
+        </Style>
+        <Style TargetType="{x:Type ContentControl}" x:Key="ComboBoxCellStyle">
+            <Setter Property="Background" Value="#FF3F3F3F" />
+            <Setter Property="BorderBrush" Value="Black" />
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <DockPanel>
+            <Grid DockPanel.Dock="Top" Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition Width="90*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+                <mylablocalizer:LocTextBlock Grid.Row="0" Grid.Column="0"
+                                       Text="Localize String" />
+                <!--Top Editable String-->
+                <mylablocalizer:LocTextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" 
+                                        TextWrapping="Wrap" 
+                                        Text="{Binding UniqueStringEditable, UpdateSourceTrigger=PropertyChanged}" 
+                                        mylablocalizer:TextChangedBehaviour.Command="{Binding Path=DataContext.UniqueStringChangeCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}}">
+                </mylablocalizer:LocTextBox>
+            </Grid>
+
+            <Grid DockPanel.Dock="Bottom" Margin="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80*" />
+                    <RowDefinition Height="20*" />
+                </Grid.RowDefinitions>
+                <DockPanel Margin="10,0,10,5" Grid.Row="0">
+                    <DockPanel.Resources>
+                        <Style TargetType="{x:Type Label}">
+                            <Setter Property="FontSize" Value="15" />
+                            <Setter Property="FontWeight" Value="DemiBold" />
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DockPanel.Resources>
+
+                    <!-- Editable DataGrid -->
+                    <mylablocalizer:LocDataGrid x:Name="contextGrid" FrozenColumnCount="3" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" ItemsSource="{Binding EditableConcept.EditableContexts}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                        <mylablocalizer:LocDataGrid.Resources>
+                            <mylablocalizer:BindingProxy x:Key="proxy" Data="{Binding}" />
+                        </mylablocalizer:LocDataGrid.Resources>
+                        <DataGrid.Columns>
+                            <!-- String Type -->
+                            <DataGridTemplateColumn Header="Type">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                             {RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock Text="{Binding StringType}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <!-- Context -->
+                            <DataGridTemplateColumn Header="Context">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                             {RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock Text="{Binding Name}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <!-- Preview Rows Start -->
+                            <DataGridTemplateColumn Header="Preview Style Standard" IsReadOnly="True">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}"
+                                        Text="{Binding Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:PreviewString
+                                        Identifier="PreviewStandard"
+                                        Text="{Binding StringEditableValue}"
+                                        IsValid="{Binding IsPreviewStandardValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                            <mylablocalizer:PreviewString.PreviewStyleInfo>
+                                                <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="Standard" >
+                                                    <Binding Path="Name" />
+                                                    <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                </MultiBinding>
+                                            </mylablocalizer:PreviewString.PreviewStyleInfo>
+                                            <mylablocalizer:PreviewString.PreviewState>
+                                                <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="Standard" >
+                                                    <Binding Path="Name" />
+                                                    <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                    <Binding Path="StringEditableValue"/>
+                                                    <Binding RelativeSource="{RelativeSource Mode=Self}"/>
+                                                </MultiBinding>
+                                            </mylablocalizer:PreviewString.PreviewState>
+                                        </mylablocalizer:PreviewString>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Preview Style Orange grey" IsReadOnly="True">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}"
+                                        Text="{Binding Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:PreviewString
+                                        Identifier="PreviewOrangeGray"
+                                        Text="{Binding StringEditableValue}"
+                                        IsValid="{Binding IsPreviewOrangeGrayValid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                            <mylablocalizer:PreviewString.PreviewStyleInfo>
+                                                <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="OrangeGrey">
+                                                    <Binding Path="Name" />
+                                                    <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                </MultiBinding>
+                                            </mylablocalizer:PreviewString.PreviewStyleInfo>
+                                            <mylablocalizer:PreviewString.PreviewState>
+                                                <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="OrangeGrey">
+                                                    <Binding Path="Name" />
+                                                    <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                    <Binding Path="StringEditableValue"/>
+                                                    <Binding RelativeSource="{RelativeSource Mode=Self}"/>
+                                                </MultiBinding>
+                                            </mylablocalizer:PreviewString.PreviewState>
+                                        </mylablocalizer:PreviewString>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Header="Preview Style StandardV2" IsReadOnly="True">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock
+                                        Style="{StaticResource DataGridHeaderTextBlock}"
+                                        Text="{Binding Content, RelativeSource={RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:PreviewString
+                                        Identifier="PreviewStandardV2"
+                                        Text="{Binding StringEditableValue}"
+                                        IsValid="{Binding IsPreviewStandardV2Valid, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                            <mylablocalizer:PreviewString.PreviewStyleInfo>
+                                                <MultiBinding Converter="{StaticResource ContextNameToPreviewStyleInfoConverter}" ConverterParameter="StandardV2">
+                                                    <Binding Path="Name" />
+                                                    <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                </MultiBinding>
+                                            </mylablocalizer:PreviewString.PreviewStyleInfo>
+                                            <mylablocalizer:PreviewString.PreviewState>
+                                                <MultiBinding Converter="{StaticResource TextSizeToPreviewStateConverter}" ConverterParameter="StandardV2">
+                                                    <Binding Path="Name" />
+                                                    <Binding ElementName="contextGrid" Path="DataContext.PreviewStyleService" />
+                                                    <Binding Path="StringEditableValue"/>
+                                                    <Binding RelativeSource="{RelativeSource Mode=Self}"/>
+                                                </MultiBinding>
+                                            </mylablocalizer:PreviewString.PreviewState>
+                                        </mylablocalizer:PreviewString>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <!-- Preview Rows End -->
+                        </DataGrid.Columns>
+                    </mylablocalizer:LocDataGrid>
+                </DockPanel>
+                <DockPanel Margin="0,20,0,0" Grid.Row="1" LastChildFill="False">
+                    <Button Style="{StaticResource ButtonStyle}" DockPanel.Dock="Right" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.CloseDialogCommand}" CommandParameter="true" Content="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[Close]}" />
+                    <Button Style="{StaticResource ButtonStyle}" DockPanel.Dock="Right" Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.SaveCommand}" Content="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[Save]}" />
+                </DockPanel>
+            </Grid>
+        </DockPanel>
+
+        <mylablocalizer:Spinner Busy="{Binding SavingBusy}" />
+    </Grid>
+</UserControl>

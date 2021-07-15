@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Services
+namespace MyLabLocalizer.IdentityDashboard.Server.Services
 {
     public interface IAsyncStyleService
     {

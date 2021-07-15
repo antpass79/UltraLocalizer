@@ -1,7 +1,7 @@
 ﻿using Globe.BusinessLogic;
 using Globe.BusinessLogic.Repositories;
-using Globe.Identity.AdministrativeDashboard.Server.Data;
-using Globe.Identity.AdministrativeDashboard.Server.Models;
+using MyLabLocalizer.IdentityDashboard.Server.Data;
+using MyLabLocalizer.IdentityDashboard.Server.Models;
 using Globe.Identity.Data;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Repositories
+namespace MyLabLocalizer.IdentityDashboard.Server.Repositories
 {
     public class RoleContextRepository : IAsyncRoleRepository
     {

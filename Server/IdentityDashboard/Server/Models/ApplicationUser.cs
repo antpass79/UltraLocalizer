@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Models
+namespace MyLabLocalizer.IdentityDashboard.Server.Models
 {
     public class ApplicationUser : GlobeUser
     {

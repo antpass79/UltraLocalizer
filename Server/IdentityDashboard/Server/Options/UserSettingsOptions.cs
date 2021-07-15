@@ -1,4 +1,4 @@
-﻿namespace Globe.Identity.AdministrativeDashboard.Server.Options
+﻿namespace MyLabLocalizer.IdentityDashboard.Server.Options
 {
     public class UserSettingsOptions
     {

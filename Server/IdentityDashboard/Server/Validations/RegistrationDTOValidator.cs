@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 
 namespace Globe.AuthenticationServer
 {

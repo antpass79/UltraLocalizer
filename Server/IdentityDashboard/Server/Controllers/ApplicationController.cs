@@ -1,9 +1,9 @@
-﻿using Globe.Identity.AdministrativeDashboard.Server.Services;
+﻿using MyLabLocalizer.IdentityDashboard.Server.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Controllers
+namespace MyLabLocalizer.IdentityDashboard.Server.Controllers
 {
     [Route("api/[controller]")]
     public class ApplicationController : Controller
