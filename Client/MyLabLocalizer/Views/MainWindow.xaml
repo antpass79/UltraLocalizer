@@ -27,7 +27,7 @@
         <DockPanel Style="{StaticResource MenuPanel}">
             <ToggleButton DockPanel.Dock="Top" Style="{StaticResource MenuToggle}" IsChecked="{Binding IsMenuOpen}">
                 <DockPanel Background="Transparent">
-                    <Image DockPanel.Dock="Left" Width="28" Height="28" Source="/Globe.Client.Platform.Assets;component/Icons/menu.png" />
+                    <Image DockPanel.Dock="Left" Width="28" Height="28" Source="/MyLabLocalizer.Core;component/Icons/menu.png" />
                     <mylablocalizer:LocTextBlock Text="Options" VerticalAlignment="Center" Margin="20,0,0,0" Visibility="{Binding IsMenuOpen, Converter={StaticResource BooleanToVisibilityConverter}}" />
                 </DockPanel>
             </ToggleButton>
@@ -97,7 +97,7 @@
                 RemoveNotificationCommand="{Binding RemoveNotificationCommand}"
                 RemoveAllNotificationsCommand="{Binding RemoveAllNotificationsCommand}"
                 Visibility="{Binding IsAuthenticated, Converter={StaticResource BooleanToVisibilityConverter}}" 
-                ImageSource="/Globe.Client.Platform.Assets;component/Icons/bell_black.png"
+                ImageSource="/MyLabLocalizer.Core;component/Icons/bell_black.png"
                 Notifications="{Binding NotificationService.Notifications}">
             </mylablocalizer:NotificationControl>
         </Grid>

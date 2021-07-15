@@ -151,10 +151,10 @@
                                 <DataTemplate>
                                     <Grid HorizontalAlignment="Center">
                                         <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Link" Command="{Binding ElementName=contextGrid, Path=DataContext.LinkCommand}" CommandParameter="{Binding}" Visibility="{Binding Linked, Converter={StaticResource LinkToVisibilityConverter}}">
-                                            <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/link.png" />
+                                            <Image Width="24" Height="24" Source="/MyLabLocalizer.Core;component/Icons/link.png" />
                                         </Button>
                                         <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Unlink" Command="{Binding ElementName=contextGrid, Path=DataContext.UnlinkCommand}" CommandParameter="{Binding}" Visibility="{Binding Linked, Converter={StaticResource UnlinkToVisibilityConverter}}">
-                                            <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/unlink.png" />
+                                            <Image Width="24" Height="24" Source="/MyLabLocalizer.Core;component/Icons/unlink.png" />
                                         </Button>
                                     </Grid>
                                 </DataTemplate>
@@ -164,7 +164,7 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button HorizontalAlignment="Center" MinWidth="0" ToolTip="Duplicate" Command="{Binding ElementName=contextGrid, Path=DataContext.DuplicateCommand}" CommandParameter="{Binding}">
-                                        <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/duplicate.png" />
+                                        <Image Width="24" Height="24" Source="/MyLabLocalizer.Core;component/Icons/duplicate.png" />
                                     </Button>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -211,7 +211,7 @@
                                 <DataTemplate>
                                     <DockPanel>
                                         <Button DockPanel.Dock="Left" HorizontalAlignment="Center" MinWidth="0" ToolTip="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=UserControl}, Path=DataContext.Localize[KeepThis]}" Command="{Binding ElementName=contextGrid, Path=DataContext.KeepThisCommand}" CommandParameter="{Binding}">
-                                            <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/english.png" />
+                                            <Image Width="24" Height="24" Source="/MyLabLocalizer.Core;component/Icons/english.png" />
                                         </Button>
                                         <mylablocalizer:LocTextBlock VerticalAlignment="Center" Width="150" TextWrapping="Wrap" Text="{Binding StringInEnglish}" />
                                     </DockPanel>
@@ -409,7 +409,7 @@
                                 </mylablocalizer:LocTextBox.InputBindings>
                             </mylablocalizer:LocTextBox>
                             <Button Grid.Row="0" Grid.Column="1" Command="{Binding SearchConceptsCommand}" MinWidth="0">
-                                <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/search.png" />
+                                <Image Width="24" Height="24" Source="/MyLabLocalizer.Core;component/Icons/search.png" />
                             </Button>
                         </Grid>
 
