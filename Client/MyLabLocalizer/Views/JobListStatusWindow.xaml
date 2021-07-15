@@ -142,8 +142,8 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Grid HorizontalAlignment="Center">
-                                            <Image HorizontalAlignment="Center" MinWidth="0" Width="40" Height="40" Source="/Globe.Client.Platform.Assets;component/Icons/draft.png" ToolTip="Draft" Visibility="{Binding IsDraft, Mode=OneWay, Converter={StaticResource IsDraftToVisibilityConverter}}"/>
-                                            <Image HorizontalAlignment="Center" MinWidth="0" Width="40" Height="40" Source="/Globe.Client.Platform.Assets;component/Icons/done.png" ToolTip="Production" Visibility="{Binding IsDraft, Mode=OneWay, Converter={StaticResource NotDraftToVisibilityConverter}}"/>
+                                            <Image HorizontalAlignment="Center" MinWidth="0" Width="40" Height="40" Source="/MyLabLocalizer.Core;component/Icons/draft.png" ToolTip="Draft" Visibility="{Binding IsDraft, Mode=OneWay, Converter={StaticResource IsDraftToVisibilityConverter}}"/>
+                                            <Image HorizontalAlignment="Center" MinWidth="0" Width="40" Height="40" Source="/MyLabLocalizer.Core;component/Icons/done.png" ToolTip="Production" Visibility="{Binding IsDraft, Mode=OneWay, Converter={StaticResource NotDraftToVisibilityConverter}}"/>
                                         </Grid>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>

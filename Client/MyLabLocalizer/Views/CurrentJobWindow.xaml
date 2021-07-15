@@ -82,7 +82,7 @@
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <Button HorizontalAlignment="Center" MinWidth="0" Command="{Binding ElementName=grid, Path=DataContext.ConceptViewEditCommand}" CommandParameter="{Binding}">
-                                            <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/edit.png" />
+                                            <Image Width="24" Height="24" Source="/MyLabLocalizer.Core;component/Icons/edit.png" />
                                         </Button>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
