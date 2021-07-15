@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Services
+namespace MyLabLocalizer.IdentityDashboard.Server.Services
 {
     public interface IAsyncApplicationService
     {

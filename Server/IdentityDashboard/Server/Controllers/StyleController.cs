@@ -1,8 +1,8 @@
-﻿using Globe.Identity.AdministrativeDashboard.Server.Services;
+﻿using MyLabLocalizer.IdentityDashboard.Server.Services;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Controllers
+namespace MyLabLocalizer.IdentityDashboard.Server.Controllers
 {
     [Route("api/[controller]")]
     public class StyleController : Controller

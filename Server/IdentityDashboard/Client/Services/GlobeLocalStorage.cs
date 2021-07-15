@@ -1,7 +1,7 @@
 ﻿using Blazored.LocalStorage;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Services
+namespace MyLabLocalizer.IdentityDashboard.Client.Services
 {
     public class GlobeLocalStorage : IGlobeDataStorage
     {

@@ -1,7 +1,7 @@
-﻿using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+﻿using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Services
+namespace MyLabLocalizer.IdentityDashboard.Client.Services
 {
     public interface IAuthService
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Components
+namespace MyLabLocalizer.IdentityDashboard.Client.Components
 {
     public enum ButtonType
     {

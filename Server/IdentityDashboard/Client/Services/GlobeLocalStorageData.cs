@@ -1,4 +1,4 @@
-﻿namespace Globe.Identity.AdministrativeDashboard.Client.Services
+﻿namespace MyLabLocalizer.IdentityDashboard.Client.Services
 {
     public class GlobeLocalStorageData
     {

@@ -1,0 +1,188 @@
+﻿<UserControl x:Class="MyLabLocalizer.Views.EditStringWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:mylablocalizer="http://schemas.mylablocalizer.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <mylablocalizer:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" True="Visible" False="Collapsed" />
+        <Style TargetType="Panel" x:Key="SectionPanel">
+            <Setter Property="Background" Value="WhiteSmoke" />
+            <Setter Property="Margin" Value="3" />
+        </Style>
+        <Style TargetType="Panel" x:Key="BottomGridPanel">
+            <Setter Property="Background" Value="WhiteSmoke" />
+            <Setter Property="Margin" Value="1" />
+            <Setter Property="DockPanel.Dock" Value="Bottom" />
+        </Style>
+    </UserControl.Resources>
+
+    <mylablocalizer:LocGrid>
+        <mylablocalizer:LocDockPanel Style="{StaticResource LocDockPanelStyle}">
+            <mylablocalizer:LocDockPanel Style="{StaticResource LocDockPanelStyle}" DockPanel.Dock="Left">
+                <mylablocalizer:LocGrid DockPanel.Dock="Top" Style="{StaticResource SectionPanel}" Width="350" Visibility="{Binding ShowFilters, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <mylablocalizer:LocLabel Style="{StaticResource LocLabelTitle}" Grid.ColumnSpan="2" Content="{Binding Localize[Filters]}"/>
+                    <mylablocalizer:LocTextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Localize[Language]}"/>
+                    <mylablocalizer:LocComboBox  Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Languages}" SelectedItem="{Binding SelectedLanguage}" DisplayMemberPath="Description" ToolTip="{Binding SelectedLanguage.Description}" ToolTipService.InitialShowDelay="500">
+                        <mylablocalizer:LocComboBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </mylablocalizer:LocComboBox.InputBindings>
+                    </mylablocalizer:LocComboBox>
+                    <mylablocalizer:LocTextBlock Grid.Row="2" Grid.Column="0">String Id</mylablocalizer:LocTextBlock>
+                    <mylablocalizer:LocNumericTextBox Grid.Row="2" Grid.Column="1" Text="{Binding InsertedStringId, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                        <mylablocalizer:LocNumericTextBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </mylablocalizer:LocNumericTextBox.InputBindings>
+                    </mylablocalizer:LocNumericTextBox>
+                    <mylablocalizer:LocTextBlock Grid.Row="3" Grid.Column="0">Translated String</mylablocalizer:LocTextBlock>
+                    <mylablocalizer:LocTextBox Grid.Row="3" Grid.Column="1" Text="{Binding InsertedString, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                        <mylablocalizer:LocTextBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </mylablocalizer:LocTextBox.InputBindings>
+                    </mylablocalizer:LocTextBox>
+                    <mylablocalizer:LocTextBlock Grid.Row="4" Grid.Column="0">Concept</mylablocalizer:LocTextBlock>
+                    <mylablocalizer:LocTextBox  Grid.Row="4" Grid.Column="1" Text="{Binding InsertedConcept, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center">
+                        <mylablocalizer:LocTextBox.InputBindings>
+                            <KeyBinding Gesture="Return" Command="{Binding SearchCommand}"></KeyBinding>
+                        </mylablocalizer:LocTextBox.InputBindings>
+                    </mylablocalizer:LocTextBox>
+                    <Button Grid.Row="5" Grid.Column="1" Command="{Binding SearchCommand}" Content="{Binding Localize[Search]}"/>
+
+                    <mylablocalizer:Spinner Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" Busy="{Binding FiltersBusy}" />
+                </mylablocalizer:LocGrid>
+            </mylablocalizer:LocDockPanel>
+
+            <mylablocalizer:LocDockPanel Style="{StaticResource SectionPanel}">
+                <mylablocalizer:LocGrid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="95*" />
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <mylablocalizer:LocDataGrid Name="grid" Grid.Row="0" FrozenColumnCount="1" ItemsSource="{Binding LocalizeStrings}" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="50" CanUserResize="False">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button HorizontalAlignment="Center" MinWidth="0" Command="{Binding ElementName=grid, Path=DataContext.LocalizeStringViewEditCommand}" CommandParameter="{Binding}">
+                                            <Image Width="24" Height="24" Source="/Globe.Client.Platform.Assets;component/Icons/edit.png" />
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTextColumn Binding="{Binding StringId}" Header="Id" Width="5*">
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding Value}" Header="String" Width="25*">
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn Binding="{Binding StringType}" Header="String" Width="5*">
+                                <DataGridTextColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <mylablocalizer:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" Text="{Binding Content, RelativeSource=
+                                         {RelativeSource Mode=TemplatedParent}}"/>
+                                    </DataTemplate>
+                                </DataGridTextColumn.HeaderTemplate>
+                            </DataGridTextColumn>
+                            <DataGridTemplateColumn IsReadOnly="True" Header="Contexts" Width="65*">
+                                <DataGridTemplateColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="DataGridColumnHeader">
+                                                    <mylablocalizer:LocDockPanel LastChildFill="False" Background="Transparent">
+                                                        <mylablocalizer:LocTextBlock Style="{StaticResource DataGridHeaderTextBlock}" DockPanel.Dock="Top" HorizontalAlignment="Center">Contexts</mylablocalizer:LocTextBlock>
+                                                        <mylablocalizer:LocGrid DockPanel.Dock="Bottom">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition />
+                                                                <ColumnDefinition />
+                                                                <ColumnDefinition />
+                                                                <ColumnDefinition />
+                                                            </Grid.ColumnDefinitions>
+                                                            <mylablocalizer:LocTextBlock Grid.Column="0">Concept</mylablocalizer:LocTextBlock>
+                                                            <mylablocalizer:LocTextBlock Grid.Column="1">Context</mylablocalizer:LocTextBlock>
+                                                            <mylablocalizer:LocTextBlock Grid.Column="2">ComponentNamespace</mylablocalizer:LocTextBlock>
+                                                            <mylablocalizer:LocTextBlock Grid.Column="3">InternalNamespace</mylablocalizer:LocTextBlock>
+                                                        </mylablocalizer:LocGrid>
+                                                    </mylablocalizer:LocDockPanel>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                        <Setter Property="Foreground" Value="Black"/>
+                                        <Setter Property="FontSize" Value="14"/>
+                                        <Setter Property="FontWeight" Value="DemiBold"/>
+                                        <Setter Property="MinWidth" Value="300"/>
+                                    </Style>
+                                </DataGridTemplateColumn.HeaderStyle>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ItemsControl ItemsSource="{Binding LocalizeStringDetails}">
+                                            <ItemsControl.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <VirtualizingStackPanel />
+                                                </ItemsPanelTemplate>
+                                            </ItemsControl.ItemsPanel>
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <mylablocalizer:LocGrid DockPanel.Dock="Bottom">
+                                                        <mylablocalizer:LocGrid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="25*"/>
+                                                            <ColumnDefinition Width="25*"/>
+                                                            <ColumnDefinition Width="25*"/>
+                                                            <ColumnDefinition Width="25*"/>
+                                                        </mylablocalizer:LocGrid.ColumnDefinitions>
+                                                        <mylablocalizer:LocTextBlock Grid.Column="0" MinWidth="100" Text="{Binding Concept}" />
+                                                        <mylablocalizer:LocTextBlock Grid.Column="1" MinWidth="100" Text="{Binding ContextName}" />
+                                                        <mylablocalizer:LocTextBlock Grid.Column="2" MinWidth="60" Text="{Binding ComponentNameSpace}" />
+                                                        <mylablocalizer:LocTextBlock Grid.Column="3" MinWidth="60" Text="{Binding InternalNameSpace}" />
+                                                    </mylablocalizer:LocGrid>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </mylablocalizer:LocDataGrid>
+
+                    <mylablocalizer:Spinner Grid.Row="0" Diameter="60" Busy="{Binding GridBusy}" />
+                    <mylablocalizer:LocDockPanel Grid.Row="1" DockPanel.Dock="Bottom" LastChildFill="True" Style="{StaticResource BottomGridPanel}">
+                        <mylablocalizer:LocTextBlock DockPanel.Dock="Left" Text="{Binding FilterBy}" TextAlignment="Left" FontSize="11" FontWeight="Bold"></mylablocalizer:LocTextBlock>
+                        <mylablocalizer:LocTextBlock DockPanel.Dock="Right" Text="{Binding ItemCount}" TextAlignment="Left" FontSize="11" FontWeight="Bold"></mylablocalizer:LocTextBlock>
+                        <mylablocalizer:LocTextBlock DockPanel.Dock="Right" TextAlignment="Right" Text="{Binding Localize[Items_Count]}" FontSize="11" FontWeight="Bold"></mylablocalizer:LocTextBlock>
+                    </mylablocalizer:LocDockPanel> 
+                </mylablocalizer:LocGrid>
+            </mylablocalizer:LocDockPanel>
+
+        </mylablocalizer:LocDockPanel>
+
+        <mylablocalizer:Spinner Grid.Row="1" Diameter="60" Busy="{Binding ConceptDetailsBusy}" />
+    </mylablocalizer:LocGrid>
+</UserControl>

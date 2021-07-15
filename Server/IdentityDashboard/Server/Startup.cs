@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using FluentValidation.AspNetCore;
-using Globe.Identity.AdministrativeDashboard.Server.Data;
-using Globe.Identity.AdministrativeDashboard.Server.Models;
-using Globe.Identity.AdministrativeDashboard.Server.Options;
-using Globe.Identity.AdministrativeDashboard.Server.Repositories;
-using Globe.Identity.AdministrativeDashboard.Server.Services;
-using Globe.Identity.AdministrativeDashboard.Server.UnitOfWorks;
+using MyLabLocalizer.IdentityDashboard.Server.Data;
+using MyLabLocalizer.IdentityDashboard.Server.Models;
+using MyLabLocalizer.IdentityDashboard.Server.Options;
+using MyLabLocalizer.IdentityDashboard.Server.Repositories;
+using MyLabLocalizer.IdentityDashboard.Server.Services;
+using MyLabLocalizer.IdentityDashboard.Server.UnitOfWorks;
 using Globe.Identity.Middlewares;
 using Globe.Identity.Options;
 using Globe.Identity.Security;
@@ -23,7 +23,7 @@ using Serilog;
 using System;
 using System.Reflection;
 
-namespace Globe.Identity.AdministrativeDashboard.Server
+namespace MyLabLocalizer.IdentityDashboard.Server
 {
     public class Startup
     {

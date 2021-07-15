@@ -1,8 +1,8 @@
-﻿using Globe.Identity.AdministrativeDashboard.Client.Services;
+﻿using MyLabLocalizer.IdentityDashboard.Client.Services;
 using Microsoft.AspNetCore.Components;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Pages
+namespace MyLabLocalizer.IdentityDashboard.Client.Pages
 {
     public class LogoutUserDataModel : ComponentBase
     {

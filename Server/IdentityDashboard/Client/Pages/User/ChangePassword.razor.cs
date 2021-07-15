@@ -1,10 +1,10 @@
-﻿using Globe.Identity.AdministrativeDashboard.Client.Services;
-using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+﻿using MyLabLocalizer.IdentityDashboard.Client.Services;
+using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Pages
+namespace MyLabLocalizer.IdentityDashboard.Client.Pages
 {
     public class ChangePasswordDataModel : ComponentBase
     {

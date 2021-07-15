@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Services
+namespace MyLabLocalizer.IdentityDashboard.Client.Services
 {
     public class ApplicationService : IApplicationService
     {

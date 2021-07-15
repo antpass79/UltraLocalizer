@@ -1,11 +1,11 @@
-﻿using Globe.Identity.AdministrativeDashboard.Server.Services;
-using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+﻿using MyLabLocalizer.IdentityDashboard.Server.Services;
+using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Controllers
+namespace MyLabLocalizer.IdentityDashboard.Server.Controllers
 {
     [Route("api/[controller]")]
     public class RoleController : Controller

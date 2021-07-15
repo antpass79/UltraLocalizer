@@ -1,7 +1,7 @@
-﻿using Globe.Identity.AdministrativeDashboard.Server.Repositories;
+﻿using MyLabLocalizer.IdentityDashboard.Server.Repositories;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.UnitOfWorks
+namespace MyLabLocalizer.IdentityDashboard.Server.UnitOfWorks
 {
     public class RoleUnitOfWork : IAsyncRoleUnitOfWork
     {

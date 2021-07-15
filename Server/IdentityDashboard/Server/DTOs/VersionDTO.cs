@@ -1,4 +1,4 @@
-﻿namespace Globe.Identity.AdministrativeDashboard.Server.DTOs
+﻿namespace MyLabLocalizer.IdentityDashboard.Server.DTOs
 {
     public class VersionDTO
     {

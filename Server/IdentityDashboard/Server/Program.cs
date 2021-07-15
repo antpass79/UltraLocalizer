@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging.AzureAppServices;
 using System;
 using System.Security.Authentication;
 
-namespace Globe.Identity.AdministrativeDashboard.Server
+namespace MyLabLocalizer.IdentityDashboard.Server
 {
     public class Program
     {

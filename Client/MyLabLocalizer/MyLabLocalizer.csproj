@@ -1,0 +1,128 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <StartupObject>MyLabLocalizer.App</StartupObject>
+    <ApplicationIcon>Localizator.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\Server\IdentityDashboard\Server\bin\Debug\net5.0\UltraLocalizer\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\Server\IdentityDashboard\Server\bin\Release\net5.0\UltraLocalizer\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\MyLabLocalizer.Shared\MyLabLocalizer.Shared.csproj" />
+    <ProjectReference Include="..\MyLabLocalizer.Core\MyLabLocalizer.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="5.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Prism.Unity" Version="8.0.0.1909" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="StyleManager">
+      <HintPath>Dependencies\StyleManager.dll</HintPath>
+    </Reference>
+    <Reference Include="UIFramework.Contract">
+      <HintPath>Dependencies\UIFramework.Contract.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Dialogs\Views\NotificationDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\Views\MessageDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dialogs\Views\ExportDbDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Dialogs\Views\EditTranslatedStringDialog.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Views\EditStringWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EditStringWindowToolBar.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginWindowToolBar.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JobListStatusWindowToolBar.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JobListStatusWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ConceptManagementWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ConceptManagementWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JobListManagementWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JobListManagementWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CurrentJobWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HomeWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\HomeWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CurrentJobWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MergeWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JobsWindowToolBar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MergeWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\JobsWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties version_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

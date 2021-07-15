@@ -1,4 +1,4 @@
-﻿using Globe.Identity.AdministrativeDashboard.Server.Models;
+﻿using MyLabLocalizer.IdentityDashboard.Server.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Repositories
+namespace MyLabLocalizer.IdentityDashboard.Server.Repositories
 {
     public class UserManagerRepository : IAsyncUserRepository
     {

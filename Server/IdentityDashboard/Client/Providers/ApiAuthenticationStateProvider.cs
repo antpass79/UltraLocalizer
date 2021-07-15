@@ -1,11 +1,11 @@
-﻿using Globe.Identity.AdministrativeDashboard.Client.Services;
+﻿using MyLabLocalizer.IdentityDashboard.Client.Services;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Providers
+namespace MyLabLocalizer.IdentityDashboard.Client.Providers
 {
     public class ApiAuthenticationStateProvider : AuthenticationStateProvider
     {

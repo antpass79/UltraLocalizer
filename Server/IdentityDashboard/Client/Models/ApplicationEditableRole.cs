@@ -1,6 +1,6 @@
-﻿using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+﻿using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Models
+namespace MyLabLocalizer.IdentityDashboard.Client.Models
 {
     public class ApplicationEditableRole : ApplicationRoleDTO
     {

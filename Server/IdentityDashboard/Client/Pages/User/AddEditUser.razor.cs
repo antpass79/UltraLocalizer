@@ -1,12 +1,12 @@
-﻿using Globe.Identity.AdministrativeDashboard.Client.Models;
-using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+﻿using MyLabLocalizer.IdentityDashboard.Client.Models;
+using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Pages
+namespace MyLabLocalizer.IdentityDashboard.Client.Pages
 {
     public class AddEditUserDataModel : ComponentBase
     {

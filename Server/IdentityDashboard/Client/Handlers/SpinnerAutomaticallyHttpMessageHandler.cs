@@ -1,10 +1,10 @@
-﻿using Globe.Identity.AdministrativeDashboard.Client.Components;
+﻿using MyLabLocalizer.IdentityDashboard.Client.Components;
 using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Handlers
+namespace MyLabLocalizer.IdentityDashboard.Client.Handlers
 {
     public class AutoSpinnerHttpMessageHandler : DelegatingHandler
     {

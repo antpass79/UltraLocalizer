@@ -1,0 +1,188 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\bell.png" />
+    <None Remove="Icons\bell_black.png" />
+    <None Remove="Icons\check.png" />
+    <None Remove="Icons\current_job.png" />
+    <None Remove="Icons\delete.png" />
+    <None Remove="Icons\done.png" />
+    <None Remove="Icons\draft.png" />
+    <None Remove="Icons\duplicate.png" />
+    <None Remove="Icons\edit.png" />
+    <None Remove="Icons\edit_page.png" />
+    <None Remove="Icons\english.png" />
+    <None Remove="Icons\error.png" />
+    <None Remove="Icons\folder.png" />
+    <None Remove="Icons\folder_black.png" />
+    <None Remove="Icons\home.png" />
+    <None Remove="Icons\information.png" />
+    <None Remove="Icons\joblist_status.png" />
+    <None Remove="Icons\link.png" />
+    <None Remove="Icons\management.png" />
+    <None Remove="Icons\menu.png" />
+    <None Remove="Icons\search.png" />
+    <None Remove="Icons\translation.png" />
+    <None Remove="Icons\unlink.png" />
+    <None Remove="Icons\warning.png" />
+    <None Remove="Icons\work_in_progress.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Remove="Styles\CustomStyles\OrangeGrey_Custom.xaml" />
+    <Page Remove="Styles\CustomStyles\StandardV2_Custom.xaml" />
+    <Page Remove="Styles\CustomStyles\Standard_Custom.xaml" />
+    <Page Remove="Styles\CustomStyles\Veterinary_Custom.xaml" />
+    <Page Remove="Styles\DefaultStyles\DefaultBasicStyles.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.31" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Prism.Core" Version="8.0.0.1909" />
+    <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+    <PackageReference Include="ToggleSwitch" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\AuthorizeView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Controls\LocButton.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\LocCheckBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocComboBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocDataGrid.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocDockPanel.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocFooter.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocGrid.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocHeader.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocImage.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocLabel.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocNumericTextBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocRadioButton.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocSideMenu.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocTextBlock.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocTextBox.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocToggleSwitch.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Controls\LocToolBarButton.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Controls\LocTreeView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Themes\Generic.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Views\AuthorizeView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Styles\CustomStyles\OrangeGrey_Custom.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="Styles\CustomStyles\StandardV2_Custom.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="Styles\CustomStyles\Standard_Custom.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="Styles\CustomStyles\Veterinary_Custom.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <None Include="Styles\DefaultStyles\DefaultBasicStyles.xaml">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\MyLabLocalizer.Shared\MyLabLocalizer.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\bell.png" />
+    <Resource Include="Icons\bell_black.png" />
+    <Resource Include="Icons\check.png" />
+    <Resource Include="Icons\current_job.png" />
+    <Resource Include="Icons\delete.png" />
+    <Resource Include="Icons\done.png" />
+    <Resource Include="Icons\draft.png" />
+    <Resource Include="Icons\duplicate.png" />
+    <Resource Include="Icons\edit.png" />
+    <Resource Include="Icons\edit_page.png" />
+    <Resource Include="Icons\english.png" />
+    <Resource Include="Icons\error.png" />
+    <Resource Include="Icons\folder.png" />
+    <Resource Include="Icons\folder_black.png" />
+    <Resource Include="Icons\home.png" />
+    <Resource Include="Icons\information.png" />
+    <Resource Include="Icons\joblist_status.png" />
+    <Resource Include="Icons\link.png" />
+    <Resource Include="Icons\management.png" />
+    <Resource Include="Icons\menu.png" />
+    <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\translation.png" />
+    <Resource Include="Icons\unlink.png" />
+    <Resource Include="Icons\warning.png" />
+    <Resource Include="Icons\work_in_progress.png" />
+  </ItemGroup>
+
+</Project>

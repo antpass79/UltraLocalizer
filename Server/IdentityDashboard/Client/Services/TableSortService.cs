@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Services
+namespace MyLabLocalizer.IdentityDashboard.Client.Services
 {
     public class TableSortService
     {

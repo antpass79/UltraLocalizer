@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using Globe.Identity.Models;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Mapping
+namespace MyLabLocalizer.IdentityDashboard.Server.Mapping
 {
     public class RegistrationResultProfile : Profile
     {

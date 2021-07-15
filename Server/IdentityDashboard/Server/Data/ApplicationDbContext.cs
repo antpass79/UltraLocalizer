@@ -1,10 +1,10 @@
-﻿using Globe.Identity.AdministrativeDashboard.Server.Models;
+﻿using MyLabLocalizer.IdentityDashboard.Server.Models;
 using Globe.Identity.Options;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Data
+namespace MyLabLocalizer.IdentityDashboard.Server.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {

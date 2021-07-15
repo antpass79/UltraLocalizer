@@ -1,6 +1,6 @@
 ﻿using CsvHelper.Configuration.Attributes;
 
-namespace Globe.TranslationServer.Tests.Mocks
+namespace MyLabLocalizer.LocalizationService.Tests.Mocks
 {
     internal class LocContextsForCsv
     {

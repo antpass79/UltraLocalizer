@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="MyLabLocalizer.Dialogs.Views.SaveJoblistDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:mylablocalizer="http://schemas.mylablocalizer.com/"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:platform="http://schemas.mylablocalizer.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             BorderThickness="5" BorderBrush="#05163D"
+             Width="350"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <prism:Dialog.WindowStyle>
+        <Style TargetType="Window">
+            <Setter Property="prism:Dialog.WindowStartupLocation" Value="CenterScreen" />
+            <Setter Property="SizeToContent" Value="WidthAndHeight" />
+            <Setter Property="WindowStyle" Value="None" />
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="ShowInTaskbar" Value="False"/>
+        </Style>
+    </prism:Dialog.WindowStyle>
+
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <mylablocalizer:LocTextBlock Grid.Row="0" Grid.Column="0">Select User</mylablocalizer:LocTextBlock>
+        <mylablocalizer:LocComboBox Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Users}" DisplayMemberPath="DisplayName" SelectedItem="{Binding SelectedUser}"></mylablocalizer:LocComboBox>
+        <mylablocalizer:LocTextBlock Grid.Row="1" Grid.Column="0">Save As</mylablocalizer:LocTextBlock>
+        <mylablocalizer:LocTextBox Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Text="{Binding JobListName, UpdateSourceTrigger=PropertyChanged}"></mylablocalizer:LocTextBox>
+        <!-- Buttons -->
+        <DockPanel Margin="0,20,0,0" Grid.Row="2" Grid.ColumnSpan="2" LastChildFill="False">
+            <Button DockPanel.Dock="Right" Style="{StaticResource GrayButton}" Command="{Binding CloseDialogCommand}">Close</Button>
+            <Button DockPanel.Dock="Right" Command="{Binding SaveCommand}">Save</Button>
+        </DockPanel>
+
+        <mylablocalizer:Spinner Grid.RowSpan="4" Grid.ColumnSpan="2" Busy="{Binding Busy}" />
+    </Grid>
+
+</UserControl>

@@ -3,7 +3,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Reflection;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Services
+namespace MyLabLocalizer.IdentityDashboard.Server.Services
 {
     public partial class ApplicationService : IAsyncApplicationService
     {

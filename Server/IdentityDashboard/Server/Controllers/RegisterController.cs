@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
-using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using Globe.Identity.Models;
 using Globe.Identity.Servicess;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.Controllers
+namespace MyLabLocalizer.IdentityDashboard.Server.Controllers
 {
     [Route("api/[controller]")]
     public class RegisterController : Controller

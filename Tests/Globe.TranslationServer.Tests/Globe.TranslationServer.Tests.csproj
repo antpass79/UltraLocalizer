@@ -28,7 +28,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Server\Common\Globe.Identity\Globe.Identity.csproj" />
     <ProjectReference Include="..\..\Server\Common\Globe.Tests\Globe.Tests.csproj" />
-    <ProjectReference Include="..\..\Server\Translation\Globe.TranslationServer\Globe.TranslationServer.csproj" />
+    <ProjectReference Include="..\..\Server\Translation\Globe.TranslationServer\MyLabLocalizer.LocalizationService.csproj" />
   </ItemGroup>
 
   <ItemGroup>

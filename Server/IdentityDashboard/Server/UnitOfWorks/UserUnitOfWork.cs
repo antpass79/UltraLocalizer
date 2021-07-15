@@ -1,9 +1,9 @@
 ﻿using Globe.BusinessLogic.Repositories;
-using Globe.Identity.AdministrativeDashboard.Server.Models;
-using Globe.Identity.AdministrativeDashboard.Server.Repositories;
+using MyLabLocalizer.IdentityDashboard.Server.Models;
+using MyLabLocalizer.IdentityDashboard.Server.Repositories;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.UnitOfWorks
+namespace MyLabLocalizer.IdentityDashboard.Server.UnitOfWorks
 {
     public class UserUnitOfWork : IAsyncUserUnitOfWork
     {

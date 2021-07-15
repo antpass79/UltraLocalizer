@@ -5,7 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 
-namespace Globe.TranslationServer.Tests.Csv
+namespace MyLabLocalizer.LocalizationService.Tests.Csv
 {
     static class CsvParser
     {

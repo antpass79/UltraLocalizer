@@ -2,15 +2,15 @@
 using Globe.Identity.Services;
 using Globe.Tests.Web;
 using Globe.Tests.Web.Extensions;
-using Globe.TranslationServer.DTOs;
-using Globe.TranslationServer.Tests.Mocks;
+using MyLabLocalizer.LocalizationService.DTOs;
+using MyLabLocalizer.LocalizationService.Tests.Mocks;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using Xunit;
 
-namespace Globe.TranslationServer.Tests.Controllers
+namespace MyLabLocalizer.LocalizationService.Tests.Controllers
 {
     [Trait(nameof(JobListControllerTests), "Job List Controller")]
     public class JobListControllerTests

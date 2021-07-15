@@ -1,10 +1,10 @@
-﻿using Globe.TranslationServer.Entities;
-using Globe.TranslationServer.Porting.UltraDBDLL.Adapters;
-using Globe.TranslationServer.Tests.Mocks;
+﻿using MyLabLocalizer.LocalizationService.Entities;
+using MyLabLocalizer.LocalizationService.Porting.UltraDBDLL.Adapters;
+using MyLabLocalizer.LocalizationService.Tests.Mocks;
 using System.Linq;
 using Xunit;
 
-namespace Globe.TranslationServer.Tests.UltraDBDLL.Adapters
+namespace MyLabLocalizer.LocalizationService.Tests.UltraDBDLL.Adapters
 {
     [Trait(nameof(LOC_JobListTableAdapterTests), "Tested all methods")]
     public class LOC_JobListTableAdapterTests : AdapterTestsWithSqlCommand

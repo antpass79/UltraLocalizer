@@ -1,7 +1,7 @@
 ﻿using CsvHelper.Configuration.Attributes;
 using System;
 
-namespace Globe.TranslationServer.Tests.Mocks
+namespace MyLabLocalizer.LocalizationService.Tests.Mocks
 {
     class LocConceptsTableForCsv
     {

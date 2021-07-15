@@ -1,9 +1,9 @@
-﻿using Globe.Identity.AdministrativeDashboard.Shared.DTOs;
+﻿using MyLabLocalizer.IdentityDashboard.Shared.DTOs;
 using Microsoft.AspNetCore.Components;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Globe.Identity.AdministrativeDashboard.Client.Pages
+namespace MyLabLocalizer.IdentityDashboard.Client.Pages
 {
     public class AddEditRoleDataModel : ComponentBase
     {

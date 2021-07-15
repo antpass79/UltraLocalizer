@@ -1,7 +1,7 @@
 ﻿using Globe.BusinessLogic;
-using Globe.Identity.AdministrativeDashboard.Server.Repositories;
+using MyLabLocalizer.IdentityDashboard.Server.Repositories;
 
-namespace Globe.Identity.AdministrativeDashboard.Server.UnitOfWorks
+namespace MyLabLocalizer.IdentityDashboard.Server.UnitOfWorks
 {
     public interface IAsyncUserUnitOfWork : IAsyncSaveable
     {
